@@ -2,7 +2,7 @@
 #include "ui_megawin.h"
 
 MEGAWin::MEGAWin(QWidget *parent) :
-    QMainWindow(parent),
+    QWidget(parent),
     ui(new Ui::MEGAWin)
 {
     ui->setupUi(this);

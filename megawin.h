@@ -1,13 +1,13 @@
 #ifndef MEGAWIN_H
 #define MEGAWIN_H
 
-#include <QMainWindow>
+#include <QWidget>
 
 namespace Ui {
 class MEGAWin;
 }
 
-class MEGAWin : public QMainWindow
+class MEGAWin : public QWidget
 {
     Q_OBJECT
 
