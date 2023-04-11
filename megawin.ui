@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>981</width>
+    <width>980</width>
     <height>562</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MEGAWin</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QStackedWidget" name="UI_stackedWidget">
    <property name="geometry">
@@ -45,6 +48,9 @@
        <height>45</height>
       </size>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(31, 133, 227);</string>
+     </property>
      <layout class="QGridLayout" name="gridLayout">
       <property name="leftMargin">
        <number>0</number>
@@ -61,31 +67,85 @@
       <property name="spacing">
        <number>0</number>
       </property>
-      <item row="0" column="3">
-       <widget class="QLabel" name="label">
+      <item row="0" column="2">
+       <widget class="QLabel" name="Machine_Name">
         <property name="minimumSize">
          <size>
-          <width>15</width>
+          <width>80</width>
           <height>45</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>15</width>
+          <width>68</width>
           <height>45</height>
          </size>
         </property>
         <property name="font">
          <font>
-          <family>Agency FB</family>
-          <pointsize>18</pointsize>
+          <family>SimSun-ExtB</family>
+          <pointsize>20</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
         <property name="text">
-         <string>-</string>
+         <string>MEGA</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="9">
+       <widget class="QPushButton" name="TimeSeting_btn">
+        <property name="minimumSize">
+         <size>
+          <width>332</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>332</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>91</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="0">
+       <widget class="QPushButton" name="Logo_lb">
+        <property name="minimumSize">
+         <size>
+          <width>110</width>
+          <height>43</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>110</width>
+          <height>43</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
         </property>
        </widget>
       </item>
@@ -128,87 +188,11 @@
           <pointsize>18</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
         <property name="text">
          <string>-</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="9">
-       <widget class="QPushButton" name="TimeSeting_btn">
-        <property name="minimumSize">
-         <size>
-          <width>332</width>
-          <height>45</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>332</width>
-          <height>45</height>
-         </size>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QPushButton" name="Logo_lb">
-        <property name="minimumSize">
-         <size>
-          <width>110</width>
-          <height>43</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>110</width>
-          <height>43</height>
-         </size>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>91</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="0" column="2">
-       <widget class="QLabel" name="Machine_Name">
-        <property name="minimumSize">
-         <size>
-          <width>68</width>
-          <height>45</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>68</width>
-          <height>45</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>SimSun-ExtB</family>
-          <pointsize>20</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>MEGA</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -234,6 +218,9 @@
           <family>SimSun-ExtB</family>
           <pointsize>18</pointsize>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
          <string>50Hz</string>
@@ -273,8 +260,42 @@
           <pointsize>18</pointsize>
          </font>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
         <property name="text">
          <string>500kW</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QLabel" name="label">
+        <property name="minimumSize">
+         <size>
+          <width>15</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>15</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Agency FB</family>
+          <pointsize>18</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
@@ -283,8 +304,8 @@
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="geometry">
       <rect>
-       <x>2</x>
-       <y>54</y>
+       <x>0</x>
+       <y>50</y>
        <width>979</width>
        <height>453</height>
       </rect>
@@ -300,6 +321,9 @@
        <width>979</width>
        <height>453</height>
       </size>
+     </property>
+     <property name="currentIndex">
+      <number>2</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">
@@ -523,13 +547,13 @@
         <string/>
        </property>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>0</x>
          <y>1</y>
          <width>144</width>
-         <height>131</height>
+         <height>147</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1086,7 +1110,7 @@
         <string/>
        </property>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -1270,9 +1294,1417 @@
        </layout>
       </widget>
      </widget>
-     <widget class="QWidget" name="Status_page"/>
-     <widget class="QWidget" name="Record_page"/>
-     <widget class="QWidget" name="System_page"/>
+     <widget class="QWidget" name="Status_page">
+      <widget class="QTabWidget" name="Run_tabWidget">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>981</width>
+         <height>451</height>
+        </rect>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="RTData_page">
+        <attribute name="title">
+         <string>PCS Data</string>
+        </attribute>
+        <widget class="QStackedWidget" name="RTD_PCS_StackedWidget">
+         <property name="geometry">
+          <rect>
+           <x>-1</x>
+           <y>-1</y>
+           <width>981</width>
+           <height>421</height>
+          </rect>
+         </property>
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
+         <widget class="QWidget" name="RTD_Bypass_N_page">
+          <widget class="QTableWidget" name="RTDataModel_tableWidget">
+           <property name="geometry">
+            <rect>
+             <x>5</x>
+             <y>1</y>
+             <width>971</width>
+             <height>421</height>
+            </rect>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="RTD_Bypass_Y_page">
+          <widget class="QWidget" name="horizontalLayoutWidget">
+           <property name="geometry">
+            <rect>
+             <x>9</x>
+             <y>9</y>
+             <width>961</width>
+             <height>411</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QStackedWidget" name="Bypass_Tab">
+              <property name="maximumSize">
+               <size>
+                <width>830</width>
+                <height>383</height>
+               </size>
+              </property>
+              <property name="currentIndex">
+               <number>1</number>
+              </property>
+              <widget class="QWidget" name="Bypass_Converter_page">
+               <widget class="QTableView" name="Converter_Tab">
+                <property name="geometry">
+                 <rect>
+                  <x>5</x>
+                  <y>-9</y>
+                  <width>831</width>
+                  <height>401</height>
+                 </rect>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QWidget" name="Bypass_Grid_page">
+               <widget class="QTableView" name="Grid_Tab">
+                <property name="geometry">
+                 <rect>
+                  <x>5</x>
+                  <y>-9</y>
+                  <width>831</width>
+                  <height>401</height>
+                 </rect>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QWidget" name="Bypass_Load_page">
+               <widget class="QListWidget" name="Load_Tab">
+                <property name="geometry">
+                 <rect>
+                  <x>5</x>
+                  <y>-9</y>
+                  <width>831</width>
+                  <height>401</height>
+                 </rect>
+                </property>
+               </widget>
+              </widget>
+             </widget>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_12">
+              <item>
+               <widget class="QPushButton" name="SConverter_btn">
+                <property name="maximumSize">
+                 <size>
+                  <width>108</width>
+                  <height>122</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Converter</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="SLoad_btn">
+                <property name="maximumSize">
+                 <size>
+                  <width>108</width>
+                  <height>122</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Load</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="SGrid_btn">
+                <property name="maximumSize">
+                 <size>
+                  <width>108</width>
+                  <height>122</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Grid</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="RTState_page">
+        <attribute name="title">
+         <string>PCS State</string>
+        </attribute>
+       </widget>
+       <widget class="QWidget" name="RTAlarm_page">
+        <attribute name="title">
+         <string>PCS Alarm</string>
+        </attribute>
+       </widget>
+       <widget class="QWidget" name="BatteryData_page">
+        <attribute name="title">
+         <string>Battery Data</string>
+        </attribute>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="Record_page">
+      <widget class="QTabWidget" name="Record_tabWidget">
+       <property name="geometry">
+        <rect>
+         <x>-6</x>
+         <y>-1</y>
+         <width>991</width>
+         <height>451</height>
+        </rect>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="DataReport_page">
+        <attribute name="title">
+         <string>Data report</string>
+        </attribute>
+        <widget class="QWidget" name="horizontalLayoutWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>-1</x>
+           <y>9</y>
+           <width>981</width>
+           <height>411</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QStackedWidget" name="Report_tab">
+            <property name="maximumSize">
+             <size>
+              <width>821</width>
+              <height>404</height>
+             </size>
+            </property>
+            <property name="currentIndex">
+             <number>3</number>
+            </property>
+            <widget class="QWidget" name="Report_tabPage_D"/>
+            <widget class="QWidget" name="Report_tabPage_M"/>
+            <widget class="QWidget" name="Report_tabPage_Y"/>
+            <widget class="QWidget" name="Report_tabPage_T">
+             <widget class="QWidget" name="verticalLayoutWidget_5">
+              <property name="geometry">
+               <rect>
+                <x>60</x>
+                <y>10</y>
+                <width>411</width>
+                <height>331</height>
+               </rect>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_19">
+               <item>
+                <widget class="QGroupBox" name="groupBox">
+                 <property name="maximumSize">
+                  <size>
+                   <width>452</width>
+                   <height>166</height>
+                  </size>
+                 </property>
+                 <property name="title">
+                  <string>Discharge:</string>
+                 </property>
+                 <widget class="QWidget" name="verticalLayoutWidget_6">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>102</width>
+                    <height>121</height>
+                   </rect>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_20">
+                   <item>
+                    <widget class="QPushButton" name="Dis_D">
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>84</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>84</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(85, 170, 0, 255), stop:0.89 rgba(79, 255, 76, 100), stop:1 rgba(33, 255, 6, 255));</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_2">
+                     <property name="minimumSize">
+                      <size>
+                       <width>92</width>
+                       <height>28</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>28</height>
+                      </size>
+                     </property>
+                     <property name="layoutDirection">
+                      <enum>Qt::LeftToRight</enum>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::NoFrame</enum>
+                     </property>
+                     <property name="text">
+                      <string>Day</string>
+                     </property>
+                     <property name="textFormat">
+                      <enum>Qt::AutoText</enum>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="verticalLayoutWidget_7">
+                  <property name="geometry">
+                   <rect>
+                    <x>110</x>
+                    <y>20</y>
+                    <width>102</width>
+                    <height>121</height>
+                   </rect>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_24">
+                   <item>
+                    <widget class="QPushButton" name="Dis_M">
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>84</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>84</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(85, 170, 0, 255), stop:0.89 rgba(79, 255, 76, 100), stop:1 rgba(33, 255, 6, 255));</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_3">
+                     <property name="minimumSize">
+                      <size>
+                       <width>92</width>
+                       <height>28</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>92</width>
+                       <height>28</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Month</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="verticalLayoutWidget_8">
+                  <property name="geometry">
+                   <rect>
+                    <x>210</x>
+                    <y>20</y>
+                    <width>102</width>
+                    <height>121</height>
+                   </rect>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_25">
+                   <item>
+                    <widget class="QPushButton" name="Dis_Y">
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>84</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>84</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(85, 170, 0, 255), stop:0.89 rgba(79, 255, 76, 100), stop:1 rgba(33, 255, 6, 255));</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_4">
+                     <property name="minimumSize">
+                      <size>
+                       <width>92</width>
+                       <height>28</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>28</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Year</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="verticalLayoutWidget_9">
+                  <property name="geometry">
+                   <rect>
+                    <x>310</x>
+                    <y>20</y>
+                    <width>102</width>
+                    <height>121</height>
+                   </rect>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_27">
+                   <item>
+                    <widget class="QPushButton" name="Dis_T">
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>84</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>84</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(85, 170, 0, 255), stop:0.89 rgba(79, 255, 76, 100), stop:1 rgba(33, 255, 6, 255));</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="lable5">
+                     <property name="minimumSize">
+                      <size>
+                       <width>92</width>
+                       <height>28</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>92</width>
+                       <height>28</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Total</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </widget>
+               </item>
+               <item>
+                <widget class="QGroupBox" name="groupBox_2">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>166</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>452</width>
+                   <height>166</height>
+                  </size>
+                 </property>
+                 <property name="title">
+                  <string>Charge:</string>
+                 </property>
+                 <widget class="QWidget" name="verticalLayoutWidget_10">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>102</width>
+                    <height>121</height>
+                   </rect>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_28">
+                   <item>
+                    <widget class="QPushButton" name="Char_D">
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>84</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>84</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(255, 128, 128, 204), stop:0.89 rgba(255, 205,144, 64), stop:1 rgba(255, 168, 124, 255));</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_6">
+                     <property name="minimumSize">
+                      <size>
+                       <width>92</width>
+                       <height>28</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>92</width>
+                       <height>28</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Day</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="verticalLayoutWidget_11">
+                  <property name="geometry">
+                   <rect>
+                    <x>110</x>
+                    <y>20</y>
+                    <width>102</width>
+                    <height>121</height>
+                   </rect>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_30">
+                   <item>
+                    <widget class="QPushButton" name="Char_M">
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>84</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>84</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(255, 128, 128, 204), stop:0.89 rgba(255, 205,144, 64), stop:1 rgba(255, 168, 124, 255));</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_7">
+                     <property name="minimumSize">
+                      <size>
+                       <width>92</width>
+                       <height>28</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>92</width>
+                       <height>28</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Month</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="verticalLayoutWidget_12">
+                  <property name="geometry">
+                   <rect>
+                    <x>210</x>
+                    <y>20</y>
+                    <width>102</width>
+                    <height>121</height>
+                   </rect>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_31">
+                   <item>
+                    <widget class="QPushButton" name="Char_Y">
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>84</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>84</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(255, 128, 128, 204), stop:0.89 rgba(255, 205,144, 64), stop:1 rgba(255, 168, 124, 255));</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_8">
+                     <property name="minimumSize">
+                      <size>
+                       <width>92</width>
+                       <height>28</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>92</width>
+                       <height>28</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Year</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="verticalLayoutWidget_13">
+                  <property name="geometry">
+                   <rect>
+                    <x>310</x>
+                    <y>20</y>
+                    <width>102</width>
+                    <height>121</height>
+                   </rect>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_32">
+                   <item>
+                    <widget class="QPushButton" name="Char_T">
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>84</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>84</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(255, 128, 128, 204), stop:0.89 rgba(255, 205,144, 64), stop:1 rgba(255, 168, 124, 255));</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_9">
+                     <property name="minimumSize">
+                      <size>
+                       <width>92</width>
+                       <height>28</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>92</width>
+                       <height>28</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Total</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_13">
+            <item>
+             <widget class="QDateEdit" name="dateEdit">
+              <property name="maximumSize">
+               <size>
+                <width>141</width>
+                <height>79</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_9">
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_18">
+                <item>
+                 <widget class="QPushButton" name="Subtract_M">
+                  <property name="maximumSize">
+                   <size>
+                    <width>63</width>
+                    <height>76</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>M  -</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="Subtract_Y">
+                  <property name="maximumSize">
+                   <size>
+                    <width>63</width>
+                    <height>76</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Y  -</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="Day_btn">
+                  <property name="maximumSize">
+                   <size>
+                    <width>63</width>
+                    <height>76</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Day</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="Year_btn">
+                  <property name="maximumSize">
+                   <size>
+                    <width>63</width>
+                    <height>76</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Year</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QVBoxLayout" name="verticalLayout_14">
+                <item>
+                 <widget class="QPushButton" name="Add_M">
+                  <property name="maximumSize">
+                   <size>
+                    <width>63</width>
+                    <height>76</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>M  +</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="Add_Y">
+                  <property name="maximumSize">
+                   <size>
+                    <width>63</width>
+                    <height>76</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Y  +</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="Month_btn">
+                  <property name="maximumSize">
+                   <size>
+                    <width>63</width>
+                    <height>76</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Month</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="Total_btn">
+                  <property name="maximumSize">
+                   <size>
+                    <width>63</width>
+                    <height>76</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>Total</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="ExportData_page">
+        <attribute name="title">
+         <string>Export Data</string>
+        </attribute>
+        <widget class="QWidget" name="verticalLayoutWidget_14">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>20</y>
+           <width>461</width>
+           <height>321</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_33">
+          <item>
+           <widget class="QGroupBox" name="groupBox_3">
+            <property name="minimumSize">
+             <size>
+              <width>455</width>
+              <height>151</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>455</width>
+              <height>151</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="title">
+             <string>Note:</string>
+            </property>
+            <widget class="QLabel" name="label_5">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>30</y>
+               <width>201</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Out put file:</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_10">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>60</y>
+               <width>181</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>HistoryRecord.csv</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_11">
+             <property name="geometry">
+              <rect>
+               <x>260</x>
+               <y>60</y>
+               <width>121</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Log.csv</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_12">
+             <property name="geometry">
+              <rect>
+               <x>40</x>
+               <y>100</y>
+               <width>121</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="text">
+              <string>Report.csv</string>
+             </property>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_35">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_13">
+              <item>
+               <spacer name="horizontalSpacer_5">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_13">
+                <property name="minimumSize">
+                 <size>
+                  <width>308</width>
+                  <height>42</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>308</width>
+                  <height>42</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>18</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Data To Export</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_6">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_37">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_17">
+                <item>
+                 <widget class="QLabel" name="label_15">
+                  <property name="minimumSize">
+                   <size>
+                    <width>147</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>147</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>static:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_14">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_14">
+                <item>
+                 <widget class="QPushButton" name="pushButton">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(255, 255, 255);
+background-color: rgb(0, 133, 199);
+border-width: 2px;
+border-style: solid;
+border-color: rgb(0, 157, 235);</string>
+                  </property>
+                  <property name="text">
+                   <string>HistoricalFailure</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton_2">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(255, 255, 255);
+background-color: rgb(255, 170, 0);
+border-width: 2px;
+border-style: solid;
+border-color: rgb(255, 170, 0);</string>
+                  </property>
+                  <property name="text">
+                   <string>OperationLog</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_15">
+                <item>
+                 <widget class="QPushButton" name="pushButton_4">
+                  <property name="styleSheet">
+                   <string notr="true">border-width: 2px;
+border-style: solid;
+border-color: rgb(85, 230, 0);
+background-color: rgb(85, 255, 0);</string>
+                  </property>
+                  <property name="text">
+                   <string>Coulombmeter report</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton_3">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(255, 0, 0);
+border-width: 2px;
+border-style: solid;
+border-color: rgb(230, 0, 0);
+background-color: rgb(255, 0, 0);</string>
+                  </property>
+                  <property name="text">
+                   <string>Eject Udisk</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="HistoryRecord_page">
+        <attribute name="title">
+         <string>History Record</string>
+        </attribute>
+        <widget class="QWidget" name="horizontalLayoutWidget_8">
+         <property name="geometry">
+          <rect>
+           <x>9</x>
+           <y>-1</y>
+           <width>971</width>
+           <height>421</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_18">
+          <item>
+           <widget class="QTableView" name="Historicalfailure_tableView"/>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="OperationLog_page">
+        <attribute name="title">
+         <string>Operation Log</string>
+        </attribute>
+        <widget class="QWidget" name="horizontalLayoutWidget_9">
+         <property name="geometry">
+          <rect>
+           <x>9</x>
+           <y>-1</y>
+           <width>971</width>
+           <height>421</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_19">
+          <item>
+           <widget class="QTableView" name="Operation_tableView"/>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="System_page">
+      <widget class="QTabWidget" name="System_tabWidget">
+       <property name="geometry">
+        <rect>
+         <x>-6</x>
+         <y>-1</y>
+         <width>991</width>
+         <height>451</height>
+        </rect>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="ParameterSet_page">
+        <attribute name="title">
+         <string>Parameter setting</string>
+        </attribute>
+        <widget class="QTableWidget" name="System_Tab">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>981</width>
+           <height>421</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="BatterySet_page">
+        <attribute name="title">
+         <string>Battery setup</string>
+        </attribute>
+        <widget class="QStackedWidget" name="BatterSet_stackedWidget">
+         <property name="geometry">
+          <rect>
+           <x>9</x>
+           <y>-1</y>
+           <width>971</width>
+           <height>421</height>
+          </rect>
+         </property>
+         <property name="currentIndex">
+          <number>2</number>
+         </property>
+         <widget class="QWidget" name="Lead_stackedWidgetPage">
+          <widget class="QWidget" name="horizontalLayoutWidget_10">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>971</width>
+             <height>421</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_20">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_39">
+              <item>
+               <widget class="QLabel" name="label_16">
+                <property name="minimumSize">
+                 <size>
+                  <width>239</width>
+                  <height>203</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>239</width>
+                  <height>203</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>TextLabel</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPlainTextEdit" name="plainTextEdit">
+                <property name="minimumSize">
+                 <size>
+                  <width>239</width>
+                  <height>202</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>239</width>
+                  <height>202</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QTableWidget" name="Lead_Tab">
+              <property name="minimumSize">
+               <size>
+                <width>721</width>
+                <height>414</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>721</width>
+                <height>414</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="Lithium_stackedWidgetPage">
+          <widget class="QTableWidget" name="Lithum_Tab">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>971</width>
+             <height>367</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QWidget" name="horizontalLayoutWidget_11">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>370</y>
+             <width>971</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_21">
+            <item>
+             <spacer name="horizontalSpacer_7">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="BMSPowerOn_btn">
+              <property name="minimumSize">
+               <size>
+                <width>117</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>117</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>BMS power on</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="BMSPowerOff_btn">
+              <property name="minimumSize">
+               <size>
+                <width>126</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>126</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>BMS power off</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="NOBAT_stackedWidgetPage"/>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="Automatic_page">
+        <attribute name="title">
+         <string>Automatic operation</string>
+        </attribute>
+        <widget class="QTableWidget" name="Time_tableWidget">
+         <property name="geometry">
+          <rect>
+           <x>5</x>
+           <y>1</y>
+           <width>971</width>
+           <height>421</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="SystemInformation_page">
+        <attribute name="title">
+         <string>SystemInformation</string>
+        </attribute>
+        <widget class="QWidget" name="horizontalLayoutWidget_12">
+         <property name="geometry">
+          <rect>
+           <x>9</x>
+           <y>9</y>
+           <width>971</width>
+           <height>411</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_22">
+          <item>
+           <widget class="QGroupBox" name="groupBox_4">
+            <property name="title">
+             <string>Version</string>
+            </property>
+            <widget class="QTableWidget" name="EquipmentInfor_tableWidget">
+             <property name="geometry">
+              <rect>
+               <x>5</x>
+               <y>21</y>
+               <width>471</width>
+               <height>381</height>
+              </rect>
+             </property>
+            </widget>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_5">
+            <property name="title">
+             <string>Network</string>
+            </property>
+            <widget class="QScrollArea" name="net_infor_scrollArea">
+             <property name="geometry">
+              <rect>
+               <x>9</x>
+               <y>26</y>
+               <width>461</width>
+               <height>371</height>
+              </rect>
+             </property>
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="scrollAreaWidgetContents">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>459</width>
+                <height>369</height>
+               </rect>
+              </property>
+             </widget>
+            </widget>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_3"/>
     </widget>
     <widget class="QWidget" name="widget_state" native="true">
      <property name="geometry">
@@ -1294,6 +2726,9 @@
        <width>979</width>
        <height>60</height>
       </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(31, 133, 227);</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
       <property name="leftMargin">
@@ -1402,18 +2837,32 @@
          <widget class="QLabel" name="CurrentMode_lb">
           <property name="minimumSize">
            <size>
-            <width>180</width>
+            <width>210</width>
             <height>57</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>180</width>
+            <width>210</width>
             <height>57</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
           <property name="text">
-           <string/>
+           <string>Current mode:CP</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
          </widget>
         </item>
