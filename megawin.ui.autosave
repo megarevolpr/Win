@@ -4306,7 +4306,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
             <height>407</height>
            </size>
           </property>
-          <widget class="QWidget" name="">
+          <widget class="QWidget" name="layoutWidget">
            <property name="geometry">
             <rect>
              <x>-10</x>
@@ -4546,7 +4546,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="">
+          <widget class="QWidget" name="layoutWidget">
            <property name="geometry">
             <rect>
              <x>190</x>

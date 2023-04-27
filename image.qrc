@@ -1,0 +1,70 @@
+<RCC>
+    <qresource prefix="/new_ui">
+        <file>UI/03-历史记录.png</file>
+        <file>UI/03-设备信息.png</file>
+        <file>UI/03实时功率.png</file>
+        <file>UI/3.png</file>
+        <file>UI/04-操作日志.png</file>
+        <file>UI/04-屏幕校准.png</file>
+        <file>UI/06-系统设置.png</file>
+        <file>UI/50k.png</file>
+        <file>UI/500k.png</file>
+        <file>UI/500k_PCS.jpg</file>
+        <file>UI/Arrow_Bottom.png</file>
+        <file>UI/Bat0.png</file>
+        <file>UI/Bat1.png</file>
+        <file>UI/Bat2.png</file>
+        <file>UI/Bat3.png</file>
+        <file>UI/Bat4.png</file>
+        <file>UI/BatterySOC.png</file>
+        <file>UI/DCBar1-01.png</file>
+        <file>UI/DCBar1-02.png</file>
+        <file>UI/DCBar2-01 .png</file>
+        <file>UI/DCBar2-02 .png</file>
+        <file>UI/DCBat0.png</file>
+        <file>UI/DCBat1.png</file>
+        <file>UI/DCBat2.png</file>
+        <file>UI/DCBat3.png</file>
+        <file>UI/DCBat4.png</file>
+        <file>UI/DCstop.png</file>
+        <file>UI/Enter.png</file>
+        <file>UI/house.png</file>
+        <file>UI/IP.png</file>
+        <file>UI/keyboard.png</file>
+        <file>UI/Last.png</file>
+        <file>UI/left.png</file>
+        <file>UI/Loading.gif</file>
+        <file>UI/Logo.png</file>
+        <file>UI/Logo_GIV.png</file>
+        <file>UI/Next.png</file>
+        <file>UI/Power_Standby.png</file>
+        <file>UI/ProcessBar1-01.png</file>
+        <file>UI/ProcessBar1-02.png</file>
+        <file>UI/ProcessBar2-01.png</file>
+        <file>UI/ProcessBar2-02.png</file>
+        <file>UI/PV.png</file>
+        <file>UI/right.png</file>
+        <file>UI/status.png</file>
+        <file>UI/stop.png</file>
+        <file>UI/Tic.png</file>
+        <file>UI/TIME1.ICO</file>
+        <file>UI/upgrade.png</file>
+        <file>UI/Warning_1.png</file>
+        <file>UI/Warning_2.png</file>
+        <file>UI/Welcome.png</file>
+        <file>UI/Welcome_PCS.png</file>
+        <file>UI/恢复出厂设置.png</file>
+        <file>UI/开关机-01.png</file>
+        <file>UI/开关机-02.png</file>
+        <file>UI/屏幕校准.png</file>
+        <file>UI/时间设置.png</file>
+        <file>UI/型号选择.png</file>
+        <file>UI/一般设置.png</file>
+    </qresource>
+    <qresource prefix="/Massagebox">
+        <file>UI/Close.png</file>
+        <file>UI/question.png</file>
+        <file>UI/Warning.png</file>
+        <file>UI/information.png</file>
+    </qresource>
+</RCC>
