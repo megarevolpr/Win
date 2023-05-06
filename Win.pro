@@ -26,13 +26,13 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        megawin.cpp
+        win.cpp
 
 HEADERS += \
-        megawin.h
+        win.h
 
 FORMS += \
-        megawin.ui
+        win.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -1,5 +1,5 @@
-#include "megawin.h"
-#include "ui_megawin.h"
+#include "win.h"
+#include "ui_win.h"
 
 MEGAWin::MEGAWin(QWidget *parent) :
     QWidget(parent),
