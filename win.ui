@@ -2283,7 +2283,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">
@@ -3357,7 +3357,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
        <item row="0" column="0">
         <widget class="QTabWidget" name="Run_tabWidget">
          <property name="currentIndex">
-          <number>0</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="RTData_page">
           <property name="minimumSize">
@@ -3472,7 +3472,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                   </size>
                  </property>
                  <property name="currentIndex">
-                  <number>2</number>
+                  <number>0</number>
                  </property>
                  <widget class="QWidget" name="Bypass_Converter_page">
                   <layout class="QGridLayout" name="gridLayout_46">
@@ -5274,7 +5274,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                        <property name="minimumSize">
                         <size>
                          <width>101</width>
-                         <height>45</height>
+                         <height>43</height>
                         </size>
                        </property>
                        <property name="maximumSize">
@@ -5991,8 +5991,8 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                         <widget class="QLabel" name="label_2">
                          <property name="minimumSize">
                           <size>
-                           <width>192</width>
-                           <height>52</height>
+                           <width>162</width>
+                           <height>65</height>
                           </size>
                          </property>
                          <property name="maximumSize">
@@ -6045,14 +6045,14 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                         <widget class="QLabel" name="Statuslb_1">
                          <property name="minimumSize">
                           <size>
-                           <width>112</width>
-                           <height>71</height>
+                           <width>113</width>
+                           <height>65</height>
                           </size>
                          </property>
                          <property name="maximumSize">
                           <size>
-                           <width>112</width>
-                           <height>71</height>
+                           <width>113</width>
+                           <height>65</height>
                           </size>
                          </property>
                          <property name="font">
@@ -6100,14 +6100,14 @@ enable</string>
                         <widget class="QLabel" name="Statuslb_2">
                          <property name="minimumSize">
                           <size>
-                           <width>144</width>
-                           <height>77</height>
+                           <width>122</width>
+                           <height>65</height>
                           </size>
                          </property>
                          <property name="maximumSize">
                           <size>
-                           <width>144</width>
-                           <height>77</height>
+                           <width>122</width>
+                           <height>65</height>
                           </size>
                          </property>
                          <property name="font">
