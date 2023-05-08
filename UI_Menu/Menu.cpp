@@ -39,7 +39,8 @@ Menu::Menu(QWidget *parent)  :
     ui(new Ui::Menu)
 {
     ui->setupUi(this);
-    this->setGeometry(0, 43, 250, 383);
+    this->mapFromGlobal(QPoint(0,0));
+//    this->setGeometry(0, 43, 250, 383);
     ui->Host_bt->installEventFilter(this);//事件过滤器
     ui->RTDATA_bt->installEventFilter(this);
     ui->Record_bt->installEventFilter(this);

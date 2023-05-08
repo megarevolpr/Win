@@ -147,7 +147,7 @@ color: rgb(255, 255, 255);</string>
           </size>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="UI_Parameter_page">
           <property name="sizePolicy">
@@ -3357,7 +3357,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
        <item row="0" column="0">
         <widget class="QTabWidget" name="Run_tabWidget">
          <property name="currentIndex">
-          <number>3</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="RTData_page">
           <property name="minimumSize">
@@ -7230,7 +7230,7 @@ background-color: rgb(255, 0, 0);</string>
         </rect>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>3</number>
        </property>
        <widget class="QWidget" name="ParameterSet_page">
         <attribute name="title">
@@ -7676,7 +7676,7 @@ background-color: rgb(255, 0, 0);</string>
           </rect>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="Lead_stackedWidgetPage">
           <widget class="QWidget" name="horizontalLayoutWidget_10">
@@ -8124,6 +8124,11 @@ B1 - A1 ≥ 30 %
              <string>9</string>
             </property>
            </row>
+           <row>
+            <property name="text">
+             <string>10</string>
+            </property>
+           </row>
            <column>
             <property name="text">
              <string>1</string>
@@ -8380,7 +8385,15 @@ B1 - A1 ≥ 30 %
            </item>
            <item row="7" column="0">
             <property name="text">
-             <string/>
+             <string>Generator charge SOC</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
+           </item>
+           <item row="7" column="2">
+            <property name="text">
+             <string>%</string>
             </property>
             <property name="textAlignment">
              <set>AlignCenter</set>
@@ -8404,7 +8417,31 @@ B1 - A1 ≥ 30 %
            </item>
            <item row="8" column="0">
             <property name="text">
-             <string/>
+             <string>Grid charge SOC</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
+           </item>
+           <item row="8" column="2">
+            <property name="text">
+             <string>%</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
+           </item>
+           <item row="9" column="0">
+            <property name="text">
+             <string>Grid capacity</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
+           </item>
+           <item row="9" column="2">
+            <property name="text">
+             <string>kW</string>
             </property>
             <property name="textAlignment">
              <set>AlignCenter</set>

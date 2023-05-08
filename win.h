@@ -37,6 +37,8 @@ private slots:
 //    void PasswordLimit();
     void My_menuAction(int Index);
     void on_UI_MenuBtn_clicked();
+//    bool PasswordCheck();
+    void on_UI_Complete_Btn_clicked();
 
 private:
     Ui::MEGAWin *ui;

@@ -5,27 +5,43 @@
 
 Menu *m_menu;
 
+/***************************************************************
+ * @brief Connected relation function
+ * #attribute   Fuction
+ * @param non       @see  non
+ * @param Non         @see Non
+ *
+ * @return Non
+ *     -<em>false</em> fail
+ *     -<em>true</em> succeed
+ ***************************************************************/
+//void MEGAWin::LinkRelationship()
+//{
+//    //系统设置
+//    connect(combox_ui_QPowerMode, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ui_QPowerMode_change()));
+//}
+
 
 void MEGAWin::My_menuAction(int Index)
 {
     switch (Index) {
     case HOSTPAGE:
-//        if(m_DspSetData.u16UpsType != Machine_MEGA_TS)
-//        {
+/*        if(m_DspSetData.u16UpsType != Machine_MEGA_TS)
+        {
             ui->stackedWidget->setCurrentWidget(ui->Host_Page);
             ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_N_page);
             ui->RTState_stackedWidget->setCurrentWidget(ui->RTState_Bypass_N_page);
-/*            m_UIPage.m_first = HOST_PAGE;
+            m_UIPage.m_first = HOST_PAGE;
         }
         else
-        {
+        {*/
             ui->stackedWidget->setCurrentWidget(ui->Bypass_page);
             ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
             ui->RTState_stackedWidget->setCurrentWidget(ui->RTState_Bypass_Y_page);
-            m_UIPage.m_first = HOST_BYPASS_PAGE;
-        }
+//            m_UIPage.m_first = HOST_BYPASS_PAGE;
+//        }
 
-        if(m_DspSetData.u16BatteryType == Battery_Li)*/
+//        if(m_DspSetData.u16BatteryType == Battery_Li)
             ui->BAT_stackedWidget->setCurrentWidget(ui->BAT_Lithium_page);
 /*        else if(m_DspSetData.u16BatteryType == Battery_lead)
             ui->BAT_stackedWidget->setCurrentWidget(ui->BAT_Lead_page);
@@ -39,13 +55,13 @@ void MEGAWin::My_menuAction(int Index)
 
 //        if(m_DspSetData.u16UpsType != Machine_MEGA_TS)
 //        {
-            ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_N_page);
-            ui->RTState_stackedWidget->setCurrentWidget(ui->RTState_Bypass_N_page);
+//            ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_N_page);
+//            ui->RTState_stackedWidget->setCurrentWidget(ui->RTState_Bypass_N_page);
 //        }
 //        else
 //        {
-//            ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
-//            ui->RTState_stackedWidget->setCurrentWidget(ui->RTState_Bypass_Y_page);
+            ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
+            ui->RTState_stackedWidget->setCurrentWidget(ui->RTState_Bypass_Y_page);
 //        }
 
 //        if(m_DspSetData.u16BatteryType == Battery_Li)
@@ -212,8 +228,13 @@ MEGAWin::MEGAWin(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->UI_stackedWidget->setCurrentWidget(ui->UI_page );
+    ui->stackedWidget->setCurrentWidget(ui->Bypass_page);
+    ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
+    ui->RTState_stackedWidget->setCurrentWidget(ui->RTState_Bypass_Y_page);
 
-    m_menu = new Menu();
+    this->mapFromGlobal(QPoint(0,0));
+    m_menu = new Menu(this);
+//    m_menu->setGeometry(0, 43, 250, 383);
     connect(m_menu, SIGNAL(Sent(int)), this, SLOT(My_menuAction(int)));
 }
 
@@ -232,4 +253,9 @@ void MEGAWin::on_UI_MenuBtn_clicked()
     {
         m_menu->hide();
     }
+}
+
+void MEGAWin::on_UI_Complete_Btn_clicked()
+{
+    ui->UI_stackedWidget->setCurrentWidget(ui->UI_page);
 }
