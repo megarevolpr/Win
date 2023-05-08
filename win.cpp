@@ -18,6 +18,19 @@ void MEGAWin::MemoryAllocation()
     AdvancedSetup_btn = new QPushButton;
 }
 
+void MEGAWin::FirstPage()
+{
+
+    ui->Bypass_Running_btn->setFlat(true);
+    ui->Bypass_Running_btn->setFocusPolicy(Qt::NoFocus);
+    ui->Bypass_Grid_btn->setFlat(true);
+    ui->Bypass_Grid_btn->setFocusPolicy(Qt::NoFocus);
+    ui->Bypass_Load_Btn->setFlat(true);
+    ui->Bypass_Load_Btn->setFocusPolicy(Qt::NoFocus);
+    ui->Bypass_Batt_btn->setFlat(true);
+    ui->Bypass_Batt_btn->setFocusPolicy(Qt::NoFocus);
+}
+
 /***************************************************************
  * @brief SystemSettingPage init
  * #attribute   Fuction
@@ -353,6 +366,11 @@ void MEGAWin::LinkRelationship()
 //    connect(combox_ui_GridMode, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ui_GridMode_change()));
     connect(AdvancedSetup_btn,SIGNAL(clicked(bool)), this, SLOT(AdvancedSetup_btn_clicked()));//高级设置
     connect(combox_ui_OnOff_Grid, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ui_OnOff_Grid_change()));//并离网
+
+    connect(ui->Bypass_Batt_btn, SIGNAL(clicked()), this, SLOT(on_Batt_btn_released()));    //主页电池按钮跳转电池信息
+    connect(ui->Bypass_Running_btn, SIGNAL(clicked()), this, SLOT(on_Running_btn_clicked()));   //主页变流器按钮跳转变流器实时数据
+    connect(ui->Bypass_Grid_btn, SIGNAL(clicked()), this, SLOT(on_Grid_clicked()));    //主页电网按钮跳转电网实时数据
+    connect(ui->Bypass_Load_Btn, SIGNAL(clicked()), this, SLOT(on_Load_clicked()));    //主页负载按钮跳转负载实时数据
 }
 
 
@@ -589,7 +607,7 @@ MEGAWin::~MEGAWin()
 void MEGAWin::UIPageInit()
 {
 //    NotifyLogo();
-//    FirstPage();
+    FirstPage();
 //    RunStatePage();
 //    HistoryPage();
     SystemSettingPage();
@@ -619,4 +637,93 @@ void MEGAWin::on_UI_MenuBtn_clicked()
 void MEGAWin::on_UI_Complete_Btn_clicked()
 {
     ui->UI_stackedWidget->setCurrentWidget(ui->UI_page);
+}
+
+void MEGAWin::on_Running_btn_clicked()  //显示变流器实时数据
+{
+    ui->stackedWidget->setCurrentWidget(ui->Status_page);
+    ui->Run_tabWidget->setCurrentWidget(ui->RTData_page);
+//    if(m_DspSetData.u16UpsType != Machine_MEGA_TS)
+//    {
+//        ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_N_page);
+//    }
+//    else
+//    {
+        ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
+        ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Converter_page);
+//    }
+
+//    if(m_DspSetData.u16BatteryType == Battery_Li)
+//        ui->BAT_stackedWidget->setCurrentWidget(ui->BAT_Lithium_page);
+//    else if(m_DspSetData.u16BatteryType == Battery_lead)
+//        ui->BAT_stackedWidget->setCurrentWidget(ui->BAT_Lead_page);
+//    else
+        //        ui->BAT_stackedWidget->setCurrentWidget(ui->BAT_No_page);
+}
+
+void MEGAWin::on_Grid_clicked() //显示电网端实时数据
+{
+    ui->stackedWidget->setCurrentWidget(ui->Status_page);
+    ui->Run_tabWidget->setCurrentWidget(ui->RTData_page);
+    ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
+    ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Grid_page);
+}
+
+void MEGAWin::on_Load_clicked() //显示负载端实时数据
+{
+    ui->stackedWidget->setCurrentWidget(ui->Status_page);
+    ui->Run_tabWidget->setCurrentWidget(ui->RTData_page);
+    ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
+    ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Load_page);
+}
+
+void MEGAWin::on_Batt_btn_pressed() //显示电池信息
+{
+    ui->stackedWidget->setCurrentWidget(ui->Status_page);
+    ui->Run_tabWidget->setCurrentWidget(ui->BatteryData_page);
+//    if(m_DspSetData.u16BatteryType == Battery_Li)
+//    {
+        ui->BAT_stackedWidget->setCurrentWidget(ui->BAT_Lithium_page);
+//    }
+//    else if(m_DspSetData.u16BatteryType == Battery_lead)
+//    {
+//        ui->BAT_stackedWidget->setCurrentWidget(ui->BAT_Lead_page);
+//    }
+//    else
+//    {
+//        ui->BAT_stackedWidget->setCurrentWidget(ui->BAT_No_page);
+        //    }
+}
+
+void MEGAWin::on_Batt_btn_released()    //显示电池信息
+{
+    ui->stackedWidget->setCurrentWidget(ui->Status_page);
+    ui->Run_tabWidget->setCurrentWidget(ui->BatteryData_page);
+//    if(m_DspSetData.u16BatteryType == Battery_Li)
+//    {
+        ui->BAT_stackedWidget->setCurrentWidget(ui->BAT_Lithium_page);
+//    }
+//    else if(m_DspSetData.u16BatteryType == Battery_lead)
+//    {
+//        ui->BAT_stackedWidget->setCurrentWidget(ui->BAT_Lead_page);
+//    }
+//    else
+//    {
+//        ui->BAT_stackedWidget->setCurrentWidget(ui->BAT_No_page);
+//    }
+}
+
+void MEGAWin::on_SConverter_btn_clicked()
+{
+    ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Converter_page);
+}
+
+void MEGAWin::on_SGrid_btn_clicked()
+{
+    ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Grid_page);
+}
+
+void MEGAWin::on_SLoad_btn_clicked()
+{
+    ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Load_page);
 }

@@ -37,11 +37,26 @@ public:
         QStringList ui_OnOff_Grid;
         short combox_ui_OnOffGrid_index;
 
-        Menu *m_menu;
-
-        void GeneralParam_tbnt_released();//一般参数槽
         QComboBox *combox_ui_OnOff_Grid;//并离网
         QPushButton *AdvancedSetup_btn;//高级设置
+
+        Menu *m_menu;
+
+
+        void UIPageInit();//初始化界面
+        void VariableInit();//初始化变量
+
+        void MemoryAllocation();
+
+        void FirstPage();
+
+        void SystemSettingPage();//系统设置界面
+
+        void LinkRelationship();
+
+        void UserParam_tab();//一般设置表初始化
+
+        void GeneralParam_tbnt_released();//一般参数槽
 
     ~MEGAWin();
 
@@ -52,17 +67,24 @@ private slots:
 //    bool PasswordCheck();
     void SystemParam_tbnt_released();
     void AdvancedSetup_btn_clicked();
-    void LinkRelationship();
-    void MemoryAllocation();
-    void UIPageInit();//初始化界面
     void combox_ui_GridMode_change();
-    void UserParam_tab();//一般设置表初始化
-    void SystemSettingPage();//系统设置界面
     void combox_ui_OnOff_Grid_change();//并离网
-    void VariableInit();//初始化变量（system_Page）
 
     void on_UI_MenuBtn_clicked();//转到槽
-    void on_UI_Complete_Btn_clicked();
+    void on_UI_Complete_Btn_clicked();//
+
+    void on_Running_btn_clicked();//跳转变流器实时数据
+    void on_Grid_clicked();//跳转电网实时数据
+    void on_Load_clicked();//跳转负载实时数据
+    void on_Batt_btn_pressed();//跳转到电池信息
+    void on_Batt_btn_released();//跳转到电池信息
+
+    void on_SConverter_btn_clicked();
+
+    void on_SGrid_btn_clicked();
+
+    void on_SLoad_btn_clicked();
+
 private:
     Ui::MEGAWin *ui;
 };
