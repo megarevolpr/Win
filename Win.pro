@@ -23,6 +23,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 #include         ($$PWD/UI_NumberKeyboard/UI_NumberKeyboard.pri)
+#include         ($$PWD/UI_Network/UI_Network.pri)
 include         ($$PWD/UI_Menu/UI_Menu.pri)
 
 INCLUDEPATH     +=$$PWD/UI_Menu/
