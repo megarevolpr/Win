@@ -33,9 +33,13 @@ public:
 
         QString combox_ui_GridMode_str;
         QComboBox *combox_ui_GridMode;
+        QString combox_ui_OnOffGrid_str;
+        QStringList ui_OnOff_Grid;
+        short combox_ui_OnOffGrid_index;
 
         Menu *m_menu;
 
+        void GeneralParam_tbnt_released();//一般参数槽
         QComboBox *combox_ui_OnOff_Grid;//并离网
         QPushButton *AdvancedSetup_btn;//高级设置
 
@@ -54,6 +58,8 @@ private slots:
     void combox_ui_GridMode_change();
     void UserParam_tab();//一般设置表初始化
     void SystemSettingPage();//系统设置界面
+    void combox_ui_OnOff_Grid_change();//并离网
+    void VariableInit();//初始化变量（system_Page）
 
     void on_UI_MenuBtn_clicked();//转到槽
     void on_UI_Complete_Btn_clicked();
