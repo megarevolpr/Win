@@ -34,6 +34,11 @@ public:
         QString combox_ui_GridMode_str;
         QComboBox *combox_ui_GridMode;
 
+        Menu *m_menu;
+
+        QComboBox *combox_ui_OnOff_Grid;//并离网
+        QPushButton *AdvancedSetup_btn;//高级设置
+
     ~MEGAWin();
 
 private slots:
@@ -42,6 +47,7 @@ private slots:
     void My_menuAction(int Index);
 //    bool PasswordCheck();
     void SystemParam_tbnt_released();
+    void AdvancedSetup_btn_clicked();
     void LinkRelationship();
     void MemoryAllocation();
     void UIPageInit();//初始化界面

@@ -4,7 +4,7 @@
 #include <qlistview.h>
 #include "UI_Menu/Menu.h"
 
-Menu *m_menu;
+
 
 /************************初始化内存空间********************************/
 void MEGAWin::MemoryAllocation()
@@ -12,6 +12,9 @@ void MEGAWin::MemoryAllocation()
     //创建下拉框
     combox_ui_GridMode =   new QComboBox();                 //并网方式
     combox_ui_GridMode->setView(new QListView());
+
+
+    AdvancedSetup_btn = new QPushButton;
 }
 
 /***************************************************************
@@ -55,6 +58,10 @@ void MEGAWin::UserParam_tab()
     ui->System_Tab->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
     ui->System_Tab->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
     ui->System_Tab->setEditTriggers(QAbstractItemView::SelectedClicked);//单机修改
+
+    AdvancedSetup_btn->setText(tr("Advance setting"));
+
+    ui->System_Tab->setCellWidget(7,4, (QWidget *)AdvancedSetup_btn);
 }
 
 void MEGAWin::combox_ui_GridMode_change()//逆变器并网方式
@@ -143,6 +150,26 @@ void MEGAWin::SystemParam_tbnt_released()
 }
 
 /***************************************************************
+ * @brief AdvancedSetup button clicked function
+ * #attribute   Slots
+ * @param non       @see  non
+ * @param Non         @see Non
+ *
+ * @return Non
+ *     -<em>false</em> fail
+ *     -<em>true</em> succeed
+ ***************************************************************/
+void MEGAWin::AdvancedSetup_btn_clicked()
+{
+//    Sclick = 0;
+//    if(PasswordCheck() && root == SUPER)
+//    {
+        ui->UI_stackedWidget->setCurrentWidget(ui->BasicSet_page);
+        SystemParam_tbnt_released();
+//    }
+}
+
+/***************************************************************
  * @brief Connected relation function 连通关系函数
  ***************************************************************/
 void MEGAWin::LinkRelationship()
@@ -150,6 +177,7 @@ void MEGAWin::LinkRelationship()
     //系统设置
 //    connect(combox_ui_QPowerMode, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ui_QPowerMode_change()));
     connect(combox_ui_GridMode, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ui_GridMode_change()));
+    connect(AdvancedSetup_btn,SIGNAL(clicked(bool)), this, SLOT(AdvancedSetup_btn_clicked()));
 }
 
 
@@ -365,11 +393,14 @@ MEGAWin::MEGAWin(QWidget *parent) :
     ui->stackedWidget->setCurrentWidget(ui->Bypass_page);
     ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
     ui->RTState_stackedWidget->setCurrentWidget(ui->RTState_Bypass_Y_page);
-
+    MemoryAllocation();
     UIPageInit();//初始化界面
 //    this->mapFromGlobal(QPoint(0,0));
     m_menu = new Menu(this);
     connect(m_menu, SIGNAL(Sent(int)), this, SLOT(My_menuAction(int)));
+
+
+
 }
 
 MEGAWin::~MEGAWin()
