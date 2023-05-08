@@ -30,16 +30,27 @@ class MEGAWin : public QWidget
 
 public:
     explicit MEGAWin(QWidget *parent = nullptr);
+
+        QString combox_ui_GridMode_str;
+        QComboBox *combox_ui_GridMode;
+
     ~MEGAWin();
 
 private slots:
 //    void combox_OutPower_change();
 //    void PasswordLimit();
     void My_menuAction(int Index);
-    void on_UI_MenuBtn_clicked();
 //    bool PasswordCheck();
-    void on_UI_Complete_Btn_clicked();
+    void SystemParam_tbnt_released();
+    void LinkRelationship();
+    void MemoryAllocation();
+    void UIPageInit();//初始化界面
+    void combox_ui_GridMode_change();
+    void UserParam_tab();//一般设置表初始化
+    void SystemSettingPage();//系统设置界面
 
+    void on_UI_MenuBtn_clicked();//转到槽
+    void on_UI_Complete_Btn_clicked();
 private:
     Ui::MEGAWin *ui;
 };

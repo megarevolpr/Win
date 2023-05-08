@@ -2283,7 +2283,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">
@@ -3397,7 +3397,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
               </size>
              </property>
              <property name="currentIndex">
-              <number>0</number>
+              <number>1</number>
              </property>
              <widget class="QWidget" name="RTD_Bypass_N_page">
               <property name="minimumSize">
@@ -6199,7 +6199,7 @@ enable</string>
        <item row="0" column="0">
         <widget class="QTabWidget" name="Record_tabWidget">
          <property name="currentIndex">
-          <number>3</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="DataReport_page">
           <attribute name="title">
@@ -7230,7 +7230,7 @@ background-color: rgb(255, 0, 0);</string>
         </rect>
        </property>
        <property name="currentIndex">
-        <number>3</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="ParameterSet_page">
         <attribute name="title">
@@ -7339,6 +7339,9 @@ background-color: rgb(255, 0, 0);</string>
           </property>
          </item>
          <item row="0" column="1">
+          <property name="text">
+           <string/>
+          </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
           </property>
@@ -7360,6 +7363,9 @@ background-color: rgb(255, 0, 0);</string>
           </property>
          </item>
          <item row="0" column="4">
+          <property name="text">
+           <string/>
+          </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
           </property>
@@ -7381,6 +7387,9 @@ background-color: rgb(255, 0, 0);</string>
           </property>
          </item>
          <item row="1" column="1">
+          <property name="text">
+           <string/>
+          </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
           </property>
@@ -7402,6 +7411,9 @@ background-color: rgb(255, 0, 0);</string>
           </property>
          </item>
          <item row="1" column="4">
+          <property name="text">
+           <string/>
+          </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
           </property>
@@ -7423,6 +7435,9 @@ background-color: rgb(255, 0, 0);</string>
           </property>
          </item>
          <item row="2" column="1">
+          <property name="text">
+           <string/>
+          </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
           </property>
@@ -7444,6 +7459,9 @@ background-color: rgb(255, 0, 0);</string>
           </property>
          </item>
          <item row="2" column="4">
+          <property name="text">
+           <string/>
+          </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
           </property>
@@ -7465,6 +7483,9 @@ background-color: rgb(255, 0, 0);</string>
           </property>
          </item>
          <item row="3" column="1">
+          <property name="text">
+           <string/>
+          </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
           </property>
@@ -7510,6 +7531,9 @@ background-color: rgb(255, 0, 0);</string>
           </property>
          </item>
          <item row="4" column="1">
+          <property name="text">
+           <string/>
+          </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
           </property>
@@ -7531,6 +7555,9 @@ background-color: rgb(255, 0, 0);</string>
           </property>
          </item>
          <item row="4" column="4">
+          <property name="text">
+           <string/>
+          </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
           </property>
@@ -7552,11 +7579,17 @@ background-color: rgb(255, 0, 0);</string>
           </property>
          </item>
          <item row="5" column="1">
+          <property name="text">
+           <string/>
+          </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
           </property>
          </item>
          <item row="5" column="2">
+          <property name="text">
+           <string/>
+          </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
           </property>
@@ -7570,6 +7603,9 @@ background-color: rgb(255, 0, 0);</string>
           </property>
          </item>
          <item row="5" column="4">
+          <property name="text">
+           <string/>
+          </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
           </property>
@@ -7591,6 +7627,9 @@ background-color: rgb(255, 0, 0);</string>
           </property>
          </item>
          <item row="6" column="1">
+          <property name="text">
+           <string/>
+          </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
           </property>
@@ -7612,6 +7651,9 @@ background-color: rgb(255, 0, 0);</string>
           </property>
          </item>
          <item row="6" column="4">
+          <property name="text">
+           <string/>
+          </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
           </property>
@@ -7633,6 +7675,9 @@ background-color: rgb(255, 0, 0);</string>
           </property>
          </item>
          <item row="7" column="1">
+          <property name="text">
+           <string/>
+          </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
           </property>
@@ -7646,16 +7691,25 @@ background-color: rgb(255, 0, 0);</string>
           </property>
          </item>
          <item row="7" column="3">
+          <property name="text">
+           <string/>
+          </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
           </property>
          </item>
          <item row="7" column="4">
+          <property name="text">
+           <string/>
+          </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
           </property>
          </item>
          <item row="7" column="5">
+          <property name="text">
+           <string/>
+          </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
           </property>

@@ -15,14 +15,7 @@ void MEGAWin::MemoryAllocation()
 }
 
 /***************************************************************
- * @brief SystemSettingPage init
- * #attribute   Fuction
- * @param non       @see  non
- * @param Non         @see Non
- *
- * @return Non
- *     -<em>false</em> fail
- *     -<em>true</em> succeed
+ * @brief SystemSettingPage 系统配置页
  ***************************************************************/
 void MEGAWin::SystemSettingPage()
 {
@@ -41,6 +34,7 @@ void MEGAWin::SystemSettingPage()
     /*自动运行时间设置表*/
 //    RunTimeSet_tab();
 }
+
 /******************************************************************************
  * 一般设置表初始化
  * ***************************************************************************/
