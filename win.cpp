@@ -177,6 +177,22 @@ void MEGAWin::UserParam_tab()
     ui->System_Tab->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
     ui->System_Tab->setEditTriggers(QAbstractItemView::SelectedClicked);//单机修改
 
+    QStringList List5;
+    List5 << tr("Name") << tr("Value") << tr("Unit")<< tr("Name") << tr("Value") << tr("Unit");
+    ui->System_Tab->setHorizontalHeaderLabels(List5);
+    ui->System_Tab->setColumnWidth(0,163);
+    ui->System_Tab->setRowHeight(0, 50);
+    ui->System_Tab->setColumnWidth(1,163);
+    ui->System_Tab->setRowHeight(1, 50);
+    ui->System_Tab->setColumnWidth(2,163);
+    ui->System_Tab->setRowHeight(2, 50);
+    ui->System_Tab->setColumnWidth(3,163);
+    ui->System_Tab->setRowHeight(3, 50);
+    ui->System_Tab->setColumnWidth(4,163);
+    ui->System_Tab->setRowHeight(4, 50);
+    ui->System_Tab->setColumnWidth(5,163);
+    ui->System_Tab->setRowHeight(5, 50);
+//    ui->System_Tab->horizontalHeader()->setStretchLastSection(3);
 
 
     //并离网
@@ -1128,7 +1144,7 @@ void MEGAWin::ModuleData_Tab()
         ui->Converter_Tab->setAlternatingRowColors(true);
 
         QStringList Converter_TabList;
-        Converter_TabList << tr("Name") << tr("Value") << tr("Name") << tr("Value");
+        Converter_TabList << tr("Name") << tr("Value") << tr("Name") << tr("Value")<< tr("Name") << tr("Value");
         ui->Converter_Tab->setHorizontalHeaderLabels(Converter_TabList);
         ui->Converter_Tab->setColumnWidth(0,200);
         ui->Converter_Tab->setColumnWidth(1,100);
