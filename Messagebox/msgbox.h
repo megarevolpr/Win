@@ -29,25 +29,36 @@
 *
 *	NOTE    :
 *=================================================================================*/
-#ifndef MYPUSHBUTTON_H
-#define MYPUSHBUTTON_H
-
+#ifndef MSGBOX_H
+#define MSGBOX_H
+#include <QDialog>
 #include <QPushButton>
+#include <QLabel>
 #include <QMouseEvent>
-#include "numkeyboard.h"
-
-class MyPushButton : public QPushButton
+class MsgBox :
+    public QDialog
 {
     Q_OBJECT
 public:
-    MyPushButton(QWidget *parent = 0);
-    ~MyPushButton();
+    MsgBox(int style,QString text);
+    ~MsgBox(void);
+public:
+    QPushButton *okBtn;
+    QPushButton *cancleBtn;
+    QPushButton *closeBtn;
+    QPushButton * msgBtn;
+    QLabel * titleLabel;
+    QLabel *askLabel;
 protected:
-    void mousePressEvent(QMouseEvent *e);
-private:
-    NumKeyboard * SetNum;
-signals:
-    void buttonclick(QString text);
+    QPoint move_point;                                    //移动的距离
+    bool mouse_press;                                    //鼠标按下
+    void mousePressEvent(QMouseEvent *qevent);            //鼠标按下事件
+    void mouseReleaseEvent(QMouseEvent *qevent);         //鼠标释放事件
+    void mouseMoveEvent(QMouseEvent *qevent);             //鼠标移动事件
+public slots:
+    void okBtn_press();
+    void cancleBtn_press();
+    void closeBtn_press();
 };
 
-#endif // MYPUSHBUTTON_H
+#endif // MSGBOX_H

@@ -90,6 +90,7 @@ public:
         void FirstPage();
 
         void SystemSettingPage();//系统设置界面
+        void LCDSetting();  //LCD标签初始化和定时器设置
 
         void LinkRelationship();
 
@@ -99,6 +100,7 @@ public:
     ~MEGAWin();
 
 private slots:
+    void onTimerOut();
 //    void combox_OutPower_change();
 //    void PasswordLimit();
     void My_menuAction(int Index);
@@ -123,8 +125,16 @@ private slots:
 
     void on_SLoad_btn_clicked();
 
+    void on_TimeSeting_btn_released();
+
 private:
     Ui::MEGAWin *ui;
+
+    QTimer *timer;
+//    QTimer *timer2;
+    QTimer *Update_RTData_timer;
+    QTime *current_time;
+
 };
 
 #endif // MEGAWIN_H

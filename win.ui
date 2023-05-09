@@ -2244,18 +2244,26 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
        <widget class="QPushButton" name="TimeSeting_btn">
         <property name="minimumSize">
          <size>
-          <width>465</width>
+          <width>323</width>
           <height>45</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>465</width>
+          <width>323</width>
           <height>45</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
         <property name="text">
-         <string/>
+         <string>2022-01-01 12:00:00</string>
         </property>
        </widget>
       </item>
@@ -2283,7 +2291,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">

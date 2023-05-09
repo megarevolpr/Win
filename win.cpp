@@ -1,9 +1,46 @@
 #include "win.h"
 #include "ui_win.h"
 #include <QMenu>
+#include <QTime>
+#include <QDate>
+#include <QDateTime>
+#include <QTimer>
 #include <qlistview.h>
 #include "UI_Menu/Menu.h"
 
+
+MEGAWin::MEGAWin(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::MEGAWin)
+{
+    ui->setupUi(this);
+    ui->UI_stackedWidget->setCurrentWidget(ui->UI_page );//开机后进入主页面
+    ui->stackedWidget->setCurrentWidget(ui->Bypass_page);
+    ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
+    ui->RTState_stackedWidget->setCurrentWidget(ui->RTState_Bypass_Y_page);
+
+    MemoryAllocation(); //初始化内存空间
+    VariableInit();     //变量初始化
+    UIPageInit();       //初始化界面
+//    this->mapFromGlobal(QPoint(0,0));
+    m_menu = new Menu(this);
+    connect(m_menu, SIGNAL(Sent(int)), this, SLOT(My_menuAction(int)));
+
+
+
+}
+
+MEGAWin::~MEGAWin()
+{
+    delete ui;
+}
+
+void MEGAWin::onTimerOut()//时间显示
+{
+    QDateTime time = QDateTime::currentDateTime();
+    QString str = time.toString("yyyy-MM-dd HH:mm:ss");
+    ui->TimeSeting_btn->setText(str);
+}
 
 
 /************************初始化内存空间********************************/
@@ -75,7 +112,31 @@ void MEGAWin::SystemSettingPage()
     /*铅酸电池设置表*/
 //    BatterySet_tab();
     /*自动运行时间设置表*/
-//    RunTimeSet_tab();
+    //    RunTimeSet_tab();
+}
+
+void MEGAWin::LCDSetting()  //LCD标签初始化和定时器设置
+{
+    ui->TimeSeting_btn->setFlat(true);//设置时间显示控件无边框
+    ui->TimeSeting_btn->setFocusPolicy(Qt::NoFocus); //设置无虚线
+    timer = new QTimer();
+    timer->setInterval(1000);//一秒刷新一次时间
+    timer->start();
+
+//    timer2 = new QTimer();
+//    timer2->setInterval(600000);//设置密码记录时间为10分钟
+
+    Update_RTData_timer = new QTimer();
+    Update_RTData_timer->setInterval(500);//设置数据实时显示刷新时间
+    Update_RTData_timer->start();
+
+#if 0
+    current_time = QTime::currentTime();   //获取当前时间
+    int hour = current_time->hour();     //当前的小时
+    int minute = current_time->minute(); //当前的分
+    int second = current_time->second(); //当前的秒
+    int msec = current_time->msec();     //当前的毫秒
+#endif
 }
 /******************************************************************************
  * 一般设置表初始化
@@ -201,8 +262,8 @@ void MEGAWin::VariableInit()
 //    combox_NCNO << tr("N_O") << tr("N_C");
 //    combox_Action << tr("Prompt") << tr("Standby") << tr("Shut down") << tr("Full standby") << tr("Empty standby") << tr("Failure standby") << tr("Grid signal") << tr("ATS signal");
 //    combox_BMS_Action << tr("No action") << tr("Power down") << tr("Standby") << tr("Shut down");
-//    combox_BMS_PROTOCOL_list << tr("Auto") << tr("MEGA")<< tr("LISHEN")<< tr("PENGHUI")<< tr("GAOTE")<< tr("XIENENG")<< tr("LANLI")<< tr("SHENLAN")<< tr("PAINENG")\
-//                        << tr("NINGDESHIDAI")<< tr("SUOYING")<< tr("XINGWANGDA")<< tr("KUBO")<< tr("GAOTE_V2") << tr("TOGOOD") << tr("GROUP_STANDARD")<< tr("WOBO") \
+//    combox_BMS_PROTOCOL_list << tr("Auto") << tr("MEGA")<< tr("LISHEN")<< tr("PENGHUI")<< tr("GAOTE")<< tr("XIENENG")<< tr("LANLI")<< tr("SHENLAN")<< tr("PAINENG")
+//                        << tr("NINGDESHIDAI")<< tr("SUOYING")<< tr("XINGWANGDA")<< tr("KUBO")<< tr("GAOTE_V2") << tr("TOGOOD") << tr("GROUP_STANDARD")<< tr("WOBO")
 //                        << tr("KGOOER")<< tr("LIDE") << tr("PAINENG_L") << tr("WEILAN") << tr("ALPHA") << tr("TUOPU")<< tr("JIEHUI")<< tr("JDI")<< tr("ECUBE");
 
 
@@ -294,6 +355,8 @@ void MEGAWin::AdvancedSetup_btn_clicked()
  ***************************************************************/
 void MEGAWin::LinkRelationship()
 {
+    connect(timer, SIGNAL(timeout()), this, SLOT(onTimerOut()));
+
     //系统设置
 //    connect(combox_ui_GridMode, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ui_GridMode_change()));
 
@@ -514,32 +577,6 @@ void MEGAWin::My_menuAction(int Index)
 }
 
 
-MEGAWin::MEGAWin(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::MEGAWin)
-{
-    ui->setupUi(this);
-    ui->UI_stackedWidget->setCurrentWidget(ui->UI_page );//开机后进入主页面
-    ui->stackedWidget->setCurrentWidget(ui->Bypass_page);
-    ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
-    ui->RTState_stackedWidget->setCurrentWidget(ui->RTState_Bypass_Y_page);
-
-    MemoryAllocation(); //初始化内存空间
-    VariableInit();     //变量初始化
-    UIPageInit();       //初始化界面
-//    this->mapFromGlobal(QPoint(0,0));
-    m_menu = new Menu(this);
-    connect(m_menu, SIGNAL(Sent(int)), this, SLOT(My_menuAction(int)));
-
-
-
-}
-
-MEGAWin::~MEGAWin()
-{
-    delete ui;
-}
-
 /************************初始化界面********************************/
 void MEGAWin::UIPageInit()
 {
@@ -548,7 +585,7 @@ void MEGAWin::UIPageInit()
 //    RunStatePage();
 //    HistoryPage();
     SystemSettingPage();
-//    LCDSetting();
+    LCDSetting();
     LinkRelationship();
 
 //    numkeyboard = new NumKeyboard(this);
@@ -663,4 +700,15 @@ void MEGAWin::on_SGrid_btn_clicked()
 void MEGAWin::on_SLoad_btn_clicked()
 {
     ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Load_page);
+}
+
+void MEGAWin::on_TimeSeting_btn_released()
+{
+//    if(set)
+//        delete set;
+
+//    set = new TimeDialog();
+
+//    set->setWindowModality(Qt::NonModal);
+//    set->show();
 }
