@@ -31,6 +31,7 @@ class MEGAWin : public QWidget
 
 public:
     explicit MEGAWin(QWidget *parent = nullptr);
+    ~MEGAWin();
 
         QString combox_ui_GridMode_str;
         QComboBox *combox_ui_GridMode;
@@ -88,19 +89,25 @@ public:
         void MemoryAllocation();
 
         void FirstPage();
+        void RunStatePage();
 
         void SystemSettingPage();//系统设置界面
         void LCDSetting();  //LCD标签初始化和定时器设置
 
         void LinkRelationship();
+        void ModuleData_Tab();//模块数据表格初始化
 
         void UserParam_tab();//一般设置表初始化
 
 
-    ~MEGAWin();
+        void RTData_Anologe();//实时模拟量数据
+
+private:
+        void RTDataDisplay();
 
 private slots:
     void onTimerOut();
+    void updateTimeOut();                       //Fun(Time)
 //    void combox_OutPower_change();
 //    void PasswordLimit();
     void My_menuAction(int Index);

@@ -9,6 +9,13 @@
 #include "UI_Menu/Menu.h"
 
 
+#define NULL_page   0
+#define Machine_MEGA 1
+#define Machine_MEGA_T 2
+#define Machine_MEGA_TS 3
+#define Machine_MEGA_TS_T 4
+
+
 MEGAWin::MEGAWin(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MEGAWin)
@@ -40,6 +47,11 @@ void MEGAWin::onTimerOut()//时间显示
     QDateTime time = QDateTime::currentDateTime();
     QString str = time.toString("yyyy-MM-dd HH:mm:ss");
     ui->TimeSeting_btn->setText(str);
+}
+
+void MEGAWin::updateTimeOut()
+{
+    RTDataDisplay();
 }
 
 
@@ -85,6 +97,12 @@ void MEGAWin::FirstPage()
     ui->Bypass_Load_Btn->setFocusPolicy(Qt::NoFocus);
     ui->Bypass_Batt_btn->setFlat(true);
     ui->Bypass_Batt_btn->setFocusPolicy(Qt::NoFocus);
+}
+
+void MEGAWin::RunStatePage()
+{
+    ModuleData_Tab();
+
 }
 
 /***************************************************************
@@ -211,6 +229,109 @@ void MEGAWin::UserParam_tab()
     ui->System_Tab->setCellWidget(2,4, (QWidget *)combox_Parallel);             //并机
     ui->System_Tab->setCellWidget(3,4, (QWidget *)combox_UnbalancePowerEnable); //功率不平衡使能
     ui->System_Tab->setCellWidget(7,4, (QWidget *)AdvancedSetup_btn);          //高级设置
+}
+
+void MEGAWin::RTData_Anologe()
+{
+    ui->RTDataModel_tableWidget->clearContents();//防止内存泄漏
+    ModuleData_Tab();
+//    if(ui->UI_SystemParameter_Tab->item(1, 5)->text() != Machine_MEGA_TS)
+//    {
+//        ui->RTDataModel_tableWidget->setItem(0, 1, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.GridVolt.u16Line_ab * 0.1)+"V"));           //电网电压AB
+//        ui->RTDataModel_tableWidget->setItem(1, 1, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.GridVolt.u16Line_bc * 0.1)+"V"));           //电网电压BC
+//        ui->RTDataModel_tableWidget->setItem(2, 1, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.GridVolt.u16Line_ca * 0.1)+"V"));           //电网电压CA
+//        ui->RTDataModel_tableWidget->setItem(3, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.GridCurr.u16Phase_a * 0.1)+"A"));    //输出电流A
+//        ui->RTDataModel_tableWidget->setItem(4, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.GridCurr.u16Phase_b * 0.1)+"A"));    //输出电流B
+//        ui->RTDataModel_tableWidget->setItem(5, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.GridCurr.u16Phase_c * 0.1)+"A"));    //输出电流C
+//        ui->RTDataModel_tableWidget->setItem(6, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.GridActPwr.u16Self * 0.1) +"kW"));               //有功功率
+//        ui->RTDataModel_tableWidget->setItem(7, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.GridReactPwr.u16Self * 0.1) +"kVar"));             //无功功率
+//        ui->RTDataModel_tableWidget->setItem(8, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.GridApparentPwr.u16Self * 0.1) +"kVA"));          //视在功率
+//        ui->RTDataModel_tableWidget->setItem(9, 1, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.GridFactor.u16Self * 0.01)));                    //输出功率因素
+
+//        ui->RTDataModel_tableWidget->setItem(0, 3, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.PCSVoltage.u16Line_ab * 0.1)+"V"));                 //AB相逆变电压
+//        ui->RTDataModel_tableWidget->setItem(1, 3, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.PCSVoltage.u16Line_bc * 0.1)+"V"));                 //BC相逆变电压
+//        ui->RTDataModel_tableWidget->setItem(2, 3, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.PCSVoltage.u16Line_ca * 0.1)+"V"));                 //CA相逆变电压
+//        ui->RTDataModel_tableWidget->setItem(3, 3, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.PCSCurrent.u16Phase_a * 0.1) +"A"));         //A相逆变电感电流
+//        ui->RTDataModel_tableWidget->setItem(4, 3, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.PCSCurrent.u16Phase_b * 0.1) +"A"));         //B相逆变电感电流
+//        ui->RTDataModel_tableWidget->setItem(5, 3, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.PCSCurrent.u16Phase_c * 0.1) +"A"));         //C相逆变电感电流
+//        ui->RTDataModel_tableWidget->setItem(6, 3, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.PCSActivePower.u16Self * 0.1) +"kW"));              //逆变有功功率
+//        ui->RTDataModel_tableWidget->setItem(7, 3, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.PCSReactivePower.u16Self * 0.1) +"kVar"));     //逆变无功功率
+//        ui->RTDataModel_tableWidget->setItem(8, 3, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.PCSAparentPower.u16Self * 0.1) +"kVA"));      //逆变视在功率
+////        ui->RTDataModel_tableWidget->setItem(9, 3, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.PCSFactor * 0.01)));                        //逆变功率因数
+
+//        ui->RTDataModel_tableWidget->setItem(0, 5, new QTableWidgetItem(QString::number(((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.InputVolt.u16MOD1) * 0.1)+"V"));                 //电池电压
+//        ui->RTDataModel_tableWidget->setItem(1, 5, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.InputCurr.u16MOD1 * 0.1)+"A"));          //电池电流
+//        ui->RTDataModel_tableWidget->setItem(2, 5, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.InputPower.u16MOD1 * 0.1)+"kW"));                     //电池功率
+//        ui->RTDataModel_tableWidget->setItem(3, 5, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.DCBus.u16Comb * 0.1) +"V"));                 //总母线电压
+//        ui->RTDataModel_tableWidget->setItem(4, 5, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.u16IGBTTemp.u16MOD1) +"℃"));                //IGBT温度
+////        ui->RTDataModel_tableWidget->setItem(5, 5, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.u16InductTemp) +"℃"));              //电感温度
+//        ui->RTDataModel_tableWidget->setItem(5, 5, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.u16EnvTemp.u16Self) +"℃"));                         //环境温度
+//        ui->RTDataModel_tableWidget->setItem(6, 5, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.OutFreq.u16Self * 0.01)+"Hz"));              //电网频率
+//    }
+//    else
+//    {
+//        ui->Converter_Tab->setItem(0, 1, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.PCSVoltage.u16Line_ab * 0.1)+"V"));          //PCS voltage(AB)
+//        ui->Converter_Tab->setItem(1, 1, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.PCSVoltage.u16Line_bc * 0.1)+"V"));          //PCS voltage(BC)
+//        ui->Converter_Tab->setItem(2, 1, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.PCSVoltage.u16Line_ca * 0.1)+"V"));          //PCS voltage(CA)
+//        ui->Converter_Tab->setItem(3, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.PCSCurrent.u16Phase_a * 0.1)+"A"));          //PCS current(A)
+//        ui->Converter_Tab->setItem(4, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.PCSCurrent.u16Phase_b * 0.1)+"A"));          //PCS current(B)
+//        ui->Converter_Tab->setItem(5, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.PCSCurrent.u16Phase_c * 0.1)+"A"));          //PCS current(C)
+//        ui->Converter_Tab->setItem(6, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.PCSActivePower.u16Self * 0.1)+"kW"));        //PCS active power
+//        ui->Converter_Tab->setItem(7, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.PCSReactivePower.u16Self * 0.1)+"kVar"));      //PCS reactive power
+//        ui->Converter_Tab->setItem(8, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.PCSAparentPower.u16Self * 0.1)+"kVA"));      //PCS apparent power
+//    //    ui->Converter_Tab->setItem(9, 1, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.u16PCSFrequency * 0.01)+"Hz"));               //PCS frequency
+//        ui->Converter_Tab->setItem(9, 1, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.PCSFactor.u16Self * 0.01)));                  //PCS power factor
+
+//        ui->Converter_Tab->setItem(0, 3, new QTableWidgetItem(QString::number(((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.InputVolt.u16MOD1) * 0.1)+"V"));                 //Battery voltage
+//        ui->Converter_Tab->setItem(1, 3, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.InputCurr.u16MOD1 * 0.1)+"A"));                 //Battery current
+//        ui->Converter_Tab->setItem(2, 3, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.InputPower.u16MOD1 * 0.1)+"kW"));               //Battery power
+//        ui->Converter_Tab->setItem(3, 3, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.DCBus.u16Comb * 0.1)+"V"));                  //Bus voltage
+//        ui->Converter_Tab->setItem(4, 3, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.u16IGBTTemp.u16MOD1)+"℃"));           //IGBT temperature
+////        ui->Converter_Tab->setItem(5, 3, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.u16InductTemp)+"℃"));         //Inductunce temperature
+////        ui->Converter_Tab->setItem(6, 3, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.u16DiodeTemp)+"℃"));          //Diode temperature
+//        ui->Converter_Tab->setItem(5, 3, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.u16EnvTemp.u16Self)+"℃"));                    //Environment temperature
+
+//        ui->Grid_Tab->setItem(0, 1, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.GridVolt.u16Line_ab * 0.1)+"V"));          //Gird voltage(AB)
+//        ui->Grid_Tab->setItem(1, 1, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.GridVolt.u16Line_bc * 0.1)+"V"));          //Gird voltage(BC)
+//        ui->Grid_Tab->setItem(2, 1, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.GridVolt.u16Line_ca * 0.1)+"V"));          //Gird voltage(CA)
+//        ui->Grid_Tab->setItem(3, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.GridCurr.u16Phase_a * 0.1)+"A"));          //Gird current(A)
+//        ui->Grid_Tab->setItem(4, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.GridCurr.u16Phase_b * 0.1)+"A"));          //Gird current(B)
+//        ui->Grid_Tab->setItem(5, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.GridCurr.u16Phase_c * 0.1)+"A"));          //Gird current(C)
+//        ui->Grid_Tab->setItem(6, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.GridActPwr.u16Self * 0.1)+"kW"));               //Gird active power
+//        ui->Grid_Tab->setItem(7, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.GridReactPwr.u16Self * 0.1)+"kVar"));          //Gird reactive power
+//        ui->Grid_Tab->setItem(8, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.GridApparentPwr.u16Self * 0.1)+"kVA"));               //Gird power factor
+//        ui->Grid_Tab->setItem(9, 1, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.OutFreq.u16Self * 0.01)+"Hz"));                 //Gird frequency
+//        ui->Grid_Tab->setItem(10, 1, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.GridFactor.u16Self * 0.01)));               //Gird power factor
+
+
+//        ui->Load_Tab->setItem(0, 1, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.LoadVoltage.u16Line_ab * 0.1)+"V"));          //Load voltage(AB)
+//        ui->Load_Tab->setItem(1, 1, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.LoadVoltage.u16Line_bc * 0.1)+"V"));          //Load voltage(BC)
+//        ui->Load_Tab->setItem(2, 1, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.LoadVoltage.u16Line_ca * 0.1)+"V"));          //Load voltage(CA)
+//        ui->Load_Tab->setItem(3, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.LoadCurrent.u16Phase_a * 0.1)+"A"));          //Load current(A)
+//        ui->Load_Tab->setItem(4, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.LoadCurrent.u16Phase_b * 0.1)+"A"));          //Load current(B)
+//        ui->Load_Tab->setItem(5, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.LoadCurrent.u16Phase_c * 0.1)+"A"));          //Load current(C)
+//        ui->Load_Tab->setItem(6, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.LoadActivepower.u16Self * 0.1)+"kW"));        //Load active power
+//        ui->Load_Tab->setItem(7, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.LoadReactivepower.u16Self * 0.1)+"kVar"));      //Load reactive power
+//        ui->Load_Tab->setItem(8, 1, new QTableWidgetItem(QString::number((INT16)m_ptModInfoEntry->InvInfo.AnlogInfo.LoadAparentpower.u16Self * 0.1)+"kVA"));       //Load apparent power
+//        ui->Load_Tab->setItem(9, 1, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.LoadFactor.u16Self * 0.01)));             //Load power factor
+
+    //    }
+}
+/*************************************************************************
+ * 实时状态数据更新函数
+ *
+ *
+ *
+ *
+ *
+ ************************************************************************/
+void MEGAWin::RTDataDisplay()
+{
+    //当前页处于主页面或者运行状态页面，且实时界面处于实时数据界面的时候，刷新数据
+//    if((m_UIPage.m_first == HOST_PAGE) || (m_UIPage.m_second == RTAnaloge_PAGE) || (m_UIPage.m_first == HOST_BYPASS_PAGE))
+//    {
+        RTData_Anologe();
+//    }
 }
 /**************************************************
 初始化变量（system_Page）
@@ -357,6 +478,8 @@ void MEGAWin::LinkRelationship()
 {
     connect(timer, SIGNAL(timeout()), this, SLOT(onTimerOut()));
 
+    connect(Update_RTData_timer, SIGNAL(timeout()), this, SLOT(updateTimeOut()));
+
     //系统设置
 //    connect(combox_ui_GridMode, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ui_GridMode_change()));
 
@@ -371,6 +494,248 @@ void MEGAWin::LinkRelationship()
     connect(ui->Bypass_Grid_btn, SIGNAL(clicked()), this, SLOT(on_Grid_clicked()));    //主页电网按钮跳转电网实时数据
     connect(ui->Bypass_Load_Btn, SIGNAL(clicked()), this, SLOT(on_Load_clicked()));    //主页负载按钮跳转负载实时数据
 
+}
+/******************************************************************************
+ * 模块实时数据表初始化
+ *
+ *
+ *
+ *
+ *
+ * ***************************************************************************/
+void MEGAWin::ModuleData_Tab()
+{
+//    if(ui->UI_SystemParameter_Tab->item(1, 5)->text() != Machine_MEGA_TS)
+//    {
+//        //设置表格背景颜色
+//        QPalette pal;
+//        pal.setColor(QPalette::Base, QColor(255, 0, 0));
+//        pal.setColor(QPalette::AlternateBase, QColor(100, 149, 237));
+//        ui->RTDataModel_tableWidget->setPalette(pal);
+//        ui->RTDataModel_tableWidget->setAlternatingRowColors(true);
+
+//        ui->RTDataModel_tableWidget->clearContents();
+//        ui->RTDataModel_tableWidget->setColumnCount(6);
+//        ui->RTDataModel_tableWidget->setRowCount(12);
+//        QStringList List1;
+//        List1 << tr("Name") << tr("Value") << tr("Name") << tr("Value") << tr("Name") << tr("Value");
+//        ui->RTDataModel_tableWidget->setHorizontalHeaderLabels(List1);
+
+//        ui->RTDataModel_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+//        ui->RTDataModel_tableWidget->verticalHeader()->setVisible(false);//设置垂直头不可见
+//        ui->RTDataModel_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
+//        ui->RTDataModel_tableWidget->setShowGrid(true);//设置不显示格子
+//        ui->RTDataModel_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+//        ui->RTDataModel_tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
+//        ui->RTDataModel_tableWidget->setStyleSheet("selection-background-color:lightblue;");
+
+//        ui->RTDataModel_tableWidget->setColumnWidth(0,150);
+//        ui->RTDataModel_tableWidget->setColumnWidth(1,100);
+//        ui->RTDataModel_tableWidget->setColumnWidth(2,150);
+//        ui->RTDataModel_tableWidget->setColumnWidth(3,100);
+//        ui->RTDataModel_tableWidget->setColumnWidth(4,150);
+//    //    ui->RTDataModel1_tableWidget->setColumnWidth(3,100);
+//        ui->RTDataModel_tableWidget->horizontalHeader()->setStretchLastSection(5);
+
+//        QStringList ModuleName;//离网//<< tr("Inductance Temp.")
+//        ModuleName << tr("Lin-Vol(AB)") << tr("Lin-Vol(BC)") << tr("Lin-Vol(CA)")\
+//                   << tr("Output Cur.(A)") << tr("Output Cur.(B)")<< tr("Output Cur.(C)")\
+//                   << tr("Active Power") << tr("Reactive Power") << tr("Parent Power") \
+//                   << tr("Output Pf") << tr("-")<< tr("-")\
+
+//                   << tr("Inv. Vol(AB)")<< tr("Inv. Vol(BC)") << tr("Inv. Vol(CA)")\
+//                   << tr("Inv. Cur(AB)")<< tr("Inv. Cur(BC)") << tr("Inv. Cur(CA)")\
+//                   << tr("Inv.Active P.") << tr("Inv. Reactive P.")<< tr("Inv. Parent P.")\
+//                   << tr("-") << tr("-")<< tr("-")\
+
+//                   << tr("Bat Vol.") << tr("Bat Cur.") << tr("Bat Power")<< tr("Bus Vol.") \
+//                   << tr("IGBT Temp.") << tr("Env. Temp.") \
+//                   << tr("Grid frequency") << tr("-") << tr("-")\
+//                   << tr("-") << tr("-")<< tr("-");
+
+//        QStringList ModuleName_1;//并网// << tr("Inductance Temp.")
+//        ModuleName_1 << tr("Grid Vol.(AB)") << tr("Grid Vol.(BC)") << tr("Grid Vol.(CA)")\
+//                   << tr("Grid Cur.(A)") << tr("Grid Cur.(B)")<< tr("Grid Cur.(C)")\
+//                   << tr("Grid Active P.") << tr("Grid Reactive P.") << tr("Grid Parent P.") \
+//                   << tr("Grid Pf") << tr("-")<< tr("-")\
+
+//                   << tr("Inv. Vol(AB)")<< tr("Inv. Vol(BC)") << tr("Inv. Vol(CA)")\
+//                   << tr("Inv. Cur(AB)")<< tr("Inv. Cur(BC)") << tr("Inv. Cur(CA)")\
+//                   << tr("Inv.Active P.") << tr("Inv. Reactive P.")<< tr("Inv. Parent P.")\
+//                   << tr("-") << tr("-")<< tr("-")\
+
+//                   << tr("Bat Vol.") << tr("Bat Cur.") << tr("Bat P")<< tr("Bus Vol.") \
+//                   << tr("IGBT Temp.")<< tr("Env. Temp.") << tr("Grid Frequency")\
+//                   << tr("-") << tr("-")\
+//                   << tr("-") << tr("-")<< tr("-");
+
+//        for(int i = 0; i < 3; i++)
+//        {
+//            for(int j = 0; j < 12; j++)
+//            {
+//                if(0 == i)
+//                {
+//                    if(m_DspSetData.u16OnOffGrid == 1)
+//                    {
+//                        ui->RTDataModel_tableWidget->setItem(j, i, new QTableWidgetItem(ModuleName.at(j)));
+//                        ui->RTDataModel_tableWidget->item(j, i)->setTextAlignment(Qt::AlignCenter);
+//                    }
+//                    else
+//                    {
+//                        ui->RTDataModel_tableWidget->setItem(j, i, new QTableWidgetItem(ModuleName_1.at(j)));
+//                        ui->RTDataModel_tableWidget->item(j, i)->setTextAlignment(Qt::AlignCenter);
+//                    }
+//                }
+//                else if(1 == i)
+//                {
+//                    int a = 12 + j;
+//                    if(a < ModuleName.size())
+//                    {
+//                        if(m_DspSetData.u16OnOffGrid == 1)
+//                        {
+//                            ui->RTDataModel_tableWidget->setItem(j, (i + 1), new QTableWidgetItem(ModuleName.at(a)));
+//                            ui->RTDataModel_tableWidget->item(j, (i + 1))->setTextAlignment(Qt::AlignCenter);
+//                        }
+//                        else
+//                        {
+//                            ui->RTDataModel_tableWidget->setItem(j, (i + 1), new QTableWidgetItem(ModuleName_1.at(a)));
+//                            ui->RTDataModel_tableWidget->item(j, (i + 1))->setTextAlignment(Qt::AlignCenter);
+//                        }
+//                    }
+//                }
+//                else
+//                {
+//                    int a = 24 + j;
+//                    if(a < ModuleName.size())
+//                    {
+//                        if(m_DspSetData.u16OnOffGrid == 1)
+//                        {
+//                            ui->RTDataModel_tableWidget->setItem(j, (i + 2), new QTableWidgetItem(ModuleName.at(a)));
+//                            ui->RTDataModel_tableWidget->item(j, (i + 2))->setTextAlignment(Qt::AlignCenter);
+//                        }
+//                        else
+//                        {
+//                            ui->RTDataModel_tableWidget->setItem(j, (i + 2), new QTableWidgetItem(ModuleName_1.at(a)));
+//                            ui->RTDataModel_tableWidget->item(j, (i + 2))->setTextAlignment(Qt::AlignCenter);
+//                        }
+
+//                    }
+//                }
+
+//            }
+//    //    ui->RTDataModel_tableWidget->resizeColumnsToContents();
+//        }
+//    }
+//    else
+    {
+        ui->Converter_Tab->clearContents();
+        ui->Grid_Tab->clearContents();
+        ui->Load_Tab->clearContents();
+
+        QStringList Converter_Tablist1;
+        Converter_Tablist1  << tr("PCS voltage(AB)") << tr("PCS voltage(BC)") << tr("PCS voltage(CA)")
+                            << tr("PCS current(A)") << tr("PCS current(B)")<< tr("PCS current(C)")
+                            << tr("PCS Active P.") << tr("PCS Reactive P.") << tr("PCS Parent P.") << tr("PCS Pf");
+        QStringList Converter_Tablist2;//<< tr("Inductunce temperature") << tr("Diode temperature")
+        Converter_Tablist2  << tr("Battery voltage") << tr("Battery current") << tr("Battery power")
+                            << tr("Bus voltage") << tr("IGBT temperature")
+                            << tr("Environment temperature") << tr("-")<< tr("-");
+
+       QStringList Grid_Tablist;
+           Grid_Tablist << tr("Grid voltage(AB)") << tr("Grid voltage(BC)") << tr("Grid voltage(CA)")
+                           << tr("Grid current(A)") << tr("Grid current(B)")<< tr("Grid current(C)")
+                           << tr("Grid active power") << tr("Grid reactive power")
+                            << tr("Grid apparent power") << tr("Grid frequency") << tr("Grid power factor");
+       QStringList Load_Tablist;
+       Load_Tablist << tr("Load voltage(AB)") << tr("Load voltage(BC)") << tr("Load voltage(CA)")
+                           << tr("Load current(A)") << tr("Load current(B)")<< tr("Load current(C)")
+                           << tr("Load active power") << tr("Load reactive power")
+                           << tr("Load apparent power") << tr("Load power fator");
+
+        ui->Converter_Tab->setColumnCount(4);
+        ui->Converter_Tab->setRowCount(Converter_Tablist1.size());
+
+        ui->Grid_Tab->setColumnCount(2);
+        ui->Grid_Tab->setRowCount(Grid_Tablist.size());
+
+        ui->Load_Tab->setColumnCount(2);
+        ui->Load_Tab->setRowCount(Load_Tablist.size());
+        //设置表格背景颜色
+        QPalette pal;
+        pal.setColor(QPalette::Base, QColor(255, 0, 0));
+        pal.setColor(QPalette::AlternateBase, QColor(100, 149, 237));
+
+        ui->Converter_Tab->setPalette(pal);
+        ui->Converter_Tab->setAlternatingRowColors(true);
+
+        QStringList Converter_TabList;
+        Converter_TabList << tr("Name") << tr("Value") << tr("Name") << tr("Value");
+        ui->Converter_Tab->setHorizontalHeaderLabels(Converter_TabList);
+        ui->Converter_Tab->setColumnWidth(0,200);
+        ui->Converter_Tab->setColumnWidth(1,100);
+        ui->Converter_Tab->setColumnWidth(2,200);
+        ui->Converter_Tab->horizontalHeader()->setStretchLastSection(3);
+
+
+        ui->Converter_Tab->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+        ui->Converter_Tab->verticalHeader()->setVisible(false);//设置垂直头不可见
+        ui->Converter_Tab->setFrameShape(QFrame::NoFrame);//设置无边框
+        ui->Converter_Tab->setShowGrid(true);//设置不显示格子
+        ui->Converter_Tab->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+        ui->Converter_Tab->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
+        ui->Converter_Tab->setStyleSheet("selection-background-color:lightblue;");
+
+        for(int i = 0; i < Converter_Tablist1.size(); i++)
+        {
+            ui->Converter_Tab->setItem(i, 0, new QTableWidgetItem(Converter_Tablist1.at(i)));
+        }
+        for(int i = 0; i < Converter_Tablist2.size(); i++)
+        {
+            ui->Converter_Tab->setItem(i, 2, new QTableWidgetItem(Converter_Tablist2.at(i)));
+        }
+
+        ui->Grid_Tab->setPalette(pal);
+        ui->Grid_Tab->setAlternatingRowColors(true);
+        QStringList Grid_TabList;
+        Grid_TabList << tr("Name") << tr("Value");
+        ui->Grid_Tab->setHorizontalHeaderLabels(Grid_TabList);
+        ui->Grid_Tab->setColumnWidth(0,300);
+        ui->Grid_Tab->horizontalHeader()->setStretchLastSection(1);
+
+        ui->Grid_Tab->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+        ui->Grid_Tab->verticalHeader()->setVisible(false);//设置垂直头不可见
+        ui->Grid_Tab->setFrameShape(QFrame::NoFrame);//设置无边框
+        ui->Grid_Tab->setShowGrid(true);//设置不显示格子
+        ui->Grid_Tab->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+        ui->Grid_Tab->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
+        ui->Grid_Tab->setStyleSheet("selection-background-color:lightblue;");
+        for(int i = 0; i < Grid_Tablist.size(); i++)
+        {
+            ui->Grid_Tab->setItem(i, 0, new QTableWidgetItem(Grid_Tablist.at(i)));
+            ui->Grid_Tab->item(i, 0)->setTextAlignment(Qt::AlignCenter);
+        }
+
+        ui->Load_Tab->setPalette(pal);
+        ui->Load_Tab->setAlternatingRowColors(true);
+        QStringList Load_TabList;
+        Load_TabList << tr("Name") << tr("Value");
+        ui->Load_Tab->setHorizontalHeaderLabels(Load_TabList);
+        ui->Load_Tab->setColumnWidth(0,300);
+        ui->Load_Tab->horizontalHeader()->setStretchLastSection(1);
+        ui->Load_Tab->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+        ui->Load_Tab->verticalHeader()->setVisible(false);//设置垂直头不可见
+        ui->Load_Tab->setFrameShape(QFrame::NoFrame);//设置无边框
+        ui->Load_Tab->setShowGrid(true);//设置不显示格子
+        ui->Load_Tab->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+        ui->Load_Tab->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
+        ui->Load_Tab->setStyleSheet("selection-background-color:lightblue;");
+        for(int i = 0; i < Load_Tablist.size(); i++)
+        {
+            ui->Load_Tab->setItem(i, 0, new QTableWidgetItem(Load_Tablist.at(i)));
+            ui->Load_Tab->item(i, 0)->setTextAlignment(Qt::AlignCenter);
+        }
+
+    }
 }
 
 
@@ -582,7 +947,7 @@ void MEGAWin::UIPageInit()
 {
 //    NotifyLogo();
     FirstPage();
-//    RunStatePage();
+    RunStatePage();
 //    HistoryPage();
     SystemSettingPage();
     LCDSetting();

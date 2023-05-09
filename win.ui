@@ -147,7 +147,7 @@ color: rgb(255, 255, 255);</string>
           </size>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="UI_Parameter_page">
           <property name="sizePolicy">
@@ -2294,7 +2294,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">
@@ -4352,7 +4352,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                 <number>0</number>
                </property>
                <item row="0" column="0">
-                <layout class="QHBoxLayout" name="horizontalLayout_14">
+                <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="3,3,2">
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="3,2,1">
                    <property name="spacing">
@@ -4828,7 +4828,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                    <item>
                     <layout class="QVBoxLayout" name="verticalLayout_20">
                      <property name="spacing">
-                      <number>7</number>
+                      <number>3</number>
                      </property>
                      <item>
                       <widget class="QLabel" name="BatUnit1">
@@ -5045,6 +5045,9 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                    </property>
                    <item>
                     <layout class="QVBoxLayout" name="verticalLayout_26">
+                     <property name="spacing">
+                      <number>3</number>
+                     </property>
                      <item>
                       <widget class="QLabel" name="BATName1_2">
                        <property name="minimumSize">
