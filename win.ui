@@ -2041,6 +2041,9 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
           <height>45</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/new_ui/UI/Logo.png);</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -2063,13 +2066,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
        <widget class="QLabel" name="Machine_Name">
         <property name="minimumSize">
          <size>
-          <width>96</width>
+          <width>66</width>
           <height>45</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>95</width>
+          <width>66</width>
           <height>45</height>
          </size>
         </property>
@@ -2094,13 +2097,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
        <widget class="QLabel" name="label">
         <property name="minimumSize">
          <size>
-          <width>21</width>
+          <width>15</width>
           <height>45</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>21</width>
+          <width>15</width>
           <height>45</height>
          </size>
         </property>
@@ -2125,13 +2128,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
        <widget class="QLabel" name="UI_captye">
         <property name="minimumSize">
          <size>
-          <width>105</width>
+          <width>75</width>
           <height>45</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>105</width>
+          <width>75</width>
           <height>45</height>
          </size>
         </property>
@@ -2153,13 +2156,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
        <widget class="QLabel" name="UI_space_1">
         <property name="minimumSize">
          <size>
-          <width>21</width>
+          <width>15</width>
           <height>45</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>21</width>
+          <width>15</width>
           <height>45</height>
          </size>
         </property>
@@ -2184,13 +2187,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
        <widget class="QLabel" name="UI_Freq">
         <property name="minimumSize">
          <size>
-          <width>84</width>
+          <width>60</width>
           <height>45</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>84</width>
+          <width>60</width>
           <height>45</height>
          </size>
         </property>
@@ -2291,7 +2294,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">

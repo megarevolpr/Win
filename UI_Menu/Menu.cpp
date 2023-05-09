@@ -62,7 +62,8 @@ bool Menu::eventFilter(QObject *o, QEvent *e)//接受或拒绝拦截到的事件
     {
         if(QApplication::activeWindow() != this)
         {
-            if(!this->isHidden())
+//            if(!this->isHidden())
+            if(!this->isVisible())
             {
                 this->hide();
             }

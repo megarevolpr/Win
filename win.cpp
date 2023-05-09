@@ -600,6 +600,8 @@ void MEGAWin::on_UI_MenuBtn_clicked()
 {
     if(m_menu->isHidden())
     {
+        m_menu->setGeometry(0, 0, 250, 453);
+        m_menu->move(QPoint((this->pos().x() + 10),(this->pos().y() + 85)));
         m_menu->show();
     }
     else
