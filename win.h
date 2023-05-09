@@ -137,6 +137,8 @@ private slots:
 
     void on_TimeSeting_btn_released();
 
+    void on_Run_tabWidget_tabBarClicked(int index);
+
 private:
     Ui::MEGAWin *ui;
 

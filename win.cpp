@@ -7,6 +7,7 @@
 #include <QTimer>
 #include <qlistview.h>
 #include "UI_Menu/Menu.h"
+#include <QDebug>
 
 
 #define NULL_page   0
@@ -15,6 +16,10 @@
 #define Machine_MEGA_TS 3
 #define Machine_MEGA_TS_T 4
 
+#define Analoge_PAGE  0
+#define State_PAGE    1
+#define Alarm_PAGE    2
+#define BAT_PAGE      3
 
 MEGAWin::MEGAWin(QWidget *parent) :
     QWidget(parent),
@@ -992,35 +997,35 @@ void MEGAWin::ModuleData_Tab()
 //        ui->RTDataModel_tableWidget->horizontalHeader()->setStretchLastSection(5);
 
 //        QStringList ModuleName;//离网//<< tr("Inductance Temp.")
-//        ModuleName << tr("Lin-Vol(AB)") << tr("Lin-Vol(BC)") << tr("Lin-Vol(CA)")\
-//                   << tr("Output Cur.(A)") << tr("Output Cur.(B)")<< tr("Output Cur.(C)")\
-//                   << tr("Active Power") << tr("Reactive Power") << tr("Parent Power") \
-//                   << tr("Output Pf") << tr("-")<< tr("-")\
+//        ModuleName << tr("Lin-Vol(AB)") << tr("Lin-Vol(BC)") << tr("Lin-Vol(CA)")
+//                   << tr("Output Cur.(A)") << tr("Output Cur.(B)")<< tr("Output Cur.(C)")
+//                   << tr("Active Power") << tr("Reactive Power") << tr("Parent Power")
+//                   << tr("Output Pf") << tr("-")<< tr("-")
 
-//                   << tr("Inv. Vol(AB)")<< tr("Inv. Vol(BC)") << tr("Inv. Vol(CA)")\
-//                   << tr("Inv. Cur(AB)")<< tr("Inv. Cur(BC)") << tr("Inv. Cur(CA)")\
-//                   << tr("Inv.Active P.") << tr("Inv. Reactive P.")<< tr("Inv. Parent P.")\
-//                   << tr("-") << tr("-")<< tr("-")\
+//                   << tr("Inv. Vol(AB)")<< tr("Inv. Vol(BC)") << tr("Inv. Vol(CA)")
+//                   << tr("Inv. Cur(AB)")<< tr("Inv. Cur(BC)") << tr("Inv. Cur(CA)")
+//                   << tr("Inv.Active P.") << tr("Inv. Reactive P.")<< tr("Inv. Parent P.")
+//                   << tr("-") << tr("-")<< tr("-")
 
-//                   << tr("Bat Vol.") << tr("Bat Cur.") << tr("Bat Power")<< tr("Bus Vol.") \
-//                   << tr("IGBT Temp.") << tr("Env. Temp.") \
-//                   << tr("Grid frequency") << tr("-") << tr("-")\
+//                   << tr("Bat Vol.") << tr("Bat Cur.") << tr("Bat Power")<< tr("Bus Vol.")
+//                   << tr("IGBT Temp.") << tr("Env. Temp.")
+//                   << tr("Grid frequency") << tr("-") << tr("-")
 //                   << tr("-") << tr("-")<< tr("-");
 
 //        QStringList ModuleName_1;//并网// << tr("Inductance Temp.")
-//        ModuleName_1 << tr("Grid Vol.(AB)") << tr("Grid Vol.(BC)") << tr("Grid Vol.(CA)")\
-//                   << tr("Grid Cur.(A)") << tr("Grid Cur.(B)")<< tr("Grid Cur.(C)")\
-//                   << tr("Grid Active P.") << tr("Grid Reactive P.") << tr("Grid Parent P.") \
-//                   << tr("Grid Pf") << tr("-")<< tr("-")\
+//        ModuleName_1 << tr("Grid Vol.(AB)") << tr("Grid Vol.(BC)") << tr("Grid Vol.(CA)")
+//                   << tr("Grid Cur.(A)") << tr("Grid Cur.(B)")<< tr("Grid Cur.(C)")
+//                   << tr("Grid Active P.") << tr("Grid Reactive P.") << tr("Grid Parent P.")
+//                   << tr("Grid Pf") << tr("-")<< tr("-")
 
-//                   << tr("Inv. Vol(AB)")<< tr("Inv. Vol(BC)") << tr("Inv. Vol(CA)")\
-//                   << tr("Inv. Cur(AB)")<< tr("Inv. Cur(BC)") << tr("Inv. Cur(CA)")\
-//                   << tr("Inv.Active P.") << tr("Inv. Reactive P.")<< tr("Inv. Parent P.")\
-//                   << tr("-") << tr("-")<< tr("-")\
+//                   << tr("Inv. Vol(AB)")<< tr("Inv. Vol(BC)") << tr("Inv. Vol(CA)")
+//                   << tr("Inv. Cur(AB)")<< tr("Inv. Cur(BC)") << tr("Inv. Cur(CA)")
+//                   << tr("Inv.Active P.") << tr("Inv. Reactive P.")<< tr("Inv. Parent P.")
+//                   << tr("-") << tr("-")<< tr("-")
 
-//                   << tr("Bat Vol.") << tr("Bat Cur.") << tr("Bat P")<< tr("Bus Vol.") \
-//                   << tr("IGBT Temp.")<< tr("Env. Temp.") << tr("Grid Frequency")\
-//                   << tr("-") << tr("-")\
+//                   << tr("Bat Vol.") << tr("Bat Cur.") << tr("Bat P")<< tr("Bus Vol.")
+//                   << tr("IGBT Temp.")<< tr("Env. Temp.") << tr("Grid Frequency")
+//                   << tr("-") << tr("-")
 //                   << tr("-") << tr("-")<< tr("-");
 
 //        for(int i = 0; i < 3; i++)
@@ -1202,28 +1207,28 @@ void MEGAWin::ModuleState_Tab()
 //    {
 //        QStringList StateName_2;// << tr("DC input breaker 2")
 //#ifdef Machine_V2
-//        StateName_2 << tr("DC input breaker") << tr("DC contactor")\
+//        StateName_2 << tr("DC input breaker") << tr("DC contactor")
 //                    << tr("Maintenance Bypass breaker") << tr("Grid breaker") << tr("Maintenance Bypass breaker");
 //#else
 //        if(m_DspSetData.u16UpsType == Machine_MEGA_TS_T)
 //        {
-//            StateName_2 << tr("DC input breaker") << tr("DC contactor")\
+//            StateName_2 << tr("DC input breaker") << tr("DC contactor")
 //                        << tr("Output contactor") << tr("Output breaker") << tr("Maintenance Bypass breaker");
 //        }
 //        else
 //        {
-//            StateName_2 << tr("DC input breaker") << tr("DC contactor")\
+//            StateName_2 << tr("DC input breaker") << tr("DC contactor")
 //                        << tr("Grid contactor") << tr("Grid breaker") << tr("Maintenance Bypass breaker");//  << tr("ModeLock") << tr("Bypass contactor") << tr("Bypass breaker");
 //        }
 
 //#endif
 //        QStringList StateName_3;
-//         StateName_3 << tr("Converter available") << tr("DC Soft start")\
-//                    << tr("Converter status") << tr("Reactive power Regulation")\
+//         StateName_3 << tr("Converter available") << tr("DC Soft start")
+//                    << tr("Converter status") << tr("Reactive power Regulation")
 //                    << tr("Sleep mode") << tr("LVRT");
 //         QStringList StateName_4;
-//          StateName_4 << tr("Generator signal") << tr("Reserve")\
-//                     << tr("Reserve") << tr("EPO contact signal 1")\
+//          StateName_4 << tr("Generator signal") << tr("Reserve")
+//                     << tr("Reserve") << tr("EPO contact signal 1")
 //                     << tr("EPO contact signal 2") << tr("Access control signal")<< tr("Full power signal") << tr("Smoke alarm signal")<< tr("Hight temp. signal");
 //        ui->RTState_MEGA_Tab->clearContents();
 //        ui->RTState_MEGA_Tab->setColumnCount(6);
@@ -1656,4 +1661,26 @@ void MEGAWin::on_TimeSeting_btn_released()
 
 //    set->setWindowModality(Qt::NonModal);
 //    set->show();
+}
+
+void MEGAWin::on_Run_tabWidget_tabBarClicked(int index)
+{
+//    qDebug("on_Run_tabWidget_tabBarClicked%d\n", index);
+    switch (index) {
+    case Analoge_PAGE:
+
+        break;
+    case State_PAGE:
+
+        break;
+    case Alarm_PAGE:
+
+        break;
+    case BAT_PAGE:
+        ui->stackedWidget->setCurrentWidget(ui->Status_page);
+        ui->Run_tabWidget->setCurrentWidget(ui->BatteryData_page);
+        ui->BAT_stackedWidget->setCurrentWidget(ui->BAT_Lithium_page);
+        break;
+    }
+
 }
