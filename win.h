@@ -97,10 +97,13 @@ public:
         void LinkRelationship();
         void ModuleData_Tab();//模块数据表格初始化
 
+        void ModuleState_Tab();//实时状态表初始化
+
         void UserParam_tab();//一般设置表初始化
 
 
         void RTData_Anologe();//实时模拟量数据
+        void RTData_Status();//实时状态量数据
 
 private:
         void RTDataDisplay();

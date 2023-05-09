@@ -103,6 +103,7 @@ void MEGAWin::RunStatePage()
 {
     ModuleData_Tab();
 
+    ModuleState_Tab();
 }
 
 /***************************************************************
@@ -316,6 +317,459 @@ void MEGAWin::RTData_Anologe()
 //        ui->Load_Tab->setItem(9, 1, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.LoadFactor.u16Self * 0.01)));             //Load power factor
 
     //    }
+}
+/******************************************************************************
+ * 实时数据——状态量
+ *
+ *
+ *
+ *
+ *
+ * ***************************************************************************/
+void MEGAWin::RTData_Status()
+{
+    ui->RTState_MEGA_Tab->clearContents();//防止内存泄漏
+    ModuleState_Tab();
+//    if(m_DspSetData.u16UpsType != Machine_MEGA_TS)
+//    {
+//        //直流输入空开1状态  直流输入空开2状态 直流接触状态 输出接触器状态 输出空开状态 旁路接触器状态 旁路空开状态
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucDCBreaker1 == 0xE0)//DC Breaker
+//            ui->RTState_MEGA_Tab->setItem(0, 1, new QTableWidgetItem(QString(tr("Break"))));
+//        else
+//            ui->RTState_MEGA_Tab->setItem(0, 1, new QTableWidgetItem(QString(tr("Close"))));
+
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucDCKM == 0xE0)//DC KM
+//            ui->RTState_MEGA_Tab->setItem(1, 1, new QTableWidgetItem(QString(tr("Break"))));
+//        else //if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucPVbrk == 0xE1)
+//            ui->RTState_MEGA_Tab->setItem(1, 1, new QTableWidgetItem(QString(tr("Close"))));
+
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucGridKM == 0xE0)//Grid KM
+//        {
+//            ui->RTState_MEGA_Tab->setItem(2, 1, new QTableWidgetItem(QString(tr("Break"))));
+//        }
+//        else
+//        {
+////            if((localSoftstart != 0) || (remoteSoftstart != 0))
+////            {
+////                DIDO* IO = new DIDO();
+////                IO->ControlDiDo(0, 0);
+////                delete IO;
+////                localSoftstart = 0;
+////                remoteSoftstart = 0;
+////            }
+//            ui->RTState_MEGA_Tab->setItem(2, 1, new QTableWidgetItem(QString(tr("Close"))));
+//        }
+
+
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucGridBrk == 0xE0)//Grid Breaker
+//        {
+//            ui->RTState_MEGA_Tab->setItem(3, 1, new QTableWidgetItem(QString(tr("Break"))));
+//        }
+//        else
+//        {
+//            ui->RTState_MEGA_Tab->setItem(3, 1, new QTableWidgetItem(QString(tr("Close"))));
+//        }
+
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucMaintenanceBypassBrk == 0xE0)//
+//        {
+//            ui->RTState_MEGA_Tab->setItem(4, 1, new QTableWidgetItem(QString(tr("Break"))));
+//        }
+//        else
+//        {
+//            ui->RTState_MEGA_Tab->setItem(4, 1, new QTableWidgetItem(QString(tr("Close"))));
+//        }
+
+//        //逆变器开机容许 直流软启动状态 逆变器状态 无功调节方式 休眠模式 紧急关机提示
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucStartupEna == 0xE0)//逆变器开机容许 0:不允许  E1:允许
+//            ui->RTState_MEGA_Tab->setItem(0, 3, new QTableWidgetItem(QString(tr("Disable"))));
+//        else //if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucStartupEna == 0xE1)
+//            ui->RTState_MEGA_Tab->setItem(0, 3, new QTableWidgetItem(QString(tr("Enable"))));
+
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucDCSoftup == 0xE1)//直流软启动状态 E1: 软启中 E2:软启完成  else: 未启动
+//        {
+//            ui->RTState_MEGA_Tab->setItem(1, 3, new QTableWidgetItem(QString(tr("Soft starting"))));
+//        }
+//        else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucDCSoftup == 0xE2)
+//        {
+//            ui->RTState_MEGA_Tab->setItem(1, 3, new QTableWidgetItem(QString(tr("complete"))));
+//        }
+//        else
+//        {
+//            ui->RTState_MEGA_Tab->setItem(1, 3, new QTableWidgetItem(QString(tr("Not starting"))));
+//        }
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState2 == 0xE0)
+//        {
+//            if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState == 0xE0)//逆变器状态E0:关闭 E1:软启动 E2:并网充电 E3：并网放电 E4:离网放电 E5：降额并网
+//            {
+//                ui->RTState_MEGA_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("Converter turn off"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter turn off")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_OFF;
+//            }
+//            else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState == 0xE1)
+//            {
+//                ui->RTState_MEGA_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("Soft start"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter Soft start")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_ON;
+//            }
+//            else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState == 0xE2)
+//            {
+//                ui->RTState_MEGA_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("Grid-ON Charge"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter Grid-ON Charge")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_ON;
+//            }
+//            else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState == 0xE3)
+//            {
+//                ui->RTState_MEGA_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("Grid-ON Discharge"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter Grid-ON Discharge")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_ON;
+//            }
+//            else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState == 0xE4)
+//            {
+//                ui->RTState_MEGA_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("Grid-OFF Discharge"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter Grid-OFF Discharge")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_ON;
+//            }
+//            else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState == 0xE5)
+//            {
+//                ui->RTState_MEGA_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("Drop and Connected"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter Drop and Connected")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_ON;
+//            }
+//            else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState == 0xE6)
+//            {
+//                ui->RTState_MEGA_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("Standby"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter standby")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_STANDBY;
+//            }
+//            else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState == 0xE7)
+//            {
+//                ui->RTState_MEGA_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("Grid-OFF Charge"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter Grid-OFF Charge")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_ON;
+//            }
+//            else
+//            {
+//                ui->RTState_MEGA_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("OFF"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter turn off")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_OFF;
+//            }
+//        }
+//        else
+//        {
+//            if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState2 == 0xE1)
+//            {
+//                ui->RTState_MEGA_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("Constant voltage discharge"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter constant voltage discharge")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_ON;
+//            }
+//            else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState2 == 0xE2)
+//            {
+//                ui->RTState_MEGA_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("Constant voltage charge"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter constant voltage charge")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_ON;
+//            }
+//            else
+//            {
+
+//            }
+
+//        }
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucQMODE == 0xE0)//无功调节方式	E0:无 E1:功率因数调节 E2:无功功率调节 E3:夜间SVG模式
+//            ui->RTState_MEGA_Tab->setItem(3, 3, new QTableWidgetItem(QString(tr("Disable"))));
+//        else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucQMODE == 0xE1)
+//            ui->RTState_MEGA_Tab->setItem(3, 3, new QTableWidgetItem(QString(tr("Pf regulation"))));
+//        else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucQMODE == 0xE2)
+//            ui->RTState_MEGA_Tab->setItem(3, 3, new QTableWidgetItem(QString(tr("Q regulation"))));
+//        else //if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucQMODE == 0xE4)
+//            ui->RTState_MEGA_Tab->setItem(3, 3, new QTableWidgetItem(QString(tr("SVG"))));
+
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucSleep == 0xE0)//休眠	E0:未休眠 	E1:休眠
+//            ui->RTState_MEGA_Tab->setItem(4, 3, new QTableWidgetItem(QString(tr("No dromancy"))));
+//        else //if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucSleep == 0xE1)
+//            ui->RTState_MEGA_Tab->setItem(4, 3, new QTableWidgetItem(QString(tr("Dromant"))));
+
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucLVRTEvent == 0xE0)//低电压穿越提示  E0:无  E1:有
+//            ui->RTState_MEGA_Tab->setItem(5, 3, new QTableWidgetItem(QString(tr("Non"))));
+//        else //if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucLVRTEvent == 0xE1)
+//            ui->RTState_MEGA_Tab->setItem(5, 3, new QTableWidgetItem(QString(tr("LVRT"))));
+
+
+//        if(m_ptMonInfoEntry->tMonSynthState.Word2_U.tWord2Bits.bDO1 == DryEnable)
+//            ui->RTState_MEGA_Tab->setItem(0, 5, new QTableWidgetItem(QString(tr("Enable"))));
+//        else
+//            ui->RTState_MEGA_Tab->setItem(0, 5, new QTableWidgetItem(QString(tr("Disable"))));
+//        if(m_ptMonInfoEntry->tMonSynthState.Word2_U.tWord2Bits.bDO2 == DryEnable)
+//            ui->RTState_MEGA_Tab->setItem(1, 5, new QTableWidgetItem(QString(tr("Enable"))));
+//        else
+//            ui->RTState_MEGA_Tab->setItem(1, 5, new QTableWidgetItem(QString(tr("Disable"))));
+//        if(m_ptMonInfoEntry->tMonSynthState.Word2_U.tWord2Bits.bDO3 == DryEnable)
+//            ui->RTState_MEGA_Tab->setItem(2, 5, new QTableWidgetItem(QString(tr("Enable"))));
+//        else
+//            ui->RTState_MEGA_Tab->setItem(2, 5, new QTableWidgetItem(QString(tr("Disable"))));
+//        if(m_ptMonInfoEntry->tMonSynthState.Word2_U.tWord2Bits.bDI1 == DryEnable)
+//            ui->RTState_MEGA_Tab->setItem(3, 5, new QTableWidgetItem(QString(tr("Enable"))));
+//        else
+//            ui->RTState_MEGA_Tab->setItem(3, 5, new QTableWidgetItem(QString(tr("Disable"))));
+//        if(m_ptMonInfoEntry->tMonSynthState.Word2_U.tWord2Bits.bDI2 == DryEnable)
+//            ui->RTState_MEGA_Tab->setItem(4, 5, new QTableWidgetItem(QString(tr("Enable"))));
+//        else
+//            ui->RTState_MEGA_Tab->setItem(4, 5, new QTableWidgetItem(QString(tr("Disable"))));
+//        if(m_ptMonInfoEntry->tMonSynthState.Word2_U.tWord2Bits.bDI3 == DryEnable)
+//            ui->RTState_MEGA_Tab->setItem(5, 5, new QTableWidgetItem(QString(tr("Enable"))));
+//        else
+//            ui->RTState_MEGA_Tab->setItem(5, 5, new QTableWidgetItem(QString(tr("Disable"))));
+//        if(m_ptMonInfoEntry->tMonSynthState.Word2_U.tWord2Bits.bDI4 == DryEnable)
+//            ui->RTState_MEGA_Tab->setItem(6, 5, new QTableWidgetItem(QString(tr("Enable"))));
+//        else
+//            ui->RTState_MEGA_Tab->setItem(6, 5, new QTableWidgetItem(QString(tr("Disable"))));
+//        if(m_ptMonInfoEntry->tMonSynthState.Word2_U.tWord2Bits.bDI5 == DryEnable)
+//            ui->RTState_MEGA_Tab->setItem(7, 5, new QTableWidgetItem(QString(tr("Enable"))));
+//        else
+//            ui->RTState_MEGA_Tab->setItem(7, 5, new QTableWidgetItem(QString(tr("Disable"))));
+//        if(m_ptMonInfoEntry->tMonSynthState.Word2_U.tWord2Bits.bDI6 == DryEnable)
+//            ui->RTState_MEGA_Tab->setItem(8, 5, new QTableWidgetItem(QString(tr("Enable"))));
+//        else
+//            ui->RTState_MEGA_Tab->setItem(8, 5, new QTableWidgetItem(QString(tr("Disable"))));
+//    }
+//    else
+//    {
+//        //直流输入空开1状态  直流输入空开2状态 直流接触状态 输出接触器状态 输出空开状态 旁路接触器状态 旁路空开状态
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucDCBreaker1 == 0xE0)//DC breaker
+//        {
+//            ui->RTState_Bypass_Tab->setItem(0, 1, new QTableWidgetItem(QString(tr("Break"))));
+//        }
+//        else
+//        {
+//            ui->RTState_Bypass_Tab->setItem(0, 1, new QTableWidgetItem(QString(tr("Close"))));
+//        }
+
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucDCKM == 0xE0)//DC KM
+//        {
+//            ui->RTState_Bypass_Tab->setItem(1, 1, new QTableWidgetItem(QString(tr("Break"))));
+//        }
+//        else
+//        {
+//            ui->RTState_Bypass_Tab->setItem(1, 1,new QTableWidgetItem(QString(tr("Close"))));
+//        }
+
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucACOutKM == 0xE0)//Out KM
+//        {
+//            ui->RTState_Bypass_Tab->setItem(2, 1, new QTableWidgetItem(QString(tr("Break"))));
+//        }
+//        else
+//        {
+//            ui->RTState_Bypass_Tab->setItem(2, 1, new QTableWidgetItem(QString(tr("Close"))));
+//        }
+
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucACOutBrk == 0xE0)// Out Breaker
+//        {
+//            ui->RTState_Bypass_Tab->setItem(3, 1, new QTableWidgetItem(QString(tr("Break"))));
+//        }
+//        else
+//        {
+//            ui->RTState_Bypass_Tab->setItem(3, 1, new QTableWidgetItem(QString(tr("Close"))));
+//        }
+
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucGridKM == 0xE0)//Grid KM
+//        {
+//            ui->RTState_Bypass_Tab->setItem(4, 1, new QTableWidgetItem(QString(tr("Break"))));
+//        }
+//        else //if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucOutBrkState == 0xE1)
+//        {
+//            ui->RTState_Bypass_Tab->setItem(4, 1, new QTableWidgetItem(QString(tr("Close"))));
+//        }
+
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucGridBrk == 0xE0)// Grid Breaker
+//        {
+//            ui->RTState_Bypass_Tab->setItem(5, 1, new QTableWidgetItem(QString(tr("Break"))));
+//        }
+//        else
+//        {
+//            ui->RTState_Bypass_Tab->setItem(5, 1, new QTableWidgetItem(QString(tr("Close"))));
+//        }
+
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucMaintenanceBypassBrk == 0xE0)//
+//        {
+//            ui->RTState_Bypass_Tab->setItem(6, 1, new QTableWidgetItem(QString(tr("Break"))));
+//        }
+//        else
+//        {
+//            ui->RTState_Bypass_Tab->setItem(6, 1, new QTableWidgetItem(QString(tr("Close"))));
+//        }
+
+
+
+//        //逆变器开机容许 直流软启动状态 逆变器状态 无功调节方式 休眠模式 紧急关机提示
+
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucStartupEna == 0xE0)//逆变器开机容许 0:不允许  E1:允许
+//        {
+//            ui->RTState_Bypass_Tab->setItem(0, 3,new QTableWidgetItem(QString(tr("Disable"))));
+//        }
+//        else //if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucStartupEna == 0xE1)
+//        {
+//            ui->RTState_Bypass_Tab->setItem(0, 3, new QTableWidgetItem(QString(tr("Enable"))));
+//        }
+
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucDCSoftup == 0xE1)//直流软启动状态 E1: 软启中 E2:软启完成  else: 未启动
+//        {
+//            ui->RTState_Bypass_Tab->setItem(1, 3, new QTableWidgetItem(QString(tr("Soft starting"))));
+//        }
+//        else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucDCSoftup == 0xE2)
+//        {
+//            ui->RTState_Bypass_Tab->setItem(1, 3, new QTableWidgetItem(QString(tr("complete"))));
+//        }
+//        else
+//            ui->RTState_Bypass_Tab->setItem(1, 3, new QTableWidgetItem(QString(tr("Not starting"))));
+
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState2 == 0xE0)
+//        {
+//            if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState == 0xE0)//逆变器状态E0:关闭 E1:软启动 E2:并网充电 E3：并网放电 E4:离网放电 E5：降额并网
+//            {
+//                ui->RTState_Bypass_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("OFF"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter turn off")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_OFF;
+//            }
+//            else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState == 0xE1)
+//            {
+//                ui->RTState_Bypass_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("Soft start"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter Soft start")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_ON;
+//            }
+//            else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState == 0xE2)
+//            {
+//                ui->RTState_Bypass_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("Grid-ON Charge"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + QString(tr("Converter Grid-ON Charge")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_ON;
+//            }
+//            else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState == 0xE3)
+//            {
+//                ui->RTState_Bypass_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("Grid-ON Discharge"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter Grid-ON Discharge")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_ON;
+//            }
+//            else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState == 0xE4)
+//            {
+//                ui->RTState_Bypass_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("Grid-OFF Discharge"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter Grid-OFF Discharge")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_ON;
+//            }
+//            else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState == 0xE5)
+//            {
+//                ui->RTState_Bypass_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("Drop and Connected"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter Drop and Connected")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_ON;
+//            }
+//            else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState == 0xE6)
+//            {
+//                ui->RTState_Bypass_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("Standby"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter standby")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_STANDBY;
+//            }
+//            else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState == 0xE7)
+//            {
+//                ui->RTState_Bypass_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("Grid-OFF Charge"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter Grid-OFF Charge")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_ON;
+//            }
+//            else
+//            {
+//                ui->RTState_Bypass_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("OFF"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter turn off")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_OFF;
+//            }
+//        }
+//        else
+//        {
+//            if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState2 == 0xE1)
+//            {
+//                ui->RTState_MEGA_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("Constant voltage discharge"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter constant voltage discharge")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_ON;
+//            }
+//            else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucState2 == 0xE2)
+//            {
+//                ui->RTState_MEGA_Tab->setItem(2, 3, new QTableWidgetItem(QString(tr("Constant voltage charge"))));
+//                ui->Inverter_state_lab->setText(combox_MachineNumber->currentText() + " " + QString(tr("Converter constant voltage charge")));
+//                m_ptMonInfoEntry->PCSStatus.PCSStatus = PCS_ON;
+//            }
+//            else
+//            {
+
+//            }
+//        }
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucQMODE == 0xE0)//无功调节方式	E0:无 E1:功率因数调节 E2:无功功率调节 E3:夜间SVG模式
+//        {
+//            ui->RTState_Bypass_Tab->setItem(3, 3, new QTableWidgetItem(QString(tr("Disable"))));
+//        }
+//        else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucQMODE == 0xE1)
+//        {
+//            ui->RTState_Bypass_Tab->setItem(3, 3, new QTableWidgetItem(QString(tr("Pf regulation"))));
+//        }
+//        else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucQMODE == 0xE2)
+//        {
+//            ui->RTState_Bypass_Tab->setItem(3, 3, new QTableWidgetItem(QString(tr("Q regulation"))));
+//        }
+//        else //if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucQMODE == 0xE3)
+//        {
+//            ui->RTState_Bypass_Tab->setItem(3, 3, new QTableWidgetItem(QString(tr("SVG"))));
+//        }
+
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucSleep == 0xE0)//休眠	E0:未休眠 	E1:休眠
+//        {
+//            ui->RTState_Bypass_Tab->setItem(4, 3, new QTableWidgetItem(QString(tr("No dromancy"))));
+//        }
+//        else if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucSleep == 0xE1)
+//        {
+//            ui->RTState_Bypass_Tab->setItem(4, 3, new QTableWidgetItem(QString(tr("Dromant"))));
+//        }
+
+//        if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucLVRTEvent == 0xE0)//低电压穿越提示  E0:无  E1:有
+//        {
+//            ui->RTState_Bypass_Tab->setItem(5, 3, new QTableWidgetItem(QString(tr("Non"))));
+//        }
+//        else //if(m_ptModSynthesisEntry->InvInfo.SwInfo.ucLVRTEvent == 0xE1)
+//        {
+//            ui->RTState_Bypass_Tab->setItem(5, 3, new QTableWidgetItem(QString(tr("LVRT"))));
+//        }
+
+//        if(m_ptMonInfoEntry->tMonSynthState.Word2_U.tWord2Bits.bDO1 == DryEnable)
+//            ui->RTState_Bypass_Tab->setItem(0, 5, new QTableWidgetItem(QString(tr("Enable"))));
+//        else
+//            ui->RTState_Bypass_Tab->setItem(0, 5, new QTableWidgetItem(QString(tr("Disable"))));
+//        if(m_ptMonInfoEntry->tMonSynthState.Word2_U.tWord2Bits.bDO2 == DryEnable)
+//            ui->RTState_Bypass_Tab->setItem(1, 5, new QTableWidgetItem(QString(tr("Enable"))));
+//        else
+//            ui->RTState_Bypass_Tab->setItem(1, 5, new QTableWidgetItem(QString(tr("Disable"))));
+//        if(m_ptMonInfoEntry->tMonSynthState.Word2_U.tWord2Bits.bDO3 == DryEnable)
+//            ui->RTState_Bypass_Tab->setItem(2, 5, new QTableWidgetItem(QString(tr("Enable"))));
+//        else
+//            ui->RTState_Bypass_Tab->setItem(2, 5, new QTableWidgetItem(QString(tr("Disable"))));
+//        if(m_ptMonInfoEntry->tMonSynthState.Word2_U.tWord2Bits.bDI1 == DryEnable)
+//            ui->RTState_Bypass_Tab->setItem(3, 5, new QTableWidgetItem(QString(tr("Enable"))));
+//        else
+//            ui->RTState_Bypass_Tab->setItem(3, 5, new QTableWidgetItem(QString(tr("Disable"))));
+//        if(m_ptMonInfoEntry->tMonSynthState.Word2_U.tWord2Bits.bDI2 == DryEnable)
+//            ui->RTState_Bypass_Tab->setItem(4, 5, new QTableWidgetItem(QString(tr("Enable"))));
+//        else
+//            ui->RTState_Bypass_Tab->setItem(4, 5, new QTableWidgetItem(QString(tr("Disable"))));
+//        if(m_ptMonInfoEntry->tMonSynthState.Word2_U.tWord2Bits.bDI3 == DryEnable)
+//            ui->RTState_Bypass_Tab->setItem(5, 5, new QTableWidgetItem(QString(tr("Enable"))));
+//        else
+//            ui->RTState_Bypass_Tab->setItem(5, 5, new QTableWidgetItem(QString(tr("Disable"))));
+//        if(m_ptMonInfoEntry->tMonSynthState.Word2_U.tWord2Bits.bDI4 == DryEnable)
+//            ui->RTState_Bypass_Tab->setItem(6, 5, new QTableWidgetItem(QString(tr("Enable"))));
+//        else
+//            ui->RTState_Bypass_Tab->setItem(6, 5, new QTableWidgetItem(QString(tr("Disable"))));
+//        if(m_ptMonInfoEntry->tMonSynthState.Word2_U.tWord2Bits.bDI5 == DryEnable)
+//            ui->RTState_Bypass_Tab->setItem(7, 5, new QTableWidgetItem(QString(tr("Enable"))));
+//        else
+//            ui->RTState_Bypass_Tab->setItem(7, 5, new QTableWidgetItem(QString(tr("Disable"))));
+//        if(m_ptMonInfoEntry->tMonSynthState.Word2_U.tWord2Bits.bDI6 == DryEnable)
+//            ui->RTState_Bypass_Tab->setItem(8, 5, new QTableWidgetItem(QString(tr("Enable"))));
+//        else
+//            ui->RTState_Bypass_Tab->setItem(8, 5, new QTableWidgetItem(QString(tr("Disable"))));
+//    }
+
 }
 /*************************************************************************
  * 实时状态数据更新函数
@@ -736,6 +1190,130 @@ void MEGAWin::ModuleData_Tab()
         }
 
     }
+}
+
+void MEGAWin::ModuleState_Tab()
+{
+
+    QPalette pal;
+    pal.setColor(QPalette::Base, QColor(255, 0, 0));
+    pal.setColor(QPalette::AlternateBase, QColor(100, 149, 237));
+//    if(m_DspSetData.u16UpsType != Machine_MEGA_TS)
+//    {
+//        QStringList StateName_2;// << tr("DC input breaker 2")
+//#ifdef Machine_V2
+//        StateName_2 << tr("DC input breaker") << tr("DC contactor")\
+//                    << tr("Maintenance Bypass breaker") << tr("Grid breaker") << tr("Maintenance Bypass breaker");
+//#else
+//        if(m_DspSetData.u16UpsType == Machine_MEGA_TS_T)
+//        {
+//            StateName_2 << tr("DC input breaker") << tr("DC contactor")\
+//                        << tr("Output contactor") << tr("Output breaker") << tr("Maintenance Bypass breaker");
+//        }
+//        else
+//        {
+//            StateName_2 << tr("DC input breaker") << tr("DC contactor")\
+//                        << tr("Grid contactor") << tr("Grid breaker") << tr("Maintenance Bypass breaker");//  << tr("ModeLock") << tr("Bypass contactor") << tr("Bypass breaker");
+//        }
+
+//#endif
+//        QStringList StateName_3;
+//         StateName_3 << tr("Converter available") << tr("DC Soft start")\
+//                    << tr("Converter status") << tr("Reactive power Regulation")\
+//                    << tr("Sleep mode") << tr("LVRT");
+//         QStringList StateName_4;
+//          StateName_4 << tr("Generator signal") << tr("Reserve")\
+//                     << tr("Reserve") << tr("EPO contact signal 1")\
+//                     << tr("EPO contact signal 2") << tr("Access control signal")<< tr("Full power signal") << tr("Smoke alarm signal")<< tr("Hight temp. signal");
+//        ui->RTState_MEGA_Tab->clearContents();
+//        ui->RTState_MEGA_Tab->setColumnCount(6);
+//        ui->RTState_MEGA_Tab->setRowCount(9);
+//        ui->RTState_MEGA_Tab->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+//        ui->RTState_MEGA_Tab->verticalHeader()->setVisible(false);//设置垂直头不可见
+//        ui->RTState_MEGA_Tab->setFrameShape(QFrame::NoFrame);//设置无边框
+//        ui->RTState_MEGA_Tab->setShowGrid(true);//设置显示格子
+//        ui->RTState_MEGA_Tab->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+//        ui->RTState_MEGA_Tab->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
+//        ui->RTState_MEGA_Tab->setStyleSheet("selection-background-color:lightblue;");
+//        QStringList StateList_2;
+//        StateList_2 << tr("Name") << tr("Value")<< tr("Name") << tr("Value");
+//        ui->RTState_MEGA_Tab->setHorizontalHeaderLabels(StateList_2);
+//        ui->RTState_MEGA_Tab->setColumnWidth(0,150);
+//        ui->RTState_MEGA_Tab->setColumnWidth(1,100);
+//        ui->RTState_MEGA_Tab->setColumnWidth(2,150);
+//        ui->RTState_MEGA_Tab->setColumnWidth(3,100);
+//        ui->RTState_MEGA_Tab->setColumnWidth(4,150);
+//        ui->RTState_MEGA_Tab->horizontalHeader()->setStretchLastSection(5);
+//        for(int i = 0; i < StateName_2.size(); i++)
+//        {
+//            ui->RTState_MEGA_Tab->setItem(i, 0, new QTableWidgetItem(StateName_2.at(i)));
+//        }
+//        for(int j = 0; j < StateName_3.size(); j++)
+//        {
+//            ui->RTState_MEGA_Tab->setItem(j, 2, new QTableWidgetItem(StateName_3.at(j)));
+//        }
+//        for(int k = 0; k < StateName_4.size(); k++)
+//        {
+//            ui->RTState_MEGA_Tab->setItem(k, 4, new QTableWidgetItem(StateName_4.at(k)));
+//        }
+//        ui->RTState_MEGA_Tab->resizeRowsToContents();
+//    }
+//    else
+    {
+        QStringList RTState_Bypass_List1;// << tr("DC input breaker 2")
+#ifdef Machine_V2
+        RTState_Bypass_List1 << tr("DC input breaker")<< tr("DC contactor")\
+            << tr("Output contactor") << tr("Output breaker") << tr("Maintenance Bypass breaker") << tr("Grid breaker");
+#else
+        RTState_Bypass_List1 << tr("DC input breaker")<< tr("DC contactor")\
+                    << tr("Output contactor") << tr("Output breaker") << tr("Grid contactor") << tr("Grid breaker") << tr("Maintenance Bypass breaker");
+#endif
+        QStringList RTState_Bypass_List2;
+         RTState_Bypass_List2 << tr("converter available") << tr("DC Soft start")\
+                    << tr("converter status") << tr("Reactive power Regulation")\
+                    << tr("Sleep mode") << tr("LVRT");
+         QStringList RTState_Bypass_List4;
+          RTState_Bypass_List4 << tr("Generator signal") << tr("Reserve")\
+                               << tr("Reserve") << tr("EPO contact signal 1")\
+                               << tr("EPO contact signal 2") << tr("Access control signal")<< tr("Full power signal") << tr("Smoke alarm signal")<< tr("Hight temp. signal");
+
+        ui->RTState_Bypass_Tab->setColumnCount(6);
+        ui->RTState_Bypass_Tab->setRowCount(9);
+        ui->RTState_Bypass_Tab->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+        ui->RTState_Bypass_Tab->verticalHeader()->setVisible(false);//设置垂直头不可见
+        ui->RTState_Bypass_Tab->setFrameShape(QFrame::NoFrame);//设置无边框
+        ui->RTState_Bypass_Tab->setShowGrid(true);//设置显示格子
+        ui->RTState_Bypass_Tab->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+        ui->RTState_Bypass_Tab->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
+        ui->RTState_Bypass_Tab->setStyleSheet("selection-background-color:lightblue;");
+        QStringList StateList_Bypass;
+        StateList_Bypass << tr("Name") << tr("Value")<< tr("Name") << tr("Value")<< tr("Name") << tr("Value");
+        ui->RTState_Bypass_Tab->setHorizontalHeaderLabels(StateList_Bypass);
+        ui->RTState_Bypass_Tab->setColumnWidth(0,220);
+        ui->RTState_Bypass_Tab->setColumnWidth(1,100);
+        ui->RTState_Bypass_Tab->setColumnWidth(2,220);
+        ui->RTState_Bypass_Tab->setColumnWidth(3,100);
+        ui->RTState_Bypass_Tab->setColumnWidth(4,220);
+        ui->RTState_Bypass_Tab->setColumnWidth(5,100);
+//        ui->RTState_Bypass_Tab->horizontalHeader()->setStretchLastSection(5);
+        for(int i = 0; i < RTState_Bypass_List1.size(); i++)
+        {
+            ui->RTState_Bypass_Tab->setItem(i, 0, new QTableWidgetItem(RTState_Bypass_List1.at(i)));
+            ui->RTState_Bypass_Tab->item(i, 0)->setTextAlignment(Qt::AlignCenter);
+        }
+        for(int j = 0; j < RTState_Bypass_List2.size(); j++)
+        {
+            ui->RTState_Bypass_Tab->setItem(j, 2, new QTableWidgetItem(RTState_Bypass_List2.at(j)));
+            ui->RTState_Bypass_Tab->item(j, 2)->setTextAlignment(Qt::AlignCenter);
+        }
+        for(int k = 0; k < RTState_Bypass_List4.size(); k++)
+        {
+            ui->RTState_Bypass_Tab->setItem(k, 4, new QTableWidgetItem(RTState_Bypass_List4.at(k)));
+            ui->RTState_Bypass_Tab->item(k, 4)->setTextAlignment(Qt::AlignCenter);
+        }
+        ui->RTState_Bypass_Tab->resizeRowsToContents();
+    }
+
 }
 
 
