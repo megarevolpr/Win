@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QComboBox>
+#include <QPair>
+#include <QList>
 #include "Menu.h"
 #include "msgbox.h"
 
@@ -56,6 +58,7 @@ public:
         QStringList combox_CM;
         short combox_ControlMode_index;
 
+
         QComboBox * combox_MachineNumber;   //设备号
         QStringList combox_MNumber;
         QString MachineNumber_str;
@@ -70,20 +73,59 @@ public:
         QString combox_UnbalancePowerEnable_str;
         short combox_UnbalancePowerEnable_index;
 
-
-
-//        QString combox_UnbalancePowerEnable_str;
-//        short combox_UnbalancePowerEnable_index;
-
         Menu *m_menu;
 
         void GeneralParam_tbnt_released();//一般参数槽
 
         QComboBox *combox_ui_OnOff_Grid;//并离网
+
+        QPushButton *Phase_C_power_btn;
         QPushButton *AdvancedSetup_btn;//高级设置入口
 
         QPushButton *Constant_power_explain;    //功率说明
 
+        QList<QPair<QPushButton *, int> > PCS_pairList;
+        QList<QString> hand_name;
+        QList<QString> btn_explain;
+
+        //实时数据
+        QPushButton *PCS_vol_AB_btn;
+        QPushButton *PCS_vol_BC_btn;
+        QPushButton *PCS_vol_CA_btn;
+        QPushButton *PCS_cur_A_btn;
+        QPushButton *PCS_cur_B_btn;
+        QPushButton *PCS_cur_C_btn;
+        QPushButton *PCS_act_P_btn;     //有功功率
+        QPushButton *PCS_rea_P_btn;     //无功功率
+        QPushButton *PCS_par_P_btn;     //视在功率
+        QPushButton *PCS_Pf_btn;        //功率因数
+        QPushButton *PCS_Bat_vol_btn;   //电池电压
+        QPushButton *PCS_Bat_cur_btn;   //电池电流
+        QPushButton *PCS_Bat_P_btn;     //电池功率
+        QPushButton *PCS_Bus_vol_btn;   //母线电压
+        QPushButton *PCS_IGBT_T_btn;    //IGBT温度
+        QPushButton *PCS_Env_T_btn;     //环境温度
+
+        QButtonGroup* pButtonGroup;
+
+        QPushButton *Grid_vol_AB_btn;     //
+//        QPushButton *Grid_vol_BC_btn;
+//        QPushButton *Grid_vol_CA_btn;
+//        QPushButton *Grid_cur_A_btn;
+//        QPushButton *Grid_cur_B_btn;
+//        QPushButton *Grid_cur_C_btn;
+
+//        QPushButton *Grid_act_P_btn;     //有功功率
+//        QPushButton *Grid_rea_P_btn;     //无功功率
+//        QPushButton *Grid_app_P_btn;     //视在功率
+//        QPushButton *Grid_vol_AB_btn;
+//        QPushButton *Grid_vol_AB_btn;
+
+//        QPushButton *Grid_fre_btn;
+//        QPushButton *Grid_vol_AB_btn;
+//        QPushButton *Grid_vol_AB_btn;
+//        QPushButton *Grid_vol_AB_btn;
+//        QPushButton *Grid_vol_AB_btn;
 
 
         void UIPageInit();//初始化界面
@@ -119,7 +161,7 @@ private slots:
     void My_menuAction(int Index);
 //    bool PasswordCheck();
     void SystemParam_tbnt_released();
-    void AdvancedSetup_btn_clicked();
+
     void combox_ui_GridMode_change();
     void combox_ui_OnOff_Grid_change();//并离网
 
@@ -141,8 +183,16 @@ private slots:
     void on_TimeSeting_btn_released();
 
     void on_Run_tabWidget_tabBarClicked(int index); //实时数据界面选项卡点击响应
-
+    void combox_ControlMode_change();
     void Constant_power_explain_clicked();//功率说明
+    void Phase_C_power_btn_clicked();//C相功率
+    void AdvancedSetup_btn_clicked();//高级
+    void ToSetButton();
+
+    /******************************PCS数据********************************/
+    void slot_btnGroupClicked(int);
+
+
 private:
     Ui::MEGAWin *ui;
 

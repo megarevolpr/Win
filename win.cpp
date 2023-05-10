@@ -9,7 +9,7 @@
 #include "UI_Menu/Menu.h"
 #include <QDebug>
 #include <QMessageBox>
-
+#include <QButtonGroup>
 
 #define NULL_page   0
 #define Machine_MEGA 1
@@ -68,6 +68,7 @@ void MEGAWin::MemoryAllocation()
     combox_ui_GridMode =   new QComboBox();             //并网方式
     combox_ui_GridMode->setView(new QListView());
 
+    /*******************************系统设置************************************/
     combox_ui_ChargeDischar =   new QComboBox();        //充放电设置
     combox_ui_ChargeDischar->setView(new QListView());
 
@@ -89,8 +90,32 @@ void MEGAWin::MemoryAllocation()
     combox_UnbalancePowerEnable = new QComboBox();      //功率不平衡使能
     combox_UnbalancePowerEnable->setView(new QListView());
 
-    AdvancedSetup_btn = new QPushButton;
-    Constant_power_explain = new QPushButton;
+    Constant_power_explain = new QPushButton;           //恒功率
+
+    Phase_C_power_btn = new QPushButton;                //C相功率
+    AdvancedSetup_btn = new QPushButton;                //高级设置
+
+    /*****************************PCS数据****************************************/
+    PCS_vol_AB_btn = new QPushButton;
+    PCS_vol_BC_btn = new QPushButton;
+    PCS_vol_CA_btn = new QPushButton;
+    PCS_cur_A_btn  = new QPushButton;
+    PCS_cur_B_btn  = new QPushButton;
+    PCS_cur_C_btn  = new QPushButton;
+    PCS_act_P_btn  = new QPushButton;
+    PCS_rea_P_btn  = new QPushButton;
+    PCS_par_P_btn  = new QPushButton;
+    PCS_Pf_btn     = new QPushButton;
+    PCS_Bat_vol_btn= new QPushButton;
+    PCS_Bat_cur_btn= new QPushButton;
+    PCS_Bat_P_btn  = new QPushButton;
+    PCS_Bus_vol_btn= new QPushButton;
+    PCS_IGBT_T_btn = new QPushButton;
+    PCS_Env_T_btn  = new QPushButton;
+
+    pButtonGroup   = new QButtonGroup();
+    Grid_vol_AB_btn  = new QPushButton;
+
 }
 
 void MEGAWin::FirstPage()
@@ -114,14 +139,7 @@ void MEGAWin::RunStatePage()
 }
 
 /***************************************************************
- * @brief SystemSettingPage init
- * #attribute   Fuction
- * @param non       @see  non
- * @param Non         @see Non
- *
- * @return Non
- *     -<em>false</em> fail
- *     -<em>true</em> succeed
+ * 系统设置页面初始化
  ***************************************************************/
 void MEGAWin::SystemSettingPage()
 {
@@ -194,7 +212,7 @@ void MEGAWin::UserParam_tab()
     ui->System_Tab->setRowHeight(4, 50);
     ui->System_Tab->setColumnWidth(5,163);
     ui->System_Tab->setRowHeight(5, 50);
-//    ui->System_Tab->horizontalHeader()->setStretchLastSection(3);
+    ui->System_Tab->horizontalHeader()->setStretchLastSection(3);
 
 
     //并离网
@@ -243,6 +261,7 @@ void MEGAWin::UserParam_tab()
     combox_UnbalancePowerEnable_str = combox_UnbalancePowerEnable->currentText();
     combox_UnbalancePowerEnable_index = combox_UnbalancePowerEnable->currentIndex();
 
+    Phase_C_power_btn->setText(tr("5"));
     AdvancedSetup_btn->setText(tr("Advance setting"));
     Constant_power_explain->setText(tr("0"));
 
@@ -255,14 +274,15 @@ void MEGAWin::UserParam_tab()
     ui->System_Tab->setCellWidget(2,4, (QWidget *)combox_Parallel);             //并机
     ui->System_Tab->setCellWidget(3,4, (QWidget *)combox_UnbalancePowerEnable); //功率不平衡使能
 
-    ui->System_Tab->setCellWidget(7,4, (QWidget *)AdvancedSetup_btn);          //高级设置
     ui->System_Tab->setCellWidget(1,1, (QWidget *)Constant_power_explain);
+    ui->System_Tab->setCellWidget(6,4, (QWidget *)Phase_C_power_btn);          //C相功率
+    ui->System_Tab->setCellWidget(7,4, (QWidget *)AdvancedSetup_btn);          //高级设置
 }
 
 void MEGAWin::RTData_Anologe()
 {
     ui->RTDataModel_tableWidget->clearContents();//防止内存泄漏
-    ModuleData_Tab();
+//    ModuleData_Tab();
 //    if(ui->UI_SystemParameter_Tab->item(1, 5)->text() != Machine_MEGA_TS)
 //    {
 //        ui->RTDataModel_tableWidget->setItem(0, 1, new QTableWidgetItem(QString::number(m_ptModInfoEntry->InvInfo.AnlogInfo.GridVolt.u16Line_ab * 0.1)+"V"));           //电网电压AB
@@ -949,8 +969,11 @@ void MEGAWin::AdvancedSetup_btn_clicked()
 //    {
         ui->UI_stackedWidget->setCurrentWidget(ui->BasicSet_page);
         SystemParam_tbnt_released();
-//    }
+        //    }
 }
+
+
+
 
 /***************************************************************
  * @brief Connected relation function 连通关系函数
@@ -967,149 +990,24 @@ void MEGAWin::LinkRelationship()
     connect(combox_ui_OnOff_Grid, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ui_OnOff_Grid_change()));//并离网
 
     connect(combox_ControlMode, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ControlMode_change()));//控制模式
-    connect(AdvancedSetup_btn,SIGNAL(clicked(bool)), this, SLOT(AdvancedSetup_btn_clicked()));//高级设置
-    connect(Constant_power_explain,SIGNAL(clicked(bool)), this, SLOT(Constant_power_explain_clicked()));//高级设置
 
+    connect(Constant_power_explain,SIGNAL(clicked(bool)), this, SLOT(Constant_power_explain_clicked()));//恒功率
+    connect(Phase_C_power_btn ,SIGNAL(clicked(bool)), this, SLOT(Constant_power_explain_clicked()));//C相功率
+    connect(AdvancedSetup_btn,SIGNAL(clicked(bool)), this, SLOT(AdvancedSetup_btn_clicked()));//高级设置
 
     connect(ui->Bypass_Batt_btn, SIGNAL(clicked()), this, SLOT(on_Batt_btn_released()));    //主页电池按钮跳转电池信息
     connect(ui->Bypass_Running_btn, SIGNAL(clicked()), this, SLOT(on_Running_btn_clicked()));   //主页变流器按钮跳转变流器实时数据
     connect(ui->Bypass_Grid_btn, SIGNAL(clicked()), this, SLOT(on_Grid_clicked()));    //主页电网按钮跳转电网实时数据
     connect(ui->Bypass_Load_Btn, SIGNAL(clicked()), this, SLOT(on_Load_clicked()));    //主页负载按钮跳转负载实时数据
 
+    //关联实时数据点击槽函数
+    connect(pButtonGroup, SIGNAL(buttonClicked(int)), this, SLOT(slot_btnGroupClicked(int)));
 }
 /******************************************************************************
  * 模块实时数据表初始化
- *
- *
- *
- *
- *
  * ***************************************************************************/
 void MEGAWin::ModuleData_Tab()
 {
-//    if(ui->UI_SystemParameter_Tab->item(1, 5)->text() != Machine_MEGA_TS)
-//    {
-//        //设置表格背景颜色
-//        QPalette pal;
-//        pal.setColor(QPalette::Base, QColor(255, 0, 0));
-//        pal.setColor(QPalette::AlternateBase, QColor(100, 149, 237));
-//        ui->RTDataModel_tableWidget->setPalette(pal);
-//        ui->RTDataModel_tableWidget->setAlternatingRowColors(true);
-
-//        ui->RTDataModel_tableWidget->clearContents();
-//        ui->RTDataModel_tableWidget->setColumnCount(6);
-//        ui->RTDataModel_tableWidget->setRowCount(12);
-//        QStringList List1;
-//        List1 << tr("Name") << tr("Value") << tr("Name") << tr("Value") << tr("Name") << tr("Value");
-//        ui->RTDataModel_tableWidget->setHorizontalHeaderLabels(List1);
-
-//        ui->RTDataModel_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
-//        ui->RTDataModel_tableWidget->verticalHeader()->setVisible(false);//设置垂直头不可见
-//        ui->RTDataModel_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
-//        ui->RTDataModel_tableWidget->setShowGrid(true);//设置不显示格子
-//        ui->RTDataModel_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
-//        ui->RTDataModel_tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
-//        ui->RTDataModel_tableWidget->setStyleSheet("selection-background-color:lightblue;");
-
-//        ui->RTDataModel_tableWidget->setColumnWidth(0,150);
-//        ui->RTDataModel_tableWidget->setColumnWidth(1,100);
-//        ui->RTDataModel_tableWidget->setColumnWidth(2,150);
-//        ui->RTDataModel_tableWidget->setColumnWidth(3,100);
-//        ui->RTDataModel_tableWidget->setColumnWidth(4,150);
-//    //    ui->RTDataModel1_tableWidget->setColumnWidth(3,100);
-//        ui->RTDataModel_tableWidget->horizontalHeader()->setStretchLastSection(5);
-
-//        QStringList ModuleName;//离网//<< tr("Inductance Temp.")
-//        ModuleName << tr("Lin-Vol(AB)") << tr("Lin-Vol(BC)") << tr("Lin-Vol(CA)")
-//                   << tr("Output Cur.(A)") << tr("Output Cur.(B)")<< tr("Output Cur.(C)")
-//                   << tr("Active Power") << tr("Reactive Power") << tr("Parent Power")
-//                   << tr("Output Pf") << tr("-")<< tr("-")
-
-//                   << tr("Inv. Vol(AB)")<< tr("Inv. Vol(BC)") << tr("Inv. Vol(CA)")
-//                   << tr("Inv. Cur(AB)")<< tr("Inv. Cur(BC)") << tr("Inv. Cur(CA)")
-//                   << tr("Inv.Active P.") << tr("Inv. Reactive P.")<< tr("Inv. Parent P.")
-//                   << tr("-") << tr("-")<< tr("-")
-
-//                   << tr("Bat Vol.") << tr("Bat Cur.") << tr("Bat Power")<< tr("Bus Vol.")
-//                   << tr("IGBT Temp.") << tr("Env. Temp.")
-//                   << tr("Grid frequency") << tr("-") << tr("-")
-//                   << tr("-") << tr("-")<< tr("-");
-
-//        QStringList ModuleName_1;//并网// << tr("Inductance Temp.")
-//        ModuleName_1 << tr("Grid Vol.(AB)") << tr("Grid Vol.(BC)") << tr("Grid Vol.(CA)")
-//                   << tr("Grid Cur.(A)") << tr("Grid Cur.(B)")<< tr("Grid Cur.(C)")
-//                   << tr("Grid Active P.") << tr("Grid Reactive P.") << tr("Grid Parent P.")
-//                   << tr("Grid Pf") << tr("-")<< tr("-")
-
-//                   << tr("Inv. Vol(AB)")<< tr("Inv. Vol(BC)") << tr("Inv. Vol(CA)")
-//                   << tr("Inv. Cur(AB)")<< tr("Inv. Cur(BC)") << tr("Inv. Cur(CA)")
-//                   << tr("Inv.Active P.") << tr("Inv. Reactive P.")<< tr("Inv. Parent P.")
-//                   << tr("-") << tr("-")<< tr("-")
-
-//                   << tr("Bat Vol.") << tr("Bat Cur.") << tr("Bat P")<< tr("Bus Vol.")
-//                   << tr("IGBT Temp.")<< tr("Env. Temp.") << tr("Grid Frequency")
-//                   << tr("-") << tr("-")
-//                   << tr("-") << tr("-")<< tr("-");
-
-//        for(int i = 0; i < 3; i++)
-//        {
-//            for(int j = 0; j < 12; j++)
-//            {
-//                if(0 == i)
-//                {
-//                    if(m_DspSetData.u16OnOffGrid == 1)
-//                    {
-//                        ui->RTDataModel_tableWidget->setItem(j, i, new QTableWidgetItem(ModuleName.at(j)));
-//                        ui->RTDataModel_tableWidget->item(j, i)->setTextAlignment(Qt::AlignCenter);
-//                    }
-//                    else
-//                    {
-//                        ui->RTDataModel_tableWidget->setItem(j, i, new QTableWidgetItem(ModuleName_1.at(j)));
-//                        ui->RTDataModel_tableWidget->item(j, i)->setTextAlignment(Qt::AlignCenter);
-//                    }
-//                }
-//                else if(1 == i)
-//                {
-//                    int a = 12 + j;
-//                    if(a < ModuleName.size())
-//                    {
-//                        if(m_DspSetData.u16OnOffGrid == 1)
-//                        {
-//                            ui->RTDataModel_tableWidget->setItem(j, (i + 1), new QTableWidgetItem(ModuleName.at(a)));
-//                            ui->RTDataModel_tableWidget->item(j, (i + 1))->setTextAlignment(Qt::AlignCenter);
-//                        }
-//                        else
-//                        {
-//                            ui->RTDataModel_tableWidget->setItem(j, (i + 1), new QTableWidgetItem(ModuleName_1.at(a)));
-//                            ui->RTDataModel_tableWidget->item(j, (i + 1))->setTextAlignment(Qt::AlignCenter);
-//                        }
-//                    }
-//                }
-//                else
-//                {
-//                    int a = 24 + j;
-//                    if(a < ModuleName.size())
-//                    {
-//                        if(m_DspSetData.u16OnOffGrid == 1)
-//                        {
-//                            ui->RTDataModel_tableWidget->setItem(j, (i + 2), new QTableWidgetItem(ModuleName.at(a)));
-//                            ui->RTDataModel_tableWidget->item(j, (i + 2))->setTextAlignment(Qt::AlignCenter);
-//                        }
-//                        else
-//                        {
-//                            ui->RTDataModel_tableWidget->setItem(j, (i + 2), new QTableWidgetItem(ModuleName_1.at(a)));
-//                            ui->RTDataModel_tableWidget->item(j, (i + 2))->setTextAlignment(Qt::AlignCenter);
-//                        }
-
-//                    }
-//                }
-
-//            }
-//    //    ui->RTDataModel_tableWidget->resizeColumnsToContents();
-//        }
-//    }
-//    else
-    {
         ui->Converter_Tab->clearContents();
         ui->Grid_Tab->clearContents();
         ui->Load_Tab->clearContents();
@@ -1176,6 +1074,7 @@ void MEGAWin::ModuleData_Tab()
             ui->Converter_Tab->setItem(i, 2, new QTableWidgetItem(Converter_Tablist2.at(i)));
         }
 
+
         ui->Grid_Tab->setPalette(pal);
         ui->Grid_Tab->setAlternatingRowColors(true);
         QStringList Grid_TabList;
@@ -1217,7 +1116,11 @@ void MEGAWin::ModuleData_Tab()
             ui->Load_Tab->item(i, 0)->setTextAlignment(Qt::AlignCenter);
         }
 
-    }
+
+        //绘制button
+        ToSetButton();
+
+
 }
 
 void MEGAWin::ModuleState_Tab()
@@ -1341,6 +1244,7 @@ void MEGAWin::ModuleState_Tab()
         }
         ui->RTState_Bypass_Tab->resizeRowsToContents();
     }
+
 
 }
 
@@ -1708,6 +1612,54 @@ void MEGAWin::on_Run_tabWidget_tabBarClicked(int index) //实时数据界面选�
 
 }
 
+void MEGAWin::combox_ControlMode_change()
+{
+    QString STR;
+}
+
+void MEGAWin::ToSetButton()
+{
+    QPushButton * btn_name[] ={PCS_vol_AB_btn,PCS_vol_BC_btn,PCS_vol_CA_btn,PCS_cur_A_btn,PCS_cur_B_btn, PCS_cur_C_btn,\
+                              PCS_act_P_btn,PCS_rea_P_btn,PCS_par_P_btn,PCS_Pf_btn,\
+                              PCS_Bat_vol_btn,PCS_Bat_cur_btn,PCS_Bat_P_btn,PCS_Bus_vol_btn,PCS_IGBT_T_btn,PCS_Env_T_btn,\
+                              Grid_vol_AB_btn};
+
+
+    for (int i=0;i<sizeof(btn_name)/sizeof(btn_name[0]);i++)
+    {
+//        PCS_pairList.append(qMakePair(btn_name[i],i));
+
+        if(i<=9){
+            btn_name[i]->setText(tr("1"));
+            ui->Converter_Tab->setCellWidget(i,1,(QWidget *)btn_name[i]);
+            pButtonGroup->addButton(btn_name[i], i);
+        }
+        else if (i<=15) {
+            btn_name[i]->setText(tr("2"));
+            ui->Converter_Tab->setCellWidget(i%10,3,(QWidget *)btn_name[i]);
+            pButtonGroup->addButton(btn_name[i], i);
+        }
+        else if (i<=26) {
+            btn_name[i]->setText(tr("3"));
+            ui->Grid_Tab->setCellWidget(i%16,1,(QWidget *)btn_name[i]);
+            pButtonGroup->addButton(btn_name[i], i);
+        }
+        else if (i<=36) {
+            btn_name[i]->setText(tr("4"));
+            ui->Converter_Tab->setCellWidget(i%27,1,(QWidget *)btn_name[i]);
+            pButtonGroup->addButton(btn_name[i], i);
+        }
+    }
+//    for (QPair<QPushButton *, QString> pair : PCS_pairList) {
+//        qDebug() << "Key: " << pair.first; // 获取第一个值
+//        qDebug() << "Value: " << pair.second; // 获取第二个值
+
+//        pair.first->setText(tr("%1").append(pair.second));
+//        ui->Converter_Tab->setCellWidget(0,1,(QWidget *)pair.first);
+//    }
+}
+
+
 void MEGAWin::Constant_power_explain_clicked()  //功率说明
 {
 //    QMessageBox::information(this, "Constant power", "You can modify the power of the converter by modifying the value", QMessageBox::Ok);
@@ -1715,5 +1667,21 @@ void MEGAWin::Constant_power_explain_clicked()  //功率说明
 
 //    QMessageBox msgBox;
 //    msgBox.setText("Constant_power_explain_clicked");
-//    msgBox.exec();
+    //    msgBox.exec();
+}
+
+void MEGAWin::Phase_C_power_btn_clicked()
+{
+    QMessageBox::about(this, "Phase Cpower", "C-phase power");
+}
+
+void MEGAWin::slot_btnGroupClicked(int nid)
+{
+    hand_name.prepend("Phase Cpower");
+    btn_explain.prepend("C-phase power 0");
+
+//    qDebug() << hand_name.size() <<nid;
+
+    QMessageBox::about(this, "Phase Cpower", "C-phase power 1");
+
 }
