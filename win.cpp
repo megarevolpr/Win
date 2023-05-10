@@ -8,6 +8,7 @@
 #include <qlistview.h>
 #include "UI_Menu/Menu.h"
 #include <QDebug>
+#include <QMessageBox>
 
 
 #define NULL_page   0
@@ -89,6 +90,7 @@ void MEGAWin::MemoryAllocation()
     combox_UnbalancePowerEnable->setView(new QListView());
 
     AdvancedSetup_btn = new QPushButton;
+    Constant_power_explain = new QPushButton;
 }
 
 void MEGAWin::FirstPage()
@@ -242,6 +244,8 @@ void MEGAWin::UserParam_tab()
     combox_UnbalancePowerEnable_index = combox_UnbalancePowerEnable->currentIndex();
 
     AdvancedSetup_btn->setText(tr("Advance setting"));
+    Constant_power_explain->setText(tr("0"));
+
     ui->System_Tab->setCellWidget(0,1, (QWidget *)combox_ui_OnOff_Grid);        //并离网
     ui->System_Tab->setCellWidget(2,1, (QWidget *)combox_ui_ChargeDischar);     //充放电设置
     ui->System_Tab->setCellWidget(3,1, (QWidget *)combox_RUN);                  //运行模式
@@ -250,7 +254,9 @@ void MEGAWin::UserParam_tab()
     ui->System_Tab->setCellWidget(1,4, (QWidget *)combox_MachineNumber);        //设备号
     ui->System_Tab->setCellWidget(2,4, (QWidget *)combox_Parallel);             //并机
     ui->System_Tab->setCellWidget(3,4, (QWidget *)combox_UnbalancePowerEnable); //功率不平衡使能
+
     ui->System_Tab->setCellWidget(7,4, (QWidget *)AdvancedSetup_btn);          //高级设置
+    ui->System_Tab->setCellWidget(1,1, (QWidget *)Constant_power_explain);
 }
 
 void MEGAWin::RTData_Anologe()
@@ -962,6 +968,7 @@ void MEGAWin::LinkRelationship()
 
     connect(combox_ControlMode, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ControlMode_change()));//控制模式
     connect(AdvancedSetup_btn,SIGNAL(clicked(bool)), this, SLOT(AdvancedSetup_btn_clicked()));//高级设置
+    connect(Constant_power_explain,SIGNAL(clicked(bool)), this, SLOT(Constant_power_explain_clicked()));//高级设置
 
 
     connect(ui->Bypass_Batt_btn, SIGNAL(clicked()), this, SLOT(on_Batt_btn_released()));    //主页电池按钮跳转电池信息
@@ -1679,7 +1686,7 @@ void MEGAWin::on_TimeSeting_btn_released()
 //    set->show();
 }
 
-void MEGAWin::on_Run_tabWidget_tabBarClicked(int index)
+void MEGAWin::on_Run_tabWidget_tabBarClicked(int index) //实时数据界面选项卡点击响应
 {
 //    qDebug("on_Run_tabWidget_tabBarClicked%d\n", index);
     switch (index) {
@@ -1699,4 +1706,14 @@ void MEGAWin::on_Run_tabWidget_tabBarClicked(int index)
         break;
     }
 
+}
+
+void MEGAWin::Constant_power_explain_clicked()  //功率说明
+{
+//    QMessageBox::information(this, "Constant power", "You can modify the power of the converter by modifying the value", QMessageBox::Ok);
+    QMessageBox::about(this, "Constant power", "You can modify the power of the converter by modifying the value");
+
+//    QMessageBox msgBox;
+//    msgBox.setText("Constant_power_explain_clicked");
+//    msgBox.exec();
 }

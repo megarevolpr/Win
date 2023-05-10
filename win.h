@@ -2,8 +2,9 @@
 #define MEGAWIN_H
 
 #include <QWidget>
-#include "Menu.h"
 #include <QComboBox>
+#include "Menu.h"
+#include "msgbox.h"
 
 
 //QComboBox * combox_OutPower;
@@ -79,7 +80,9 @@ public:
         void GeneralParam_tbnt_released();//一般参数槽
 
         QComboBox *combox_ui_OnOff_Grid;//并离网
-        QPushButton *AdvancedSetup_btn;//高级设置
+        QPushButton *AdvancedSetup_btn;//高级设置入口
+
+        QPushButton *Constant_power_explain;    //功率说明
 
 
 
@@ -137,8 +140,9 @@ private slots:
 
     void on_TimeSeting_btn_released();
 
-    void on_Run_tabWidget_tabBarClicked(int index);
+    void on_Run_tabWidget_tabBarClicked(int index); //实时数据界面选项卡点击响应
 
+    void Constant_power_explain_clicked();//功率说明
 private:
     Ui::MEGAWin *ui;
 
