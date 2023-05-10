@@ -101,8 +101,10 @@ public:
         void ModuleData_Tab();//模块数据表格初始化
 
         void ModuleState_Tab();//实时状态表初始化
-
         void UserParam_tab();//一般设置表初始化
+
+
+        void BatterySet_tab();//电池设置表初始化
 
 
         void RTData_Anologe();//实时模拟量数据

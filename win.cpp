@@ -92,7 +92,16 @@ void MEGAWin::MemoryAllocation()
     AdvancedSetup_btn = new QPushButton;
     Constant_power_explain = new QPushButton;
 }
-
+/***************************************************************
+ * @brief HOSTPAGE init
+ * #attribute   Fuction
+ * @param non       @see  non
+ * @param Non         @see Non
+ *
+ * @return Non
+ *     -<em>false</em> fail
+ *     -<em>true</em> succeed
+ ***************************************************************/
 void MEGAWin::FirstPage()
 {
 
@@ -105,7 +114,16 @@ void MEGAWin::FirstPage()
     ui->Bypass_Batt_btn->setFlat(true);
     ui->Bypass_Batt_btn->setFocusPolicy(Qt::NoFocus);
 }
-
+/***************************************************************
+ * @brief RunStatePage init
+ * #attribute   Fuction
+ * @param non       @see  non
+ * @param Non         @see Non
+ *
+ * @return Non
+ *     -<em>false</em> fail
+ *     -<em>true</em> succeed
+ ***************************************************************/
 void MEGAWin::RunStatePage()
 {
     ModuleData_Tab();
@@ -136,7 +154,7 @@ void MEGAWin::SystemSettingPage()
     /*设备信息表*/
 //    EquipmentInfor_tab();
     /*铅酸电池设置表*/
-//    BatterySet_tab();
+    BatterySet_tab();
     /*自动运行时间设置表*/
     //    RunTimeSet_tab();
 }
@@ -258,7 +276,32 @@ void MEGAWin::UserParam_tab()
     ui->System_Tab->setCellWidget(7,4, (QWidget *)AdvancedSetup_btn);          //高级设置
     ui->System_Tab->setCellWidget(1,1, (QWidget *)Constant_power_explain);
 }
-
+/******************************************************************************
+ * 电池设置表初始化
+ *
+ *
+ *
+ *
+ *
+ * ***************************************************************************/
+void MEGAWin::BatterySet_tab()
+{
+    ui->Lithum_Tab->setColumnWidth(0,250);
+    ui->Lithum_Tab->setColumnWidth(1,120);
+    ui->Lithum_Tab->setColumnWidth(2,100);
+    ui->Lithum_Tab->setColumnWidth(3,250);
+    ui->Lithum_Tab->setColumnWidth(4,120);
+    ui->Lithum_Tab->setColumnWidth(5,100);
+//    ui->Lithum_Tab->horizontalHeader()->setStretchLastSection(5);
+}
+/******************************************************************************
+ * 实时数据——模拟量
+ *
+ *
+ *
+ *
+ *
+ * ***************************************************************************/
 void MEGAWin::RTData_Anologe()
 {
     ui->RTDataModel_tableWidget->clearContents();//防止内存泄漏
@@ -1219,7 +1262,14 @@ void MEGAWin::ModuleData_Tab()
 
     }
 }
-
+/******************************************************************************
+ * 模块实时状态表初始化
+ *
+ *
+ *
+ *
+ *
+ * ***************************************************************************/
 void MEGAWin::ModuleState_Tab()
 {
 
