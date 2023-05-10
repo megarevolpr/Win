@@ -152,7 +152,7 @@ void MEGAWin::SystemSettingPage()
 //    BMSProtection_tab();
 //    DebugParam_tab();
     /*设备信息表*/
-//    EquipmentInfor_tab();
+    EquipmentInfor_tab();
     /*铅酸电池设置表*/
     BatterySet_tab();
     /*自动运行时间设置表*/
@@ -277,6 +277,41 @@ void MEGAWin::UserParam_tab()
     ui->System_Tab->setCellWidget(1,1, (QWidget *)Constant_power_explain);
 }
 /******************************************************************************
+ * 设备信息表表初始化
+ *
+ *
+ *
+ *
+ *
+ * ***************************************************************************/
+void MEGAWin::EquipmentInfor_tab()
+{
+    ui->EquipmentInfor_tableWidget->clearContents();
+    ui->EquipmentInfor_tableWidget->setColumnCount(2);
+    ui->EquipmentInfor_tableWidget->setRowCount(9);
+    ui->EquipmentInfor_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+    ui->EquipmentInfor_tableWidget->verticalHeader()->setVisible(false);//设置垂直头不可见
+    ui->EquipmentInfor_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
+    ui->EquipmentInfor_tableWidget->setShowGrid(true);//设置显示格子
+    ui->EquipmentInfor_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+    ui->EquipmentInfor_tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
+    ui->EquipmentInfor_tableWidget->setStyleSheet("selection-background-color:lightblue;");
+
+    //将设备信息显示到LCD上
+    QStringList List4;
+    List4 << tr("Name") << tr("Information") ;
+    ui->EquipmentInfor_tableWidget->setHorizontalHeaderLabels(List4);
+    ui->EquipmentInfor_tableWidget->setColumnWidth(0,240);
+    ui->EquipmentInfor_tableWidget->horizontalHeader()->setStretchLastSection(1);//自动占用剩余空间
+    QStringList Display_Par4;
+    Display_Par4 << tr("Converter type") << tr("Manufacturer name") << tr("Monitoring software version") << tr("Protocol version") << tr("Converter software version")
+                << tr("CPLD software version") << "SN:";
+    for(int i = 0; i < Display_Par4.size(); i++)
+    {
+        ui->EquipmentInfor_tableWidget->setItem(i, 0, new QTableWidgetItem(QString(Display_Par4.at(i))));
+    }
+}
+/******************************************************************************
  * 电池设置表初始化
  *
  *
@@ -305,7 +340,7 @@ void MEGAWin::BatterySet_tab()
 void MEGAWin::RunTimeSet_tab()
 {
     QStringList time_str;
-    bool ok;
+//    bool ok;
     time_str<< tr("Check") << tr("StartTime") << tr("EndTime") << tr("State") << tr("Power(kW)");
     ui->Time_tableWidget->setColumnCount(time_str.size());
     ui->Time_tableWidget->setRowCount(20);
@@ -1091,7 +1126,126 @@ void MEGAWin::RTDataDisplay()
 //    if((m_UIPage.m_first == HOST_PAGE) || (m_UIPage.m_second == RTAnaloge_PAGE) || (m_UIPage.m_first == HOST_BYPASS_PAGE))
 //    {
         RTData_Anologe();
+        //    }
+}
+
+void MEGAWin::Information_tbnt_released()//系统信息槽
+{
+    //ui->stackedWidget->setCurrentWidget(ui->SystemInformation_page);
+
+    ui->EquipmentInfor_tableWidget->clearContents();
+    ui->EquipmentInfor_tableWidget->setColumnCount(2);
+    ui->EquipmentInfor_tableWidget->setRowCount(9);
+    ui->EquipmentInfor_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+    ui->EquipmentInfor_tableWidget->verticalHeader()->setVisible(false);//设置垂直头不可见
+    ui->EquipmentInfor_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
+    ui->EquipmentInfor_tableWidget->setShowGrid(true);//设置显示格子
+    ui->EquipmentInfor_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+    ui->EquipmentInfor_tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
+    ui->EquipmentInfor_tableWidget->setStyleSheet("selection-background-color:lightblue;");
+
+    //将设备信息显示到LCD上
+    QStringList List4;
+    List4 << tr("Name") << tr("Information") ;
+    ui->EquipmentInfor_tableWidget->setHorizontalHeaderLabels(List4);
+    ui->EquipmentInfor_tableWidget->setColumnWidth(0,230);
+    ui->EquipmentInfor_tableWidget->horizontalHeader()->setStretchLastSection(1);//自动占用剩余空间
+    QStringList Display_Par4;
+    Display_Par4 << tr("Manufacturer name") << tr("Monitoring software version") << tr("Protocol version") << tr("Converter software version")
+                << tr("CPLD software version") << tr("SN:");//<< tr("Converter type")
+    for(int i = 0; i < Display_Par4.size(); i++)
+    {
+        ui->EquipmentInfor_tableWidget->setItem(i, 0, new QTableWidgetItem(QString(Display_Par4.at(i))));
+    }
+
+//    QChar data[12];
+//    QChar SNdata[12];
+    QString STR_PRO;
+    QString STR_DSP;
+    QString STR_CPLD;
+    QString SNCODE;
+
+//    for(int i = 0; i < 12; i++)
+//    {
+//        data[i] = m_ptModSynthesisEntry->InvInfo.ucSysCANVersion[i];
+//        STR_PRO.append(data[i]);
+//        data[i] = m_ptModSynthesisEntry->InvInfo.ucDspFWVersion[i];
+//        STR_DSP.append(data[i]);
+//        data[i] = m_ptModSynthesisEntry->InvInfo.ucCpldVersion[i];
+//        STR_CPLD.append(data[i]);
+//        SNdata[i] = m_SysBasicSetData.ucUpsSN[i];
+//        SNCODE.append(SNdata[i]);
 //    }
+
+////    ui->EquipmentInfor_tableWidget->setItem(0, 1, new QTableWidgetItem(QString::fromLocal8Bit((const char*)m_SysBasicSetData.ucUpsName, 10)));
+////    ui->EquipmentInfor_tableWidget->item(0, 1)->setTextAlignment(Qt::AlignCenter);
+//    if(m_SysMonSetData.u16LOGO == LOGO_MEGA)
+//    {
+//        ui->EquipmentInfor_tableWidget->setItem(0, 1, new QTableWidgetItem(QString(tr("MEGAREVO"))));
+//        ui->EquipmentInfor_tableWidget->item(0, 1)->setTextAlignment(Qt::AlignCenter);
+//    }
+//    else
+    {
+        ui->EquipmentInfor_tableWidget->setItem(0, 1, new QTableWidgetItem(QString(tr("PCS"))));
+        ui->EquipmentInfor_tableWidget->item(0, 1)->setTextAlignment(Qt::AlignCenter);
+    }
+
+
+    ui->EquipmentInfor_tableWidget->setItem(1, 1, new QTableWidgetItem("V103B500D004"));//QString::fromLocal8Bit((const char*)m_SysBasicSetData.ucMonitorVersion, 16)
+    ui->EquipmentInfor_tableWidget->item(1, 1)->setTextAlignment(Qt::AlignCenter);
+
+    ui->EquipmentInfor_tableWidget->setItem(2, 1, new QTableWidgetItem(STR_PRO));
+    ui->EquipmentInfor_tableWidget->item(2, 1)->setTextAlignment(Qt::AlignCenter);
+    ui->EquipmentInfor_tableWidget->setItem(3, 1, new QTableWidgetItem(STR_DSP));
+    ui->EquipmentInfor_tableWidget->item(3, 1)->setTextAlignment(Qt::AlignCenter);
+    ui->EquipmentInfor_tableWidget->setItem(4, 1, new QTableWidgetItem(STR_CPLD));
+    ui->EquipmentInfor_tableWidget->item(4, 1)->setTextAlignment(Qt::AlignCenter);
+    ui->EquipmentInfor_tableWidget->setItem(5, 1, new QTableWidgetItem(SNCODE));
+    ui->EquipmentInfor_tableWidget->item(5, 1)->setTextAlignment(Qt::AlignCenter);
+
+
+}
+
+void MEGAWin::GeneralParam_tbnt_released()  //一般参数槽
+{
+////            ui->stackedWidget->setCurrentWidget(ui->System_page);
+////            ui->System_tabWidget->setCurrentWidget(ui->ParameterSet_page);
+
+//        combox_bps1_str = combox_bps1->currentText();
+//        combox_bps2_str = combox_bps2->currentText();
+//        combox_Can1_str = combox_Can1->currentText();
+//        combox_Can2_str = combox_Can2->currentText();
+//        combox_GFU_str = combox_GFU->currentText();
+//        combox_GFD_str = combox_GFD->currentText();
+//        combox_VPU_str = combox_VPU->currentText();
+//        combox_VPD_str = combox_VPD->currentText();
+//        combox_RUN_str = combox_RUN->currentText();
+//        combox_BMSCommtype_str = combox_BMSCommtype->currentText();
+//        combox_machinetype_str = combox_machinetype->currentText();
+//        combox_batterytype_str = combox_batterytype->currentText();
+
+//        combox_bps1_index = combox_bps1->currentIndex();
+//        combox_bps2_index = combox_bps2->currentIndex();
+//        combox_Can1_index = combox_Can1->currentIndex();
+//        combox_Can2_index = combox_Can2->currentIndex();
+//        combox_GFU_index = combox_GFU->currentIndex();
+//        combox_GFD_index = combox_GFD->currentIndex();
+//        combox_VPU_index = combox_VPU->currentIndex();
+//        combox_VPD_index = combox_VPD->currentIndex();
+//        combox_RUN_index = combox_RUN->currentIndex();
+
+//        active_power_str = Grid_Power_btn->text(); //有功功率百分比
+//        combox_ui_ChargeDischar_str = combox_ui_ChargeDischar->currentText();
+//        combox_ui_OnOffGrid_str = combox_ui_OnOff_Grid->currentText();
+//        combox_ui_ChargeDischar_index = combox_ui_ChargeDischar->currentIndex();
+//        combox_ui_OnOffGrid_index = combox_ui_OnOff_Grid->currentIndex();
+
+//        combox_BMSCommtype_index = combox_BMSCommtype->currentIndex();
+//        combox_machinetype_index = combox_machinetype->currentIndex();
+//        combox_batterytype_index = combox_batterytype->currentIndex();
+//        ModuleNumber_str = Number_btn->text();
+//        PwrChangeRateLmt_str = PwrChangeRateLmt->text();
+//        address_str = address_btn->text();
 }
 /**************************************************
 初始化变量（system_Page）
@@ -1243,9 +1397,9 @@ void MEGAWin::LinkRelationship()
     //系统设置
 //    connect(combox_ui_GridMode, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ui_GridMode_change()));
 
-    connect(combox_ui_OnOff_Grid, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ui_OnOff_Grid_change()));//并离网
+//    connect(combox_ui_OnOff_Grid, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ui_OnOff_Grid_change()));//并离网
 
-    connect(combox_ControlMode, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ControlMode_change()));//控制模式
+//    connect(combox_ControlMode, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ControlMode_change()));//控制模式
     connect(AdvancedSetup_btn,SIGNAL(clicked(bool)), this, SLOT(AdvancedSetup_btn_clicked()));//高级设置
     connect(Constant_power_explain,SIGNAL(clicked(bool)), this, SLOT(Constant_power_explain_clicked()));//高级设置
 
@@ -2002,4 +2156,20 @@ void MEGAWin::Constant_power_explain_clicked()  //功率说明
 //    QMessageBox msgBox;
 //    msgBox.setText("Constant_power_explain_clicked");
 //    msgBox.exec();
+}
+
+void MEGAWin::on_System_tabWidget_currentChanged(int index)
+{
+
+//    m_UIPage.m_first = SYSTEM_PAGE;
+//    m_UIPage.m_second = index + m_UIPage.m_first * 10;
+    GeneralParam_tbnt_released();
+//    if(m_UIPage.m_second == SAuto_PAGE)
+//    {
+//        TimeSet_tbnt_released();
+//    }
+//    if(m_UIPage.m_second == SInfor_PAGE)
+//    {
+        Information_tbnt_released();
+//    }
 }
