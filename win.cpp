@@ -156,7 +156,7 @@ void MEGAWin::SystemSettingPage()
     /*铅酸电池设置表*/
     BatterySet_tab();
     /*自动运行时间设置表*/
-    //    RunTimeSet_tab();
+    RunTimeSet_tab();
 }
 
 void MEGAWin::LCDSetting()  //LCD标签初始化和定时器设置
@@ -292,7 +292,243 @@ void MEGAWin::BatterySet_tab()
     ui->Lithum_Tab->setColumnWidth(3,250);
     ui->Lithum_Tab->setColumnWidth(4,120);
     ui->Lithum_Tab->setColumnWidth(5,100);
-//    ui->Lithum_Tab->horizontalHeader()->setStretchLastSection(5);
+    //    ui->Lithum_Tab->horizontalHeader()->setStretchLastSection(5);
+}
+/******************************************************************************
+ * 系统运行时间表初始化
+ *
+ *
+ *
+ *
+ *
+ * ***************************************************************************/
+void MEGAWin::RunTimeSet_tab()
+{
+    QStringList time_str;
+    bool ok;
+    time_str<< tr("Check") << tr("StartTime") << tr("EndTime") << tr("State") << tr("Power(kW)");
+    ui->Time_tableWidget->setColumnCount(time_str.size());
+    ui->Time_tableWidget->setRowCount(20);
+    ui->Time_tableWidget->setHorizontalHeaderLabels(time_str);
+    ui->Time_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+    ui->Time_tableWidget->verticalHeader()->setVisible(false);//设置垂直头不可见
+    ui->Time_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
+    ui->Time_tableWidget->setShowGrid(true);//设置显示格子
+    ui->Time_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+    ui->Time_tableWidget->setEditTriggers(QAbstractItemView::SelectedClicked);//单机修改
+    ui->Time_tableWidget->setColumnWidth(0,50);
+    ui->Time_tableWidget->setColumnWidth(1,180);
+    ui->Time_tableWidget->setColumnWidth(2,180);
+    ui->Time_tableWidget->setColumnWidth(3,130);
+//    ui->Time_tableWidget->setColumnWidth(4,125);
+    ui->Time_tableWidget->horizontalHeader()->setStretchLastSection(4);
+
+    QStringList choice;
+    choice <<tr("charge") << tr("discharge") << tr("Automatic");
+
+//    StartTime_l.append(StartTime1);
+//    EndTime_l.append(EndTime1);
+//    ComboBox_l.append(choice_cb1);
+//    CheckBox_l.append(check1);
+//    choice_cb1->addItems(choice);
+//    PowerBtn_l.append(Power1);
+//    StartTime_l.append(StartTime2);
+//    EndTime_l.append(EndTime2);
+//    ComboBox_l.append(choice_cb2);
+//    CheckBox_l.append(check2);
+//    choice_cb2->addItems(choice);
+//    PowerBtn_l.append(Power2);
+//    StartTime_l.append(StartTime3);
+//    EndTime_l.append(EndTime3);
+//    ComboBox_l.append(choice_cb3);
+//    CheckBox_l.append(check3);
+//    choice_cb3->addItems(choice);
+//    PowerBtn_l.append(Power3);
+//    StartTime_l.append(StartTime4);
+//    EndTime_l.append(EndTime4);
+//    ComboBox_l.append(choice_cb4);
+//    CheckBox_l.append(check4);
+//    choice_cb4->addItems(choice);
+//    PowerBtn_l.append(Power4);
+//    StartTime_l.append(StartTime5);
+//    EndTime_l.append(EndTime5);
+//    ComboBox_l.append(choice_cb5);
+//    CheckBox_l.append(check5);
+//    choice_cb5->addItems(choice);
+//    PowerBtn_l.append(Power5);
+//    StartTime_l.append(StartTime6);
+//    EndTime_l.append(EndTime6);
+//    ComboBox_l.append(choice_cb6);
+//    CheckBox_l.append(check6);
+//    choice_cb6->addItems(choice);
+//    PowerBtn_l.append(Power6);
+//    StartTime_l.append(StartTime7);
+//    EndTime_l.append(EndTime7);
+//    ComboBox_l.append(choice_cb7);
+//    CheckBox_l.append(check7);
+//    choice_cb7->addItems(choice);
+//    PowerBtn_l.append(Power7);
+//    StartTime_l.append(StartTime8);
+//    EndTime_l.append(EndTime8);
+//    ComboBox_l.append(choice_cb8);
+//    CheckBox_l.append(check8);
+//    choice_cb8->addItems(choice);
+//    PowerBtn_l.append(Power8);
+//    StartTime_l.append(StartTime9);
+//    EndTime_l.append(EndTime9);
+//    ComboBox_l.append(choice_cb9);
+//    CheckBox_l.append(check9);
+//    choice_cb9->addItems(choice);
+//    PowerBtn_l.append(Power9);
+//    StartTime_l.append(StartTime10);
+//    EndTime_l.append(EndTime10);
+//    ComboBox_l.append(choice_cb10);
+//    CheckBox_l.append(check10);
+//    choice_cb10->addItems(choice);
+//    PowerBtn_l.append(Power10);
+//    StartTime_l.append(StartTime11);
+//    EndTime_l.append(EndTime11);
+//    ComboBox_l.append(choice_cb11);
+//    CheckBox_l.append(check11);
+//    choice_cb11->addItems(choice);
+//    PowerBtn_l.append(Power11);
+//    StartTime_l.append(StartTime12);
+//    EndTime_l.append(EndTime12);
+//    ComboBox_l.append(choice_cb12);
+//    CheckBox_l.append(check12);
+//    choice_cb12->addItems(choice);
+//    PowerBtn_l.append(Power12);
+//    StartTime_l.append(StartTime13);
+//    EndTime_l.append(EndTime13);
+//    ComboBox_l.append(choice_cb13);
+//    CheckBox_l.append(check13);
+//    choice_cb13->addItems(choice);
+//    PowerBtn_l.append(Power13);
+//    StartTime_l.append(StartTime14);
+//    EndTime_l.append(EndTime14);
+//    ComboBox_l.append(choice_cb14);
+//    CheckBox_l.append(check14);
+//    choice_cb14->addItems(choice);
+//    PowerBtn_l.append(Power14);
+//    StartTime_l.append(StartTime15);
+//    EndTime_l.append(EndTime15);
+//    ComboBox_l.append(choice_cb15);
+//    CheckBox_l.append(check15);
+//    choice_cb15->addItems(choice);
+//    PowerBtn_l.append(Power15);
+//    StartTime_l.append(StartTime16);
+//    EndTime_l.append(EndTime16);
+//    ComboBox_l.append(choice_cb16);
+//    CheckBox_l.append(check16);
+//    choice_cb16->addItems(choice);
+//    PowerBtn_l.append(Power16);
+//    StartTime_l.append(StartTime17);
+//    EndTime_l.append(EndTime17);
+//    ComboBox_l.append(choice_cb17);
+//    CheckBox_l.append(check17);
+//    choice_cb17->addItems(choice);
+//    PowerBtn_l.append(Power17);
+//    StartTime_l.append(StartTime18);
+//    EndTime_l.append(EndTime18);
+//    ComboBox_l.append(choice_cb18);
+//    CheckBox_l.append(check18);
+//    choice_cb18->addItems(choice);
+//    PowerBtn_l.append(Power18);
+//    StartTime_l.append(StartTime19);
+//    EndTime_l.append(EndTime19);
+//    ComboBox_l.append(choice_cb19);
+//    CheckBox_l.append(check19);
+//    choice_cb19->addItems(choice);
+//    PowerBtn_l.append(Power19);
+//    StartTime_l.append(StartTime20);
+//    EndTime_l.append(EndTime20);
+//    ComboBox_l.append(choice_cb20);
+//    CheckBox_l.append(check20);
+//    choice_cb20->addItems(choice);
+//    PowerBtn_l.append(Power20);
+
+//    foreach(QComboBox *box, ComboBox_l)
+//    {
+//        box->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
+//        box->setView(new QListView());
+//    }
+
+//    for(int i = 0; i < ui->Time_tableWidget->rowCount(); i++)
+//    {
+//            ui->Time_tableWidget->setCellWidget(i, 0, (QWidget *)CheckBox_l.at(i));
+//            ui->Time_tableWidget->setCellWidget(i, 1, (QWidget *)StartTime_l.at(i));
+//            ui->Time_tableWidget->setCellWidget(i, 2, (QWidget *)EndTime_l.at(i));
+//            ui->Time_tableWidget->setCellWidget(i, 3, (QWidget *)ComboBox_l.at(i));
+//            ui->Time_tableWidget->setCellWidget(i, 4, (QWidget *)PowerBtn_l.at(i));
+//    }
+
+//    Start_strl_source = new QStringList;
+//    End_strl_source = new QStringList;
+//    Power_strl_source = new QStringList;
+//    Enable_strl_source = new QStringList;
+//    Chioce_strl_source = new QStringList;
+
+//    Start_strl_new = new QStringList;
+//    End_strl_new = new QStringList;
+//    Power_strl_new = new QStringList;
+//    Enable_strl_new = new QStringList;
+//    Chioce_strl_new = new QStringList;
+//    foreach(QCheckBox *Checkbox, CheckBox_l)
+//    {
+//        Checkbox->setStyleSheet("QCheckBox::indicator {width: 48px; height: 20px;} QCheckBox::indicator:checked {image: url(:/new_ui/UI/Tic.png);}");
+//    }
+//    foreach(MyPushButton *button, StartTime_l)
+//    {
+//        Start_strl_source->append(button->text());
+//    }
+//    foreach(MyPushButton *button, EndTime_l)
+//    {
+//        End_strl_source->append(button->text());
+//    }
+
+//    foreach(MyPushButton *button, PowerBtn_l)
+//    {
+//        Power_strl_source->append(button->text());
+//    }
+
+//    QStringList TimeSetData_list = Table_data("TimeSetData");
+//    if(TimeSetData_list.isEmpty())
+//    {
+//        init_TimeSetData();
+//        TimeSetData_list = Table_data("TimeSetData");
+//    }
+
+//    for(int i = 0; i < TimeSetData_list.size() / 6; i++)//行
+//    {
+//        CheckBox_l.at(i)->setCheckState(TimeSetData_list.at( i * 6 + 1) == "1" ? Qt::Checked : Qt::Unchecked);
+//        StartTime_l.at(i)->setText(TimeSetData_list.at(i * 6 + 2));
+//        EndTime_l.at(i)->setText(TimeSetData_list.at(i * 6 + 3));
+//        ComboBox_l.at(i)->setCurrentIndex(TimeSetData_list.at( i * 6 + 4) == "0" ? 0 : 1);//charge : dicharge
+//        PowerBtn_l.at(i)->setText(QString::number(TimeSetData_list.at( i * 6 + 5).toFloat(&ok) * 0.1));
+//    }
+//    foreach(QCheckBox *Checkbox, CheckBox_l)
+//    {
+//        Enable_strl_source->append( Checkbox->checkState() == Qt::Checked ? "1" : "0");
+//    }
+
+//    foreach(MyPushButton *button, StartTime_l)
+//    {
+//        Start_strl_source->append(button->text());
+//    }
+//    foreach(MyPushButton *button, EndTime_l)
+//    {
+//        End_strl_source->append(button->text());
+//    }
+
+//    foreach(QComboBox *box, ComboBox_l)
+//    {
+//        Chioce_strl_source->append( QString::number( box->currentIndex() ));
+//    }
+
+//    foreach(MyPushButton *button, PowerBtn_l)
+//    {
+//        Power_strl_source->append(button->text());
+//    }
 }
 /******************************************************************************
  * 实时数据——模拟量

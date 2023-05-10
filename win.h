@@ -105,6 +105,7 @@ public:
 
 
         void BatterySet_tab();//电池设置表初始化
+        void RunTimeSet_tab();//系统自动运行表初始化
 
 
         void RTData_Anologe();//实时模拟量数据
