@@ -75,7 +75,6 @@ public:
 
         Menu *m_menu;
 
-        void GeneralParam_tbnt_released();//一般参数槽
 
         QComboBox *combox_ui_OnOff_Grid;//并离网
 
@@ -143,8 +142,12 @@ public:
         void ModuleData_Tab();//模块数据表格初始化
 
         void ModuleState_Tab();//实时状态表初始化
-
         void UserParam_tab();//一般设置表初始化
+
+
+        void EquipmentInfor_tab();//设备信息表初始化
+        void BatterySet_tab();//电池设置表初始化
+        void RunTimeSet_tab();//系统自动运行表初始化
 
 
         void RTData_Anologe();//实时模拟量数据
@@ -152,6 +155,8 @@ public:
 
 private:
         void RTDataDisplay();
+        void Information_tbnt_released(); //系统信息槽
+        void GeneralParam_tbnt_released();  //一般参数槽
 
 private slots:
     void onTimerOut();
@@ -192,6 +197,7 @@ private slots:
     /******************************PCS数据********************************/
     void slot_btnGroupClicked(int);
 
+    void on_System_tabWidget_currentChanged(int index);
 
 private:
     Ui::MEGAWin *ui;

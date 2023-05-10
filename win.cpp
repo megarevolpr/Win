@@ -117,7 +117,16 @@ void MEGAWin::MemoryAllocation()
     Grid_vol_AB_btn  = new QPushButton;
 
 }
-
+/***************************************************************
+ * @brief HOSTPAGE init
+ * #attribute   Fuction
+ * @param non       @see  non
+ * @param Non         @see Non
+ *
+ * @return Non
+ *     -<em>false</em> fail
+ *     -<em>true</em> succeed
+ ***************************************************************/
 void MEGAWin::FirstPage()
 {
 
@@ -130,7 +139,16 @@ void MEGAWin::FirstPage()
     ui->Bypass_Batt_btn->setFlat(true);
     ui->Bypass_Batt_btn->setFocusPolicy(Qt::NoFocus);
 }
-
+/***************************************************************
+ * @brief RunStatePage init
+ * #attribute   Fuction
+ * @param non       @see  non
+ * @param Non         @see Non
+ *
+ * @return Non
+ *     -<em>false</em> fail
+ *     -<em>true</em> succeed
+ ***************************************************************/
 void MEGAWin::RunStatePage()
 {
     ModuleData_Tab();
@@ -152,11 +170,11 @@ void MEGAWin::SystemSettingPage()
 //    BMSProtection_tab();
 //    DebugParam_tab();
     /*设备信息表*/
-//    EquipmentInfor_tab();
+    EquipmentInfor_tab();
     /*铅酸电池设置表*/
-//    BatterySet_tab();
+    BatterySet_tab();
     /*自动运行时间设置表*/
-    //    RunTimeSet_tab();
+    RunTimeSet_tab();
 }
 
 void MEGAWin::LCDSetting()  //LCD标签初始化和定时器设置
@@ -278,7 +296,303 @@ void MEGAWin::UserParam_tab()
     ui->System_Tab->setCellWidget(6,4, (QWidget *)Phase_C_power_btn);          //C相功率
     ui->System_Tab->setCellWidget(7,4, (QWidget *)AdvancedSetup_btn);          //高级设置
 }
+/******************************************************************************
+ * 设备信息表表初始化
+ *
+ *
+ *
+ *
+ *
+ * ***************************************************************************/
+void MEGAWin::EquipmentInfor_tab()
+{
+    ui->EquipmentInfor_tableWidget->clearContents();
+    ui->EquipmentInfor_tableWidget->setColumnCount(2);
+    ui->EquipmentInfor_tableWidget->setRowCount(9);
+    ui->EquipmentInfor_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+    ui->EquipmentInfor_tableWidget->verticalHeader()->setVisible(false);//设置垂直头不可见
+    ui->EquipmentInfor_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
+    ui->EquipmentInfor_tableWidget->setShowGrid(true);//设置显示格子
+    ui->EquipmentInfor_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+    ui->EquipmentInfor_tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
+    ui->EquipmentInfor_tableWidget->setStyleSheet("selection-background-color:lightblue;");
 
+    //将设备信息显示到LCD上
+    QStringList List4;
+    List4 << tr("Name") << tr("Information") ;
+    ui->EquipmentInfor_tableWidget->setHorizontalHeaderLabels(List4);
+    ui->EquipmentInfor_tableWidget->setColumnWidth(0,240);
+    ui->EquipmentInfor_tableWidget->horizontalHeader()->setStretchLastSection(1);//自动占用剩余空间
+    QStringList Display_Par4;
+    Display_Par4 << tr("Converter type") << tr("Manufacturer name") << tr("Monitoring software version") << tr("Protocol version") << tr("Converter software version")
+                << tr("CPLD software version") << "SN:";
+    for(int i = 0; i < Display_Par4.size(); i++)
+    {
+        ui->EquipmentInfor_tableWidget->setItem(i, 0, new QTableWidgetItem(QString(Display_Par4.at(i))));
+    }
+}
+/******************************************************************************
+ * 电池设置表初始化
+ *
+ *
+ *
+ *
+ *
+ * ***************************************************************************/
+void MEGAWin::BatterySet_tab()
+{
+    ui->Lithum_Tab->setColumnWidth(0,250);
+    ui->Lithum_Tab->setColumnWidth(1,120);
+    ui->Lithum_Tab->setColumnWidth(2,100);
+    ui->Lithum_Tab->setColumnWidth(3,250);
+    ui->Lithum_Tab->setColumnWidth(4,120);
+    ui->Lithum_Tab->setColumnWidth(5,100);
+    //    ui->Lithum_Tab->horizontalHeader()->setStretchLastSection(5);
+}
+/******************************************************************************
+ * 系统运行时间表初始化
+ *
+ *
+ *
+ *
+ *
+ * ***************************************************************************/
+void MEGAWin::RunTimeSet_tab()
+{
+    QStringList time_str;
+//    bool ok;
+    time_str<< tr("Check") << tr("StartTime") << tr("EndTime") << tr("State") << tr("Power(kW)");
+    ui->Time_tableWidget->setColumnCount(time_str.size());
+    ui->Time_tableWidget->setRowCount(20);
+    ui->Time_tableWidget->setHorizontalHeaderLabels(time_str);
+    ui->Time_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+    ui->Time_tableWidget->verticalHeader()->setVisible(false);//设置垂直头不可见
+    ui->Time_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
+    ui->Time_tableWidget->setShowGrid(true);//设置显示格子
+    ui->Time_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+    ui->Time_tableWidget->setEditTriggers(QAbstractItemView::SelectedClicked);//单机修改
+    ui->Time_tableWidget->setColumnWidth(0,50);
+    ui->Time_tableWidget->setColumnWidth(1,180);
+    ui->Time_tableWidget->setColumnWidth(2,180);
+    ui->Time_tableWidget->setColumnWidth(3,130);
+//    ui->Time_tableWidget->setColumnWidth(4,125);
+    ui->Time_tableWidget->horizontalHeader()->setStretchLastSection(4);
+
+    QStringList choice;
+    choice <<tr("charge") << tr("discharge") << tr("Automatic");
+
+//    StartTime_l.append(StartTime1);
+//    EndTime_l.append(EndTime1);
+//    ComboBox_l.append(choice_cb1);
+//    CheckBox_l.append(check1);
+//    choice_cb1->addItems(choice);
+//    PowerBtn_l.append(Power1);
+//    StartTime_l.append(StartTime2);
+//    EndTime_l.append(EndTime2);
+//    ComboBox_l.append(choice_cb2);
+//    CheckBox_l.append(check2);
+//    choice_cb2->addItems(choice);
+//    PowerBtn_l.append(Power2);
+//    StartTime_l.append(StartTime3);
+//    EndTime_l.append(EndTime3);
+//    ComboBox_l.append(choice_cb3);
+//    CheckBox_l.append(check3);
+//    choice_cb3->addItems(choice);
+//    PowerBtn_l.append(Power3);
+//    StartTime_l.append(StartTime4);
+//    EndTime_l.append(EndTime4);
+//    ComboBox_l.append(choice_cb4);
+//    CheckBox_l.append(check4);
+//    choice_cb4->addItems(choice);
+//    PowerBtn_l.append(Power4);
+//    StartTime_l.append(StartTime5);
+//    EndTime_l.append(EndTime5);
+//    ComboBox_l.append(choice_cb5);
+//    CheckBox_l.append(check5);
+//    choice_cb5->addItems(choice);
+//    PowerBtn_l.append(Power5);
+//    StartTime_l.append(StartTime6);
+//    EndTime_l.append(EndTime6);
+//    ComboBox_l.append(choice_cb6);
+//    CheckBox_l.append(check6);
+//    choice_cb6->addItems(choice);
+//    PowerBtn_l.append(Power6);
+//    StartTime_l.append(StartTime7);
+//    EndTime_l.append(EndTime7);
+//    ComboBox_l.append(choice_cb7);
+//    CheckBox_l.append(check7);
+//    choice_cb7->addItems(choice);
+//    PowerBtn_l.append(Power7);
+//    StartTime_l.append(StartTime8);
+//    EndTime_l.append(EndTime8);
+//    ComboBox_l.append(choice_cb8);
+//    CheckBox_l.append(check8);
+//    choice_cb8->addItems(choice);
+//    PowerBtn_l.append(Power8);
+//    StartTime_l.append(StartTime9);
+//    EndTime_l.append(EndTime9);
+//    ComboBox_l.append(choice_cb9);
+//    CheckBox_l.append(check9);
+//    choice_cb9->addItems(choice);
+//    PowerBtn_l.append(Power9);
+//    StartTime_l.append(StartTime10);
+//    EndTime_l.append(EndTime10);
+//    ComboBox_l.append(choice_cb10);
+//    CheckBox_l.append(check10);
+//    choice_cb10->addItems(choice);
+//    PowerBtn_l.append(Power10);
+//    StartTime_l.append(StartTime11);
+//    EndTime_l.append(EndTime11);
+//    ComboBox_l.append(choice_cb11);
+//    CheckBox_l.append(check11);
+//    choice_cb11->addItems(choice);
+//    PowerBtn_l.append(Power11);
+//    StartTime_l.append(StartTime12);
+//    EndTime_l.append(EndTime12);
+//    ComboBox_l.append(choice_cb12);
+//    CheckBox_l.append(check12);
+//    choice_cb12->addItems(choice);
+//    PowerBtn_l.append(Power12);
+//    StartTime_l.append(StartTime13);
+//    EndTime_l.append(EndTime13);
+//    ComboBox_l.append(choice_cb13);
+//    CheckBox_l.append(check13);
+//    choice_cb13->addItems(choice);
+//    PowerBtn_l.append(Power13);
+//    StartTime_l.append(StartTime14);
+//    EndTime_l.append(EndTime14);
+//    ComboBox_l.append(choice_cb14);
+//    CheckBox_l.append(check14);
+//    choice_cb14->addItems(choice);
+//    PowerBtn_l.append(Power14);
+//    StartTime_l.append(StartTime15);
+//    EndTime_l.append(EndTime15);
+//    ComboBox_l.append(choice_cb15);
+//    CheckBox_l.append(check15);
+//    choice_cb15->addItems(choice);
+//    PowerBtn_l.append(Power15);
+//    StartTime_l.append(StartTime16);
+//    EndTime_l.append(EndTime16);
+//    ComboBox_l.append(choice_cb16);
+//    CheckBox_l.append(check16);
+//    choice_cb16->addItems(choice);
+//    PowerBtn_l.append(Power16);
+//    StartTime_l.append(StartTime17);
+//    EndTime_l.append(EndTime17);
+//    ComboBox_l.append(choice_cb17);
+//    CheckBox_l.append(check17);
+//    choice_cb17->addItems(choice);
+//    PowerBtn_l.append(Power17);
+//    StartTime_l.append(StartTime18);
+//    EndTime_l.append(EndTime18);
+//    ComboBox_l.append(choice_cb18);
+//    CheckBox_l.append(check18);
+//    choice_cb18->addItems(choice);
+//    PowerBtn_l.append(Power18);
+//    StartTime_l.append(StartTime19);
+//    EndTime_l.append(EndTime19);
+//    ComboBox_l.append(choice_cb19);
+//    CheckBox_l.append(check19);
+//    choice_cb19->addItems(choice);
+//    PowerBtn_l.append(Power19);
+//    StartTime_l.append(StartTime20);
+//    EndTime_l.append(EndTime20);
+//    ComboBox_l.append(choice_cb20);
+//    CheckBox_l.append(check20);
+//    choice_cb20->addItems(choice);
+//    PowerBtn_l.append(Power20);
+
+//    foreach(QComboBox *box, ComboBox_l)
+//    {
+//        box->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
+//        box->setView(new QListView());
+//    }
+
+//    for(int i = 0; i < ui->Time_tableWidget->rowCount(); i++)
+//    {
+//            ui->Time_tableWidget->setCellWidget(i, 0, (QWidget *)CheckBox_l.at(i));
+//            ui->Time_tableWidget->setCellWidget(i, 1, (QWidget *)StartTime_l.at(i));
+//            ui->Time_tableWidget->setCellWidget(i, 2, (QWidget *)EndTime_l.at(i));
+//            ui->Time_tableWidget->setCellWidget(i, 3, (QWidget *)ComboBox_l.at(i));
+//            ui->Time_tableWidget->setCellWidget(i, 4, (QWidget *)PowerBtn_l.at(i));
+//    }
+
+//    Start_strl_source = new QStringList;
+//    End_strl_source = new QStringList;
+//    Power_strl_source = new QStringList;
+//    Enable_strl_source = new QStringList;
+//    Chioce_strl_source = new QStringList;
+
+//    Start_strl_new = new QStringList;
+//    End_strl_new = new QStringList;
+//    Power_strl_new = new QStringList;
+//    Enable_strl_new = new QStringList;
+//    Chioce_strl_new = new QStringList;
+//    foreach(QCheckBox *Checkbox, CheckBox_l)
+//    {
+//        Checkbox->setStyleSheet("QCheckBox::indicator {width: 48px; height: 20px;} QCheckBox::indicator:checked {image: url(:/new_ui/UI/Tic.png);}");
+//    }
+//    foreach(MyPushButton *button, StartTime_l)
+//    {
+//        Start_strl_source->append(button->text());
+//    }
+//    foreach(MyPushButton *button, EndTime_l)
+//    {
+//        End_strl_source->append(button->text());
+//    }
+
+//    foreach(MyPushButton *button, PowerBtn_l)
+//    {
+//        Power_strl_source->append(button->text());
+//    }
+
+//    QStringList TimeSetData_list = Table_data("TimeSetData");
+//    if(TimeSetData_list.isEmpty())
+//    {
+//        init_TimeSetData();
+//        TimeSetData_list = Table_data("TimeSetData");
+//    }
+
+//    for(int i = 0; i < TimeSetData_list.size() / 6; i++)//行
+//    {
+//        CheckBox_l.at(i)->setCheckState(TimeSetData_list.at( i * 6 + 1) == "1" ? Qt::Checked : Qt::Unchecked);
+//        StartTime_l.at(i)->setText(TimeSetData_list.at(i * 6 + 2));
+//        EndTime_l.at(i)->setText(TimeSetData_list.at(i * 6 + 3));
+//        ComboBox_l.at(i)->setCurrentIndex(TimeSetData_list.at( i * 6 + 4) == "0" ? 0 : 1);//charge : dicharge
+//        PowerBtn_l.at(i)->setText(QString::number(TimeSetData_list.at( i * 6 + 5).toFloat(&ok) * 0.1));
+//    }
+//    foreach(QCheckBox *Checkbox, CheckBox_l)
+//    {
+//        Enable_strl_source->append( Checkbox->checkState() == Qt::Checked ? "1" : "0");
+//    }
+
+//    foreach(MyPushButton *button, StartTime_l)
+//    {
+//        Start_strl_source->append(button->text());
+//    }
+//    foreach(MyPushButton *button, EndTime_l)
+//    {
+//        End_strl_source->append(button->text());
+//    }
+
+//    foreach(QComboBox *box, ComboBox_l)
+//    {
+//        Chioce_strl_source->append( QString::number( box->currentIndex() ));
+//    }
+
+//    foreach(MyPushButton *button, PowerBtn_l)
+//    {
+//        Power_strl_source->append(button->text());
+//    }
+}
+/******************************************************************************
+ * 实时数据——模拟量
+ *
+ *
+ *
+ *
+ *
+ * ***************************************************************************/
 void MEGAWin::RTData_Anologe()
 {
     ui->RTDataModel_tableWidget->clearContents();//防止内存泄漏
@@ -832,7 +1146,126 @@ void MEGAWin::RTDataDisplay()
 //    if((m_UIPage.m_first == HOST_PAGE) || (m_UIPage.m_second == RTAnaloge_PAGE) || (m_UIPage.m_first == HOST_BYPASS_PAGE))
 //    {
         RTData_Anologe();
+        //    }
+}
+
+void MEGAWin::Information_tbnt_released()//系统信息槽
+{
+    //ui->stackedWidget->setCurrentWidget(ui->SystemInformation_page);
+
+    ui->EquipmentInfor_tableWidget->clearContents();
+    ui->EquipmentInfor_tableWidget->setColumnCount(2);
+    ui->EquipmentInfor_tableWidget->setRowCount(9);
+    ui->EquipmentInfor_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+    ui->EquipmentInfor_tableWidget->verticalHeader()->setVisible(false);//设置垂直头不可见
+    ui->EquipmentInfor_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
+    ui->EquipmentInfor_tableWidget->setShowGrid(true);//设置显示格子
+    ui->EquipmentInfor_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+    ui->EquipmentInfor_tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
+    ui->EquipmentInfor_tableWidget->setStyleSheet("selection-background-color:lightblue;");
+
+    //将设备信息显示到LCD上
+    QStringList List4;
+    List4 << tr("Name") << tr("Information") ;
+    ui->EquipmentInfor_tableWidget->setHorizontalHeaderLabels(List4);
+    ui->EquipmentInfor_tableWidget->setColumnWidth(0,230);
+    ui->EquipmentInfor_tableWidget->horizontalHeader()->setStretchLastSection(1);//自动占用剩余空间
+    QStringList Display_Par4;
+    Display_Par4 << tr("Manufacturer name") << tr("Monitoring software version") << tr("Protocol version") << tr("Converter software version")
+                << tr("CPLD software version") << tr("SN:");//<< tr("Converter type")
+    for(int i = 0; i < Display_Par4.size(); i++)
+    {
+        ui->EquipmentInfor_tableWidget->setItem(i, 0, new QTableWidgetItem(QString(Display_Par4.at(i))));
+    }
+
+//    QChar data[12];
+//    QChar SNdata[12];
+    QString STR_PRO;
+    QString STR_DSP;
+    QString STR_CPLD;
+    QString SNCODE;
+
+//    for(int i = 0; i < 12; i++)
+//    {
+//        data[i] = m_ptModSynthesisEntry->InvInfo.ucSysCANVersion[i];
+//        STR_PRO.append(data[i]);
+//        data[i] = m_ptModSynthesisEntry->InvInfo.ucDspFWVersion[i];
+//        STR_DSP.append(data[i]);
+//        data[i] = m_ptModSynthesisEntry->InvInfo.ucCpldVersion[i];
+//        STR_CPLD.append(data[i]);
+//        SNdata[i] = m_SysBasicSetData.ucUpsSN[i];
+//        SNCODE.append(SNdata[i]);
 //    }
+
+////    ui->EquipmentInfor_tableWidget->setItem(0, 1, new QTableWidgetItem(QString::fromLocal8Bit((const char*)m_SysBasicSetData.ucUpsName, 10)));
+////    ui->EquipmentInfor_tableWidget->item(0, 1)->setTextAlignment(Qt::AlignCenter);
+//    if(m_SysMonSetData.u16LOGO == LOGO_MEGA)
+//    {
+//        ui->EquipmentInfor_tableWidget->setItem(0, 1, new QTableWidgetItem(QString(tr("MEGAREVO"))));
+//        ui->EquipmentInfor_tableWidget->item(0, 1)->setTextAlignment(Qt::AlignCenter);
+//    }
+//    else
+    {
+        ui->EquipmentInfor_tableWidget->setItem(0, 1, new QTableWidgetItem(QString(tr("PCS"))));
+        ui->EquipmentInfor_tableWidget->item(0, 1)->setTextAlignment(Qt::AlignCenter);
+    }
+
+
+    ui->EquipmentInfor_tableWidget->setItem(1, 1, new QTableWidgetItem("V103B500D004"));//QString::fromLocal8Bit((const char*)m_SysBasicSetData.ucMonitorVersion, 16)
+    ui->EquipmentInfor_tableWidget->item(1, 1)->setTextAlignment(Qt::AlignCenter);
+
+    ui->EquipmentInfor_tableWidget->setItem(2, 1, new QTableWidgetItem(STR_PRO));
+    ui->EquipmentInfor_tableWidget->item(2, 1)->setTextAlignment(Qt::AlignCenter);
+    ui->EquipmentInfor_tableWidget->setItem(3, 1, new QTableWidgetItem(STR_DSP));
+    ui->EquipmentInfor_tableWidget->item(3, 1)->setTextAlignment(Qt::AlignCenter);
+    ui->EquipmentInfor_tableWidget->setItem(4, 1, new QTableWidgetItem(STR_CPLD));
+    ui->EquipmentInfor_tableWidget->item(4, 1)->setTextAlignment(Qt::AlignCenter);
+    ui->EquipmentInfor_tableWidget->setItem(5, 1, new QTableWidgetItem(SNCODE));
+    ui->EquipmentInfor_tableWidget->item(5, 1)->setTextAlignment(Qt::AlignCenter);
+
+
+}
+
+void MEGAWin::GeneralParam_tbnt_released()  //一般参数槽
+{
+////            ui->stackedWidget->setCurrentWidget(ui->System_page);
+////            ui->System_tabWidget->setCurrentWidget(ui->ParameterSet_page);
+
+//        combox_bps1_str = combox_bps1->currentText();
+//        combox_bps2_str = combox_bps2->currentText();
+//        combox_Can1_str = combox_Can1->currentText();
+//        combox_Can2_str = combox_Can2->currentText();
+//        combox_GFU_str = combox_GFU->currentText();
+//        combox_GFD_str = combox_GFD->currentText();
+//        combox_VPU_str = combox_VPU->currentText();
+//        combox_VPD_str = combox_VPD->currentText();
+//        combox_RUN_str = combox_RUN->currentText();
+//        combox_BMSCommtype_str = combox_BMSCommtype->currentText();
+//        combox_machinetype_str = combox_machinetype->currentText();
+//        combox_batterytype_str = combox_batterytype->currentText();
+
+//        combox_bps1_index = combox_bps1->currentIndex();
+//        combox_bps2_index = combox_bps2->currentIndex();
+//        combox_Can1_index = combox_Can1->currentIndex();
+//        combox_Can2_index = combox_Can2->currentIndex();
+//        combox_GFU_index = combox_GFU->currentIndex();
+//        combox_GFD_index = combox_GFD->currentIndex();
+//        combox_VPU_index = combox_VPU->currentIndex();
+//        combox_VPD_index = combox_VPD->currentIndex();
+//        combox_RUN_index = combox_RUN->currentIndex();
+
+//        active_power_str = Grid_Power_btn->text(); //有功功率百分比
+//        combox_ui_ChargeDischar_str = combox_ui_ChargeDischar->currentText();
+//        combox_ui_OnOffGrid_str = combox_ui_OnOff_Grid->currentText();
+//        combox_ui_ChargeDischar_index = combox_ui_ChargeDischar->currentIndex();
+//        combox_ui_OnOffGrid_index = combox_ui_OnOff_Grid->currentIndex();
+
+//        combox_BMSCommtype_index = combox_BMSCommtype->currentIndex();
+//        combox_machinetype_index = combox_machinetype->currentIndex();
+//        combox_batterytype_index = combox_batterytype->currentIndex();
+//        ModuleNumber_str = Number_btn->text();
+//        PwrChangeRateLmt_str = PwrChangeRateLmt->text();
+//        address_str = address_btn->text();
 }
 /**************************************************
 初始化变量（system_Page）
@@ -987,9 +1420,13 @@ void MEGAWin::LinkRelationship()
     //系统设置
 //    connect(combox_ui_GridMode, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ui_GridMode_change()));
 
-    connect(combox_ui_OnOff_Grid, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ui_OnOff_Grid_change()));//并离网
+//    connect(combox_ui_OnOff_Grid, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ui_OnOff_Grid_change()));//并离网
 
-    connect(combox_ControlMode, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ControlMode_change()));//控制模式
+
+//    connect(combox_ControlMode, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ControlMode_change()));//控制模式
+
+
+
 
     connect(Constant_power_explain,SIGNAL(clicked(bool)), this, SLOT(Constant_power_explain_clicked()));//恒功率
     connect(Phase_C_power_btn ,SIGNAL(clicked(bool)), this, SLOT(Constant_power_explain_clicked()));//C相功率
@@ -1122,7 +1559,14 @@ void MEGAWin::ModuleData_Tab()
 
 
 }
-
+/******************************************************************************
+ * 模块实时状态表初始化
+ *
+ *
+ *
+ *
+ *
+ * ***************************************************************************/
 void MEGAWin::ModuleState_Tab()
 {
 
@@ -1684,4 +2128,20 @@ void MEGAWin::slot_btnGroupClicked(int nid)
 
     QMessageBox::about(this, "Phase Cpower", "C-phase power 1");
 
+}
+
+void MEGAWin::on_System_tabWidget_currentChanged(int index)
+{
+
+//    m_UIPage.m_first = SYSTEM_PAGE;
+//    m_UIPage.m_second = index + m_UIPage.m_first * 10;
+    GeneralParam_tbnt_released();
+//    if(m_UIPage.m_second == SAuto_PAGE)
+//    {
+//        TimeSet_tbnt_released();
+//    }
+//    if(m_UIPage.m_second == SInfor_PAGE)
+//    {
+        Information_tbnt_released();
+//    }
 }
