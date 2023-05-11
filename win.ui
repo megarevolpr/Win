@@ -7396,7 +7396,7 @@ background-color: rgb(255, 0, 0);</string>
         </rect>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>3</number>
        </property>
        <widget class="QWidget" name="ParameterSet_page">
         <attribute name="title">
@@ -8899,22 +8899,6 @@ B1 - A1 ≥ 30 %
                  <string>ip：</string>
                 </property>
                </widget>
-               <widget class="QLabel" name="label_10">
-                <property name="geometry">
-                 <rect>
-                  <x>190</x>
-                  <y>65</y>
-                  <width>191</width>
-                  <height>30</height>
-                 </rect>
-                </property>
-                <property name="text">
-                 <string>192 . 168 . 1 . 100</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
                <widget class="QLabel" name="label_11">
                 <property name="geometry">
                  <rect>
@@ -8931,22 +8915,6 @@ B1 - A1 ≥ 30 %
                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                 </property>
                </widget>
-               <widget class="QLabel" name="label_12">
-                <property name="geometry">
-                 <rect>
-                  <x>190</x>
-                  <y>120</y>
-                  <width>191</width>
-                  <height>30</height>
-                 </rect>
-                </property>
-                <property name="text">
-                 <string>255 . 255 . 255 . 0</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
-               </widget>
                <widget class="QLabel" name="label_21">
                 <property name="geometry">
                  <rect>
@@ -8958,22 +8926,6 @@ B1 - A1 ≥ 30 %
                 </property>
                 <property name="text">
                  <string>gateway:</string>
-                </property>
-               </widget>
-               <widget class="QLabel" name="label_22">
-                <property name="geometry">
-                 <rect>
-                  <x>190</x>
-                  <y>180</y>
-                  <width>191</width>
-                  <height>30</height>
-                 </rect>
-                </property>
-                <property name="text">
-                 <string>192 . 168 .  1  . 1</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
                 </property>
                </widget>
                <widget class="QLabel" name="label_29">
@@ -8989,7 +8941,46 @@ B1 - A1 ≥ 30 %
                  <string>Server ip:</string>
                 </property>
                </widget>
-               <widget class="QLabel" name="label_31">
+               <widget class="QPushButton" name="ip_explain_btn">
+                <property name="geometry">
+                 <rect>
+                  <x>190</x>
+                  <y>65</y>
+                  <width>191</width>
+                  <height>30</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>192 . 168 . 1 . 100</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="netmask_explain_btn">
+                <property name="geometry">
+                 <rect>
+                  <x>190</x>
+                  <y>120</y>
+                  <width>191</width>
+                  <height>30</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>255 . 255 . 255 . 0</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="pushButton">
+                <property name="geometry">
+                 <rect>
+                  <x>190</x>
+                  <y>180</y>
+                  <width>191</width>
+                  <height>30</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>192 . 168 .  1  . 1</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="pushButton_22">
                 <property name="geometry">
                  <rect>
                   <x>190</x>
@@ -9001,12 +8992,9 @@ B1 - A1 ≥ 30 %
                 <property name="text">
                  <string> 192 . 168 . 1  . 200</string>
                 </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
                </widget>
               </widget>
-              <widget class="QPushButton" name="pushButton">
+              <widget class="QPushButton" name="ok">
                <property name="geometry">
                 <rect>
                  <x>0</x>
@@ -9019,7 +9007,7 @@ B1 - A1 ≥ 30 %
                 <string>Apply and Restart system</string>
                </property>
               </widget>
-              <widget class="QLabel" name="cb_interface">
+              <widget class="QPushButton" name="interface_explain_btn">
                <property name="geometry">
                 <rect>
                  <x>150</x>
@@ -9032,20 +9020,17 @@ B1 - A1 ≥ 30 %
                 <string>eth0</string>
                </property>
               </widget>
-              <widget class="QLabel" name="edt_port">
+              <widget class="QPushButton" name="port_explain_btn">
                <property name="geometry">
                 <rect>
-                 <x>315</x>
-                 <y>0</y>
+                 <x>310</x>
+                 <y>1</y>
                  <width>140</width>
                  <height>31</height>
                 </rect>
                </property>
                <property name="text">
                 <string>502</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
                </property>
               </widget>
              </widget>
