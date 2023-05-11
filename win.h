@@ -7,6 +7,7 @@
 #include <QList>
 #include "Menu.h"
 #include "msgbox.h"
+#include "Specification/Specification.h"
 
 
 //QComboBox * combox_OutPower;
@@ -82,6 +83,7 @@ public:
         QPushButton *AdvancedSetup_btn;//高级设置入口
 
         QPushButton *Constant_power_explain;    //功率说明
+        QPushButton *Phase_B_power_explain;    //B相电压说明
 
         QList<QPair<QPushButton *, int> > PCS_pairList;
         QList<QString> hand_name;
