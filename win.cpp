@@ -1362,6 +1362,61 @@ void MEGAWin::combox_ui_OnOff_Grid_change()//并离网
  ***************************************************************/
 void MEGAWin::SystemParam_tbnt_released()
 {
+
+    for(int i=0;i<12;i++)
+    {
+        ui->UI_Parameter_Tab->setColumnWidth(i,165);
+        ui->UI_Parameter_Tab->setRowHeight(i,50);
+        ui->UI_SystemParameter_Tab->setColumnWidth(i,165);
+        ui->UI_SystemParameter_Tab->setRowHeight(i++,50);
+
+        ui->UI_Parameter_Tab->setColumnWidth(i,90);
+        ui->UI_Parameter_Tab->setRowHeight(i,50);
+        ui->UI_SystemParameter_Tab->setColumnWidth(i,90);
+        ui->UI_SystemParameter_Tab->setRowHeight(i++,50);
+
+        ui->UI_Parameter_Tab->setColumnWidth(i,55);
+        ui->UI_Parameter_Tab->setRowHeight(i,50);
+        ui->UI_SystemParameter_Tab->setColumnWidth(i,55);
+        ui->UI_SystemParameter_Tab->setRowHeight(i,50);
+    }
+    for(int i=0;i<9;i++)
+    {
+        ui->ExternalDevice_tW->setColumnWidth(i,200);
+        ui->ExternalDevice_tW->setRowHeight(i,50);
+        if(i==3){
+            ui->ExternalDevice_tW->setColumnWidth(i,280);
+            ui->ExternalDevice_tW->setRowHeight(i,50);
+        }
+    }
+    for(int i=0;i<3;i++)
+    {
+        ui->BMSProtection_tW->setColumnWidth(i,220);
+        ui->BMSProtection_tW->setRowHeight(i,50);
+    }
+    for(int i=0;i<12;i++)
+    {
+        if(i%2==0)
+        {
+            ui->UI_Debug_Tab->setColumnWidth(i,165);
+            ui->UI_Debug_Tab->setRowHeight(i,50);
+        }
+        else
+        {
+            ui->UI_Debug_Tab->setColumnWidth(i,140);
+            ui->UI_Debug_Tab->setRowHeight(i,50);
+        }
+
+    }
+
+    for (int i=0;i<11; i++)
+    {
+            ui->UI_Debug_Tab->item (i,0)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+            ui->UI_Debug_Tab->item (i,2)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+            ui->UI_Debug_Tab->item (i,4)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+    }
+//    ui->System_Tab->setColumnWidth(0,163);
+//    ui->System_Tab->setRowHeight(0, 50);
 //    if(PasswordCheck())
 //    {
 //        PasswordLimit();
@@ -2096,6 +2151,7 @@ void MEGAWin::ToSetButton()
                     ,"400V","400V","400V","400V","400V","400V","400V","400V","400V","400V","400V","400V"\
                     ,"400V","400V","400V","400V","400V","400V","400V","400V","400V","400V","400V","400V"\
                     ,"400V","400V"};
+
 //    QPushButton * btn_name2[] ={};
 
     for (int i=0;i<sizeof(btn_name1)/sizeof(btn_name1[0]);i++)
@@ -2103,10 +2159,10 @@ void MEGAWin::ToSetButton()
 //        PCS_pairList.append(qMakePair(btn_name[i],i));
 
         if(i<=9){
-
-            btn_name1[i]->setText(data[i].toUtf8());
-            ui->Converter_Tab->setCellWidget(i,1,(QWidget *)btn_name1[i]);
-            pButtonGroup->addButton(btn_name1[i], i);
+//            PCS_C_data[i] = new Specification(btn_name1[i],  ui->Converter_Tab, 5, 4, "5", "Phase_B_power", "This is Phase_B_power");
+//            btn_name1[i]->setText(data[i].toUtf8());
+//            ui->Converter_Tab->setCellWidget(i,1,(QWidget *)btn_name1[i]);
+//            pButtonGroup->addButton(btn_name1[i], i);
         }
         else if (i<=15) {
             btn_name1[i]->setText(data[i].toUtf8());
