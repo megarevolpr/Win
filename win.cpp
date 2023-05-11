@@ -90,12 +90,80 @@ void MEGAWin::MemoryAllocation()
 //    combox_UnbalancePowerEnable = new QComboBox();      //功率不平衡使能
 //    combox_UnbalancePowerEnable->setView(new QListView());
 
-    Constant_power_explain = new QPushButton;           //恒功率
 
-    Phase_B_power_explain = new QPushButton;                //B相功率说明
-    Phase_C_power_btn = new QPushButton;                //C相功率
+
+//    Grid_CM_of_PCS_explain          = new QPushButton;
+//    Constant_power_explain          = new QPushButton; //恒功率
+//    Charg_and_Discharg_explain      = new QPushButton;
+//    Work_mode_explain               = new QPushButton;
+//    Output_power_factor_explain     = new QPushButton;
+//    Output_reactive_power_explain   = new QPushButton;
+//    Constant_current_explain        = new QPushButton;
+//    Constant_voltage_explain        = new QPushButton;
+//    Control_mode_explain            = new QPushButton;
+//    Machine_number_explain          = new QPushButton;
+//    Parallel_explain                = new QPushButton;
+//    Unbalance_power_enable_explain  = new QPushButton;
+//    Phase_A_power_explain           = new QPushButton;
+//    Phase_B_power_explain           = new QPushButton;  //B相功率说明
+//    Phase_C_power_explain           = new QPushButton;
+
+    /***************************高级设置**********************************/
     AdvancedSetup_btn = new QPushButton;                //高级设置
 
+    Battery_type_explain                    = new QPushButton;
+    BMS_Comm_type_explain                   = new QPushButton;
+    Power_control_type_explain              = new QPushButton;
+    EMS_Comm_type_explain                   = new QPushButton;
+    Output_power_limit_explain              = new QPushButton;
+    BAT_manufacturers_explain               = new QPushButton;
+    Power_Delta_explain                     = new QPushButton;
+    Charge_power_limit_explain              = new QPushButton;
+    Discharge_power_limit_explain           = new QPushButton;
+    Charge_Vol_upper_Limit_delta_explain    = new QPushButton;
+    Discharge_Vol_lower_Limit_delta_explain = new QPushButton;
+    Host_Address_explain                    = new QPushButton;
+    serial_port_1_explain                   = new QPushButton;
+    serial_port_2_explain                   = new QPushButton;
+    serial_port_3_explain                   = new QPushButton;
+    serial_port_4_explain                   = new QPushButton;
+    serial_port_5_explain                   = new QPushButton;
+    Can_port_1_explain      = new QPushButton;
+    Can_port_2_explain      = new QPushButton;
+    ProtocolVersion_explain = new QPushButton;
+    UserPassPort_explain    = new QPushButton;
+    RootPassport_explain    = new QPushButton;
+    Language_explain        = new QPushButton;
+    System_upgrade_explain  = new QPushButton;
+    Sounds_explain          = new QPushButton;
+    DryContact_explain      = new QPushButton;
+
+    Change_rate_of_power_explain        = new QPushButton;
+    Grid_frequency_upper_limit_explain  = new QPushButton;
+    Grid_frequency_lower_limit_explain  = new QPushButton;
+    Vol_protection_upper_limit_explain  = new QPushButton;
+    Vol_protection_lower_limit_explain  = new QPushButton;
+    HVRT_enable_explain                 = new QPushButton;
+    LVRT_enable_explain                 = new QPushButton;
+    AFD_enable_explain                  = new QPushButton;
+    Insulation_detection_enable_explain = new QPushButton;
+    PrimaryFreq_enable_explain          = new QPushButton;
+    Inertia_enable_explain              = new QPushButton;
+    CV_parallel_explain                 = new QPushButton;
+    Machine_type_explain                = new QPushButton;
+    Machine_capacity_explain            = new QPushButton;
+    Output_Fre_grade_explain            = new QPushButton;
+    Output_vol_level_explain            = new QPushButton;
+    Converter_side_vol_level_explain    = new QPushButton;
+    Output_reactive_power_mode_explain  = new QPushButton;
+    Grid_connected_mode_of_Inv_explain  = new QPushButton;
+    Primary_FM_dead_zone_explain        = new QPushButton;
+    PFM_coeff_explain                   = new QPushButton;
+    Grid_recover_time_explain           = new QPushButton;
+    DynamicCap_explain                  = new QPushButton;
+    Module_Number_explain               = new QPushButton;
+    Restore_factory_explain             = new QPushButton;
+    Clear_Data_explain                  = new QPushButton;
     /*****************************PCS数据****************************************/
     PCS_vol_AB_btn = new QPushButton;
     PCS_vol_BC_btn = new QPushButton;
@@ -303,9 +371,9 @@ void MEGAWin::UserParam_tab()
 //    combox_UnbalancePowerEnable_str = combox_UnbalancePowerEnable->currentText();
 //    combox_UnbalancePowerEnable_index = combox_UnbalancePowerEnable->currentIndex();
 
-    Phase_C_power_btn->setText(tr("5"));
+//    Phase_C_power_btn->setText(tr("5"));
     AdvancedSetup_btn->setText(tr("Advance setting"));
-    Constant_power_explain->setText(tr("0"));
+//    Constant_power_explain->setText(tr("0"));
 
 //    ui->System_Tab->setCellWidget(0,1, (QWidget *)combox_ui_OnOff_Grid);        //并离网
 //    ui->System_Tab->setCellWidget(2,1, (QWidget *)combox_ui_ChargeDischar);     //充放电设置
@@ -320,8 +388,41 @@ void MEGAWin::UserParam_tab()
 //    ui->System_Tab->setCellWidget(6,4, (QWidget *)Phase_C_power_btn);          //C相功率
     ui->System_Tab->setCellWidget(7,4, (QWidget *)AdvancedSetup_btn);          //高级设置
 
-    Phase_B_power = new Specification(Phase_B_power_explain, ui->System_Tab, 5, 4, "5", "Phase_B_power", "This is Phase_B_power");
-    Phase_B_power->add_Specifition();
+
+//    Grid_CM_of_PCS = new Specification(Grid_CM_of_PCS_explain, ui->System_Tab, 0, 1, "5", "Phase_B_power", "This is Phase_B_power");
+//    Grid_CM_of_PCS->add_Specifition();
+//    Constant_power = new Specification(Constant_power_explain, ui->System_Tab, 1, 1, "5", "Phase_B_power", "This is Phase_B_power");
+//    Constant_power->add_Specifition();
+//    Charg_and_Discharg = new Specification(Charg_and_Discharg_explain, ui->System_Tab, 2, 1, "5", "Phase_B_power", "This is Phase_B_power");
+//    Charg_and_Discharg->add_Specifition();
+//    Work_mode = new Specification(Work_mode_explain, ui->System_Tab, 3, 1, "5", "Phase_B_power", "This is Phase_B_power");
+//    Work_mode->add_Specifition();
+//    Output_power_factor = new Specification(Output_power_factor_explain, ui->System_Tab, 4, 1, "5", "Phase_B_power", "This is Phase_B_power");
+//    Output_power_factor->add_Specifition();
+//    Output_reactive_power = new Specification(Output_reactive_power_explain, ui->System_Tab, 5, 1, "5", "Phase_B_power", "This is Phase_B_power");
+//    Output_reactive_power->add_Specifition();
+//    Constant_current = new Specification(Constant_current_explain, ui->System_Tab, 6, 1, "5", "Phase_B_power", "This is Phase_B_power");
+//    Constant_current->add_Specifition();
+//    Constant_voltage = new Specification(Constant_voltage_explain, ui->System_Tab, 7, 1, "5", "Phase_B_power", "This is Phase_B_power");
+//    Constant_voltage->add_Specifition();
+//    Control_mode = new Specification(Control_mode_explain, ui->System_Tab, 0, 4, "5", "Phase_B_power", "This is Phase_B_power");
+//    Control_mode->add_Specifition();
+//    Machine_number = new Specification(Machine_number_explain, ui->System_Tab, 1, 4, "5", "Phase_B_power", "This is Phase_B_power");
+//    Machine_number->add_Specifition();
+//    Parallel = new Specification(Parallel_explain, ui->System_Tab, 2, 4, "5", "Phase_B_power", "This is Phase_B_power");
+//    Parallel->add_Specifition();
+//    Unbalance_power_enable = new Specification(Unbalance_power_enable_explain, ui->System_Tab, 3, 4, "5", "Phase_B_power", "This is Phase_B_power");
+//    Unbalance_power_enable->add_Specifition();
+//    Phase_A_power = new Specification(Phase_A_power_explain, ui->System_Tab, 4, 4, "5", "Phase_B_power", "This is Phase_B_power");
+//    Phase_A_power->add_Specifition();
+//    Phase_B_power = new Specification(Phase_B_power_explain, ui->System_Tab, 5, 4, "5", "Phase_B_power", "This is Phase_B_power");
+//    Phase_B_power->add_Specifition();
+//    Phase_C_power = new Specification(Phase_C_power_explain, ui->System_Tab, 6, 4, "5", "Phase_B_power", "This is Phase_B_power");
+//    Phase_C_power->add_Specifition();
+
+
+
+
 }
 /******************************************************************************
  * 设备信息表表初始化
@@ -1407,9 +1508,7 @@ void MEGAWin::SystemParam_tbnt_released()
             ui->UI_Debug_Tab->setColumnWidth(i,140);
             ui->UI_Debug_Tab->setRowHeight(i,50);
         }
-
     }
-
     for (int i=0;i<11; i++)
     {
             ui->UI_Debug_Tab->item (i,0)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
@@ -1417,6 +1516,220 @@ void MEGAWin::SystemParam_tbnt_released()
             ui->UI_Debug_Tab->item (i,4)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     }
 
+    /*功能设置*/
+    Battery_type = new Specification(Battery_type_explain, ui->UI_Parameter_Tab, 0, 1, \
+                                     "Lithium", "Battery_type", \
+                                     "根据实际情况选择电池类型，有锂电和铅酸两种类型可供选择\nChoose the battery type according to the actual situation, there are two types of lithium and lead acid to choose from");
+    Battery_type->add_Specifition();
+    BMS_Comm_type = new Specification(BMS_Comm_type_explain, ui->UI_Parameter_Tab, 1, 1, \
+                                      "CAN", "BMS_Comm_type", \
+                                      "设置与电池之间的通信方式，可根据情况选择RS485或CAN通信\nSet the communication mode between the battery, RS485 or CAN communication can be selected according to the situation");
+    BMS_Comm_type->add_Specifition();
+    Power_control_type = new Specification(Power_control_type_explain, ui->UI_Parameter_Tab, 2, 1,\
+                                           "CP_N&&P" , "Power_control_type", \
+                                           "设置控制功率的方式，有恒压、恒流、恒功率\nSet the control power mode, constant voltage, constant current, constant power");
+    Power_control_type->add_Specifition();
+    EMS_Comm_type = new Specification(EMS_Comm_type_explain, ui->UI_Parameter_Tab, 3, 1, \
+                                      "RS485", "EMS_Comm_type", \
+                                      "设置EMS的通信方式，有RS485， CAN通信，以太网三种方式");
+    EMS_Comm_type->add_Specifition();
+    Output_power_limit = new Specification(Output_power_limit_explain, ui->UI_Parameter_Tab, 4, 1,\
+                                           "100", "Output_power_limit", \
+                                           "设置允许输出的功率最大值");
+    Output_power_limit->add_Specifition();
+    BAT_manufacturers = new Specification(BAT_manufacturers_explain, ui->UI_Parameter_Tab, 5, 1, \
+                                          "GAOTE", "BAT_manufacturers", \
+                                          "电池厂家");
+    BAT_manufacturers->add_Specifition();
+    Power_Delta = new Specification(Power_Delta_explain, ui->UI_Parameter_Tab, 6, 1, \
+                                    "10", "Power_Delta", \
+                                    "This is Phase_B_power");
+    Power_Delta->add_Specifition();
+    Charge_power_limit = new Specification(Charge_power_limit_explain, ui->UI_Parameter_Tab, 7, 1, \
+                                           "100", "Charge_power_limit",\
+                                           "This is Phase_B_power");
+    Charge_power_limit->add_Specifition();
+    Discharge_power_limit = new Specification(Discharge_power_limit_explain, ui->UI_Parameter_Tab, 8, 1, \
+                                              "100", "Charge_power_limit", \
+                                              "This is Phase_B_power");
+    Discharge_power_limit->add_Specifition();
+    Charge_Vol_upper_Limit_delta = new Specification(Charge_Vol_upper_Limit_delta_explain, ui->UI_Parameter_Tab, 9, 1, \
+                                                     "10", "Charge_Vol_upper_Limit_delta", \
+                                                     "This is Phase_B_power");
+    Charge_Vol_upper_Limit_delta->add_Specifition();
+    Discharge_Vol_lower_Limit_delta = new Specification(Discharge_Vol_lower_Limit_delta_explain, ui->UI_Parameter_Tab, 10, 1,\
+                                                        "10", "Discharge_Vol_lower_Limit_delta", \
+                                                        "This is Phase_B_power");
+    Discharge_Vol_lower_Limit_delta->add_Specifition();
+    Host_Address = new Specification(Host_Address_explain, ui->UI_Parameter_Tab, 0, 4,\
+                                     "20", "Host_Address", \
+                                     "This is Phase_B_power");
+    Host_Address->add_Specifition();
+    serial_port_1 = new Specification(serial_port_1_explain, ui->UI_Parameter_Tab, 1, 4, \
+                                      "9600", "serial_port_1", "This is Phase_B_power");
+    serial_port_1->add_Specifition();
+    serial_port_2 = new Specification(serial_port_2_explain, ui->UI_Parameter_Tab, 2, 4, \
+                                      "9600", "serial_port_2", \
+                                      "This is Phase_B_power");
+    serial_port_2->add_Specifition();
+    serial_port_3 = new Specification(serial_port_3_explain, ui->UI_Parameter_Tab, 3, 4, \
+                                      "9600", "serial_port_3", \
+                                      "This is Phase_B_power");
+    serial_port_3->add_Specifition();
+    serial_port_4 = new Specification(serial_port_4_explain, ui->UI_Parameter_Tab, 4, 4, \
+                                      "9600", "serial_port_4", \
+                                      "This is Phase_B_power");
+    serial_port_4->add_Specifition();
+    serial_port_5 = new Specification(serial_port_5_explain, ui->UI_Parameter_Tab, 5, 4, \
+                                      "9600", "serial_port_5", \
+                                      "This is Phase_B_power");
+    serial_port_5->add_Specifition();
+
+    Can_port_1 = new Specification(Can_port_1_explain, ui->UI_Parameter_Tab, 6, 4, \
+                                   "500", "Can_port_1", \
+                                   "This is Phase_B_power");
+    Can_port_1->add_Specifition();
+    Can_port_2 = new Specification(Can_port_2_explain, ui->UI_Parameter_Tab, 7, 4, \
+                                   "250", "Can_port_2", \
+                                   "This is Phase_B_power");
+    Can_port_2->add_Specifition();
+    ProtocolVersion = new Specification(ProtocolVersion_explain, ui->UI_Parameter_Tab, 0, 7, \
+                                        "ProtocolVersion", "serial_port_5", \
+                                        "This is Phase_B_power");
+    ProtocolVersion->add_Specifition();
+    UserPassPort = new Specification(UserPassPort_explain, ui->UI_Parameter_Tab, 1, 7, \
+                                     "123456", "UserPassPort", \
+                                     "This is Phase_B_power");
+    UserPassPort->add_Specifition();
+    RootPassport = new Specification(RootPassport_explain, ui->UI_Parameter_Tab, 2, 7,\
+                                     "888888", "RootPassport", \
+                                     "This is Phase_B_power");
+    RootPassport->add_Specifition();
+    Language = new Specification(Language_explain, ui->UI_Parameter_Tab, 3, 7, \
+                                 "English", "Language", \
+                                 "This is Phase_B_power");
+    Language->add_Specifition();
+    System_upgrade = new Specification(System_upgrade_explain, ui->UI_Parameter_Tab, 4, 7, \
+                                       "upgrade", "System_upgrade", \
+                                       "This is Phase_B_power");
+    System_upgrade->add_Specifition();
+    Sounds = new Specification(Sounds_explain, ui->UI_Parameter_Tab, 5, 7, \
+                               "Allow", "Sounds", \
+                               "This is Phase_B_power");
+    Sounds->add_Specifition();
+    DryContact = new Specification(DryContact_explain, ui->UI_Parameter_Tab, 6, 7, \
+                                   "forbid", "DryContact", \
+                                   "This is Phase_B_power");
+    DryContact->add_Specifition();
+
+    /*系统参数*/
+    Change_rate_of_power = new Specification(Change_rate_of_power_explain, ui->UI_SystemParameter_Tab, 0, 1, \
+                                             "20", "Change_rate_of_power", \
+                                             "根据实际情况选择电池类型，有锂电和铅酸两种类型可供选择\nChoose the battery type according to the actual situation, there are two types of lithium and lead acid to choose from");
+    Change_rate_of_power->add_Specifition();
+    Grid_frequency_upper_limit = new Specification(Grid_frequency_upper_limit_explain, ui->UI_SystemParameter_Tab, 1, 1, \
+                                                   "3", "Grid_frequency_upper_limit", \
+                                                   "电网频率变化范围上限");
+    Grid_frequency_upper_limit->add_Specifition();
+    Grid_frequency_lower_limit = new Specification(Grid_frequency_lower_limit_explain, ui->UI_SystemParameter_Tab, 2, 1, \
+                                                   "-3", "Grid_frequency_lower_limit", \
+                                                   "电网频率变化范围下限");
+    Grid_frequency_lower_limit->add_Specifition();
+    Vol_protection_upper_limit = new Specification(Vol_protection_upper_limit_explain, ui->UI_SystemParameter_Tab, 3, 1, \
+                                                   "+15", "Vol_protection_upper_limit", \
+                                                   "电压保护范围上限");
+    Vol_protection_upper_limit->add_Specifition();
+    Vol_protection_lower_limit = new Specification(Vol_protection_lower_limit_explain, ui->UI_SystemParameter_Tab, 4, 1, \
+                                                   "-15", "Vol_protection_lower_limit", \
+                                                   "电压保护范围下限");
+    Vol_protection_lower_limit->add_Specifition();
+    HVRT_enable = new Specification(HVRT_enable_explain, ui->UI_SystemParameter_Tab, 5, 1, \
+                                                    "prohibit", "HVRT_enable", \
+                                                    "设置波特率。默认9600");
+    HVRT_enable->add_Specifition();
+    LVRT_enable = new Specification(LVRT_enable_explain, ui->UI_SystemParameter_Tab, 6, 1, \
+                                    "prohibit", "LVRT_enable", \
+                                    "This is Phase_B_power");
+    LVRT_enable->add_Specifition();
+    AFD_enable = new Specification(AFD_enable_explain, ui->UI_SystemParameter_Tab, 7, 1, \
+                                   "prohibit", "AFD_enable", \
+                                   "This is Phase_B_power");
+    AFD_enable->add_Specifition();
+    Insulation_detection_enable = new Specification(Insulation_detection_enable_explain, ui->UI_SystemParameter_Tab, 8, 1, \
+                                                    "prohibit", "Insulation_detection_enable", \
+                                                    "This is Phase_B_power");
+    Insulation_detection_enable->add_Specifition();
+    PrimaryFreq_enable = new Specification(PrimaryFreq_enable_explain, ui->UI_SystemParameter_Tab, 9, 1, \
+                                           "prohibit", "PrimaryFreq_enable", \
+                                           "This is Phase_B_power");
+    PrimaryFreq_enable->add_Specifition();
+    Inertia_enable = new Specification(Inertia_enable_explain, ui->UI_SystemParameter_Tab, 10, 1, \
+                                       "prohibit", "Inertia_enable", \
+                                       "This is Phase_B_power");
+    Inertia_enable->add_Specifition();
+
+    CV_parallel = new Specification(CV_parallel_explain, ui->UI_SystemParameter_Tab, 11, 1, \
+                                    "prohibit", "CV_parallel", \
+                                    "This is Phase_B_power");
+    CV_parallel->add_Specifition();
+
+    Machine_type = new Specification(Machine_type_explain, ui->UI_SystemParameter_Tab, 0, 4, \
+                                     "9600", "serial_port_2", \
+                                     "This is Phase_B_power");
+    Machine_type->add_Specifition();
+    Machine_capacity = new Specification(Machine_capacity_explain, ui->UI_SystemParameter_Tab, 1, 4, \
+                                     "9600", "serial_port_2", \
+                                     "This is Phase_B_power");
+    Machine_capacity->add_Specifition();
+    Output_Fre_grade = new Specification(Output_Fre_grade_explain, ui->UI_SystemParameter_Tab, 2, 4, \
+                                         "9600", "serial_port_3", \
+                                         "This is Phase_B_power");
+    Output_Fre_grade->add_Specifition();
+    Output_vol_level = new Specification(Output_vol_level_explain, ui->UI_SystemParameter_Tab, 3, 4, \
+                                         "9600", "serial_port_3", \
+                                         "This is Phase_B_power");
+    Output_vol_level->add_Specifition();
+    Converter_side_vol_level = new Specification(Converter_side_vol_level_explain, ui->UI_SystemParameter_Tab, 4, 4, \
+                                         "9600", "serial_port_3", \
+                                         "This is Phase_B_power");
+    Converter_side_vol_level->add_Specifition();
+    Output_reactive_power_mode = new Specification(Output_reactive_power_mode_explain, ui->UI_SystemParameter_Tab, 5, 4, \
+                                         "9600", "serial_port_3", \
+                                         "This is Phase_B_power");
+    Output_reactive_power_mode->add_Specifition();
+    Grid_connected_mode_of_Inv = new Specification(Grid_connected_mode_of_Inv_explain, ui->UI_SystemParameter_Tab, 6, 4, \
+                                                   "9600", "serial_port_4", \
+                                                   "This is Phase_B_power");
+    Grid_connected_mode_of_Inv->add_Specifition();
+    Primary_FM_dead_zone = new Specification(Primary_FM_dead_zone_explain, ui->UI_SystemParameter_Tab, 7, 4, \
+                                             "9600", "serial_port_5", \
+                                             "This is Phase_B_power");
+    Primary_FM_dead_zone->add_Specifition();
+    PFM_coeff = new Specification(PFM_coeff_explain, ui->UI_SystemParameter_Tab, 8, 4, \
+                                  "9600", "serial_port_5", \
+                                  "This is Phase_B_power");
+    PFM_coeff->add_Specifition();
+    Grid_recover_time = new Specification(Grid_recover_time_explain, ui->UI_SystemParameter_Tab, 9, 4, \
+                                          "9600", "serial_port_5", \
+                                          "This is Phase_B_power");
+    Grid_recover_time->add_Specifition();
+    DynamicCap = new Specification(DynamicCap_explain, ui->UI_SystemParameter_Tab, 10, 4, \
+                                   "9600", "serial_port_5", \
+                                   "This is Phase_B_power");
+    DynamicCap->add_Specifition();
+
+    Module_Number = new Specification(Module_Number_explain, ui->UI_SystemParameter_Tab, 0, 7, \
+                                      "9600", "serial_port_5", \
+                                      "This is Phase_B_power");
+    Module_Number->add_Specifition();
+    Restore_factory = new Specification(Restore_factory_explain, ui->UI_SystemParameter_Tab,1, 7, \
+                                        "9600", "serial_port_5", \
+                                        "This is Phase_B_power");
+    Restore_factory->add_Specifition();
+    Clear_Data = new Specification(Clear_Data_explain, ui->UI_SystemParameter_Tab, 2, 7, \
+                                   "9600", "serial_port_5", \
+                                   "This is Phase_B_power");
+    Clear_Data->add_Specifition();
 
 }
 
