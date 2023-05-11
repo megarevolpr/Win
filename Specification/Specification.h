@@ -2,19 +2,8 @@
 #define SPECIFICATION_H
 
 #include <QDialog>
-#include <QPushButton>
-#include <QTableWidget>
-#include <QString>
+#include "database.h"
 
-typedef struct{
-    QPushButton *explain_btn;
-    QTableWidget *target_tab;
-    int row;
-    int column;
-    QString value;
-    QString explain_title;
-    QString specification_text;
-}TAB_SPECIFITION;
 
 class Specification : public QDialog
 {

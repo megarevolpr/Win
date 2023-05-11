@@ -1,6 +1,7 @@
 
 HEADERS += \
-    $$PWD/Specification.h
+    $$PWD/Specification.h \
+    $$PWD/database.h
 
 SOURCES += \
     $$PWD/Specification.cpp

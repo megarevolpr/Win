@@ -65,30 +65,30 @@ void MEGAWin::updateTimeOut()
 void MEGAWin::MemoryAllocation()
 {
     //创建下拉框
-    combox_ui_GridMode =   new QComboBox();             //并网方式
-    combox_ui_GridMode->setView(new QListView());
+//    combox_ui_GridMode =   new QComboBox();             //并网方式
+//    combox_ui_GridMode->setView(new QListView());
 
     /*******************************系统设置************************************/
-    combox_ui_ChargeDischar =   new QComboBox();        //充放电设置
-    combox_ui_ChargeDischar->setView(new QListView());
+//    combox_ui_ChargeDischar =   new QComboBox();        //充放电设置
+//    combox_ui_ChargeDischar->setView(new QListView());
 
-    combox_RUN  =   new QComboBox();                    //运行模式
-    combox_RUN->setView(new QListView());
+//    combox_RUN  =   new QComboBox();                    //运行模式
+//    combox_RUN->setView(new QListView());
 
-    combox_ControlMode  =   new QComboBox();            //控制模式
-    combox_ControlMode->setView(new QListView());       //控制模式列表
+//    combox_ControlMode  =   new QComboBox();            //控制模式
+//    combox_ControlMode->setView(new QListView());       //控制模式列表
 
-    combox_ui_OnOff_Grid =   new QComboBox();           //并离网设置
-    combox_ui_OnOff_Grid->setView(new QListView());     //并离网列表设置
+//    combox_ui_OnOff_Grid =   new QComboBox();           //并离网设置
+//    combox_ui_OnOff_Grid->setView(new QListView());     //并离网列表设置
 
-    combox_MachineNumber = new QComboBox();             //设备号
-    combox_MachineNumber->setView(new QListView());
+//    combox_MachineNumber = new QComboBox();             //设备号
+//    combox_MachineNumber->setView(new QListView());
 
-    combox_Parallel = new QComboBox();                  //并机
-    combox_Parallel->setView(new QListView());
+//    combox_Parallel = new QComboBox();                  //并机
+//    combox_Parallel->setView(new QListView());
 
-    combox_UnbalancePowerEnable = new QComboBox();      //功率不平衡使能
-    combox_UnbalancePowerEnable->setView(new QListView());
+//    combox_UnbalancePowerEnable = new QComboBox();      //功率不平衡使能
+//    combox_UnbalancePowerEnable->setView(new QListView());
 
     Constant_power_explain = new QPushButton;           //恒功率
 
@@ -257,64 +257,64 @@ void MEGAWin::UserParam_tab()
     ui->System_Tab->horizontalHeader()->setStretchLastSection(3);
 
 
-    //并离网
-    combox_ui_OnOff_Grid->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-    combox_ui_OnOff_Grid->addItems(ui_OnOff_Grid);
-//    combox_ui_OnOff_Grid->setCurrentIndex(ui_sysDspSetData.u16OnOffGrid - 1);
-    combox_ui_OnOffGrid_str = combox_ui_OnOff_Grid->currentText();
-    combox_ui_OnOffGrid_index = combox_ui_OnOff_Grid->currentIndex();
+//    //并离网
+//    combox_ui_OnOff_Grid->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
+//    combox_ui_OnOff_Grid->addItems(ui_OnOff_Grid);
+////    combox_ui_OnOff_Grid->setCurrentIndex(ui_sysDspSetData.u16OnOffGrid - 1);
+//    combox_ui_OnOffGrid_str = combox_ui_OnOff_Grid->currentText();
+//    combox_ui_OnOffGrid_index = combox_ui_OnOff_Grid->currentIndex();
 
-    //充放电
-    combox_ui_ChargeDischar->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-    combox_ui_ChargeDischar->addItems(ui_ChargeDischar);
-//    combox_ui_ChargeDischar->setCurrentIndex(ui_sysDspSetData.u16ChargeOrDischarge - 1);
-    combox_ui_ChargeDischar_str = combox_ui_ChargeDischar->currentText();
-    combox_ui_ChargeDischar_index = combox_ui_ChargeDischar->currentIndex();
+//    //充放电
+//    combox_ui_ChargeDischar->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
+//    combox_ui_ChargeDischar->addItems(ui_ChargeDischar);
+////    combox_ui_ChargeDischar->setCurrentIndex(ui_sysDspSetData.u16ChargeOrDischarge - 1);
+//    combox_ui_ChargeDischar_str = combox_ui_ChargeDischar->currentText();
+//    combox_ui_ChargeDischar_index = combox_ui_ChargeDischar->currentIndex();
 
-    //运行方式
-    combox_RUN->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-    combox_RUN->addItems(combox_Runmode);
-//    combox_RUN->setCurrentIndex(ui_sysDspSetData.u16RunMod);//默认手动控制
-    combox_RUN_str = combox_RUN->currentText();
-    combox_RUN_index = combox_RUN->currentIndex();
+//    //运行方式
+//    combox_RUN->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
+//    combox_RUN->addItems(combox_Runmode);
+////    combox_RUN->setCurrentIndex(ui_sysDspSetData.u16RunMod);//默认手动控制
+//    combox_RUN_str = combox_RUN->currentText();
+//    combox_RUN_index = combox_RUN->currentIndex();
 
-    //控制模式
-    combox_ControlMode->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-    combox_ControlMode->addItems(combox_CM);
-//    combox_ControlMode->setCurrentIndex(ui_sysMonSetData.u16ControlMode);
-    combox_ControlMode_str = combox_ControlMode->currentText();
-    combox_ControlMode_index = combox_ControlMode->currentIndex();
+//    //控制模式
+//    combox_ControlMode->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
+//    combox_ControlMode->addItems(combox_CM);
+////    combox_ControlMode->setCurrentIndex(ui_sysMonSetData.u16ControlMode);
+//    combox_ControlMode_str = combox_ControlMode->currentText();
+//    combox_ControlMode_index = combox_ControlMode->currentIndex();
 
-    combox_MachineNumber->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-    combox_MachineNumber->addItems(combox_MNumber);
-//    combox_MachineNumber->setCurrentIndex(ui_sysDspSetData.u16MachineNumber);
-    MachineNumber_str = combox_MachineNumber->currentText();
-    combox_MachineNumber_index = combox_MachineNumber->currentIndex();
+//    combox_MachineNumber->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
+//    combox_MachineNumber->addItems(combox_MNumber);
+////    combox_MachineNumber->setCurrentIndex(ui_sysDspSetData.u16MachineNumber);
+//    MachineNumber_str = combox_MachineNumber->currentText();
+//    combox_MachineNumber_index = combox_MachineNumber->currentIndex();
 
-    combox_Parallel->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-    combox_Parallel->addItems(combox_Para);
-//    combox_Parallel->setCurrentIndex(ui_sysDspSetData.u16EnableParallel);
-    combox_Parallel_str = combox_Parallel->currentText();
-    combox_Parallel_index = combox_Parallel->currentIndex();
+//    combox_Parallel->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
+//    combox_Parallel->addItems(combox_Para);
+////    combox_Parallel->setCurrentIndex(ui_sysDspSetData.u16EnableParallel);
+//    combox_Parallel_str = combox_Parallel->currentText();
+//    combox_Parallel_index = combox_Parallel->currentIndex();
 
-    combox_UnbalancePowerEnable->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-    combox_UnbalancePowerEnable->addItems(combox_Para);
-//    combox_UnbalancePowerEnable->setCurrentIndex(ui_sysDspSetData.u16UnbalancePowerEnable);
-    combox_UnbalancePowerEnable_str = combox_UnbalancePowerEnable->currentText();
-    combox_UnbalancePowerEnable_index = combox_UnbalancePowerEnable->currentIndex();
+//    combox_UnbalancePowerEnable->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
+//    combox_UnbalancePowerEnable->addItems(combox_Para);
+////    combox_UnbalancePowerEnable->setCurrentIndex(ui_sysDspSetData.u16UnbalancePowerEnable);
+//    combox_UnbalancePowerEnable_str = combox_UnbalancePowerEnable->currentText();
+//    combox_UnbalancePowerEnable_index = combox_UnbalancePowerEnable->currentIndex();
 
     Phase_C_power_btn->setText(tr("5"));
     AdvancedSetup_btn->setText(tr("Advance setting"));
     Constant_power_explain->setText(tr("0"));
 
-    ui->System_Tab->setCellWidget(0,1, (QWidget *)combox_ui_OnOff_Grid);        //并离网
-    ui->System_Tab->setCellWidget(2,1, (QWidget *)combox_ui_ChargeDischar);     //充放电设置
-    ui->System_Tab->setCellWidget(3,1, (QWidget *)combox_RUN);                  //运行模式
+//    ui->System_Tab->setCellWidget(0,1, (QWidget *)combox_ui_OnOff_Grid);        //并离网
+//    ui->System_Tab->setCellWidget(2,1, (QWidget *)combox_ui_ChargeDischar);     //充放电设置
+//    ui->System_Tab->setCellWidget(3,1, (QWidget *)combox_RUN);                  //运行模式
 
-    ui->System_Tab->setCellWidget(0,4, (QWidget *)combox_ControlMode);          //控制模式
-    ui->System_Tab->setCellWidget(1,4, (QWidget *)combox_MachineNumber);        //设备号
-    ui->System_Tab->setCellWidget(2,4, (QWidget *)combox_Parallel);             //并机
-    ui->System_Tab->setCellWidget(3,4, (QWidget *)combox_UnbalancePowerEnable); //功率不平衡使能
+//    ui->System_Tab->setCellWidget(0,4, (QWidget *)combox_ControlMode);          //控制模式
+//    ui->System_Tab->setCellWidget(1,4, (QWidget *)combox_MachineNumber);        //设备号
+//    ui->System_Tab->setCellWidget(2,4, (QWidget *)combox_Parallel);             //并机
+//    ui->System_Tab->setCellWidget(3,4, (QWidget *)combox_UnbalancePowerEnable); //功率不平衡使能
 
     ui->System_Tab->setCellWidget(1,1, (QWidget *)Constant_power_explain);
     ui->System_Tab->setCellWidget(6,4, (QWidget *)Phase_C_power_btn);          //C相功率
@@ -1319,8 +1319,8 @@ void MEGAWin::VariableInit()
 ////    ui_OutFreq << tr("50Hz") << tr("60Hz");
 //    ui_QPowerMode << tr("Non adjustable") << tr("Pf") << tr("Q");
 
-    ui_ChargeDischar << tr("Charge") << tr("Discharge");
-    ui_OnOff_Grid << tr("Off") << tr("On") << tr("automatic");
+//    ui_ChargeDischar << tr("Charge") << tr("Discharge");
+//    ui_OnOff_Grid << tr("Off") << tr("On") << tr("automatic");
 //    combox_Battery << tr("Non") << tr("Lithium") << tr("LeadAcid");
 //    if(m_SysMonSetData.u16LOGO == LOGO_MEGA)
 //        combox_Machine << tr("MEGA ") << tr("MEGA -T") << tr("MEGA -TS") << tr("MEGA -TS-T");
@@ -1328,8 +1328,8 @@ void MEGAWin::VariableInit()
 //        combox_Machine << tr("PCS ") << tr("PCS -T") << tr("PCS -TS") << tr("PCS -TS-T");
 
 //    combox_Control << tr("CAN") << tr("RS485") << tr("Ethernet") << tr("Non");
-    combox_Runmode << tr("Manual") << tr("Peak valley") << tr("UPS") << tr("Prevent countercurrnet");
-    combox_CM << tr("Local") << tr("Remote");
+//    combox_Runmode << tr("Manual") << tr("Peak valley") << tr("UPS") << tr("Prevent countercurrnet");
+//    combox_CM << tr("Local") << tr("Remote");
 //    combox_Volt_down << "-10" << "-15" << "-20" << "-30";
 //    combox_Volt_up << "+10" << "+15" << "+20" << "+30";
 //    combox_limite_down  << "-0.5" << "-1" << "-2" << "-3";
@@ -1339,8 +1339,8 @@ void MEGAWin::VariableInit()
 //    combox_InsulationDetectionEN << tr("Disable") << tr("Enable");
 //    comobx_Language <<tr("Chinese") << tr("English");
 //    sounds_choice << tr("Allow") << tr("forbid");
-    combox_Para << tr("Disable") << tr("Enable");
-    combox_MNumber << tr("Master_00") << tr("Slave_01") << tr("Slave_02") << tr("Slave_03") << tr("Slave_04") << tr("Slave_05") << tr("Slave_06") << tr("Slave_07") << tr("Slave_08");
+//    combox_Para << tr("Disable") << tr("Enable");
+//    combox_MNumber << tr("Master_00") << tr("Slave_01") << tr("Slave_02") << tr("Slave_03") << tr("Slave_04") << tr("Slave_05") << tr("Slave_06") << tr("Slave_07") << tr("Slave_08");
 //    combox_NCNO << tr("N_O") << tr("N_C");
 //    combox_Action << tr("Prompt") << tr("Standby") << tr("Shut down") << tr("Full standby") << tr("Empty standby") << tr("Failure standby") << tr("Grid signal") << tr("ATS signal");
 //    combox_BMS_Action << tr("No action") << tr("Power down") << tr("Standby") << tr("Shut down");
@@ -1395,7 +1395,7 @@ void MEGAWin::SystemParam_tbnt_released()
 //        combox_ui_CapType_str = combox_ui_CapType->currentText();
 //        combox_ui_EnableLVRT_str = combox_ui_EnableLVRT->currentText();
 //        combox_EMS_CommType_str =   combox_EMS_CommType->currentText();
-        combox_ui_GridMode_str = combox_ui_GridMode->currentText();
+//        combox_ui_GridMode_str = combox_ui_GridMode->currentText();
 //        combox_ui_RunMod_str = combox_ui_RunMod->currentText();
 //        combox_ui_SysVltGrade_str = combox_ui_SysVltGrade->text();//->currentText();
 //        combox_ui_OutPower_str = combox_OutPower->currentText();
