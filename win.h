@@ -86,9 +86,9 @@ public:
         QPushButton *Phase_B_power_explain;    //B相电压说明
         Specification *Phase_B_power;
 
-        QList<QPair<QPushButton *, int> > PCS_pairList;
-        QList<QString> hand_name;
-        QList<QString> btn_explain;
+//        QList<QPair<QPushButton *, int> > PCS_pairList;
+//        QList<QString> hand_name;
+//        QList<QString> btn_explain;
 
         //实时数据
         QPushButton *PCS_vol_AB_btn;
@@ -201,13 +201,13 @@ private slots:
 
     void on_Run_tabWidget_tabBarClicked(int index); //实时数据界面选项卡点击响应
     void combox_ControlMode_change();
-    void Constant_power_explain_clicked();//功率说明
-    void Phase_C_power_btn_clicked();//C相功率
+//    void Constant_power_explain_clicked();//功率说明
+//    void Phase_C_power_btn_clicked();//C相功率
     void AdvancedSetup_btn_clicked();//高级
     void ToSetButton();
 
     /******************************PCS数据********************************/
-    void slot_btnGroupClicked(int);
+//    void slot_btnGroupClicked(int);
 
     void on_System_tabWidget_currentChanged(int index);
 

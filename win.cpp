@@ -316,8 +316,8 @@ void MEGAWin::UserParam_tab()
 //    ui->System_Tab->setCellWidget(2,4, (QWidget *)combox_Parallel);             //并机
 //    ui->System_Tab->setCellWidget(3,4, (QWidget *)combox_UnbalancePowerEnable); //功率不平衡使能
 
-    ui->System_Tab->setCellWidget(1,1, (QWidget *)Constant_power_explain);
-    ui->System_Tab->setCellWidget(6,4, (QWidget *)Phase_C_power_btn);          //C相功率
+//    ui->System_Tab->setCellWidget(1,1, (QWidget *)Constant_power_explain);
+//    ui->System_Tab->setCellWidget(6,4, (QWidget *)Phase_C_power_btn);          //C相功率
     ui->System_Tab->setCellWidget(7,4, (QWidget *)AdvancedSetup_btn);          //高级设置
 
     Phase_B_power = new Specification(Phase_B_power_explain, ui->System_Tab, 5, 4, "5", "Phase_B_power", "This is Phase_B_power");
@@ -1416,56 +1416,7 @@ void MEGAWin::SystemParam_tbnt_released()
             ui->UI_Debug_Tab->item (i,2)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
             ui->UI_Debug_Tab->item (i,4)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     }
-//    ui->System_Tab->setColumnWidth(0,163);
-//    ui->System_Tab->setRowHeight(0, 50);
-//    if(PasswordCheck())
-//    {
-//        PasswordLimit();
-//        ui->UI_stackedWidget->setCurrentWidget(ui->BasicSet_page);
 
-//        combox_ui_QPowerMode_index = combox_ui_QPowerMode->currentIndex();
-//        combox_HVRTEnable_index = combox_HVRTEnable->currentIndex();
-//        combox_ui_CapType_index = combox_ui_CapType->currentIndex();
-//        combox_ui_EnableLVRT_index = combox_ui_EnableLVRT->currentIndex();
-//        combox_EMS_CommType_index   =   combox_EMS_CommType->currentIndex();
-//        Primary_FM_DZ_str = Primary_FM_DZ->text();
-//        PFM_Coeff_str =  Primary_FM_DZ->text();
-//        GridRecoverTime_str =  GridRecoverTime->text();
-
-//        combox_ui_RunMod_index = combox_ui_RunMod->currentIndex();
-////        combox_ui_SysVltGrade_index = combox_ui_SysVltGrade->currentIndex();
-//        PowerCtlType_index = combox_OutPower->currentIndex();
-//        combox_ui_Turns_ratio_index = combox_ui_Turns_ratio->currentIndex();
-//        InsulationDetectionEN_index = InsulationDetectionEN->currentIndex();
-//        CV_ParallelEN_index = CV_ParallelEN->currentIndex();
-//        DynamicCapEN_index = DynamicCapEN->currentIndex();
-
-//        combox_ui_QPowerMode_str = combox_ui_QPowerMode->currentText();
-//        combox_ui_OutFreq_str = combox_ui_OutFreq->text();
-//        combox_ui_CapType_str = combox_ui_CapType->currentText();
-//        combox_ui_EnableLVRT_str = combox_ui_EnableLVRT->currentText();
-//        combox_EMS_CommType_str =   combox_EMS_CommType->currentText();
-//        combox_ui_GridMode_str = combox_ui_GridMode->currentText();
-//        combox_ui_RunMod_str = combox_ui_RunMod->currentText();
-//        combox_ui_SysVltGrade_str = combox_ui_SysVltGrade->text();//->currentText();
-//        combox_ui_OutPower_str = combox_OutPower->currentText();
-
-//        PowerFactor_str = OutputPowerFactor->text();//输出功率因数
-//        OutputReactivePower_str = OutputReactivePower->text();//输出无功功率
-//        ConstantCurrent_str = ConstantCurrent->text();
-//        ConstantVoltage_str = ConstantVoltage->text();
-//        combox_IsolatedIsland_index = combox_IsolatedIsland->currentIndex();
-//        MachineNumber_str = combox_MachineNumber->currentText();
-//        CV_ParallelEN_str = CV_ParallelEN->currentText();
-//        DynamicCapEN_str  = DynamicCapEN->currentText();
-
-
-//        timer2->start();//2018/11/21
-//    }
-//    else
-//    {
-//        ui->stackedWidget->setCurrentWidget(ui->System_page);
-//    }
 
 }
 
@@ -1494,19 +1445,8 @@ void MEGAWin::LinkRelationship()
 
     connect(Update_RTData_timer, SIGNAL(timeout()), this, SLOT(updateTimeOut()));
 
-    //系统设置
-//    connect(combox_ui_GridMode, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ui_GridMode_change()));
-
-//    connect(combox_ui_OnOff_Grid, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ui_OnOff_Grid_change()));//并离网
-
-
-//    connect(combox_ControlMode, SIGNAL(currentIndexChanged(int)), this, SLOT(combox_ControlMode_change()));//控制模式
-
-
-
-
-    connect(Constant_power_explain,SIGNAL(clicked(bool)), this, SLOT(Constant_power_explain_clicked()));//恒功率
-    connect(Phase_C_power_btn ,SIGNAL(clicked(bool)), this, SLOT(Constant_power_explain_clicked()));//C相功率
+//    connect(Constant_power_explain,SIGNAL(clicked(bool)), this, SLOT(Constant_power_explain_clicked()));//恒功率
+//    connect(Phase_C_power_btn ,SIGNAL(clicked(bool)), this, SLOT(Constant_power_explain_clicked()));//C相功率
     connect(AdvancedSetup_btn,SIGNAL(clicked(bool)), this, SLOT(AdvancedSetup_btn_clicked()));//高级设置
 
     connect(ui->Bypass_Batt_btn, SIGNAL(clicked()), this, SLOT(on_Batt_btn_released()));    //主页电池按钮跳转电池信息
@@ -1515,8 +1455,9 @@ void MEGAWin::LinkRelationship()
     connect(ui->Bypass_Load_Btn, SIGNAL(clicked()), this, SLOT(on_Load_clicked()));    //主页负载按钮跳转负载实时数据
 
     //关联实时数据点击槽函数
-    connect(pButtonGroup, SIGNAL(buttonClicked(int)), this, SLOT(slot_btnGroupClicked(int)));
+//    connect(pButtonGroup, SIGNAL(buttonClicked(int)), this, SLOT(slot_btnGroupClicked(int)));
 }
+
 /******************************************************************************
  * 模块实时数据表初始化
  * ***************************************************************************/
@@ -1650,67 +1591,7 @@ void MEGAWin::ModuleState_Tab()
     QPalette pal;
     pal.setColor(QPalette::Base, QColor(255, 0, 0));
     pal.setColor(QPalette::AlternateBase, QColor(100, 149, 237));
-//    if(m_DspSetData.u16UpsType != Machine_MEGA_TS)
-//    {
-//        QStringList StateName_2;// << tr("DC input breaker 2")
-//#ifdef Machine_V2
-//        StateName_2 << tr("DC input breaker") << tr("DC contactor")
-//                    << tr("Maintenance Bypass breaker") << tr("Grid breaker") << tr("Maintenance Bypass breaker");
-//#else
-//        if(m_DspSetData.u16UpsType == Machine_MEGA_TS_T)
-//        {
-//            StateName_2 << tr("DC input breaker") << tr("DC contactor")
-//                        << tr("Output contactor") << tr("Output breaker") << tr("Maintenance Bypass breaker");
-//        }
-//        else
-//        {
-//            StateName_2 << tr("DC input breaker") << tr("DC contactor")
-//                        << tr("Grid contactor") << tr("Grid breaker") << tr("Maintenance Bypass breaker");//  << tr("ModeLock") << tr("Bypass contactor") << tr("Bypass breaker");
-//        }
 
-//#endif
-//        QStringList StateName_3;
-//         StateName_3 << tr("Converter available") << tr("DC Soft start")
-//                    << tr("Converter status") << tr("Reactive power Regulation")
-//                    << tr("Sleep mode") << tr("LVRT");
-//         QStringList StateName_4;
-//          StateName_4 << tr("Generator signal") << tr("Reserve")
-//                     << tr("Reserve") << tr("EPO contact signal 1")
-//                     << tr("EPO contact signal 2") << tr("Access control signal")<< tr("Full power signal") << tr("Smoke alarm signal")<< tr("Hight temp. signal");
-//        ui->RTState_MEGA_Tab->clearContents();
-//        ui->RTState_MEGA_Tab->setColumnCount(6);
-//        ui->RTState_MEGA_Tab->setRowCount(9);
-//        ui->RTState_MEGA_Tab->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
-//        ui->RTState_MEGA_Tab->verticalHeader()->setVisible(false);//设置垂直头不可见
-//        ui->RTState_MEGA_Tab->setFrameShape(QFrame::NoFrame);//设置无边框
-//        ui->RTState_MEGA_Tab->setShowGrid(true);//设置显示格子
-//        ui->RTState_MEGA_Tab->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
-//        ui->RTState_MEGA_Tab->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
-//        ui->RTState_MEGA_Tab->setStyleSheet("selection-background-color:lightblue;");
-//        QStringList StateList_2;
-//        StateList_2 << tr("Name") << tr("Value")<< tr("Name") << tr("Value");
-//        ui->RTState_MEGA_Tab->setHorizontalHeaderLabels(StateList_2);
-//        ui->RTState_MEGA_Tab->setColumnWidth(0,150);
-//        ui->RTState_MEGA_Tab->setColumnWidth(1,100);
-//        ui->RTState_MEGA_Tab->setColumnWidth(2,150);
-//        ui->RTState_MEGA_Tab->setColumnWidth(3,100);
-//        ui->RTState_MEGA_Tab->setColumnWidth(4,150);
-//        ui->RTState_MEGA_Tab->horizontalHeader()->setStretchLastSection(5);
-//        for(int i = 0; i < StateName_2.size(); i++)
-//        {
-//            ui->RTState_MEGA_Tab->setItem(i, 0, new QTableWidgetItem(StateName_2.at(i)));
-//        }
-//        for(int j = 0; j < StateName_3.size(); j++)
-//        {
-//            ui->RTState_MEGA_Tab->setItem(j, 2, new QTableWidgetItem(StateName_3.at(j)));
-//        }
-//        for(int k = 0; k < StateName_4.size(); k++)
-//        {
-//            ui->RTState_MEGA_Tab->setItem(k, 4, new QTableWidgetItem(StateName_4.at(k)));
-//        }
-//        ui->RTState_MEGA_Tab->resizeRowsToContents();
-//    }
-//    else
     {
         QStringList RTState_Bypass_List1;// << tr("DC input breaker 2")
 #ifdef Machine_V2
@@ -2140,47 +2021,47 @@ void MEGAWin::combox_ControlMode_change()
 
 void MEGAWin::ToSetButton()
 {
-    QPushButton * btn_name1[] ={PCS_vol_AB_btn,PCS_vol_BC_btn,PCS_vol_CA_btn,PCS_cur_A_btn,PCS_cur_B_btn, PCS_cur_C_btn,\
-                              PCS_act_P_btn,PCS_rea_P_btn,PCS_par_P_btn,PCS_Pf_btn,\
-                              PCS_Bat_vol_btn,PCS_Bat_cur_btn,PCS_Bat_P_btn,PCS_Bus_vol_btn,PCS_IGBT_T_btn,PCS_Env_T_btn,\
-                              Grid_vol_AB_btn,Grid_vol_BC_btn,Grid_vol_CA_btn,Grid_cur_A_btn,Grid_cur_B_btn, Grid_cur_C_btn,\
-                              Grid_act_P_btn,Grid_rea_P_btn,Grid_app_P_btn,Grid_fre_btn,Grid_Pf_btn,\
-                              Load_vol_AB_btn,Load_vol_BC_btn,Load_vol_CA_btn,Load_cur_A_btn,Load_cur_B_btn, Load_cur_C_btn,\
-                              Load_act_P_btn,Load_rea_P_btn,Load_app_P_btn,Load_fre_btn,Load_Pf_btn};
+//    QPushButton * btn_name1[] ={PCS_vol_AB_btn,PCS_vol_BC_btn,PCS_vol_CA_btn,PCS_cur_A_btn,PCS_cur_B_btn, PCS_cur_C_btn,\
+//                              PCS_act_P_btn,PCS_rea_P_btn,PCS_par_P_btn,PCS_Pf_btn,\
+//                              PCS_Bat_vol_btn,PCS_Bat_cur_btn,PCS_Bat_P_btn,PCS_Bus_vol_btn,PCS_IGBT_T_btn,PCS_Env_T_btn,\
+//                              Grid_vol_AB_btn,Grid_vol_BC_btn,Grid_vol_CA_btn,Grid_cur_A_btn,Grid_cur_B_btn, Grid_cur_C_btn,\
+//                              Grid_act_P_btn,Grid_rea_P_btn,Grid_app_P_btn,Grid_fre_btn,Grid_Pf_btn,\
+//                              Load_vol_AB_btn,Load_vol_BC_btn,Load_vol_CA_btn,Load_cur_A_btn,Load_cur_B_btn, Load_cur_C_btn,\
+//                              Load_act_P_btn,Load_rea_P_btn,Load_app_P_btn,Load_fre_btn,Load_Pf_btn};
 
-    QString data[] ={"400V","401V","402V","403V","404V","405V","400V","400V","400V","400V","400V","400V"\
-                    ,"400V","400V","400V","400V","400V","400V","400V","400V","400V","400V","400V","400V"\
-                    ,"400V","400V","400V","400V","400V","400V","400V","400V","400V","400V","400V","400V"\
-                    ,"400V","400V"};
+//    QString data[] ={"400V","401V","402V","403V","404V","405V","400V","400V","400V","400V","400V","400V"\
+//                    ,"400V","400V","400V","400V","400V","400V","400V","400V","400V","400V","400V","400V"\
+//                    ,"400V","400V","400V","400V","400V","400V","400V","400V","400V","400V","400V","400V"\
+//                    ,"400V","400V"};
 
 //    QPushButton * btn_name2[] ={};
 
-    for (int i=0;i<sizeof(btn_name1)/sizeof(btn_name1[0]);i++)
-    {
+//    for (int i=0;i<sizeof(btn_name1)/sizeof(btn_name1[0]);i++)
+//    {
 //        PCS_pairList.append(qMakePair(btn_name[i],i));
 
-        if(i<=9){
+//        if(i<=9){
 //            PCS_C_data[i] = new Specification(btn_name1[i],  ui->Converter_Tab, 5, 4, "5", "Phase_B_power", "This is Phase_B_power");
 //            btn_name1[i]->setText(data[i].toUtf8());
 //            ui->Converter_Tab->setCellWidget(i,1,(QWidget *)btn_name1[i]);
 //            pButtonGroup->addButton(btn_name1[i], i);
-        }
-        else if (i<=15) {
-            btn_name1[i]->setText(data[i].toUtf8());
-            ui->Converter_Tab->setCellWidget(i%10,3,(QWidget *)btn_name1[i]);
-            pButtonGroup->addButton(btn_name1[i], i);
-        }
-        else if (i<=26) {
-            btn_name1[i]->setText(data[i].toUtf8());
-            ui->Grid_Tab->setCellWidget(i%16,1,(QWidget *)btn_name1[i]);
-            pButtonGroup->addButton(btn_name1[i], i);
-        }
-        else if (i<=36) {
-            btn_name1[i]->setText(data[i]);
-            ui->Load_Tab->setCellWidget(i%27,1,(QWidget *)btn_name1[i]);
-            pButtonGroup->addButton(btn_name1[i], i);
-        }
-    }
+//        }
+//        else if (i<=15) {
+//            btn_name1[i]->setText(data[i].toUtf8());
+//            ui->Converter_Tab->setCellWidget(i%10,3,(QWidget *)btn_name1[i]);
+//            pButtonGroup->addButton(btn_name1[i], i);
+//        }
+//        else if (i<=26) {
+//            btn_name1[i]->setText(data[i].toUtf8());
+//            ui->Grid_Tab->setCellWidget(i%16,1,(QWidget *)btn_name1[i]);
+//            pButtonGroup->addButton(btn_name1[i], i);
+//        }
+//        else if (i<=36) {
+//            btn_name1[i]->setText(data[i]);
+//            ui->Load_Tab->setCellWidget(i%27,1,(QWidget *)btn_name1[i]);
+//            pButtonGroup->addButton(btn_name1[i], i);
+//        }
+//    }
 
 //    for (int i=1;i<=24;i++)
 //    {
@@ -2198,31 +2079,31 @@ void MEGAWin::ToSetButton()
 }
 
 
-void MEGAWin::Constant_power_explain_clicked()  //功率说明
-{
-//    QMessageBox::information(this, "Constant power", "You can modify the power of the converter by modifying the value", QMessageBox::Ok);
-    QMessageBox::about(this, "Constant power", "You can modify the power of the converter by modifying the value");
+//void MEGAWin::Constant_power_explain_clicked()  //功率说明
+//{
+////    QMessageBox::information(this, "Constant power", "You can modify the power of the converter by modifying the value", QMessageBox::Ok);
+//    QMessageBox::about(this, "Constant power", "You can modify the power of the converter by modifying the value");
 
-//    QMessageBox msgBox;
-//    msgBox.setText("Constant_power_explain_clicked");
-    //    msgBox.exec();
-}
+////    QMessageBox msgBox;
+////    msgBox.setText("Constant_power_explain_clicked");
+//    //    msgBox.exec();
+//}
 
-void MEGAWin::Phase_C_power_btn_clicked()
-{
-    QMessageBox::about(this, "Phase Cpower", "C-phase power");
-}
+//void MEGAWin::Phase_C_power_btn_clicked()
+//{
+//    QMessageBox::about(this, "Phase Cpower", "C-phase power");
+//}
 
-void MEGAWin::slot_btnGroupClicked(int nid)
-{
-    hand_name.prepend("Phase Cpower");
-    btn_explain.prepend("C-phase power 0");
+//void MEGAWin::slot_btnGroupClicked(int nid)
+//{
+//    hand_name.prepend("Phase Cpower");
+//    btn_explain.prepend("C-phase power 0");
 
-//    qDebug() << hand_name.size() <<nid;
+////    qDebug() << hand_name.size() <<nid;
 
-    QMessageBox::about(this, "Phase Cpower", "C-phase power 1");
+//    QMessageBox::about(this, "Phase Cpower", "C-phase power 1");
 
-}
+//}
 
 void MEGAWin::on_System_tabWidget_currentChanged(int index)
 {
