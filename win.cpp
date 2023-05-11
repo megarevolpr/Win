@@ -255,75 +255,20 @@ void MEGAWin::UserParam_tab()
     List5 << tr("Name") << tr("Value") << tr("Unit")<< tr("Name") << tr("Value") << tr("Unit");
     ui->System_Tab->setHorizontalHeaderLabels(List5);
     ui->System_Tab->setColumnWidth(0,163);
-    ui->System_Tab->setRowHeight(0, 50);
+    ui->System_Tab->setRowHeight(0, 48);
     ui->System_Tab->setColumnWidth(1,163);
-    ui->System_Tab->setRowHeight(1, 50);
+    ui->System_Tab->setRowHeight(1, 48);
     ui->System_Tab->setColumnWidth(2,163);
-    ui->System_Tab->setRowHeight(2, 50);
+    ui->System_Tab->setRowHeight(2, 48);
     ui->System_Tab->setColumnWidth(3,163);
-    ui->System_Tab->setRowHeight(3, 50);
+    ui->System_Tab->setRowHeight(3, 48);
     ui->System_Tab->setColumnWidth(4,163);
-    ui->System_Tab->setRowHeight(4, 50);
+    ui->System_Tab->setRowHeight(4, 48);
     ui->System_Tab->setColumnWidth(5,163);
-    ui->System_Tab->setRowHeight(5, 50);
-    ui->System_Tab->horizontalHeader()->setStretchLastSection(3);
+    ui->System_Tab->setRowHeight(5, 48);
+    ui->System_Tab->setRowHeight(6, 48);
+    ui->System_Tab->setRowHeight(7, 48);
 
-
-//    //并离网
-//    combox_ui_OnOff_Grid->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-//    combox_ui_OnOff_Grid->addItems(ui_OnOff_Grid);
-////    combox_ui_OnOff_Grid->setCurrentIndex(ui_sysDspSetData.u16OnOffGrid - 1);
-//    combox_ui_OnOffGrid_str = combox_ui_OnOff_Grid->currentText();
-//    combox_ui_OnOffGrid_index = combox_ui_OnOff_Grid->currentIndex();
-
-//    //充放电
-//    combox_ui_ChargeDischar->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-//    combox_ui_ChargeDischar->addItems(ui_ChargeDischar);
-////    combox_ui_ChargeDischar->setCurrentIndex(ui_sysDspSetData.u16ChargeOrDischarge - 1);
-//    combox_ui_ChargeDischar_str = combox_ui_ChargeDischar->currentText();
-//    combox_ui_ChargeDischar_index = combox_ui_ChargeDischar->currentIndex();
-
-//    //运行方式
-//    combox_RUN->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-//    combox_RUN->addItems(combox_Runmode);
-////    combox_RUN->setCurrentIndex(ui_sysDspSetData.u16RunMod);//默认手动控制
-//    combox_RUN_str = combox_RUN->currentText();
-//    combox_RUN_index = combox_RUN->currentIndex();
-
-//    //控制模式
-//    combox_ControlMode->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-//    combox_ControlMode->addItems(combox_CM);
-////    combox_ControlMode->setCurrentIndex(ui_sysMonSetData.u16ControlMode);
-//    combox_ControlMode_str = combox_ControlMode->currentText();
-//    combox_ControlMode_index = combox_ControlMode->currentIndex();
-
-//    combox_MachineNumber->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-//    combox_MachineNumber->addItems(combox_MNumber);
-////    combox_MachineNumber->setCurrentIndex(ui_sysDspSetData.u16MachineNumber);
-//    MachineNumber_str = combox_MachineNumber->currentText();
-//    combox_MachineNumber_index = combox_MachineNumber->currentIndex();
-
-//    combox_Parallel->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-//    combox_Parallel->addItems(combox_Para);
-////    combox_Parallel->setCurrentIndex(ui_sysDspSetData.u16EnableParallel);
-//    combox_Parallel_str = combox_Parallel->currentText();
-//    combox_Parallel_index = combox_Parallel->currentIndex();
-
-//    combox_UnbalancePowerEnable->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-//    combox_UnbalancePowerEnable->addItems(combox_Para);
-////    combox_UnbalancePowerEnable->setCurrentIndex(ui_sysDspSetData.u16UnbalancePowerEnable);
-//    combox_UnbalancePowerEnable_str = combox_UnbalancePowerEnable->currentText();
-//    combox_UnbalancePowerEnable_index = combox_UnbalancePowerEnable->currentIndex();
-
-
-//    ui->System_Tab->setCellWidget(0,1, (QWidget *)combox_ui_OnOff_Grid);        //并离网
-//    ui->System_Tab->setCellWidget(2,1, (QWidget *)combox_ui_ChargeDischar);     //充放电设置
-//    ui->System_Tab->setCellWidget(3,1, (QWidget *)combox_RUN);                  //运行模式
-
-//    ui->System_Tab->setCellWidget(0,4, (QWidget *)combox_ControlMode);          //控制模式
-//    ui->System_Tab->setCellWidget(1,4, (QWidget *)combox_MachineNumber);        //设备号
-//    ui->System_Tab->setCellWidget(2,4, (QWidget *)combox_Parallel);             //并机
-//    ui->System_Tab->setCellWidget(3,4, (QWidget *)combox_UnbalancePowerEnable); //功率不平衡使能
 
     AdvancedSetup_btn->setText(tr("Advance setting"));
     ui->System_Tab->setCellWidget(7,4, (QWidget *)AdvancedSetup_btn);          //高级设置

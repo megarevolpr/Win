@@ -37,47 +37,7 @@ public:
     explicit MEGAWin(QWidget *parent = nullptr);
     ~MEGAWin();
 
-
-//        QString combox_ui_GridMode_str;
-//        QComboBox *combox_ui_GridMode;
-
-//        QComboBox *combox_ui_OnOff_Grid;//并离网
-//        QString combox_ui_OnOffGrid_str;    //并离网
-//        QStringList ui_OnOff_Grid;
-//        short combox_ui_OnOffGrid_index;
-
-//        QComboBox *combox_ui_ChargeDischar; //充放电
-//        QStringList ui_ChargeDischar;
-//        QString combox_ui_ChargeDischar_str;
-//        short combox_ui_ChargeDischar_index;
-
-//        QComboBox *combox_RUN;              //运行模式
-//        QStringList combox_Runmode;
-//        QString combox_RUN_str;
-//        short combox_RUN_index;
-
-//        QString combox_ControlMode_str;
-//        QComboBox *combox_ControlMode;      //控制模式
-//        QStringList combox_CM;
-//        short combox_ControlMode_index;
-
-
-//        QComboBox * combox_MachineNumber;   //设备号
-//        QStringList combox_MNumber;
-//        QString MachineNumber_str;
-//        short combox_MachineNumber_index;
-
-//        QComboBox *combox_Parallel;         //并机
-//        QStringList combox_Para;
-//        QString combox_Parallel_str;
-//        short combox_Parallel_index;
-
-//        QComboBox *combox_UnbalancePowerEnable;//功率不平衡使能
-//        QString combox_UnbalancePowerEnable_str;
-//        short combox_UnbalancePowerEnable_index;
-
         Menu *m_menu;
-
 
         QPushButton *Grid_connected_mode_explain;//并网方式说明
         Specification *Grid_connected_mode;
@@ -126,9 +86,7 @@ public:
 
         QPushButton *AdvancedSetup_btn;//高级设置入口
 
-//        QList<QPair<QPushButton *, int> > PCS_pairList;
-//        QList<QString> hand_name;
-//        QList<QString> btn_explain;
+
 
         //实时数据
         QPushButton *PCS_vol_AB_btn;

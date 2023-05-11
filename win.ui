@@ -7396,7 +7396,7 @@ background-color: rgb(255, 0, 0);</string>
         </rect>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>3</number>
        </property>
        <widget class="QWidget" name="ParameterSet_page">
         <attribute name="title">
