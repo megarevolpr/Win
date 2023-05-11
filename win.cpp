@@ -92,6 +92,7 @@ void MEGAWin::MemoryAllocation()
 
     Constant_power_explain = new QPushButton;           //恒功率
 
+    Phase_B_power_explain = new QPushButton;                //B相功率说明
     Phase_C_power_btn = new QPushButton;                //C相功率
     AdvancedSetup_btn = new QPushButton;                //高级设置
 
@@ -295,6 +296,8 @@ void MEGAWin::UserParam_tab()
     ui->System_Tab->setCellWidget(1,1, (QWidget *)Constant_power_explain);
     ui->System_Tab->setCellWidget(6,4, (QWidget *)Phase_C_power_btn);          //C相功率
     ui->System_Tab->setCellWidget(7,4, (QWidget *)AdvancedSetup_btn);          //高级设置
+
+    Specification *Phase_B_power = new Specification(Phase_B_power_explain, ui->System_Tab, 5, 4, "5", "Phase_B_power", "This is Phase_B_power");
 }
 /******************************************************************************
  * 设备信息表表初始化
@@ -2058,7 +2061,7 @@ void MEGAWin::on_Run_tabWidget_tabBarClicked(int index) //实时数据界面选�
 
 void MEGAWin::combox_ControlMode_change()
 {
-    QString STR;
+//    QString STR;
 }
 
 void MEGAWin::ToSetButton()
@@ -2074,7 +2077,7 @@ void MEGAWin::ToSetButton()
 //        PCS_pairList.append(qMakePair(btn_name[i],i));
 
         if(i<=9){
-            btn_name[i]->setText(tr("1"));
+            btn_name[i]->setText(tr("400V"));
             ui->Converter_Tab->setCellWidget(i,1,(QWidget *)btn_name[i]);
             pButtonGroup->addButton(btn_name[i], i);
         }

@@ -23,18 +23,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 #include         ($$PWD/UI_NumberKeyboard/UI_NumberKeyboard.pri)
-#include         ($$PWD/UI_Network/UI_Network.pri)
+#include         ($$PWD/UI_Network/UI_Network.pri)Specification
 include         ($$PWD/Messagebox/Messagebox.pri)
 include         ($$PWD/UI_Menu/UI_Menu.pri)
+include         ($$PWD/Specification/Specification.pri)
 
 INCLUDEPATH     +=$$PWD/Messagebox/
 INCLUDEPATH     +=$$PWD/UI_Menu/
+INCLUDEPATH     +=$$PWD/Specification/
 
 CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        win.cpp
+        win.cpp \
 
 HEADERS += \
         win.h \
