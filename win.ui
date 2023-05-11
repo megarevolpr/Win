@@ -147,7 +147,7 @@ color: rgb(255, 255, 255);</string>
           </size>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>4</number>
          </property>
          <widget class="QWidget" name="UI_Parameter_page">
           <property name="sizePolicy">
@@ -349,6 +349,9 @@ color: rgb(255, 255, 255);</string>
               <property name="text">
                <string>ProtocolVersion</string>
               </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
              </item>
              <item row="0" column="8">
               <property name="text">
@@ -361,6 +364,9 @@ color: rgb(255, 255, 255);</string>
              <item row="1" column="0">
               <property name="text">
                <string>BMS Comm. type</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
               </property>
              </item>
              <item row="1" column="2">
@@ -407,6 +413,9 @@ color: rgb(255, 255, 255);</string>
               <property name="text">
                <string>BMS Comm. type</string>
               </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
              </item>
              <item row="2" column="2">
               <property name="text">
@@ -451,6 +460,9 @@ color: rgb(255, 255, 255);</string>
              <item row="3" column="0">
               <property name="text">
                <string>EMS Comm. type</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
               </property>
              </item>
              <item row="3" column="2">
@@ -497,6 +509,9 @@ color: rgb(255, 255, 255);</string>
               <property name="text">
                <string>Output power limit</string>
               </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
              </item>
              <item row="4" column="2">
               <property name="text">
@@ -541,6 +556,9 @@ color: rgb(255, 255, 255);</string>
              <item row="5" column="0">
               <property name="text">
                <string>BAT manufacturers</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
               </property>
              </item>
              <item row="5" column="2">
@@ -627,6 +645,9 @@ color: rgb(255, 255, 255);</string>
               <property name="text">
                <string>Charge power limit</string>
               </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
              </item>
              <item row="7" column="2">
               <property name="text">
@@ -655,6 +676,9 @@ color: rgb(255, 255, 255);</string>
              <item row="8" column="0">
               <property name="text">
                <string>Discharge power limit</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
               </property>
              </item>
              <item row="8" column="2">
@@ -685,6 +709,9 @@ color: rgb(255, 255, 255);</string>
               <property name="text">
                <string>Charge Vol. upper Limit delta</string>
               </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
              </item>
              <item row="9" column="2">
               <property name="text">
@@ -697,6 +724,9 @@ color: rgb(255, 255, 255);</string>
              <item row="10" column="0">
               <property name="text">
                <string>Discharge Vol. lower Limit delta</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
               </property>
              </item>
              <item row="10" column="2">
@@ -720,20 +750,20 @@ color: rgb(255, 255, 255);</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>794</width>
-             <height>349</height>
+             <width>973</width>
+             <height>420</height>
             </rect>
            </property>
            <property name="minimumSize">
             <size>
-             <width>794</width>
-             <height>349</height>
+             <width>973</width>
+             <height>420</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>794</width>
-             <height>349</height>
+             <width>973</width>
+             <height>420</height>
             </size>
            </property>
            <attribute name="horizontalHeaderVisible">
@@ -870,6 +900,9 @@ color: rgb(255, 255, 255);</string>
             <property name="text">
              <string>Machine type</string>
             </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
            </item>
            <item row="0" column="4">
             <property name="text">
@@ -887,6 +920,9 @@ color: rgb(255, 255, 255);</string>
            <item row="0" column="6">
             <property name="text">
              <string>Module Number</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
             </property>
            </item>
            <item row="0" column="7">
@@ -927,6 +963,9 @@ color: rgb(255, 255, 255);</string>
             <property name="text">
              <string>Machine capacity</string>
             </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
            </item>
            <item row="1" column="5">
             <property name="text">
@@ -939,6 +978,9 @@ color: rgb(255, 255, 255);</string>
            <item row="1" column="6">
             <property name="text">
              <string>Restore factory</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
             </property>
            </item>
            <item row="1" column="8">
@@ -969,6 +1011,9 @@ color: rgb(255, 255, 255);</string>
             <property name="text">
              <string>Output Fre. grade</string>
             </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
            </item>
            <item row="2" column="5">
             <property name="text">
@@ -981,6 +1026,9 @@ color: rgb(255, 255, 255);</string>
            <item row="2" column="6">
             <property name="text">
              <string>Clear Data</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
             </property>
            </item>
            <item row="2" column="8">
@@ -1010,6 +1058,9 @@ color: rgb(255, 255, 255);</string>
            <item row="3" column="3">
             <property name="text">
              <string>Output vol. level</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
             </property>
            </item>
            <item row="3" column="5">
@@ -1045,6 +1096,9 @@ color: rgb(255, 255, 255);</string>
             <property name="text">
              <string>Converter side vol. level</string>
             </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
            </item>
            <item row="4" column="5">
             <property name="text">
@@ -1073,6 +1127,9 @@ color: rgb(255, 255, 255);</string>
            <item row="5" column="3">
             <property name="text">
              <string>Output reactive power mode</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
             </property>
            </item>
            <item row="5" column="5">
@@ -1103,6 +1160,9 @@ color: rgb(255, 255, 255);</string>
             <property name="text">
              <string>Grid connected mode of Inv</string>
             </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
            </item>
            <item row="6" column="5">
             <property name="text">
@@ -1132,6 +1192,9 @@ color: rgb(255, 255, 255);</string>
             <property name="text">
              <string>Primary FM dead zone</string>
             </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
            </item>
            <item row="7" column="5">
             <property name="text">
@@ -1160,6 +1223,9 @@ color: rgb(255, 255, 255);</string>
            <item row="8" column="3">
             <property name="text">
              <string>PFM coeff</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
             </property>
            </item>
            <item row="8" column="5">
@@ -1195,6 +1261,9 @@ color: rgb(255, 255, 255);</string>
             <property name="text">
              <string>Grid recover time</string>
             </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
            </item>
            <item row="9" column="5">
             <property name="text">
@@ -1223,6 +1292,9 @@ color: rgb(255, 255, 255);</string>
            <item row="10" column="3">
             <property name="text">
              <string>DynamicCap</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
             </property>
            </item>
            <item row="11" column="0">
@@ -1262,14 +1334,14 @@ color: rgb(255, 255, 255);</string>
             <widget class="QTableWidget" name="ExternalDevice_tW">
              <property name="minimumSize">
               <size>
-               <width>951</width>
-               <height>395</height>
+               <width>973</width>
+               <height>420</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>951</width>
-               <height>395</height>
+               <width>973</width>
+               <height>420</height>
               </size>
              </property>
              <attribute name="horizontalHeaderDefaultSectionSize">
@@ -1285,45 +1357,90 @@ color: rgb(255, 255, 255);</string>
               <property name="text">
                <string>DI_1</string>
               </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
              </row>
              <row>
               <property name="text">
                <string>DI_2</string>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
               </property>
              </row>
              <row>
               <property name="text">
                <string>DI_3</string>
               </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
              </row>
              <row>
               <property name="text">
                <string>DI_4</string>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
               </property>
              </row>
              <row>
               <property name="text">
                <string>DI_5</string>
               </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
              </row>
              <row>
               <property name="text">
                <string>DI_6</string>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
               </property>
              </row>
              <row>
               <property name="text">
                <string>DO_1</string>
               </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
              </row>
              <row>
               <property name="text">
                <string>DO_2</string>
               </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
              </row>
              <row>
               <property name="text">
                <string>DO_3</string>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
               </property>
              </row>
              <column>
@@ -1346,24 +1463,52 @@ color: rgb(255, 255, 255);</string>
                <string>Function description</string>
               </property>
              </column>
+             <item row="0" column="0">
+              <property name="text">
+               <string/>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
+             </item>
              <item row="0" column="3">
               <property name="text">
                <string>Shut Down NO</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
+             </item>
+             <item row="1" column="0">
+              <property name="text">
+               <string/>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
               </property>
              </item>
              <item row="1" column="3">
               <property name="text">
                <string>Shut Down NC</string>
               </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
              </item>
              <item row="2" column="3">
               <property name="text">
                <string>Access Control</string>
               </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
              </item>
              <item row="3" column="3">
               <property name="text">
                <string>Full Power</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
               </property>
              </item>
              <item row="4" column="3">
@@ -1378,10 +1523,16 @@ color: rgb(255, 255, 255);</string>
               <property name="text">
                <string>Temperature</string>
               </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
              </item>
              <item row="6" column="3">
               <property name="text">
                <string>Generator</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
               </property>
              </item>
              <item row="7" column="3">
@@ -1436,30 +1587,60 @@ color: rgb(255, 255, 255);</string>
               <property name="text">
                <string>DOD</string>
               </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
              </row>
              <row>
               <property name="text">
                <string>Prohibit charging</string>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
               </property>
              </row>
              <row>
               <property name="text">
                <string>Prohibit discharging</string>
               </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
              </row>
              <row>
               <property name="text">
                <string>BMS warning</string>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
               </property>
              </row>
              <row>
               <property name="text">
                <string>BMS alarm</string>
               </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
              </row>
              <row>
               <property name="text">
                <string>BMS fualt</string>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
               </property>
              </row>
              <column>
@@ -1538,8 +1719,8 @@ color: rgb(255, 255, 255);</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>791</width>
-             <height>347</height>
+             <width>973</width>
+             <height>420</height>
             </rect>
            </property>
            <attribute name="horizontalHeaderVisible">
@@ -1651,10 +1832,16 @@ color: rgb(255, 255, 255);</string>
             <property name="text">
              <string>Debug variable 1</string>
             </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
            </item>
            <item row="0" column="2">
             <property name="text">
              <string>1.5V Voltage revise</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
             </property>
            </item>
            <item row="0" column="4">
@@ -1666,10 +1853,16 @@ color: rgb(255, 255, 255);</string>
             <property name="text">
              <string>Debug variable 2</string>
             </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
            </item>
            <item row="1" column="2">
             <property name="text">
              <string> Bus Vol. revise</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
             </property>
            </item>
            <item row="1" column="4">
@@ -1680,6 +1873,9 @@ color: rgb(255, 255, 255);</string>
            <item row="2" column="0">
             <property name="text">
              <string>Debug variable 3</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
             </property>
            </item>
            <item row="2" column="2">
@@ -1696,6 +1892,9 @@ color: rgb(255, 255, 255);</string>
             <property name="text">
              <string>Debug variable 1 address</string>
             </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
            </item>
            <item row="3" column="2">
             <property name="text">
@@ -1710,6 +1909,9 @@ color: rgb(255, 255, 255);</string>
            <item row="4" column="0">
             <property name="text">
              <string>Debug variable 2 address</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
             </property>
            </item>
            <item row="4" column="2">
@@ -1726,6 +1928,9 @@ color: rgb(255, 255, 255);</string>
             <property name="text">
              <string>Debug variable 3 address</string>
             </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
            </item>
            <item row="5" column="2">
             <property name="text">
@@ -1740,6 +1945,9 @@ color: rgb(255, 255, 255);</string>
            <item row="6" column="0">
             <property name="text">
              <string>Debug memery var. 1</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
             </property>
            </item>
            <item row="6" column="2">
@@ -1756,6 +1964,9 @@ color: rgb(255, 255, 255);</string>
             <property name="text">
              <string>Debug memery var. 2</string>
             </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
            </item>
            <item row="7" column="2">
             <property name="text">
@@ -1770,6 +1981,9 @@ color: rgb(255, 255, 255);</string>
            <item row="8" column="0">
             <property name="text">
              <string>Debug memery var. 3</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
             </property>
            </item>
            <item row="8" column="2">
@@ -1786,6 +2000,9 @@ color: rgb(255, 255, 255);</string>
             <property name="text">
              <string>Input Vol. revise</string>
             </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
            </item>
            <item row="9" column="2">
             <property name="text">
@@ -1796,10 +2013,16 @@ color: rgb(255, 255, 255);</string>
             <property name="text">
              <string>DC bus flag</string>
             </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
            </item>
            <item row="10" column="0">
             <property name="text">
              <string>Input. Cur. revise</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
             </property>
            </item>
            <item row="10" column="2">
@@ -1811,10 +2034,16 @@ color: rgb(255, 255, 255);</string>
             <property name="text">
              <string>INT main flag</string>
             </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
+            </property>
            </item>
            <item row="11" column="4">
             <property name="text">
              <string>parallel signal</string>
+            </property>
+            <property name="textAlignment">
+             <set>AlignCenter</set>
             </property>
            </item>
           </widget>
@@ -2294,7 +2523,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">
@@ -4627,7 +4856,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_1">
+                      <widget class="QPushButton" name="pushButton_1">
                        <property name="minimumSize">
                         <size>
                          <width>114</width>
@@ -4640,19 +4869,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                          <height>43</height>
                         </size>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
-                       </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>600</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_2">
+                      <widget class="QPushButton" name="pushButton_2">
                        <property name="minimumSize">
                         <size>
                          <width>114</width>
@@ -4665,19 +4888,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                          <height>43</height>
                         </size>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
-                       </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>100</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_3">
+                      <widget class="QPushButton" name="pushButton_3">
                        <property name="minimumSize">
                         <size>
                          <width>114</width>
@@ -4690,19 +4907,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                          <height>43</height>
                         </size>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
-                       </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>90</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_4">
+                      <widget class="QPushButton" name="pushButton_4">
                        <property name="minimumSize">
                         <size>
                          <width>114</width>
@@ -4715,19 +4926,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                          <height>43</height>
                         </size>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
-                       </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>100</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_5">
+                      <widget class="QPushButton" name="pushButton_5">
                        <property name="minimumSize">
                         <size>
                          <width>114</width>
@@ -4740,19 +4945,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                          <height>43</height>
                         </size>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
-                       </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>3300</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_6">
+                      <widget class="QPushButton" name="pushButton_6">
                        <property name="minimumSize">
                         <size>
                          <width>114</width>
@@ -4765,19 +4964,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                          <height>43</height>
                         </size>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
-                       </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>3250</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_7">
+                      <widget class="QPushButton" name="pushButton_7">
                        <property name="minimumSize">
                         <size>
                          <width>114</width>
@@ -4790,19 +4983,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                          <height>43</height>
                         </size>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
-                       </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>28</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_8">
+                      <widget class="QPushButton" name="pushButton_8">
                        <property name="minimumSize">
                         <size>
                          <width>114</width>
@@ -4815,14 +5002,8 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                          <height>43</height>
                         </size>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
-                       </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>27</string>
                        </property>
                       </widget>
                      </item>
@@ -5312,7 +5493,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_9">
+                      <widget class="QPushButton" name="pushButton_9">
                        <property name="minimumSize">
                         <size>
                          <width>101</width>
@@ -5326,15 +5507,12 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                         </size>
                        </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>1000</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_10">
+                      <widget class="QPushButton" name="pushButton_10">
                        <property name="minimumSize">
                         <size>
                          <width>101</width>
@@ -5348,15 +5526,12 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                         </size>
                        </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>1000</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_11">
+                      <widget class="QPushButton" name="pushButton_11">
                        <property name="minimumSize">
                         <size>
                          <width>101</width>
@@ -5370,15 +5545,12 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                         </size>
                        </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>500</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_12">
+                      <widget class="QPushButton" name="pushButton_12">
                        <property name="minimumSize">
                         <size>
                          <width>101</width>
@@ -5392,15 +5564,12 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                         </size>
                        </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>500</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_13">
+                      <widget class="QPushButton" name="pushButton_13">
                        <property name="minimumSize">
                         <size>
                          <width>101</width>
@@ -5414,15 +5583,12 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                         </size>
                        </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>900</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_14">
+                      <widget class="QPushButton" name="pushButton_14">
                        <property name="minimumSize">
                         <size>
                          <width>101</width>
@@ -5436,10 +5602,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                         </size>
                        </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>900</string>
                        </property>
                       </widget>
                      </item>
@@ -5786,7 +5949,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                              </widget>
                             </item>
                             <item>
-                             <widget class="QLabel" name="label_20">
+                             <widget class="QPushButton" name="pushButton_20">
                               <property name="minimumSize">
                                <size>
                                 <width>112</width>
@@ -5804,9 +5967,6 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                               </property>
                               <property name="text">
                                <string/>
-                              </property>
-                              <property name="alignment">
-                               <set>Qt::AlignCenter</set>
                               </property>
                              </widget>
                             </item>
@@ -5845,7 +6005,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                              </widget>
                             </item>
                             <item>
-                             <widget class="QLabel" name="label_19">
+                             <widget class="QPushButton" name="pushButton_21">
                               <property name="minimumSize">
                                <size>
                                 <width>112</width>
@@ -5863,9 +6023,6 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                               </property>
                               <property name="text">
                                <string/>
-                              </property>
-                              <property name="alignment">
-                               <set>Qt::AlignCenter</set>
                               </property>
                              </widget>
                             </item>
@@ -5908,7 +6065,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                              </widget>
                             </item>
                             <item>
-                             <widget class="QLabel" name="label_30">
+                             <widget class="QPushButton" name="pushButton_18">
                               <property name="minimumSize">
                                <size>
                                 <width>112</width>
@@ -5926,9 +6083,6 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                               </property>
                               <property name="text">
                                <string/>
-                              </property>
-                              <property name="alignment">
-                               <set>Qt::AlignCenter</set>
                               </property>
                              </widget>
                             </item>
@@ -5967,7 +6121,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                              </widget>
                             </item>
                             <item>
-                             <widget class="QLabel" name="label_18">
+                             <widget class="QPushButton" name="pushButton_19">
                               <property name="minimumSize">
                                <size>
                                 <width>112</width>
@@ -5985,9 +6139,6 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                               </property>
                               <property name="text">
                                <string/>
-                              </property>
-                              <property name="alignment">
-                               <set>Qt::AlignCenter</set>
                               </property>
                              </widget>
                             </item>
@@ -6008,19 +6159,18 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                         <widget class="QLabel" name="label_2">
                          <property name="minimumSize">
                           <size>
-                           <width>162</width>
+                           <width>0</width>
                            <height>65</height>
                           </size>
                          </property>
                          <property name="maximumSize">
                           <size>
-                           <width>162</width>
+                           <width>16777215</width>
                            <height>65</height>
                           </size>
                          </property>
                          <property name="font">
                           <font>
-                           <family>SimSun-ExtB</family>
                            <pointsize>14</pointsize>
                           </font>
                          </property>
@@ -6033,7 +6183,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="Alarm_all">
+                        <widget class="QPushButton" name="pushButton_15">
                          <property name="minimumSize">
                           <size>
                            <width>64</width>
@@ -6046,11 +6196,11 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                            <height>65</height>
                           </size>
                          </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(85, 255, 127);</string>
+                         </property>
                          <property name="text">
                           <string/>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -6059,7 +6209,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                      <item>
                       <layout class="QHBoxLayout" name="horizontalLayout_5">
                        <item>
-                        <widget class="QLabel" name="Statuslb_1">
+                        <widget class="QLabel" name="label_18">
                          <property name="minimumSize">
                           <size>
                            <width>113</width>
@@ -6074,7 +6224,6 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                          </property>
                          <property name="font">
                           <font>
-                           <family>SimSun-ExtB</family>
                            <pointsize>14</pointsize>
                           </font>
                          </property>
@@ -6088,7 +6237,7 @@ enable</string>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="Statusvalue_1">
+                        <widget class="QPushButton" name="pushButton_16">
                          <property name="minimumSize">
                           <size>
                            <width>113</width>
@@ -6101,11 +6250,13 @@ enable</string>
                            <height>65</height>
                           </size>
                          </property>
-                         <property name="text">
-                          <string/>
+                         <property name="font">
+                          <font>
+                           <pointsize>14</pointsize>
+                          </font>
                          </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                         <property name="text">
+                          <string>Disable</string>
                          </property>
                         </widget>
                        </item>
@@ -6114,22 +6265,21 @@ enable</string>
                      <item>
                       <layout class="QHBoxLayout" name="horizontalLayout_6">
                        <item>
-                        <widget class="QLabel" name="Statuslb_2">
+                        <widget class="QLabel" name="label_19">
                          <property name="minimumSize">
                           <size>
-                           <width>122</width>
+                           <width>113</width>
                            <height>65</height>
                           </size>
                          </property>
                          <property name="maximumSize">
                           <size>
-                           <width>122</width>
+                           <width>113</width>
                            <height>65</height>
                           </size>
                          </property>
                          <property name="font">
                           <font>
-                           <family>SimSun-ExtB</family>
                            <pointsize>14</pointsize>
                           </font>
                          </property>
@@ -6137,13 +6287,10 @@ enable</string>
                           <string>Discharge 
 enable</string>
                          </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="Statusvalue_2">
+                        <widget class="QPushButton" name="pushButton_17">
                          <property name="minimumSize">
                           <size>
                            <width>104</width>
@@ -6156,11 +6303,13 @@ enable</string>
                            <height>65</height>
                           </size>
                          </property>
-                         <property name="text">
-                          <string/>
+                         <property name="font">
+                          <font>
+                           <pointsize>14</pointsize>
+                          </font>
                          </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                         <property name="text">
+                          <string>Disable</string>
                          </property>
                         </widget>
                        </item>
@@ -7247,7 +7396,7 @@ background-color: rgb(255, 0, 0);</string>
         </rect>
        </property>
        <property name="currentIndex">
-        <number>3</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="ParameterSet_page">
         <attribute name="title">
