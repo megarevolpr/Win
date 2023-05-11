@@ -108,23 +108,31 @@ public:
         QButtonGroup* pButtonGroup;
 
         QPushButton *Grid_vol_AB_btn;     //
-//        QPushButton *Grid_vol_BC_btn;
-//        QPushButton *Grid_vol_CA_btn;
-//        QPushButton *Grid_cur_A_btn;
-//        QPushButton *Grid_cur_B_btn;
-//        QPushButton *Grid_cur_C_btn;
+        QPushButton *Grid_vol_BC_btn;
+        QPushButton *Grid_vol_CA_btn;
+        QPushButton *Grid_cur_A_btn;
+        QPushButton *Grid_cur_B_btn;
+        QPushButton *Grid_cur_C_btn;
+        QPushButton *Grid_act_P_btn;     //有功功率
+        QPushButton *Grid_rea_P_btn;     //无功功率
+        QPushButton *Grid_app_P_btn;     //视在功率
+        QPushButton *Grid_fre_btn;
+        QPushButton *Grid_Pf_btn;
 
-//        QPushButton *Grid_act_P_btn;     //有功功率
-//        QPushButton *Grid_rea_P_btn;     //无功功率
-//        QPushButton *Grid_app_P_btn;     //视在功率
-//        QPushButton *Grid_vol_AB_btn;
-//        QPushButton *Grid_vol_AB_btn;
 
-//        QPushButton *Grid_fre_btn;
-//        QPushButton *Grid_vol_AB_btn;
-//        QPushButton *Grid_vol_AB_btn;
-//        QPushButton *Grid_vol_AB_btn;
-//        QPushButton *Grid_vol_AB_btn;
+        QPushButton *Load_vol_AB_btn;     //
+        QPushButton *Load_vol_BC_btn;
+        QPushButton *Load_vol_CA_btn;
+        QPushButton *Load_cur_A_btn;
+        QPushButton *Load_cur_B_btn;
+        QPushButton *Load_cur_C_btn;
+        QPushButton *Load_act_P_btn;     //有功功率
+        QPushButton *Load_rea_P_btn;     //无功功率
+        QPushButton *Load_app_P_btn;     //视在功率
+        QPushButton *Load_fre_btn;
+        QPushButton *Load_Pf_btn;
+
+
 
 
         void UIPageInit();//初始化界面
