@@ -4627,7 +4627,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_1">
+                      <widget class="QPushButton" name="pushButton_1">
                        <property name="minimumSize">
                         <size>
                          <width>114</width>
@@ -4640,19 +4640,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                          <height>43</height>
                         </size>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
-                       </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>600</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_2">
+                      <widget class="QPushButton" name="pushButton_2">
                        <property name="minimumSize">
                         <size>
                          <width>114</width>
@@ -4665,19 +4659,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                          <height>43</height>
                         </size>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
-                       </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>100</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_3">
+                      <widget class="QPushButton" name="pushButton_3">
                        <property name="minimumSize">
                         <size>
                          <width>114</width>
@@ -4690,19 +4678,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                          <height>43</height>
                         </size>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
-                       </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>90</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_4">
+                      <widget class="QPushButton" name="pushButton_4">
                        <property name="minimumSize">
                         <size>
                          <width>114</width>
@@ -4715,19 +4697,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                          <height>43</height>
                         </size>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
-                       </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>100</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_5">
+                      <widget class="QPushButton" name="pushButton_5">
                        <property name="minimumSize">
                         <size>
                          <width>114</width>
@@ -4740,19 +4716,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                          <height>43</height>
                         </size>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
-                       </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>3300</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_6">
+                      <widget class="QPushButton" name="pushButton_6">
                        <property name="minimumSize">
                         <size>
                          <width>114</width>
@@ -4765,19 +4735,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                          <height>43</height>
                         </size>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
-                       </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>3250</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_7">
+                      <widget class="QPushButton" name="pushButton_7">
                        <property name="minimumSize">
                         <size>
                          <width>114</width>
@@ -4790,19 +4754,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                          <height>43</height>
                         </size>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
-                       </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>28</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_8">
+                      <widget class="QPushButton" name="pushButton_8">
                        <property name="minimumSize">
                         <size>
                          <width>114</width>
@@ -4815,14 +4773,8 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                          <height>43</height>
                         </size>
                        </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
-                       </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>27</string>
                        </property>
                       </widget>
                      </item>
@@ -5312,7 +5264,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_9">
+                      <widget class="QPushButton" name="pushButton_9">
                        <property name="minimumSize">
                         <size>
                          <width>101</width>
@@ -5326,15 +5278,12 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                         </size>
                        </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>1000</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_10">
+                      <widget class="QPushButton" name="pushButton_10">
                        <property name="minimumSize">
                         <size>
                          <width>101</width>
@@ -5348,15 +5297,12 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                         </size>
                        </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>1000</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_11">
+                      <widget class="QPushButton" name="pushButton_11">
                        <property name="minimumSize">
                         <size>
                          <width>101</width>
@@ -5370,15 +5316,12 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                         </size>
                        </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>500</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_12">
+                      <widget class="QPushButton" name="pushButton_12">
                        <property name="minimumSize">
                         <size>
                          <width>101</width>
@@ -5392,15 +5335,12 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                         </size>
                        </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>500</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_13">
+                      <widget class="QPushButton" name="pushButton_13">
                        <property name="minimumSize">
                         <size>
                          <width>101</width>
@@ -5414,15 +5354,12 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                         </size>
                        </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>900</string>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLabel" name="BatValue_14">
+                      <widget class="QPushButton" name="pushButton_14">
                        <property name="minimumSize">
                         <size>
                          <width>101</width>
@@ -5436,10 +5373,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                         </size>
                        </property>
                        <property name="text">
-                        <string/>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
+                        <string>900</string>
                        </property>
                       </widget>
                      </item>
@@ -5786,7 +5720,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                              </widget>
                             </item>
                             <item>
-                             <widget class="QLabel" name="label_20">
+                             <widget class="QPushButton" name="pushButton_20">
                               <property name="minimumSize">
                                <size>
                                 <width>112</width>
@@ -5804,9 +5738,6 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                               </property>
                               <property name="text">
                                <string/>
-                              </property>
-                              <property name="alignment">
-                               <set>Qt::AlignCenter</set>
                               </property>
                              </widget>
                             </item>
@@ -5845,7 +5776,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                              </widget>
                             </item>
                             <item>
-                             <widget class="QLabel" name="label_19">
+                             <widget class="QPushButton" name="pushButton_21">
                               <property name="minimumSize">
                                <size>
                                 <width>112</width>
@@ -5863,9 +5794,6 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                               </property>
                               <property name="text">
                                <string/>
-                              </property>
-                              <property name="alignment">
-                               <set>Qt::AlignCenter</set>
                               </property>
                              </widget>
                             </item>
@@ -5908,7 +5836,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                              </widget>
                             </item>
                             <item>
-                             <widget class="QLabel" name="label_30">
+                             <widget class="QPushButton" name="pushButton_18">
                               <property name="minimumSize">
                                <size>
                                 <width>112</width>
@@ -5926,9 +5854,6 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                               </property>
                               <property name="text">
                                <string/>
-                              </property>
-                              <property name="alignment">
-                               <set>Qt::AlignCenter</set>
                               </property>
                              </widget>
                             </item>
@@ -5967,7 +5892,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                              </widget>
                             </item>
                             <item>
-                             <widget class="QLabel" name="label_18">
+                             <widget class="QPushButton" name="pushButton_19">
                               <property name="minimumSize">
                                <size>
                                 <width>112</width>
@@ -5985,9 +5910,6 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                               </property>
                               <property name="text">
                                <string/>
-                              </property>
-                              <property name="alignment">
-                               <set>Qt::AlignCenter</set>
                               </property>
                              </widget>
                             </item>
@@ -6008,19 +5930,18 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                         <widget class="QLabel" name="label_2">
                          <property name="minimumSize">
                           <size>
-                           <width>162</width>
+                           <width>0</width>
                            <height>65</height>
                           </size>
                          </property>
                          <property name="maximumSize">
                           <size>
-                           <width>162</width>
+                           <width>16777215</width>
                            <height>65</height>
                           </size>
                          </property>
                          <property name="font">
                           <font>
-                           <family>SimSun-ExtB</family>
                            <pointsize>14</pointsize>
                           </font>
                          </property>
@@ -6033,7 +5954,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="Alarm_all">
+                        <widget class="QPushButton" name="pushButton_15">
                          <property name="minimumSize">
                           <size>
                            <width>64</width>
@@ -6046,11 +5967,11 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                            <height>65</height>
                           </size>
                          </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(85, 255, 127);</string>
+                         </property>
                          <property name="text">
                           <string/>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -6059,7 +5980,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                      <item>
                       <layout class="QHBoxLayout" name="horizontalLayout_5">
                        <item>
-                        <widget class="QLabel" name="Statuslb_1">
+                        <widget class="QLabel" name="label_18">
                          <property name="minimumSize">
                           <size>
                            <width>113</width>
@@ -6074,7 +5995,6 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                          </property>
                          <property name="font">
                           <font>
-                           <family>SimSun-ExtB</family>
                            <pointsize>14</pointsize>
                           </font>
                          </property>
@@ -6088,7 +6008,7 @@ enable</string>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="Statusvalue_1">
+                        <widget class="QPushButton" name="pushButton_16">
                          <property name="minimumSize">
                           <size>
                            <width>113</width>
@@ -6101,11 +6021,13 @@ enable</string>
                            <height>65</height>
                           </size>
                          </property>
-                         <property name="text">
-                          <string/>
+                         <property name="font">
+                          <font>
+                           <pointsize>14</pointsize>
+                          </font>
                          </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                         <property name="text">
+                          <string>Disable</string>
                          </property>
                         </widget>
                        </item>
@@ -6114,22 +6036,21 @@ enable</string>
                      <item>
                       <layout class="QHBoxLayout" name="horizontalLayout_6">
                        <item>
-                        <widget class="QLabel" name="Statuslb_2">
+                        <widget class="QLabel" name="label_19">
                          <property name="minimumSize">
                           <size>
-                           <width>122</width>
+                           <width>113</width>
                            <height>65</height>
                           </size>
                          </property>
                          <property name="maximumSize">
                           <size>
-                           <width>122</width>
+                           <width>113</width>
                            <height>65</height>
                           </size>
                          </property>
                          <property name="font">
                           <font>
-                           <family>SimSun-ExtB</family>
                            <pointsize>14</pointsize>
                           </font>
                          </property>
@@ -6137,13 +6058,10 @@ enable</string>
                           <string>Discharge 
 enable</string>
                          </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="Statusvalue_2">
+                        <widget class="QPushButton" name="pushButton_17">
                          <property name="minimumSize">
                           <size>
                            <width>104</width>
@@ -6156,11 +6074,13 @@ enable</string>
                            <height>65</height>
                           </size>
                          </property>
-                         <property name="text">
-                          <string/>
+                         <property name="font">
+                          <font>
+                           <pointsize>14</pointsize>
+                          </font>
                          </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                         <property name="text">
+                          <string>Disable</string>
                          </property>
                         </widget>
                        </item>
@@ -7247,7 +7167,7 @@ background-color: rgb(255, 0, 0);</string>
         </rect>
        </property>
        <property name="currentIndex">
-        <number>3</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="ParameterSet_page">
         <attribute name="title">

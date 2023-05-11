@@ -105,7 +105,8 @@ public:
         QPushButton *PCS_IGBT_T_btn;    //IGBT温度
         QPushButton *PCS_Env_T_btn;     //环境温度
 
-        QButtonGroup* pButtonGroup;
+        QButtonGroup* pButtonGroup;//PCS_data的button组
+//        QButtonGroup* pButtonGroup1;//Battery_data的button组
 
         QPushButton *Grid_vol_AB_btn;     //
         QPushButton *Grid_vol_BC_btn;

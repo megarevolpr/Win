@@ -356,11 +356,6 @@ void MEGAWin::EquipmentInfor_tab()
 }
 /******************************************************************************
  * 电池设置表初始化
- *
- *
- *
- *
- *
  * ***************************************************************************/
 void MEGAWin::BatterySet_tab()
 {
@@ -2125,6 +2120,13 @@ void MEGAWin::ToSetButton()
             pButtonGroup->addButton(btn_name1[i], i);
         }
     }
+
+//    for (int i=1;i<=24;i++)
+//    {
+//        QString bat_btn_name="pushButton_%1" ;
+//        bat_btn_name = bat_btn_name.arg(i);
+//        pButtonGroup->addButton(btn_name1[i], i);
+//    }
 //    for (QPair<QPushButton *, QString> pair : PCS_pairList) {
 //        qDebug() << "Key: " << pair.first; // 获取第一个值
 //        qDebug() << "Value: " << pair.second; // 获取第二个值
