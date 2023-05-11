@@ -37,9 +37,11 @@ public:
     explicit MEGAWin(QWidget *parent = nullptr);
     ~MEGAWin();
 
+
 //        QString combox_ui_GridMode_str;
 //        QComboBox *combox_ui_GridMode;
 
+//        QComboBox *combox_ui_OnOff_Grid;//并离网
 //        QString combox_ui_OnOffGrid_str;    //并离网
 //        QStringList ui_OnOff_Grid;
 //        short combox_ui_OnOffGrid_index;
@@ -77,14 +79,52 @@ public:
         Menu *m_menu;
 
 
-//        QComboBox *combox_ui_OnOff_Grid;//并离网
+        QPushButton *Grid_connected_mode_explain;//并网方式说明
+        Specification *Grid_connected_mode;
 
-        QPushButton *Phase_C_power_btn;
-        QPushButton *AdvancedSetup_btn;//高级设置入口
+        QPushButton *Constant_power_explain;     //功率说明
+        Specification *Constant_power;
 
-        QPushButton *Constant_power_explain;    //功率说明
-        QPushButton *Phase_B_power_explain;    //B相电压说明
+        QPushButton *Charging_and_discharging_explain;  //充放电说明
+        Specification *Charging_and_discharging;
+
+        QPushButton *Work_mode_explain;  //工作模式说明
+        Specification *Work_mode;
+
+        QPushButton *Output_power_factor_explain;    //输出功率因素说明
+        Specification *Output_power_factor;
+
+        QPushButton *Output_reactive_power_explain;  //输出无功功率说明
+        Specification *Output_reactive_power;
+
+        QPushButton *Constant_current_explain;  //恒流说明
+        Specification *Constant_current;
+
+        QPushButton *Constant_voltage_explain; //恒压说明
+        Specification *Constant_voltage;
+
+        QPushButton *Control_mode_explain;  //控制模式说明
+        Specification *Control_mode;
+
+        QPushButton *Machine_number_explain;    //设备号说明
+        Specification *Machine_number;
+
+        QPushButton *Parallel_explain;  //并机说明
+        Specification *Parallel;
+
+        QPushButton *Unbalance_power_enable_explain;    //功率不平衡使能说明
+        Specification *Unbalance_power_enable;
+
+        QPushButton *Phase_A_power_explain;      //A相功率说明
+        Specification *Phase_A_power;
+
+        QPushButton *Phase_B_power_explain;      //B相功率说明
         Specification *Phase_B_power;
+
+        QPushButton *Phase_C_power_explain;      //C相功率说明
+        Specification *Phase_C_power;
+
+        QPushButton *AdvancedSetup_btn;//高级设置入口
 
 //        QList<QPair<QPushButton *, int> > PCS_pairList;
 //        QList<QString> hand_name;

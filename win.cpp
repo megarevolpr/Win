@@ -90,10 +90,22 @@ void MEGAWin::MemoryAllocation()
 //    combox_UnbalancePowerEnable = new QComboBox();      //功率不平衡使能
 //    combox_UnbalancePowerEnable->setView(new QListView());
 
-    Constant_power_explain = new QPushButton;           //恒功率
+    Grid_connected_mode_explain = new QPushButton;      //PCS并离网方式说明
+    Constant_power_explain = new QPushButton;           //恒功率说明
+    Charging_and_discharging_explain = new QPushButton; //充放电说明
+    Work_mode_explain = new QPushButton;                //工作模式说明
+    Output_power_factor_explain = new QPushButton;      //输出功率因素说明
+    Output_reactive_power_explain = new QPushButton;    //输出无功功率说明
+    Constant_current_explain = new QPushButton;         //恒流说明
+    Constant_voltage_explain = new QPushButton;         //恒压说明
+    Control_mode_explain = new QPushButton;             //控制模式说明
+    Machine_number_explain = new QPushButton;           //设备号说明
+    Parallel_explain = new QPushButton;                 //并机说明
+    Unbalance_power_enable_explain = new QPushButton;   //功率不平衡使能说明
+    Phase_A_power_explain = new QPushButton;            //A相功率说明
+    Phase_B_power_explain = new QPushButton;            //B相功率说明
+    Phase_C_power_explain = new QPushButton;            //C相功率说明
 
-    Phase_B_power_explain = new QPushButton;                //B相功率说明
-    Phase_C_power_btn = new QPushButton;                //C相功率
     AdvancedSetup_btn = new QPushButton;                //高级设置
 
     /*****************************PCS数据****************************************/
@@ -303,9 +315,6 @@ void MEGAWin::UserParam_tab()
 //    combox_UnbalancePowerEnable_str = combox_UnbalancePowerEnable->currentText();
 //    combox_UnbalancePowerEnable_index = combox_UnbalancePowerEnable->currentIndex();
 
-    Phase_C_power_btn->setText(tr("5"));
-    AdvancedSetup_btn->setText(tr("Advance setting"));
-    Constant_power_explain->setText(tr("0"));
 
 //    ui->System_Tab->setCellWidget(0,1, (QWidget *)combox_ui_OnOff_Grid);        //并离网
 //    ui->System_Tab->setCellWidget(2,1, (QWidget *)combox_ui_ChargeDischar);     //充放电设置
@@ -316,12 +325,85 @@ void MEGAWin::UserParam_tab()
 //    ui->System_Tab->setCellWidget(2,4, (QWidget *)combox_Parallel);             //并机
 //    ui->System_Tab->setCellWidget(3,4, (QWidget *)combox_UnbalancePowerEnable); //功率不平衡使能
 
-//    ui->System_Tab->setCellWidget(1,1, (QWidget *)Constant_power_explain);
-//    ui->System_Tab->setCellWidget(6,4, (QWidget *)Phase_C_power_btn);          //C相功率
+    AdvancedSetup_btn->setText(tr("Advance setting"));
     ui->System_Tab->setCellWidget(7,4, (QWidget *)AdvancedSetup_btn);          //高级设置
 
-    Phase_B_power = new Specification(Phase_B_power_explain, ui->System_Tab, 5, 4, "5", "Phase_B_power", "This is Phase_B_power");
+    Grid_connected_mode = new Specification(Grid_connected_mode_explain, ui->System_Tab, 0, 1, \
+                                            "automatic", "Grid connected mode of PCS", \
+                                            "这是PCS并网方式，一共有三项可选：自动，并网，离网\nThis is PCS grid-connected mode. There are three options: automatic, grid-connected(Off) and off-grid(On)");
+    Grid_connected_mode->add_Specifition();
+
+    Constant_power = new Specification(Constant_power_explain, ui->System_Tab, 1, 1, \
+                                       "0", "Constant power(AC)", \
+                                       "这是恒功率，可以通过修改这项数值来设置机器的功率,'-'代表充电\nThis is the constant power. You can set the power of the machine by changing this value. '-' stands for charge");
+    Constant_power->add_Specifition();
+
+    Charging_and_discharging = new Specification(Charging_and_discharging_explain, ui->System_Tab, 2, 1, \
+                                                 "Charge", "Charging and discharging", \
+                                                 "这是充放电，一共有两项可选：充电，放电\nThis is charge and discharge. There are two options: charge and discharge");
+    Charging_and_discharging->add_Specifition();
+
+    Work_mode = new Specification(Work_mode_explain, ui->System_Tab, 3, 1, \
+                                  "Manual", "Work mode", \
+                                  "这是工作模式，有四项可选：手动，UPS，削峰填谷，受控制削峰填谷\nThis is the working mode, there are four options: manual, UPS, peak cutting and valley filling, controlled peak cutting and valley filling");
+    Work_mode->add_Specifition();
+
+    Output_power_factor = new Specification(Output_power_factor_explain, ui->System_Tab, 4, 1, \
+                                            "1", "Output power factor", \
+                                            "这是输出功率因素\nThis is the power output factor");
+    Output_power_factor->add_Specifition();
+
+    Output_reactive_power = new Specification(Output_reactive_power_explain, ui->System_Tab, 5, 1, \
+                                              "1", "Output reactive power", \
+                                              "这是输出无功功率\nThis is the output reactive power");
+    Output_reactive_power->add_Specifition();
+
+    Constant_current = new Specification(Constant_current_explain, ui->System_Tab, 6, 1, \
+                                         "100", "Constant current", \
+                                         "这是恒流值\nThis is the constant current value");
+    Constant_current->add_Specifition();
+
+    Constant_voltage = new Specification(Constant_voltage_explain, ui->System_Tab, 7, 1, \
+                                         "600", "Constant voltage", \
+                                         "这是恒压值\nThis is constant pressure");
+    Constant_voltage->add_Specifition();
+
+    Control_mode = new Specification(Control_mode_explain, ui->System_Tab, 0, 4, \
+                                     "Local", "Control mode", \
+                                     "这是工作模式，有两项可选：本地，远程\nThis is the working mode, with two options: Local and Remote");
+    Control_mode->add_Specifition();
+
+    Machine_number = new Specification(Machine_number_explain, ui->System_Tab, 1, 4, \
+                                       "Master_00", "Machine number", \
+                                       "这是设备号，可以选择主机或者从机，其中主机有一项可选，从机有九项可选\nThis is the device number. You can choose the host or slave. The host has one option(Master_00) and the slave has nine options");
+    Machine_number->add_Specifition();
+
+    Parallel = new Specification(Parallel_explain, ui->System_Tab, 2, 4, \
+                                 "Disable", "Parallel", \
+                                 "这是并机，有两项可选：使能，禁止\nThis is parallel, with two options: Enable and Disable");
+    Parallel->add_Specifition();
+
+    Unbalance_power_enable = new Specification(Unbalance_power_enable_explain, ui->System_Tab, 3, 4, \
+                                               "Disable", "Unbalance power enable", \
+                                               "这是功率不平衡使能，有两项可选：使能，禁止\nThis is to enable power imbalance, with two options: Enable and Disable");
+    Unbalance_power_enable->add_Specifition();
+
+    Phase_A_power = new Specification(Phase_A_power_explain, ui->System_Tab, 4, 4, \
+                                      "5", "Phase A power", \
+                                      "这是A相功率\nThis is Phase A power");
+    Phase_A_power->add_Specifition();
+
+    Phase_B_power = new Specification(Phase_B_power_explain, ui->System_Tab, 5, 4, \
+                                      "5", "Phase B power", \
+                                      "T这是B相功率\nhis is Phase B power");
     Phase_B_power->add_Specifition();
+
+    Phase_C_power = new Specification(Phase_C_power_explain, ui->System_Tab, 6, 4, \
+                                      "5", "Phase C power", \
+                                      "这是C相功率\nThis is Phase C power");
+    Phase_C_power->add_Specifition();
+
+
 }
 /******************************************************************************
  * 设备信息表表初始化

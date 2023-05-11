@@ -7396,7 +7396,7 @@ background-color: rgb(255, 0, 0);</string>
         </rect>
        </property>
        <property name="currentIndex">
-        <number>3</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="ParameterSet_page">
         <attribute name="title">
@@ -7810,7 +7810,7 @@ background-color: rgb(255, 0, 0);</string>
          </item>
          <item row="6" column="3">
           <property name="text">
-           <string>Phase Cpower</string>
+           <string>Phase C power</string>
           </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
