@@ -84,6 +84,7 @@ public:
 
         QPushButton *Constant_power_explain;    //功率说明
         QPushButton *Phase_B_power_explain;    //B相电压说明
+        Specification *Phase_B_power;
 
         QList<QPair<QPushButton *, int> > PCS_pairList;
         QList<QString> hand_name;

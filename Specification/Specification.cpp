@@ -2,25 +2,33 @@
 #include <QWidget>
 #include <QMessageBox>
 
-Specification::Specification(QPushButton *explain_btn, QTableWidget *target_tab,
-                                int row, int column, QString value, QString title, QString text)
+Specification::Specification(QPushButton *button, QTableWidget *tableWidget,
+                             int r, int col, QString val, QString title, QString text)
 {
-    target_tab->setCellWidget(row, column, (QWidget *)(explain_btn));
+    tab.explain_btn = button;
+    tab.target_tab = tableWidget;
+    tab.row = r;
+    tab.column = col;
+    tab.value = val;
+    tab.explain_title = title;
+    tab.specification_text = text;
 
-    connect(explain_btn,SIGNAL(clicked(bool)), this, SLOT(explain_btn_clicked()));
-
-    explain_btn->setText(value);
-    explain_title = title;
-    specification_text = text;
+    connect(tab.explain_btn,SIGNAL(clicked(bool)), this, SLOT(explain_btn_clicked()));
 }
 
 Specification::~Specification()
 {
-//    disconnect(explain_btn,SIGNAL(clicked(bool)), this, SLOT(explain_btn_clicked()));
+    disconnect(tab.explain_btn,SIGNAL(clicked(bool)), this, SLOT(explain_btn_clicked()));
+}
+
+void Specification::add_Specifition()
+{
+    tab.explain_btn->setText(tab.value);
+    tab.target_tab->setCellWidget(tab.row, tab.column, (QWidget *)tab.explain_btn);
 }
 
 void Specification::explain_btn_clicked()
 {
-    QMessageBox::about(this, explain_title, specification_text);
+    QMessageBox::question(this, tab.explain_title, tab.specification_text, "OK");
 }
 

@@ -320,7 +320,8 @@ void MEGAWin::UserParam_tab()
     ui->System_Tab->setCellWidget(6,4, (QWidget *)Phase_C_power_btn);          //C相功率
     ui->System_Tab->setCellWidget(7,4, (QWidget *)AdvancedSetup_btn);          //高级设置
 
-    Specification *Phase_B_power = new Specification(Phase_B_power_explain, ui->System_Tab, 5, 4, "5", "Phase_B_power", "This is Phase_B_power");
+    Phase_B_power = new Specification(Phase_B_power_explain, ui->System_Tab, 5, 4, "5", "Phase_B_power", "This is Phase_B_power");
+    Phase_B_power->add_Specifition();
 }
 /******************************************************************************
  * 设备信息表表初始化
