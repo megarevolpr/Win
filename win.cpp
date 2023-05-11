@@ -115,7 +115,30 @@ void MEGAWin::MemoryAllocation()
     PCS_Env_T_btn  = new QPushButton;
 
     pButtonGroup   = new QButtonGroup();
-    Grid_vol_AB_btn  = new QPushButton;
+    Grid_vol_AB_btn = new QPushButton;
+    Grid_vol_BC_btn = new QPushButton;
+    Grid_vol_CA_btn = new QPushButton;
+    Grid_cur_A_btn  = new QPushButton;
+    Grid_cur_B_btn  = new QPushButton;
+    Grid_cur_C_btn  = new QPushButton;
+    Grid_act_P_btn  = new QPushButton;
+    Grid_rea_P_btn  = new QPushButton;
+    Grid_app_P_btn  = new QPushButton;
+    Grid_fre_btn    = new QPushButton;
+    Grid_Pf_btn     = new QPushButton;
+
+    Load_vol_AB_btn = new QPushButton;
+    Load_vol_BC_btn = new QPushButton;
+    Load_vol_CA_btn = new QPushButton;
+    Load_cur_A_btn  = new QPushButton;
+    Load_cur_B_btn  = new QPushButton;
+    Load_cur_C_btn  = new QPushButton;
+    Load_act_P_btn  = new QPushButton;
+    Load_rea_P_btn  = new QPushButton;
+    Load_app_P_btn  = new QPushButton;
+    Load_fre_btn    = new QPushButton;
+    Load_Pf_btn     = new QPushButton;
+
 
 }
 /***************************************************************
@@ -2066,35 +2089,44 @@ void MEGAWin::combox_ControlMode_change()
 
 void MEGAWin::ToSetButton()
 {
-    QPushButton * btn_name[] ={PCS_vol_AB_btn,PCS_vol_BC_btn,PCS_vol_CA_btn,PCS_cur_A_btn,PCS_cur_B_btn, PCS_cur_C_btn,\
+    QPushButton * btn_name1[] ={PCS_vol_AB_btn,PCS_vol_BC_btn,PCS_vol_CA_btn,PCS_cur_A_btn,PCS_cur_B_btn, PCS_cur_C_btn,\
                               PCS_act_P_btn,PCS_rea_P_btn,PCS_par_P_btn,PCS_Pf_btn,\
                               PCS_Bat_vol_btn,PCS_Bat_cur_btn,PCS_Bat_P_btn,PCS_Bus_vol_btn,PCS_IGBT_T_btn,PCS_Env_T_btn,\
-                              Grid_vol_AB_btn};
+                              Grid_vol_AB_btn,Grid_vol_BC_btn,Grid_vol_CA_btn,Grid_cur_A_btn,Grid_cur_B_btn, Grid_cur_C_btn,\
+                              Grid_act_P_btn,Grid_rea_P_btn,Grid_app_P_btn,Grid_fre_btn,Grid_Pf_btn,\
+                              Load_vol_AB_btn,Load_vol_BC_btn,Load_vol_CA_btn,Load_cur_A_btn,Load_cur_B_btn, Load_cur_C_btn,\
+                              Load_act_P_btn,Load_rea_P_btn,Load_app_P_btn,Load_fre_btn,Load_Pf_btn};
 
+    QString data[] ={"400V","401V","402V","403V","404V","405V","400V","400V","400V","400V","400V","400V"\
+                    ,"400V","400V","400V","400V","400V","400V","400V","400V","400V","400V","400V","400V"\
+                    ,"400V","400V","400V","400V","400V","400V","400V","400V","400V","400V","400V","400V"\
+                    ,"400V","400V"};
+//    QPushButton * btn_name2[] ={};
 
-    for (int i=0;i<sizeof(btn_name)/sizeof(btn_name[0]);i++)
+    for (int i=0;i<sizeof(btn_name1)/sizeof(btn_name1[0]);i++)
     {
 //        PCS_pairList.append(qMakePair(btn_name[i],i));
 
         if(i<=9){
-            btn_name[i]->setText(tr("400V"));
-            ui->Converter_Tab->setCellWidget(i,1,(QWidget *)btn_name[i]);
-            pButtonGroup->addButton(btn_name[i], i);
+
+            btn_name1[i]->setText(data[i].toUtf8());
+            ui->Converter_Tab->setCellWidget(i,1,(QWidget *)btn_name1[i]);
+            pButtonGroup->addButton(btn_name1[i], i);
         }
         else if (i<=15) {
-            btn_name[i]->setText(tr("2"));
-            ui->Converter_Tab->setCellWidget(i%10,3,(QWidget *)btn_name[i]);
-            pButtonGroup->addButton(btn_name[i], i);
+            btn_name1[i]->setText(data[i].toUtf8());
+            ui->Converter_Tab->setCellWidget(i%10,3,(QWidget *)btn_name1[i]);
+            pButtonGroup->addButton(btn_name1[i], i);
         }
         else if (i<=26) {
-            btn_name[i]->setText(tr("3"));
-            ui->Grid_Tab->setCellWidget(i%16,1,(QWidget *)btn_name[i]);
-            pButtonGroup->addButton(btn_name[i], i);
+            btn_name1[i]->setText(data[i].toUtf8());
+            ui->Grid_Tab->setCellWidget(i%16,1,(QWidget *)btn_name1[i]);
+            pButtonGroup->addButton(btn_name1[i], i);
         }
         else if (i<=36) {
-            btn_name[i]->setText(tr("4"));
-            ui->Converter_Tab->setCellWidget(i%27,1,(QWidget *)btn_name[i]);
-            pButtonGroup->addButton(btn_name[i], i);
+            btn_name1[i]->setText(data[i]);
+            ui->Load_Tab->setCellWidget(i%27,1,(QWidget *)btn_name1[i]);
+            pButtonGroup->addButton(btn_name1[i], i);
         }
     }
 //    for (QPair<QPushButton *, QString> pair : PCS_pairList) {
