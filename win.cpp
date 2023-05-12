@@ -1616,215 +1616,216 @@ void MEGAWin::SystemParam_tbnt_released()
     /*功能设置*/
     Battery_type = new Specification(Battery_type_explain, ui->UI_Parameter_Tab, 0, 1, \
                                      "Lithium", "Battery_type", \
-                                     "根据实际情况选择电池类型，有锂电和铅酸两种类型可供选择\nChoose the battery type according to the actual situation, there are two types of lithium and lead acid to choose from");
+                                     "根据实际情况选择电池类型，有锂电(Lithium)和铅酸(LeadAcid)两种类型可供选择\n Choose the battery type according to the actual situation, there are two types of lithium(Lithium) and lead acid(LeadAcid) to choose from.");
     Battery_type->add_Specifition();
     BMS_Comm_type = new Specification(BMS_Comm_type_explain, ui->UI_Parameter_Tab, 1, 1, \
                                       "CAN", "BMS_Comm_type", \
-                                      "设置与电池之间的通信方式，可根据情况选择RS485或CAN通信\nSet the communication mode between the battery, RS485 or CAN communication can be selected according to the situation");
+                                      "设置与电池之间的通信方式，可根据情况选择RS485(RS485)或CAN通信(CAN)或以太网(Ethernet)\nSet the communication mode between the battery, RS485(RS485) or CAN communication(CAN) or Ethernet(Ethernet) can be selected according to the situation.");
     BMS_Comm_type->add_Specifition();
     Power_control_type = new Specification(Power_control_type_explain, ui->UI_Parameter_Tab, 2, 1,\
                                            "CP_N&&P" , "Power_control_type", \
-                                           "设置控制功率的方式，有恒压、恒流、恒功率\nSet the control power mode, constant voltage, constant current, constant power");
+                                           "设置控制功率的方式，有恒压(CV)、恒流(CC)、恒功率(CP_P)、正负功率(CP_N&&P)\nSet the control power mode, constant voltage(CV), constant current(CC), constant power(CP_P), positive and negative power(CP_N&&P).");
     Power_control_type->add_Specifition();
     EMS_Comm_type = new Specification(EMS_Comm_type_explain, ui->UI_Parameter_Tab, 3, 1, \
                                       "RS485", "EMS_Comm_type", \
-                                      "设置EMS的通信方式，有RS485， CAN通信，以太网三种方式");
+                                      "设置EMS的通信方式，有RS485(RS485),CAN通信(CAN)，以太网(Ethernet)三种方式\nSetting the communication mode of EMS, there are RS485(RS485),CAN communication (CAN) and Ethernet.");
     EMS_Comm_type->add_Specifition();
     Output_power_limit = new Specification(Output_power_limit_explain, ui->UI_Parameter_Tab, 4, 1,\
                                            "100", "Output_power_limit", \
-                                           "设置允许输出的功率最大值");
+                                           "设置允许输出的功率最大值\nSet the maximum power output allowed.");
     Output_power_limit->add_Specifition();
     BAT_manufacturers = new Specification(BAT_manufacturers_explain, ui->UI_Parameter_Tab, 5, 1, \
                                           "GAOTE", "BAT_manufacturers", \
-                                          "电池厂家");
+                                          "这是电池厂家，根据选择的电池厂家解析报文\nThis is the battery manufacturer and the packet is parsed according to the selected battery manufacturer.");
     BAT_manufacturers->add_Specifition();
     Power_Delta = new Specification(Power_Delta_explain, ui->UI_Parameter_Tab, 6, 1, \
                                     "10", "Power_Delta", \
-                                    "This is Phase_B_power");
+                                    "设置功率回差，默认功率回差为10kw\nSet the power back difference, and the default power back difference is 10kw.");
     Power_Delta->add_Specifition();
     Charge_power_limit = new Specification(Charge_power_limit_explain, ui->UI_Parameter_Tab, 7, 1, \
                                            "100", "Charge_power_limit",\
-                                           "This is Phase_B_power");
+                                           "设置充电功率限制,可以限制充电功率\nSet the charging power limit, which can limit the charging power.");
     Charge_power_limit->add_Specifition();
     Discharge_power_limit = new Specification(Discharge_power_limit_explain, ui->UI_Parameter_Tab, 8, 1, \
                                               "100", "Charge_power_limit", \
-                                              "This is Phase_B_power");
+                                              "设置放电功率限制，可以限制放电功率\n设置放电功率限制，可以限制放电功率.");
     Discharge_power_limit->add_Specifition();
     Charge_Vol_upper_Limit_delta = new Specification(Charge_Vol_upper_Limit_delta_explain, ui->UI_Parameter_Tab, 9, 1, \
                                                      "10", "Charge_Vol_upper_Limit_delta", \
-                                                     "This is Phase_B_power");
+                                                     "设置充电电压上限回差，默认充电电压上限为10kw\nThe upper limit of charging voltage return difference is set, and the default charging voltage upper limit is 10kw.");
     Charge_Vol_upper_Limit_delta->add_Specifition();
     Discharge_Vol_lower_Limit_delta = new Specification(Discharge_Vol_lower_Limit_delta_explain, ui->UI_Parameter_Tab, 10, 1,\
                                                         "10", "Discharge_Vol_lower_Limit_delta", \
-                                                        "This is Phase_B_power");
+                                                        "设置放电电压下限回差，默认放电电压下限回差为10kw\nSet the discharge voltage lower limit back difference, the default discharge voltage lower limit back difference is 10kw.");
     Discharge_Vol_lower_Limit_delta->add_Specifition();
     Host_Address = new Specification(Host_Address_explain, ui->UI_Parameter_Tab, 0, 4,\
                                      "20", "Host_Address", \
-                                     "This is Phase_B_power");
+                                     "设置主机地址\nSet host address.");
     Host_Address->add_Specifition();
     serial_port_1 = new Specification(serial_port_1_explain, ui->UI_Parameter_Tab, 1, 4, \
-                                      "9600", "serial_port_1", "This is Phase_B_power");
+                                      "9600", "serial_port_1", \
+                                      "这是串口1，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口1默认波特率是9600bps\nThis is serial port 1, set the baud rate, there are six options to choose from, which are 1200, 2400, 4800, 9600, 19200, 38400, and the default baud rate of serial port 1 is 9600bps.");
     serial_port_1->add_Specifition();
     serial_port_2 = new Specification(serial_port_2_explain, ui->UI_Parameter_Tab, 2, 4, \
                                       "9600", "serial_port_2", \
-                                      "This is Phase_B_power");
+                                      "这是串口2，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口2默认波特率是9600bps\nThis is serial port 2, set the baud rate, there are six options to choose from, which are 1200, 2400, 4800, 9600, 19200, 38400, and the default baud rate of serial port 2 is 9600bps");
     serial_port_2->add_Specifition();
     serial_port_3 = new Specification(serial_port_3_explain, ui->UI_Parameter_Tab, 3, 4, \
                                       "9600", "serial_port_3", \
-                                      "This is Phase_B_power");
+                                      "这是串口3，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口3默认波特率是9600bps\nThis is serial port 3, set the baud rate, there are six options to choose from, which are 1200, 2400, 4800, 9600, 19200, 38400, and the default baud rate of serial port 3 is 9600bps.");
     serial_port_3->add_Specifition();
     serial_port_4 = new Specification(serial_port_4_explain, ui->UI_Parameter_Tab, 4, 4, \
                                       "9600", "serial_port_4", \
-                                      "This is Phase_B_power");
+                                      "这是串口4，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口4默认波特率是9600bps\nThis is serial port 4, set the baud rate, there are six options to choose from, which are 1200, 2400, 4800, 9600, 19200, 38400, and the default baud rate of serial port 4 is 9600bps.");
     serial_port_4->add_Specifition();
     serial_port_5 = new Specification(serial_port_5_explain, ui->UI_Parameter_Tab, 5, 4, \
                                       "9600", "serial_port_5", \
-                                      "This is Phase_B_power");
+                                      "这是串口5，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口5默认波特率是9600bps\nThis is serial port 5, set the baud rate, there are six options to choose from, which are 1200, 2400, 4800, 9600, 19200, 38400, and the default baud rate of serial port 5 is 9600bps.");
     serial_port_5->add_Specifition();
 
     Can_port_1 = new Specification(Can_port_1_explain, ui->UI_Parameter_Tab, 6, 4, \
                                    "500", "Can_port_1", \
-                                   "This is Phase_B_power");
+                                   "这是CAN1端口，PCS内部通讯的波特率，默认波特率500，无需更改\nThis is the baud rate of CAN1 port and PCS internal communication. The default baud rate is 500, which need not be changed.");
     Can_port_1->add_Specifition();
     Can_port_2 = new Specification(Can_port_2_explain, ui->UI_Parameter_Tab, 7, 4, \
                                    "250", "Can_port_2", \
-                                   "This is Phase_B_power");
+                                   "这是CAN2端口，PCS与BMS通信的波特率，默认波特率125，根据现场BMS通信波特率进行修改，其中有五项可供选择，分别是100、125、250、500、800\nThis is the baud rate of the CAN2 port and the communication between PCS and BMS. The default baud rate is 125, which is modified according to the on-site BMS communication baud rate. There are five items to choose from, which are 100, 125, 250, 500 and 800 respectively.");
     Can_port_2->add_Specifition();
     ProtocolVersion = new Specification(ProtocolVersion_explain, ui->UI_Parameter_Tab, 0, 7, \
-                                        "ProtocolVersion", "serial_port_5", \
-                                        "This is Phase_B_power");
+                                        "5612", "ProtocolVersion", \
+                                        "这是协议版本号，用于查看当前协议版本\nThis is the protocol version number used to see the current protocol version.");
     ProtocolVersion->add_Specifition();
     UserPassPort = new Specification(UserPassPort_explain, ui->UI_Parameter_Tab, 1, 7, \
                                      "123456", "UserPassPort", \
-                                     "This is Phase_B_power");
+                                     "这是用户密码，可供重新设置用户密码，默认用户密码123456\nThis is the user password, you can reset the user password, the default user password 123456.");
     UserPassPort->add_Specifition();
     RootPassport = new Specification(RootPassport_explain, ui->UI_Parameter_Tab, 2, 7,\
                                      "888888", "RootPassport", \
-                                     "This is Phase_B_power");
+                                     "这是超级权限密码，可供重新设置超级权限密码，默认超级权限密码888888\nThis is the super privilege password. You can reset the super privilege password. The default super privilege password is 888888.");
     RootPassport->add_Specifition();
     Language = new Specification(Language_explain, ui->UI_Parameter_Tab, 3, 7, \
                                  "English", "Language", \
-                                 "This is Phase_B_power");
+                                 "设置显示屏的显示语言，可供选择为中文与英文，切换语言时系统会重启\nSet the display language of the display screen, which can be selected as Chinese and English. The system will restart when switching languages.");
     Language->add_Specifition();
     System_upgrade = new Specification(System_upgrade_explain, ui->UI_Parameter_Tab, 4, 7, \
                                        "upgrade", "System_upgrade", \
-                                       "This is Phase_B_power");
+                                       "点击即可进入系统升级应用程序，根据升级文档进行系统升级\nClick to enter the system upgrade application and upgrade the system according to the upgrade document.");
     System_upgrade->add_Specifition();
     Sounds = new Specification(Sounds_explain, ui->UI_Parameter_Tab, 5, 7, \
                                "Allow", "Sounds", \
-                               "This is Phase_B_power");
+                               "设置显示屏是否开启声音，可供选择为允许(Allow)、禁止(forbid)\nSet whether the display is enabled sound, which can be allowed(Allow) or prohibited(forbid).");
     Sounds->add_Specifition();
     DryContact = new Specification(DryContact_explain, ui->UI_Parameter_Tab, 6, 7, \
                                    "forbid", "DryContact", \
-                                   "This is Phase_B_power");
+                                   "根据项目现场配置干接点功能，可供选择为允许(Allow)、禁止(forbid)\nAccording to the project site configuration dry contact function, can be selected as allowed(Allow), prohibited(forbid).");
     DryContact->add_Specifition();
 
     /*系统参数*/
     Change_rate_of_power = new Specification(Change_rate_of_power_explain, ui->UI_SystemParameter_Tab, 0, 1, \
                                              "20", "Change_rate_of_power", \
-                                             "根据实际情况选择电池类型，有锂电和铅酸两种类型可供选择\nChoose the battery type according to the actual situation, there are two types of lithium and lead acid to choose from");
+                                             "功率变化率是与额定功率相比功率变化的大小");
     Change_rate_of_power->add_Specifition();
     Grid_frequency_upper_limit = new Specification(Grid_frequency_upper_limit_explain, ui->UI_SystemParameter_Tab, 1, 1, \
                                                    "3", "Grid_frequency_upper_limit", \
-                                                   "电网频率变化范围上限");
+                                                   "电网频率允许超出额定频率的上限");
     Grid_frequency_upper_limit->add_Specifition();
     Grid_frequency_lower_limit = new Specification(Grid_frequency_lower_limit_explain, ui->UI_SystemParameter_Tab, 2, 1, \
                                                    "-3", "Grid_frequency_lower_limit", \
-                                                   "电网频率变化范围下限");
+                                                   "电网频率允许小于额定频率的下限");
     Grid_frequency_lower_limit->add_Specifition();
     Vol_protection_upper_limit = new Specification(Vol_protection_upper_limit_explain, ui->UI_SystemParameter_Tab, 3, 1, \
                                                    "+15", "Vol_protection_upper_limit", \
-                                                   "电压保护范围上限");
+                                                   "会进行断电保护的电压最大值");
     Vol_protection_upper_limit->add_Specifition();
     Vol_protection_lower_limit = new Specification(Vol_protection_lower_limit_explain, ui->UI_SystemParameter_Tab, 4, 1, \
                                                    "-15", "Vol_protection_lower_limit", \
-                                                   "电压保护范围下限");
+                                                   "会进行断电保护的电压最小值");
     Vol_protection_lower_limit->add_Specifition();
     HVRT_enable = new Specification(HVRT_enable_explain, ui->UI_SystemParameter_Tab, 5, 1, \
                                                     "prohibit", "HVRT_enable", \
-                                                    "设置波特率。默认9600");
+                                                    "高压穿越使能,使高压也能穿越，在一定时间内高压不会关机,可供选择为允许、禁止");
     HVRT_enable->add_Specifition();
     LVRT_enable = new Specification(LVRT_enable_explain, ui->UI_SystemParameter_Tab, 6, 1, \
                                     "prohibit", "LVRT_enable", \
-                                    "This is Phase_B_power");
+                                    "低压穿越使能，使低压也能穿越，在一定时间内低压不会关机,可供选择为允许、禁止");
     LVRT_enable->add_Specifition();
     AFD_enable = new Specification(AFD_enable_explain, ui->UI_SystemParameter_Tab, 7, 1, \
                                    "prohibit", "AFD_enable", \
-                                   "This is Phase_B_power");
+                                   "孤岛使能,可供选择为允许、禁止");
     AFD_enable->add_Specifition();
     Insulation_detection_enable = new Specification(Insulation_detection_enable_explain, ui->UI_SystemParameter_Tab, 8, 1, \
                                                     "prohibit", "Insulation_detection_enable", \
-                                                    "This is Phase_B_power");
+                                                    "绝缘检测使能，绝缘电阻大于33KΩ要能正常起机运行，小于33KΩ不能起机，并且要告警，默认禁止,可供选择为允许、禁止");
     Insulation_detection_enable->add_Specifition();
     PrimaryFreq_enable = new Specification(PrimaryFreq_enable_explain, ui->UI_SystemParameter_Tab, 9, 1, \
                                            "prohibit", "PrimaryFreq_enable", \
-                                           "This is Phase_B_power");
+                                           "一次调频使能,可供选择为允许、禁止");
     PrimaryFreq_enable->add_Specifition();
     Inertia_enable = new Specification(Inertia_enable_explain, ui->UI_SystemParameter_Tab, 10, 1, \
                                        "prohibit", "Inertia_enable", \
-                                       "This is Phase_B_power");
+                                       "转动惯性使能,可供选择为允许、禁止");
     Inertia_enable->add_Specifition();
 
     CV_parallel = new Specification(CV_parallel_explain, ui->UI_SystemParameter_Tab, 11, 1, \
                                     "prohibit", "CV_parallel", \
-                                    "This is Phase_B_power");
+                                    "恒压并机使能可供选择为允许、禁止,可供选择为允许、禁止");
     CV_parallel->add_Specifition();
 
     Machine_type = new Specification(Machine_type_explain, ui->UI_SystemParameter_Tab, 0, 4, \
-                                     "9600", "serial_port_2", \
-                                     "This is Phase_B_power");
+                                     "PCS-TS", "Machine_type", \
+                                     "根据现场机器机器型号设置，以出厂值为准,可供选择为PCS、PCS-T、PCS-TS、PCS-TS-T");
     Machine_type->add_Specifition();
     Machine_capacity = new Specification(Machine_capacity_explain, ui->UI_SystemParameter_Tab, 1, 4, \
-                                     "9600", "serial_port_2", \
-                                     "This is Phase_B_power");
+                                     "100", "Machine_capacity", \
+                                     "PCS的额定容量，以出厂值为准，不可更改");
     Machine_capacity->add_Specifition();
     Output_Fre_grade = new Specification(Output_Fre_grade_explain, ui->UI_SystemParameter_Tab, 2, 4, \
-                                         "9600", "serial_port_3", \
-                                         "This is Phase_B_power");
+                                         "50", "Output_Fre_grade", \
+                                         "设置输出频率的等级，一般默认50HZ，根据项目地可更改为60Hz");
     Output_Fre_grade->add_Specifition();
     Output_vol_level = new Specification(Output_vol_level_explain, ui->UI_SystemParameter_Tab, 3, 4, \
-                                         "9600", "serial_port_3", \
-                                         "This is Phase_B_power");
+                                         "400", "Output_vol_level", \
+                                         "输出电压等级是通过变压器后输出的电压等级，要根据变压器的变比来设置，以出厂默认值为准，不可更改");
     Output_vol_level->add_Specifition();
     Converter_side_vol_level = new Specification(Converter_side_vol_level_explain, ui->UI_SystemParameter_Tab, 4, 4, \
-                                         "9600", "serial_port_3", \
+                                         "270:400", "Converter_side_vol_level", \
                                          "This is Phase_B_power");
     Converter_side_vol_level->add_Specifition();
     Output_reactive_power_mode = new Specification(Output_reactive_power_mode_explain, ui->UI_SystemParameter_Tab, 5, 4, \
-                                         "9600", "serial_port_3", \
+                                         "Non adjustab", "Output_reactive_power_mode", \
                                          "This is Phase_B_power");
     Output_reactive_power_mode->add_Specifition();
     Grid_connected_mode_of_Inv = new Specification(Grid_connected_mode_of_Inv_explain, ui->UI_SystemParameter_Tab, 6, 4, \
-                                                   "9600", "serial_port_4", \
+                                                   "Non counterc", "Grid_connected_mode_of_Inv", \
                                                    "This is Phase_B_power");
     Grid_connected_mode_of_Inv->add_Specifition();
     Primary_FM_dead_zone = new Specification(Primary_FM_dead_zone_explain, ui->UI_SystemParameter_Tab, 7, 4, \
-                                             "9600", "serial_port_5", \
+                                             "3", "Primary_FM_dead_zone", \
                                              "This is Phase_B_power");
     Primary_FM_dead_zone->add_Specifition();
     PFM_coeff = new Specification(PFM_coeff_explain, ui->UI_SystemParameter_Tab, 8, 4, \
-                                  "9600", "serial_port_5", \
+                                  "20", "PFM_coeff", \
                                   "This is Phase_B_power");
     PFM_coeff->add_Specifition();
     Grid_recover_time = new Specification(Grid_recover_time_explain, ui->UI_SystemParameter_Tab, 9, 4, \
-                                          "9600", "serial_port_5", \
+                                          "10", "Grid_recover_time", \
                                           "This is Phase_B_power");
     Grid_recover_time->add_Specifition();
     DynamicCap = new Specification(DynamicCap_explain, ui->UI_SystemParameter_Tab, 10, 4, \
-                                   "9600", "serial_port_5", \
-                                   "This is Phase_B_power");
+                                   "9600", "DynamicCap", \
+                                   "电网扩容使能,可供选择为允许、禁止");
     DynamicCap->add_Specifition();
 
     Module_Number = new Specification(Module_Number_explain, ui->UI_SystemParameter_Tab, 0, 7, \
-                                      "9600", "serial_port_5", \
+                                      "1", "Module_Number", \
                                       "This is Phase_B_power");
     Module_Number->add_Specifition();
     Restore_factory = new Specification(Restore_factory_explain, ui->UI_SystemParameter_Tab,1, 7, \
-                                        "9600", "serial_port_5", \
+                                        "restore", "Restore_factory", \
                                         "This is Phase_B_power");
     Restore_factory->add_Specifition();
     Clear_Data = new Specification(Clear_Data_explain, ui->UI_SystemParameter_Tab, 2, 7, \
-                                   "9600", "serial_port_5", \
+                                   "Clear", "Clear_Data", \
                                    "This is Phase_B_power");
     Clear_Data->add_Specifition();
 
