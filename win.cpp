@@ -241,6 +241,10 @@ void MEGAWin::MemoryAllocation()
 void MEGAWin::FirstPage()
 {
 
+    ui->Alarm_Button->setDefault(false);
+    ui->Alarm_Button->setFlat(true);
+    ui->Alarm_Button->setFocusPolicy(Qt::NoFocus);
+
     ui->Bypass_Running_btn->setFlat(true);
     ui->Bypass_Running_btn->setFocusPolicy(Qt::NoFocus);
     ui->Bypass_Grid_btn->setFlat(true);
@@ -1770,6 +1774,8 @@ void MEGAWin::LinkRelationship()
     connect(ui->Bypass_Grid_btn, SIGNAL(clicked()), this, SLOT(on_Grid_clicked()));    //主页电网按钮跳转电网实时数据
     connect(ui->Bypass_Load_Btn, SIGNAL(clicked()), this, SLOT(on_Load_clicked()));    //主页负载按钮跳转负载实时数据
 
+    connect(ui->Alarm_Button, SIGNAL(clicked()), this,SLOT(RTAlarm_tbtn_clicked()));//跳转当前告警记录
+
     //关联实时数据点击槽函数
 //    connect(pButtonGroup, SIGNAL(buttonClicked(int)), this, SLOT(slot_btnGroupClicked(int)));
 }
@@ -2244,6 +2250,45 @@ void MEGAWin::on_Load_clicked() //显示负载端实时数据
     ui->Run_tabWidget->setCurrentWidget(ui->RTData_page);
     ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
     ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Load_page);
+}
+
+void MEGAWin::RTAlarm_tbtn_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->Status_page);
+    ui->Run_tabWidget->setCurrentWidget(ui->RTAlarm_page);
+
+    QStringList RTAlarm_List2;
+    RTAlarm_List2 << tr("converter available") << tr("DC Soft start")\
+                << tr("converter status") << tr("Reactive power Regulation")\
+                << tr("Sleep mode") << tr("LVRT");
+
+    ui->RTAlarm_Data_page->setColumnCount(5);
+    ui->RTAlarm_Data_page->setRowCount(30);
+    ui->RTAlarm_Data_page->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+    ui->RTAlarm_Data_page->verticalHeader()->setVisible(false);//设置垂直头不可见
+    ui->RTAlarm_Data_page->setFrameShape(QFrame::NoFrame);//设置无边框
+    ui->RTAlarm_Data_page->setShowGrid(true);//设置显示格子
+    ui->RTAlarm_Data_page->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+    ui->RTAlarm_Data_page->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
+    ui->RTAlarm_Data_page->setStyleSheet("selection-background-color:lightblue;");
+    QStringList RTAlarm_Title;
+    RTAlarm_Title << tr("告警名称\nAlarm name") << tr("告警等级\nAlarm leve")<< tr("触发条件\nTrigger condition") \
+                    << tr("响应动作\nResponse action")<< tr("是否自动复位及复位时间\nWhether to reset automatically\nand reset time");
+    ui->RTAlarm_Data_page->setHorizontalHeaderLabels(RTAlarm_Title);
+    ui->RTAlarm_Data_page->setColumnWidth(0,130);
+    ui->RTAlarm_Data_page->setColumnWidth(1,90);
+    ui->RTAlarm_Data_page->setColumnWidth(2,230);
+    ui->RTAlarm_Data_page->setColumnWidth(3,230);
+    ui->RTAlarm_Data_page->setColumnWidth(4,270);
+
+//    ui->RTAlarm_Data_page->setRowHeight(0, 60);
+//    ui->RTAlarm_Data_page->setRowHeight(1, 60);
+
+//    for(int j = 0; j < RTAlarm_List2.size(); j++)
+//    {
+//        ui->RTAlarm_Data_page->setItem(j, 2, new QTableWidgetItem(RTState_Bypass_List2.at(j)));
+//        ui->RTAlarm_Data_page->item(j, 2)->setTextAlignment(Qt::AlignCenter);
+//    }
 }
 
 void MEGAWin::on_Batt_btn_pressed() //显示电池信息

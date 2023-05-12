@@ -16,5 +16,12 @@ typedef struct{
 }TAB_SPECIFITION;
 
 
+typedef struct {
+    QString Alarm_name;
+    QString Alarm_level;
+    QString Trigger_condition;
+    QString Response_action;
+    QString Whether_to_reset_automatically_and_reset_time;
+}RTALARM_DATA;
 
 #endif // SPECIFICATION_H

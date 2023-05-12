@@ -335,6 +335,7 @@ private slots:
     void on_Running_btn_clicked();//跳转变流器实时数据
     void on_Grid_clicked();//跳转电网实时数据
     void on_Load_clicked();//跳转负载实时数据
+    void RTAlarm_tbtn_clicked(); //跳转实时告警页面
     void on_Batt_btn_pressed();//跳转到电池信息
     void on_Batt_btn_released();//跳转到电池信息
 
