@@ -45,6 +45,154 @@ public:
         QPushButton *Constant_power_explain;     //功率说明
         Specification *Constant_power;
 
+
+
+//        QPushButton *Grid_CM_of_PCS_explain;
+//        QPushButton *Constant_power_explain;
+//        QPushButton *Charg_and_Discharg_explain;
+//        QPushButton *Work_mode_explain;
+//        QPushButton *Output_power_factor_explain;
+//        QPushButton *Output_reactive_power_explain;
+//        QPushButton *Constant_current_explain;
+//        QPushButton *Constant_voltage_explain;
+//        QPushButton *Control_mode_explain;
+//        QPushButton *Machine_number_explain;
+//        QPushButton *Parallel_explain;
+//        QPushButton *Unbalance_power_enable_explain;
+//        QPushButton *Phase_A_power_explain;
+//        QPushButton *Phase_B_power_explain;    //B相电压说明
+//        QPushButton *Phase_C_power_explain;
+
+//        Specification *Grid_CM_of_PCS;
+//        Specification *Constant_power;
+//        Specification *Charg_and_Discharg;
+//        Specification *Work_mode;
+//        Specification *Output_power_factor;
+//        Specification *Output_reactive_power;
+//        Specification *Constant_current;
+//        Specification *Constant_voltage;
+//        Specification *Control_mode;
+//        Specification *Machine_number;
+//        Specification *Parallel;
+//        Specification *Unbalance_power_enable;
+//        Specification *Phase_A_power;
+//        Specification *Phase_B_power;
+//        Specification *Phase_C_power;
+        /***************************功能设置**************************/
+        QPushButton *Battery_type_explain;
+        QPushButton *BMS_Comm_type_explain;
+        QPushButton *Power_control_type_explain;
+        QPushButton *EMS_Comm_type_explain;
+        QPushButton *Output_power_limit_explain;
+        QPushButton *BAT_manufacturers_explain;
+        QPushButton *Power_Delta_explain;
+        QPushButton *Charge_power_limit_explain;
+        QPushButton *Discharge_power_limit_explain;
+        QPushButton *Charge_Vol_upper_Limit_delta_explain;
+        QPushButton *Discharge_Vol_lower_Limit_delta_explain;
+        QPushButton *Host_Address_explain;
+        QPushButton *serial_port_1_explain;
+        QPushButton *serial_port_2_explain;
+        QPushButton *serial_port_3_explain;
+        QPushButton *serial_port_4_explain;
+        QPushButton *serial_port_5_explain;
+        QPushButton *Can_port_1_explain;
+        QPushButton *Can_port_2_explain;
+        QPushButton *ProtocolVersion_explain;
+        QPushButton *UserPassPort_explain;
+        QPushButton *RootPassport_explain;
+        QPushButton *Language_explain;
+        QPushButton *System_upgrade_explain;
+        QPushButton *Sounds_explain;
+        QPushButton *DryContact_explain;
+
+        Specification *Battery_type;
+        Specification *BMS_Comm_type;
+        Specification *Power_control_type;
+        Specification *EMS_Comm_type;
+        Specification *Output_power_limit;
+        Specification *BAT_manufacturers;
+        Specification *Power_Delta;
+        Specification *Charge_power_limit;
+        Specification *Discharge_power_limit;
+        Specification *Charge_Vol_upper_Limit_delta;
+        Specification *Discharge_Vol_lower_Limit_delta;
+        Specification *Host_Address;
+        Specification *serial_port_1;
+        Specification *serial_port_2;
+        Specification *serial_port_3;
+        Specification *serial_port_4;
+        Specification *serial_port_5;
+        Specification *Can_port_1;
+        Specification *Can_port_2;
+        Specification *ProtocolVersion;
+        Specification *UserPassPort;
+        Specification *RootPassport;
+        Specification *Language;
+        Specification *System_upgrade;
+        Specification *Sounds;
+        Specification *DryContact;
+
+        /***************************系统参数**************************/
+        QPushButton *Change_rate_of_power_explain;
+        QPushButton *Grid_frequency_upper_limit_explain;
+        QPushButton *Grid_frequency_lower_limit_explain;
+        QPushButton *Vol_protection_upper_limit_explain;
+        QPushButton *Vol_protection_lower_limit_explain;
+        QPushButton *HVRT_enable_explain;
+        QPushButton *LVRT_enable_explain;
+        QPushButton *AFD_enable_explain;
+        QPushButton *Insulation_detection_enable_explain;
+        QPushButton *PrimaryFreq_enable_explain;
+        QPushButton *Inertia_enable_explain;
+        QPushButton *CV_parallel_explain;
+        QPushButton *Machine_type_explain;
+        QPushButton *Machine_capacity_explain;
+        QPushButton *Output_Fre_grade_explain;
+        QPushButton *Output_vol_level_explain;
+        QPushButton *Converter_side_vol_level_explain;
+        QPushButton *Output_reactive_power_mode_explain;
+        QPushButton *Grid_connected_mode_of_Inv_explain;
+        QPushButton *Primary_FM_dead_zone_explain;
+        QPushButton *PFM_coeff_explain;
+        QPushButton *Grid_recover_time_explain;
+        QPushButton *DynamicCap_explain;
+        QPushButton *Module_Number_explain;
+        QPushButton *Restore_factory_explain;
+        QPushButton *Clear_Data_explain;
+
+        Specification *Change_rate_of_power;
+        Specification *Grid_frequency_upper_limit;
+        Specification *Grid_frequency_lower_limit;
+        Specification *Vol_protection_upper_limit;
+        Specification *Vol_protection_lower_limit;
+        Specification *HVRT_enable;
+        Specification *LVRT_enable;
+        Specification *AFD_enable;
+        Specification *Insulation_detection_enable;
+        Specification *PrimaryFreq_enable;
+        Specification *Inertia_enable;
+        Specification *CV_parallel;
+        Specification *Machine_type;
+        Specification *Machine_capacity;
+        Specification *Output_Fre_grade;
+        Specification *Output_vol_level;
+        Specification *Converter_side_vol_level;
+        Specification *Output_reactive_power_mode;
+        Specification *Grid_connected_mode_of_Inv;
+        Specification *Primary_FM_dead_zone;
+        Specification *PFM_coeff;
+        Specification *Grid_recover_time;
+        Specification *DynamicCap;
+        Specification *Module_Number;
+        Specification *Restore_factory;
+        Specification *Clear_Data;
+        /***************************外设**************************/
+        /***************************BMS保护**************************/
+        /***************************系统参数**************************/
+        /***************************调试**************************/
+        /***************************监控调试**************************/
+
         QPushButton *Charging_and_discharging_explain;  //充放电说明
         Specification *Charging_and_discharging;
 
@@ -80,6 +228,7 @@ public:
 
         QPushButton *Phase_B_power_explain;      //B相功率说明
         Specification *Phase_B_power;
+
 
         QPushButton *Phase_C_power_explain;      //C相功率说明
         Specification *Phase_C_power;

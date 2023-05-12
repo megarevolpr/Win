@@ -147,7 +147,7 @@ color: rgb(255, 255, 255);</string>
           </size>
          </property>
          <property name="currentIndex">
-          <number>4</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="UI_Parameter_page">
           <property name="sizePolicy">
@@ -337,6 +337,14 @@ color: rgb(255, 255, 255);</string>
                <set>AlignCenter</set>
               </property>
              </item>
+             <item row="0" column="3">
+              <property name="text">
+               <string>Host Address</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
+             </item>
              <item row="0" column="5">
               <property name="text">
                <string>-</string>
@@ -379,7 +387,7 @@ color: rgb(255, 255, 255);</string>
              </item>
              <item row="1" column="3">
               <property name="text">
-               <string>Host Address</string>
+               <string>serial port 1</string>
               </property>
               <property name="textAlignment">
                <set>AlignCenter</set>
@@ -411,7 +419,7 @@ color: rgb(255, 255, 255);</string>
              </item>
              <item row="2" column="0">
               <property name="text">
-               <string>BMS Comm. type</string>
+               <string>Power control type</string>
               </property>
               <property name="textAlignment">
                <set>AlignCenter</set>
@@ -427,7 +435,7 @@ color: rgb(255, 255, 255);</string>
              </item>
              <item row="2" column="3">
               <property name="text">
-               <string>serial port 1</string>
+               <string>serial port 2</string>
               </property>
               <property name="textAlignment">
                <set>AlignCenter</set>
@@ -475,7 +483,7 @@ color: rgb(255, 255, 255);</string>
              </item>
              <item row="3" column="3">
               <property name="text">
-               <string>serial port 2</string>
+               <string>serial port 3</string>
               </property>
               <property name="textAlignment">
                <set>AlignCenter</set>
@@ -523,7 +531,7 @@ color: rgb(255, 255, 255);</string>
              </item>
              <item row="4" column="3">
               <property name="text">
-               <string>serial port 3</string>
+               <string>serial port 4</string>
               </property>
               <property name="textAlignment">
                <set>AlignCenter</set>
@@ -571,7 +579,7 @@ color: rgb(255, 255, 255);</string>
              </item>
              <item row="5" column="3">
               <property name="text">
-               <string>serial port 4</string>
+               <string>serial port 5</string>
               </property>
               <property name="textAlignment">
                <set>AlignCenter</set>
@@ -611,7 +619,7 @@ color: rgb(255, 255, 255);</string>
              </item>
              <item row="6" column="3">
               <property name="text">
-               <string>serial port 5</string>
+               <string>Can port 1</string>
               </property>
               <property name="textAlignment">
                <set>AlignCenter</set>
@@ -619,7 +627,7 @@ color: rgb(255, 255, 255);</string>
              </item>
              <item row="6" column="5">
               <property name="text">
-               <string>bps</string>
+               <string>kbps</string>
               </property>
               <property name="textAlignment">
                <set>AlignCenter</set>
@@ -659,7 +667,7 @@ color: rgb(255, 255, 255);</string>
              </item>
              <item row="7" column="3">
               <property name="text">
-               <string>Can port 1</string>
+               <string>Can port 2</string>
               </property>
               <property name="textAlignment">
                <set>AlignCenter</set>
@@ -691,7 +699,7 @@ color: rgb(255, 255, 255);</string>
              </item>
              <item row="8" column="3">
               <property name="text">
-               <string>Can port 2</string>
+               <string/>
               </property>
               <property name="textAlignment">
                <set>AlignCenter</set>
@@ -699,7 +707,7 @@ color: rgb(255, 255, 255);</string>
              </item>
              <item row="8" column="5">
               <property name="text">
-               <string>kbps</string>
+               <string/>
               </property>
               <property name="textAlignment">
                <set>AlignCenter</set>
@@ -1110,7 +1118,7 @@ color: rgb(255, 255, 255);</string>
            </item>
            <item row="5" column="0">
             <property name="text">
-             <string>Vol protection\n lower limit</string>
+             <string>HVRT enable</string>
             </property>
             <property name="textAlignment">
              <set>AlignCenter</set>
