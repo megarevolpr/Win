@@ -147,7 +147,7 @@ color: rgb(255, 255, 255);</string>
           </size>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="UI_Parameter_page">
           <property name="sizePolicy">

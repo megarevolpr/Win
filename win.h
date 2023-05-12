@@ -228,6 +228,61 @@ public:
         Specification *Restore_factory;
         Specification *Clear_Data;
         /***************************外设**************************/
+        QPushButton *DI_1_Enable_explain;
+        QPushButton *DI_2_Enable_explain;
+        QPushButton *DI_3_Enable_explain;
+        QPushButton *DI_4_Enable_explain;
+        QPushButton *DI_5_Enable_explain;
+        QPushButton *DI_6_Enable_explain;
+        QPushButton *DO_1_Enable_explain;
+        QPushButton *DO_2_Enable_explain;
+        QPushButton *DO_3_Enable_explain;
+        QPushButton *DI_1_NC_O_explain;
+        QPushButton *DI_2_NC_O_explain;
+        QPushButton *DI_3_NC_O_explain;
+        QPushButton *DI_4_NC_O_explain;
+        QPushButton *DI_5_NC_O_explain;
+        QPushButton *DI_6_NC_O_explain;
+        QPushButton *DO_1_NC_O_explain;
+        QPushButton *DO_2_NC_O_explain;
+        QPushButton *DO_3_NC_O_explain;
+        QPushButton *DI_1_Action_explain;
+        QPushButton *DI_2_Action_explain;
+        QPushButton *DI_3_Action_explain;
+        QPushButton *DI_4_Action_explain;
+        QPushButton *DI_5_Action_explain;
+        QPushButton *DI_6_Action_explain;
+        QPushButton *DO_1_Action_explain;
+        QPushButton *DO_2_Action_explain;
+        QPushButton *DO_3_Action_explain;
+
+        Specification *DI_1_Enable;
+        Specification *DI_2_Enable;
+        Specification *DI_3_Enable;
+        Specification *DI_4_Enable;
+        Specification *DI_5_Enable;
+        Specification *DI_6_Enable;
+        Specification *DO_1_Enable;
+        Specification *DO_2_Enable;
+        Specification *DO_3_Enable;
+        Specification *DI_1_NC_O;
+        Specification *DI_2_NC_O;
+        Specification *DI_3_NC_O;
+        Specification *DI_4_NC_O;
+        Specification *DI_5_NC_O;
+        Specification *DI_6_NC_O;
+        Specification *DO_1_NC_O;
+        Specification *DO_2_NC_O;
+        Specification *DO_3_NC_O;
+        Specification *DI_1_Action;
+        Specification *DI_2_Action;
+        Specification *DI_3_Action;
+        Specification *DI_4_Action;
+        Specification *DI_5_Action;
+        Specification *DI_6_Action;
+        Specification *DO_1_Action;
+        Specification *DO_2_Action;
+        Specification *DO_3_Action;
         /***************************BMS保护**************************/
         /***************************系统参数**************************/
         /***************************调试**************************/

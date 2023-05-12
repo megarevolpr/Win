@@ -109,7 +109,7 @@ void MEGAWin::MemoryAllocation()
 //    Phase_B_power_explain           = new QPushButton;  //B相功率说明
 //    Phase_C_power_explain           = new QPushButton;
 
-    /***************************高级设置**********************************/
+    /***************************参数设置**********************************/
 
     Grid_connected_mode_explain = new QPushButton;      //PCS并离网方式说明
     Constant_power_explain = new QPushButton;           //恒功率说明
@@ -127,9 +127,10 @@ void MEGAWin::MemoryAllocation()
     Phase_B_power_explain = new QPushButton;            //B相功率说明
     Phase_C_power_explain = new QPushButton;            //C相功率说明
 
-
+    /***************************高级设置**********************************/
     AdvancedSetup_btn = new QPushButton;                //高级设置
 
+    //功能设置
     Battery_type_explain                    = new QPushButton;
     BMS_Comm_type_explain                   = new QPushButton;
     Power_control_type_explain              = new QPushButton;
@@ -157,6 +158,7 @@ void MEGAWin::MemoryAllocation()
     Sounds_explain          = new QPushButton;
     DryContact_explain      = new QPushButton;
 
+    //系统参数
     Change_rate_of_power_explain        = new QPushButton;
     Grid_frequency_upper_limit_explain  = new QPushButton;
     Grid_frequency_lower_limit_explain  = new QPushButton;
@@ -183,6 +185,35 @@ void MEGAWin::MemoryAllocation()
     Module_Number_explain               = new QPushButton;
     Restore_factory_explain             = new QPushButton;
     Clear_Data_explain                  = new QPushButton;
+
+    //外设
+    DI_1_Enable_explain = new QPushButton;
+    DI_2_Enable_explain = new QPushButton;
+    DI_3_Enable_explain = new QPushButton;
+    DI_4_Enable_explain = new QPushButton;
+    DI_5_Enable_explain = new QPushButton;
+    DI_6_Enable_explain = new QPushButton;
+    DO_1_Enable_explain = new QPushButton;
+    DO_2_Enable_explain = new QPushButton;
+    DO_3_Enable_explain = new QPushButton;
+    DI_1_NC_O_explain   = new QPushButton;
+    DI_2_NC_O_explain   = new QPushButton;
+    DI_3_NC_O_explain   = new QPushButton;
+    DI_4_NC_O_explain   = new QPushButton;
+    DI_5_NC_O_explain   = new QPushButton;
+    DI_6_NC_O_explain   = new QPushButton;
+    DO_1_NC_O_explain   = new QPushButton;
+    DO_2_NC_O_explain   = new QPushButton;
+    DO_3_NC_O_explain   = new QPushButton;
+    DI_1_Action_explain = new QPushButton;
+    DI_2_Action_explain = new QPushButton;
+    DI_3_Action_explain = new QPushButton;
+    DI_4_Action_explain = new QPushButton;
+    DI_5_Action_explain = new QPushButton;
+    DI_6_Action_explain = new QPushButton;
+    DO_1_Action_explain = new QPushButton;
+    DO_2_Action_explain = new QPushButton;
+    DO_3_Action_explain = new QPushButton;
     /*****************************PCS数据****************************************/
     PCS_vol_AB_btn = new QPushButton;
     PCS_vol_BC_btn = new QPushButton;
@@ -1624,11 +1655,11 @@ void MEGAWin::SystemParam_tbnt_released()
     BMS_Comm_type->add_Specifition();
     Power_control_type = new Specification(Power_control_type_explain, ui->UI_Parameter_Tab, 2, 1,\
                                            "CP_N&&P" , "Power_control_type", \
-                                           "设置控制功率的方式，有恒压(CV)、恒流(CC)、恒功率(CP_P)、正负功率(CP_N&&P)\nSet the control power mode, constant voltage(CV), constant current(CC), constant power(CP_P), positive and negative power(CP_N&&P).");
+                                           "设置控制功率的方式，有恒压(CV)、恒流(CC)、恒功率(CP_P)、正负功率(CP_N&P)\nSet the control power mode, constant voltage(CV), constant current(CC), constant power(CP_P), positive and negative power(CP_N&P).");
     Power_control_type->add_Specifition();
     EMS_Comm_type = new Specification(EMS_Comm_type_explain, ui->UI_Parameter_Tab, 3, 1, \
                                       "RS485", "EMS_Comm_type", \
-                                      "设置EMS的通信方式，有RS485(RS485),CAN通信(CAN)，以太网(Ethernet)三种方式\nSetting the communication mode of EMS, there are RS485(RS485),CAN communication (CAN) and Ethernet.");
+                                      "设置EMS的通信方式，有RS485(RS485),CAN通信(CAN)，以太网(Ethernet)三种方式\nSetting the communication mode of EMS, there are RS485(RS485),CAN communication (CAN) and Ethernet(Ethernet).");
     EMS_Comm_type->add_Specifition();
     Output_power_limit = new Specification(Output_power_limit_explain, ui->UI_Parameter_Tab, 4, 1,\
                                            "100", "Output_power_limit", \
@@ -1648,7 +1679,7 @@ void MEGAWin::SystemParam_tbnt_released()
     Charge_power_limit->add_Specifition();
     Discharge_power_limit = new Specification(Discharge_power_limit_explain, ui->UI_Parameter_Tab, 8, 1, \
                                               "100", "Charge_power_limit", \
-                                              "设置放电功率限制，可以限制放电功率\n设置放电功率限制，可以限制放电功率.");
+                                              "设置放电功率限制，可以限制放电功率\nYou can set discharge power limit to limit the discharge power.");
     Discharge_power_limit->add_Specifition();
     Charge_Vol_upper_Limit_delta = new Specification(Charge_Vol_upper_Limit_delta_explain, ui->UI_Parameter_Tab, 9, 1, \
                                                      "10", "Charge_Vol_upper_Limit_delta", \
@@ -1723,112 +1754,199 @@ void MEGAWin::SystemParam_tbnt_released()
     /*系统参数*/
     Change_rate_of_power = new Specification(Change_rate_of_power_explain, ui->UI_SystemParameter_Tab, 0, 1, \
                                              "20", "Change_rate_of_power", \
-                                             "功率变化率是与额定功率相比功率变化的大小");
+                                             "功率变化率是与额定功率相比功率变化的大小\nPower change ratio is the magnitude of the power change compared to the rated power.");
     Change_rate_of_power->add_Specifition();
     Grid_frequency_upper_limit = new Specification(Grid_frequency_upper_limit_explain, ui->UI_SystemParameter_Tab, 1, 1, \
                                                    "3", "Grid_frequency_upper_limit", \
-                                                   "电网频率允许超出额定频率的上限");
+                                                   "电网频率允许超出额定频率的上限,可供选择为0.2、0.5、1、3\nThe grid frequency is allowed to exceed the upper limit of the rated frequency, which can be selected as 0.2, 0.5, 1, and 3.");
     Grid_frequency_upper_limit->add_Specifition();
     Grid_frequency_lower_limit = new Specification(Grid_frequency_lower_limit_explain, ui->UI_SystemParameter_Tab, 2, 1, \
                                                    "-3", "Grid_frequency_lower_limit", \
-                                                   "电网频率允许小于额定频率的下限");
+                                                   "电网频率允许小于额定频率的下限,可供选择为-0.5、-1、-2、-3\nThe grid frequency is allowed to be less than the lower limit of the rated frequency, which can be selected as -0.5, -1, -2, -3.");
     Grid_frequency_lower_limit->add_Specifition();
     Vol_protection_upper_limit = new Specification(Vol_protection_upper_limit_explain, ui->UI_SystemParameter_Tab, 3, 1, \
                                                    "+15", "Vol_protection_upper_limit", \
-                                                   "会进行断电保护的电压最大值");
+                                                   "会进行断电保护的电压最大值,可供选择为+10、+15、+20、+30\nThe maximum voltage for power outage protection can be selected as +10, +15, +20, +30.");
     Vol_protection_upper_limit->add_Specifition();
     Vol_protection_lower_limit = new Specification(Vol_protection_lower_limit_explain, ui->UI_SystemParameter_Tab, 4, 1, \
                                                    "-15", "Vol_protection_lower_limit", \
-                                                   "会进行断电保护的电压最小值");
+                                                   "会进行断电保护的电压最小值,可供选择为-10、-15、-20、-30\nThe minimum voltage for power outage protection can be selected as -10, -15, -20, -30.");
     Vol_protection_lower_limit->add_Specifition();
     HVRT_enable = new Specification(HVRT_enable_explain, ui->UI_SystemParameter_Tab, 5, 1, \
                                                     "prohibit", "HVRT_enable", \
-                                                    "高压穿越使能,使高压也能穿越，在一定时间内高压不会关机,可供选择为允许、禁止");
+                                                    "高压穿越使能,使高压也能穿越，在一定时间内高压不会关机,可供选择为允许(Allow)、禁止(forbid)\nEnable the high voltage pass through, so that the high voltage can also pass through, and the high voltage will not shut down within a certain time. The options are Allow (Allow), forbid (forbid).");
     HVRT_enable->add_Specifition();
     LVRT_enable = new Specification(LVRT_enable_explain, ui->UI_SystemParameter_Tab, 6, 1, \
                                     "prohibit", "LVRT_enable", \
-                                    "低压穿越使能，使低压也能穿越，在一定时间内低压不会关机,可供选择为允许、禁止");
+                                    "低压穿越使能，使低压也能穿越，在一定时间内低压不会关机,可供选择为允许(Allow)、禁止(forbid)\nEnable the low-voltage pass through, so that the low-voltage can also pass through, and the low-voltage will not shut down within a certain period of time. The options are Allow(Allow),, forbid(forbid).");
     LVRT_enable->add_Specifition();
     AFD_enable = new Specification(AFD_enable_explain, ui->UI_SystemParameter_Tab, 7, 1, \
                                    "prohibit", "AFD_enable", \
-                                   "孤岛使能,可供选择为允许、禁止");
+                                   "    防止孤岛效应，当检测出现孤岛效应(在光伏并网系统中,当大电网出现停电事故时,光伏并网逆变器发电与电网低压侧本地负载如果刚好出现功率相匹配时,容易出现自给自足的维持发电状态,从而出现""孤岛""现象,从而危及检修人员安全)时,让逆变器自动停机,可供选择为允许(Allow)、禁止(forbid)\nPrevent island effect, When the detection of island effect (in the photovoltaic grid-connected system, when the power failure accident occurs in the large power grid, photovoltaic grid-connected inverter power generation and the local load on the low voltage side of the grid if there is just a power match, it is easy to self-contained maintenance power state, resulting in the phenomenon of ""island"", thereby endangering the safety of maintenance personnel), let the inverter automatic shutdown, optional Permit(Allow) and forbid(forbid).");
     AFD_enable->add_Specifition();
     Insulation_detection_enable = new Specification(Insulation_detection_enable_explain, ui->UI_SystemParameter_Tab, 8, 1, \
                                                     "prohibit", "Insulation_detection_enable", \
-                                                    "绝缘检测使能，绝缘电阻大于33KΩ要能正常起机运行，小于33KΩ不能起机，并且要告警，默认禁止,可供选择为允许、禁止");
+                                                    "   绝缘检测使能，绝缘电阻大于33KΩ要能正常起机运行，小于33KΩ不能起机，并且要告警，默认禁止,可供选择为允许(Allow)、禁止(forbid)\nEnable insulation detection. If the insulation resistance is greater than 33KΩ, the machine can start normally; if the insulation resistance is smaller than 33KΩ, the machine cannot start, and the alarm should be generated. By default, it is prohibited, which can be selected as Allow(Allow) or forbid(forbid).");
     Insulation_detection_enable->add_Specifition();
     PrimaryFreq_enable = new Specification(PrimaryFreq_enable_explain, ui->UI_SystemParameter_Tab, 9, 1, \
                                            "prohibit", "PrimaryFreq_enable", \
-                                           "一次调频使能,可供选择为允许、禁止");
+                                           "    一次调频使能,电网的频率偏离额定值时，通过控制有功功率的增减使电网频率维持稳定，可供选择为允许(Allow)、禁止(forbid)\nWhen the frequency of the power grid deviates from the rated value, the frequency of the power grid can be maintained stable by controlling the increase or decrease of the active power. The alternatives are Allow(Allow) and forbid(forbid).");
     PrimaryFreq_enable->add_Specifition();
     Inertia_enable = new Specification(Inertia_enable_explain, ui->UI_SystemParameter_Tab, 10, 1, \
                                        "prohibit", "Inertia_enable", \
-                                       "转动惯性使能,可供选择为允许、禁止");
+                                       "转动惯量使能,在电力系统稳定性计算中加入转动惯量，可供选择为允许(Allow)、禁止(forbid)\nEnable the moment of inertia. Add the moment of inertia to the stability calculation of the power system. The options are Allow(Allow) and forbid(forbid).");
     Inertia_enable->add_Specifition();
 
     CV_parallel = new Specification(CV_parallel_explain, ui->UI_SystemParameter_Tab, 11, 1, \
                                     "prohibit", "CV_parallel", \
-                                    "恒压并机使能可供选择为允许、禁止,可供选择为允许、禁止");
+                                    "恒压并机使能,可供选择为允许(Allow)、禁止(forbid)\nAllow (Allow) forbid (forbid) Enable the constant voltage parallel machine.");
     CV_parallel->add_Specifition();
 
     Machine_type = new Specification(Machine_type_explain, ui->UI_SystemParameter_Tab, 0, 4, \
                                      "PCS-TS", "Machine_type", \
-                                     "根据现场机器机器型号设置，以出厂值为准,可供选择为PCS、PCS-T、PCS-TS、PCS-TS-T");
+                                     "根据现场机器机器型号设置，以出厂值为准,可供选择为PCS、PCS-T、PCS-TS、PCS-TS-T\nSet according to the machine model and factory value. PCS, PCs-T, PCS-TS, and PCS-TS-T can be selected.");
     Machine_type->add_Specifition();
     Machine_capacity = new Specification(Machine_capacity_explain, ui->UI_SystemParameter_Tab, 1, 4, \
                                      "100", "Machine_capacity", \
-                                     "PCS的额定容量，以出厂值为准，不可更改");
+                                     "PCS的额定容量，以出厂值为准，不可随意更改\nThe rated capacity of PCS is subject to the factory value and cannot be changed at will.");
     Machine_capacity->add_Specifition();
     Output_Fre_grade = new Specification(Output_Fre_grade_explain, ui->UI_SystemParameter_Tab, 2, 4, \
                                          "50", "Output_Fre_grade", \
-                                         "设置输出频率的等级，一般默认50HZ，根据项目地可更改为60Hz");
+                                         "设置输出频率的等级，一般默认50HZ，根据项目地可更改为60Hz\nSet the output frequency level. The default frequency is 50HZ, but it can be changed to 60Hz according to the project.");
     Output_Fre_grade->add_Specifition();
     Output_vol_level = new Specification(Output_vol_level_explain, ui->UI_SystemParameter_Tab, 3, 4, \
                                          "400", "Output_vol_level", \
-                                         "输出电压等级是通过变压器后输出的电压等级，要根据变压器的变比来设置，以出厂默认值为准，不可更改");
+                                         "电压等级是通过变压器后输出的电压等级，要根据变压器的变比来设置，以出厂默认值为准，不可更改\nVoltage level is the output voltage level through the transformer, according to the transformer ratio to set, to the factory default value prevail, can not be changed.");
     Output_vol_level->add_Specifition();
     Converter_side_vol_level = new Specification(Converter_side_vol_level_explain, ui->UI_SystemParameter_Tab, 4, 4, \
                                          "270:400", "Converter_side_vol_level", \
-                                         "This is Phase_B_power");
+                                         "逆变电压等级是逆变器逆变出来的电压等级，要根据变压器来设置，以出厂默认值为准，不可随意更改，可供更改选择为1:1、60:400、100:400、200:400、270:400、315:400、315:480\n");
     Converter_side_vol_level->add_Specifition();
     Output_reactive_power_mode = new Specification(Output_reactive_power_mode_explain, ui->UI_SystemParameter_Tab, 5, 4, \
                                          "Non adjustab", "Output_reactive_power_mode", \
-                                         "This is Phase_B_power");
+                                         "输出无功方式，默认不可调节，可供选择为功率因数(PF)、无功功率(Q)、不可调节(Non adjustable)\nadjustable output reactive power mode, adjustable by default, adjustable power factor (PF), adjustable power (Q), Non adjustable(Non adjustable).");
     Output_reactive_power_mode->add_Specifition();
     Grid_connected_mode_of_Inv = new Specification(Grid_connected_mode_of_Inv_explain, ui->UI_SystemParameter_Tab, 6, 4, \
                                                    "Non counterc", "Grid_connected_mode_of_Inv", \
-                                                   "This is Phase_B_power");
+                                                   "设置逆变器的并网方式，可逆流即光伏发电转换成交流电后可以并入电网；不可逆则是光伏发电的电流不会流向电网。默认可逆流，可供选择为可逆流(Counterc)、不可逆流(Non counterc)\nThe grid-connected mode of the inverter can be countercurrent, that is, photovoltaic power generation can be converted into alternating current, which can be incorporated into the power grid; Irreversible means that photovoltaic electricity does not flow to the grid. Countercurrent is available by default. The options are Counterc(Counterc) and Non counterc(Non counterc).");
     Grid_connected_mode_of_Inv->add_Specifition();
     Primary_FM_dead_zone = new Specification(Primary_FM_dead_zone_explain, ui->UI_SystemParameter_Tab, 7, 4, \
                                              "3", "Primary_FM_dead_zone", \
-                                             "This is Phase_B_power");
+                                             "一次调频死区为了防止在电网频差小范围变化时调门不必要的动作而设置的频差\nPrimary frequency modulation dead zone A frequency difference set to prevent unwanted switch action when the network frequency difference varies in a small range.");
     Primary_FM_dead_zone->add_Specifition();
     PFM_coeff = new Specification(PFM_coeff_explain, ui->UI_SystemParameter_Tab, 8, 4, \
                                   "20", "PFM_coeff", \
-                                  "This is Phase_B_power");
+                                  "设置有功调频系数\nSet the active power frequency modulation coefficient.");
     PFM_coeff->add_Specifition();
     Grid_recover_time = new Specification(Grid_recover_time_explain, ui->UI_SystemParameter_Tab, 9, 4, \
                                           "10", "Grid_recover_time", \
-                                          "This is Phase_B_power");
+                                          "电网恢复并网时间：预留功能，设置无效\nGrid restoration time: reserved function, setting invalid.");
     Grid_recover_time->add_Specifition();
     DynamicCap = new Specification(DynamicCap_explain, ui->UI_SystemParameter_Tab, 10, 4, \
                                    "9600", "DynamicCap", \
-                                   "电网扩容使能,可供选择为允许、禁止");
+                                   "电网扩容使能,可供选择为允许(Allow)、禁止(forbid)\nEnable the power network expansion. The options are Allow(Allow) and forbid(forbid).");
     DynamicCap->add_Specifition();
-
     Module_Number = new Specification(Module_Number_explain, ui->UI_SystemParameter_Tab, 0, 7, \
                                       "1", "Module_Number", \
-                                      "This is Phase_B_power");
+                                      "PCS的模块数量，默认值1(无效设置)\nNumber of modules for PCS, default 1(invalid setting).");
     Module_Number->add_Specifition();
     Restore_factory = new Specification(Restore_factory_explain, ui->UI_SystemParameter_Tab,1, 7, \
                                         "restore", "Restore_factory", \
-                                        "This is Phase_B_power");
+                                        "恢复出厂时的默认设置\nRestore the factory default Settings.");
     Restore_factory->add_Specifition();
     Clear_Data = new Specification(Clear_Data_explain, ui->UI_SystemParameter_Tab, 2, 7, \
                                    "Clear", "Clear_Data", \
-                                   "This is Phase_B_power");
+                                   "清除系统此前的记录数据及操作数据\nClear previous recorded data and operation data of the system.");
     Clear_Data->add_Specifition();
 
+    /*外设*/
+    DI_1_Enable = new Specification(DI_1_Enable_explain, ui->ExternalDevice_tW, 0, 0, \
+                                   "Enable", "DI_1_Enable", \
+                                   "输入干接点1，发生NO关机时执行动作的开关,可选功能为使能(Enable)、禁止(Disable)\n");
+    DI_1_Enable->add_Specifition();
+    DI_2_Enable = new Specification(DI_2_Enable_explain, ui->ExternalDevice_tW, 1, 0, \
+                                   "Enable", "DI_2_Enable", \
+                                   "输入干接点2，发生NC关机时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\n");
+    DI_2_Enable->add_Specifition();
+    DI_3_Enable = new Specification(DI_3_Enable_explain, ui->ExternalDevice_tW, 2, 0, \
+                                   "Enable", "DI_3_Enable", \
+                                   "输入干接点3，门禁开启时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\n");
+    DI_3_Enable->add_Specifition();
+    DI_4_Enable = new Specification(DI_4_Enable_explain, ui->ExternalDevice_tW, 3, 0, \
+                                   "Enable", "DI_4_Enable", \
+                                   "输入干接点4，柴发信号发出时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\n");
+    DI_4_Enable->add_Specifition();
+    DI_5_Enable = new Specification(DI_5_Enable_explain, ui->ExternalDevice_tW, 4, 0, \
+                                   "Enable", "DI_5_Enable", \
+                                   "输入干接点5，发生水浸时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\n");
+    DI_5_Enable->add_Specifition();
+    DI_6_Enable = new Specification(DI_6_Enable_explain, ui->ExternalDevice_tW, 5, 0, \
+                                   "Enable", "DI_6_Enable", \
+                                   "输入干接点6，消防信号发出时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\n");
+    DI_6_Enable->add_Specifition();
+    DO_1_Enable = new Specification(DO_1_Enable_explain, ui->ExternalDevice_tW, 6, 0, \
+                                   "Enable", "DO_1_Enable", \
+                                   "输出干接点1，发电机开启时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\n");
+    DO_1_Enable->add_Specifition();
+    DO_2_Enable = new Specification(DO_2_Enable_explain, ui->ExternalDevice_tW, 7, 0, \
+                                   "Enable", "DO_2_Enable", \
+                                   "输出干接点2，预留功能，设置无效，可选功能为使能(Enable)、禁止(Disable)\n");
+    DO_2_Enable->add_Specifition();
+    DO_3_Enable = new Specification(DO_3_Enable_explain, ui->ExternalDevice_tW, 8, 0, \
+                                   "Enable", "DO_3_Enable", \
+                                   "输出干接点3，预留功能，设置无效，可选功能为使能(Enable)、禁止(Disable)\n");
+    DO_3_Enable->add_Specifition();
+
+    DI_1_NC_O = new Specification(DI_1_NC_O_explain, ui->ExternalDevice_tW, 0, 1, \
+                                   "N_O", "DI_1_NC_O", \
+                                   "输入干接点1，设置NO关机是常闭电路还是常开电路,可选功能为常开(N_O)常闭(N_C)\n");
+    DI_1_NC_O->add_Specifition();
+    DI_2_NC_O = new Specification(DI_2_NC_O_explain, ui->ExternalDevice_tW, 1, 1, \
+                                   "N_O", "DI_2_NC_O", \
+                                   "输入干接点2，设置NC关机是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
+    DI_2_NC_O->add_Specifition();
+    DI_3_NC_O = new Specification(DI_3_NC_O_explain, ui->ExternalDevice_tW, 2, 1, \
+                                   "N_C", "DI_3_NC_O", \
+                                   "输入干接点3，设置门禁开是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
+    DI_3_NC_O->add_Specifition();
+    DI_4_NC_O = new Specification(DI_4_NC_O_explain, ui->ExternalDevice_tW, 3, 1, \
+                                   "N_O", "DI_4_NC_O", \
+                                   "输入干接点4，设置柴发信号是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
+    DI_4_NC_O->add_Specifition();
+    DI_5_NC_O = new Specification(DI_5_NC_O_explain, ui->ExternalDevice_tW, 4, 1, \
+                                   "N_O", "DI_5_NC_O", \
+                                   "输入干接点5，设置水浸是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
+    DI_5_NC_O->add_Specifition();
+    DI_6_NC_O = new Specification(DI_6_NC_O_explain, ui->ExternalDevice_tW, 5, 1, \
+                                   "N_O", "DI_6_NC_O", \
+                                   "输入干接点6，设置消防是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
+    DI_6_NC_O->add_Specifition();
+    DO_1_NC_O = new Specification(DO_1_NC_O_explain, ui->ExternalDevice_tW, 6, 1, \
+                                   "N_O", "DO_1_NC_O", \
+                                   "输出干接点1，设置发电机是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
+    DO_1_NC_O->add_Specifition();
+    DO_2_NC_O = new Specification(DO_2_NC_O_explain, ui->ExternalDevice_tW, 7, 1, \
+                                   "N_O", "DO_2_NC_O", \
+                                   "输出干接点2，预留功能，设置无效，设置是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
+    DO_2_NC_O->add_Specifition();
+    DO_3_NC_O = new Specification(DO_3_NC_O_explain, ui->ExternalDevice_tW, 8, 1, \
+                                   "N_O", "DO_3_NC_O", \
+                                   "输出干接点3，预留功能，设置无效，设置是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
+    DO_3_NC_O->add_Specifition();
+
+    DI_1_Action = new Specification(DI_1_Action_explain, ui->ExternalDevice_tW, 0, 1, \
+                                   "Enable", "DI_1_Action", \
+                                   "输入干接点1，发生NO关机时执行的动作,可选功能为提示、待机、关机、充满待机、放空待机、故障待机、电网信号\n");
+    DI_1_Action->add_Specifition();
+//    Specification *DI_1_Action;
+//    Specification *DI_2_Action;
+//    Specification *DI_3_Action;
+//    Specification *DI_4_Action;
+//    Specification *DI_5_Action;
+//    Specification *DI_6_Action;
+//    Specification *DO_1_Action;
+//    Specification *DO_2_Action;
+//    Specification *DO_3_Action;
 }
 
 /***************************************************************
@@ -1836,12 +1954,8 @@ void MEGAWin::SystemParam_tbnt_released()
  ***************************************************************/
 void MEGAWin::AdvancedSetup_btn_clicked()
 {
-//    Sclick = 0;
-//    if(PasswordCheck() && root == SUPER)
-//    {
         ui->UI_stackedWidget->setCurrentWidget(ui->BasicSet_page);
         SystemParam_tbnt_released();
-        //    }
 }
 
 
