@@ -37,47 +37,7 @@ public:
     explicit MEGAWin(QWidget *parent = nullptr);
     ~MEGAWin();
 
-
-//        QString combox_ui_GridMode_str;
-//        QComboBox *combox_ui_GridMode;
-
-//        QComboBox *combox_ui_OnOff_Grid;//并离网
-//        QString combox_ui_OnOffGrid_str;    //并离网
-//        QStringList ui_OnOff_Grid;
-//        short combox_ui_OnOffGrid_index;
-
-//        QComboBox *combox_ui_ChargeDischar; //充放电
-//        QStringList ui_ChargeDischar;
-//        QString combox_ui_ChargeDischar_str;
-//        short combox_ui_ChargeDischar_index;
-
-//        QComboBox *combox_RUN;              //运行模式
-//        QStringList combox_Runmode;
-//        QString combox_RUN_str;
-//        short combox_RUN_index;
-
-//        QString combox_ControlMode_str;
-//        QComboBox *combox_ControlMode;      //控制模式
-//        QStringList combox_CM;
-//        short combox_ControlMode_index;
-
-
-//        QComboBox * combox_MachineNumber;   //设备号
-//        QStringList combox_MNumber;
-//        QString MachineNumber_str;
-//        short combox_MachineNumber_index;
-
-//        QComboBox *combox_Parallel;         //并机
-//        QStringList combox_Para;
-//        QString combox_Parallel_str;
-//        short combox_Parallel_index;
-
-//        QComboBox *combox_UnbalancePowerEnable;//功率不平衡使能
-//        QString combox_UnbalancePowerEnable_str;
-//        short combox_UnbalancePowerEnable_index;
-
         Menu *m_menu;
-
 
         QPushButton *Grid_connected_mode_explain;//并网方式说明
         Specification *Grid_connected_mode;
@@ -85,39 +45,47 @@ public:
         QPushButton *Constant_power_explain;     //功率说明
         Specification *Constant_power;
 
+        QPushButton *Charging_and_discharging_explain;  //充放电说明
+        Specification *Charging_and_discharging;
+
+        QPushButton *Work_mode_explain;  //工作模式说明
+        Specification *Work_mode;
+
+        QPushButton *Output_power_factor_explain;    //输出功率因素说明
+        Specification *Output_power_factor;
+
+        QPushButton *Output_reactive_power_explain;  //输出无功功率说明
+        Specification *Output_reactive_power;
+
+        QPushButton *Constant_current_explain;  //恒流说明
+        Specification *Constant_current;
+
+        QPushButton *Constant_voltage_explain; //恒压说明
+        Specification *Constant_voltage;
+
+        QPushButton *Control_mode_explain;  //控制模式说明
+        Specification *Control_mode;
+
+        QPushButton *Machine_number_explain;    //设备号说明
+        Specification *Machine_number;
+
+        QPushButton *Parallel_explain;  //并机说明
+        Specification *Parallel;
+
+        QPushButton *Unbalance_power_enable_explain;    //功率不平衡使能说明
+        Specification *Unbalance_power_enable;
+
+        QPushButton *Phase_A_power_explain;      //A相功率说明
+        Specification *Phase_A_power;
+
+        QPushButton *Phase_B_power_explain;      //B相功率说明
+        Specification *Phase_B_power;
 
 
-//        QPushButton *Grid_CM_of_PCS_explain;
-//        QPushButton *Constant_power_explain;
-//        QPushButton *Charg_and_Discharg_explain;
-//        QPushButton *Work_mode_explain;
-//        QPushButton *Output_power_factor_explain;
-//        QPushButton *Output_reactive_power_explain;
-//        QPushButton *Constant_current_explain;
-//        QPushButton *Constant_voltage_explain;
-//        QPushButton *Control_mode_explain;
-//        QPushButton *Machine_number_explain;
-//        QPushButton *Parallel_explain;
-//        QPushButton *Unbalance_power_enable_explain;
-//        QPushButton *Phase_A_power_explain;
-//        QPushButton *Phase_B_power_explain;    //B相电压说明
-//        QPushButton *Phase_C_power_explain;
 
-//        Specification *Grid_CM_of_PCS;
-//        Specification *Constant_power;
-//        Specification *Charg_and_Discharg;
-//        Specification *Work_mode;
-//        Specification *Output_power_factor;
-//        Specification *Output_reactive_power;
-//        Specification *Constant_current;
-//        Specification *Constant_voltage;
-//        Specification *Control_mode;
-//        Specification *Machine_number;
-//        Specification *Parallel;
-//        Specification *Unbalance_power_enable;
-//        Specification *Phase_A_power;
-//        Specification *Phase_B_power;
-//        Specification *Phase_C_power;
+        QPushButton *Phase_C_power_explain;      //C相功率说明
+        Specification *Phase_C_power;
+
         /***************************功能设置**************************/
         QPushButton *Battery_type_explain;
         QPushButton *BMS_Comm_type_explain;
@@ -385,55 +353,11 @@ public:
         Specification *INT_main_flag;
         Specification *parallel_signal;
 
-        /***************************监控调试**************************/
-
-        QPushButton *Charging_and_discharging_explain;  //充放电说明
-        Specification *Charging_and_discharging;
-
-        QPushButton *Work_mode_explain;  //工作模式说明
-        Specification *Work_mode;
-
-        QPushButton *Output_power_factor_explain;    //输出功率因素说明
-        Specification *Output_power_factor;
-
-        QPushButton *Output_reactive_power_explain;  //输出无功功率说明
-        Specification *Output_reactive_power;
-
-        QPushButton *Constant_current_explain;  //恒流说明
-        Specification *Constant_current;
-
-        QPushButton *Constant_voltage_explain; //恒压说明
-        Specification *Constant_voltage;
-
-        QPushButton *Control_mode_explain;  //控制模式说明
-        Specification *Control_mode;
-
-        QPushButton *Machine_number_explain;    //设备号说明
-        Specification *Machine_number;
-
-        QPushButton *Parallel_explain;  //并机说明
-        Specification *Parallel;
-
-        QPushButton *Unbalance_power_enable_explain;    //功率不平衡使能说明
-        Specification *Unbalance_power_enable;
-
-        QPushButton *Phase_A_power_explain;      //A相功率说明
-        Specification *Phase_A_power;
-
-        QPushButton *Phase_B_power_explain;      //B相功率说明
-        Specification *Phase_B_power;
-
-
-        QPushButton *Phase_C_power_explain;      //C相功率说明
-        Specification *Phase_C_power;
-
         QPushButton *AdvancedSetup_btn;//高级设置入口
 
-//        QList<QPair<QPushButton *, int> > PCS_pairList;
-//        QList<QString> hand_name;
-//        QList<QString> btn_explain;
+        /********************实时数据**************************/
 
-        //实时数据
+        //PCS数据
         QPushButton *PCS_vol_AB_btn;
         QPushButton *PCS_vol_BC_btn;
         QPushButton *PCS_vol_CA_btn;
@@ -451,8 +375,6 @@ public:
         QPushButton *PCS_IGBT_T_btn;    //IGBT温度
         QPushButton *PCS_Env_T_btn;     //环境温度
 
-        QButtonGroup* pButtonGroup;//PCS_data的button组
-//        QButtonGroup* pButtonGroup1;//Battery_data的button组
 
         QPushButton *Grid_vol_AB_btn;     //
         QPushButton *Grid_vol_BC_btn;
@@ -515,11 +437,8 @@ private:
 
 private slots:
     void onTimerOut();
-    void updateTimeOut();                       //Fun(Time)
-//    void combox_OutPower_change();
-//    void PasswordLimit();
+    void updateTimeOut(); //Fun(Time)
     void My_menuAction(int Index);
-//    bool PasswordCheck();
     void SystemParam_tbnt_released();
 
     void combox_ui_GridMode_change();
@@ -531,6 +450,7 @@ private slots:
     void on_Running_btn_clicked();//跳转变流器实时数据
     void on_Grid_clicked();//跳转电网实时数据
     void on_Load_clicked();//跳转负载实时数据
+    void RTAlarm_tbtn_clicked(); //跳转实时告警页面
     void on_Batt_btn_pressed();//跳转到电池信息
     void on_Batt_btn_released();//跳转到电池信息
 
@@ -544,13 +464,8 @@ private slots:
 
     void on_Run_tabWidget_tabBarClicked(int index); //实时数据界面选项卡点击响应
     void combox_ControlMode_change();
-//    void Constant_power_explain_clicked();//功率说明
-//    void Phase_C_power_btn_clicked();//C相功率
-    void AdvancedSetup_btn_clicked();//高级
-    void ToSetButton();
 
-    /******************************PCS数据********************************/
-//    void slot_btnGroupClicked(int);
+    void AdvancedSetup_btn_clicked();//高级
 
     void on_System_tabWidget_currentChanged(int index);
 
@@ -558,7 +473,6 @@ private:
     Ui::MEGAWin *ui;
 
     QTimer *timer;
-//    QTimer *timer2;
     QTimer *Update_RTData_timer;
     QTime *current_time;
 

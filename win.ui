@@ -2475,6 +2475,9 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
           <height>45</height>
          </size>
         </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/new_ui/UI/Warning_1.png);</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -2531,7 +2534,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">
@@ -3605,7 +3608,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
        <item row="0" column="0">
         <widget class="QTabWidget" name="Run_tabWidget">
          <property name="currentIndex">
-          <number>3</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="RTData_page">
           <property name="minimumSize">
@@ -3645,7 +3648,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
               </size>
              </property>
              <property name="currentIndex">
-              <number>1</number>
+              <number>0</number>
              </property>
              <widget class="QWidget" name="RTD_Bypass_N_page">
               <property name="minimumSize">
@@ -6373,7 +6376,7 @@ enable</string>
        <item row="0" column="0">
         <widget class="QTabWidget" name="Record_tabWidget">
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="DataReport_page">
           <attribute name="title">
@@ -7404,7 +7407,7 @@ background-color: rgb(255, 0, 0);</string>
         </rect>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>3</number>
        </property>
        <widget class="QWidget" name="ParameterSet_page">
         <attribute name="title">
