@@ -214,6 +214,58 @@ void MEGAWin::MemoryAllocation()
     DO_1_Action_explain = new QPushButton;
     DO_2_Action_explain = new QPushButton;
     DO_3_Action_explain = new QPushButton;
+
+    //BMS保护
+    DOD_Action_explain                 = new QPushButton;
+    Prohibit_charging_Action_explain   = new QPushButton;
+    Prohibit_discharging_Action_explain= new QPushButton;
+    BMS_warning_Action_explain         = new QPushButton;
+    BMS_alarm_Action_explain           = new QPushButton;
+    BMS_fualt_Action_explain           = new QPushButton;
+    BMS_warning_CP_explain             = new QPushButton;
+    BMS_alarm_CP_explain               = new QPushButton;
+    BMS_fualt_CP_explain               = new QPushButton;
+    BMS_warning_DP_explain             = new QPushButton;
+    BMS_alarm_DP_explain               = new QPushButton;
+    BMS_fualt_DP_explain               = new QPushButton;
+
+    //调试
+    Debug_variable_1_explain        = new QPushButton;
+    Debug_variable_2_explain        = new QPushButton;
+    Debug_variable_3_explain        = new QPushButton;
+    Debug_variable_1_addr_explain   = new QPushButton;
+    Debug_variable_2_addr_explain   = new QPushButton;
+    Debug_variable_3_addr_explain   = new QPushButton;
+    Debug_memery_var_1_explain      = new QPushButton;
+    Debug_memery_var_2_explain      = new QPushButton;
+    Debug_memery_var_3_explain      = new QPushButton;
+    Input_Vol_revise_explain        = new QPushButton;
+    Input_Cur_revise_explain        = new QPushButton;
+
+    Voltage_1_5_revise_explain      = new QPushButton;
+    Bus_Vol_revise_explain          = new QPushButton;
+    Grid_A_AB_Vol_revise_explain    = new QPushButton;
+    Grid_B_BC_Vol_revise_explain    = new QPushButton;
+    Grid_C_CA_Vol_revise_explain    = new QPushButton;
+    Output_A_Cur_revise_explain     = new QPushButton;
+    Output_B_Cur_revise_explain     = new QPushButton;
+    Output_C_Cur_revise_explain     = new QPushButton;
+    INV_A_Vol_revise_explain        = new QPushButton;
+    INV_B_Vol_revise_explain        = new QPushButton;
+    INV_C_Vol_revise_explain        = new QPushButton;
+
+    INV_A_ind_Cur_revise_explain    = new QPushButton;
+    INV_B_ind_Cur_revise_explain    = new QPushButton;
+    INV_C_ind_Cur_revise_explain    = new QPushButton;
+    INV_On_off_flag_explain         = new QPushButton;
+    Logic_state_explain             = new QPushButton;
+    INV_flag_explain                = new QPushButton;
+    Grid_flag_explain               = new QPushButton;
+    Grid_protect_flag_explain       = new QPushButton;
+    Bat_flag_explain                = new QPushButton;
+    DC_bus_flag_explain             = new QPushButton;
+    INT_main_flag_explain           = new QPushButton;
+    parallel_signal_explain         = new QPushButton;
     /*****************************PCS数据****************************************/
     PCS_vol_AB_btn = new QPushButton;
     PCS_vol_BC_btn = new QPushButton;
@@ -1844,7 +1896,7 @@ void MEGAWin::SystemParam_tbnt_released()
     Grid_recover_time->add_Specifition();
     DynamicCap = new Specification(DynamicCap_explain, ui->UI_SystemParameter_Tab, 10, 4, \
                                    "9600", "DynamicCap", \
-                                   "电网扩容使能,可供选择为允许(Allow)、禁止(forbid)\nEnable the power network expansion. The options are Allow(Allow) and forbid(forbid).");
+                                   "电网扩容使能,当负载在短时间内所需功率大于电网容量时，可暂时从电池辅助供电以达到功率要求，可供选择为允许(Allow)、禁止(forbid)\nEnable the power network expansion. The options are Allow(Allow) and forbid(forbid).");
     DynamicCap->add_Specifition();
     Module_Number = new Specification(Module_Number_explain, ui->UI_SystemParameter_Tab, 0, 7, \
                                       "1", "Module_Number", \
@@ -1934,19 +1986,234 @@ void MEGAWin::SystemParam_tbnt_released()
                                    "输出干接点3，预留功能，设置无效，设置是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
     DO_3_NC_O->add_Specifition();
 
-    DI_1_Action = new Specification(DI_1_Action_explain, ui->ExternalDevice_tW, 0, 1, \
-                                   "Enable", "DI_1_Action", \
-                                   "输入干接点1，发生NO关机时执行的动作,可选功能为提示、待机、关机、充满待机、放空待机、故障待机、电网信号\n");
+    DI_1_Action = new Specification(DI_1_Action_explain, ui->ExternalDevice_tW, 0, 2, \
+                                   "Shut down", "DI_1_Action", \
+                                   "输入干接点1，发生NO关机时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
     DI_1_Action->add_Specifition();
-//    Specification *DI_1_Action;
-//    Specification *DI_2_Action;
-//    Specification *DI_3_Action;
-//    Specification *DI_4_Action;
-//    Specification *DI_5_Action;
-//    Specification *DI_6_Action;
-//    Specification *DO_1_Action;
-//    Specification *DO_2_Action;
-//    Specification *DO_3_Action;
+    DI_2_Action = new Specification(DI_2_Action_explain, ui->ExternalDevice_tW, 1, 2, \
+                                   "Prompt", "DI_2_Action", \
+                                   "输入干接点2，发生NC关机时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
+    DI_2_Action->add_Specifition();
+    DI_3_Action = new Specification(DI_3_Action_explain, ui->ExternalDevice_tW, 2, 2, \
+                                   "Prompt", "DI_3_Action", \
+                                   "输入干接点3，门禁打开时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
+    DI_3_Action->add_Specifition();
+    DI_4_Action = new Specification(DI_4_Action_explain, ui->ExternalDevice_tW, 3, 2, \
+                                   "Prompt", "DI_4_Action", \
+                                   "输入干接点4，柴发信号发出时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
+    DI_4_Action->add_Specifition();
+    DI_5_Action = new Specification(DI_5_Action_explain, ui->ExternalDevice_tW, 4, 2, \
+                                   "Shut down", "DI_5_Action", \
+                                   "输入干接点5，发生水浸时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
+    DI_5_Action->add_Specifition();
+    DI_6_Action = new Specification(DI_6_Action_explain, ui->ExternalDevice_tW, 5, 2, \
+                                   "Shut down", "DI_6_Action", \
+                                   "输入干接点6，触发消防时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
+    DI_6_Action->add_Specifition();
+    DO_1_Action = new Specification(DO_1_Action_explain, ui->ExternalDevice_tW, 6, 2, \
+                                   "Prompt", "DO_1_Action", \
+                                   "输出干接点1，启动发电机时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
+    DO_1_Action->add_Specifition();
+    DO_2_Action = new Specification(DO_2_Action_explain, ui->ExternalDevice_tW, 7, 2, \
+                                   "Prompt", "DO_2_Action", \
+                                   "输出干接点2，预留功能，设置无效，信号触发时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
+    DO_2_Action->add_Specifition();
+    DO_3_Action = new Specification(DO_3_Action_explain, ui->ExternalDevice_tW, 8, 2, \
+                                   "Prompt", "DO_3_Action", \
+                                   "输出干接点3，预留功能，设置无效，信号触发时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
+    DO_3_Action->add_Specifition();
+
+    /*BMS保护*/
+    DOD_Action = new Specification(DOD_Action_explain, ui->BMSProtection_tW, 0, 0, \
+                                   "Standby", "DOD", \
+                                   "DOD保护，触发DOD保护时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\n");
+    DOD_Action->add_Specifition();
+    Prohibit_charging_Action = new Specification(Prohibit_charging_Action_explain, ui->BMSProtection_tW, 1, 0, \
+                                   "Standby", "Prohibit_charging", \
+                                   "触发禁充时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\n");
+    Prohibit_charging_Action->add_Specifition();
+    Prohibit_discharging_Action = new Specification(Prohibit_discharging_Action_explain, ui->BMSProtection_tW, 2, 0, \
+                                   "Standby", "Prohibit_discharging", \
+                                   "触发禁放时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\n");
+    Prohibit_discharging_Action->add_Specifition();
+    BMS_warning_Action = new Specification(BMS_warning_Action_explain, ui->BMSProtection_tW, 3, 0, \
+                                   "NO action", "BMS_warning", \
+                                   "触发BMS提示时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\n");
+    BMS_warning_Action->add_Specifition();
+    BMS_alarm_Action = new Specification(BMS_alarm_Action_explain, ui->BMSProtection_tW, 4, 0, \
+                                   "Standby", "BMS_alarm", \
+                                   "触发BMS告警时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\n");
+    BMS_alarm_Action->add_Specifition();
+    BMS_fualt_Action = new Specification(BMS_fualt_Action_explain, ui->BMSProtection_tW, 5, 0, \
+                                   "Shut down", "BMS_fualt", \
+                                   "触发BMS故障时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\n");
+    BMS_fualt_Action->add_Specifition();
+    BMS_warning_CP = new Specification(BMS_warning_CP_explain, ui->BMSProtection_tW, 3, 1, \
+                                   "0", "BMS_warning_CP", \
+                                   "触发BMS提示时的充电功率\n");
+    BMS_warning_CP->add_Specifition();
+    BMS_alarm_CP = new Specification(BMS_alarm_CP_explain, ui->BMSProtection_tW, 4, 1, \
+                                   "0", "BMS_alarm_CP", \
+                                   "触发BMS告警时执行的的充电功率\n");
+    BMS_alarm_CP->add_Specifition();
+    BMS_fualt_CP = new Specification(BMS_fualt_CP_explain, ui->BMSProtection_tW, 5, 1, \
+                                   "0", "BMS_fualt_CP", \
+                                   "触发BMS故障时的充电功率\n");
+    BMS_fualt_CP->add_Specifition();
+
+    BMS_warning_DP = new Specification(BMS_warning_DP_explain, ui->BMSProtection_tW, 3, 2, \
+                                   "0", "BMS_warning_DP", \
+                                   "触发BMS提示时的放电功率\n");
+    BMS_warning_DP->add_Specifition();
+    BMS_alarm_DP = new Specification(BMS_alarm_DP_explain, ui->BMSProtection_tW, 4, 2, \
+                                   "0", "BMS_alarm_DP", \
+                                   "触发BMS告警时的放电功率\n");
+    BMS_alarm_DP->add_Specifition();
+    BMS_fualt_DP = new Specification(BMS_fualt_DP_explain, ui->BMSProtection_tW, 5, 2, \
+                                   "0", "BMS_fualt_DP", \
+                                   "触发BMS故障时的放电功率\n");
+    BMS_fualt_DP->add_Specifition();
+
+    /*调试*/
+    Debug_variable_1 = new Specification(Debug_variable_1_explain, ui->UI_Debug_Tab, 0, 1, \
+                                   "0", "Debug_variable_1", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Debug_variable_1->add_Specifition();
+    Debug_variable_2 = new Specification(Debug_variable_2_explain, ui->UI_Debug_Tab, 1, 1, \
+                                   "0", "Debug_variable_2", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Debug_variable_2->add_Specifition();
+    Debug_variable_3 = new Specification(Debug_variable_3_explain, ui->UI_Debug_Tab, 2, 1, \
+                                   "0", "Debug_variable_3", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Debug_variable_3->add_Specifition();
+    Debug_variable_1_addr = new Specification(Debug_variable_1_addr_explain, ui->UI_Debug_Tab, 3, 1, \
+                                   "4096", "Debug_variable_1_addr", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Debug_variable_1_addr->add_Specifition();
+    Debug_variable_2_addr = new Specification(Debug_variable_2_addr_explain, ui->UI_Debug_Tab, 4, 1, \
+                                   "4096", "Debug_variable_2_addr", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Debug_variable_2_addr->add_Specifition();
+    Debug_variable_3_addr = new Specification(Debug_variable_3_addr_explain, ui->UI_Debug_Tab, 5, 1, \
+                                   "4096", "Debug_variable_3_addr", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Debug_variable_3_addr->add_Specifition();
+    Debug_memery_var_1 = new Specification(Debug_memery_var_1_explain, ui->UI_Debug_Tab, 6, 1, \
+                                   "0", "Debug_memery_var_1", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Debug_memery_var_1->add_Specifition();
+    Debug_memery_var_2 = new Specification(Debug_memery_var_2_explain, ui->UI_Debug_Tab, 7, 1, \
+                                   "0", "Debug_memery_var_2", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Debug_memery_var_2->add_Specifition();
+    Debug_memery_var_3 = new Specification(Debug_memery_var_3_explain, ui->UI_Debug_Tab, 8, 1, \
+                                   "0", "Debug_memery_var_3", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Debug_memery_var_3->add_Specifition();
+    Input_Vol_revise = new Specification(Input_Vol_revise_explain, ui->UI_Debug_Tab, 9, 1, \
+                                   "", "Input_Vol_revise", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Input_Vol_revise->add_Specifition();
+    Input_Cur_revise = new Specification(Input_Cur_revise_explain, ui->UI_Debug_Tab, 10, 1, \
+                                   "", "Input_Cur_revise", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Input_Cur_revise->add_Specifition();
+    Voltage_1_5_revise = new Specification(Voltage_1_5_revise_explain, ui->UI_Debug_Tab, 0, 3, \
+                                   "", "Voltage_1_5_revise", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Voltage_1_5_revise->add_Specifition();
+    Bus_Vol_revise = new Specification(Bus_Vol_revise_explain, ui->UI_Debug_Tab, 1, 3, \
+                                   "", "Bus_Vol_revise", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Bus_Vol_revise->add_Specifition();
+    Grid_A_AB_Vol_revise = new Specification(Grid_A_AB_Vol_revise_explain, ui->UI_Debug_Tab, 2, 3, \
+                                   "", "Grid_A_AB_Vol_revise", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Grid_A_AB_Vol_revise->add_Specifition();
+    Grid_B_BC_Vol_revise = new Specification(Grid_B_BC_Vol_revise_explain, ui->UI_Debug_Tab, 3, 3, \
+                                   "", "Grid_B_BC_Vol_revise", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Grid_B_BC_Vol_revise->add_Specifition();
+    Grid_C_CA_Vol_revise = new Specification(Grid_C_CA_Vol_revise_explain, ui->UI_Debug_Tab, 4, 3, \
+                                   "", "Grid_C_CA_Vol_revise", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Grid_C_CA_Vol_revise->add_Specifition();
+    Output_A_Cur_revise = new Specification(Output_A_Cur_revise_explain, ui->UI_Debug_Tab, 5, 3, \
+                                   "", "Output_A_Cur_revise", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Output_A_Cur_revise->add_Specifition();
+    Output_B_Cur_revise = new Specification(Output_B_Cur_revise_explain, ui->UI_Debug_Tab, 6, 3, \
+                                   "", "Output_B_Cur_revise", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Output_B_Cur_revise->add_Specifition();
+    Output_C_Cur_revise = new Specification(Output_C_Cur_revise_explain, ui->UI_Debug_Tab, 7, 3, \
+                                   "", "Output_C_Cur_revise", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Output_C_Cur_revise->add_Specifition();
+    INV_A_Vol_revise = new Specification(INV_A_Vol_revise_explain, ui->UI_Debug_Tab, 8, 3, \
+                                   "", "INV_A_Vol_revise", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    INV_A_Vol_revise->add_Specifition();
+    INV_B_Vol_revise = new Specification(INV_B_Vol_revise_explain, ui->UI_Debug_Tab, 9, 3, \
+                                   "", "INV_B_Vol_revise", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    INV_B_Vol_revise->add_Specifition();
+    INV_C_Vol_revise = new Specification(INV_C_Vol_revise_explain, ui->UI_Debug_Tab, 10, 3, \
+                                   "", "INV_C_Vol_revise", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    INV_C_Vol_revise->add_Specifition();
+
+    INV_A_ind_Cur_revise = new Specification(INV_A_ind_Cur_revise_explain, ui->UI_Debug_Tab, 0, 5, \
+                                   "", "INV_A_ind_Cur_revise", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    INV_A_ind_Cur_revise->add_Specifition();
+    INV_B_ind_Cur_revise = new Specification(INV_B_ind_Cur_revise_explain, ui->UI_Debug_Tab, 1, 5, \
+                                   "", "INV_B_ind_Cur_revise", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    INV_B_ind_Cur_revise->add_Specifition();
+    INV_C_ind_Cur_revise = new Specification(INV_C_ind_Cur_revise_explain, ui->UI_Debug_Tab, 2, 5, \
+                                   "", "INV_C_ind_Cur_revise", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    INV_C_ind_Cur_revise->add_Specifition();
+    INV_On_off_flag = new Specification(INV_On_off_flag_explain, ui->UI_Debug_Tab, 3, 5, \
+                                   "0", "INV_On_off_flag", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    INV_On_off_flag->add_Specifition();
+    Logic_state = new Specification(Logic_state_explain, ui->UI_Debug_Tab, 4, 5, \
+                                   "0", "Logic_state", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Logic_state->add_Specifition();
+    INV_flag = new Specification(INV_flag_explain, ui->UI_Debug_Tab, 5, 5, \
+                                   "0", "INV_flag", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    INV_flag->add_Specifition();
+    Grid_flag = new Specification(Grid_flag_explain, ui->UI_Debug_Tab, 6, 5, \
+                                   "0", "Grid_flag", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Grid_flag->add_Specifition();
+    Grid_protect_flag = new Specification(Grid_protect_flag_explain, ui->UI_Debug_Tab, 7, 5, \
+                                   "0", "Grid_protect_flag", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Grid_protect_flag->add_Specifition();
+    Bat_flag = new Specification(Bat_flag_explain, ui->UI_Debug_Tab, 8, 5, \
+                                   "0", "Bat_flag", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    Bat_flag->add_Specifition();
+    DC_bus_flag = new Specification(DC_bus_flag_explain, ui->UI_Debug_Tab, 9, 5, \
+                                   "0", "DC_bus_flag", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    DC_bus_flag->add_Specifition();
+    INT_main_flag = new Specification(INT_main_flag_explain, ui->UI_Debug_Tab, 10, 5, \
+                                   "0", "INT_main_flag", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    INT_main_flag->add_Specifition();
+    parallel_signal = new Specification(parallel_signal_explain, ui->UI_Debug_Tab, 11, 5, \
+                                   "0", "parallel_signal", \
+                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+    parallel_signal->add_Specifition();
+
+
 }
 
 /***************************************************************

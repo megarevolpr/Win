@@ -284,8 +284,107 @@ public:
         Specification *DO_2_Action;
         Specification *DO_3_Action;
         /***************************BMS保护**************************/
-        /***************************系统参数**************************/
+        QPushButton *DOD_Action_explain;
+        QPushButton *Prohibit_charging_Action_explain;
+        QPushButton *Prohibit_discharging_Action_explain;
+        QPushButton *BMS_warning_Action_explain;
+        QPushButton *BMS_alarm_Action_explain;
+        QPushButton *BMS_fualt_Action_explain;
+        QPushButton *BMS_warning_CP_explain;
+        QPushButton *BMS_alarm_CP_explain;
+        QPushButton *BMS_fualt_CP_explain;
+        QPushButton *BMS_warning_DP_explain;
+        QPushButton *BMS_alarm_DP_explain;
+        QPushButton *BMS_fualt_DP_explain;
+
+        Specification *DOD_Action;
+        Specification *Prohibit_charging_Action;
+        Specification *Prohibit_discharging_Action;
+        Specification *BMS_warning_Action;
+        Specification *BMS_alarm_Action;
+        Specification *BMS_fualt_Action;
+        Specification *BMS_warning_CP;
+        Specification *BMS_alarm_CP;
+        Specification *BMS_fualt_CP;
+        Specification *BMS_warning_DP;
+        Specification *BMS_alarm_DP;
+        Specification *BMS_fualt_DP;
         /***************************调试**************************/
+
+        QPushButton *Debug_variable_1_explain;
+        QPushButton *Debug_variable_2_explain;
+        QPushButton *Debug_variable_3_explain;
+        QPushButton *Debug_variable_1_addr_explain;
+        QPushButton *Debug_variable_2_addr_explain;
+        QPushButton *Debug_variable_3_addr_explain;
+        QPushButton *Debug_memery_var_1_explain;
+        QPushButton *Debug_memery_var_2_explain;
+        QPushButton *Debug_memery_var_3_explain;
+        QPushButton *Input_Vol_revise_explain;
+        QPushButton *Input_Cur_revise_explain;
+
+        QPushButton *Voltage_1_5_revise_explain;
+        QPushButton *Bus_Vol_revise_explain;
+        QPushButton *Grid_A_AB_Vol_revise_explain;
+        QPushButton *Grid_B_BC_Vol_revise_explain;
+        QPushButton *Grid_C_CA_Vol_revise_explain;
+        QPushButton *Output_A_Cur_revise_explain;
+        QPushButton *Output_B_Cur_revise_explain;
+        QPushButton *Output_C_Cur_revise_explain;
+        QPushButton *INV_A_Vol_revise_explain;
+        QPushButton *INV_B_Vol_revise_explain;
+        QPushButton *INV_C_Vol_revise_explain;
+
+        QPushButton *INV_A_ind_Cur_revise_explain;
+        QPushButton *INV_B_ind_Cur_revise_explain;
+        QPushButton *INV_C_ind_Cur_revise_explain;
+        QPushButton *INV_On_off_flag_explain;
+        QPushButton *Logic_state_explain;
+        QPushButton *INV_flag_explain;
+        QPushButton *Grid_flag_explain;
+        QPushButton *Grid_protect_flag_explain;
+        QPushButton *Bat_flag_explain;
+        QPushButton *DC_bus_flag_explain;
+        QPushButton *INT_main_flag_explain;
+        QPushButton *parallel_signal_explain;
+
+        Specification *Debug_variable_1;
+        Specification *Debug_variable_2;
+        Specification *Debug_variable_3;
+        Specification *Debug_variable_1_addr;
+        Specification *Debug_variable_2_addr;
+        Specification *Debug_variable_3_addr;
+        Specification *Debug_memery_var_1;
+        Specification *Debug_memery_var_2;
+        Specification *Debug_memery_var_3;
+        Specification *Input_Vol_revise;
+        Specification *Input_Cur_revise;
+
+        Specification *Voltage_1_5_revise;
+        Specification *Bus_Vol_revise;
+        Specification *Grid_A_AB_Vol_revise;
+        Specification *Grid_B_BC_Vol_revise;
+        Specification *Grid_C_CA_Vol_revise;
+        Specification *Output_A_Cur_revise;
+        Specification *Output_B_Cur_revise;
+        Specification *Output_C_Cur_revise;
+        Specification *INV_A_Vol_revise;
+        Specification *INV_B_Vol_revise;
+        Specification *INV_C_Vol_revise;
+
+        Specification *INV_A_ind_Cur_revise;
+        Specification *INV_B_ind_Cur_revise;
+        Specification *INV_C_ind_Cur_revise;
+        Specification *INV_On_off_flag;
+        Specification *Logic_state;
+        Specification *INV_flag;
+        Specification *Grid_flag;
+        Specification *Grid_protect_flag;
+        Specification *Bat_flag;
+        Specification *DC_bus_flag;
+        Specification *INT_main_flag;
+        Specification *parallel_signal;
+
         /***************************监控调试**************************/
 
         QPushButton *Charging_and_discharging_explain;  //充放电说明
