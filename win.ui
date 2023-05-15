@@ -3648,7 +3648,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
               </size>
              </property>
              <property name="currentIndex">
-              <number>0</number>
+              <number>1</number>
              </property>
              <widget class="QWidget" name="RTD_Bypass_N_page">
               <property name="minimumSize">
@@ -3723,7 +3723,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                   </size>
                  </property>
                  <property name="currentIndex">
-                  <number>0</number>
+                  <number>1</number>
                  </property>
                  <widget class="QWidget" name="Bypass_Converter_page">
                   <layout class="QGridLayout" name="gridLayout_46">

@@ -39,6 +39,7 @@ public:
 
         Menu *m_menu;
 
+        /***************************系统设置****************************/
         QPushButton *Grid_connected_mode_explain;//并网方式说明
         Specification *Grid_connected_mode;
 
@@ -81,11 +82,82 @@ public:
         QPushButton *Phase_B_power_explain;      //B相功率说明
         Specification *Phase_B_power;
 
-
-
         QPushButton *Phase_C_power_explain;      //C相功率说明
         Specification *Phase_C_power;
+        /***************************电池设置****************************/
+        QPushButton *DOD_OnGrid_explain;
+        QPushButton *DOD_OffGrid_explain;
+        QPushButton *Charge_Vol_Up_Limit_explain;
+        QPushButton *Disc_Vol_lower_Limit_explain;
+        QPushButton *Charge_Cur_Limit_explain;
+        QPushButton *Gen_turn_off_SOC_explain;    //柴发关闭SOC
+        QPushButton *Gen_turn_on_SOC_explain;     //柴发开启SOC
+        QPushButton *Gen_charge_SOC_explain;      //柴发充电SOC
+        QPushButton *Grid_charge_SOC_explain;     //电网充电SOC
+        QPushButton *Grid_capacity_explain;       //电网容量
+        QPushButton *Turn_on_SOC_explain;
+        QPushButton *Turn_off_SOC_explain;
+        QPushButton *Turn_on_cell_vol_explain;
+        QPushButton *Turn_off_cell_vol_explain;
+        QPushButton *Turn_on_total_vol_explain;
+        QPushButton *Turn_off_total_vol_explain;
+        QPushButton *UPS_charge_power_explain;
+        QPushButton *Monthly_cycle_time_explain;
 
+        Specification *DOD_OnGrid;
+        Specification *DOD_OffGrid;
+        Specification *Charge_Vol_Up_Limit;
+        Specification *Disc_Vol_lower_Limit;
+        Specification *Charge_Cur_Limit;
+        Specification *Gen_turn_off_SOC;    //柴发关闭SOC
+        Specification *Gen_turn_on_SOC;     //柴发开启SOC
+        Specification *Gen_charge_SOC;      //柴发充电SOC
+        Specification *Grid_charge_SOC;     //电网充电SOC
+        Specification *Grid_capacity;       //电网容量
+        Specification *Turn_on_SOC;
+        Specification *Turn_off_SOC;
+        Specification *Turn_on_cell_vol;
+        Specification *Turn_off_cell_vol;
+        Specification *Turn_on_total_vol;
+        Specification *Turn_off_total_vol;
+        Specification *UPS_charge_power;
+        Specification *Monthly_cycle_time;
+        /***************************自动运行**************************/
+        //选择
+        QPushButton *Check1_explain,*Check2_explain,*Check3_explain,*Check4_explain,*Check5_explain;
+        QPushButton *Check6_explain,*Check7_explain,*Check8_explain,*Check9_explain,*Check10_explain;
+        QPushButton *Check11_explain,*Check12_explain,*Check13_explain,*Check14_explain,*Check15_explain;
+        QPushButton *Check16_explain,*Check17_explain,*Check18_explain,*Check19_explain,*Check20_explain;
+        Specification *Check1,*Check2,*Check3,*Check4,*Check5,*Check6,*Check7,*Check8,*Check9,*Check10;
+        Specification *Check11,*Check12,*Check13,*Check14,*Check15,*Check16,*Check17,*Check18,*Check19,*Check20;
+        //开始时间
+        QPushButton *Start_T1_explain,*Start_T2_explain,*Start_T3_explain,*Start_T4_explain,*Start_T5_explain;
+        QPushButton *Start_T6_explain,*Start_T7_explain,*Start_T8_explain,*Start_T9_explain,*Start_T10_explain;
+        QPushButton *Start_T11_explain,*Start_T12_explain,*Start_T13_explain,*Start_T14_explain,*Start_T15_explain;
+        QPushButton *Start_T16_explain,*Start_T17_explain,*Start_T18_explain,*Start_T19_explain,*Start_T20_explain;
+        Specification *Start_T1,*Start_T2,*Start_T3,*Start_T4,*Start_T5,*Start_T6,*Start_T7,*Start_T8,*Start_T9,*Start_T10;
+        Specification *Start_T11,*Start_T12,*Start_T13,*Start_T14,*Start_T15,*Start_T16,*Start_T17,*Start_T18,*Start_T19,*Start_T20;
+        //结束时间
+        QPushButton *End_T1_explain,*End_T2_explain,*End_T3_explain,*End_T4_explain,*End_T5_explain;
+        QPushButton *End_T6_explain,*End_T7_explain,*End_T8_explain,*End_T9_explain,*End_T10_explain;
+        QPushButton *End_T11_explain,*End_T12_explain,*End_T13_explain,*End_T14_explain,*End_T15_explain;
+        QPushButton *End_T16_explain,*End_T17_explain,*End_T18_explain,*End_T19_explain,*End_T20_explain;
+        Specification *End_T1,*End_T2,*End_T3,*End_T4,*End_T5,*End_T6,*End_T7,*End_T8,*End_T9,*End_T10;
+        Specification *End_T11,*End_T12,*End_T13,*End_T14,*End_T15,*End_T16,*End_T17,*End_T18,*End_T19,*End_T20;
+        //状态
+        QPushButton *State1_explain,*State2_explain,*State3_explain,*State4_explain,*State5_explain;
+        QPushButton *State6_explain,*State7_explain,*State8_explain,*State9_explain,*State10_explain;
+        QPushButton *State11_explain,*State12_explain,*State13_explain,*State14_explain,*State15_explain;
+        QPushButton *State16_explain,*State17_explain,*State18_explain,*State19_explain,*State20_explain;
+        Specification *State1,*State2,*State3,*State4,*State5,*State6,*State7,*State8,*State9,*State10;
+        Specification *State11,*State12,*State13,*State14,*State15,*State16,*State17,*State18,*State19,*State20;
+        //功率
+        QPushButton *Power1_explain,*Power2_explain,*Power3_explain,*Power4_explain,*Power5_explain;
+        QPushButton *Power6_explain,*Power7_explain,*Power8_explain,*Power9_explain,*Power10_explain;
+        QPushButton *Power11_explain,*Power12_explain,*Power13_explain,*Power14_explain,*Power15_explain;
+        QPushButton *Power16_explain,*Power17_explain,*Power18_explain,*Power19_explain,*Power20_explain;
+        Specification *Power1,*Power2,*Power3,*Power4,*Power5,*Power6,*Power7,*Power8,*Power9,*Power10;
+        Specification *Power11,*Power12,*Power13,*Power14,*Power15,*Power16,*Power17,*Power18,*Power19,*Power20;
         /***************************功能设置**************************/
         QPushButton *Battery_type_explain;
         QPushButton *BMS_Comm_type_explain;
@@ -278,7 +350,6 @@ public:
         Specification *BMS_alarm_DP;
         Specification *BMS_fualt_DP;
         /***************************调试**************************/
-
         QPushButton *Debug_variable_1_explain;
         QPushButton *Debug_variable_2_explain;
         QPushButton *Debug_variable_3_explain;
@@ -357,52 +428,86 @@ public:
 
         /********************实时数据**************************/
 
-        //PCS数据
-        QPushButton *PCS_vol_AB_btn;
-        QPushButton *PCS_vol_BC_btn;
-        QPushButton *PCS_vol_CA_btn;
-        QPushButton *PCS_cur_A_btn;
-        QPushButton *PCS_cur_B_btn;
-        QPushButton *PCS_cur_C_btn;
-        QPushButton *PCS_act_P_btn;     //有功功率
-        QPushButton *PCS_rea_P_btn;     //无功功率
-        QPushButton *PCS_par_P_btn;     //视在功率
-        QPushButton *PCS_Pf_btn;        //功率因数
-        QPushButton *PCS_Bat_vol_btn;   //电池电压
-        QPushButton *PCS_Bat_cur_btn;   //电池电流
-        QPushButton *PCS_Bat_P_btn;     //电池功率
-        QPushButton *PCS_Bus_vol_btn;   //母线电压
-        QPushButton *PCS_IGBT_T_btn;    //IGBT温度
-        QPushButton *PCS_Env_T_btn;     //环境温度
+        //变流器
+        QPushButton *PCS_vol_AB_explain;
+        QPushButton *PCS_vol_BC_explain;
+        QPushButton *PCS_vol_CA_explain;
+        QPushButton *PCS_cur_A_explain;
+        QPushButton *PCS_cur_B_explain;
+        QPushButton *PCS_cur_C_explain;
+        QPushButton *PCS_act_P_explain;     //有功功率
+        QPushButton *PCS_rea_P_explain;     //无功功率
+        QPushButton *PCS_par_P_explain;     //视在功率
+        QPushButton *PCS_Pf_explain;        //功率因数
+        QPushButton *PCS_Bat_vol_explain;   //电池电压
+        QPushButton *PCS_Bat_cur_explain;   //电池电流
+        QPushButton *PCS_Bat_P_explain;     //电池功率
+        QPushButton *PCS_Bus_vol_explain;   //母线电压
+        QPushButton *PCS_IGBT_T_explain;    //IGBT温度
+        QPushButton *PCS_Env_T_explain;     //环境温度
+        //电网
+        QPushButton *Grid_vol_AB_explain;     //
+        QPushButton *Grid_vol_BC_explain;
+        QPushButton *Grid_vol_CA_explain;
+        QPushButton *Grid_cur_A_explain;
+        QPushButton *Grid_cur_B_explain;
+        QPushButton *Grid_cur_C_explain;
+        QPushButton *Grid_act_P_explain;     //有功功率
+        QPushButton *Grid_rea_P_explain;     //无功功率
+        QPushButton *Grid_app_P_explain;     //视在功率
+        QPushButton *Grid_fre_explain;
+        QPushButton *Grid_Pf_explain;
+        //负载
+        QPushButton *Load_vol_AB_explain;     //
+        QPushButton *Load_vol_BC_explain;
+        QPushButton *Load_vol_CA_explain;
+        QPushButton *Load_cur_A_explain;
+        QPushButton *Load_cur_B_explain;
+        QPushButton *Load_cur_C_explain;
+        QPushButton *Load_act_P_explain;     //有功功率
+        QPushButton *Load_rea_P_explain;     //无功功率
+        QPushButton *Load_app_P_explain;     //视在功率
+        QPushButton *Load_Pf_explain;
 
+        Specification *PCS_vol_AB;
+        Specification *PCS_vol_BC;
+        Specification *PCS_vol_CA;
+        Specification *PCS_cur_A;
+        Specification *PCS_cur_B;
+        Specification *PCS_cur_C;
+        Specification *PCS_act_P;     //有功功率
+        Specification *PCS_rea_P;     //无功功率
+        Specification *PCS_par_P;     //视在功率
+        Specification *PCS_Pf;        //功率因数
+        Specification *PCS_Bat_vol;   //电池电压
+        Specification *PCS_Bat_cur;   //电池电流
+        Specification *PCS_Bat_P;     //电池功率
+        Specification *PCS_Bus_vol;   //母线电压
+        Specification *PCS_IGBT_T;    //IGBT温度
+        Specification *PCS_Env_T;     //环境温度
 
-        QPushButton *Grid_vol_AB_btn;     //
-        QPushButton *Grid_vol_BC_btn;
-        QPushButton *Grid_vol_CA_btn;
-        QPushButton *Grid_cur_A_btn;
-        QPushButton *Grid_cur_B_btn;
-        QPushButton *Grid_cur_C_btn;
-        QPushButton *Grid_act_P_btn;     //有功功率
-        QPushButton *Grid_rea_P_btn;     //无功功率
-        QPushButton *Grid_app_P_btn;     //视在功率
-        QPushButton *Grid_fre_btn;
-        QPushButton *Grid_Pf_btn;
+        Specification *Grid_vol_AB;     //
+        Specification *Grid_vol_BC;
+        Specification *Grid_vol_CA;
+        Specification *Grid_cur_A;
+        Specification *Grid_cur_B;
+        Specification *Grid_cur_C;
+        Specification *Grid_act_P;     //有功功率
+        Specification *Grid_rea_P;     //无功功率
+        Specification *Grid_app_P;     //视在功率
+        Specification *Grid_fre;
+        Specification *Grid_Pf;
 
-
-        QPushButton *Load_vol_AB_btn;     //
-        QPushButton *Load_vol_BC_btn;
-        QPushButton *Load_vol_CA_btn;
-        QPushButton *Load_cur_A_btn;
-        QPushButton *Load_cur_B_btn;
-        QPushButton *Load_cur_C_btn;
-        QPushButton *Load_act_P_btn;     //有功功率
-        QPushButton *Load_rea_P_btn;     //无功功率
-        QPushButton *Load_app_P_btn;     //视在功率
-        QPushButton *Load_fre_btn;
-        QPushButton *Load_Pf_btn;
-
-
-
+        Specification *Load_vol_AB;     //
+        Specification *Load_vol_BC;
+        Specification *Load_vol_CA;
+        Specification *Load_cur_A;
+        Specification *Load_cur_B;
+        Specification *Load_cur_C;
+        Specification *Load_act_P;     //有功功率
+        Specification *Load_rea_P;     //无功功率
+        Specification *Load_app_P;     //视在功率
+        Specification *Load_Pf;
 
         void UIPageInit();//初始化界面
         void VariableInit();//初始化变量
@@ -431,6 +536,19 @@ public:
         void RTData_Status();//实时状态量数据
 
 private:
+        void PCS_Data();//PCS数据 绘制button
+        void Grid_Data();//电网数据 绘制button
+        void Load_Data();//负载数据 绘制button
+        void ParameterSet();//系统设置 绘制button
+        void BetterySetup();//电池设置 绘制button
+        void AutoOperation();//自动运行 绘制button
+
+        void FunctionSet();//功能设置 绘制button
+        void SystemParameter();//系统参数 绘制button
+        void Peripheral();//外设 绘制button
+        void BMS_Protect();//BMS保护 绘制button
+        void Debugg();//调试 绘制button
+
         void RTDataDisplay();
         void Information_tbnt_released(); //系统信息槽
         void GeneralParam_tbnt_released();  //一般参数槽
