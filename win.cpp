@@ -103,11 +103,11 @@ void MEGAWin::MemoryAllocation()
 //    Phase_B_power_explain           = new QPushButton;  //B相功率说明
 //    Phase_C_power_explain           = new QPushButton;
 
+    pButton_History = new QButtonGroup();
     /***************************参数设置**********************************/
-
     Grid_connected_mode_explain = new QPushButton;      //PCS并离网方式说明
     Constant_power_explain  = new QPushButton;           //恒功率说明
-    Charging_and_discharging_explain = new QPushButton; //充放电说明
+    Charging_and_discharging_explain = new QPushButton; //充放电说明status
     Work_mode_explain = new QPushButton;                //工作模式说明
     Output_power_factor_explain = new QPushButton;      //输出功率因素说明
     Output_reactive_power_explain = new QPushButton;    //输出无功功率说明
@@ -360,7 +360,29 @@ void MEGAWin::MemoryAllocation()
     Load_rea_P_explain  = new QPushButton;
     Load_app_P_explain  = new QPushButton;
     Load_Pf_explain     = new QPushButton;
-
+    /***************************PCS状态**********************************/
+    DC_input_Breaker_explain    = new QPushButton;//直流输入断路器
+    DC_Cont_explain             = new QPushButton;//直流输入器
+    Output_Cont_explain         = new QPushButton;//输出接触器
+    Output_Breaker_explain      = new QPushButton;//输出断路器
+    Grid_Cont_explain           = new QPushButton;//电网接触器
+    Grid_Breaker_explain        = new QPushButton;//电网断路器
+    MB_Breaker_explain          = new QPushButton;//维修旁路
+    converter_available_explain = new QPushButton;//变流器使能
+    DC_Soft_start_explain       = new QPushButton;//直流软启动
+    converter_status_explain    = new QPushButton;//变流器状态
+    Reactive_P_Regulation_explain = new QPushButton;//无功调节方式
+    Sleep_mode_explain          = new QPushButton;//睡眠模式
+    LVRT_explain                = new QPushButton;//
+    Generator_signal_explain    = new QPushButton;//发电机信号
+    Reserve_explain             = new QPushButton;//保留位
+    Reserve2_explain            = new QPushButton;//保留位
+    EPO_Cont_signal1_explain    = new QPushButton;//EPO节点信号
+    EPO_Cont_signal2_explain    = new QPushButton;//EPO节点信号
+    Access_signal_explain       = new QPushButton;//门禁信号
+    Full_P_signal_explain       = new QPushButton;//满功率信号
+    Smoke_alarm_signal_explain  = new QPushButton;//烟感信号
+    Hight_temp_signal_explain   = new QPushButton;//高温信号
 
 }
 /***************************************************************
@@ -425,6 +447,8 @@ void MEGAWin::SystemSettingPage()
     BatterySet_tab();
     /*自动运行时间设置表*/
     RunTimeSet_tab();
+    /*历史记录设置表*/
+    History_tab();//历史记录设置表初始化
 }
 
 void MEGAWin::LCDSetting()  //LCD标签初始化和定时器设置
@@ -579,9 +603,17 @@ void MEGAWin::UserParam_tab()
 
     ParameterSet();//系统设置 绘制button
 
-
-
 }
+
+void MEGAWin::History_tab()//历史记录设置表初始化
+{
+    //数据报表
+    DataReport();//数据报表 绘制button
+    //导出数据
+    //历史记录
+    //操作日志
+}
+
 /******************************************************************************
  * 设备信息表表初始化
  * ***************************************************************************/
@@ -672,6 +704,8 @@ void MEGAWin::RTData_Status()
     ModuleState_Tab();
 
 }
+
+
 
 
 
@@ -865,12 +899,11 @@ void MEGAWin::LinkRelationship()
 /******************************************************************************
  * 模块实时数据表初始化
  * ***************************************************************************/
-void MEGAWin::ModuleData_Tab()
+void MEGAWin::ModuleData_Tab()//PCS数据
 {
         ui->Converter_Tab->clearContents();
         ui->Grid_Tab->clearContents();
         ui->Load_Tab->clearContents();
-
         QStringList Converter_Tablist1;
         Converter_Tablist1  << tr("PCS voltage(AB)") << tr("PCS voltage(BC)") << tr("PCS voltage(CA)")
                             << tr("PCS current(A)") << tr("PCS current(B)")<< tr("PCS current(C)")
@@ -890,7 +923,6 @@ void MEGAWin::ModuleData_Tab()
                            << tr("Load current(A)") << tr("Load current(B)")<< tr("Load current(C)")
                            << tr("Load active power") << tr("Load reactive power")
                            << tr("Load apparent power") << tr("Load power fator");
-
         ui->Converter_Tab->setColumnCount(4);
         ui->Converter_Tab->setRowCount(Converter_Tablist1.size());
 
@@ -906,7 +938,6 @@ void MEGAWin::ModuleData_Tab()
 
         ui->Converter_Tab->setPalette(pal);
         ui->Converter_Tab->setAlternatingRowColors(true);
-
         QStringList Converter_TabList;
         Converter_TabList << tr("Name") << tr("Value") << tr("Name") << tr("Value")<< tr("Name") << tr("Value");
         ui->Converter_Tab->setHorizontalHeaderLabels(Converter_TabList);
@@ -914,8 +945,6 @@ void MEGAWin::ModuleData_Tab()
         ui->Converter_Tab->setColumnWidth(1,100);
         ui->Converter_Tab->setColumnWidth(2,200);
         ui->Converter_Tab->horizontalHeader()->setStretchLastSection(3);
-
-
         ui->Converter_Tab->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
         ui->Converter_Tab->verticalHeader()->setVisible(false);//设置垂直头不可见
         ui->Converter_Tab->setFrameShape(QFrame::NoFrame);//设置无边框
@@ -923,7 +952,6 @@ void MEGAWin::ModuleData_Tab()
         ui->Converter_Tab->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
         ui->Converter_Tab->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
         ui->Converter_Tab->setStyleSheet("selection-background-color:lightblue;");
-
         for(int i = 0; i < Converter_Tablist1.size(); i++)
         {
             ui->Converter_Tab->setItem(i, 0, new QTableWidgetItem(Converter_Tablist1.at(i)));
@@ -932,7 +960,6 @@ void MEGAWin::ModuleData_Tab()
         {
             ui->Converter_Tab->setItem(i, 2, new QTableWidgetItem(Converter_Tablist2.at(i)));
         }
-
 
         ui->Grid_Tab->setPalette(pal);
         ui->Grid_Tab->setAlternatingRowColors(true);
@@ -982,7 +1009,7 @@ void MEGAWin::ModuleData_Tab()
 /******************************************************************************
  * 模块实时状态表初始化
  * ***************************************************************************/
-void MEGAWin::ModuleState_Tab()
+void MEGAWin::ModuleState_Tab()//PCS状态
 {
 
     QPalette pal;
@@ -1021,8 +1048,8 @@ void MEGAWin::ModuleState_Tab()
         ui->RTState_Bypass_Tab->setHorizontalHeaderLabels(StateList_Bypass);
         ui->RTState_Bypass_Tab->setColumnWidth(0,220);
         ui->RTState_Bypass_Tab->setColumnWidth(1,100);
-        ui->RTState_Bypass_Tab->setColumnWidth(2,220);
-        ui->RTState_Bypass_Tab->setColumnWidth(3,100);
+        ui->RTState_Bypass_Tab->setColumnWidth(2,210);
+        ui->RTState_Bypass_Tab->setColumnWidth(3,110);
         ui->RTState_Bypass_Tab->setColumnWidth(4,220);
         ui->RTState_Bypass_Tab->setColumnWidth(5,100);
 
@@ -1043,7 +1070,7 @@ void MEGAWin::ModuleState_Tab()
         }
         ui->RTState_Bypass_Tab->resizeRowsToContents();
     }
-
+    PCS_State();//PCS状态 绘制button
 }
 
 
@@ -1247,6 +1274,27 @@ void MEGAWin::on_System_tabWidget_currentChanged(int index)
     Information_tbnt_released();
 }
 
+void MEGAWin::DataReport()//数据报表 绘制button
+{
+
+//    Specification *Dis_D;
+//    Specification *Dis_M;
+//    Specification *Dis_Y;
+//    Specification *Dis_T;
+//    Specification *Char_D;
+//    Specification *Char_M;
+//    Specification *Char_Y;
+//    Specification *Char_T;
+//    Specification *Daily_Usage;//日用量
+//    Specification *MonthlyUsage;
+//    Specification *AnnualUsage;
+//    Specification *TotalPower;
+//    Specification *M_Decrease;//月份减
+//    Specification *Y_Decrease;
+//    Specification *M_Plus;
+//    Specification *Y_Plus;
+}
+
 void MEGAWin::PCS_Data()//PCS数据 绘制button
 {
     PCS_vol_AB = new Specification(PCS_vol_AB_explain, ui->Converter_Tab, 0, 1, \
@@ -1406,6 +1454,98 @@ void MEGAWin::Load_Data()//负载数据 绘制button
                                             "0", "Load frequency", \
                                             "这是负载的功率因数\nThis is the power factor of the load");
     Load_Pf->add_Specifition();
+}
+
+void MEGAWin::PCS_State()//PCS状态 绘制button
+{
+    DC_input_Breaker = new Specification(DC_input_Breaker_explain, ui->RTState_Bypass_Tab, 0, 1, \
+                                            "闭合", "DC input Breaker", \
+                                            "这是直流输入断路器，用于判断PCS的运行状态\nThis is the DC input circuit breaker used to judge the operating status of PCS");
+    DC_input_Breaker->add_Specifition();
+    DC_Cont = new Specification(DC_Cont_explain, ui->RTState_Bypass_Tab, 1, 1, \
+                                            "闭合", "DC contactor", \
+                                            "这是直流接触器，用于判断PCS的运行状态\nThis is a DC contactor used to judge the running state of PCS");
+    DC_Cont->add_Specifition();
+    Output_Cont = new Specification(Output_Cont_explain, ui->RTState_Bypass_Tab, 2, 1, \
+                                            "闭合", "Output contactor", \
+                                            "这是输出接触器，用于判断PCS的运行状态\nThis is the output contactor used to judge the running status of PCS");
+    Output_Cont->add_Specifition();
+    Output_Breaker = new Specification(Output_Breaker_explain, ui->RTState_Bypass_Tab, 3, 1, \
+                                            "闭合", "Output Breaker", \
+                                            "这是输出断路器，用于判断PCS的运行状态\nThis is the output circuit breaker used to judge the operating status of PCS");
+    Output_Breaker->add_Specifition();
+    Grid_Cont = new Specification(Grid_Cont_explain, ui->RTState_Bypass_Tab, 4, 1, \
+                                            "闭合", "Grid contactor", \
+                                            "这是电网接触器，用于判断PCS的运行状态\nThis is the power grid contactor, which is used to judge the running status of PCS");
+    Grid_Cont->add_Specifition();
+    Grid_Breaker = new Specification(Grid_Breaker_explain, ui->RTState_Bypass_Tab, 5, 1, \
+                                            "闭合", "Grid Breaker", \
+                                            "这是电网断路器，用于判断PCS的运行状态\nThis is the power grid circuit breaker, used to judge the operating status of PCS");
+    Grid_Breaker->add_Specifition();
+    MB_Breaker = new Specification(MB_Breaker_explain, ui->RTState_Bypass_Tab, 6, 1, \
+                                            "闭合", "Maintenance Bypass Breaker", \
+                                            "这是维修旁路，用于判断PCS的运行状态\nThis is the maintenance bypass used to judge the operating status of PCS");
+    MB_Breaker->add_Specifition();
+    converter_available = new Specification(converter_available_explain, ui->RTState_Bypass_Tab, 0, 3, \
+                                            "禁止", "converter available", \
+                                            "这是变流器使能，用于判断PCS的运行状态\nThis is the converter enable, which is used to judge the running status of PCS");
+    converter_available->add_Specifition();
+    DC_Soft_start = new Specification(DC_Soft_start_explain, ui->RTState_Bypass_Tab, 1, 3, \
+                                            "未启动", "DC Soft start", \
+                                            "这是直流软启动，用于判断PCS的运行状态\nThis is DC soft startup, which is used to judge the running status of PCS");
+    DC_Soft_start->add_Specifition();
+    converter_status = new Specification(converter_status_explain, ui->RTState_Bypass_Tab, 2, 3, \
+                                            "关闭", "converter status", \
+                                            "这是变流器状态，用于判断PCS的运行状态\nThis is the status of the converter, which is used to judge the running status of PCS");
+    converter_status->add_Specifition();
+    Reactive_P_Regulation = new Specification(Reactive_P_Regulation_explain, ui->RTState_Bypass_Tab, 3, 3, \
+                                            "夜间SVG模式", "Reactive Power Regulation", \
+                                            "这是无功调节方式，用于判断PCS的运行状态\nThis is the reactive power adjustment mode, which is used to judge the running state of PCS");
+    Reactive_P_Regulation->add_Specifition();
+    Sleep_mode = new Specification(Sleep_mode_explain, ui->RTState_Bypass_Tab, 4, 3, \
+                                            "未休眠", "Sleep mode", \
+                                            "这是休眠模式，用于判断PCS的运行状态\nThis is the sleep mode used to judge the running status of PCS");
+    Sleep_mode->add_Specifition();
+    LVRT = new Specification(LVRT_explain, ui->RTState_Bypass_Tab, 5, 3, \
+                                            "无", "LVRT", \
+                                            "这是LVRT，用于判断PCS的运行状态\nThis is LVRT, which is used to judge the running status of PCS");
+    LVRT->add_Specifition();
+    Generator_signal = new Specification(Generator_signal_explain, ui->RTState_Bypass_Tab, 0, 5, \
+                                            "使能", "Generator signal", \
+                                            "这是柴发信号，用于判断PCS的运行状态\nThis is the Chai signal used to judge the running status of PCS");
+    Generator_signal->add_Specifition();
+    Reserve = new Specification(Reserve_explain, ui->RTState_Bypass_Tab, 1, 5, \
+                                            "禁止", "Reserve", \
+                                            "这是保留位\nThis is the reserved bit");
+    Reserve->add_Specifition();
+    Reserve2 = new Specification(Reserve2_explain, ui->RTState_Bypass_Tab, 2, 5, \
+                                            "使能", "Reserve2", \
+                                            "这是保留位\nThis is the reserved bit");
+    Reserve2->add_Specifition();
+    EPO_Cont_signal1 = new Specification(EPO_Cont_signal1_explain, ui->RTState_Bypass_Tab, 3, 5, \
+                                            "禁止", "EPO_Cont signal1", \
+                                            "这是EPO节点信号，用于判断PCS的运行状态\nThis is the EPO node signal, which is used to judge the running status of PCS");
+    EPO_Cont_signal1->add_Specifition();
+    EPO_Cont_signal2 = new Specification(EPO_Cont_signal2_explain, ui->RTState_Bypass_Tab, 4, 5, \
+                                            "禁止", "EPO_Cont signal2", \
+                                            "这是EPO节点信号2，用于判断PCS的运行状态\nThis is EPO node signal 2, which is used to judge the running status of PCS");
+    EPO_Cont_signal2->add_Specifition();
+    Access_signal = new Specification(Access_signal_explain, ui->RTState_Bypass_Tab, 5, 5, \
+                                            "禁止", "Access_signal", \
+                                            "这是门禁信号，用于判断PCS的运行状态\nThis is the access signal, which is used to judge the running state of PCS");
+    Access_signal->add_Specifition();
+    Full_P_signal = new Specification(Full_P_signal_explain, ui->RTState_Bypass_Tab, 6, 5, \
+                                            "禁止", "Full_P_signal", \
+                                            "这是满功率信号，用于判断PCS的运行状态\nThis is the full power signal, which is used to judge the running status of PCS");
+    Full_P_signal->add_Specifition();
+    Smoke_alarm_signal = new Specification(Smoke_alarm_signal_explain, ui->RTState_Bypass_Tab, 7, 5, \
+                                            "禁止", "Smoke alarm signal", \
+                                            "这是烟雾告警信号，用于判断PCS的运行状态\nThis is a smoke alarm signal used to judge the running status of PCS");
+    Smoke_alarm_signal->add_Specifition();
+    Hight_temp_signal = new Specification(Hight_temp_signal_explain, ui->RTState_Bypass_Tab, 8, 5, \
+                                            "禁止", "Hight temp signal", \
+                                            "这是高温信号，用于判断PCS的运行状态\nThis is the high temperature signal, which is used to judge the running status of PCS");
+    Hight_temp_signal->add_Specifition();
 }
 
 void MEGAWin::ParameterSet()//系统设置 绘制button

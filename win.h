@@ -427,7 +427,6 @@ public:
         QPushButton *AdvancedSetup_btn;//高级设置入口
 
         /********************实时数据**************************/
-
         //变流器
         QPushButton *PCS_vol_AB_explain;
         QPushButton *PCS_vol_BC_explain;
@@ -508,6 +507,69 @@ public:
         Specification *Load_rea_P;     //无功功率
         Specification *Load_app_P;     //视在功率
         Specification *Load_Pf;
+        /********************PCS状态**************************/
+        QPushButton *DC_input_Breaker_explain;//直流输入断路器
+        QPushButton *DC_Cont_explain;         //直流输入器
+        QPushButton *Output_Cont_explain;     //输出接触器
+        QPushButton *Output_Breaker_explain;  //输出断路器
+        QPushButton *Grid_Cont_explain;       //电网接触器
+        QPushButton *Grid_Breaker_explain;    //电网断路器
+        QPushButton *MB_Breaker_explain;      //维修旁路
+        QPushButton *converter_available_explain;//变流器使能
+        QPushButton *DC_Soft_start_explain;         //直流软启动
+        QPushButton *converter_status_explain;     //变流器状态
+        QPushButton *Reactive_P_Regulation_explain;  //无功调节方式
+        QPushButton *Sleep_mode_explain;       //睡眠模式
+        QPushButton *LVRT_explain;            //
+        QPushButton *Generator_signal_explain;//柴发信号
+        QPushButton *Reserve_explain;         //保留位
+        QPushButton *Reserve2_explain;     //保留位
+        QPushButton *EPO_Cont_signal1_explain;  //EPO节点信号
+        QPushButton *EPO_Cont_signal2_explain;       //EPO节点信号
+        QPushButton *Access_signal_explain;    //门禁信号
+        QPushButton *Full_P_signal_explain;    //满功率信号
+        QPushButton *Smoke_alarm_signal_explain;    //烟感信号
+        QPushButton *Hight_temp_signal_explain;    //高温信号
+
+        Specification *DC_input_Breaker;//直流输入断路器
+        Specification *DC_Cont;         //直流输入器
+        Specification *Output_Cont;     //输出接触器
+        Specification *Output_Breaker;  //输出断路器
+        Specification *Grid_Cont;       //电网接触器
+        Specification *Grid_Breaker;    //电网断路器
+        Specification *MB_Breaker;      //维修旁路
+        Specification *converter_available;//变流器使能
+        Specification *DC_Soft_start;         //直流软启动
+        Specification *converter_status;     //变流器状态
+        Specification *Reactive_P_Regulation;  //无功调节方式
+        Specification *Sleep_mode;       //睡眠模式
+        Specification *LVRT;            //
+        Specification *Generator_signal;//柴发信号
+        Specification *Reserve;         //保留位
+        Specification *Reserve2;     //保留位
+        Specification *EPO_Cont_signal1;  //EPO节点信号
+        Specification *EPO_Cont_signal2;       //EPO节点信号
+        Specification *Access_signal;    //门禁信号
+        Specification *Full_P_signal;    //满功率信号
+        Specification *Smoke_alarm_signal;    //烟感信号
+        Specification *Hight_temp_signal;    //高温信号
+        /**********************Data report*************************/
+//        Specification *Dis_D;
+//        Specification *Dis_M;
+//        Specification *Dis_Y;
+//        Specification *Dis_T;
+//        Specification *Char_D;
+//        Specification *Char_M;
+//        Specification *Char_Y;
+//        Specification *Char_T;
+//        Specification *Daily_Usage;//日用量
+//        Specification *MonthlyUsage;
+//        Specification *AnnualUsage;
+//        Specification *TotalPower;
+//        Specification *M_Decrease;//月份减
+//        Specification *Y_Decrease;
+//        Specification *M_Plus;
+//        Specification *Y_Plus;
 
         void UIPageInit();//初始化界面
         void VariableInit();//初始化变量
@@ -525,7 +587,7 @@ public:
 
         void ModuleState_Tab();//实时状态表初始化
         void UserParam_tab();//一般设置表初始化
-
+        void History_tab();//历史记录设置表初始化
 
         void EquipmentInfor_tab();//设备信息表初始化
         void BatterySet_tab();//电池设置表初始化
@@ -534,11 +596,15 @@ public:
 
         void RTData_Anologe();//实时模拟量数据
         void RTData_Status();//实时状态量数据
-
 private:
+        void DataReport();//数据报表
+        void ExportData();//导出数据
+        void History();//历史记录
+        void OperationLog();//操作日志
         void PCS_Data();//PCS数据 绘制button
         void Grid_Data();//电网数据 绘制button
         void Load_Data();//负载数据 绘制button
+        void PCS_State();//PCS状态 绘制button
         void ParameterSet();//系统设置 绘制button
         void BetterySetup();//电池设置 绘制button
         void AutoOperation();//自动运行 绘制button
@@ -593,6 +659,8 @@ private:
     QTimer *timer;
     QTimer *Update_RTData_timer;
     QTime *current_time;
+    QButtonGroup *pButton_History;
+
 
 };
 
