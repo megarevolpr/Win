@@ -281,6 +281,7 @@ private:
         void RTDataDisplay();
         void Information_tbnt_released(); //系统信息槽
         void GeneralParam_tbnt_released();  //一般参数槽
+        void PCS_Alarm_information_table();  //PCS故障信息表
 
 private slots:
     void onTimerOut();
