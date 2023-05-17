@@ -102,7 +102,7 @@ void MEGAWin::MemoryAllocation()
 //    Phase_A_power_explain           = new QPushButton;
 //    Phase_B_power_explain           = new QPushButton;  //B相功率说明
 //    Phase_C_power_explain           = new QPushButton;
-    /***************************数据报表**********************************/
+    /***************************数据报表&导出数据**********************************/
 
     pButton_History = new QButtonGroup();
     pButton_History->addButton(ui->Dis_D,0);
@@ -467,7 +467,29 @@ void MEGAWin::MemoryAllocation()
     Smoke_alarm_signal_explain  = new QPushButton;//烟感信号
     Hight_temp_signal_explain   = new QPushButton;//高温信号
 
-
+    /***************************电池数据**********************************/
+    pButton_BatteryData  = new QButtonGroup();
+    pButton_BatteryData->addButton(ui->pushButton_1,0);
+    pButton_BatteryData->addButton(ui->pushButton_2,1);
+    pButton_BatteryData->addButton(ui->pushButton_3,2);
+    pButton_BatteryData->addButton(ui->pushButton_4,3);
+    pButton_BatteryData->addButton(ui->pushButton_5,4);
+    pButton_BatteryData->addButton(ui->pushButton_6,5);
+    pButton_BatteryData->addButton(ui->pushButton_7,6);
+    pButton_BatteryData->addButton(ui->pushButton_8,7);
+    pButton_BatteryData->addButton(ui->pushButton_9,8);
+    pButton_BatteryData->addButton(ui->pushButton_10,9);
+    pButton_BatteryData->addButton(ui->pushButton_11,10);
+    pButton_BatteryData->addButton(ui->pushButton_12,11);
+    pButton_BatteryData->addButton(ui->pushButton_13,12);
+    pButton_BatteryData->addButton(ui->pushButton_14,13);
+    pButton_BatteryData->addButton(ui->pushButton_15,14);
+    pButton_BatteryData->addButton(ui->pushButton_16,15);
+    pButton_BatteryData->addButton(ui->pushButton_17,16);
+    pButton_BatteryData->addButton(ui->pushButton_18,17);
+    pButton_BatteryData->addButton(ui->pushButton_19,18);
+    pButton_BatteryData->addButton(ui->pushButton_20,19);
+    pButton_BatteryData->addButton(ui->pushButton_21,20);
 
 
 }
@@ -509,9 +531,8 @@ void MEGAWin::FirstPage()
  ***************************************************************/
 void MEGAWin::RunStatePage()
 {
-    ModuleData_Tab();
-
-    ModuleState_Tab();
+    ModuleData_Tab();//PCS数据
+    ModuleState_Tab();//PCS状态
 }
 
 /***************************************************************
@@ -528,7 +549,7 @@ void MEGAWin::SystemSettingPage()
 //    BMSProtection_tab();
 //    DebugParam_tab();
     /*设备信息表*/
-    EquipmentInfor_tab();
+//    EquipmentInfor_tab();
     /*铅酸电池设置表*/
     BatterySet_tab();
     /*自动运行时间设置表*/
@@ -697,36 +718,6 @@ void MEGAWin::History_tab()//历史记录设置表初始化
     OperationLog();//操作日志
 }
 
-/******************************************************************************
- * 设备信息表表初始化
- * ***************************************************************************/
-void MEGAWin::EquipmentInfor_tab()
-{
-    ui->EquipmentInfor_tableWidget->clearContents();
-    ui->EquipmentInfor_tableWidget->setColumnCount(2);
-    ui->EquipmentInfor_tableWidget->setRowCount(9);
-    ui->EquipmentInfor_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
-    ui->EquipmentInfor_tableWidget->verticalHeader()->setVisible(false);//设置垂直头不可见
-    ui->EquipmentInfor_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
-    ui->EquipmentInfor_tableWidget->setShowGrid(true);//设置显示格子
-    ui->EquipmentInfor_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
-    ui->EquipmentInfor_tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
-    ui->EquipmentInfor_tableWidget->setStyleSheet("selection-background-color:lightblue;");
-
-    //将设备信息显示到LCD上
-    QStringList List4;
-    List4 << tr("Name") << tr("Information") ;
-    ui->EquipmentInfor_tableWidget->setHorizontalHeaderLabels(List4);
-    ui->EquipmentInfor_tableWidget->setColumnWidth(0,240);
-    ui->EquipmentInfor_tableWidget->horizontalHeader()->setStretchLastSection(1);//自动占用剩余空间
-    QStringList Display_Par4;
-    Display_Par4 << tr("Converter type") << tr("Manufacturer name") << tr("Monitoring software version") << tr("Protocol version") << tr("Converter software version")
-                << tr("CPLD software version") << "SN:";
-    for(int i = 0; i < Display_Par4.size(); i++)
-    {
-        ui->EquipmentInfor_tableWidget->setItem(i, 0, new QTableWidgetItem(QString(Display_Par4.at(i))));
-    }
-}
 /******************************************************************************
  * 电池设置表初始化
  * ***************************************************************************/
@@ -1331,6 +1322,7 @@ void MEGAWin::LinkRelationship()
     connect(ui->Alarm_Button, SIGNAL(clicked()), this,SLOT(RTAlarm_tbtn_clicked()));//跳转当前告警记录
 
     connect(pButton_History, SIGNAL(buttonClicked(int)), this,SLOT(Data_report_clicked(int)));//数据报表
+    connect(pButton_BatteryData, SIGNAL(buttonClicked(int)), this,SLOT(BatteryData_clicked(int)));//电池数据
 
 }
 
@@ -1811,7 +1803,6 @@ void MEGAWin::History()//历史记录
     ui->Historicalfailure_tableWidget->setRowCount(8);
     ui->Historicalfailure_tableWidget->setHorizontalHeaderLabels(table_h_headers);
     ui->Historicalfailure_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
-    ui->Historicalfailure_tableWidget->verticalHeader()->setVisible(false);//设置垂直头不可见
     ui->Historicalfailure_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
     ui->Historicalfailure_tableWidget->setShowGrid(true);//设置显示格子
     ui->Historicalfailure_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
@@ -1992,8 +1983,6 @@ void MEGAWin::OperationLog()//操作日志
     ui->Operation_tableWidget->setColumnCount(Ope_headers.size());
     ui->Operation_tableWidget->setRowCount(8);
     ui->Operation_tableWidget->setHorizontalHeaderLabels(Ope_headers);
-    ui->Operation_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
-//    ui->Operation_tableWidget->verticalHeader()->setVisible(false);//设置垂直头不可见
     ui->Operation_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
     ui->Operation_tableWidget->setShowGrid(true);//设置显示格子
     ui->Operation_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
@@ -2049,9 +2038,145 @@ void MEGAWin::OperationLog()//操作日志
                                                     "2023-05-11 11:02:14", "ModificationTime", \
                                                     "系统设置修改时的时间\nTime when the system Settings are modified");
     ModificationTime12->add_Specifition();
+    EventRecord = new Specification(EventRecord_explain, ui->Operation_tableWidget, 0, 1, \
+                                                    "功率控制类型：正常模式->CP_N&&P", "RecordEvent", \
+                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+    EventRecord->add_Specifition();
+    EventRecord2 = new Specification(EventRecord2_explain, ui->Operation_tableWidget, 1, 1, \
+                                                    "功率控制类型：CP_N&&P->正常模式", "RecordEvent", \
+                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+    EventRecord2->add_Specifition();
+    EventRecord3 = new Specification(EventRecord3_explain, ui->Operation_tableWidget, 2, 1, \
+                                                    "电网频率上限：0.2->3", "RecordEvent", \
+                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+    EventRecord3->add_Specifition();
+    EventRecord4 = new Specification(EventRecord4_explain, ui->Operation_tableWidget, 3, 1, \
+                                                    "电网频率上限：3->0.2", "RecordEvent", \
+                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+    EventRecord4->add_Specifition();
+    EventRecord5 = new Specification(EventRecord5_explain, ui->Operation_tableWidget, 4, 1, \
+                                                    "电压保护下限：-10->-15", "RecordEvent", \
+                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+    EventRecord5->add_Specifition();
+    EventRecord6 = new Specification(EventRecord6_explain, ui->Operation_tableWidget, 5, 1, \
+                                                    "电压保护下限：-15->-10", "RecordEvent", \
+                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+    EventRecord6->add_Specifition();
+    EventRecord7 = new Specification(EventRecord7_explain, ui->Operation_tableWidget, 6, 1, \
+                                                    "操作模式：受控削峰填谷->削峰填谷", "RecordEvent", \
+                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+    EventRecord7->add_Specifition();
+    EventRecord8 = new Specification(EventRecord8_explain, ui->Operation_tableWidget, 7, 1, \
+                                                    "操作模式：UPS->受控削峰填谷", "RecordEvent", \
+                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+    EventRecord8->add_Specifition();
+    EventRecord9 = new Specification(EventRecord9_explain, ui->Operation_tableWidget, 8, 1, \
+                                                    "操作模式：手动->UPS", "RecordEvent", \
+                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+    EventRecord9->add_Specifition();
+    EventRecord10 = new Specification(EventRecord10_explain, ui->Operation_tableWidget, 9, 1, \
+                                                    "操作模式：削峰填谷->手动", "RecordEvent", \
+                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+    EventRecord10->add_Specifition();
+    EventRecord11 = new Specification(EventRecord11_explain, ui->Operation_tableWidget, 10, 1, \
+                                                    "并离网：离网->自动", "RecordEvent", \
+                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+    EventRecord11->add_Specifition();
+    EventRecord12 = new Specification(EventRecord12_explain, ui->Operation_tableWidget, 11, 1, \
+                                                    "并离网：并网->离网", "RecordEvent", \
+                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+    EventRecord12->add_Specifition();
+}
 
-//    Specification *ModificationTime12;
-//    Specification *EventRecord;
+void MEGAWin::BatteryData_clicked(int nid)//电池数据
+{
+
+    switch (nid) {
+    case 0:
+        QMessageBox::question(this, "Bat volage"\
+                              ,"这是电池电压\nThis is the battery voltage", "OK");
+        break;
+    case 1:
+        QMessageBox::question(this, "Bat current"\
+                              ,"这是电池电流\nThis is the amount of electricity discharged during the month", "OK");
+        break;
+    case 2:
+        QMessageBox::question(this, "SOC"\
+                              ,"这是电池SOC，即电池剩余电量百分比\nThis is the battery SOC, which is the percentage of charge left in the battery", "OK");
+        break;
+    case 3:
+        QMessageBox::question(this, "SOH"\
+                              ,"这是电池SOH，即电池当前的容量与出厂容量的百分比\nThis is the battery SOH, which is the percentage of the battery's current capacity to its factory capacity", "OK");
+        break;
+    case 4:
+        QMessageBox::question(this, "Cell voltage(max)"\
+                              ,"这是单体最高电压\nThis is the highest voltage of a cell", "OK");
+        break;
+    case 5:
+        QMessageBox::question(this, "Cell voltage(min)"\
+                              ,"这是单体最低电压\nThis is the minimum voltage of a cell", "OK");
+        break;
+    case 6:
+        QMessageBox::question(this, "Cell temp.(max)"\
+                              ,"这是单体最高温度\nThis is the highest temperature of the cell", "OK");
+        break;
+    case 7:
+        QMessageBox::question(this, "Cell temp.(min)"\
+                              ,"这是单体最低温度\nThis is the lowest temperature of a cell", "OK");
+        break;
+    case 8:
+        QMessageBox::question(this, "Charging current limite"\
+                              ,"这是充电电流上限\nThis is the upper limit of charging current", "OK");
+        break;
+    case 9:
+        QMessageBox::question(this, "Discharging current limite"\
+                              ,"这是放电电流上限\nThis is the upper limit of discharge current", "OK");
+        break;
+    case 10:
+        QMessageBox::question(this, "Allow charge power"\
+                              ,"这是可充电功率\nThis is rechargeable power", "OK");
+        break;
+    case 11:
+        QMessageBox::question(this, "Allow discharge power"\
+                              ,"这是可放电功率\nThis is the discharge power", "OK");
+        break;
+    case 12:
+        QMessageBox::question(this, "Allow charge energy"\
+                              ,"这是允许充电量\nThis is the allowable charge", "OK");
+        break;
+    case 13:
+        QMessageBox::question(this, "Allow discharge energy"\
+                              ,"这是允许放电量\nThis is the allowable discharge", "OK");
+        break;
+    case 14:
+        QMessageBox::question(this, "Alarm level"\
+                              ,"这是告警等级图示，根据颜色判断告警等级，正常为绿色、告警1为黄色、告警2为橙色、告警3为红色\nThis is the alarm severity diagram. The alarm severity is determined by the color. The normal value is green, alarm 1 is yellow, alarm 2 is orange, and alarm 3 is red", "OK");
+        break;
+    case 15:
+        QMessageBox::question(this, "Charge enable"\
+                              ,"这是充电使能，作为判断当前是否可以充电的判断标准\nThis is the charging enable, which is used to judge whether the current charging can be done", "OK");
+        break;
+    case 16:
+        QMessageBox::question(this, "Discharge enable"\
+                              ,"这是放电使能，作为判断当前是否可以放电的判断标准\nThis is the discharge enable, as a judge whether the current discharge can judge the standard", "OK");
+        break;
+    case 17:
+        QMessageBox::question(this, "Warning2"\
+                              ,"这是二级告警，二级告警时显示橙色\nThis is a Level 2 alarm. The level 2 alarm is orange", "OK");
+        break;
+    case 18:
+        QMessageBox::question(this, "Warning3"\
+                              ,"这是三级告警，三级告警时显示红色\nThis is a Level 3 alarm. Red is displayed for a level 3 alarm", "OK");
+        break;
+    case 19:
+        QMessageBox::question(this, "Normal"\
+                              ,"这是正常，表示当前无告警，正常时显示绿色\nIf this parameter is normal, no alarm is generated. If this parameter is normal, green is displayed", "OK");
+        break;
+    case 20:
+        QMessageBox::question(this, "Warning1"\
+                              ,"这是一级告警，一级告警时显示黄色\nThis is a Level 1 alarm. The Level 1 alarm is yellow", "OK");
+        break;
+    }
 }
 
 void MEGAWin::PCS_Data()//PCS数据 绘制button

@@ -751,8 +751,8 @@ private slots:
     void AdvancedSetup_btn_clicked();//高级
 
     void on_System_tabWidget_currentChanged(int index);
-
-    void Data_report_clicked(int nid);
+    void BatteryData_clicked(int nid);//电池数据
+    void Data_report_clicked(int nid);//数据报表
 
 private:
     Ui::MEGAWin *ui;
@@ -761,6 +761,7 @@ private:
     QTimer *Update_RTData_timer;
     QTime *current_time;
     QButtonGroup *pButton_History;
+    QButtonGroup *pButton_BatteryData;
 
 
 };
