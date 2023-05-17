@@ -102,9 +102,91 @@ void MEGAWin::MemoryAllocation()
 //    Phase_A_power_explain           = new QPushButton;
 //    Phase_B_power_explain           = new QPushButton;  //B相功率说明
 //    Phase_C_power_explain           = new QPushButton;
+    /***************************数据报表**********************************/
 
     pButton_History = new QButtonGroup();
+    pButton_History->addButton(ui->Dis_D,0);
+    pButton_History->addButton(ui->Dis_M,1);
+    pButton_History->addButton(ui->Dis_Y,2);
+    pButton_History->addButton(ui->Dis_T,3);
+    pButton_History->addButton(ui->Char_D,4);
+    pButton_History->addButton(ui->Char_M,5);
+    pButton_History->addButton(ui->Char_Y,6);
+    pButton_History->addButton(ui->Char_T,7);
+    pButton_History->addButton(ui->Subtract_M,8);
+    pButton_History->addButton(ui->Subtract_Y,9);
+    pButton_History->addButton(ui->Day_btn,10);
+    pButton_History->addButton(ui->Year_btn,11);
+    pButton_History->addButton(ui->Add_M,12);
+    pButton_History->addButton(ui->Add_Y,13);
+    pButton_History->addButton(ui->Month_btn,14);
+    pButton_History->addButton(ui->Total_btn,15);
+    pButton_History->addButton(ui->OutPut_historyFailuer,16);
+    pButton_History->addButton(ui->Output_OperationLog,17);
+    pButton_History->addButton(ui->CoulombmeterReport_btn,18);
+    pButton_History->addButton(ui->Eject_btn,19);
+
+    /***************************历史记录**********************************/
+    Grade_explain       = new QPushButton;
+    Grade2_explain      = new QPushButton;
+    Grade3_explain      = new QPushButton;
+    Grade4_explain      = new QPushButton;
+    Grade5_explain      = new QPushButton;
+    Grade6_explain      = new QPushButton;
+    Grade7_explain      = new QPushButton;
+    Grade8_explain      = new QPushButton;
+    StartTime_explain   = new QPushButton;
+    StartTime2_explain  = new QPushButton;
+    StartTime3_explain  = new QPushButton;
+    StartTime4_explain  = new QPushButton;
+    StartTime5_explain  = new QPushButton;
+    StartTime6_explain  = new QPushButton;
+    StartTime7_explain  = new QPushButton;
+    StartTime8_explain  = new QPushButton;
+    EndTime_explain     = new QPushButton;
+    EndTime2_explain    = new QPushButton;
+    EndTime3_explain    = new QPushButton;
+    EndTime4_explain    = new QPushButton;
+    EndTime5_explain    = new QPushButton;
+    EndTime6_explain    = new QPushButton;
+    EndTime7_explain    = new QPushButton;
+    EndTime8_explain    = new QPushButton;
+    Describe_explain    = new QPushButton;
+    Describe2_explain   = new QPushButton;
+    Describe3_explain   = new QPushButton;
+    Describe4_explain   = new QPushButton;
+    Describe5_explain   = new QPushButton;
+    Describe6_explain   = new QPushButton;
+    Describe7_explain   = new QPushButton;
+    Describe8_explain   = new QPushButton;
+
+    /***************************操作日志**********************************/
+    ModificationTime_explain    = new QPushButton;
+    ModificationTime2_explain   = new QPushButton;
+    ModificationTime3_explain   = new QPushButton;
+    ModificationTime4_explain   = new QPushButton;
+    ModificationTime5_explain   = new QPushButton;
+    ModificationTime6_explain   = new QPushButton;
+    ModificationTime7_explain   = new QPushButton;
+    ModificationTime8_explain   = new QPushButton;
+    ModificationTime9_explain   = new QPushButton;
+    ModificationTime10_explain  = new QPushButton;
+    ModificationTime11_explain  = new QPushButton;
+    ModificationTime12_explain  = new QPushButton;
+    EventRecord_explain         = new QPushButton;
+    EventRecord2_explain        = new QPushButton;
+    EventRecord3_explain        = new QPushButton;
+    EventRecord4_explain        = new QPushButton;
+    EventRecord5_explain        = new QPushButton;
+    EventRecord6_explain        = new QPushButton;
+    EventRecord7_explain        = new QPushButton;
+    EventRecord8_explain        = new QPushButton;
+    EventRecord9_explain        = new QPushButton;
+    EventRecord10_explain       = new QPushButton;
+    EventRecord11_explain       = new QPushButton;
+    EventRecord12_explain       = new QPushButton;
     /***************************参数设置**********************************/
+
     Grid_connected_mode_explain = new QPushButton;      //PCS并离网方式说明
     Constant_power_explain  = new QPushButton;           //恒功率说明
     Charging_and_discharging_explain = new QPushButton; //充放电说明status
@@ -122,6 +204,7 @@ void MEGAWin::MemoryAllocation()
     Phase_C_power_explain = new QPushButton;            //C相功率说明
 
     /***************************电池设置**********************************/
+
     DOD_OnGrid_explain          = new QPushButton;
     DOD_OffGrid_explain         = new QPushButton;
     Charge_Vol_Up_Limit_explain = new QPushButton;
@@ -384,6 +467,9 @@ void MEGAWin::MemoryAllocation()
     Smoke_alarm_signal_explain  = new QPushButton;//烟感信号
     Hight_temp_signal_explain   = new QPushButton;//高温信号
 
+
+
+
 }
 /***************************************************************
  * @brief HOSTPAGE init
@@ -607,11 +693,8 @@ void MEGAWin::UserParam_tab()
 
 void MEGAWin::History_tab()//历史记录设置表初始化
 {
-    //数据报表
-    DataReport();//数据报表 绘制button
-    //导出数据
-    //历史记录
-    //操作日志
+    History();//历史记录
+    OperationLog();//操作日志
 }
 
 /******************************************************************************
@@ -769,11 +852,365 @@ void MEGAWin::Information_tbnt_released()//系统信息槽
     ui->EquipmentInfor_tableWidget->item(5, 1)->setTextAlignment(Qt::AlignCenter);
 
 
+
 }
 
 void MEGAWin::GeneralParam_tbnt_released()  //一般参数槽
 {
 
+}
+/*************************************************************************
+ * PCS故障信息表
+ ************************************************************************/
+void MEGAWin::PCS_Alarm_information_table()
+{
+    ui->RTAlarm_Data_page->setRowHeight(0, 110);
+    QStringList RTAlarm_List;
+    RTAlarm_List << tr("逆变器过流\nInverter overcurrent") << tr("一般故障\nGeneral failure") \
+                << tr("电感电流瞬时值>3Ip\n或电感电流有效值>1.36In\nInductive current instantaneous value >3lp or inductive current RMS value >1.36ln") \
+                << tr("PCS 停机，输出接触器断开\nPCS shut down and disconnect the output contactor") \
+                << tr("可恢复，故障消除5min后自动恢复\nRecoverable, automatic recovery 5 minutes after the fault is eliminated");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(0, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(0, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(1, 130);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("变流器故障\nConverter fault") << tr("一般故障\nGeneral failure")\
+                << tr("变流器开机软启过程中，30s后逆变电压有效值>1.2Vgrid或逆变电压有效值<0.3Vgrid\nDuring soft startup of converter, inverter voltage RMS more then 1.2Vgrid or inverter voltage RMS less than 0.3Vgrid after 30s") \
+                << tr("PCS 停机，停止开机软启\nPCS shut down and Stop the soft startup") \
+                << tr("可恢复，故障消除5min后自动恢复\nRecoverable, automatic recovery 5 minutes after the fault is eliminated");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(1, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(1, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(2, 110);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("电池电压低\nBattery low voltage") << tr("告警\nWarning") \
+                << tr("直流出入电压低于电池EOD电压或者小于1.414倍电网线电压\nThe DC input/output voltage is lower than the battery EOD voltage or less than 1.414 times the grid line voltage") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("可恢复，故障消除5min后自动恢复\nRecoverable, automatic recovery 5 minutes after the fault is eliminated");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(2, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(2, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(3, 200);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("电池功率低\nLow battery power") << tr("告警\nWarning") \
+                << tr("电池电压低于电池EOD电压值(适用无BMS电池系统，防止电压回升)\nThe battery voltage is lower than the EOD voltage value (applicable to BMS free battery systems to prevent voltage rebound)") \
+                << tr("处于放电状态时PCS停机(充电过程不受影响)，交流接触器断开\nWhen the PCS is in discharge state, the machine stops (the charging process is not affected) and the AC contactor is disconnected") \
+                << tr("可恢复，PCS充电时间大于5min后，告警消除\nRecoverable, The alarm is cleared when the charging time of PCS is longer than 5 minutes");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(3, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(3, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(4, 130);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("直流母线过压\nDc bus overvoltage") << tr("严重故障\nSerious failure") \
+                << tr("直流输入电压>850V\nDc input voltage more then 850V") \
+                << tr("PCS 停机，交流接触器断开，直流断路器脱扣\nPCS shut down, the AC contactor is disconnected, and the DC circuit breaker is tripped") \
+                << tr("不可恢复\nUnrecoverable");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(4, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(4, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(5, 130);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("直流母线短路\nDc bus short circuit") << tr("严重故障\nSerious failure") \
+                << tr("直流母线电压低于200V，直流电流大于50A，判断时间为200us\nThe DC bus voltage is less than 200V, the DC current is more than 50A, and the judgment time is 200us") \
+                << tr("PCS 停机，交流接触器断开，直流断路器脱扣\nPCS shut down, the AC contactor is disconnected, and the DC circuit breaker is tripped") \
+                << tr("不可恢复\nUnrecoverable");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(5, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(5, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(6, 110);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("输出接触器开路\nThe output contactor is open") << tr("一般故障\nGeneral failure")\
+                << tr("PCS运行状态下，交流接触器的辅助触点信号为断开状态\nWhen PCS is running, the auxiliary contact signal of AC contactor is in the disconnected state") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("可恢复，故障消除5min后自动恢复\nRecoverable, automatic recovery 5 minutes after the fault is eliminated");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(6, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(6, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(7, 110);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("输出接触器短路\nOutput contactor short circuit") << tr("一般故障\nGeneral failure")\
+                << tr("PCS停机状态下，交流接触器的辅助触点信号为闭合状态\nWhen PCS is shut down, the auxiliary contact signal of AC contactor is closed") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("可恢复，故障消除5min后自动恢复\nRecoverable, automatic recovery 5 minutes after the fault is eliminated");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(7, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(7, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(8, 310);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("变流器过温\nThe converter is overheated") << tr("告警\nWarning") \
+                << tr("IGBT温度超过105℃或电抗器温度超过160℃\nIGBT temperature exceeds 105℃ or reactor temperature exceeds 160℃") \
+                << tr("IGBT过温：降额运行(并网)；IGBT过温：PCS停机(离网)，交流接触器断开；电抗器过温：PCS 停机，交流接触器断开\nIGBT overtemperature: derating operation (grid-connected); IGBT overtemperature: PCS shut down (off-grid), AC contactor is disconnected; Reactor overtemperature: PCS shut down and AC contactor is disconnected") \
+                << tr("可恢复，故障消除5min后自动恢复\nRecoverable, automatic recovery 5 minutes after the fault is eliminated");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(8, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(8, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(9, 90);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("输出过载\nOutput over load") << tr("告警\nWarning") \
+                << tr("离网负载功率>110%Pn\nOff-grid load power >110%Pn") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("可恢复，故障消除5min后自动恢复\nRecoverable, automatic recovery 5 minutes after the fault is eliminated");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(9, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(9, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(10, 170);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("电池接反故障\nThe positive and negative terminals of the battery are connected inversely fault") << tr("告警\nWarning") \
+                << tr("直流输入正负极性接反\nThe DC input is reversed") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("不可恢复\nUnrecoverable");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(10, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(10, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(11, 170);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("DC接触器故障\nThe DC contactor is faulty") << tr("一般故障\nGeneral failure") \
+                << tr("驱动信号为闭合信号条件下，电池和母线之间的压测>50V；驱动信号为断开条件下，辅助触点信号为闭合状态\nWhen the driving signal is a closed signal, the pressure difference between the battery and the bus is greater than 50V;When the driving signal is off, the auxiliary contact signal is closed") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("可恢复，故障消除5min后自动恢复\nRecoverable, automatic recovery 5 minutes after the fault is eliminated");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(11, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(11, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(12, 90);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("EMS通信故障\nEMS communicate\nfault") << tr("一般故障\nGeneral failure") \
+                << tr("PCS与EMS通信丢失，判断时间3min\nThe communication between PCS and EMS is lost, and the judgment time is 3 minutes") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("可恢复，故障消除后30s自动恢复\nRecoverable, the fault recovers automatically 30 seconds after it is rectified");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(12, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(12, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(13, 90);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("BMS通信故障\nBMS communicate\nfault") << tr("一般故障\nGeneral failure") \
+                << tr("PCS与BMS通信丢失，判断时间50s\nCommunication loss between PCS and BMS, judgment time 50s") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("可恢复，故障消除后30s自动恢复\nRecoverable, the fault recovers automatically 30 seconds after it is rectified");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(13, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(13, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(14, 130);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("变流器缺相故障\nConverter phase loss fault") << tr("一般故障\nGeneral failure") \
+                << tr("并网功率大于50%条件下，三相电路出现一项或多项线路无输出功率，判断时间为10s\nWhen the grid-connected power is greater than 50%, one or more lines of the three-phase circuit have no output power, and the judgment time is 10s") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("可恢复，故障消除5min后自动恢复\nRecoverable, automatic recovery 5 minutes after the fault is eliminated");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(14, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(14, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(15, 110);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("电网过压\nGrid overvoltage") << tr("告警\nWarning") \
+                << tr("电网电压超过最大允许电压(90%~70%可设定),判断时间1s\nIf the power grid voltage exceeds the maximum allowable voltage (90% to 70% can be set), the judgment time is 1s") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("可恢复，故障消除5min后自动恢复\nRecoverable, automatic recovery 5 minutes after the fault is eliminated");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(15, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(15, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(16, 110);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("电网欠压\nGrid undervoltage") << tr("告警\nWarning") \
+                << tr("电网电压超过最大允许电压(90%~70%可设定),判断时间1s\nIf the power grid voltage exceeds the maximum allowable voltage (90% to 70% can be set), the judgment time is 1s") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("可恢复，故障消除5min后自动恢复\nRecoverable, automatic recovery 5 minutes after the fault is eliminated");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(16, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(16, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(17, 150);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("电网反序\nGrid reverse sequence") << tr("告警\nWarning") \
+                << tr("三相相序接反(电网电压正序模值小于负序模值)，判断时间为1s\nThe three-phase phase sequence is reversed (the positive sequence mode value of the grid voltage is less than the negative sequence mode value), and the judgment time is 1s") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("不可恢复\nUnrecoverable");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(17, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(17, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(18, 150);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("电网频率异常\nGrid frequency anomaly") << tr("告警\nWarning") \
+                << tr("电网频率超出PCS允许范围内(±2Hz可设定)\nGrid frequency frequency beyond the allowable range of PCS (±2Hz can be set)") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("可恢复，故障消除5min后自动恢复\nRecoverable, automatic recovery 5 minutes after the fault is eliminated");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(18, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(18, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(19, 150);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("变流器孤岛保护\nConverter shutter island protection") << tr("告警\nWarning") \
+                << tr("主动孤岛保护模式下电网失电，且负载和逆变器并网功率和相角相匹配\nInitiative shutter island protection mode, the power grid loses power, and the load matches the grid-connected power and phase Angle of the inverter") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("可恢复，故障消除5min后自动恢复\nRecoverable, automatic recovery 5 minutes after the fault is eliminated");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(19, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(19, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(20, 150);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("驱动线故障\nDrive line fault") << tr("一般故障\nGeneral failure") \
+                << tr("驱动线端口松动\nThe driver cable port is loose") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("可恢复，故障消除5min后自动恢复\nRecoverable, automatic recovery 5 minutes after the fault is eliminated");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(20, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(20, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(21, 150);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("防雷故障\nLightning protection fault") << tr("告警\nWarning") \
+                << tr("防雷器击穿或漏电\nSurge arrester breakdown or leakage") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("不可恢复\nUnrecoverable");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(21, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(21, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(22, 150);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("绝缘阻抗异常\nDrive line fault") << tr("告警\nWarning") \
+                << tr("直流侧正负母线对地电压异常（小于50V）\nAbnormal voltage of positive and negative bus to ground in DC side (less than 50V)") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("可恢复，故障消除5min后自动恢复\nRecoverable, automatic recovery 5 minutes after the fault is eliminated");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(22, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(22, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(23, 150);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("交流辅助电源故障\nThe AC auxiliary power supply is faulty") << tr("一般故障\nGeneral failure") \
+                << tr("交流辅助电源输出出现异常\nThe AC auxiliary power output is abnormal. Procedure") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("可恢复，故障消除5min后自动恢复\nRecoverable, automatic recovery 5 minutes after the fault is eliminated");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(23, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(23, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(24, 150);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("直流辅助电源故障\nThe DC auxiliary power supply is faulty") << tr("一般故障\nGeneral failure") \
+                << tr("直流辅助电源输出出现异常\nThe DC auxiliary power output is abnormal. Procedure") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("可恢复，故障消除5min后自动恢复\nRecoverable, automatic recovery 5 minutes after the fault is eliminated");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(24, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(24, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(25, 150);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("风扇故障\nFan failure") << tr("告警\nWarning") \
+                << tr("风扇无法启动运行\nThe fan cannot be started") \
+                << tr("PCS 降额运行\nPCS derating operation") \
+                << tr("可恢复，故障消除5min后自动恢复\nRecoverable, automatic recovery 5 minutes after the fault is eliminated");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(25, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(25, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(26, 150);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("紧急关机\nEmergency shutdown") << tr("告警\nWarning") \
+                << tr("在变流器控制面板上按下EPO按钮\nPress the EPO button on the converter control panel") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("可恢复，故障消除5min后自动恢复\nRecoverable, automatic recovery 5 minutes after the fault is eliminated");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(26, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(26, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(27, 150);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("CT或霍尔开路故障\nCT or Hall open circuit fault") << tr("一般故障\nGeneral failure") \
+                << tr("PCS并网功率大于50%运行时，CT检测电流小于给定量的70%\nWhen PCS grid-connected power is greater than 50%, CT detection current is less than 70% of the given quantity") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("可恢复，故障消除5min后自动恢复\nRecoverable, automatic recovery 5 minutes after the fault is eliminated");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(27, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(27, i)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    ui->RTAlarm_Data_page->setRowHeight(28, 150);
+    RTAlarm_List.clear();
+    RTAlarm_List << tr("绝缘阻抗异常\nAbnormal insulation impedance") << tr("严重故障\nSerious failure") \
+                << tr("对于1000V系统，正对地或负对地阻抗小于33K欧姆\nFor 1000V systems, the positive or negative ground impedance is less than 33KΩ") \
+                << tr("PCS 停机，交流接触器断开\nPCS shut down and the AC contactor is disconnected") \
+                << tr("不可恢复\nUnrecoverable");
+    for(int i = 0; i < RTAlarm_List.size(); i++)
+    {
+        ui->RTAlarm_Data_page->setItem(28, i, new QTableWidgetItem(RTAlarm_List.at(i)));
+        ui->RTAlarm_Data_page->item(28, i)->setTextAlignment(Qt::AlignCenter);
+    }
 }
 /**************************************************
 初始化变量（system_Page）
@@ -891,8 +1328,9 @@ void MEGAWin::LinkRelationship()
     connect(ui->Bypass_Running_btn, SIGNAL(clicked()), this, SLOT(on_Running_btn_clicked()));   //主页变流器按钮跳转变流器实时数据
     connect(ui->Bypass_Grid_btn, SIGNAL(clicked()), this, SLOT(on_Grid_clicked()));    //主页电网按钮跳转电网实时数据
     connect(ui->Bypass_Load_Btn, SIGNAL(clicked()), this, SLOT(on_Load_clicked()));    //主页负载按钮跳转负载实时数据
-
     connect(ui->Alarm_Button, SIGNAL(clicked()), this,SLOT(RTAlarm_tbtn_clicked()));//跳转当前告警记录
+
+    connect(pButton_History, SIGNAL(buttonClicked(int)), this,SLOT(Data_report_clicked(int)));//数据报表
 
 }
 
@@ -1097,6 +1535,8 @@ void MEGAWin::My_menuAction(int Index)
         ui->stackedWidget->setCurrentWidget(ui->Record_page);
         ui->Record_tabWidget->setCurrentWidget(ui->DataReport_page);
         ui->Report_tab->setCurrentWidget(ui->Report_tabPage_T);
+
+        ui->Record_tabWidget->setCurrentWidget(ui->HistoryRecord_page);
         ui->dateEdit->setDate(QDateTime::currentDateTime().date());
         break;
     case SYSTEMPAGE:
@@ -1193,17 +1633,18 @@ void MEGAWin::RTAlarm_tbtn_clicked()
     ui->RTAlarm_Data_page->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
     ui->RTAlarm_Data_page->setStyleSheet("selection-background-color:lightblue;");
 
-    ui->RTAlarm_Data_page->setColumnWidth(0,130);
-    ui->RTAlarm_Data_page->setColumnWidth(1,90);
-    ui->RTAlarm_Data_page->setColumnWidth(2,230);
-    ui->RTAlarm_Data_page->setColumnWidth(3,230);
-    ui->RTAlarm_Data_page->setColumnWidth(4,270);
+    ui->RTAlarm_Data_page->setColumnWidth(0,110);
+    ui->RTAlarm_Data_page->setColumnWidth(1,85);
+    ui->RTAlarm_Data_page->setColumnWidth(2,305);
+    ui->RTAlarm_Data_page->setColumnWidth(3,200);
+    ui->RTAlarm_Data_page->setColumnWidth(4,250);
 
     QStringList RTAlarm_Title;
     RTAlarm_Title << tr("告警名称\nAlarm name") << tr("告警等级\nAlarm leve")<< tr("触发条件\nTrigger condition") \
-                    << tr("响应动作\nResponse action")<< tr("是否自动复位及复位时间\nWhether to reset automatically\nand reset time");
+                    << tr("响应动作\nResponse action")<< tr("是否自动复位及复位时间\nWhether to reset\nautomatically and reset time");
     ui->RTAlarm_Data_page->setHorizontalHeaderLabels(RTAlarm_Title);
 
+    PCS_Alarm_information_table();  //展示PCS故障信息表
 }
 
 void MEGAWin::on_Batt_btn_pressed() //显示电池信息
@@ -1274,25 +1715,343 @@ void MEGAWin::on_System_tabWidget_currentChanged(int index)
     Information_tbnt_released();
 }
 
-void MEGAWin::DataReport()//数据报表 绘制button
+void MEGAWin::Data_report_clicked(int nid)
 {
+    switch (nid) {
+    case 0:
+        QMessageBox::question(this, "Discharge Day"\
+                              ,"这是当日放电电量\nThis is the daily discharge consumption", "OK");
+        break;
+    case 1:
+        QMessageBox::question(this, "Discharge Month"\
+                              ,"这是当月放电电量\nThis is the amount of electricity discharged during the month", "OK");
+        break;
+    case 2:
+        QMessageBox::question(this, "Discharge Year"\
+                              ,"这是年当放电电量\nThis is the amount of electricity discharged in years", "OK");
+        break;
+    case 3:
+        QMessageBox::question(this, "Discharge Total"\
+                              ,"这是总放电电量\nThis is the total amount of discharge", "OK");
+        break;
+    case 4:
+        QMessageBox::question(this, "Charge Day"\
+                              ,"这是当日充电电量\nThis is the daily discharge consumption", "OK");
+        break;
+    case 5:
+        QMessageBox::question(this, "Charge Month"\
+                              ,"这是当月充电电量\nThis is the charge for the month", "OK");
+        break;
+    case 6:
+        QMessageBox::question(this, "Charge Year"\
+                              ,"这是当年充电电量\nThis is the charge for the year", "OK");
+        break;
+    case 7:
+        QMessageBox::question(this, "Charge Total"\
+                              ,"这是总充电电量\nThis is the total charge", "OK");
+        break;
+    case 8:
+        QMessageBox::question(this, "Month-"\
+                              ,"查看上一个月的数据\nView the data of the previous month", "OK");
+        break;
+    case 9:
+        QMessageBox::question(this, "Year-"\
+                              ,"查看上一年的数据\nCheck the previous year's data", "OK");
+        break;
+    case 10:
+        QMessageBox::question(this, "Daily electricity quantity"\
+                              ,"查看当日充放电量\nCheck the daily charge and discharge amount", "OK");
+        break;
+    case 11:
+        QMessageBox::question(this, "Annual electricity quantity"\
+                              ,"查看当年充放电量\nCheck the charge and discharge amount of the current year", "OK");
+        break;
+    case 12:
+        QMessageBox::question(this, "Month+"\
+                              ,"查看下一个月的数据\nCheck the data for the next month", "OK");
+        break;
+    case 13:
+        QMessageBox::question(this, "Year+"\
+                              ,"查看下一年的数据\nLook at the next year's data", "OK");
+        break;
+    case 14:
+        QMessageBox::question(this, "Monthly electric quantity"\
+                              ,"查看当月充放电量\nCheck the charge and discharge amount of the month", "OK");
+        break;
+    case 15:
+        QMessageBox::question(this, "Total electric quantity"\
+                              ,"查看总充放电量\nCheck the total charge and discharge", "OK");
+        break;
+    case 16:
+        QMessageBox::question(this, "HistoricalFailure"\
+                              ,"导出历史记录\nExport history", "OK");
+        break;
+    case 17:
+        QMessageBox::question(this, "OperationLog"\
+                              ,"导出操作日志\nExporting operation Logs", "OK");
+        break;
+    case 18:
+        QMessageBox::question(this, "Coulombmeter report"\
+                              ,"导出电量统计表\nThe statistical table of electric quantity is derived", "OK");
+        break;
+    case 19:
+        QMessageBox::question(this, "Eject Udisk"\
+                              ,"退出U盘\nExit USB flash drive", "OK");
+        break;
+    }
 
-//    Specification *Dis_D;
-//    Specification *Dis_M;
-//    Specification *Dis_Y;
-//    Specification *Dis_T;
-//    Specification *Char_D;
-//    Specification *Char_M;
-//    Specification *Char_Y;
-//    Specification *Char_T;
-//    Specification *Daily_Usage;//日用量
-//    Specification *MonthlyUsage;
-//    Specification *AnnualUsage;
-//    Specification *TotalPower;
-//    Specification *M_Decrease;//月份减
-//    Specification *Y_Decrease;
-//    Specification *M_Plus;
-//    Specification *Y_Plus;
+}
+
+void MEGAWin::History()//历史记录
+{
+    QStringList table_h_headers;
+    table_h_headers.clear();
+    table_h_headers << tr("Level") << tr("Start Time") << tr("End Time") << tr("Description");
+    ui->Historicalfailure_tableWidget->setColumnCount(table_h_headers.size());
+    ui->Historicalfailure_tableWidget->setRowCount(8);
+    ui->Historicalfailure_tableWidget->setHorizontalHeaderLabels(table_h_headers);
+    ui->Historicalfailure_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+    ui->Historicalfailure_tableWidget->verticalHeader()->setVisible(false);//设置垂直头不可见
+    ui->Historicalfailure_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
+    ui->Historicalfailure_tableWidget->setShowGrid(true);//设置显示格子
+    ui->Historicalfailure_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+    ui->Historicalfailure_tableWidget->setEditTriggers(QAbstractItemView::SelectedClicked);//单机修改
+    ui->Historicalfailure_tableWidget->setColumnWidth(0,50);
+    ui->Historicalfailure_tableWidget->setColumnWidth(1,180);
+    ui->Historicalfailure_tableWidget->setColumnWidth(2,180);
+    ui->Historicalfailure_tableWidget->horizontalHeader()->setStretchLastSection(true);
+
+    Grade_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Grade2_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Grade3_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Grade4_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Grade5_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Grade6_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Grade7_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Grade8_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    StartTime_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    StartTime2_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    StartTime3_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    StartTime4_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    StartTime5_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    StartTime6_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    StartTime7_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    StartTime8_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    EndTime_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    EndTime2_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    EndTime3_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    EndTime4_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    EndTime5_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    EndTime6_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    EndTime7_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    EndTime8_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Describe_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Describe2_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Describe3_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Describe4_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Describe5_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Describe6_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Describe7_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Describe8_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+
+    Grade = new Specification(Grade_explain, ui->Historicalfailure_tableWidget, 0, 0, \
+                                                    "0", "Level", \
+                                                    "这是等级\nThis is the level");
+    Grade->add_Specifition();
+    Grade2 = new Specification(Grade2_explain, ui->Historicalfailure_tableWidget, 1, 0, \
+                                                    "0", "Level", \
+                                                    "这是等级\nThis is the level");
+    Grade2->add_Specifition();
+    Grade3 = new Specification(Grade3_explain, ui->Historicalfailure_tableWidget, 2, 0, \
+                                                    "0", "Level", \
+                                                    "这是等级\nThis is the level");
+    Grade3->add_Specifition();
+    Grade4 = new Specification(Grade4_explain, ui->Historicalfailure_tableWidget, 3, 0, \
+                                                    "0", "Level", \
+                                                    "这是等级\nThis is the level");
+    Grade4->add_Specifition();
+    Grade5 = new Specification(Grade5_explain, ui->Historicalfailure_tableWidget, 4, 0, \
+                                                    "0", "Level", \
+                                                    "这是等级\nThis is the level");
+    Grade5->add_Specifition();
+    Grade6 = new Specification(Grade6_explain, ui->Historicalfailure_tableWidget, 5, 0, \
+                                                    "0", "Level", \
+                                                    "这是等级\nThis is the level");
+    Grade6->add_Specifition();
+    Grade7 = new Specification(Grade7_explain, ui->Historicalfailure_tableWidget, 6, 0, \
+                                                    "0", "Level", \
+                                                    "这是等级\nThis is the level");
+    Grade7->add_Specifition();
+    Grade8 = new Specification(Grade8_explain, ui->Historicalfailure_tableWidget, 7, 0, \
+                                                    "0", "Level", \
+                                                    "这是等级\nThis is the level");
+    Grade8->add_Specifition();
+    StartTime = new Specification(StartTime_explain, ui->Historicalfailure_tableWidget, 0, 1, \
+                                                    "2023.5.6 15:49:50", "Start Time", \
+                                                    "事件开始时间\nEvent start time");
+    StartTime->add_Specifition();
+    StartTime2 = new Specification(StartTime2_explain, ui->Historicalfailure_tableWidget, 1, 1, \
+                                                    "2023.5.6 15:48:18", "Start Time", \
+                                                    "事件开始时间\nEvent start time");
+    StartTime2->add_Specifition();
+    StartTime3 = new Specification(StartTime3_explain, ui->Historicalfailure_tableWidget, 2, 1, \
+                                                    "2023.5.6 15:39:3", "Start Time", \
+                                                    "事件开始时间\nEvent start time");
+    StartTime3->add_Specifition();
+    StartTime4 = new Specification(StartTime4_explain, ui->Historicalfailure_tableWidget, 3, 1, \
+                                                    "2023.5.6 15:39:3", "Start Time", \
+                                                    "事件开始时间\nEvent start time");
+    StartTime4->add_Specifition();
+    StartTime5 = new Specification(StartTime5_explain, ui->Historicalfailure_tableWidget, 4, 1, \
+                                                    "2023.5.6 15:39:3", "Start Time", \
+                                                    "事件开始时间\nEvent start time");
+    StartTime5->add_Specifition();
+    StartTime6 = new Specification(StartTime6_explain, ui->Historicalfailure_tableWidget, 5, 1, \
+                                                    "2023.5.6 15:21:56", "Start Time", \
+                                                    "事件开始时间\nEvent start time");
+    StartTime6->add_Specifition();
+    StartTime7 = new Specification(StartTime7_explain, ui->Historicalfailure_tableWidget, 6, 1, \
+                                                    "2023.5.6 15:21:38", "Start Time", \
+                                                    "事件开始时间\nEvent start time");
+    StartTime7->add_Specifition();
+    StartTime8 = new Specification(StartTime8_explain, ui->Historicalfailure_tableWidget, 7, 1, \
+                                                    "2023.5.6 15:21:38", "Start Time", \
+                                                    "事件开始时间\nEvent start time");
+    StartTime8->add_Specifition();
+    EndTime = new Specification(EndTime_explain, ui->Historicalfailure_tableWidget, 0, 2, \
+                                                    "-", "End Time", \
+                                                    "事件结束时间\nEvent end time");
+    EndTime->add_Specifition();
+    EndTime2 = new Specification(EndTime2_explain, ui->Historicalfailure_tableWidget, 1, 2, \
+                                                    "-", "End Time", \
+                                                    "事件结束时间\nEvent end time");
+    EndTime2->add_Specifition();
+    EndTime3 = new Specification(EndTime3_explain, ui->Historicalfailure_tableWidget, 2, 2, \
+                                                    "...", "End Time", \
+                                                    "事件结束时间\nEvent end time");
+    EndTime3->add_Specifition();
+    EndTime4 = new Specification(EndTime4_explain, ui->Historicalfailure_tableWidget, 3, 2, \
+                                                    "-", "End Time", \
+                                                    "事件结束时间\nEvent end time");
+    EndTime4->add_Specifition();
+    EndTime5 = new Specification(EndTime5_explain, ui->Historicalfailure_tableWidget, 4, 2, \
+                                                    "...", "End Time", \
+                                                    "事件结束时间\nEvent end time");
+    EndTime5->add_Specifition();
+    EndTime6 = new Specification(EndTime6_explain, ui->Historicalfailure_tableWidget, 5, 2, \
+                                                    "-", "End Time", \
+                                                    "事件结束时间\nEvent end time");
+    EndTime6->add_Specifition();
+    EndTime7 = new Specification(EndTime7_explain, ui->Historicalfailure_tableWidget, 6, 2, \
+                                                    "-", "End Time", \
+                                                    "事件结束时间\nEvent end time");
+    EndTime7->add_Specifition();
+    EndTime8 = new Specification(EndTime8_explain, ui->Historicalfailure_tableWidget, 7, 2, \
+                                                    "-", "End Time", \
+                                                    "事件结束时间\nEvent end time");
+    EndTime8->add_Specifition();
+    Describe = new Specification(Describe_explain, ui->Historicalfailure_tableWidget, 0, 3, \
+                                                    "CAN通信故障", "Description", \
+                                                    "事件描述\nEvent description");
+    Describe->add_Specifition();
+    Describe2 = new Specification(Describe2_explain, ui->Historicalfailure_tableWidget, 1, 3, \
+                                                    "CAN通信故障", "Description", \
+                                                    "事件描述\nEvent description");
+    Describe2->add_Specifition();
+    Describe3 = new Specification(Describe3_explain, ui->Historicalfailure_tableWidget, 2, 3, \
+                                                    "消防告警(高温告警)", "Description", \
+                                                    "事件描述\nEvent description");
+    Describe3->add_Specifition();
+    Describe4 = new Specification(Describe4_explain, ui->Historicalfailure_tableWidget, 3, 3, \
+                                                    "CAN通信故障", "Description", \
+                                                    "事件描述\nEvent description");
+    Describe4->add_Specifition();
+    Describe5 = new Specification(Describe5_explain, ui->Historicalfailure_tableWidget, 4, 3, \
+                                                    "电能表通信故障", "Description", \
+                                                    "事件描述\nEvent description");
+    Describe5->add_Specifition();
+    Describe6 = new Specification(Describe6_explain, ui->Historicalfailure_tableWidget, 5, 3, \
+                                                    "CAN通信故障", "Description", \
+                                                    "事件描述\nEvent description");
+    Describe6->add_Specifition();
+    Describe7 = new Specification(Describe7_explain, ui->Historicalfailure_tableWidget, 6, 3, \
+                                                    "消防告警(高温告警)", "Description", \
+                                                    "事件描述\nEvent description");
+    Describe7->add_Specifition();
+    Describe8 = new Specification(Describe8_explain, ui->Historicalfailure_tableWidget, 7, 3, \
+                                                    "电能表通信故障", "Description", \
+                                                    "事件描述\nEvent description");
+    Describe8->add_Specifition();
+}
+
+void MEGAWin::OperationLog()//操作日志
+{
+    QStringList Ope_headers;
+    Ope_headers.clear();
+    Ope_headers << tr("ModificationTime") << tr("RecordEvent");
+    ui->Operation_tableWidget->setColumnCount(Ope_headers.size());
+    ui->Operation_tableWidget->setRowCount(8);
+    ui->Operation_tableWidget->setHorizontalHeaderLabels(Ope_headers);
+    ui->Operation_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+//    ui->Operation_tableWidget->verticalHeader()->setVisible(false);//设置垂直头不可见
+    ui->Operation_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
+    ui->Operation_tableWidget->setShowGrid(true);//设置显示格子
+    ui->Operation_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+    ui->Operation_tableWidget->setEditTriggers(QAbstractItemView::SelectedClicked);//单机修改
+    ui->Operation_tableWidget->setColumnWidth(0,260);
+    ui->Operation_tableWidget->horizontalHeader()->setStretchLastSection(true);
+
+    ModificationTime = new Specification(ModificationTime_explain, ui->Operation_tableWidget, 0, 0, \
+                                                    "2023-05-12 11:32:45", "ModificationTime", \
+                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+    ModificationTime->add_Specifition();
+    ModificationTime2 = new Specification(ModificationTime2_explain, ui->Operation_tableWidget, 1, 0, \
+                                                    "2023-05-12 11:32:33", "ModificationTime", \
+                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+    ModificationTime2->add_Specifition();
+    ModificationTime3 = new Specification(ModificationTime3_explain, ui->Operation_tableWidget, 2, 0, \
+                                                    "2023-05-11 19:29:24", "ModificationTime", \
+                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+    ModificationTime3->add_Specifition();
+    ModificationTime4 = new Specification(ModificationTime4_explain, ui->Operation_tableWidget, 3, 0, \
+                                                    "2023-05-11 19:29:21", "ModificationTime", \
+                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+    ModificationTime4->add_Specifition();
+    ModificationTime5 = new Specification(ModificationTime5_explain, ui->Operation_tableWidget, 4, 0, \
+                                                    "2023-05-11 19:29:10", "ModificationTime", \
+                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+    ModificationTime5->add_Specifition();
+    ModificationTime6 = new Specification(ModificationTime6_explain, ui->Operation_tableWidget, 5, 0, \
+                                                    "2023-05-11 19:29:07", "ModificationTime", \
+                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+    ModificationTime6->add_Specifition();
+    ModificationTime7 = new Specification(ModificationTime7_explain, ui->Operation_tableWidget, 6, 0, \
+                                                    "2023-05-11 17:21:16", "ModificationTime", \
+                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+    ModificationTime7->add_Specifition();
+    ModificationTime8 = new Specification(ModificationTime8_explain, ui->Operation_tableWidget, 7, 0, \
+                                                    "2023-05-11 11:21:02", "ModificationTime", \
+                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+    ModificationTime8->add_Specifition();
+    ModificationTime9 = new Specification(ModificationTime9_explain, ui->Operation_tableWidget, 8, 0, \
+                                                    "2023-05-11 11:20:58", "ModificationTime", \
+                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+    ModificationTime9->add_Specifition();
+    ModificationTime10 = new Specification(ModificationTime10_explain, ui->Operation_tableWidget, 9, 0, \
+                                                    "2023-05-11 11:02:22", "ModificationTime", \
+                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+    ModificationTime10->add_Specifition();
+    ModificationTime11 = new Specification(ModificationTime11_explain, ui->Operation_tableWidget, 10, 0, \
+                                                    "2023-05-11 11:02:18", "ModificationTime", \
+                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+    ModificationTime11->add_Specifition();
+    ModificationTime12 = new Specification(ModificationTime12_explain, ui->Operation_tableWidget, 11, 0, \
+                                                    "2023-05-11 11:02:14", "ModificationTime", \
+                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+    ModificationTime12->add_Specifition();
+
+//    Specification *ModificationTime12;
+//    Specification *EventRecord;
 }
 
 void MEGAWin::PCS_Data()//PCS数据 绘制button

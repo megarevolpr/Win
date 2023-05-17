@@ -5,6 +5,7 @@
 #include <QComboBox>
 #include <QPair>
 #include <QList>
+#include <QStandardItemModel>
 #include "Menu.h"
 #include "msgbox.h"
 #include "Specification/Specification.h"
@@ -553,23 +554,122 @@ public:
         Specification *Full_P_signal;    //满功率信号
         Specification *Smoke_alarm_signal;    //烟感信号
         Specification *Hight_temp_signal;    //高温信号
-        /**********************Data report*************************/
-//        Specification *Dis_D;
-//        Specification *Dis_M;
-//        Specification *Dis_Y;
-//        Specification *Dis_T;
-//        Specification *Char_D;
-//        Specification *Char_M;
-//        Specification *Char_Y;
-//        Specification *Char_T;
-//        Specification *Daily_Usage;//日用量
-//        Specification *MonthlyUsage;
-//        Specification *AnnualUsage;
-//        Specification *TotalPower;
-//        Specification *M_Decrease;//月份减
-//        Specification *Y_Decrease;
-//        Specification *M_Plus;
-//        Specification *Y_Plus;
+        /**********************历史记录*************************/
+        QPushButton *Grade_explain;
+        QPushButton *Grade2_explain;
+        QPushButton *Grade3_explain;
+        QPushButton *Grade4_explain;
+        QPushButton *Grade5_explain;
+        QPushButton *Grade6_explain;
+        QPushButton *Grade7_explain;
+        QPushButton *Grade8_explain;
+        QPushButton *StartTime_explain;
+        QPushButton *StartTime2_explain;
+        QPushButton *StartTime3_explain;
+        QPushButton *StartTime4_explain;
+        QPushButton *StartTime5_explain;
+        QPushButton *StartTime6_explain;
+        QPushButton *StartTime7_explain;
+        QPushButton *StartTime8_explain;
+        QPushButton *EndTime_explain;
+        QPushButton *EndTime2_explain;
+        QPushButton *EndTime3_explain;
+        QPushButton *EndTime4_explain;
+        QPushButton *EndTime5_explain;
+        QPushButton *EndTime6_explain;
+        QPushButton *EndTime7_explain;
+        QPushButton *EndTime8_explain;
+        QPushButton *Describe_explain;
+        QPushButton *Describe2_explain;
+        QPushButton *Describe3_explain;
+        QPushButton *Describe4_explain;
+        QPushButton *Describe5_explain;
+        QPushButton *Describe6_explain;
+        QPushButton *Describe7_explain;
+        QPushButton *Describe8_explain;
+        Specification *Grade;
+        Specification *Grade2;
+        Specification *Grade3;
+        Specification *Grade4;
+        Specification *Grade5;
+        Specification *Grade6;
+        Specification *Grade7;
+        Specification *Grade8;
+        Specification *StartTime;
+        Specification *StartTime2;
+        Specification *StartTime3;
+        Specification *StartTime4;
+        Specification *StartTime5;
+        Specification *StartTime6;
+        Specification *StartTime7;
+        Specification *StartTime8;
+        Specification *EndTime;
+        Specification *EndTime2;
+        Specification *EndTime3;
+        Specification *EndTime4;
+        Specification *EndTime5;
+        Specification *EndTime6;
+        Specification *EndTime7;
+        Specification *EndTime8;
+        Specification *Describe;
+        Specification *Describe2;
+        Specification *Describe3;
+        Specification *Describe4;
+        Specification *Describe5;
+        Specification *Describe6;
+        Specification *Describe7;
+        Specification *Describe8;
+        /**********************操作日志*************************/
+        QPushButton *ModificationTime_explain;
+        QPushButton *ModificationTime2_explain;
+        QPushButton *ModificationTime3_explain;
+        QPushButton *ModificationTime4_explain;
+        QPushButton *ModificationTime5_explain;
+        QPushButton *ModificationTime6_explain;
+        QPushButton *ModificationTime7_explain;
+        QPushButton *ModificationTime8_explain;
+        QPushButton *ModificationTime9_explain;
+        QPushButton *ModificationTime10_explain;
+        QPushButton *ModificationTime11_explain;
+        QPushButton *ModificationTime12_explain;
+        QPushButton *EventRecord_explain;
+        QPushButton *EventRecord2_explain;
+        QPushButton *EventRecord3_explain;
+        QPushButton *EventRecord4_explain;
+        QPushButton *EventRecord5_explain;
+        QPushButton *EventRecord6_explain;
+        QPushButton *EventRecord7_explain;
+        QPushButton *EventRecord8_explain;
+        QPushButton *EventRecord9_explain;
+        QPushButton *EventRecord10_explain;
+        QPushButton *EventRecord11_explain;
+        QPushButton *EventRecord12_explain;
+
+        Specification *ModificationTime;
+        Specification *ModificationTime2;
+        Specification *ModificationTime3;
+        Specification *ModificationTime4;
+        Specification *ModificationTime5;
+        Specification *ModificationTime6;
+        Specification *ModificationTime7;
+        Specification *ModificationTime8;
+        Specification *ModificationTime9;
+        Specification *ModificationTime10;
+        Specification *ModificationTime11;
+        Specification *ModificationTime12;
+        Specification *EventRecord;
+        Specification *EventRecord2;
+        Specification *EventRecord3;
+        Specification *EventRecord4;
+        Specification *EventRecord5;
+        Specification *EventRecord6;
+        Specification *EventRecord7;
+        Specification *EventRecord8;
+        Specification *EventRecord9;
+        Specification *EventRecord10;
+        Specification *EventRecord11;
+        Specification *EventRecord12;
+
 
         void UIPageInit();//初始化界面
         void VariableInit();//初始化变量
@@ -597,8 +697,6 @@ public:
         void RTData_Anologe();//实时模拟量数据
         void RTData_Status();//实时状态量数据
 private:
-        void DataReport();//数据报表
-        void ExportData();//导出数据
         void History();//历史记录
         void OperationLog();//操作日志
         void PCS_Data();//PCS数据 绘制button
@@ -618,6 +716,7 @@ private:
         void RTDataDisplay();
         void Information_tbnt_released(); //系统信息槽
         void GeneralParam_tbnt_released();  //一般参数槽
+        void PCS_Alarm_information_table();  //PCS故障信息表
 
 private slots:
     void onTimerOut();
@@ -652,6 +751,8 @@ private slots:
     void AdvancedSetup_btn_clicked();//高级
 
     void on_System_tabWidget_currentChanged(int index);
+
+    void Data_report_clicked(int nid);
 
 private:
     Ui::MEGAWin *ui;
