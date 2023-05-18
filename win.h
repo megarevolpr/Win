@@ -213,7 +213,20 @@ public:
         Specification *System_upgrade;
         Specification *Sounds;
         Specification *DryContact;
+        /***************************系统信息**************************/
+        QPushButton *Manufacturer_name_explain;
+        QPushButton *MonitoringVersion_explain;
+        QPushButton *SysProtocol_Version_explain;
+        QPushButton *ConverterVersion_explain;
+        QPushButton *CPLD_Version_explain;
+        QPushButton *SN_explain;
 
+        Specification *Manufacturer_name;
+        Specification *MonitoringVersion;
+        Specification *SysProtocol_Version;
+        Specification *ConverterVersion;
+        Specification *CPLD_Version;
+        Specification *SN;
         /***************************系统参数**************************/
         QPushButton *Change_rate_of_power_explain;
         QPushButton *Grid_frequency_upper_limit_explain;
@@ -706,6 +719,7 @@ private:
         void ParameterSet();//系统设置 绘制button
         void BetterySetup();//电池设置 绘制button
         void AutoOperation();//自动运行 绘制button
+        void SystemMessages();//系统信息 绘制button
 
         void FunctionSet();//功能设置 绘制button
         void SystemParameter();//系统参数 绘制button
@@ -753,7 +767,7 @@ private slots:
     void on_System_tabWidget_currentChanged(int index);
     void BatteryData_clicked(int nid);//电池数据
     void Data_report_clicked(int nid);//数据报表
-
+    void SystemlnformationVer_clicked(int nid);//系统信息
 private:
     Ui::MEGAWin *ui;
 
@@ -762,8 +776,9 @@ private:
     QTime *current_time;
     QButtonGroup *pButton_History;
     QButtonGroup *pButton_BatteryData;
-
+    QButtonGroup *pButton_Version;
 
 };
+
 
 #endif // MEGAWIN_H

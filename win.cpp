@@ -264,6 +264,22 @@ void MEGAWin::MemoryAllocation()
     Power16_explain= new QPushButton;Power17_explain= new QPushButton;Power18_explain= new QPushButton;
     Power19_explain= new QPushButton;Power20_explain= new QPushButton;
 
+    /***************************系统消息**********************************/
+    pButton_Version = new QButtonGroup();
+    pButton_Version->addButton(ui->interface_explain_btn,0);
+    pButton_Version->addButton(ui->port_explain_btn,1);
+    pButton_Version->addButton(ui->ip_explain_btn,2);
+    pButton_Version->addButton(ui->netmask_explain_btn,3);
+    pButton_Version->addButton(ui->pushButton,4);
+    pButton_Version->addButton(ui->pushButton_22,5);
+    pButton_Version->addButton(ui->ok,6);
+
+    Manufacturer_name_explain   = new QPushButton;
+    MonitoringVersion_explain   = new QPushButton;
+    SysProtocol_Version_explain = new QPushButton;
+    ConverterVersion_explain    = new QPushButton;
+    CPLD_Version_explain        = new QPushButton;
+    SN_explain                  = new QPushButton;
     /***************************高级设置**********************************/
     AdvancedSetup_btn = new QPushButton;                //高级设置
 
@@ -556,6 +572,7 @@ void MEGAWin::SystemSettingPage()
     RunTimeSet_tab();
     /*历史记录设置表*/
     History_tab();//历史记录设置表初始化
+    Information_tbnt_released();
 }
 
 void MEGAWin::LCDSetting()  //LCD标签初始化和定时器设置
@@ -795,9 +812,7 @@ void MEGAWin::RTDataDisplay()
 
 void MEGAWin::Information_tbnt_released()//系统信息槽
 {
-    //ui->stackedWidget->setCurrentWidget(ui->SystemInformation_page);
-
-    ui->EquipmentInfor_tableWidget->clearContents();
+//    ui->EquipmentInfor_tableWidget->clearContents();
     ui->EquipmentInfor_tableWidget->setColumnCount(2);
     ui->EquipmentInfor_tableWidget->setRowCount(9);
     ui->EquipmentInfor_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
@@ -814,20 +829,23 @@ void MEGAWin::Information_tbnt_released()//系统信息槽
     ui->EquipmentInfor_tableWidget->setHorizontalHeaderLabels(List4);
     ui->EquipmentInfor_tableWidget->setColumnWidth(0,230);
     ui->EquipmentInfor_tableWidget->horizontalHeader()->setStretchLastSection(1);//自动占用剩余空间
-    QStringList Display_Par4;
-    Display_Par4 << tr("Manufacturer name") << tr("Monitoring software version") << tr("Protocol version") << tr("Converter software version")
-                << tr("CPLD software version") << tr("SN:");//<< tr("Converter type")
-    for(int i = 0; i < Display_Par4.size(); i++)
-    {
-        ui->EquipmentInfor_tableWidget->setItem(i, 0, new QTableWidgetItem(QString(Display_Par4.at(i))));
-    }
+
+    SystemMessages();//系统信息 绘制button
+
+//    QStringList Display_Par4;
+//    Display_Par4 << tr("Manufacturer name") << tr("Monitoring software version") << tr("Protocol version") << tr("Converter software version")
+//                << tr("CPLD software version") << tr("SN:");//<< tr("Converter type")
+//    for(int i = 0; i < Display_Par4.size(); i++)
+//    {
+//        ui->EquipmentInfor_tableWidget->setItem(i, 0, new QTableWidgetItem(QString(Display_Par4.at(i))));
+//    }
+
 
 
 //    QString STR_PRO;
 //    QString STR_DSP;
 //    QString STR_CPLD;
 //    QString SNCODE;
-
 //    ui->EquipmentInfor_tableWidget->setItem(0, 1, new QTableWidgetItem(QString(tr("PCS"))));
 //    ui->EquipmentInfor_tableWidget->item(0, 1)->setTextAlignment(Qt::AlignCenter);
 //    ui->EquipmentInfor_tableWidget->setItem(1, 1, new QTableWidgetItem("V103B500D004"));
@@ -854,6 +872,9 @@ void MEGAWin::GeneralParam_tbnt_released()  //一般参数槽
  ************************************************************************/
 void MEGAWin::PCS_Alarm_information_table()
 {
+
+
+
     ui->RTAlarm_Data_page->setRowHeight(0, 110);
     QStringList RTAlarm_List;
     RTAlarm_List << tr("逆变器过流\nInverter overcurrent") << tr("一般故障\nGeneral failure") \
@@ -1322,7 +1343,7 @@ void MEGAWin::LinkRelationship()
 
     connect(pButton_History, SIGNAL(buttonClicked(int)), this,SLOT(Data_report_clicked(int)));//数据报表
     connect(pButton_BatteryData, SIGNAL(buttonClicked(int)), this,SLOT(BatteryData_clicked(int)));//电池数据
-
+    connect(pButton_Version, SIGNAL(buttonClicked(int)), this,SLOT(SystemlnformationVer_clicked(int)));//
 }
 
 /******************************************************************************
@@ -1536,15 +1557,17 @@ void MEGAWin::My_menuAction(int Index)
         ui->System_tabWidget->setCurrentIndex(0);
         break;
     case MACHINECLOSE:
-
+        QMessageBox::question(this, "Turn off"\
+                              ,"这是变流器关闭开关，点击后开关闭变流器\nThis is the converter off switch. Click to turn on and off the converter", "OK");
         break;
     case MACHINESTANDBY:
-
+        QMessageBox::question(this, "Stand-by"\
+                              ,"这是变流器待机开关，点击后变流器进入待机状态\nThis is the converter standby switch. Click the converter to enter the standby state", "OK");
         break;
     case MACHINEOPEN:
-
+        QMessageBox::question(this, "Turn on"\
+                              ,"这是变流器打开开关,点击后开启变流器\nThis is the converter on switch, click to turn on the converter", "OK");
         break;
-
     default:
         break;
     }
@@ -1611,6 +1634,7 @@ void MEGAWin::on_Load_clicked() //显示负载端实时数据
 
 void MEGAWin::RTAlarm_tbtn_clicked()
 {
+
     ui->stackedWidget->setCurrentWidget(ui->Status_page);
     ui->Run_tabWidget->setCurrentWidget(ui->RTAlarm_page);
 
@@ -1703,7 +1727,7 @@ void MEGAWin::combox_ControlMode_change()
 void MEGAWin::on_System_tabWidget_currentChanged(int index)
 {
     GeneralParam_tbnt_released();
-    Information_tbnt_released();
+//    Information_tbnt_released();
 }
 
 void MEGAWin::Data_report_clicked(int nid)
@@ -1791,6 +1815,42 @@ void MEGAWin::Data_report_clicked(int nid)
         break;
     }
 
+}
+//系统信息点击槽
+void MEGAWin::SystemlnformationVer_clicked(int nid)
+{
+    switch (nid) {
+    case 0:
+        QMessageBox::question(this, "Interface"\
+                              ,"这是接口号，默认eth0\nThis is the interface number, which defaults to eth0", "OK");
+        break;
+    case 1:
+        QMessageBox::question(this, "Port"\
+                              ,"这是端口号，默认502\nThis is the port number, default 502", "OK");
+        break;
+    case 2:
+        QMessageBox::question(this, "Ip"\
+                              ,"这是IP地址，默认192.168.1.100\nThis is the IP address. The default is 192.168.1.100", "OK");
+        break;
+    case 3:
+        QMessageBox::question(this, "Netmask"\
+                              ,"这是子网掩码，255.255.255.0\nThis is the subnet mask, 255.255.255.0", "OK");
+        break;
+    case 4:
+        QMessageBox::question(this, "Gateway"\
+                              ,"这是网关，默,192.168.1.1\nThis is the gateway, Mer,192.168.1.1", "OK");
+        break;
+    case 5:
+        QMessageBox::question(this, "Serber ip"\
+                              ,"这是服务器IP，默认192.168.1.200\nThis is the server IP address. The default is 192.168.1.200", "OK");
+        break;
+    case 6:
+        QMessageBox::question(this, "Apply and Restart system"\
+                              ,"这是应用并重启系统，点击后重启系统\nThis is apply and restart the system, click and restart the system", "OK");
+        break;
+    default:
+        break;
+    }
 }
 
 void MEGAWin::History()//历史记录
@@ -1941,35 +2001,35 @@ void MEGAWin::History()//历史记录
                                                     "事件结束时间\nEvent end time");
     EndTime8->add_Specifition();
     Describe = new Specification(Describe_explain, ui->Historicalfailure_tableWidget, 0, 3, \
-                                                    "CAN通信故障", "Description", \
+                                                    "CAN communication failure", "Description", \
                                                     "事件描述\nEvent description");
     Describe->add_Specifition();
     Describe2 = new Specification(Describe2_explain, ui->Historicalfailure_tableWidget, 1, 3, \
-                                                    "CAN通信故障", "Description", \
+                                                    "CAN communication failure", "Description", \
                                                     "事件描述\nEvent description");
     Describe2->add_Specifition();
     Describe3 = new Specification(Describe3_explain, ui->Historicalfailure_tableWidget, 2, 3, \
-                                                    "消防告警(高温告警)", "Description", \
+                                                    "Fire alarm (High temp. alarm)", "Description", \
                                                     "事件描述\nEvent description");
     Describe3->add_Specifition();
     Describe4 = new Specification(Describe4_explain, ui->Historicalfailure_tableWidget, 3, 3, \
-                                                    "CAN通信故障", "Description", \
+                                                    "CAN communication failure", "Description", \
                                                     "事件描述\nEvent description");
     Describe4->add_Specifition();
     Describe5 = new Specification(Describe5_explain, ui->Historicalfailure_tableWidget, 4, 3, \
-                                                    "电能表通信故障", "Description", \
+                                                    "PowerMeter Comm fualttLead-acid abnormal", "Description", \
                                                     "事件描述\nEvent description");
     Describe5->add_Specifition();
     Describe6 = new Specification(Describe6_explain, ui->Historicalfailure_tableWidget, 5, 3, \
-                                                    "CAN通信故障", "Description", \
+                                                    "CAN communication failure", "Description", \
                                                     "事件描述\nEvent description");
     Describe6->add_Specifition();
     Describe7 = new Specification(Describe7_explain, ui->Historicalfailure_tableWidget, 6, 3, \
-                                                    "消防告警(高温告警)", "Description", \
+                                                    "Fire alarm (High temp. alarm)", "Description", \
                                                     "事件描述\nEvent description");
     Describe7->add_Specifition();
     Describe8 = new Specification(Describe8_explain, ui->Historicalfailure_tableWidget, 7, 3, \
-                                                    "电能表通信故障", "Description", \
+                                                    "PowerMeter Comm fualttLead-acid abnormal", "Description", \
                                                     "事件描述\nEvent description");
     Describe8->add_Specifition();
 }
@@ -2038,51 +2098,51 @@ void MEGAWin::OperationLog()//操作日志
                                                     "系统设置修改时的时间\nTime when the system Settings are modified");
     ModificationTime12->add_Specifition();
     EventRecord = new Specification(EventRecord_explain, ui->Operation_tableWidget, 0, 1, \
-                                                    "功率控制类型：正常模式->CP_N&&P", "RecordEvent", \
+                                                    "Power control type：CP_P->CP_N&&P", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord->add_Specifition();
     EventRecord2 = new Specification(EventRecord2_explain, ui->Operation_tableWidget, 1, 1, \
-                                                    "功率控制类型：CP_N&&P->正常模式", "RecordEvent", \
+                                                    "Power control type：CP_N&&P->CP_P", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord2->add_Specifition();
     EventRecord3 = new Specification(EventRecord3_explain, ui->Operation_tableWidget, 2, 1, \
-                                                    "电网频率上限：0.2->3", "RecordEvent", \
+                                                    "Grid Fre Upper limit：0.2->3", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord3->add_Specifition();
     EventRecord4 = new Specification(EventRecord4_explain, ui->Operation_tableWidget, 3, 1, \
-                                                    "电网频率上限：3->0.2", "RecordEvent", \
+                                                    "Grid Fre Upper limit：3->0.2", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord4->add_Specifition();
     EventRecord5 = new Specification(EventRecord5_explain, ui->Operation_tableWidget, 4, 1, \
-                                                    "电压保护下限：-10->-15", "RecordEvent", \
+                                                    "Voltage protection Lower limit：-10->-15", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord5->add_Specifition();
     EventRecord6 = new Specification(EventRecord6_explain, ui->Operation_tableWidget, 5, 1, \
-                                                    "电压保护下限：-15->-10", "RecordEvent", \
+                                                    "Voltage protection Lower limit：-15->-10", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord6->add_Specifition();
     EventRecord7 = new Specification(EventRecord7_explain, ui->Operation_tableWidget, 6, 1, \
-                                                    "操作模式：受控削峰填谷->削峰填谷", "RecordEvent", \
+                                                    "Operation mode：Prevent countercurrnet->Peak valley", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord7->add_Specifition();
     EventRecord8 = new Specification(EventRecord8_explain, ui->Operation_tableWidget, 7, 1, \
-                                                    "操作模式：UPS->受控削峰填谷", "RecordEvent", \
+                                                    "Operation mode：UPS->Prevent countercurrnet", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord8->add_Specifition();
     EventRecord9 = new Specification(EventRecord9_explain, ui->Operation_tableWidget, 8, 1, \
-                                                    "操作模式：手动->UPS", "RecordEvent", \
+                                                    "Operation mode：Manual->UPS", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord9->add_Specifition();
     EventRecord10 = new Specification(EventRecord10_explain, ui->Operation_tableWidget, 9, 1, \
-                                                    "操作模式：削峰填谷->手动", "RecordEvent", \
+                                                    "Operation mode：Peak valley->Manual", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord10->add_Specifition();
     EventRecord11 = new Specification(EventRecord11_explain, ui->Operation_tableWidget, 10, 1, \
-                                                    "并离网：离网->自动", "RecordEvent", \
+                                                    "Inv ON/Off-Grid：Off->automatic", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord11->add_Specifition();
     EventRecord12 = new Specification(EventRecord12_explain, ui->Operation_tableWidget, 11, 1, \
-                                                    "并离网：并网->离网", "RecordEvent", \
+                                                    "Inv ON/Off-Grid：automatic->Off", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord12->add_Specifition();
 }
@@ -2175,9 +2235,10 @@ void MEGAWin::BatteryData_clicked(int nid)//电池数据
         QMessageBox::question(this, "Warning1"\
                               ,"这是一级告警，一级告警时显示黄色\nThis is a Level 1 alarm. The Level 1 alarm is yellow", "OK");
         break;
+    default:
+        break;
     }
 }
-
 void MEGAWin::PCS_Data()//PCS数据 绘制button
 {
     PCS_vol_AB = new Specification(PCS_vol_AB_explain, ui->Converter_Tab, 0, 1, \
@@ -2342,91 +2403,91 @@ void MEGAWin::Load_Data()//负载数据 绘制button
 void MEGAWin::PCS_State()//PCS状态 绘制button
 {
     DC_input_Breaker = new Specification(DC_input_Breaker_explain, ui->RTState_Bypass_Tab, 0, 1, \
-                                            "闭合", "DC input Breaker", \
+                                            "Close", "DC input Breaker", \
                                             "这是直流输入断路器，用于判断PCS的运行状态\nThis is the DC input circuit breaker used to judge the operating status of PCS");
     DC_input_Breaker->add_Specifition();
     DC_Cont = new Specification(DC_Cont_explain, ui->RTState_Bypass_Tab, 1, 1, \
-                                            "闭合", "DC contactor", \
+                                            "Close", "DC contactor", \
                                             "这是直流接触器，用于判断PCS的运行状态\nThis is a DC contactor used to judge the running state of PCS");
     DC_Cont->add_Specifition();
     Output_Cont = new Specification(Output_Cont_explain, ui->RTState_Bypass_Tab, 2, 1, \
-                                            "闭合", "Output contactor", \
+                                            "Close", "Output contactor", \
                                             "这是输出接触器，用于判断PCS的运行状态\nThis is the output contactor used to judge the running status of PCS");
     Output_Cont->add_Specifition();
     Output_Breaker = new Specification(Output_Breaker_explain, ui->RTState_Bypass_Tab, 3, 1, \
-                                            "闭合", "Output Breaker", \
+                                            "Close", "Output Breaker", \
                                             "这是输出断路器，用于判断PCS的运行状态\nThis is the output circuit breaker used to judge the operating status of PCS");
     Output_Breaker->add_Specifition();
     Grid_Cont = new Specification(Grid_Cont_explain, ui->RTState_Bypass_Tab, 4, 1, \
-                                            "闭合", "Grid contactor", \
+                                            "Close", "Grid contactor", \
                                             "这是电网接触器，用于判断PCS的运行状态\nThis is the power grid contactor, which is used to judge the running status of PCS");
     Grid_Cont->add_Specifition();
     Grid_Breaker = new Specification(Grid_Breaker_explain, ui->RTState_Bypass_Tab, 5, 1, \
-                                            "闭合", "Grid Breaker", \
+                                            "Close", "Grid Breaker", \
                                             "这是电网断路器，用于判断PCS的运行状态\nThis is the power grid circuit breaker, used to judge the operating status of PCS");
     Grid_Breaker->add_Specifition();
     MB_Breaker = new Specification(MB_Breaker_explain, ui->RTState_Bypass_Tab, 6, 1, \
-                                            "闭合", "Maintenance Bypass Breaker", \
+                                            "Close", "Maintenance Bypass Breaker", \
                                             "这是维修旁路，用于判断PCS的运行状态\nThis is the maintenance bypass used to judge the operating status of PCS");
     MB_Breaker->add_Specifition();
     converter_available = new Specification(converter_available_explain, ui->RTState_Bypass_Tab, 0, 3, \
-                                            "禁止", "converter available", \
+                                            "Disable", "converter available", \
                                             "这是变流器使能，用于判断PCS的运行状态\nThis is the converter enable, which is used to judge the running status of PCS");
     converter_available->add_Specifition();
     DC_Soft_start = new Specification(DC_Soft_start_explain, ui->RTState_Bypass_Tab, 1, 3, \
-                                            "未启动", "DC Soft start", \
+                                            "Not starting", "DC Soft start", \
                                             "这是直流软启动，用于判断PCS的运行状态\nThis is DC soft startup, which is used to judge the running status of PCS");
     DC_Soft_start->add_Specifition();
     converter_status = new Specification(converter_status_explain, ui->RTState_Bypass_Tab, 2, 3, \
-                                            "关闭", "converter status", \
+                                            "Shut down", "converter status", \
                                             "这是变流器状态，用于判断PCS的运行状态\nThis is the status of the converter, which is used to judge the running status of PCS");
     converter_status->add_Specifition();
     Reactive_P_Regulation = new Specification(Reactive_P_Regulation_explain, ui->RTState_Bypass_Tab, 3, 3, \
-                                            "夜间SVG模式", "Reactive Power Regulation", \
+                                            "SVG", "Reactive Power Regulation", \
                                             "这是无功调节方式，用于判断PCS的运行状态\nThis is the reactive power adjustment mode, which is used to judge the running state of PCS");
     Reactive_P_Regulation->add_Specifition();
     Sleep_mode = new Specification(Sleep_mode_explain, ui->RTState_Bypass_Tab, 4, 3, \
-                                            "未休眠", "Sleep mode", \
+                                            "", "Sleep mode", \
                                             "这是休眠模式，用于判断PCS的运行状态\nThis is the sleep mode used to judge the running status of PCS");
     Sleep_mode->add_Specifition();
     LVRT = new Specification(LVRT_explain, ui->RTState_Bypass_Tab, 5, 3, \
-                                            "无", "LVRT", \
+                                            "LVRT", "LVRT", \
                                             "这是LVRT，用于判断PCS的运行状态\nThis is LVRT, which is used to judge the running status of PCS");
     LVRT->add_Specifition();
     Generator_signal = new Specification(Generator_signal_explain, ui->RTState_Bypass_Tab, 0, 5, \
-                                            "使能", "Generator signal", \
+                                            "Enable", "Generator signal", \
                                             "这是柴发信号，用于判断PCS的运行状态\nThis is the Chai signal used to judge the running status of PCS");
     Generator_signal->add_Specifition();
     Reserve = new Specification(Reserve_explain, ui->RTState_Bypass_Tab, 1, 5, \
-                                            "禁止", "Reserve", \
+                                            "Disable", "Reserve", \
                                             "这是保留位\nThis is the reserved bit");
     Reserve->add_Specifition();
     Reserve2 = new Specification(Reserve2_explain, ui->RTState_Bypass_Tab, 2, 5, \
-                                            "使能", "Reserve2", \
+                                            "Enable", "Reserve2", \
                                             "这是保留位\nThis is the reserved bit");
     Reserve2->add_Specifition();
     EPO_Cont_signal1 = new Specification(EPO_Cont_signal1_explain, ui->RTState_Bypass_Tab, 3, 5, \
-                                            "禁止", "EPO_Cont signal1", \
+                                            "Disable", "EPO_Cont signal1", \
                                             "这是EPO节点信号，用于判断PCS的运行状态\nThis is the EPO node signal, which is used to judge the running status of PCS");
     EPO_Cont_signal1->add_Specifition();
     EPO_Cont_signal2 = new Specification(EPO_Cont_signal2_explain, ui->RTState_Bypass_Tab, 4, 5, \
-                                            "禁止", "EPO_Cont signal2", \
+                                            "Disable", "EPO_Cont signal2", \
                                             "这是EPO节点信号2，用于判断PCS的运行状态\nThis is EPO node signal 2, which is used to judge the running status of PCS");
     EPO_Cont_signal2->add_Specifition();
     Access_signal = new Specification(Access_signal_explain, ui->RTState_Bypass_Tab, 5, 5, \
-                                            "禁止", "Access_signal", \
+                                            "Disable", "Access_signal", \
                                             "这是门禁信号，用于判断PCS的运行状态\nThis is the access signal, which is used to judge the running state of PCS");
     Access_signal->add_Specifition();
     Full_P_signal = new Specification(Full_P_signal_explain, ui->RTState_Bypass_Tab, 6, 5, \
-                                            "禁止", "Full_P_signal", \
+                                            "Disable", "Full_P_signal", \
                                             "这是满功率信号，用于判断PCS的运行状态\nThis is the full power signal, which is used to judge the running status of PCS");
     Full_P_signal->add_Specifition();
     Smoke_alarm_signal = new Specification(Smoke_alarm_signal_explain, ui->RTState_Bypass_Tab, 7, 5, \
-                                            "禁止", "Smoke alarm signal", \
+                                            "Disable", "Smoke alarm signal", \
                                             "这是烟雾告警信号，用于判断PCS的运行状态\nThis is a smoke alarm signal used to judge the running status of PCS");
     Smoke_alarm_signal->add_Specifition();
     Hight_temp_signal = new Specification(Hight_temp_signal_explain, ui->RTState_Bypass_Tab, 8, 5, \
-                                            "禁止", "Hight temp signal", \
+                                            "Disable", "Hight temp signal", \
                                             "这是高温信号，用于判断PCS的运行状态\nThis is the high temperature signal, which is used to judge the running status of PCS");
     Hight_temp_signal->add_Specifition();
 }
@@ -2681,6 +2742,34 @@ void MEGAWin::AutoOperation()//自动运行 绘制button
         }
     }
 
+}
+
+void MEGAWin::SystemMessages()//系统信息 绘制button
+{
+    Manufacturer_name = new Specification(Manufacturer_name_explain, ui->EquipmentInfor_tableWidget, 0, 1, \
+                                     "PCS", "Manufacturer name", \
+                                     "这是厂家名称\nThis is the name of the manufacturer.");
+    Manufacturer_name->add_Specifition();
+    MonitoringVersion = new Specification(MonitoringVersion_explain, ui->EquipmentInfor_tableWidget, 1, 1, \
+                                     "V103B500D004", "Monitoring software version", \
+                                     "这是监控版本\nThis is the name of the manufacturer.");
+    MonitoringVersion->add_Specifition();
+    SysProtocol_Version = new Specification(SysProtocol_Version_explain, ui->EquipmentInfor_tableWidget, 2, 1, \
+                                     "V001B001D001", "Manufacturer name", \
+                                     "这是协议版本号\nThis is the name of the manufacturer.");
+    SysProtocol_Version->add_Specifition();
+    ConverterVersion = new Specification(ConverterVersion_explain, ui->EquipmentInfor_tableWidget, 3, 1, \
+                                     "V105B500D008", "Manufacturer name", \
+                                     "这是变流器软件版本\nThis is the name of the manufacturer.");
+    ConverterVersion->add_Specifition();
+    CPLD_Version = new Specification(CPLD_Version_explain, ui->EquipmentInfor_tableWidget, 4, 1, \
+                                     "V001B001D000", "Manufacturer name", \
+                                     "这是CPLD软件版本\nThis is the name of the manufacturer.");
+    CPLD_Version->add_Specifition();
+    SN = new Specification(SN_explain, ui->EquipmentInfor_tableWidget, 5, 1, \
+                                     "F12200000001", "Manufacturer name", \
+                                     "这是SN,即产品序列号\nThis is the name of the manufacturer.");
+    SN->add_Specifition();
 }
 
 void MEGAWin::FunctionSet()//功能设置绘制button

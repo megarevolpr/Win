@@ -147,7 +147,7 @@ color: rgb(255, 255, 255);</string>
           </size>
          </property>
          <property name="currentIndex">
-          <number>4</number>
+          <number>5</number>
          </property>
          <widget class="QWidget" name="UI_Parameter_page">
           <property name="sizePolicy">
@@ -2534,7 +2534,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">
@@ -3608,7 +3608,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
        <item row="0" column="0">
         <widget class="QTabWidget" name="Run_tabWidget">
          <property name="currentIndex">
-          <number>3</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="RTData_page">
           <property name="minimumSize">
@@ -6298,6 +6298,9 @@ enable</string>
                           <string>Discharge 
 enable</string>
                          </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
                         </widget>
                        </item>
                        <item>
@@ -6376,7 +6379,7 @@ enable</string>
        <item row="0" column="0">
         <widget class="QTabWidget" name="Record_tabWidget">
          <property name="currentIndex">
-          <number>0</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="DataReport_page">
           <attribute name="title">
@@ -7372,20 +7375,6 @@ background-color: rgb(255, 0, 0);</string>
            </layout>
           </widget>
          </widget>
-         <widget class="QWidget" name="HistoryRecord_page">
-          <attribute name="title">
-           <string>History Record</string>
-          </attribute>
-          <layout class="QGridLayout" name="gridLayout_12">
-           <item row="0" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_18">
-             <item>
-              <widget class="QTableWidget" name="Historicalfailure_tableWidget"/>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </widget>
          <widget class="QWidget" name="OperationLog_page">
           <attribute name="title">
            <string>Operation Log</string>
@@ -7395,6 +7384,20 @@ background-color: rgb(255, 0, 0);</string>
             <layout class="QHBoxLayout" name="horizontalLayout_19">
              <item>
               <widget class="QTableWidget" name="Operation_tableWidget"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="HistoryRecord_page">
+          <attribute name="title">
+           <string>History Record</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_12">
+           <item row="0" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_18">
+             <item>
+              <widget class="QTableWidget" name="Historicalfailure_tableWidget"/>
              </item>
             </layout>
            </item>
@@ -8797,6 +8800,81 @@ B1 - A1 ≥ 30 %
                <height>381</height>
               </rect>
              </property>
+             <row>
+              <property name="text">
+               <string>新建行</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>新建行</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>新建行</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>新建行</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>新建行</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>新建行</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>新建列</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>新建列</string>
+              </property>
+             </column>
+             <item row="0" column="0">
+              <property name="text">
+               <string>Manufacturer name</string>
+              </property>
+             </item>
+             <item row="0" column="1">
+              <property name="text">
+               <string/>
+              </property>
+             </item>
+             <item row="1" column="0">
+              <property name="text">
+               <string>Monitoring software version</string>
+              </property>
+             </item>
+             <item row="2" column="0">
+              <property name="text">
+               <string>Protocol version</string>
+              </property>
+             </item>
+             <item row="3" column="0">
+              <property name="text">
+               <string>Converter software version</string>
+              </property>
+             </item>
+             <item row="4" column="0">
+              <property name="text">
+               <string>CPLD software version</string>
+              </property>
+             </item>
+             <item row="5" column="0">
+              <property name="text">
+               <string>SN:</string>
+              </property>
+             </item>
             </widget>
            </widget>
           </item>
