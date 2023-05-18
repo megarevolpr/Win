@@ -6,7 +6,7 @@
 #include <QString>
 
 typedef struct{
-
+    QWidget *parent;
     QPushButton *explain_btn;
     QTableWidget *target_tab;
     int row;

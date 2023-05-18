@@ -3,9 +3,10 @@
 #include <QMessageBox>
 #include <win.h>
 
-Specification::Specification(QPushButton *button, QTableWidget *tableWidget,
+Specification::Specification(QWidget *parent,QPushButton *button, QTableWidget *tableWidget,
                              int r, int col, QString val, QString title, QString text)
 {
+    tab.parent = parent;
     tab.explain_btn = button;
     tab.target_tab = tableWidget;
     tab.row = r;
@@ -30,6 +31,6 @@ void Specification::add_Specifition()
 
 void Specification::explain_btn_clicked()
 {
-    QMessageBox::question(this , tab.explain_title, tab.specification_text, "OK");
+    QMessageBox::question(tab.parent , tab.explain_title, tab.specification_text, "OK");
 }
 

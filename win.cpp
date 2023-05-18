@@ -1904,131 +1904,131 @@ void MEGAWin::History()//历史记录
     Describe7_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
     Describe8_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
 
-    Grade = new Specification(Grade_explain, ui->Historicalfailure_tableWidget, 0, 0, \
+    Grade = new Specification(this,Grade_explain, ui->Historicalfailure_tableWidget, 0, 0, \
                                                     "0", "Level", \
                                                     "这是等级\nThis is the level");
     Grade->add_Specifition();
-    Grade2 = new Specification(Grade2_explain, ui->Historicalfailure_tableWidget, 1, 0, \
+    Grade2 = new Specification(this,Grade2_explain, ui->Historicalfailure_tableWidget, 1, 0, \
                                                     "0", "Level", \
                                                     "这是等级\nThis is the level");
     Grade2->add_Specifition();
-    Grade3 = new Specification(Grade3_explain, ui->Historicalfailure_tableWidget, 2, 0, \
+    Grade3 = new Specification(this,Grade3_explain, ui->Historicalfailure_tableWidget, 2, 0, \
                                                     "0", "Level", \
                                                     "这是等级\nThis is the level");
     Grade3->add_Specifition();
-    Grade4 = new Specification(Grade4_explain, ui->Historicalfailure_tableWidget, 3, 0, \
+    Grade4 = new Specification(this,Grade4_explain, ui->Historicalfailure_tableWidget, 3, 0, \
                                                     "0", "Level", \
                                                     "这是等级\nThis is the level");
     Grade4->add_Specifition();
-    Grade5 = new Specification(Grade5_explain, ui->Historicalfailure_tableWidget, 4, 0, \
+    Grade5 = new Specification(this,Grade5_explain, ui->Historicalfailure_tableWidget, 4, 0, \
                                                     "0", "Level", \
                                                     "这是等级\nThis is the level");
     Grade5->add_Specifition();
-    Grade6 = new Specification(Grade6_explain, ui->Historicalfailure_tableWidget, 5, 0, \
+    Grade6 = new Specification(this,Grade6_explain, ui->Historicalfailure_tableWidget, 5, 0, \
                                                     "0", "Level", \
                                                     "这是等级\nThis is the level");
     Grade6->add_Specifition();
-    Grade7 = new Specification(Grade7_explain, ui->Historicalfailure_tableWidget, 6, 0, \
+    Grade7 = new Specification(this,Grade7_explain, ui->Historicalfailure_tableWidget, 6, 0, \
                                                     "0", "Level", \
                                                     "这是等级\nThis is the level");
     Grade7->add_Specifition();
-    Grade8 = new Specification(Grade8_explain, ui->Historicalfailure_tableWidget, 7, 0, \
+    Grade8 = new Specification(this,Grade8_explain, ui->Historicalfailure_tableWidget, 7, 0, \
                                                     "0", "Level", \
                                                     "这是等级\nThis is the level");
     Grade8->add_Specifition();
-    StartTime = new Specification(StartTime_explain, ui->Historicalfailure_tableWidget, 0, 1, \
+    StartTime = new Specification(this,StartTime_explain, ui->Historicalfailure_tableWidget, 0, 1, \
                                                     "2023.5.6 15:49:50", "Start Time", \
                                                     "事件开始时间\nEvent start time");
     StartTime->add_Specifition();
-    StartTime2 = new Specification(StartTime2_explain, ui->Historicalfailure_tableWidget, 1, 1, \
+    StartTime2 = new Specification(this,StartTime2_explain, ui->Historicalfailure_tableWidget, 1, 1, \
                                                     "2023.5.6 15:48:18", "Start Time", \
                                                     "事件开始时间\nEvent start time");
     StartTime2->add_Specifition();
-    StartTime3 = new Specification(StartTime3_explain, ui->Historicalfailure_tableWidget, 2, 1, \
+    StartTime3 = new Specification(this,StartTime3_explain, ui->Historicalfailure_tableWidget, 2, 1, \
                                                     "2023.5.6 15:39:3", "Start Time", \
                                                     "事件开始时间\nEvent start time");
     StartTime3->add_Specifition();
-    StartTime4 = new Specification(StartTime4_explain, ui->Historicalfailure_tableWidget, 3, 1, \
+    StartTime4 = new Specification(this,StartTime4_explain, ui->Historicalfailure_tableWidget, 3, 1, \
                                                     "2023.5.6 15:39:3", "Start Time", \
                                                     "事件开始时间\nEvent start time");
     StartTime4->add_Specifition();
-    StartTime5 = new Specification(StartTime5_explain, ui->Historicalfailure_tableWidget, 4, 1, \
+    StartTime5 = new Specification(this,StartTime5_explain, ui->Historicalfailure_tableWidget, 4, 1, \
                                                     "2023.5.6 15:39:3", "Start Time", \
                                                     "事件开始时间\nEvent start time");
     StartTime5->add_Specifition();
-    StartTime6 = new Specification(StartTime6_explain, ui->Historicalfailure_tableWidget, 5, 1, \
+    StartTime6 = new Specification(this,StartTime6_explain, ui->Historicalfailure_tableWidget, 5, 1, \
                                                     "2023.5.6 15:21:56", "Start Time", \
                                                     "事件开始时间\nEvent start time");
     StartTime6->add_Specifition();
-    StartTime7 = new Specification(StartTime7_explain, ui->Historicalfailure_tableWidget, 6, 1, \
+    StartTime7 = new Specification(this,StartTime7_explain, ui->Historicalfailure_tableWidget, 6, 1, \
                                                     "2023.5.6 15:21:38", "Start Time", \
                                                     "事件开始时间\nEvent start time");
     StartTime7->add_Specifition();
-    StartTime8 = new Specification(StartTime8_explain, ui->Historicalfailure_tableWidget, 7, 1, \
+    StartTime8 = new Specification(this,StartTime8_explain, ui->Historicalfailure_tableWidget, 7, 1, \
                                                     "2023.5.6 15:21:38", "Start Time", \
                                                     "事件开始时间\nEvent start time");
     StartTime8->add_Specifition();
-    EndTime = new Specification(EndTime_explain, ui->Historicalfailure_tableWidget, 0, 2, \
+    EndTime = new Specification(this,EndTime_explain, ui->Historicalfailure_tableWidget, 0, 2, \
                                                     "-", "End Time", \
                                                     "事件结束时间\nEvent end time");
     EndTime->add_Specifition();
-    EndTime2 = new Specification(EndTime2_explain, ui->Historicalfailure_tableWidget, 1, 2, \
+    EndTime2 = new Specification(this,EndTime2_explain, ui->Historicalfailure_tableWidget, 1, 2, \
                                                     "-", "End Time", \
                                                     "事件结束时间\nEvent end time");
     EndTime2->add_Specifition();
-    EndTime3 = new Specification(EndTime3_explain, ui->Historicalfailure_tableWidget, 2, 2, \
+    EndTime3 = new Specification(this,EndTime3_explain, ui->Historicalfailure_tableWidget, 2, 2, \
                                                     "...", "End Time", \
                                                     "事件结束时间\nEvent end time");
     EndTime3->add_Specifition();
-    EndTime4 = new Specification(EndTime4_explain, ui->Historicalfailure_tableWidget, 3, 2, \
+    EndTime4 = new Specification(this,EndTime4_explain, ui->Historicalfailure_tableWidget, 3, 2, \
                                                     "-", "End Time", \
                                                     "事件结束时间\nEvent end time");
     EndTime4->add_Specifition();
-    EndTime5 = new Specification(EndTime5_explain, ui->Historicalfailure_tableWidget, 4, 2, \
+    EndTime5 = new Specification(this,EndTime5_explain, ui->Historicalfailure_tableWidget, 4, 2, \
                                                     "...", "End Time", \
                                                     "事件结束时间\nEvent end time");
     EndTime5->add_Specifition();
-    EndTime6 = new Specification(EndTime6_explain, ui->Historicalfailure_tableWidget, 5, 2, \
+    EndTime6 = new Specification(this,EndTime6_explain, ui->Historicalfailure_tableWidget, 5, 2, \
                                                     "-", "End Time", \
                                                     "事件结束时间\nEvent end time");
     EndTime6->add_Specifition();
-    EndTime7 = new Specification(EndTime7_explain, ui->Historicalfailure_tableWidget, 6, 2, \
+    EndTime7 = new Specification(this,EndTime7_explain, ui->Historicalfailure_tableWidget, 6, 2, \
                                                     "-", "End Time", \
                                                     "事件结束时间\nEvent end time");
     EndTime7->add_Specifition();
-    EndTime8 = new Specification(EndTime8_explain, ui->Historicalfailure_tableWidget, 7, 2, \
+    EndTime8 = new Specification(this,EndTime8_explain, ui->Historicalfailure_tableWidget, 7, 2, \
                                                     "-", "End Time", \
                                                     "事件结束时间\nEvent end time");
     EndTime8->add_Specifition();
-    Describe = new Specification(Describe_explain, ui->Historicalfailure_tableWidget, 0, 3, \
+    Describe = new Specification(this,Describe_explain, ui->Historicalfailure_tableWidget, 0, 3, \
                                                     "CAN communication failure", "Description", \
                                                     "事件描述\nEvent description");
     Describe->add_Specifition();
-    Describe2 = new Specification(Describe2_explain, ui->Historicalfailure_tableWidget, 1, 3, \
+    Describe2 = new Specification(this,Describe2_explain, ui->Historicalfailure_tableWidget, 1, 3, \
                                                     "CAN communication failure", "Description", \
                                                     "事件描述\nEvent description");
     Describe2->add_Specifition();
-    Describe3 = new Specification(Describe3_explain, ui->Historicalfailure_tableWidget, 2, 3, \
+    Describe3 = new Specification(this,Describe3_explain, ui->Historicalfailure_tableWidget, 2, 3, \
                                                     "Fire alarm (High temp. alarm)", "Description", \
                                                     "事件描述\nEvent description");
     Describe3->add_Specifition();
-    Describe4 = new Specification(Describe4_explain, ui->Historicalfailure_tableWidget, 3, 3, \
+    Describe4 = new Specification(this,Describe4_explain, ui->Historicalfailure_tableWidget, 3, 3, \
                                                     "CAN communication failure", "Description", \
                                                     "事件描述\nEvent description");
     Describe4->add_Specifition();
-    Describe5 = new Specification(Describe5_explain, ui->Historicalfailure_tableWidget, 4, 3, \
+    Describe5 = new Specification(this,Describe5_explain, ui->Historicalfailure_tableWidget, 4, 3, \
                                                     "PowerMeter Comm fualttLead-acid abnormal", "Description", \
                                                     "事件描述\nEvent description");
     Describe5->add_Specifition();
-    Describe6 = new Specification(Describe6_explain, ui->Historicalfailure_tableWidget, 5, 3, \
+    Describe6 = new Specification(this,Describe6_explain, ui->Historicalfailure_tableWidget, 5, 3, \
                                                     "CAN communication failure", "Description", \
                                                     "事件描述\nEvent description");
     Describe6->add_Specifition();
-    Describe7 = new Specification(Describe7_explain, ui->Historicalfailure_tableWidget, 6, 3, \
+    Describe7 = new Specification(this,Describe7_explain, ui->Historicalfailure_tableWidget, 6, 3, \
                                                     "Fire alarm (High temp. alarm)", "Description", \
                                                     "事件描述\nEvent description");
     Describe7->add_Specifition();
-    Describe8 = new Specification(Describe8_explain, ui->Historicalfailure_tableWidget, 7, 3, \
+    Describe8 = new Specification(this,Describe8_explain, ui->Historicalfailure_tableWidget, 7, 3, \
                                                     "PowerMeter Comm fualttLead-acid abnormal", "Description", \
                                                     "事件描述\nEvent description");
     Describe8->add_Specifition();
@@ -2049,99 +2049,99 @@ void MEGAWin::OperationLog()//操作日志
     ui->Operation_tableWidget->setColumnWidth(0,260);
     ui->Operation_tableWidget->horizontalHeader()->setStretchLastSection(true);
 
-    ModificationTime = new Specification(ModificationTime_explain, ui->Operation_tableWidget, 0, 0, \
+    ModificationTime = new Specification(this,ModificationTime_explain, ui->Operation_tableWidget, 0, 0, \
                                                     "2023-05-12 11:32:45", "ModificationTime", \
                                                     "系统设置修改时的时间\nTime when the system Settings are modified");
     ModificationTime->add_Specifition();
-    ModificationTime2 = new Specification(ModificationTime2_explain, ui->Operation_tableWidget, 1, 0, \
+    ModificationTime2 = new Specification(this,ModificationTime2_explain, ui->Operation_tableWidget, 1, 0, \
                                                     "2023-05-12 11:32:33", "ModificationTime", \
                                                     "系统设置修改时的时间\nTime when the system Settings are modified");
     ModificationTime2->add_Specifition();
-    ModificationTime3 = new Specification(ModificationTime3_explain, ui->Operation_tableWidget, 2, 0, \
+    ModificationTime3 = new Specification(this,ModificationTime3_explain, ui->Operation_tableWidget, 2, 0, \
                                                     "2023-05-11 19:29:24", "ModificationTime", \
                                                     "系统设置修改时的时间\nTime when the system Settings are modified");
     ModificationTime3->add_Specifition();
-    ModificationTime4 = new Specification(ModificationTime4_explain, ui->Operation_tableWidget, 3, 0, \
+    ModificationTime4 = new Specification(this,ModificationTime4_explain, ui->Operation_tableWidget, 3, 0, \
                                                     "2023-05-11 19:29:21", "ModificationTime", \
                                                     "系统设置修改时的时间\nTime when the system Settings are modified");
     ModificationTime4->add_Specifition();
-    ModificationTime5 = new Specification(ModificationTime5_explain, ui->Operation_tableWidget, 4, 0, \
+    ModificationTime5 = new Specification(this,ModificationTime5_explain, ui->Operation_tableWidget, 4, 0, \
                                                     "2023-05-11 19:29:10", "ModificationTime", \
                                                     "系统设置修改时的时间\nTime when the system Settings are modified");
     ModificationTime5->add_Specifition();
-    ModificationTime6 = new Specification(ModificationTime6_explain, ui->Operation_tableWidget, 5, 0, \
+    ModificationTime6 = new Specification(this,ModificationTime6_explain, ui->Operation_tableWidget, 5, 0, \
                                                     "2023-05-11 19:29:07", "ModificationTime", \
                                                     "系统设置修改时的时间\nTime when the system Settings are modified");
     ModificationTime6->add_Specifition();
-    ModificationTime7 = new Specification(ModificationTime7_explain, ui->Operation_tableWidget, 6, 0, \
+    ModificationTime7 = new Specification(this,ModificationTime7_explain, ui->Operation_tableWidget, 6, 0, \
                                                     "2023-05-11 17:21:16", "ModificationTime", \
                                                     "系统设置修改时的时间\nTime when the system Settings are modified");
     ModificationTime7->add_Specifition();
-    ModificationTime8 = new Specification(ModificationTime8_explain, ui->Operation_tableWidget, 7, 0, \
+    ModificationTime8 = new Specification(this,ModificationTime8_explain, ui->Operation_tableWidget, 7, 0, \
                                                     "2023-05-11 11:21:02", "ModificationTime", \
                                                     "系统设置修改时的时间\nTime when the system Settings are modified");
     ModificationTime8->add_Specifition();
-    ModificationTime9 = new Specification(ModificationTime9_explain, ui->Operation_tableWidget, 8, 0, \
+    ModificationTime9 = new Specification(this,ModificationTime9_explain, ui->Operation_tableWidget, 8, 0, \
                                                     "2023-05-11 11:20:58", "ModificationTime", \
                                                     "系统设置修改时的时间\nTime when the system Settings are modified");
     ModificationTime9->add_Specifition();
-    ModificationTime10 = new Specification(ModificationTime10_explain, ui->Operation_tableWidget, 9, 0, \
+    ModificationTime10 = new Specification(this,ModificationTime10_explain, ui->Operation_tableWidget, 9, 0, \
                                                     "2023-05-11 11:02:22", "ModificationTime", \
                                                     "系统设置修改时的时间\nTime when the system Settings are modified");
     ModificationTime10->add_Specifition();
-    ModificationTime11 = new Specification(ModificationTime11_explain, ui->Operation_tableWidget, 10, 0, \
+    ModificationTime11 = new Specification(this,ModificationTime11_explain, ui->Operation_tableWidget, 10, 0, \
                                                     "2023-05-11 11:02:18", "ModificationTime", \
                                                     "系统设置修改时的时间\nTime when the system Settings are modified");
     ModificationTime11->add_Specifition();
-    ModificationTime12 = new Specification(ModificationTime12_explain, ui->Operation_tableWidget, 11, 0, \
+    ModificationTime12 = new Specification(this,ModificationTime12_explain, ui->Operation_tableWidget, 11, 0, \
                                                     "2023-05-11 11:02:14", "ModificationTime", \
                                                     "系统设置修改时的时间\nTime when the system Settings are modified");
     ModificationTime12->add_Specifition();
-    EventRecord = new Specification(EventRecord_explain, ui->Operation_tableWidget, 0, 1, \
+    EventRecord = new Specification(this,EventRecord_explain, ui->Operation_tableWidget, 0, 1, \
                                                     "Power control type：CP_P->CP_N&&P", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord->add_Specifition();
-    EventRecord2 = new Specification(EventRecord2_explain, ui->Operation_tableWidget, 1, 1, \
+    EventRecord2 = new Specification(this,EventRecord2_explain, ui->Operation_tableWidget, 1, 1, \
                                                     "Power control type：CP_N&&P->CP_P", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord2->add_Specifition();
-    EventRecord3 = new Specification(EventRecord3_explain, ui->Operation_tableWidget, 2, 1, \
+    EventRecord3 = new Specification(this,EventRecord3_explain, ui->Operation_tableWidget, 2, 1, \
                                                     "Grid Fre Upper limit：0.2->3", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord3->add_Specifition();
-    EventRecord4 = new Specification(EventRecord4_explain, ui->Operation_tableWidget, 3, 1, \
+    EventRecord4 = new Specification(this,EventRecord4_explain, ui->Operation_tableWidget, 3, 1, \
                                                     "Grid Fre Upper limit：3->0.2", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord4->add_Specifition();
-    EventRecord5 = new Specification(EventRecord5_explain, ui->Operation_tableWidget, 4, 1, \
+    EventRecord5 = new Specification(this,EventRecord5_explain, ui->Operation_tableWidget, 4, 1, \
                                                     "Voltage protection Lower limit：-10->-15", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord5->add_Specifition();
-    EventRecord6 = new Specification(EventRecord6_explain, ui->Operation_tableWidget, 5, 1, \
+    EventRecord6 = new Specification(this,EventRecord6_explain, ui->Operation_tableWidget, 5, 1, \
                                                     "Voltage protection Lower limit：-15->-10", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord6->add_Specifition();
-    EventRecord7 = new Specification(EventRecord7_explain, ui->Operation_tableWidget, 6, 1, \
+    EventRecord7 = new Specification(this,EventRecord7_explain, ui->Operation_tableWidget, 6, 1, \
                                                     "Operation mode：Prevent countercurrnet->Peak valley", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord7->add_Specifition();
-    EventRecord8 = new Specification(EventRecord8_explain, ui->Operation_tableWidget, 7, 1, \
+    EventRecord8 = new Specification(this,EventRecord8_explain, ui->Operation_tableWidget, 7, 1, \
                                                     "Operation mode：UPS->Prevent countercurrnet", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord8->add_Specifition();
-    EventRecord9 = new Specification(EventRecord9_explain, ui->Operation_tableWidget, 8, 1, \
+    EventRecord9 = new Specification(this,EventRecord9_explain, ui->Operation_tableWidget, 8, 1, \
                                                     "Operation mode：Manual->UPS", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord9->add_Specifition();
-    EventRecord10 = new Specification(EventRecord10_explain, ui->Operation_tableWidget, 9, 1, \
+    EventRecord10 = new Specification(this,EventRecord10_explain, ui->Operation_tableWidget, 9, 1, \
                                                     "Operation mode：Peak valley->Manual", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord10->add_Specifition();
-    EventRecord11 = new Specification(EventRecord11_explain, ui->Operation_tableWidget, 10, 1, \
+    EventRecord11 = new Specification(this,EventRecord11_explain, ui->Operation_tableWidget, 10, 1, \
                                                     "Inv ON/Off-Grid：Off->automatic", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord11->add_Specifition();
-    EventRecord12 = new Specification(EventRecord12_explain, ui->Operation_tableWidget, 11, 1, \
+    EventRecord12 = new Specification(this,EventRecord12_explain, ui->Operation_tableWidget, 11, 1, \
                                                     "Inv ON/Off-Grid：automatic->Off", "RecordEvent", \
                                                     "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
     EventRecord12->add_Specifition();
@@ -2241,68 +2241,68 @@ void MEGAWin::BatteryData_clicked(int nid)//电池数据
 }
 void MEGAWin::PCS_Data()//PCS数据 绘制button
 {
-    PCS_vol_AB = new Specification(PCS_vol_AB_explain, ui->Converter_Tab, 0, 1, \
+    PCS_vol_AB = new Specification(this,PCS_vol_AB_explain, ui->Converter_Tab, 0, 1, \
                                             "99.9V", "PCS voltage(AB)", \
                                             "这是PCS的A和B相的电压\nThis is the voltage of the A and B phases of the PCS");
     PCS_vol_AB->add_Specifition();
-    PCS_vol_BC = new Specification(PCS_vol_BC_explain, ui->Converter_Tab, 1, 1, \
+    PCS_vol_BC = new Specification(this,PCS_vol_BC_explain, ui->Converter_Tab, 1, 1, \
                                             "99.9V", "PCS voltage(BC)", \
                                             "这是PCS的B和C相的电压\nThis is the voltage of phase B and phase C of PCS");
     PCS_vol_BC->add_Specifition();
-    PCS_vol_CA = new Specification(PCS_vol_CA_explain, ui->Converter_Tab, 2, 1, \
+    PCS_vol_CA = new Specification(this,PCS_vol_CA_explain, ui->Converter_Tab, 2, 1, \
                                             "99.7V", "PCS voltage(CA)", \
                                             "这是PCS的A和C相的电压\nThis is the voltage of phase A and phase C of the PCS");
     PCS_vol_CA->add_Specifition();
-    PCS_cur_A = new Specification(PCS_cur_A_explain, ui->Converter_Tab, 3, 1, \
+    PCS_cur_A = new Specification(this,PCS_cur_A_explain, ui->Converter_Tab, 3, 1, \
                                             "0A", "PCS current(A)", \
                                             "这是PCS的A相电流\nThis is the A-phase current of PCS");
     PCS_cur_A->add_Specifition();
-    PCS_cur_B = new Specification(PCS_cur_B_explain, ui->Converter_Tab, 4, 1, \
+    PCS_cur_B = new Specification(this,PCS_cur_B_explain, ui->Converter_Tab, 4, 1, \
                                             "0A", "PCS current(B)", \
                                             "这是PCS的B相电流\nThis is the B-phase current of PCS");
     PCS_cur_B->add_Specifition();
-    PCS_cur_C = new Specification(PCS_cur_C_explain, ui->Converter_Tab, 5, 1, \
+    PCS_cur_C = new Specification(this,PCS_cur_C_explain, ui->Converter_Tab, 5, 1, \
                                             "0A", "PCS current(C)", \
                                             "这是PCS的C相电流\nThis is the C phase current of PCS");
     PCS_cur_C->add_Specifition();
-    PCS_act_P = new Specification(PCS_act_P_explain, ui->Converter_Tab, 6, 1, \
+    PCS_act_P = new Specification(this,PCS_act_P_explain, ui->Converter_Tab, 6, 1, \
                                             "0kW", "PCS Active Power", \
                                             "这是PCS的有功功率\nThis is the active power of PCS");
     PCS_act_P->add_Specifition();
-    PCS_rea_P = new Specification(PCS_rea_P_explain, ui->Converter_Tab, 7, 1, \
+    PCS_rea_P = new Specification(this,PCS_rea_P_explain, ui->Converter_Tab, 7, 1, \
                                             "0kVar", "PCS Reactive Power", \
                                             "这是PCS的无功功率\nThis is the reactive power of PCS");
     PCS_rea_P->add_Specifition();
-    PCS_par_P = new Specification(PCS_par_P_explain, ui->Converter_Tab, 8, 1, \
+    PCS_par_P = new Specification(this,PCS_par_P_explain, ui->Converter_Tab, 8, 1, \
                                             "0kVA", "PCS Parent Power", \
                                             "这是PCS的视在功率\nThis is the apparent power of PCS");
     PCS_par_P->add_Specifition();
 
-    PCS_Pf = new Specification(PCS_Pf_explain, ui->Converter_Tab, 9, 1, \
+    PCS_Pf = new Specification(this,PCS_Pf_explain, ui->Converter_Tab, 9, 1, \
                                             "0", "PCS Power factor", \
                                             "这是PCS的功率因数\nThis is the power factor of PCS");
     PCS_Pf->add_Specifition();
-    PCS_Bat_vol = new Specification(PCS_Bat_vol_explain, ui->Converter_Tab, 0, 3, \
+    PCS_Bat_vol = new Specification(this,PCS_Bat_vol_explain, ui->Converter_Tab, 0, 3, \
                                             "0V", "PCS Battery voltage", \
                                             "这是电池电压\nThis is the battery voltage");
     PCS_Bat_vol->add_Specifition();
-    PCS_Bat_cur = new Specification(PCS_Bat_cur_explain, ui->Converter_Tab, 1, 3, \
+    PCS_Bat_cur = new Specification(this,PCS_Bat_cur_explain, ui->Converter_Tab, 1, 3, \
                                             "0A", "PCS Battery current", \
                                             "这是电池电流\nThis is battery current");
     PCS_Bat_cur->add_Specifition();
-    PCS_Bat_P = new Specification(PCS_Bat_P_explain, ui->Converter_Tab, 2, 3, \
+    PCS_Bat_P = new Specification(this,PCS_Bat_P_explain, ui->Converter_Tab, 2, 3, \
                                             "0kW", "PCS Battery power", \
                                             "这是电池功率\nThis is battery power");
     PCS_Bat_P->add_Specifition();
-    PCS_Bus_vol = new Specification(PCS_Bus_vol_explain, ui->Converter_Tab, 3, 3, \
+    PCS_Bus_vol = new Specification(this,PCS_Bus_vol_explain, ui->Converter_Tab, 3, 3, \
                                             "0V", "PCS Bus voltage", \
                                             "这是母线电压\nThis is the bus voltage");
     PCS_Bus_vol->add_Specifition();
-    PCS_IGBT_T = new Specification(PCS_IGBT_T_explain, ui->Converter_Tab, 4, 3, \
+    PCS_IGBT_T = new Specification(this,PCS_IGBT_T_explain, ui->Converter_Tab, 4, 3, \
                                             "39℃", "PCS IGBT temperature", \
                                             "这是IGBT温度\nThis is the IGBT temperature");
     PCS_IGBT_T->add_Specifition();
-    PCS_Env_T = new Specification(PCS_Env_T_explain, ui->Converter_Tab, 5, 3, \
+    PCS_Env_T = new Specification(this,PCS_Env_T_explain, ui->Converter_Tab, 5, 3, \
                                             "25℃", "PCS Environment temperature", \
                                             "这是环境温度\nThis is the ambient temperature");
     PCS_Env_T->add_Specifition();
@@ -2310,47 +2310,47 @@ void MEGAWin::PCS_Data()//PCS数据 绘制button
 
 void MEGAWin::Grid_Data()//电网数据 绘制button
 {
-    Grid_vol_AB = new Specification(Grid_vol_AB_explain, ui->Grid_Tab, 0, 1, \
+    Grid_vol_AB = new Specification(this,Grid_vol_AB_explain, ui->Grid_Tab, 0, 1, \
                                             "0V", "Grid voltage(AB)", \
                                             "这是电网的A和B相的电压\nThis is the voltage of phase A and phase B of the grid");
     Grid_vol_AB->add_Specifition();
-    Grid_vol_BC = new Specification(Grid_vol_BC_explain, ui->Grid_Tab, 1, 1, \
+    Grid_vol_BC = new Specification(this,Grid_vol_BC_explain, ui->Grid_Tab, 1, 1, \
                                             "0V", "Grid voltage(BC)", \
                                             "这是电网的B和C相的电压\nThis is the voltage of phase B and phase C of the grid");
     Grid_vol_BC->add_Specifition();
-    Grid_vol_CA = new Specification(Grid_vol_CA_explain, ui->Grid_Tab, 2, 1, \
+    Grid_vol_CA = new Specification(this,Grid_vol_CA_explain, ui->Grid_Tab, 2, 1, \
                                             "0V", "Grid voltage(CA)", \
                                             "这是电网的A和C相的电压\nThis is the voltage of phase A and phase C of the grid");
     Grid_vol_CA->add_Specifition();
-    Grid_cur_A = new Specification(Grid_cur_A_explain, ui->Grid_Tab, 3, 1, \
+    Grid_cur_A = new Specification(this,Grid_cur_A_explain, ui->Grid_Tab, 3, 1, \
                                             "0A", "Grid current(AB)", \
                                             "这是电网的A相电流\nThis is the A-phase current of the grid");
     Grid_cur_A->add_Specifition();
-    Grid_cur_B = new Specification(Grid_cur_B_explain, ui->Grid_Tab, 4, 1, \
+    Grid_cur_B = new Specification(this,Grid_cur_B_explain, ui->Grid_Tab, 4, 1, \
                                             "0A", "Grid current(B)", \
                                             "这是电网的B相电流\nThis is the B-phase current of the grid");
     Grid_cur_B->add_Specifition();
-    Grid_cur_C = new Specification(Grid_cur_C_explain, ui->Grid_Tab, 5, 1, \
+    Grid_cur_C = new Specification(this,Grid_cur_C_explain, ui->Grid_Tab, 5, 1, \
                                             "0A", "Grid current(C)", \
                                             "这是电网的C相电流\nThis is the C-phase current of the grid");
     Grid_cur_C->add_Specifition();
-    Grid_act_P = new Specification(Grid_act_P_explain, ui->Grid_Tab, 6, 1, \
+    Grid_act_P = new Specification(this,Grid_act_P_explain, ui->Grid_Tab, 6, 1, \
                                             "0kW", "Grid active power", \
                                             "这是电网的有功功率\nThis is the active power of the grid");
     Grid_act_P->add_Specifition();
-    Grid_rea_P = new Specification(Grid_rea_P_explain, ui->Grid_Tab, 7, 1, \
+    Grid_rea_P = new Specification(this,Grid_rea_P_explain, ui->Grid_Tab, 7, 1, \
                                             "0kVar", "Grid reactive power", \
                                             "这是电网的无功功率\nThis is the reactive power of the grid");
     Grid_rea_P->add_Specifition();
-    Grid_app_P = new Specification(Grid_app_P_explain, ui->Grid_Tab, 8, 1, \
+    Grid_app_P = new Specification(this,Grid_app_P_explain, ui->Grid_Tab, 8, 1, \
                                             "0kVA", "Grid apparent power", \
                                             "这是电网的视在功率\nThis is the apparent power of the grid");
     Grid_app_P->add_Specifition();
-    Grid_fre = new Specification(Grid_fre_explain, ui->Grid_Tab, 9, 1, \
+    Grid_fre = new Specification(this,Grid_fre_explain, ui->Grid_Tab, 9, 1, \
                                             "0Hz", "Grid frequency", \
                                             "这是电网的频率\nThis is the frequency of the grid");
     Grid_fre->add_Specifition();
-    Grid_Pf = new Specification(Grid_Pf_explain, ui->Grid_Tab, 10, 1, \
+    Grid_Pf = new Specification(this,Grid_Pf_explain, ui->Grid_Tab, 10, 1, \
                                             "0", "Grid power factor", \
                                             "这是电网的功率因数\nThis is the power factor of the grid");
     Grid_Pf->add_Specifition();
@@ -2358,43 +2358,43 @@ void MEGAWin::Grid_Data()//电网数据 绘制button
 
 void MEGAWin::Load_Data()//负载数据 绘制button
 {
-    Load_vol_AB = new Specification(Load_vol_AB_explain, ui->Load_Tab, 0, 1, \
+    Load_vol_AB = new Specification(this,Load_vol_AB_explain, ui->Load_Tab, 0, 1, \
                                             "0V", "Load voltage(AB)", \
                                             "这是负载的A和B相的电压\nThis is the voltage of the A and B phases of the load");
     Load_vol_AB->add_Specifition();
-    Load_vol_BC = new Specification(Load_vol_BC_explain, ui->Load_Tab, 1, 1, \
+    Load_vol_BC = new Specification(this,Load_vol_BC_explain, ui->Load_Tab, 1, 1, \
                                             "0V", "Load voltage(BC)", \
                                             "这是负载的B和C相的电压\nThis is the B and C phase voltage of the load");
     Load_vol_BC->add_Specifition();
-    Load_vol_CA = new Specification(Load_vol_CA_explain, ui->Load_Tab, 2, 1, \
+    Load_vol_CA = new Specification(this,Load_vol_CA_explain, ui->Load_Tab, 2, 1, \
                                             "0V", "Load voltage(CA)", \
                                             "这是负载的A和C相的电压\nThis is the A and C phase voltage of the load");
     Load_vol_CA->add_Specifition();
-    Load_cur_A = new Specification(Load_cur_A_explain, ui->Load_Tab, 3, 1, \
+    Load_cur_A = new Specification(this,Load_cur_A_explain, ui->Load_Tab, 3, 1, \
                                             "0A", "Load current(AB)", \
                                             "这是负载的A相电流\nThis is the A-phase current of the load");
     Load_cur_A->add_Specifition();
-    Load_cur_B = new Specification(Load_cur_B_explain, ui->Load_Tab, 4, 1, \
+    Load_cur_B = new Specification(this,Load_cur_B_explain, ui->Load_Tab, 4, 1, \
                                             "0A", "Load current(B)", \
                                             "这是负载的B相电流\nThis is the B-phase current of the load");
     Load_cur_B->add_Specifition();
-    Load_cur_C = new Specification(Load_cur_C_explain, ui->Load_Tab, 5, 1, \
+    Load_cur_C = new Specification(this,Load_cur_C_explain, ui->Load_Tab, 5, 1, \
                                             "0A", "Load current(C)", \
                                             "这是负载的C相电流\nThis is the C-phase current of the load");
     Load_cur_C->add_Specifition();
-    Load_act_P = new Specification(Load_act_P_explain, ui->Load_Tab, 6, 1, \
+    Load_act_P = new Specification(this,Load_act_P_explain, ui->Load_Tab, 6, 1, \
                                             "0kW", "Load active power", \
                                             "这是负载的有功功率\nThis is the active power of the load");
     Load_act_P->add_Specifition();
-    Load_rea_P = new Specification(Load_rea_P_explain, ui->Load_Tab, 7, 1, \
+    Load_rea_P = new Specification(this,Load_rea_P_explain, ui->Load_Tab, 7, 1, \
                                             "0kVar", "Load reactive power", \
                                             "这是负载的无功功率\nThis is the reactive power of the load");
     Load_rea_P->add_Specifition();
-    Load_app_P = new Specification(Load_app_P_explain, ui->Load_Tab, 8, 1, \
+    Load_app_P = new Specification(this,Load_app_P_explain, ui->Load_Tab, 8, 1, \
                                             "0kVA", "Load apparent power", \
                                             "这是负载的视在功率This is the apparent power of the load");
     Load_app_P->add_Specifition();
-    Load_Pf = new Specification(Load_Pf_explain, ui->Load_Tab, 9, 1, \
+    Load_Pf = new Specification(this,Load_Pf_explain, ui->Load_Tab, 9, 1, \
                                             "0", "Load frequency", \
                                             "这是负载的功率因数\nThis is the power factor of the load");
     Load_Pf->add_Specifition();
@@ -2402,91 +2402,91 @@ void MEGAWin::Load_Data()//负载数据 绘制button
 
 void MEGAWin::PCS_State()//PCS状态 绘制button
 {
-    DC_input_Breaker = new Specification(DC_input_Breaker_explain, ui->RTState_Bypass_Tab, 0, 1, \
+    DC_input_Breaker = new Specification(this,DC_input_Breaker_explain, ui->RTState_Bypass_Tab, 0, 1, \
                                             "Close", "DC input Breaker", \
                                             "这是直流输入断路器，用于判断PCS的运行状态\nThis is the DC input circuit breaker used to judge the operating status of PCS");
     DC_input_Breaker->add_Specifition();
-    DC_Cont = new Specification(DC_Cont_explain, ui->RTState_Bypass_Tab, 1, 1, \
+    DC_Cont = new Specification(this,DC_Cont_explain, ui->RTState_Bypass_Tab, 1, 1, \
                                             "Close", "DC contactor", \
                                             "这是直流接触器，用于判断PCS的运行状态\nThis is a DC contactor used to judge the running state of PCS");
     DC_Cont->add_Specifition();
-    Output_Cont = new Specification(Output_Cont_explain, ui->RTState_Bypass_Tab, 2, 1, \
+    Output_Cont = new Specification(this,Output_Cont_explain, ui->RTState_Bypass_Tab, 2, 1, \
                                             "Close", "Output contactor", \
                                             "这是输出接触器，用于判断PCS的运行状态\nThis is the output contactor used to judge the running status of PCS");
     Output_Cont->add_Specifition();
-    Output_Breaker = new Specification(Output_Breaker_explain, ui->RTState_Bypass_Tab, 3, 1, \
+    Output_Breaker = new Specification(this,Output_Breaker_explain, ui->RTState_Bypass_Tab, 3, 1, \
                                             "Close", "Output Breaker", \
                                             "这是输出断路器，用于判断PCS的运行状态\nThis is the output circuit breaker used to judge the operating status of PCS");
     Output_Breaker->add_Specifition();
-    Grid_Cont = new Specification(Grid_Cont_explain, ui->RTState_Bypass_Tab, 4, 1, \
+    Grid_Cont = new Specification(this,Grid_Cont_explain, ui->RTState_Bypass_Tab, 4, 1, \
                                             "Close", "Grid contactor", \
                                             "这是电网接触器，用于判断PCS的运行状态\nThis is the power grid contactor, which is used to judge the running status of PCS");
     Grid_Cont->add_Specifition();
-    Grid_Breaker = new Specification(Grid_Breaker_explain, ui->RTState_Bypass_Tab, 5, 1, \
+    Grid_Breaker = new Specification(this,Grid_Breaker_explain, ui->RTState_Bypass_Tab, 5, 1, \
                                             "Close", "Grid Breaker", \
                                             "这是电网断路器，用于判断PCS的运行状态\nThis is the power grid circuit breaker, used to judge the operating status of PCS");
     Grid_Breaker->add_Specifition();
-    MB_Breaker = new Specification(MB_Breaker_explain, ui->RTState_Bypass_Tab, 6, 1, \
+    MB_Breaker = new Specification(this,MB_Breaker_explain, ui->RTState_Bypass_Tab, 6, 1, \
                                             "Close", "Maintenance Bypass Breaker", \
                                             "这是维修旁路，用于判断PCS的运行状态\nThis is the maintenance bypass used to judge the operating status of PCS");
     MB_Breaker->add_Specifition();
-    converter_available = new Specification(converter_available_explain, ui->RTState_Bypass_Tab, 0, 3, \
+    converter_available = new Specification(this,converter_available_explain, ui->RTState_Bypass_Tab, 0, 3, \
                                             "Disable", "converter available", \
                                             "这是变流器使能，用于判断PCS的运行状态\nThis is the converter enable, which is used to judge the running status of PCS");
     converter_available->add_Specifition();
-    DC_Soft_start = new Specification(DC_Soft_start_explain, ui->RTState_Bypass_Tab, 1, 3, \
+    DC_Soft_start = new Specification(this,DC_Soft_start_explain, ui->RTState_Bypass_Tab, 1, 3, \
                                             "Not starting", "DC Soft start", \
                                             "这是直流软启动，用于判断PCS的运行状态\nThis is DC soft startup, which is used to judge the running status of PCS");
     DC_Soft_start->add_Specifition();
-    converter_status = new Specification(converter_status_explain, ui->RTState_Bypass_Tab, 2, 3, \
+    converter_status = new Specification(this,converter_status_explain, ui->RTState_Bypass_Tab, 2, 3, \
                                             "Shut down", "converter status", \
                                             "这是变流器状态，用于判断PCS的运行状态\nThis is the status of the converter, which is used to judge the running status of PCS");
     converter_status->add_Specifition();
-    Reactive_P_Regulation = new Specification(Reactive_P_Regulation_explain, ui->RTState_Bypass_Tab, 3, 3, \
+    Reactive_P_Regulation = new Specification(this,Reactive_P_Regulation_explain, ui->RTState_Bypass_Tab, 3, 3, \
                                             "SVG", "Reactive Power Regulation", \
                                             "这是无功调节方式，用于判断PCS的运行状态\nThis is the reactive power adjustment mode, which is used to judge the running state of PCS");
     Reactive_P_Regulation->add_Specifition();
-    Sleep_mode = new Specification(Sleep_mode_explain, ui->RTState_Bypass_Tab, 4, 3, \
+    Sleep_mode = new Specification(this,Sleep_mode_explain, ui->RTState_Bypass_Tab, 4, 3, \
                                             "", "Sleep mode", \
                                             "这是休眠模式，用于判断PCS的运行状态\nThis is the sleep mode used to judge the running status of PCS");
     Sleep_mode->add_Specifition();
-    LVRT = new Specification(LVRT_explain, ui->RTState_Bypass_Tab, 5, 3, \
+    LVRT = new Specification(this,LVRT_explain, ui->RTState_Bypass_Tab, 5, 3, \
                                             "LVRT", "LVRT", \
                                             "这是LVRT，用于判断PCS的运行状态\nThis is LVRT, which is used to judge the running status of PCS");
     LVRT->add_Specifition();
-    Generator_signal = new Specification(Generator_signal_explain, ui->RTState_Bypass_Tab, 0, 5, \
+    Generator_signal = new Specification(this,Generator_signal_explain, ui->RTState_Bypass_Tab, 0, 5, \
                                             "Enable", "Generator signal", \
                                             "这是柴发信号，用于判断PCS的运行状态\nThis is the Chai signal used to judge the running status of PCS");
     Generator_signal->add_Specifition();
-    Reserve = new Specification(Reserve_explain, ui->RTState_Bypass_Tab, 1, 5, \
+    Reserve = new Specification(this,Reserve_explain, ui->RTState_Bypass_Tab, 1, 5, \
                                             "Disable", "Reserve", \
                                             "这是保留位\nThis is the reserved bit");
     Reserve->add_Specifition();
-    Reserve2 = new Specification(Reserve2_explain, ui->RTState_Bypass_Tab, 2, 5, \
+    Reserve2 = new Specification(this,Reserve2_explain, ui->RTState_Bypass_Tab, 2, 5, \
                                             "Enable", "Reserve2", \
                                             "这是保留位\nThis is the reserved bit");
     Reserve2->add_Specifition();
-    EPO_Cont_signal1 = new Specification(EPO_Cont_signal1_explain, ui->RTState_Bypass_Tab, 3, 5, \
+    EPO_Cont_signal1 = new Specification(this,EPO_Cont_signal1_explain, ui->RTState_Bypass_Tab, 3, 5, \
                                             "Disable", "EPO_Cont signal1", \
                                             "这是EPO节点信号，用于判断PCS的运行状态\nThis is the EPO node signal, which is used to judge the running status of PCS");
     EPO_Cont_signal1->add_Specifition();
-    EPO_Cont_signal2 = new Specification(EPO_Cont_signal2_explain, ui->RTState_Bypass_Tab, 4, 5, \
+    EPO_Cont_signal2 = new Specification(this,EPO_Cont_signal2_explain, ui->RTState_Bypass_Tab, 4, 5, \
                                             "Disable", "EPO_Cont signal2", \
                                             "这是EPO节点信号2，用于判断PCS的运行状态\nThis is EPO node signal 2, which is used to judge the running status of PCS");
     EPO_Cont_signal2->add_Specifition();
-    Access_signal = new Specification(Access_signal_explain, ui->RTState_Bypass_Tab, 5, 5, \
+    Access_signal = new Specification(this,Access_signal_explain, ui->RTState_Bypass_Tab, 5, 5, \
                                             "Disable", "Access_signal", \
                                             "这是门禁信号，用于判断PCS的运行状态\nThis is the access signal, which is used to judge the running state of PCS");
     Access_signal->add_Specifition();
-    Full_P_signal = new Specification(Full_P_signal_explain, ui->RTState_Bypass_Tab, 6, 5, \
+    Full_P_signal = new Specification(this,Full_P_signal_explain, ui->RTState_Bypass_Tab, 6, 5, \
                                             "Disable", "Full_P_signal", \
                                             "这是满功率信号，用于判断PCS的运行状态\nThis is the full power signal, which is used to judge the running status of PCS");
     Full_P_signal->add_Specifition();
-    Smoke_alarm_signal = new Specification(Smoke_alarm_signal_explain, ui->RTState_Bypass_Tab, 7, 5, \
+    Smoke_alarm_signal = new Specification(this,Smoke_alarm_signal_explain, ui->RTState_Bypass_Tab, 7, 5, \
                                             "Disable", "Smoke alarm signal", \
                                             "这是烟雾告警信号，用于判断PCS的运行状态\nThis is a smoke alarm signal used to judge the running status of PCS");
     Smoke_alarm_signal->add_Specifition();
-    Hight_temp_signal = new Specification(Hight_temp_signal_explain, ui->RTState_Bypass_Tab, 8, 5, \
+    Hight_temp_signal = new Specification(this,Hight_temp_signal_explain, ui->RTState_Bypass_Tab, 8, 5, \
                                             "Disable", "Hight temp signal", \
                                             "这是高温信号，用于判断PCS的运行状态\nThis is the high temperature signal, which is used to judge the running status of PCS");
     Hight_temp_signal->add_Specifition();
@@ -2494,77 +2494,77 @@ void MEGAWin::PCS_State()//PCS状态 绘制button
 
 void MEGAWin::ParameterSet()//系统设置 绘制button
 {
-    Grid_connected_mode = new Specification(Grid_connected_mode_explain, ui->System_Tab, 0, 1, \
+    Grid_connected_mode = new Specification(this,Grid_connected_mode_explain, ui->System_Tab, 0, 1, \
                                             "automatic", "Grid connected mode of PCS", \
                                             "这是PCS并网方式，一共有三项可选：自动，并网，离网\nThis is PCS grid-connected mode. There are three options: automatic, grid-connected(Off) and off-grid(On)");
     Grid_connected_mode->add_Specifition();
 
-    Constant_power = new Specification(Constant_power_explain, ui->System_Tab, 1, 1, \
+    Constant_power = new Specification(this,Constant_power_explain, ui->System_Tab, 1, 1, \
                                        "0", "Constant power(AC)", \
                                        "这是恒功率，可以通过修改这项数值来设置机器的功率,'-'代表充电\nThis is the constant power. You can set the power of the machine by changing this value. '-' stands for charge");
     Constant_power->add_Specifition();
 
-    Charging_and_discharging = new Specification(Charging_and_discharging_explain, ui->System_Tab, 2, 1, \
+    Charging_and_discharging = new Specification(this,Charging_and_discharging_explain, ui->System_Tab, 2, 1, \
                                                  "Charge", "Charging and discharging", \
                                                  "这是充放电，一共有两项可选：充电，放电\nThis is charge and discharge. There are two options: charge and discharge");
     Charging_and_discharging->add_Specifition();
 
-    Work_mode = new Specification(Work_mode_explain, ui->System_Tab, 3, 1, \
+    Work_mode = new Specification(this,Work_mode_explain, ui->System_Tab, 3, 1, \
                                   "Manual", "Work mode", \
                                   "这是工作模式，有四项可选：手动，UPS，削峰填谷，受控制削峰填谷\nThis is the working mode, there are four options: manual, UPS, peak cutting and valley filling, controlled peak cutting and valley filling");
     Work_mode->add_Specifition();
 
-    Output_power_factor = new Specification(Output_power_factor_explain, ui->System_Tab, 4, 1, \
+    Output_power_factor = new Specification(this,Output_power_factor_explain, ui->System_Tab, 4, 1, \
                                             "1", "Output power factor", \
                                             "这是输出功率因素\nThis is the power output factor");
     Output_power_factor->add_Specifition();
 
-    Output_reactive_power = new Specification(Output_reactive_power_explain, ui->System_Tab, 5, 1, \
+    Output_reactive_power = new Specification(this,Output_reactive_power_explain, ui->System_Tab, 5, 1, \
                                               "1", "Output reactive power", \
                                               "这是输出无功功率\nThis is the output reactive power");
     Output_reactive_power->add_Specifition();
 
-    Constant_current = new Specification(Constant_current_explain, ui->System_Tab, 6, 1, \
+    Constant_current = new Specification(this,Constant_current_explain, ui->System_Tab, 6, 1, \
                                          "100", "Constant current", \
                                          "这是恒流值\nThis is the constant current value");
     Constant_current->add_Specifition();
 
-    Constant_voltage = new Specification(Constant_voltage_explain, ui->System_Tab, 7, 1, \
+    Constant_voltage = new Specification(this,Constant_voltage_explain, ui->System_Tab, 7, 1, \
                                          "600", "Constant voltage", \
                                          "这是恒压值\nThis is constant pressure");
     Constant_voltage->add_Specifition();
 
-    Control_mode = new Specification(Control_mode_explain, ui->System_Tab, 0, 4, \
+    Control_mode = new Specification(this,Control_mode_explain, ui->System_Tab, 0, 4, \
                                      "Local", "Control mode", \
                                      "这是工作模式，有两项可选：本地，远程\nThis is the working mode, with two options: Local and Remote");
     Control_mode->add_Specifition();
 
-    Machine_number = new Specification(Machine_number_explain, ui->System_Tab, 1, 4, \
+    Machine_number = new Specification(this,Machine_number_explain, ui->System_Tab, 1, 4, \
                                        "Master_00", "Machine number", \
                                        "这是设备号，可以选择主机或者从机，其中主机有一项可选，从机有九项可选\nThis is the device number. You can choose the host or slave. The host has one option(Master_00) and the slave has nine options");
     Machine_number->add_Specifition();
 
-    Parallel = new Specification(Parallel_explain, ui->System_Tab, 2, 4, \
+    Parallel = new Specification(this,Parallel_explain, ui->System_Tab, 2, 4, \
                                  "Disable", "Parallel", \
                                  "这是并机，有两项可选：使能，禁止\nThis is parallel, with two options: Enable and Disable");
     Parallel->add_Specifition();
 
-    Unbalance_power_enable = new Specification(Unbalance_power_enable_explain, ui->System_Tab, 3, 4, \
+    Unbalance_power_enable = new Specification(this,Unbalance_power_enable_explain, ui->System_Tab, 3, 4, \
                                                "Disable", "Unbalance power enable", \
                                                "这是功率不平衡使能，有两项可选：使能，禁止\nThis is to enable power imbalance, with two options: Enable and Disable");
     Unbalance_power_enable->add_Specifition();
 
-    Phase_A_power = new Specification(Phase_A_power_explain, ui->System_Tab, 4, 4, \
+    Phase_A_power = new Specification(this,Phase_A_power_explain, ui->System_Tab, 4, 4, \
                                       "5", "Phase A power", \
                                       "这是A相功率\nThis is Phase A power");
     Phase_A_power->add_Specifition();
 
-    Phase_B_power = new Specification(Phase_B_power_explain, ui->System_Tab, 5, 4, \
+    Phase_B_power = new Specification(this,Phase_B_power_explain, ui->System_Tab, 5, 4, \
                                       "5", "Phase B power", \
                                       "T这是B相功率\nhis is Phase B power");
     Phase_B_power->add_Specifition();
 
-    Phase_C_power = new Specification(Phase_C_power_explain, ui->System_Tab, 6, 4, \
+    Phase_C_power = new Specification(this,Phase_C_power_explain, ui->System_Tab, 6, 4, \
                                       "5", "Phase C power", \
                                       "这是C相功率\nThis is Phase C power");
     Phase_C_power->add_Specifition();
@@ -2573,75 +2573,75 @@ void MEGAWin::ParameterSet()//系统设置 绘制button
 
 void MEGAWin::BetterySetup()//电池设置 绘制button
 {
-    DOD_OnGrid = new Specification(DOD_OnGrid_explain, ui->Lithum_Tab, 0, 1, \
+    DOD_OnGrid = new Specification(this,DOD_OnGrid_explain, ui->Lithum_Tab, 0, 1, \
                                      "80", "DOD_OnGrid", \
                                      "并网工况下电池的放电深度，默认90\nThe default discharge depth of the battery in grid-connected condition is 90.");
     DOD_OnGrid->add_Specifition();
-    DOD_OffGrid = new Specification(DOD_OffGrid_explain, ui->Lithum_Tab, 1, 1, \
+    DOD_OffGrid = new Specification(this,DOD_OffGrid_explain, ui->Lithum_Tab, 1, 1, \
                                      "80", "DOD_OffGrid", \
                                      "离网工况下电池的放电深度，默认90\nThe default discharge depth of the battery in off-grid mode is 90.");
     DOD_OffGrid->add_Specifition();
-    Charge_Vol_Up_Limit = new Specification(Charge_Vol_Up_Limit_explain, ui->Lithum_Tab, 2, 1, \
+    Charge_Vol_Up_Limit = new Specification(this,Charge_Vol_Up_Limit_explain, ui->Lithum_Tab, 2, 1, \
                                      "792", "Charge_Vol_Up_Limit", \
                                      "充电时电池电压所允许达到的最大值\nThe maximum allowable battery voltage during charging.");
     Charge_Vol_Up_Limit->add_Specifition();
-    Disc_Vol_lower_Limit = new Specification(Disc_Vol_lower_Limit_explain, ui->Lithum_Tab, 3, 1, \
+    Disc_Vol_lower_Limit = new Specification(this,Disc_Vol_lower_Limit_explain, ui->Lithum_Tab, 3, 1, \
                                      "616", "Disc_Vol_lower_Limit", \
                                      "放电时电池电压所允许的最小值\nThe minimum allowable battery voltage when discharging.");
     Disc_Vol_lower_Limit->add_Specifition();
-    Charge_Cur_Limit = new Specification(Charge_Cur_Limit_explain, ui->Lithum_Tab, 4, 1, \
+    Charge_Cur_Limit = new Specification(this,Charge_Cur_Limit_explain, ui->Lithum_Tab, 4, 1, \
                                      "160", "Charge_Cur_Limit", \
                                      "允许的最大充电电流\nThe maximum allowable charging current.");
     Charge_Cur_Limit->add_Specifition();
-    Gen_turn_off_SOC = new Specification(Gen_turn_off_SOC_explain, ui->Lithum_Tab, 5, 1, \
+    Gen_turn_off_SOC = new Specification(this,Gen_turn_off_SOC_explain, ui->Lithum_Tab, 5, 1, \
                                      "85", "Gen_turn_off_SOC", \
                                      "达到指定SCO值时，柴油发电机关闭\nWhen the specified SCO value is reached, the diesel generator shuts down.");
     Gen_turn_off_SOC->add_Specifition();
-    Gen_turn_on_SOC = new Specification(Gen_turn_on_SOC_explain, ui->Lithum_Tab, 6, 1, \
+    Gen_turn_on_SOC = new Specification(this,Gen_turn_on_SOC_explain, ui->Lithum_Tab, 6, 1, \
                                      "25", "Gen_turn_on_SOC", \
                                      "达到指定SOC值时，柴油发电机开启\nWhen the specified SOC value is reached, the diesel generator starts.");
     Gen_turn_on_SOC->add_Specifition();
-    Gen_charge_SOC = new Specification(Gen_charge_SOC_explain, ui->Lithum_Tab, 7, 1, \
+    Gen_charge_SOC = new Specification(this,Gen_charge_SOC_explain, ui->Lithum_Tab, 7, 1, \
                                      "10", "Gen_charge_SOC", \
                                      "达到指定SOC值时，柴油发电机开始充电\nWhen the specified SOC value is reached, the diesel generator starts charging.");
     Gen_charge_SOC->add_Specifition();
-    Grid_charge_SOC = new Specification(Grid_charge_SOC_explain, ui->Lithum_Tab, 8, 1, \
+    Grid_charge_SOC = new Specification(this,Grid_charge_SOC_explain, ui->Lithum_Tab, 8, 1, \
                                      "15", "Grid_charge_SOC", \
                                      "到达指定SOC值时，开始电网充电\nWhen the specified SOC value is reached, grid charging begins.");
     Grid_charge_SOC->add_Specifition();
-    Grid_capacity = new Specification(Grid_capacity_explain, ui->Lithum_Tab, 9, 1, \
+    Grid_capacity = new Specification(this,Grid_capacity_explain, ui->Lithum_Tab, 9, 1, \
                                      "150", "Grid_capacity", \
                                      "电网容量，电网允许带的总负荷\nThe capacity of the grid, the total load allowed on the grid.");
     Grid_capacity->add_Specifition();
-    Turn_on_SOC = new Specification(Turn_on_SOC_explain, ui->Lithum_Tab, 0, 4, \
+    Turn_on_SOC = new Specification(this,Turn_on_SOC_explain, ui->Lithum_Tab, 0, 4, \
                                      "20", "Turn_on_SOC", \
                                      "当电池剩余电量百分比达到此值时开始充电\nCharging begins when the percentage of remaining battery capacity reaches this value.");
     Turn_on_SOC->add_Specifition();
-    Turn_off_SOC = new Specification(Turn_off_SOC_explain, ui->Lithum_Tab, 1, 4, \
+    Turn_off_SOC = new Specification(this,Turn_off_SOC_explain, ui->Lithum_Tab, 1, 4, \
                                      "50", "Turn_off_SOC", \
                                      "当电池剩余电量百分比达到此值时停止充电\nStop charging when the percentage of remaining battery power reaches this value.");
     Turn_off_SOC->add_Specifition();
-    Turn_on_cell_vol = new Specification(Turn_on_cell_vol_explain, ui->Lithum_Tab, 2, 4, \
+    Turn_on_cell_vol = new Specification(this,Turn_on_cell_vol_explain, ui->Lithum_Tab, 2, 4, \
                                      "3100", "Turn_on_cell_vol", \
                                      "所有单体中的最高电压达到此值时开始充电\nCharge begins when the highest voltage in all cells reaches this value.");
     Turn_on_cell_vol->add_Specifition();
-    Turn_off_cell_vol = new Specification(Turn_off_cell_vol_explain, ui->Lithum_Tab, 3, 4, \
+    Turn_off_cell_vol = new Specification(this,Turn_off_cell_vol_explain, ui->Lithum_Tab, 3, 4, \
                                      "3500", "Turn_off_cell_vol", \
                                      "所有单体中的最高电压达到此值时停止充电\nThe highest voltage in all cells stops charging when it reaches this value.");
     Turn_off_cell_vol->add_Specifition();
-    Turn_on_total_vol = new Specification(Turn_on_total_vol_explain, ui->Lithum_Tab, 4, 4, \
+    Turn_on_total_vol = new Specification(this,Turn_on_total_vol_explain, ui->Lithum_Tab, 4, 4, \
                                      "400", "Turn_on_total_vol", \
                                      "当电池电压达到此值时开始充电\nCharge begins when the battery voltage reaches this value.");
     Turn_on_total_vol->add_Specifition();
-    Turn_off_total_vol = new Specification(Turn_off_total_vol_explain, ui->Lithum_Tab, 5, 4, \
+    Turn_off_total_vol = new Specification(this,Turn_off_total_vol_explain, ui->Lithum_Tab, 5, 4, \
                                      "650", "Turn_off_total_vol", \
                                      "当电池电压达到此值时停止充电\nStop charging when the battery voltage reaches this value.");
     Turn_off_total_vol->add_Specifition();
-    UPS_charge_power = new Specification(UPS_charge_power_explain, ui->Lithum_Tab, 6, 4, \
+    UPS_charge_power = new Specification(this,UPS_charge_power_explain, ui->Lithum_Tab, 6, 4, \
                                      "-1", "UPS_charge_power", \
                                      "工作模式为后备模式时的充电功率\nThe charging power when the working mode is backup mode.");
     UPS_charge_power->add_Specifition();
-    Monthly_cycle_time = new Specification(Monthly_cycle_time_explain, ui->Lithum_Tab, 7, 4, \
+    Monthly_cycle_time = new Specification(this,Monthly_cycle_time_explain, ui->Lithum_Tab, 7, 4, \
                                      "0", "Monthly_cycle_time", \
                                      "当每月到达这一天都会进行一次充放电循环\nA charge-discharge cycle is performed once a month on that date.");
     Monthly_cycle_time->add_Specifition();
@@ -2701,41 +2701,41 @@ void MEGAWin::AutoOperation()//自动运行 绘制button
         QString temp17 = QString("%1:00").arg(i+9);
 
         if(i<5)
-            temp[i] = new Specification(temp2[i], ui->Time_tableWidget, i, 0, \
+            temp[i] = new Specification(this,temp2[i], ui->Time_tableWidget, i, 0, \
                                                 "√", temp3, \
                                                 "这是'使能'，选择后将在指定的时间以指定的功率开启指定的状态，并在指定的时间结束\nThis is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time.");
         else
-            temp[i] = new Specification(temp2[i], ui->Time_tableWidget, i, 0, \
+            temp[i] = new Specification(this,temp2[i], ui->Time_tableWidget, i, 0, \
                                                 "", temp3, \
                                                 "这是'使能'，选择后将在指定的时间以指定的功率开启指定的状态，并在指定的时间结束\nThis is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time.");
         temp[i]->add_Specifition();
-        temp4[i] = new Specification(temp5[i], ui->Time_tableWidget, i, 1, \
+        temp4[i] = new Specification(this,temp5[i], ui->Time_tableWidget, i, 1, \
                                                 temp16, temp6, \
                                                 "这是开始时间，将在此时间开始工作\nThis is the start time at which work will begin");
         temp4[i]->add_Specifition();
-        temp7[i] = new Specification(temp8[i], ui->Time_tableWidget, i, 2, \
+        temp7[i] = new Specification(this,temp8[i], ui->Time_tableWidget, i, 2, \
                                                 temp17, temp9, \
                                                 "这是结束时间，将在此时间结束工作\nWill finish work at this time.");
         temp7[i]->add_Specifition();
 
         if(i%2==0)
         {
-            temp10[i] = new Specification(temp11[i], ui->Time_tableWidget, i, 3, \
+            temp10[i] = new Specification(this,temp11[i], ui->Time_tableWidget, i, 3, \
                                                     "charge", temp12, \
                                                     "这是状态，将在工作时间执行此状态，有三种可供选择，分别为充电(charge)、放电(discharge)、自动(Automatic)\nThis is the state, which will be executed during working hours.  There are three options: charge（charge）, discharge（discharge）, and Automatic（Automatic）.");
             temp10[i]->add_Specifition();
-            temp13[i] = new Specification(temp14[i], ui->Time_tableWidget, i, 4, \
+            temp13[i] = new Specification(this,temp14[i], ui->Time_tableWidget, i, 4, \
                                                     "-100", temp15, \
                                                     "这是工作功率，此状态下工作时根据工作状态执行此功率\nThis is the working power, which is executed according to the working state when working in this state.");
             temp13[i]->add_Specifition();
         }
         else
         {
-            temp10[i] = new Specification(temp11[i], ui->Time_tableWidget, i, 3, \
+            temp10[i] = new Specification(this,temp11[i], ui->Time_tableWidget, i, 3, \
                                                     "discharge", temp12, \
                                                     "这是状态，将在工作时间执行此状态，有三种可供选择，分别为充电(charge)、放电(discharge)、自动(Automatic)\nThis is the state, which will be executed during working hours.  There are three options: charge（charge）, discharge（discharge）, and Automatic（Automatic）.");
             temp10[i]->add_Specifition();
-            temp13[i] = new Specification(temp14[i], ui->Time_tableWidget, i, 4, \
+            temp13[i] = new Specification(this,temp14[i], ui->Time_tableWidget, i, 4, \
                                                     "100", temp15, \
                                                     "这是工作功率，此状态下工作时根据工作状态执行此功率\nThis is the working power, which is executed according to the working state when working in this state");
             temp13[i]->add_Specifition();
@@ -2746,27 +2746,27 @@ void MEGAWin::AutoOperation()//自动运行 绘制button
 
 void MEGAWin::SystemMessages()//系统信息 绘制button
 {
-    Manufacturer_name = new Specification(Manufacturer_name_explain, ui->EquipmentInfor_tableWidget, 0, 1, \
+    Manufacturer_name = new Specification(this,Manufacturer_name_explain, ui->EquipmentInfor_tableWidget, 0, 1, \
                                      "PCS", "Manufacturer name", \
                                      "这是厂家名称\nThis is the name of the manufacturer.");
     Manufacturer_name->add_Specifition();
-    MonitoringVersion = new Specification(MonitoringVersion_explain, ui->EquipmentInfor_tableWidget, 1, 1, \
+    MonitoringVersion = new Specification(this,MonitoringVersion_explain, ui->EquipmentInfor_tableWidget, 1, 1, \
                                      "V103B500D004", "Monitoring software version", \
                                      "这是监控版本\nThis is the name of the manufacturer.");
     MonitoringVersion->add_Specifition();
-    SysProtocol_Version = new Specification(SysProtocol_Version_explain, ui->EquipmentInfor_tableWidget, 2, 1, \
+    SysProtocol_Version = new Specification(this,SysProtocol_Version_explain, ui->EquipmentInfor_tableWidget, 2, 1, \
                                      "V001B001D001", "Manufacturer name", \
                                      "这是协议版本号\nThis is the name of the manufacturer.");
     SysProtocol_Version->add_Specifition();
-    ConverterVersion = new Specification(ConverterVersion_explain, ui->EquipmentInfor_tableWidget, 3, 1, \
+    ConverterVersion = new Specification(this,ConverterVersion_explain, ui->EquipmentInfor_tableWidget, 3, 1, \
                                      "V105B500D008", "Manufacturer name", \
                                      "这是变流器软件版本\nThis is the name of the manufacturer.");
     ConverterVersion->add_Specifition();
-    CPLD_Version = new Specification(CPLD_Version_explain, ui->EquipmentInfor_tableWidget, 4, 1, \
+    CPLD_Version = new Specification(this,CPLD_Version_explain, ui->EquipmentInfor_tableWidget, 4, 1, \
                                      "V001B001D000", "Manufacturer name", \
                                      "这是CPLD软件版本\nThis is the name of the manufacturer.");
     CPLD_Version->add_Specifition();
-    SN = new Specification(SN_explain, ui->EquipmentInfor_tableWidget, 5, 1, \
+    SN = new Specification(this,SN_explain, ui->EquipmentInfor_tableWidget, 5, 1, \
                                      "F12200000001", "Manufacturer name", \
                                      "这是SN,即产品序列号\nThis is the name of the manufacturer.");
     SN->add_Specifition();
@@ -2774,108 +2774,108 @@ void MEGAWin::SystemMessages()//系统信息 绘制button
 
 void MEGAWin::FunctionSet()//功能设置绘制button
 {
-    Battery_type = new Specification(Battery_type_explain, ui->UI_Parameter_Tab, 0, 1, \
+    Battery_type = new Specification(this,Battery_type_explain, ui->UI_Parameter_Tab, 0, 1, \
                                      "Lithium", "Battery_type", \
                                      "根据实际情况选择电池类型，有锂电(Lithium)和铅酸(LeadAcid)两种类型可供选择\n Choose the battery type according to the actual situation, there are two types of lithium(Lithium) and lead acid(LeadAcid) to choose from.");
     Battery_type->add_Specifition();
-    BMS_Comm_type = new Specification(BMS_Comm_type_explain, ui->UI_Parameter_Tab, 1, 1, \
+    BMS_Comm_type = new Specification(this,BMS_Comm_type_explain, ui->UI_Parameter_Tab, 1, 1, \
                                       "CAN", "BMS_Comm_type", \
                                       "设置与电池之间的通信方式，可根据情况选择RS485(RS485)或CAN通信(CAN)或以太网(Ethernet)\nSet the communication mode between the battery, RS485(RS485) or CAN communication(CAN) or Ethernet(Ethernet) can be selected according to the situation.");
     BMS_Comm_type->add_Specifition();
-    Power_control_type = new Specification(Power_control_type_explain, ui->UI_Parameter_Tab, 2, 1,\
+    Power_control_type = new Specification(this,Power_control_type_explain, ui->UI_Parameter_Tab, 2, 1,\
                                            "CP_N&&P" , "Power_control_type", \
                                            "设置控制功率的方式，有恒压(CV)、恒流(CC)、恒功率(CP_P)、正负功率(CP_N&P)\nSet the control power mode, constant voltage(CV), constant current(CC), constant power(CP_P), positive and negative power(CP_N&P).");
     Power_control_type->add_Specifition();
-    EMS_Comm_type = new Specification(EMS_Comm_type_explain, ui->UI_Parameter_Tab, 3, 1, \
+    EMS_Comm_type = new Specification(this,EMS_Comm_type_explain, ui->UI_Parameter_Tab, 3, 1, \
                                       "RS485", "EMS_Comm_type", \
                                       "设置EMS的通信方式，有RS485(RS485),CAN通信(CAN)，以太网(Ethernet)三种方式\nSetting the communication mode of EMS, there are RS485(RS485),CAN communication (CAN) and Ethernet(Ethernet).");
     EMS_Comm_type->add_Specifition();
-    Output_power_limit = new Specification(Output_power_limit_explain, ui->UI_Parameter_Tab, 4, 1,\
+    Output_power_limit = new Specification(this,Output_power_limit_explain, ui->UI_Parameter_Tab, 4, 1,\
                                            "100", "Output_power_limit", \
                                            "设置允许输出的功率最大值\nSet the maximum power output allowed.");
     Output_power_limit->add_Specifition();
-    BAT_manufacturers = new Specification(BAT_manufacturers_explain, ui->UI_Parameter_Tab, 5, 1, \
+    BAT_manufacturers = new Specification(this,BAT_manufacturers_explain, ui->UI_Parameter_Tab, 5, 1, \
                                           "GAOTE", "BAT_manufacturers", \
                                           "这是电池厂家，根据选择的电池厂家解析报文\nThis is the battery manufacturer and the packet is parsed according to the selected battery manufacturer.");
     BAT_manufacturers->add_Specifition();
-    Power_Delta = new Specification(Power_Delta_explain, ui->UI_Parameter_Tab, 6, 1, \
+    Power_Delta = new Specification(this,Power_Delta_explain, ui->UI_Parameter_Tab, 6, 1, \
                                     "10", "Power_Delta", \
                                     "设置功率回差，默认功率回差为10kw\nSet the power back difference, and the default power back difference is 10kw.");
     Power_Delta->add_Specifition();
-    Charge_power_limit = new Specification(Charge_power_limit_explain, ui->UI_Parameter_Tab, 7, 1, \
+    Charge_power_limit = new Specification(this,Charge_power_limit_explain, ui->UI_Parameter_Tab, 7, 1, \
                                            "100", "Charge_power_limit",\
                                            "设置充电功率限制,可以限制充电功率\nSet the charging power limit, which can limit the charging power.");
     Charge_power_limit->add_Specifition();
-    Discharge_power_limit = new Specification(Discharge_power_limit_explain, ui->UI_Parameter_Tab, 8, 1, \
+    Discharge_power_limit = new Specification(this,Discharge_power_limit_explain, ui->UI_Parameter_Tab, 8, 1, \
                                               "100", "Charge_power_limit", \
                                               "设置放电功率限制，可以限制放电功率\nYou can set discharge power limit to limit the discharge power.");
     Discharge_power_limit->add_Specifition();
-    Charge_Vol_upper_Limit_delta = new Specification(Charge_Vol_upper_Limit_delta_explain, ui->UI_Parameter_Tab, 9, 1, \
+    Charge_Vol_upper_Limit_delta = new Specification(this,Charge_Vol_upper_Limit_delta_explain, ui->UI_Parameter_Tab, 9, 1, \
                                                      "10", "Charge_Vol_upper_Limit_delta", \
                                                      "设置充电电压上限回差，默认充电电压上限为10kw\nThe upper limit of charging voltage return difference is set, and the default charging voltage upper limit is 10kw.");
     Charge_Vol_upper_Limit_delta->add_Specifition();
-    Discharge_Vol_lower_Limit_delta = new Specification(Discharge_Vol_lower_Limit_delta_explain, ui->UI_Parameter_Tab, 10, 1,\
+    Discharge_Vol_lower_Limit_delta = new Specification(this,Discharge_Vol_lower_Limit_delta_explain, ui->UI_Parameter_Tab, 10, 1,\
                                                         "10", "Discharge_Vol_lower_Limit_delta", \
                                                         "设置放电电压下限回差，默认放电电压下限回差为10kw\nSet the discharge voltage lower limit back difference, the default discharge voltage lower limit back difference is 10kw.");
     Discharge_Vol_lower_Limit_delta->add_Specifition();
-    Host_Address = new Specification(Host_Address_explain, ui->UI_Parameter_Tab, 0, 4,\
+    Host_Address = new Specification(this,Host_Address_explain, ui->UI_Parameter_Tab, 0, 4,\
                                      "20", "Host_Address", \
                                      "设置主机地址\nSet host address.");
     Host_Address->add_Specifition();
-    serial_port_1 = new Specification(serial_port_1_explain, ui->UI_Parameter_Tab, 1, 4, \
+    serial_port_1 = new Specification(this,serial_port_1_explain, ui->UI_Parameter_Tab, 1, 4, \
                                       "9600", "serial_port_1", \
                                       "这是串口1，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口1默认波特率是9600bps\nThis is serial port 1, set the baud rate, there are six options to choose from, which are 1200, 2400, 4800, 9600, 19200, 38400, and the default baud rate of serial port 1 is 9600bps.");
     serial_port_1->add_Specifition();
-    serial_port_2 = new Specification(serial_port_2_explain, ui->UI_Parameter_Tab, 2, 4, \
+    serial_port_2 = new Specification(this,serial_port_2_explain, ui->UI_Parameter_Tab, 2, 4, \
                                       "9600", "serial_port_2", \
                                       "这是串口2，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口2默认波特率是9600bps\nThis is serial port 2, set the baud rate, there are six options to choose from, which are 1200, 2400, 4800, 9600, 19200, 38400, and the default baud rate of serial port 2 is 9600bps");
     serial_port_2->add_Specifition();
-    serial_port_3 = new Specification(serial_port_3_explain, ui->UI_Parameter_Tab, 3, 4, \
+    serial_port_3 = new Specification(this,serial_port_3_explain, ui->UI_Parameter_Tab, 3, 4, \
                                       "9600", "serial_port_3", \
                                       "这是串口3，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口3默认波特率是9600bps\nThis is serial port 3, set the baud rate, there are six options to choose from, which are 1200, 2400, 4800, 9600, 19200, 38400, and the default baud rate of serial port 3 is 9600bps.");
     serial_port_3->add_Specifition();
-    serial_port_4 = new Specification(serial_port_4_explain, ui->UI_Parameter_Tab, 4, 4, \
+    serial_port_4 = new Specification(this,serial_port_4_explain, ui->UI_Parameter_Tab, 4, 4, \
                                       "9600", "serial_port_4", \
                                       "这是串口4，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口4默认波特率是9600bps\nThis is serial port 4, set the baud rate, there are six options to choose from, which are 1200, 2400, 4800, 9600, 19200, 38400, and the default baud rate of serial port 4 is 9600bps.");
     serial_port_4->add_Specifition();
-    serial_port_5 = new Specification(serial_port_5_explain, ui->UI_Parameter_Tab, 5, 4, \
+    serial_port_5 = new Specification(this,serial_port_5_explain, ui->UI_Parameter_Tab, 5, 4, \
                                       "9600", "serial_port_5", \
                                       "这是串口5，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口5默认波特率是9600bps\nThis is serial port 5, set the baud rate, there are six options to choose from, which are 1200, 2400, 4800, 9600, 19200, 38400, and the default baud rate of serial port 5 is 9600bps.");
     serial_port_5->add_Specifition();
 
-    Can_port_1 = new Specification(Can_port_1_explain, ui->UI_Parameter_Tab, 6, 4, \
+    Can_port_1 = new Specification(this,Can_port_1_explain, ui->UI_Parameter_Tab, 6, 4, \
                                    "500", "Can_port_1", \
                                    "这是CAN1端口，PCS内部通讯的波特率，默认波特率500，无需更改\nThis is the baud rate of CAN1 port and PCS internal communication. The default baud rate is 500, which need not be changed.");
     Can_port_1->add_Specifition();
-    Can_port_2 = new Specification(Can_port_2_explain, ui->UI_Parameter_Tab, 7, 4, \
+    Can_port_2 = new Specification(this,Can_port_2_explain, ui->UI_Parameter_Tab, 7, 4, \
                                    "250", "Can_port_2", \
                                    "这是CAN2端口，PCS与BMS通信的波特率，默认波特率125，根据现场BMS通信波特率进行修改，其中有五项可供选择，分别是100、125、250、500、800\nThis is the baud rate of the CAN2 port and the communication between PCS and BMS. The default baud rate is 125, which is modified according to the on-site BMS communication baud rate. There are five items to choose from, which are 100, 125, 250, 500 and 800 respectively.");
     Can_port_2->add_Specifition();
-    ProtocolVersion = new Specification(ProtocolVersion_explain, ui->UI_Parameter_Tab, 0, 7, \
+    ProtocolVersion = new Specification(this,ProtocolVersion_explain, ui->UI_Parameter_Tab, 0, 7, \
                                         "5612", "ProtocolVersion", \
                                         "这是协议版本号，用于查看当前协议版本\nThis is the protocol version number used to see the current protocol version.");
     ProtocolVersion->add_Specifition();
-    UserPassPort = new Specification(UserPassPort_explain, ui->UI_Parameter_Tab, 1, 7, \
+    UserPassPort = new Specification(this,UserPassPort_explain, ui->UI_Parameter_Tab, 1, 7, \
                                      "123456", "UserPassPort", \
                                      "这是用户密码，可供重新设置用户密码，默认用户密码123456\nThis is the user password, you can reset the user password, the default user password 123456.");
     UserPassPort->add_Specifition();
-    RootPassport = new Specification(RootPassport_explain, ui->UI_Parameter_Tab, 2, 7,\
+    RootPassport = new Specification(this,RootPassport_explain, ui->UI_Parameter_Tab, 2, 7,\
                                      "888888", "RootPassport", \
                                      "这是超级权限密码，可供重新设置超级权限密码，默认超级权限密码888888\nThis is the super privilege password. You can reset the super privilege password. The default super privilege password is 888888.");
     RootPassport->add_Specifition();
-    Language = new Specification(Language_explain, ui->UI_Parameter_Tab, 3, 7, \
+    Language = new Specification(this,Language_explain, ui->UI_Parameter_Tab, 3, 7, \
                                  "English", "Language", \
                                  "设置显示屏的显示语言，可供选择为中文与英文，切换语言时系统会重启\nSet the display language of the display screen, which can be selected as Chinese and English. The system will restart when switching languages.");
     Language->add_Specifition();
-    System_upgrade = new Specification(System_upgrade_explain, ui->UI_Parameter_Tab, 4, 7, \
+    System_upgrade = new Specification(this,System_upgrade_explain, ui->UI_Parameter_Tab, 4, 7, \
                                        "upgrade", "System_upgrade", \
                                        "点击即可进入系统升级应用程序，根据升级文档进行系统升级\nClick to enter the system upgrade application and upgrade the system according to the upgrade document.");
     System_upgrade->add_Specifition();
-    Sounds = new Specification(Sounds_explain, ui->UI_Parameter_Tab, 5, 7, \
+    Sounds = new Specification(this,Sounds_explain, ui->UI_Parameter_Tab, 5, 7, \
                                "Allow", "Sounds", \
                                "设置显示屏是否开启声音，可供选择为允许(Allow)、禁止(forbid)\nSet whether the display is enabled sound, which can be allowed(Allow) or prohibited(forbid).");
     Sounds->add_Specifition();
-    DryContact = new Specification(DryContact_explain, ui->UI_Parameter_Tab, 6, 7, \
+    DryContact = new Specification(this,DryContact_explain, ui->UI_Parameter_Tab, 6, 7, \
                                    "forbid", "DryContact", \
                                    "根据项目现场配置干接点功能，可供选择为允许(Allow)、禁止(forbid)\nAccording to the project site configuration dry contact function, can be selected as allowed(Allow), prohibited(forbid).");
     DryContact->add_Specifition();
@@ -2883,109 +2883,109 @@ void MEGAWin::FunctionSet()//功能设置绘制button
 
 void MEGAWin::SystemParameter()//系统参数 绘制button
 {
-    Change_rate_of_power = new Specification(Change_rate_of_power_explain, ui->UI_SystemParameter_Tab, 0, 1, \
+    Change_rate_of_power = new Specification(this,Change_rate_of_power_explain, ui->UI_SystemParameter_Tab, 0, 1, \
                                              "20", "Change_rate_of_power", \
                                              "功率变化率是与额定功率相比功率变化的大小\nPower change ratio is the magnitude of the power change compared to the rated power.");
     Change_rate_of_power->add_Specifition();
-    Grid_frequency_upper_limit = new Specification(Grid_frequency_upper_limit_explain, ui->UI_SystemParameter_Tab, 1, 1, \
+    Grid_frequency_upper_limit = new Specification(this,Grid_frequency_upper_limit_explain, ui->UI_SystemParameter_Tab, 1, 1, \
                                                    "3", "Grid_frequency_upper_limit", \
                                                    "电网频率允许超出额定频率的上限,可供选择为0.2、0.5、1、3\nThe grid frequency is allowed to exceed the upper limit of the rated frequency, which can be selected as 0.2, 0.5, 1, and 3.");
     Grid_frequency_upper_limit->add_Specifition();
-    Grid_frequency_lower_limit = new Specification(Grid_frequency_lower_limit_explain, ui->UI_SystemParameter_Tab, 2, 1, \
+    Grid_frequency_lower_limit = new Specification(this,Grid_frequency_lower_limit_explain, ui->UI_SystemParameter_Tab, 2, 1, \
                                                    "-3", "Grid_frequency_lower_limit", \
                                                    "电网频率允许小于额定频率的下限,可供选择为-0.5、-1、-2、-3\nThe grid frequency is allowed to be less than the lower limit of the rated frequency, which can be selected as -0.5, -1, -2, -3.");
     Grid_frequency_lower_limit->add_Specifition();
-    Vol_protection_upper_limit = new Specification(Vol_protection_upper_limit_explain, ui->UI_SystemParameter_Tab, 3, 1, \
+    Vol_protection_upper_limit = new Specification(this,Vol_protection_upper_limit_explain, ui->UI_SystemParameter_Tab, 3, 1, \
                                                    "+15", "Vol_protection_upper_limit", \
                                                    "会进行断电保护的电压最大值,可供选择为+10、+15、+20、+30\nThe maximum voltage for power outage protection can be selected as +10, +15, +20, +30.");
     Vol_protection_upper_limit->add_Specifition();
-    Vol_protection_lower_limit = new Specification(Vol_protection_lower_limit_explain, ui->UI_SystemParameter_Tab, 4, 1, \
+    Vol_protection_lower_limit = new Specification(this,Vol_protection_lower_limit_explain, ui->UI_SystemParameter_Tab, 4, 1, \
                                                    "-15", "Vol_protection_lower_limit", \
                                                    "会进行断电保护的电压最小值,可供选择为-10、-15、-20、-30\nThe minimum voltage for power outage protection can be selected as -10, -15, -20, -30.");
     Vol_protection_lower_limit->add_Specifition();
-    HVRT_enable = new Specification(HVRT_enable_explain, ui->UI_SystemParameter_Tab, 5, 1, \
+    HVRT_enable = new Specification(this,HVRT_enable_explain, ui->UI_SystemParameter_Tab, 5, 1, \
                                                     "prohibit", "HVRT_enable", \
                                                     "高压穿越使能,使高压也能穿越，在一定时间内高压不会关机,可供选择为允许(Allow)、禁止(forbid)\nEnable the high voltage pass through, so that the high voltage can also pass through, and the high voltage will not shut down within a certain time. The options are Allow (Allow), forbid (forbid).");
     HVRT_enable->add_Specifition();
-    LVRT_enable = new Specification(LVRT_enable_explain, ui->UI_SystemParameter_Tab, 6, 1, \
+    LVRT_enable = new Specification(this,LVRT_enable_explain, ui->UI_SystemParameter_Tab, 6, 1, \
                                     "prohibit", "LVRT_enable", \
                                     "低压穿越使能，使低压也能穿越，在一定时间内低压不会关机,可供选择为允许(Allow)、禁止(forbid)\nEnable the low-voltage pass through, so that the low-voltage can also pass through, and the low-voltage will not shut down within a certain period of time. The options are Allow(Allow),, forbid(forbid).");
     LVRT_enable->add_Specifition();
-    AFD_enable = new Specification(AFD_enable_explain, ui->UI_SystemParameter_Tab, 7, 1, \
+    AFD_enable = new Specification(this,AFD_enable_explain, ui->UI_SystemParameter_Tab, 7, 1, \
                                    "prohibit", "AFD_enable", \
                                    "    防止孤岛效应，当检测出现孤岛效应(在光伏并网系统中,当大电网出现停电事故时,光伏并网逆变器发电与电网低压侧本地负载如果刚好出现功率相匹配时,容易出现自给自足的维持发电状态,从而出现""孤岛""现象,从而危及检修人员安全)时,让逆变器自动停机,可供选择为允许(Allow)、禁止(forbid)\nPrevent island effect, When the detection of island effect (in the photovoltaic grid-connected system, when the power failure accident occurs in the large power grid, photovoltaic grid-connected inverter power generation and the local load on the low voltage side of the grid if there is just a power match, it is easy to self-contained maintenance power state, resulting in the phenomenon of ""island"", thereby endangering the safety of maintenance personnel), let the inverter automatic shutdown, optional Permit(Allow) and forbid(forbid).");
     AFD_enable->add_Specifition();
-    Insulation_detection_enable = new Specification(Insulation_detection_enable_explain, ui->UI_SystemParameter_Tab, 8, 1, \
+    Insulation_detection_enable = new Specification(this,Insulation_detection_enable_explain, ui->UI_SystemParameter_Tab, 8, 1, \
                                                     "prohibit", "Insulation_detection_enable", \
                                                     "   绝缘检测使能，绝缘电阻大于33KΩ要能正常起机运行，小于33KΩ不能起机，并且要告警，默认禁止,可供选择为允许(Allow)、禁止(forbid)\nEnable insulation detection. If the insulation resistance is greater than 33KΩ, the machine can start normally; if the insulation resistance is smaller than 33KΩ, the machine cannot start, and the alarm should be generated. By default, it is prohibited, which can be selected as Allow(Allow) or forbid(forbid).");
     Insulation_detection_enable->add_Specifition();
-    PrimaryFreq_enable = new Specification(PrimaryFreq_enable_explain, ui->UI_SystemParameter_Tab, 9, 1, \
+    PrimaryFreq_enable = new Specification(this,PrimaryFreq_enable_explain, ui->UI_SystemParameter_Tab, 9, 1, \
                                            "prohibit", "PrimaryFreq_enable", \
                                            "    一次调频使能,电网的频率偏离额定值时，通过控制有功功率的增减使电网频率维持稳定，可供选择为允许(Allow)、禁止(forbid)\nWhen the frequency of the power grid deviates from the rated value, the frequency of the power grid can be maintained stable by controlling the increase or decrease of the active power. The alternatives are Allow(Allow) and forbid(forbid).");
     PrimaryFreq_enable->add_Specifition();
-    Inertia_enable = new Specification(Inertia_enable_explain, ui->UI_SystemParameter_Tab, 10, 1, \
+    Inertia_enable = new Specification(this,Inertia_enable_explain, ui->UI_SystemParameter_Tab, 10, 1, \
                                        "prohibit", "Inertia_enable", \
                                        "转动惯量使能,在电力系统稳定性计算中加入转动惯量，可供选择为允许(Allow)、禁止(forbid)\nEnable the moment of inertia. Add the moment of inertia to the stability calculation of the power system. The options are Allow(Allow) and forbid(forbid).");
     Inertia_enable->add_Specifition();
 
-    CV_parallel = new Specification(CV_parallel_explain, ui->UI_SystemParameter_Tab, 11, 1, \
+    CV_parallel = new Specification(this,CV_parallel_explain, ui->UI_SystemParameter_Tab, 11, 1, \
                                     "prohibit", "CV_parallel", \
                                     "恒压并机使能,可供选择为允许(Allow)、禁止(forbid)\nAllow (Allow) forbid (forbid) Enable the constant voltage parallel machine.");
     CV_parallel->add_Specifition();
 
-    Machine_type = new Specification(Machine_type_explain, ui->UI_SystemParameter_Tab, 0, 4, \
+    Machine_type = new Specification(this,Machine_type_explain, ui->UI_SystemParameter_Tab, 0, 4, \
                                      "PCS-TS", "Machine_type", \
                                      "根据现场机器机器型号设置，以出厂值为准,可供选择为PCS、PCS-T、PCS-TS、PCS-TS-T\nSet according to the machine model and factory value. PCS, PCs-T, PCS-TS, and PCS-TS-T can be selected.");
     Machine_type->add_Specifition();
-    Machine_capacity = new Specification(Machine_capacity_explain, ui->UI_SystemParameter_Tab, 1, 4, \
+    Machine_capacity = new Specification(this,Machine_capacity_explain, ui->UI_SystemParameter_Tab, 1, 4, \
                                      "100", "Machine_capacity", \
                                      "PCS的额定容量，以出厂值为准，不可随意更改\nThe rated capacity of PCS is subject to the factory value and cannot be changed at will.");
     Machine_capacity->add_Specifition();
-    Output_Fre_grade = new Specification(Output_Fre_grade_explain, ui->UI_SystemParameter_Tab, 2, 4, \
+    Output_Fre_grade = new Specification(this,Output_Fre_grade_explain, ui->UI_SystemParameter_Tab, 2, 4, \
                                          "50", "Output_Fre_grade", \
                                          "设置输出频率的等级，一般默认50HZ，根据项目地可更改为60Hz\nSet the output frequency level. The default frequency is 50HZ, but it can be changed to 60Hz according to the project.");
     Output_Fre_grade->add_Specifition();
-    Output_vol_level = new Specification(Output_vol_level_explain, ui->UI_SystemParameter_Tab, 3, 4, \
+    Output_vol_level = new Specification(this,Output_vol_level_explain, ui->UI_SystemParameter_Tab, 3, 4, \
                                          "400", "Output_vol_level", \
                                          "电压等级是通过变压器后输出的电压等级，要根据变压器的变比来设置，以出厂默认值为准，不可更改\nVoltage level is the output voltage level through the transformer, according to the transformer ratio to set, to the factory default value prevail, can not be changed.");
     Output_vol_level->add_Specifition();
-    Converter_side_vol_level = new Specification(Converter_side_vol_level_explain, ui->UI_SystemParameter_Tab, 4, 4, \
+    Converter_side_vol_level = new Specification(this,Converter_side_vol_level_explain, ui->UI_SystemParameter_Tab, 4, 4, \
                                          "270:400", "Converter_side_vol_level", \
                                          "逆变电压等级是逆变器逆变出来的电压等级，要根据变压器来设置，以出厂默认值为准，不可随意更改，可供更改选择为1:1、60:400、100:400、200:400、270:400、315:400、315:480\n");
     Converter_side_vol_level->add_Specifition();
-    Output_reactive_power_mode = new Specification(Output_reactive_power_mode_explain, ui->UI_SystemParameter_Tab, 5, 4, \
+    Output_reactive_power_mode = new Specification(this,Output_reactive_power_mode_explain, ui->UI_SystemParameter_Tab, 5, 4, \
                                          "Non adjustab", "Output_reactive_power_mode", \
                                          "输出无功方式，默认不可调节，可供选择为功率因数(PF)、无功功率(Q)、不可调节(Non adjustable)\nadjustable output reactive power mode, adjustable by default, adjustable power factor (PF), adjustable power (Q), Non adjustable(Non adjustable).");
     Output_reactive_power_mode->add_Specifition();
-    Grid_connected_mode_of_Inv = new Specification(Grid_connected_mode_of_Inv_explain, ui->UI_SystemParameter_Tab, 6, 4, \
+    Grid_connected_mode_of_Inv = new Specification(this,Grid_connected_mode_of_Inv_explain, ui->UI_SystemParameter_Tab, 6, 4, \
                                                    "Non counterc", "Grid_connected_mode_of_Inv", \
                                                    "设置逆变器的并网方式，可逆流即光伏发电转换成交流电后可以并入电网；不可逆则是光伏发电的电流不会流向电网。默认可逆流，可供选择为可逆流(Counterc)、不可逆流(Non counterc)\nThe grid-connected mode of the inverter can be countercurrent, that is, photovoltaic power generation can be converted into alternating current, which can be incorporated into the power grid; Irreversible means that photovoltaic electricity does not flow to the grid. Countercurrent is available by default. The options are Counterc(Counterc) and Non counterc(Non counterc).");
     Grid_connected_mode_of_Inv->add_Specifition();
-    Primary_FM_dead_zone = new Specification(Primary_FM_dead_zone_explain, ui->UI_SystemParameter_Tab, 7, 4, \
+    Primary_FM_dead_zone = new Specification(this,Primary_FM_dead_zone_explain, ui->UI_SystemParameter_Tab, 7, 4, \
                                              "3", "Primary_FM_dead_zone", \
                                              "一次调频死区为了防止在电网频差小范围变化时调门不必要的动作而设置的频差\nPrimary frequency modulation dead zone A frequency difference set to prevent unwanted switch action when the network frequency difference varies in a small range.");
     Primary_FM_dead_zone->add_Specifition();
-    PFM_coeff = new Specification(PFM_coeff_explain, ui->UI_SystemParameter_Tab, 8, 4, \
+    PFM_coeff = new Specification(this,PFM_coeff_explain, ui->UI_SystemParameter_Tab, 8, 4, \
                                   "20", "PFM_coeff", \
                                   "设置有功调频系数\nSet the active power frequency modulation coefficient.");
     PFM_coeff->add_Specifition();
-    Grid_recover_time = new Specification(Grid_recover_time_explain, ui->UI_SystemParameter_Tab, 9, 4, \
+    Grid_recover_time = new Specification(this,Grid_recover_time_explain, ui->UI_SystemParameter_Tab, 9, 4, \
                                           "10", "Grid_recover_time", \
                                           "电网恢复并网时间：预留功能，设置无效\nGrid restoration time: reserved function, setting invalid.");
     Grid_recover_time->add_Specifition();
-    DynamicCap = new Specification(DynamicCap_explain, ui->UI_SystemParameter_Tab, 10, 4, \
+    DynamicCap = new Specification(this,DynamicCap_explain, ui->UI_SystemParameter_Tab, 10, 4, \
                                    "9600", "DynamicCap", \
                                    "电网扩容使能,当负载在短时间内所需功率大于电网容量时，可暂时从电池辅助供电以达到功率要求，可供选择为允许(Allow)、禁止(forbid)\nEnable the power network expansion. The options are Allow(Allow) and forbid(forbid).");
     DynamicCap->add_Specifition();
-    Module_Number = new Specification(Module_Number_explain, ui->UI_SystemParameter_Tab, 0, 7, \
+    Module_Number = new Specification(this,Module_Number_explain, ui->UI_SystemParameter_Tab, 0, 7, \
                                       "1", "Module_Number", \
                                       "PCS的模块数量，默认值1(无效设置)\nNumber of modules for PCS, default 1(invalid setting).");
     Module_Number->add_Specifition();
-    Restore_factory = new Specification(Restore_factory_explain, ui->UI_SystemParameter_Tab,1, 7, \
+    Restore_factory = new Specification(this,Restore_factory_explain, ui->UI_SystemParameter_Tab,1, 7, \
                                         "restore", "Restore_factory", \
                                         "恢复出厂时的默认设置\nRestore the factory default Settings.");
     Restore_factory->add_Specifition();
-    Clear_Data = new Specification(Clear_Data_explain, ui->UI_SystemParameter_Tab, 2, 7, \
+    Clear_Data = new Specification(this,Clear_Data_explain, ui->UI_SystemParameter_Tab, 2, 7, \
                                    "Clear", "Clear_Data", \
                                    "清除系统此前的记录数据及操作数据\nClear previous recorded data and operation data of the system.");
     Clear_Data->add_Specifition();
@@ -2993,113 +2993,113 @@ void MEGAWin::SystemParameter()//系统参数 绘制button
 
 void MEGAWin::Peripheral()//外设 绘制button
 {
-    DI_1_Enable = new Specification(DI_1_Enable_explain, ui->ExternalDevice_tW, 0, 0, \
+    DI_1_Enable = new Specification(this,DI_1_Enable_explain, ui->ExternalDevice_tW, 0, 0, \
                                    "Enable", "DI_1_Enable", \
                                    "输入干接点1，发生NO关机时执行动作的开关,可选功能为使能(Enable)、禁止(Disable)\n");
     DI_1_Enable->add_Specifition();
-    DI_2_Enable = new Specification(DI_2_Enable_explain, ui->ExternalDevice_tW, 1, 0, \
+    DI_2_Enable = new Specification(this,DI_2_Enable_explain, ui->ExternalDevice_tW, 1, 0, \
                                    "Enable", "DI_2_Enable", \
                                    "输入干接点2，发生NC关机时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\n");
     DI_2_Enable->add_Specifition();
-    DI_3_Enable = new Specification(DI_3_Enable_explain, ui->ExternalDevice_tW, 2, 0, \
+    DI_3_Enable = new Specification(this,DI_3_Enable_explain, ui->ExternalDevice_tW, 2, 0, \
                                    "Enable", "DI_3_Enable", \
                                    "输入干接点3，门禁开启时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\n");
     DI_3_Enable->add_Specifition();
-    DI_4_Enable = new Specification(DI_4_Enable_explain, ui->ExternalDevice_tW, 3, 0, \
+    DI_4_Enable = new Specification(this,DI_4_Enable_explain, ui->ExternalDevice_tW, 3, 0, \
                                    "Enable", "DI_4_Enable", \
                                    "输入干接点4，柴发信号发出时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\n");
     DI_4_Enable->add_Specifition();
-    DI_5_Enable = new Specification(DI_5_Enable_explain, ui->ExternalDevice_tW, 4, 0, \
+    DI_5_Enable = new Specification(this,DI_5_Enable_explain, ui->ExternalDevice_tW, 4, 0, \
                                    "Enable", "DI_5_Enable", \
                                    "输入干接点5，发生水浸时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\n");
     DI_5_Enable->add_Specifition();
-    DI_6_Enable = new Specification(DI_6_Enable_explain, ui->ExternalDevice_tW, 5, 0, \
+    DI_6_Enable = new Specification(this,DI_6_Enable_explain, ui->ExternalDevice_tW, 5, 0, \
                                    "Enable", "DI_6_Enable", \
                                    "输入干接点6，消防信号发出时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\n");
     DI_6_Enable->add_Specifition();
-    DO_1_Enable = new Specification(DO_1_Enable_explain, ui->ExternalDevice_tW, 6, 0, \
+    DO_1_Enable = new Specification(this,DO_1_Enable_explain, ui->ExternalDevice_tW, 6, 0, \
                                    "Enable", "DO_1_Enable", \
                                    "输出干接点1，发电机开启时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\n");
     DO_1_Enable->add_Specifition();
-    DO_2_Enable = new Specification(DO_2_Enable_explain, ui->ExternalDevice_tW, 7, 0, \
+    DO_2_Enable = new Specification(this,DO_2_Enable_explain, ui->ExternalDevice_tW, 7, 0, \
                                    "Enable", "DO_2_Enable", \
                                    "输出干接点2，预留功能，设置无效，可选功能为使能(Enable)、禁止(Disable)\n");
     DO_2_Enable->add_Specifition();
-    DO_3_Enable = new Specification(DO_3_Enable_explain, ui->ExternalDevice_tW, 8, 0, \
+    DO_3_Enable = new Specification(this,DO_3_Enable_explain, ui->ExternalDevice_tW, 8, 0, \
                                    "Enable", "DO_3_Enable", \
                                    "输出干接点3，预留功能，设置无效，可选功能为使能(Enable)、禁止(Disable)\n");
     DO_3_Enable->add_Specifition();
 
-    DI_1_NC_O = new Specification(DI_1_NC_O_explain, ui->ExternalDevice_tW, 0, 1, \
+    DI_1_NC_O = new Specification(this,DI_1_NC_O_explain, ui->ExternalDevice_tW, 0, 1, \
                                    "N_O", "DI_1_NC_O", \
                                    "输入干接点1，设置NO关机是常闭电路还是常开电路,可选功能为常开(N_O)常闭(N_C)\n");
     DI_1_NC_O->add_Specifition();
-    DI_2_NC_O = new Specification(DI_2_NC_O_explain, ui->ExternalDevice_tW, 1, 1, \
+    DI_2_NC_O = new Specification(this,DI_2_NC_O_explain, ui->ExternalDevice_tW, 1, 1, \
                                    "N_O", "DI_2_NC_O", \
                                    "输入干接点2，设置NC关机是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
     DI_2_NC_O->add_Specifition();
-    DI_3_NC_O = new Specification(DI_3_NC_O_explain, ui->ExternalDevice_tW, 2, 1, \
+    DI_3_NC_O = new Specification(this,DI_3_NC_O_explain, ui->ExternalDevice_tW, 2, 1, \
                                    "N_C", "DI_3_NC_O", \
                                    "输入干接点3，设置门禁开是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
     DI_3_NC_O->add_Specifition();
-    DI_4_NC_O = new Specification(DI_4_NC_O_explain, ui->ExternalDevice_tW, 3, 1, \
+    DI_4_NC_O = new Specification(this,DI_4_NC_O_explain, ui->ExternalDevice_tW, 3, 1, \
                                    "N_O", "DI_4_NC_O", \
                                    "输入干接点4，设置柴发信号是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
     DI_4_NC_O->add_Specifition();
-    DI_5_NC_O = new Specification(DI_5_NC_O_explain, ui->ExternalDevice_tW, 4, 1, \
+    DI_5_NC_O = new Specification(this,DI_5_NC_O_explain, ui->ExternalDevice_tW, 4, 1, \
                                    "N_O", "DI_5_NC_O", \
                                    "输入干接点5，设置水浸是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
     DI_5_NC_O->add_Specifition();
-    DI_6_NC_O = new Specification(DI_6_NC_O_explain, ui->ExternalDevice_tW, 5, 1, \
+    DI_6_NC_O = new Specification(this,DI_6_NC_O_explain, ui->ExternalDevice_tW, 5, 1, \
                                    "N_O", "DI_6_NC_O", \
                                    "输入干接点6，设置消防是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
     DI_6_NC_O->add_Specifition();
-    DO_1_NC_O = new Specification(DO_1_NC_O_explain, ui->ExternalDevice_tW, 6, 1, \
+    DO_1_NC_O = new Specification(this,DO_1_NC_O_explain, ui->ExternalDevice_tW, 6, 1, \
                                    "N_O", "DO_1_NC_O", \
                                    "输出干接点1，设置发电机是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
     DO_1_NC_O->add_Specifition();
-    DO_2_NC_O = new Specification(DO_2_NC_O_explain, ui->ExternalDevice_tW, 7, 1, \
+    DO_2_NC_O = new Specification(this,DO_2_NC_O_explain, ui->ExternalDevice_tW, 7, 1, \
                                    "N_O", "DO_2_NC_O", \
                                    "输出干接点2，预留功能，设置无效，设置是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
     DO_2_NC_O->add_Specifition();
-    DO_3_NC_O = new Specification(DO_3_NC_O_explain, ui->ExternalDevice_tW, 8, 1, \
+    DO_3_NC_O = new Specification(this,DO_3_NC_O_explain, ui->ExternalDevice_tW, 8, 1, \
                                    "N_O", "DO_3_NC_O", \
                                    "输出干接点3，预留功能，设置无效，设置是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
     DO_3_NC_O->add_Specifition();
 
-    DI_1_Action = new Specification(DI_1_Action_explain, ui->ExternalDevice_tW, 0, 2, \
+    DI_1_Action = new Specification(this,DI_1_Action_explain, ui->ExternalDevice_tW, 0, 2, \
                                    "Shut down", "DI_1_Action", \
                                    "输入干接点1，发生NO关机时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
     DI_1_Action->add_Specifition();
-    DI_2_Action = new Specification(DI_2_Action_explain, ui->ExternalDevice_tW, 1, 2, \
+    DI_2_Action = new Specification(this,DI_2_Action_explain, ui->ExternalDevice_tW, 1, 2, \
                                    "Prompt", "DI_2_Action", \
                                    "输入干接点2，发生NC关机时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
     DI_2_Action->add_Specifition();
-    DI_3_Action = new Specification(DI_3_Action_explain, ui->ExternalDevice_tW, 2, 2, \
+    DI_3_Action = new Specification(this,DI_3_Action_explain, ui->ExternalDevice_tW, 2, 2, \
                                    "Prompt", "DI_3_Action", \
                                    "输入干接点3，门禁打开时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
     DI_3_Action->add_Specifition();
-    DI_4_Action = new Specification(DI_4_Action_explain, ui->ExternalDevice_tW, 3, 2, \
+    DI_4_Action = new Specification(this,DI_4_Action_explain, ui->ExternalDevice_tW, 3, 2, \
                                    "Prompt", "DI_4_Action", \
                                    "输入干接点4，柴发信号发出时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
     DI_4_Action->add_Specifition();
-    DI_5_Action = new Specification(DI_5_Action_explain, ui->ExternalDevice_tW, 4, 2, \
+    DI_5_Action = new Specification(this,DI_5_Action_explain, ui->ExternalDevice_tW, 4, 2, \
                                    "Shut down", "DI_5_Action", \
                                    "输入干接点5，发生水浸时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
     DI_5_Action->add_Specifition();
-    DI_6_Action = new Specification(DI_6_Action_explain, ui->ExternalDevice_tW, 5, 2, \
+    DI_6_Action = new Specification(this,DI_6_Action_explain, ui->ExternalDevice_tW, 5, 2, \
                                    "Shut down", "DI_6_Action", \
                                    "输入干接点6，触发消防时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
     DI_6_Action->add_Specifition();
-    DO_1_Action = new Specification(DO_1_Action_explain, ui->ExternalDevice_tW, 6, 2, \
+    DO_1_Action = new Specification(this,DO_1_Action_explain, ui->ExternalDevice_tW, 6, 2, \
                                    "Prompt", "DO_1_Action", \
                                    "输出干接点1，启动发电机时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
     DO_1_Action->add_Specifition();
-    DO_2_Action = new Specification(DO_2_Action_explain, ui->ExternalDevice_tW, 7, 2, \
+    DO_2_Action = new Specification(this,DO_2_Action_explain, ui->ExternalDevice_tW, 7, 2, \
                                    "Prompt", "DO_2_Action", \
                                    "输出干接点2，预留功能，设置无效，信号触发时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
     DO_2_Action->add_Specifition();
-    DO_3_Action = new Specification(DO_3_Action_explain, ui->ExternalDevice_tW, 8, 2, \
+    DO_3_Action = new Specification(this,DO_3_Action_explain, ui->ExternalDevice_tW, 8, 2, \
                                    "Prompt", "DO_3_Action", \
                                    "输出干接点3，预留功能，设置无效，信号触发时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
     DO_3_Action->add_Specifition();
@@ -3107,52 +3107,52 @@ void MEGAWin::Peripheral()//外设 绘制button
 
 void MEGAWin::BMS_Protect()//BMS保护 绘制button
 {
-    DOD_Action = new Specification(DOD_Action_explain, ui->BMSProtection_tW, 0, 0, \
+    DOD_Action = new Specification(this,DOD_Action_explain, ui->BMSProtection_tW, 0, 0, \
                                    "Standby", "DOD", \
                                    "DOD保护，触发DOD保护时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\n");
     DOD_Action->add_Specifition();
-    Prohibit_charging_Action = new Specification(Prohibit_charging_Action_explain, ui->BMSProtection_tW, 1, 0, \
+    Prohibit_charging_Action = new Specification(this,Prohibit_charging_Action_explain, ui->BMSProtection_tW, 1, 0, \
                                    "Standby", "Prohibit_charging", \
                                    "触发禁充时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\n");
     Prohibit_charging_Action->add_Specifition();
-    Prohibit_discharging_Action = new Specification(Prohibit_discharging_Action_explain, ui->BMSProtection_tW, 2, 0, \
+    Prohibit_discharging_Action = new Specification(this,Prohibit_discharging_Action_explain, ui->BMSProtection_tW, 2, 0, \
                                    "Standby", "Prohibit_discharging", \
                                    "触发禁放时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\n");
     Prohibit_discharging_Action->add_Specifition();
-    BMS_warning_Action = new Specification(BMS_warning_Action_explain, ui->BMSProtection_tW, 3, 0, \
+    BMS_warning_Action = new Specification(this,BMS_warning_Action_explain, ui->BMSProtection_tW, 3, 0, \
                                    "NO action", "BMS_warning", \
                                    "触发BMS提示时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\n");
     BMS_warning_Action->add_Specifition();
-    BMS_alarm_Action = new Specification(BMS_alarm_Action_explain, ui->BMSProtection_tW, 4, 0, \
+    BMS_alarm_Action = new Specification(this,BMS_alarm_Action_explain, ui->BMSProtection_tW, 4, 0, \
                                    "Standby", "BMS_alarm", \
                                    "触发BMS告警时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\n");
     BMS_alarm_Action->add_Specifition();
-    BMS_fualt_Action = new Specification(BMS_fualt_Action_explain, ui->BMSProtection_tW, 5, 0, \
+    BMS_fualt_Action = new Specification(this,BMS_fualt_Action_explain, ui->BMSProtection_tW, 5, 0, \
                                    "Shut down", "BMS_fualt", \
                                    "触发BMS故障时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\n");
     BMS_fualt_Action->add_Specifition();
-    BMS_warning_CP = new Specification(BMS_warning_CP_explain, ui->BMSProtection_tW, 3, 1, \
+    BMS_warning_CP = new Specification(this,BMS_warning_CP_explain, ui->BMSProtection_tW, 3, 1, \
                                    "0", "BMS_warning_CP", \
                                    "触发BMS提示时的充电功率\n");
     BMS_warning_CP->add_Specifition();
-    BMS_alarm_CP = new Specification(BMS_alarm_CP_explain, ui->BMSProtection_tW, 4, 1, \
+    BMS_alarm_CP = new Specification(this,BMS_alarm_CP_explain, ui->BMSProtection_tW, 4, 1, \
                                    "0", "BMS_alarm_CP", \
                                    "触发BMS告警时执行的的充电功率\n");
     BMS_alarm_CP->add_Specifition();
-    BMS_fualt_CP = new Specification(BMS_fualt_CP_explain, ui->BMSProtection_tW, 5, 1, \
+    BMS_fualt_CP = new Specification(this,BMS_fualt_CP_explain, ui->BMSProtection_tW, 5, 1, \
                                    "0", "BMS_fualt_CP", \
                                    "触发BMS故障时的充电功率\n");
     BMS_fualt_CP->add_Specifition();
 
-    BMS_warning_DP = new Specification(BMS_warning_DP_explain, ui->BMSProtection_tW, 3, 2, \
+    BMS_warning_DP = new Specification(this,BMS_warning_DP_explain, ui->BMSProtection_tW, 3, 2, \
                                    "0", "BMS_warning_DP", \
                                    "触发BMS提示时的放电功率\n");
     BMS_warning_DP->add_Specifition();
-    BMS_alarm_DP = new Specification(BMS_alarm_DP_explain, ui->BMSProtection_tW, 4, 2, \
+    BMS_alarm_DP = new Specification(this,BMS_alarm_DP_explain, ui->BMSProtection_tW, 4, 2, \
                                    "0", "BMS_alarm_DP", \
                                    "触发BMS告警时的放电功率\n");
     BMS_alarm_DP->add_Specifition();
-    BMS_fualt_DP = new Specification(BMS_fualt_DP_explain, ui->BMSProtection_tW, 5, 2, \
+    BMS_fualt_DP = new Specification(this,BMS_fualt_DP_explain, ui->BMSProtection_tW, 5, 2, \
                                    "0", "BMS_fualt_DP", \
                                    "触发BMS故障时的放电功率\n");
     BMS_fualt_DP->add_Specifition();
@@ -3161,140 +3161,140 @@ void MEGAWin::BMS_Protect()//BMS保护 绘制button
 
 void MEGAWin::Debugg()//调试 绘制button
 {
-    Debug_variable_1 = new Specification(Debug_variable_1_explain, ui->UI_Debug_Tab, 0, 1, \
+    Debug_variable_1 = new Specification(this,Debug_variable_1_explain, ui->UI_Debug_Tab, 0, 1, \
                                    "0", "Debug_variable_1", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Debug_variable_1->add_Specifition();
-    Debug_variable_2 = new Specification(Debug_variable_2_explain, ui->UI_Debug_Tab, 1, 1, \
+    Debug_variable_2 = new Specification(this,Debug_variable_2_explain, ui->UI_Debug_Tab, 1, 1, \
                                    "0", "Debug_variable_2", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Debug_variable_2->add_Specifition();
-    Debug_variable_3 = new Specification(Debug_variable_3_explain, ui->UI_Debug_Tab, 2, 1, \
+    Debug_variable_3 = new Specification(this,Debug_variable_3_explain, ui->UI_Debug_Tab, 2, 1, \
                                    "0", "Debug_variable_3", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Debug_variable_3->add_Specifition();
-    Debug_variable_1_addr = new Specification(Debug_variable_1_addr_explain, ui->UI_Debug_Tab, 3, 1, \
+    Debug_variable_1_addr = new Specification(this,Debug_variable_1_addr_explain, ui->UI_Debug_Tab, 3, 1, \
                                    "4096", "Debug_variable_1_addr", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Debug_variable_1_addr->add_Specifition();
-    Debug_variable_2_addr = new Specification(Debug_variable_2_addr_explain, ui->UI_Debug_Tab, 4, 1, \
+    Debug_variable_2_addr = new Specification(this,Debug_variable_2_addr_explain, ui->UI_Debug_Tab, 4, 1, \
                                    "4096", "Debug_variable_2_addr", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Debug_variable_2_addr->add_Specifition();
-    Debug_variable_3_addr = new Specification(Debug_variable_3_addr_explain, ui->UI_Debug_Tab, 5, 1, \
+    Debug_variable_3_addr = new Specification(this,Debug_variable_3_addr_explain, ui->UI_Debug_Tab, 5, 1, \
                                    "4096", "Debug_variable_3_addr", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Debug_variable_3_addr->add_Specifition();
-    Debug_memery_var_1 = new Specification(Debug_memery_var_1_explain, ui->UI_Debug_Tab, 6, 1, \
+    Debug_memery_var_1 = new Specification(this,Debug_memery_var_1_explain, ui->UI_Debug_Tab, 6, 1, \
                                    "0", "Debug_memery_var_1", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Debug_memery_var_1->add_Specifition();
-    Debug_memery_var_2 = new Specification(Debug_memery_var_2_explain, ui->UI_Debug_Tab, 7, 1, \
+    Debug_memery_var_2 = new Specification(this,Debug_memery_var_2_explain, ui->UI_Debug_Tab, 7, 1, \
                                    "0", "Debug_memery_var_2", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Debug_memery_var_2->add_Specifition();
-    Debug_memery_var_3 = new Specification(Debug_memery_var_3_explain, ui->UI_Debug_Tab, 8, 1, \
+    Debug_memery_var_3 = new Specification(this,Debug_memery_var_3_explain, ui->UI_Debug_Tab, 8, 1, \
                                    "0", "Debug_memery_var_3", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Debug_memery_var_3->add_Specifition();
-    Input_Vol_revise = new Specification(Input_Vol_revise_explain, ui->UI_Debug_Tab, 9, 1, \
+    Input_Vol_revise = new Specification(this,Input_Vol_revise_explain, ui->UI_Debug_Tab, 9, 1, \
                                    "", "Input_Vol_revise", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Input_Vol_revise->add_Specifition();
-    Input_Cur_revise = new Specification(Input_Cur_revise_explain, ui->UI_Debug_Tab, 10, 1, \
+    Input_Cur_revise = new Specification(this,Input_Cur_revise_explain, ui->UI_Debug_Tab, 10, 1, \
                                    "", "Input_Cur_revise", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Input_Cur_revise->add_Specifition();
-    Voltage_1_5_revise = new Specification(Voltage_1_5_revise_explain, ui->UI_Debug_Tab, 0, 3, \
+    Voltage_1_5_revise = new Specification(this,Voltage_1_5_revise_explain, ui->UI_Debug_Tab, 0, 3, \
                                    "", "Voltage_1_5_revise", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Voltage_1_5_revise->add_Specifition();
-    Bus_Vol_revise = new Specification(Bus_Vol_revise_explain, ui->UI_Debug_Tab, 1, 3, \
+    Bus_Vol_revise = new Specification(this,Bus_Vol_revise_explain, ui->UI_Debug_Tab, 1, 3, \
                                    "", "Bus_Vol_revise", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Bus_Vol_revise->add_Specifition();
-    Grid_A_AB_Vol_revise = new Specification(Grid_A_AB_Vol_revise_explain, ui->UI_Debug_Tab, 2, 3, \
+    Grid_A_AB_Vol_revise = new Specification(this,Grid_A_AB_Vol_revise_explain, ui->UI_Debug_Tab, 2, 3, \
                                    "", "Grid_A_AB_Vol_revise", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Grid_A_AB_Vol_revise->add_Specifition();
-    Grid_B_BC_Vol_revise = new Specification(Grid_B_BC_Vol_revise_explain, ui->UI_Debug_Tab, 3, 3, \
+    Grid_B_BC_Vol_revise = new Specification(this,Grid_B_BC_Vol_revise_explain, ui->UI_Debug_Tab, 3, 3, \
                                    "", "Grid_B_BC_Vol_revise", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Grid_B_BC_Vol_revise->add_Specifition();
-    Grid_C_CA_Vol_revise = new Specification(Grid_C_CA_Vol_revise_explain, ui->UI_Debug_Tab, 4, 3, \
+    Grid_C_CA_Vol_revise = new Specification(this,Grid_C_CA_Vol_revise_explain, ui->UI_Debug_Tab, 4, 3, \
                                    "", "Grid_C_CA_Vol_revise", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Grid_C_CA_Vol_revise->add_Specifition();
-    Output_A_Cur_revise = new Specification(Output_A_Cur_revise_explain, ui->UI_Debug_Tab, 5, 3, \
+    Output_A_Cur_revise = new Specification(this,Output_A_Cur_revise_explain, ui->UI_Debug_Tab, 5, 3, \
                                    "", "Output_A_Cur_revise", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Output_A_Cur_revise->add_Specifition();
-    Output_B_Cur_revise = new Specification(Output_B_Cur_revise_explain, ui->UI_Debug_Tab, 6, 3, \
+    Output_B_Cur_revise = new Specification(this,Output_B_Cur_revise_explain, ui->UI_Debug_Tab, 6, 3, \
                                    "", "Output_B_Cur_revise", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Output_B_Cur_revise->add_Specifition();
-    Output_C_Cur_revise = new Specification(Output_C_Cur_revise_explain, ui->UI_Debug_Tab, 7, 3, \
+    Output_C_Cur_revise = new Specification(this,Output_C_Cur_revise_explain, ui->UI_Debug_Tab, 7, 3, \
                                    "", "Output_C_Cur_revise", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Output_C_Cur_revise->add_Specifition();
-    INV_A_Vol_revise = new Specification(INV_A_Vol_revise_explain, ui->UI_Debug_Tab, 8, 3, \
+    INV_A_Vol_revise = new Specification(this,INV_A_Vol_revise_explain, ui->UI_Debug_Tab, 8, 3, \
                                    "", "INV_A_Vol_revise", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     INV_A_Vol_revise->add_Specifition();
-    INV_B_Vol_revise = new Specification(INV_B_Vol_revise_explain, ui->UI_Debug_Tab, 9, 3, \
+    INV_B_Vol_revise = new Specification(this,INV_B_Vol_revise_explain, ui->UI_Debug_Tab, 9, 3, \
                                    "", "INV_B_Vol_revise", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     INV_B_Vol_revise->add_Specifition();
-    INV_C_Vol_revise = new Specification(INV_C_Vol_revise_explain, ui->UI_Debug_Tab, 10, 3, \
+    INV_C_Vol_revise = new Specification(this,INV_C_Vol_revise_explain, ui->UI_Debug_Tab, 10, 3, \
                                    "", "INV_C_Vol_revise", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     INV_C_Vol_revise->add_Specifition();
 
-    INV_A_ind_Cur_revise = new Specification(INV_A_ind_Cur_revise_explain, ui->UI_Debug_Tab, 0, 5, \
+    INV_A_ind_Cur_revise = new Specification(this,INV_A_ind_Cur_revise_explain, ui->UI_Debug_Tab, 0, 5, \
                                    "", "INV_A_ind_Cur_revise", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     INV_A_ind_Cur_revise->add_Specifition();
-    INV_B_ind_Cur_revise = new Specification(INV_B_ind_Cur_revise_explain, ui->UI_Debug_Tab, 1, 5, \
+    INV_B_ind_Cur_revise = new Specification(this,INV_B_ind_Cur_revise_explain, ui->UI_Debug_Tab, 1, 5, \
                                    "", "INV_B_ind_Cur_revise", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     INV_B_ind_Cur_revise->add_Specifition();
-    INV_C_ind_Cur_revise = new Specification(INV_C_ind_Cur_revise_explain, ui->UI_Debug_Tab, 2, 5, \
+    INV_C_ind_Cur_revise = new Specification(this,INV_C_ind_Cur_revise_explain, ui->UI_Debug_Tab, 2, 5, \
                                    "", "INV_C_ind_Cur_revise", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     INV_C_ind_Cur_revise->add_Specifition();
-    INV_On_off_flag = new Specification(INV_On_off_flag_explain, ui->UI_Debug_Tab, 3, 5, \
+    INV_On_off_flag = new Specification(this,INV_On_off_flag_explain, ui->UI_Debug_Tab, 3, 5, \
                                    "0", "INV_On_off_flag", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     INV_On_off_flag->add_Specifition();
-    Logic_state = new Specification(Logic_state_explain, ui->UI_Debug_Tab, 4, 5, \
+    Logic_state = new Specification(this,Logic_state_explain, ui->UI_Debug_Tab, 4, 5, \
                                    "0", "Logic_state", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Logic_state->add_Specifition();
-    INV_flag = new Specification(INV_flag_explain, ui->UI_Debug_Tab, 5, 5, \
+    INV_flag = new Specification(this,INV_flag_explain, ui->UI_Debug_Tab, 5, 5, \
                                    "0", "INV_flag", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     INV_flag->add_Specifition();
-    Grid_flag = new Specification(Grid_flag_explain, ui->UI_Debug_Tab, 6, 5, \
+    Grid_flag = new Specification(this,Grid_flag_explain, ui->UI_Debug_Tab, 6, 5, \
                                    "0", "Grid_flag", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Grid_flag->add_Specifition();
-    Grid_protect_flag = new Specification(Grid_protect_flag_explain, ui->UI_Debug_Tab, 7, 5, \
+    Grid_protect_flag = new Specification(this,Grid_protect_flag_explain, ui->UI_Debug_Tab, 7, 5, \
                                    "0", "Grid_protect_flag", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Grid_protect_flag->add_Specifition();
-    Bat_flag = new Specification(Bat_flag_explain, ui->UI_Debug_Tab, 8, 5, \
+    Bat_flag = new Specification(this,Bat_flag_explain, ui->UI_Debug_Tab, 8, 5, \
                                    "0", "Bat_flag", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     Bat_flag->add_Specifition();
-    DC_bus_flag = new Specification(DC_bus_flag_explain, ui->UI_Debug_Tab, 9, 5, \
+    DC_bus_flag = new Specification(this,DC_bus_flag_explain, ui->UI_Debug_Tab, 9, 5, \
                                    "0", "DC_bus_flag", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     DC_bus_flag->add_Specifition();
-    INT_main_flag = new Specification(INT_main_flag_explain, ui->UI_Debug_Tab, 10, 5, \
+    INT_main_flag = new Specification(this,INT_main_flag_explain, ui->UI_Debug_Tab, 10, 5, \
                                    "0", "INT_main_flag", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     INT_main_flag->add_Specifition();
-    parallel_signal = new Specification(parallel_signal_explain, ui->UI_Debug_Tab, 11, 5, \
+    parallel_signal = new Specification(this,parallel_signal_explain, ui->UI_Debug_Tab, 11, 5, \
                                    "0", "parallel_signal", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     parallel_signal->add_Specifition();

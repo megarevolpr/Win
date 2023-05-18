@@ -10,7 +10,7 @@ class Specification : public QDialog
     Q_OBJECT
 
 public:
-    explicit Specification(QPushButton *button, QTableWidget *tableWidget,
+    explicit Specification(QWidget *parent,QPushButton *button, QTableWidget *tableWidget,
                             int r, int col, QString val, QString title, QString text);
     ~Specification();
 
