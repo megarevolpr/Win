@@ -26,6 +26,7 @@ MEGAWin::MEGAWin(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MEGAWin)
 {
+    ASKey = true;
     ui->setupUi(this);
     ui->UI_stackedWidget->setCurrentWidget(ui->UI_page );//开机后进入主页面
     ui->stackedWidget->setCurrentWidget(ui->Bypass_page);
@@ -419,6 +420,14 @@ void MEGAWin::MemoryAllocation()
     DC_bus_flag_explain             = new QPushButton;
     INT_main_flag_explain           = new QPushButton;
     parallel_signal_explain         = new QPushButton;
+    /*****************************监控调试****************************************/
+    pButton_MonitorDebug = new QButtonGroup();
+    pButton_MonitorDebug->addButton(ui->DO_TurnON_btn,0);
+    pButton_MonitorDebug->addButton(ui->DO_TurnOFF_btn,1);
+    pButton_MonitorDebug->addButton(ui->localSoftstart_btn,2);
+    pButton_MonitorDebug->addButton(ui->localSoftend_btn,3);
+    pButton_MonitorDebug->addButton(ui->BMSPowerOn_btn,4);//电池设置-电池上电
+    pButton_MonitorDebug->addButton(ui->BMSPowerOff_btn,5);//电池设置-电池下电
     /*****************************PCS数据****************************************/
     PCS_vol_AB_explain = new QPushButton;
     PCS_vol_BC_explain = new QPushButton;
@@ -548,7 +557,9 @@ void MEGAWin::FirstPage()
 void MEGAWin::RunStatePage()
 {
     ModuleData_Tab();//PCS数据
+    RTAlarm();//告警信息
     ModuleState_Tab();//PCS状态
+
 }
 
 /***************************************************************
@@ -556,23 +567,15 @@ void MEGAWin::RunStatePage()
  ***************************************************************/
 void MEGAWin::SystemSettingPage()
 {
-    /*一般设置表*/
-    UserParam_tab();
-    /*系统设置表*/
-//    FuctionParam_tab();
-//    ProtectParam_tab();
-//    ExternalDevice_tab();
-//    BMSProtection_tab();
-//    DebugParam_tab();
-    /*设备信息表*/
-//    EquipmentInfor_tab();
-    /*铅酸电池设置表*/
-    BatterySet_tab();
-    /*自动运行时间设置表*/
-    RunTimeSet_tab();
-    /*历史记录设置表*/
-    History_tab();//历史记录设置表初始化
-    Information_tbnt_released();
+    UserParam_tab();/*系统-设置表*/
+
+    BatterySet_tab();/*系统-电池设置表*/
+
+    RunTimeSet_tab();/*系统-自动运行时间设置表*/
+
+    History_tab();/*记录-历史记录、操作日志设置表*/
+
+    Information_tbnt_released();/*系统-系统消息*/
 }
 
 void MEGAWin::LCDSetting()  //LCD标签初始化和定时器设置
@@ -863,18 +866,15 @@ void MEGAWin::Information_tbnt_released()//系统信息槽
 
 }
 
-void MEGAWin::GeneralParam_tbnt_released()  //一般参数槽
-{
+//void MEGAWin::GeneralParam_tbnt_released()  //一般参数槽
+//{
 
-}
+//}
 /*************************************************************************
  * PCS故障信息表
  ************************************************************************/
 void MEGAWin::PCS_Alarm_information_table()
 {
-
-
-
     ui->RTAlarm_Data_page->setRowHeight(0, 110);
     QStringList RTAlarm_List;
     RTAlarm_List << tr("逆变器过流\nInverter overcurrent") << tr("一般故障\nGeneral failure") \
@@ -1247,7 +1247,7 @@ void MEGAWin::combox_ui_OnOff_Grid_change()//并离网
 void MEGAWin::SystemParam_tbnt_released()
 {
 
-    for(int i=0;i<12;i++)
+    for(int i=0;i<12;i++)//调整功能设置、参数设置的列宽列高
     {
         ui->UI_Parameter_Tab->setColumnWidth(i,165);
         ui->UI_Parameter_Tab->setRowHeight(i,50);
@@ -1264,7 +1264,7 @@ void MEGAWin::SystemParam_tbnt_released()
         ui->UI_SystemParameter_Tab->setColumnWidth(i,55);
         ui->UI_SystemParameter_Tab->setRowHeight(i,50);
     }
-    for(int i=0;i<9;i++)
+    for(int i=0;i<9;i++)//调整 外设 的列宽列高
     {
         ui->ExternalDevice_tW->setColumnWidth(i,200);
         ui->ExternalDevice_tW->setRowHeight(i,50);
@@ -1273,12 +1273,12 @@ void MEGAWin::SystemParam_tbnt_released()
             ui->ExternalDevice_tW->setRowHeight(i,50);
         }
     }
-    for(int i=0;i<3;i++)
+    for(int i=0;i<3;i++)//调整 BMS保护 的列宽列高
     {
         ui->BMSProtection_tW->setColumnWidth(i,220);
         ui->BMSProtection_tW->setRowHeight(i,50);
     }
-    for(int i=0;i<12;i++)
+    for(int i=0;i<12;i++)//调整 调试 的列宽列高
     {
         if(i%2==0)
         {
@@ -1303,14 +1303,6 @@ void MEGAWin::SystemParam_tbnt_released()
     BMS_Protect();/*BMS保护*/
     Debugg();/*调试*/
 
-
-
-
-    
-
-
-
-
 }
 
 /***************************************************************
@@ -1318,10 +1310,12 @@ void MEGAWin::SystemParam_tbnt_released()
  ***************************************************************/
 void MEGAWin::AdvancedSetup_btn_clicked()
 {
-
     ui->UI_stackedWidget->setCurrentWidget(ui->BasicSet_page);
-    SystemParam_tbnt_released();
-
+    if(ASKey)//保证只执行一次这句话，否则多次进出高级设置，会多次绘制页面，点击一次button，出现个消息对话框
+    {
+        ASKey = false;
+        SystemParam_tbnt_released();
+    }
 }
 
 /***************************************************************
@@ -1339,11 +1333,13 @@ void MEGAWin::LinkRelationship()
     connect(ui->Bypass_Running_btn, SIGNAL(clicked()), this, SLOT(on_Running_btn_clicked()));   //主页变流器按钮跳转变流器实时数据
     connect(ui->Bypass_Grid_btn, SIGNAL(clicked()), this, SLOT(on_Grid_clicked()));    //主页电网按钮跳转电网实时数据
     connect(ui->Bypass_Load_Btn, SIGNAL(clicked()), this, SLOT(on_Load_clicked()));    //主页负载按钮跳转负载实时数据
-    connect(ui->Alarm_Button, SIGNAL(clicked()), this,SLOT(RTAlarm_tbtn_clicked()));//跳转当前告警记录
+    connect(ui->Alarm_Button, SIGNAL(clicked()), this,SLOT(on_Alarm_btn_clicker()));//跳转当前告警记录
 
     connect(pButton_History, SIGNAL(buttonClicked(int)), this,SLOT(Data_report_clicked(int)));//数据报表
     connect(pButton_BatteryData, SIGNAL(buttonClicked(int)), this,SLOT(BatteryData_clicked(int)));//电池数据
-    connect(pButton_Version, SIGNAL(buttonClicked(int)), this,SLOT(SystemlnformationVer_clicked(int)));//
+    connect(pButton_Version, SIGNAL(buttonClicked(int)), this,SLOT(SystemlnformationVer_clicked(int)));//系统信息
+    connect(pButton_MonitorDebug, SIGNAL(buttonClicked(int)), this,SLOT(MonitorDebug_clicked(int)));//监控调试
+
 }
 
 /******************************************************************************
@@ -1577,13 +1573,15 @@ void MEGAWin::My_menuAction(int Index)
 /************************初始化界面********************************/
 void MEGAWin::UIPageInit()
 {
-//    NotifyLogo();
-    FirstPage();
-    RunStatePage();
-//    HistoryPage();
-    SystemSettingPage();
-    LCDSetting();
-    LinkRelationship();
+    FirstPage();//主页点击
+
+    RunStatePage();//PCS运行状态页
+
+    SystemSettingPage();//系统设置页面初始化
+
+    LCDSetting();//时间设置
+
+    LinkRelationship();//函数关联
 
 }
 /***********************************关联槽函数*****************************************/
@@ -1632,36 +1630,6 @@ void MEGAWin::on_Load_clicked() //显示负载端实时数据
     ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Load_page);
 }
 
-void MEGAWin::RTAlarm_tbtn_clicked()
-{
-
-    ui->stackedWidget->setCurrentWidget(ui->Status_page);
-    ui->Run_tabWidget->setCurrentWidget(ui->RTAlarm_page);
-
-    ui->RTAlarm_Data_page->setColumnCount(5);
-    ui->RTAlarm_Data_page->setRowCount(30);
-    ui->RTAlarm_Data_page->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
-    ui->RTAlarm_Data_page->verticalHeader()->setVisible(false);//设置垂直头不可见
-    ui->RTAlarm_Data_page->setFrameShape(QFrame::NoFrame);//设置无边框
-    ui->RTAlarm_Data_page->setShowGrid(true);//设置显示格子
-    ui->RTAlarm_Data_page->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
-    ui->RTAlarm_Data_page->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
-    ui->RTAlarm_Data_page->setStyleSheet("selection-background-color:lightblue;");
-
-    ui->RTAlarm_Data_page->setColumnWidth(0,110);
-    ui->RTAlarm_Data_page->setColumnWidth(1,85);
-    ui->RTAlarm_Data_page->setColumnWidth(2,305);
-    ui->RTAlarm_Data_page->setColumnWidth(3,200);
-    ui->RTAlarm_Data_page->setColumnWidth(4,250);
-
-    QStringList RTAlarm_Title;
-    RTAlarm_Title << tr("告警名称\nAlarm name") << tr("告警等级\nAlarm leve")<< tr("触发条件\nTrigger condition") \
-                    << tr("响应动作\nResponse action")<< tr("是否自动复位及复位时间\nWhether to reset\nautomatically and reset time");
-    ui->RTAlarm_Data_page->setHorizontalHeaderLabels(RTAlarm_Title);
-
-    PCS_Alarm_information_table();  //展示PCS故障信息表
-}
-
 void MEGAWin::on_Batt_btn_pressed() //显示电池信息
 {
     ui->stackedWidget->setCurrentWidget(ui->Status_page);
@@ -1675,6 +1643,12 @@ void MEGAWin::on_Batt_btn_released()    //显示电池信息
     ui->stackedWidget->setCurrentWidget(ui->Status_page);
     ui->Run_tabWidget->setCurrentWidget(ui->BatteryData_page);
     ui->BAT_stackedWidget->setCurrentWidget(ui->BAT_Lithium_page);
+}
+
+void MEGAWin::on_Alarm_btn_clicker()//显示告警信息
+{
+    ui->stackedWidget->setCurrentWidget(ui->Status_page);
+    ui->Run_tabWidget->setCurrentWidget(ui->RTAlarm_page);
 }
 
 void MEGAWin::on_SConverter_btn_clicked()
@@ -1724,13 +1698,13 @@ void MEGAWin::combox_ControlMode_change()
 }
 
 
-void MEGAWin::on_System_tabWidget_currentChanged(int index)
-{
-    GeneralParam_tbnt_released();
-//    Information_tbnt_released();
-}
+//void MEGAWin::on_System_tabWidget_currentChanged(int index)
+//{
+//    GeneralParam_tbnt_released();
+////    Information_tbnt_released();
+//}
 
-void MEGAWin::Data_report_clicked(int nid)
+void MEGAWin::Data_report_clicked(int nid)//数据报表点击槽
 {
     switch (nid) {
     case 0:
@@ -1853,7 +1827,39 @@ void MEGAWin::SystemlnformationVer_clicked(int nid)
     }
 }
 
-void MEGAWin::History()//历史记录
+void MEGAWin::MonitorDebug_clicked(int nid)//监控调试点击槽
+{
+    switch (nid) {
+        case 0:
+            QMessageBox::question(this, "DO turn on"\
+                              ,"这是DO控制闭合，仅提供内部调试使用\nThis is the DO control closure, provided for internal debugging use only.", "OK");
+            break;
+        case 1:
+            QMessageBox::question(this, "Do turn off"\
+                              ,"这是DO控制断开，仅提供内部调试使用\nThis is the DO control off, provided for internal debugging use only.", "OK");
+            break;
+        case 2:
+            QMessageBox::question(this, "Local on"\
+                              ,"这是启动本地软启动，仅提供内部调试使用\nThis is to start a local soft boot, only for internal debugging use.", "OK");
+            break;
+        case 3:
+            QMessageBox::question(this, "Local off"\
+                              ,"这是关闭本地软启动，仅提供内部调试使用\nThis is to turn off the local soft boot for internal debugging use only.", "OK");
+            break;
+        case 4:
+            QMessageBox::question(this, "BMS power on"\
+                          ,"这是电池上电\nThis is power on the battery.", "OK");
+            break;
+        case 5:
+            QMessageBox::question(this, "BMS power off"\
+                          ,"这是电池下电\nThis is power off the battery.", "OK");
+            break;
+        default:
+            break;
+    }
+}
+
+void MEGAWin::History()//历史记录 绘制button
 {
     QStringList table_h_headers;
     table_h_headers.clear();
@@ -2034,7 +2040,7 @@ void MEGAWin::History()//历史记录
     Describe8->add_Specifition();
 }
 
-void MEGAWin::OperationLog()//操作日志
+void MEGAWin::OperationLog()//操作日志 绘制button
 {
     QStringList Ope_headers;
     Ope_headers.clear();
@@ -2147,7 +2153,33 @@ void MEGAWin::OperationLog()//操作日志
     EventRecord12->add_Specifition();
 }
 
-void MEGAWin::BatteryData_clicked(int nid)//电池数据
+void MEGAWin::RTAlarm()//告警信息 绘表
+{
+    ui->RTAlarm_Data_page->setColumnCount(5);
+    ui->RTAlarm_Data_page->setRowCount(30);
+    ui->RTAlarm_Data_page->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+    ui->RTAlarm_Data_page->verticalHeader()->setVisible(false);//设置垂直头不可见
+    ui->RTAlarm_Data_page->setFrameShape(QFrame::NoFrame);//设置无边框
+    ui->RTAlarm_Data_page->setShowGrid(true);//设置显示格子
+    ui->RTAlarm_Data_page->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+    ui->RTAlarm_Data_page->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
+    ui->RTAlarm_Data_page->setStyleSheet("selection-background-color:lightblue;");
+
+    ui->RTAlarm_Data_page->setColumnWidth(0,110);
+    ui->RTAlarm_Data_page->setColumnWidth(1,85);
+    ui->RTAlarm_Data_page->setColumnWidth(2,305);
+    ui->RTAlarm_Data_page->setColumnWidth(3,200);
+    ui->RTAlarm_Data_page->setColumnWidth(4,250);
+
+    QStringList RTAlarm_Title;
+    RTAlarm_Title << tr("告警名称\nAlarm name") << tr("告警等级\nAlarm leve")<< tr("触发条件\nTrigger condition") \
+                    << tr("响应动作\nResponse action")<< tr("是否自动复位及复位时间\nWhether to reset\nautomatically and reset time");
+    ui->RTAlarm_Data_page->setHorizontalHeaderLabels(RTAlarm_Title);
+
+    PCS_Alarm_information_table();  //展示PCS故障信息表
+}
+
+void MEGAWin::BatteryData_clicked(int nid)//电池数据点击槽
 {
 
     switch (nid) {
@@ -2447,7 +2479,7 @@ void MEGAWin::PCS_State()//PCS状态 绘制button
                                             "这是无功调节方式，用于判断PCS的运行状态\nThis is the reactive power adjustment mode, which is used to judge the running state of PCS");
     Reactive_P_Regulation->add_Specifition();
     Sleep_mode = new Specification(this,Sleep_mode_explain, ui->RTState_Bypass_Tab, 4, 3, \
-                                            "", "Sleep mode", \
+                                            "Sleep", "Sleep mode", \
                                             "这是休眠模式，用于判断PCS的运行状态\nThis is the sleep mode used to judge the running status of PCS");
     Sleep_mode->add_Specifition();
     LVRT = new Specification(this,LVRT_explain, ui->RTState_Bypass_Tab, 5, 3, \
@@ -2995,113 +3027,113 @@ void MEGAWin::Peripheral()//外设 绘制button
 {
     DI_1_Enable = new Specification(this,DI_1_Enable_explain, ui->ExternalDevice_tW, 0, 0, \
                                    "Enable", "DI_1_Enable", \
-                                   "输入干接点1，发生NO关机时执行动作的开关,可选功能为使能(Enable)、禁止(Disable)\n");
+                                   "输入干接点1，发生NO关机时执行动作的开关,可选功能为使能(Enable)、禁止(Disable)\nInput dry contact 1, the switch to perform the action when NO shutdown occurs. The optional functions are Enable(Enable) or Disable(Disable).");
     DI_1_Enable->add_Specifition();
     DI_2_Enable = new Specification(this,DI_2_Enable_explain, ui->ExternalDevice_tW, 1, 0, \
-                                   "Enable", "DI_2_Enable", \
-                                   "输入干接点2，发生NC关机时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\n");
+                                   "Disable", "DI_2_Enable", \
+                                   "输入干接点2，发生NC关机时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\nEnter dry contact 2, the switch that performs the action when NC shutdown occurs.The optional functions are Enable(Enable) or Disable(Disable).");
     DI_2_Enable->add_Specifition();
     DI_3_Enable = new Specification(this,DI_3_Enable_explain, ui->ExternalDevice_tW, 2, 0, \
                                    "Enable", "DI_3_Enable", \
-                                   "输入干接点3，门禁开启时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\n");
+                                   "输入干接点3，门禁开启时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\nEnter dry contact 3. The switch that performs the action when the access control is opened.The optional functions are Enable(Enable) or Disable(Disable).");
     DI_3_Enable->add_Specifition();
     DI_4_Enable = new Specification(this,DI_4_Enable_explain, ui->ExternalDevice_tW, 3, 0, \
                                    "Enable", "DI_4_Enable", \
-                                   "输入干接点4，柴发信号发出时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\n");
+                                   "输入干接点4，柴发信号发出时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\nInput dry contact 4, the switch to perform the action when the firewood signal is sent.The optional functions are Enable(Enable) or Disable(Disable).");
     DI_4_Enable->add_Specifition();
     DI_5_Enable = new Specification(this,DI_5_Enable_explain, ui->ExternalDevice_tW, 4, 0, \
                                    "Enable", "DI_5_Enable", \
-                                   "输入干接点5，发生水浸时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\n");
+                                   "输入干接点5，发生水浸时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\nEnter dry contact 5, the switch that performs the action when flooding occurs.The optional functions are Enable(Enable) or Disable(Disable).");
     DI_5_Enable->add_Specifition();
     DI_6_Enable = new Specification(this,DI_6_Enable_explain, ui->ExternalDevice_tW, 5, 0, \
                                    "Enable", "DI_6_Enable", \
-                                   "输入干接点6，消防信号发出时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\n");
+                                   "输入干接点6，消防信号发出时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\nInput dry contact 6, the switch to perform action when the fire signal is sent.The optional functions are Enable(Enable) or Disable(Disable).");
     DI_6_Enable->add_Specifition();
     DO_1_Enable = new Specification(this,DO_1_Enable_explain, ui->ExternalDevice_tW, 6, 0, \
-                                   "Enable", "DO_1_Enable", \
-                                   "输出干接点1，发电机开启时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\n");
+                                   "Disable", "DO_1_Enable", \
+                                   "输出干接点1，发电机开启时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\nOutput dry contact 1, the switch that performs the action when the generator is on.The optional functions are Enable(Enable) or Disable(Disable).");
     DO_1_Enable->add_Specifition();
     DO_2_Enable = new Specification(this,DO_2_Enable_explain, ui->ExternalDevice_tW, 7, 0, \
-                                   "Enable", "DO_2_Enable", \
-                                   "输出干接点2，预留功能，设置无效，可选功能为使能(Enable)、禁止(Disable)\n");
+                                   "Disable", "DO_2_Enable", \
+                                   "输出干接点2，预留功能，设置无效，可选功能为使能(Enable)、禁止(Disable)\nDry contact 2 is output. The reserved function is invalid.The optional functions are Enable(Enable) or Disable(Disable).");
     DO_2_Enable->add_Specifition();
     DO_3_Enable = new Specification(this,DO_3_Enable_explain, ui->ExternalDevice_tW, 8, 0, \
-                                   "Enable", "DO_3_Enable", \
-                                   "输出干接点3，预留功能，设置无效，可选功能为使能(Enable)、禁止(Disable)\n");
+                                   "Disable", "DO_3_Enable", \
+                                   "输出干接点3，预留功能，设置无效，可选功能为使能(Enable)、禁止(Disable)\nDry contact 3 is output. The reserved function is invalid.The optional functions are Enable(Enable) or Disable(Disable).");
     DO_3_Enable->add_Specifition();
 
     DI_1_NC_O = new Specification(this,DI_1_NC_O_explain, ui->ExternalDevice_tW, 0, 1, \
                                    "N_O", "DI_1_NC_O", \
-                                   "输入干接点1，设置NO关机是常闭电路还是常开电路,可选功能为常开(N_O)常闭(N_C)\n");
+                                   "输入干接点1，设置NO关机是常闭电路还是常开电路,可选功能为常开(N_O)常闭(N_C)\nInput dry contact 1, set NO shutdown is normally closed circuit or normally open circuit, optional function is normally open (N_O) normally closed (N_C).");
     DI_1_NC_O->add_Specifition();
     DI_2_NC_O = new Specification(this,DI_2_NC_O_explain, ui->ExternalDevice_tW, 1, 1, \
                                    "N_O", "DI_2_NC_O", \
-                                   "输入干接点2，设置NC关机是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
+                                   "输入干接点2，设置NC关机是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\nInput dry contact 2, set NC shutdown is normally closed circuit or normally open circuit Optional function is normally open (N_O) normally closed (N_C).");
     DI_2_NC_O->add_Specifition();
     DI_3_NC_O = new Specification(this,DI_3_NC_O_explain, ui->ExternalDevice_tW, 2, 1, \
                                    "N_C", "DI_3_NC_O", \
-                                   "输入干接点3，设置门禁开是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
+                                   "输入干接点3，设置门禁开是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\nInput dry contact 3, set the access control open normally closed circuit or normally open circuit Optional function: normally open (N_O) normally closed (N_C).");
     DI_3_NC_O->add_Specifition();
     DI_4_NC_O = new Specification(this,DI_4_NC_O_explain, ui->ExternalDevice_tW, 3, 1, \
                                    "N_O", "DI_4_NC_O", \
-                                   "输入干接点4，设置柴发信号是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
+                                   "输入干接点4，设置柴发信号是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\nInput dry contact 4, set the firewood signal is normally closed circuit or normally open circuit Optional function is normally open (N_O) normally closed (N_C).");
     DI_4_NC_O->add_Specifition();
     DI_5_NC_O = new Specification(this,DI_5_NC_O_explain, ui->ExternalDevice_tW, 4, 1, \
                                    "N_O", "DI_5_NC_O", \
-                                   "输入干接点5，设置水浸是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
+                                   "输入干接点5，设置水浸是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\nInput dry contact 5, set the flooding is normally closed circuit or normally open circuit Optional function is normally open (N_O) normally closed (N_C).");
     DI_5_NC_O->add_Specifition();
     DI_6_NC_O = new Specification(this,DI_6_NC_O_explain, ui->ExternalDevice_tW, 5, 1, \
                                    "N_O", "DI_6_NC_O", \
-                                   "输入干接点6，设置消防是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
+                                   "输入干接点6，设置消防是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\nInput dry contact 6, set fire is normally closed circuit or normally open circuit Optional function is normally open (N_O) normally closed (N_C).");
     DI_6_NC_O->add_Specifition();
     DO_1_NC_O = new Specification(this,DO_1_NC_O_explain, ui->ExternalDevice_tW, 6, 1, \
                                    "N_O", "DO_1_NC_O", \
-                                   "输出干接点1，设置发电机是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
+                                   "输出干接点1，设置发电机是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\nOutput dry contact 1, set the generator is normally closed circuit or normally open circuit Optional function is normally open (N_O) normally closed (N_C).");
     DO_1_NC_O->add_Specifition();
     DO_2_NC_O = new Specification(this,DO_2_NC_O_explain, ui->ExternalDevice_tW, 7, 1, \
                                    "N_O", "DO_2_NC_O", \
-                                   "输出干接点2，预留功能，设置无效，设置是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
+                                   "输出干接点2，预留功能，设置无效，设置是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\nOutput dry contact 2, reserved function, setting invalid, setting is normally closed circuit or normally open circuit Optional function: normally open (N_O) normally closed (N_C).");
     DO_2_NC_O->add_Specifition();
     DO_3_NC_O = new Specification(this,DO_3_NC_O_explain, ui->ExternalDevice_tW, 8, 1, \
                                    "N_O", "DO_3_NC_O", \
-                                   "输出干接点3，预留功能，设置无效，设置是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\n");
+                                   "输出干接点3，预留功能，设置无效，设置是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\nOutput dry contact 3, reserved function, setting invalid, setting is normally closed circuit or normally open circuit Optional function: normally open (N_O) normally closed (N_C).");
     DO_3_NC_O->add_Specifition();
 
     DI_1_Action = new Specification(this,DI_1_Action_explain, ui->ExternalDevice_tW, 0, 2, \
                                    "Shut down", "DI_1_Action", \
-                                   "输入干接点1，发生NO关机时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
+                                   "输入干接点1，发生NO关机时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\nInput dry contact 1 to perform the action when NO shutdown occurs. The optional functions are prompt(Prompt), standby(Standby), shutdown(Shut down), full standby(Full standby), empty standby(Empty standby), fault standby(Failure standby), and power grid signal(Grid singnal).");
     DI_1_Action->add_Specifition();
     DI_2_Action = new Specification(this,DI_2_Action_explain, ui->ExternalDevice_tW, 1, 2, \
                                    "Prompt", "DI_2_Action", \
-                                   "输入干接点2，发生NC关机时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
+                                   "输入干接点2，发生NC关机时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\nEnter dry contact 2 to perform the action when the NC is shut down.The optional functions are prompt(Prompt), standby(Standby), shutdown(Shut down), full standby(Full standby), empty standby(Empty standby), fault standby(Failure standby), and power grid signal(Grid singnal)");
     DI_2_Action->add_Specifition();
     DI_3_Action = new Specification(this,DI_3_Action_explain, ui->ExternalDevice_tW, 2, 2, \
                                    "Prompt", "DI_3_Action", \
-                                   "输入干接点3，门禁打开时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
+                                   "输入干接点3，门禁打开时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\nEnter dry contact 3. The action is performed when the access control is opened.The optional functions are prompt(Prompt), standby(Standby), shutdown(Shut down), full standby(Full standby), empty standby(Empty standby), fault standby(Failure standby), and power grid signal(Grid singnal)");
     DI_3_Action->add_Specifition();
     DI_4_Action = new Specification(this,DI_4_Action_explain, ui->ExternalDevice_tW, 3, 2, \
                                    "Prompt", "DI_4_Action", \
-                                   "输入干接点4，柴发信号发出时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
+                                   "输入干接点4，柴发信号发出时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\nInput dry contact 4, the action to be performed when the chai signal is issued.The optional functions are prompt(Prompt), standby(Standby), shutdown(Shut down), full standby(Full standby), empty standby(Empty standby), fault standby(Failure standby), and power grid signal(Grid singnal)");
     DI_4_Action->add_Specifition();
     DI_5_Action = new Specification(this,DI_5_Action_explain, ui->ExternalDevice_tW, 4, 2, \
                                    "Shut down", "DI_5_Action", \
-                                   "输入干接点5，发生水浸时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
+                                   "输入干接点5，发生水浸时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\nEnter dry contact 5 to perform the action when flooding occurs.The optional functions are prompt(Prompt), standby(Standby), shutdown(Shut down), full standby(Full standby), empty standby(Empty standby), fault standby(Failure standby), and power grid signal(Grid singnal)");
     DI_5_Action->add_Specifition();
     DI_6_Action = new Specification(this,DI_6_Action_explain, ui->ExternalDevice_tW, 5, 2, \
                                    "Shut down", "DI_6_Action", \
-                                   "输入干接点6，触发消防时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
+                                   "输入干接点6，触发消防时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\nEnter dry contact 6 to trigger the fire extinguishing action.The optional functions are prompt(Prompt), standby(Standby), shutdown(Shut down), full standby(Full standby), empty standby(Empty standby), fault standby(Failure standby), and power grid signal(Grid singnal)");
     DI_6_Action->add_Specifition();
     DO_1_Action = new Specification(this,DO_1_Action_explain, ui->ExternalDevice_tW, 6, 2, \
                                    "Prompt", "DO_1_Action", \
-                                   "输出干接点1，启动发电机时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
+                                   "输出干接点1，启动发电机时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\nOutput dry contact 1, the action to be performed when starting the generator.The optional functions are prompt(Prompt), standby(Standby), shutdown(Shut down), full standby(Full standby), empty standby(Empty standby), fault standby(Failure standby), and power grid signal(Grid singnal)");
     DO_1_Action->add_Specifition();
     DO_2_Action = new Specification(this,DO_2_Action_explain, ui->ExternalDevice_tW, 7, 2, \
                                    "Prompt", "DO_2_Action", \
-                                   "输出干接点2，预留功能，设置无效，信号触发时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
+                                   "输出干接点2，预留功能，设置无效，信号触发时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\nOutput dry contact 2, reserved function, set invalid, the action to be performed when the signal is triggered.The optional functions are prompt(Prompt), standby(Standby), shutdown(Shut down), full standby(Full standby), empty standby(Empty standby), fault standby(Failure standby), and power grid signal(Grid singnal)");
     DO_2_Action->add_Specifition();
     DO_3_Action = new Specification(this,DO_3_Action_explain, ui->ExternalDevice_tW, 8, 2, \
                                    "Prompt", "DO_3_Action", \
-                                   "输出干接点3，预留功能，设置无效，信号触发时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\n");
+                                   "输出干接点3，预留功能，设置无效，信号触发时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\nDry contact 3 is output. The reserved function is invalid.The optional functions are prompt(Prompt), standby(Standby), shutdown(Shut down), full standby(Full standby), empty standby(Empty standby), fault standby(Failure standby), and power grid signal(Grid singnal)");
     DO_3_Action->add_Specifition();
 }
 
@@ -3109,52 +3141,52 @@ void MEGAWin::BMS_Protect()//BMS保护 绘制button
 {
     DOD_Action = new Specification(this,DOD_Action_explain, ui->BMSProtection_tW, 0, 0, \
                                    "Standby", "DOD", \
-                                   "DOD保护，触发DOD保护时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\n");
+                                   "DOD保护，触发DOD保护时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\nDOD protection: Actions to be performed when DOD protection is triggered. The optional functions are NO action(NO action), Power down(Power down), Standby(Standby), Shut down(Shut down).");
     DOD_Action->add_Specifition();
     Prohibit_charging_Action = new Specification(this,Prohibit_charging_Action_explain, ui->BMSProtection_tW, 1, 0, \
                                    "Standby", "Prohibit_charging", \
-                                   "触发禁充时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\n");
+                                   "触发禁充时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\naction to be performed when the charging ban is triggered. The optional functions are NO action(NO action), Power down(Power down), Standby(Standby), Shut down(Shut down).");
     Prohibit_charging_Action->add_Specifition();
     Prohibit_discharging_Action = new Specification(this,Prohibit_discharging_Action_explain, ui->BMSProtection_tW, 2, 0, \
                                    "Standby", "Prohibit_discharging", \
-                                   "触发禁放时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\n");
+                                   "触发禁放时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\nThe action to be performed when a ban is triggered.The optional functions are NO action(NO action), Power down(Power down), Standby(Standby), Shut down(Shut down).");
     Prohibit_discharging_Action->add_Specifition();
     BMS_warning_Action = new Specification(this,BMS_warning_Action_explain, ui->BMSProtection_tW, 3, 0, \
                                    "NO action", "BMS_warning", \
-                                   "触发BMS提示时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\n");
+                                   "触发BMS提示时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\nAction to be performed when a BMS prompt is triggered.The optional functions are NO action(NO action), Power down(Power down), Standby(Standby), Shut down(Shut down).");
     BMS_warning_Action->add_Specifition();
     BMS_alarm_Action = new Specification(this,BMS_alarm_Action_explain, ui->BMSProtection_tW, 4, 0, \
                                    "Standby", "BMS_alarm", \
-                                   "触发BMS告警时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\n");
+                                   "触发BMS告警时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\nAction when a BMS alarm is triggered.The optional functions are NO action(NO action), Power down(Power down), Standby(Standby), Shut down(Shut down).");
     BMS_alarm_Action->add_Specifition();
     BMS_fualt_Action = new Specification(this,BMS_fualt_Action_explain, ui->BMSProtection_tW, 5, 0, \
                                    "Shut down", "BMS_fualt", \
-                                   "触发BMS故障时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\n");
+                                   "触发BMS故障时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\nAction that is performed when a BMS fault is triggered.The optional functions are NO action(NO action), Power down(Power down), Standby(Standby), Shut down(Shut down).");
     BMS_fualt_Action->add_Specifition();
     BMS_warning_CP = new Specification(this,BMS_warning_CP_explain, ui->BMSProtection_tW, 3, 1, \
                                    "0", "BMS_warning_CP", \
-                                   "触发BMS提示时的充电功率\n");
+                                   "触发BMS提示时的充电功率\nCharge power when BMS prompt is triggered.");
     BMS_warning_CP->add_Specifition();
     BMS_alarm_CP = new Specification(this,BMS_alarm_CP_explain, ui->BMSProtection_tW, 4, 1, \
                                    "0", "BMS_alarm_CP", \
-                                   "触发BMS告警时执行的的充电功率\n");
+                                   "触发BMS告警时执行的的充电功率\nCharge power that is executed when a BMS alarm is triggered.");
     BMS_alarm_CP->add_Specifition();
     BMS_fualt_CP = new Specification(this,BMS_fualt_CP_explain, ui->BMSProtection_tW, 5, 1, \
                                    "0", "BMS_fualt_CP", \
-                                   "触发BMS故障时的充电功率\n");
+                                   "触发BMS故障时的充电功率\nCharging power when a BMS fault is triggered.");
     BMS_fualt_CP->add_Specifition();
 
     BMS_warning_DP = new Specification(this,BMS_warning_DP_explain, ui->BMSProtection_tW, 3, 2, \
                                    "0", "BMS_warning_DP", \
-                                   "触发BMS提示时的放电功率\n");
+                                   "触发BMS提示时的放电功率\nDischarge power when the BMS prompt is triggered.");
     BMS_warning_DP->add_Specifition();
     BMS_alarm_DP = new Specification(this,BMS_alarm_DP_explain, ui->BMSProtection_tW, 4, 2, \
                                    "0", "BMS_alarm_DP", \
-                                   "触发BMS告警时的放电功率\n");
+                                   "触发BMS告警时的放电功率\nDischarge power when a BMS alarm is triggered.");
     BMS_alarm_DP->add_Specifition();
     BMS_fualt_DP = new Specification(this,BMS_fualt_DP_explain, ui->BMSProtection_tW, 5, 2, \
                                    "0", "BMS_fualt_DP", \
-                                   "触发BMS故障时的放电功率\n");
+                                   "触发BMS故障时的放电功率\nDischarge power when triggering a BMS fault.");
     BMS_fualt_DP->add_Specifition();
 
 }

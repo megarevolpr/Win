@@ -712,6 +712,7 @@ public:
 private:
         void History();//历史记录
         void OperationLog();//操作日志
+        void RTAlarm(); //告警信息绘表
         void PCS_Data();//PCS数据 绘制button
         void Grid_Data();//电网数据 绘制button
         void Load_Data();//负载数据 绘制button
@@ -747,9 +748,10 @@ private slots:
     void on_Running_btn_clicked();//跳转变流器实时数据
     void on_Grid_clicked();//跳转电网实时数据
     void on_Load_clicked();//跳转负载实时数据
-    void RTAlarm_tbtn_clicked(); //跳转实时告警页面
+
     void on_Batt_btn_pressed();//跳转到电池信息
     void on_Batt_btn_released();//跳转到电池信息
+    void on_Alarm_btn_clicker();//跳转实时告警页面
 
     void on_SConverter_btn_clicked();
 
@@ -764,20 +766,21 @@ private slots:
 
     void AdvancedSetup_btn_clicked();//高级
 
-    void on_System_tabWidget_currentChanged(int index);
+//    void on_System_tabWidget_currentChanged(int index);
     void BatteryData_clicked(int nid);//电池数据
     void Data_report_clicked(int nid);//数据报表
     void SystemlnformationVer_clicked(int nid);//系统信息
+    void MonitorDebug_clicked(int nid);//监控调试
 private:
     Ui::MEGAWin *ui;
-
     QTimer *timer;
     QTimer *Update_RTData_timer;
     QTime *current_time;
     QButtonGroup *pButton_History;
     QButtonGroup *pButton_BatteryData;
     QButtonGroup *pButton_Version;
-
+    QButtonGroup *pButton_MonitorDebug;
+    bool ASKey;//高级设置钥匙
 };
 
 
