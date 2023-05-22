@@ -1533,19 +1533,19 @@ void MEGAWin::My_menuAction(int Index)
         ui->BAT_stackedWidget->setCurrentWidget(ui->BAT_Lithium_page);
         break;
     case RTDATAPAGE:
-        ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
         ui->RTState_stackedWidget->setCurrentWidget(ui->RTState_Bypass_Y_page);
         ui->BAT_stackedWidget->setCurrentWidget(ui->BAT_Lithium_page);
         ui->stackedWidget->setCurrentWidget(ui->Status_page);
-        ui->Run_tabWidget->setCurrentIndex(0);
+
+        ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
+//        ui->Run_tabWidget->setCurrentIndex(0);
         break;
     case RECORDPAGE:
-        ui->stackedWidget->setCurrentWidget(ui->Record_page);
+        ui->Record_tabWidget->setCurrentWidget(ui->HistoryRecord_page);
         ui->Record_tabWidget->setCurrentWidget(ui->DataReport_page);
         ui->Report_tab->setCurrentWidget(ui->Report_tabPage_T);
-
-        ui->Record_tabWidget->setCurrentWidget(ui->HistoryRecord_page);
         ui->dateEdit->setDate(QDateTime::currentDateTime().date());
+        ui->stackedWidget->setCurrentWidget(ui->Record_page);
         break;
     case SYSTEMPAGE:
         ui->stackedWidget->setCurrentWidget(ui->System_page);
@@ -2312,31 +2312,31 @@ void MEGAWin::PCS_Data()//PCS数据 绘制button
 
     PCS_Pf = new Specification(this,PCS_Pf_explain, ui->Converter_Tab, 9, 1, \
                                             "0", "PCS Power factor", \
-                                            "这是从变流器获取的当前PCS的功率因数,它是交流电路有功功率对视在功率的比值\nThis is the power factor of PCS");
+                                            "这是从变流器获取的当前PCS的功率因数,它是交流电路有功功率对视在功率的比值\nThis is the power factor of the current PCS obtained from the converter, which is the ratio of the active power to the apparent power of the AC circuit.");
     PCS_Pf->add_Specifition();
     PCS_Bat_vol = new Specification(this,PCS_Bat_vol_explain, ui->Converter_Tab, 0, 3, \
                                             "0V", "PCS Battery voltage", \
-                                            "这是从变流器获取的当前电池电压\nThis is the battery voltage");
+                                            "这是从变流器获取的当前电池电压\nThis is the current battery voltage obtained from the converter.");
     PCS_Bat_vol->add_Specifition();
     PCS_Bat_cur = new Specification(this,PCS_Bat_cur_explain, ui->Converter_Tab, 1, 3, \
                                             "0A", "PCS Battery current", \
-                                            "这是从变流器获取的当前电池电流\nThis is battery current");
+                                            "这是从变流器获取的当前电池电流\nThis is the current battery current obtained from the converter.");
     PCS_Bat_cur->add_Specifition();
     PCS_Bat_P = new Specification(this,PCS_Bat_P_explain, ui->Converter_Tab, 2, 3, \
                                             "0kW", "PCS Battery power", \
-                                            "这是从变流器获取的当前电池功率\nThis is battery power");
+                                            "这是从变流器获取的当前电池功率\nThis is the current battery power obtained from the converter.");
     PCS_Bat_P->add_Specifition();
     PCS_Bus_vol = new Specification(this,PCS_Bus_vol_explain, ui->Converter_Tab, 3, 3, \
                                             "0V", "PCS Bus voltage", \
-                                            "这是从变流器获取的当前母线电压，母线电压是所有供电分歧的源头，逆变器所有变压器输出后整流汇总在一起的高压直流电压，这里称之为母线电压\nThis is the bus voltage");
+                                            "这是从变流器获取的当前母线电压，母线电压是所有供电分支的源头，逆变器所有变压器输出后整流汇总在一起的高压直流电压，这里称之为母线电压\nThis is the current bus voltage obtained from the converter. The bus voltage is the source of all power supply branches and the combined high voltage DC voltage after the output of all transformers of the inverter. It is called the bus voltage here.");
     PCS_Bus_vol->add_Specifition();
     PCS_IGBT_T = new Specification(this,PCS_IGBT_T_explain, ui->Converter_Tab, 4, 3, \
                                             "39℃", "PCS IGBT temperature", \
-                                            "这是从变流器获取的当前IGBT温度，IGBT温度是指半导体芯片内的最高工作温度\nThis is the IGBT temperature");
+                                            "这是从变流器获取的当前IGBT温度，IGBT温度是指半导体芯片内的最高工作温度\nThis is the current IGBT temperature obtained from the converter. IGBT temperature is the highest operating temperature inside the semiconductor chip.");
     PCS_IGBT_T->add_Specifition();
     PCS_Env_T = new Specification(this,PCS_Env_T_explain, ui->Converter_Tab, 5, 3, \
                                             "25℃", "PCS Environment temperature", \
-                                            "这是从变流器获取的当前环境温度\nThis is the ambient temperature");
+                                            "这是从变流器获取的当前环境温度\nThis is the current ambient temperature obtained from the converter.");
     PCS_Env_T->add_Specifition();
 }
 
@@ -2344,47 +2344,47 @@ void MEGAWin::Grid_Data()//电网数据 绘制button
 {
     Grid_vol_AB = new Specification(this,Grid_vol_AB_explain, ui->Grid_Tab, 0, 1, \
                                             "0V", "Grid voltage(AB)", \
-                                            "这是电网的A和B相的电压\nThis is the voltage of phase A and phase B of the grid");
+                                            "这是从变流器获取的当前电网的A相和B相之间的电压\nThis is the voltage between phase A and phase B of the current grid obtained from the converter.");
     Grid_vol_AB->add_Specifition();
     Grid_vol_BC = new Specification(this,Grid_vol_BC_explain, ui->Grid_Tab, 1, 1, \
                                             "0V", "Grid voltage(BC)", \
-                                            "这是电网的B和C相的电压\nThis is the voltage of phase B and phase C of the grid");
+                                            "这是从变流器获取的当前电网的B相和C相之间的电压\nThis is the voltage between the B and C phases of the current grid obtained from the converter.");
     Grid_vol_BC->add_Specifition();
     Grid_vol_CA = new Specification(this,Grid_vol_CA_explain, ui->Grid_Tab, 2, 1, \
                                             "0V", "Grid voltage(CA)", \
-                                            "这是电网的A和C相的电压\nThis is the voltage of phase A and phase C of the grid");
+                                            "这是从变流器获取的当前电网的A相和C相之间的电压\nThis is the voltage between phase A and phase C of the current grid obtained from the converter.");
     Grid_vol_CA->add_Specifition();
     Grid_cur_A = new Specification(this,Grid_cur_A_explain, ui->Grid_Tab, 3, 1, \
                                             "0A", "Grid current(AB)", \
-                                            "这是电网的A相电流\nThis is the A-phase current of the grid");
+                                            "这是从变流器获取的当前电网的A相电流\nThis is the current A-phase current of the grid obtained from the converter.");
     Grid_cur_A->add_Specifition();
     Grid_cur_B = new Specification(this,Grid_cur_B_explain, ui->Grid_Tab, 4, 1, \
                                             "0A", "Grid current(B)", \
-                                            "这是电网的B相电流\nThis is the B-phase current of the grid");
+                                            "这是从变流器获取的当前电网的B相电流\nThis is the current grid B-phase current obtained from the converter.");
     Grid_cur_B->add_Specifition();
     Grid_cur_C = new Specification(this,Grid_cur_C_explain, ui->Grid_Tab, 5, 1, \
                                             "0A", "Grid current(C)", \
-                                            "这是电网的C相电流\nThis is the C-phase current of the grid");
+                                            "这是从变流器获取的当前电网的C相电流\nThis is the current C-phase current of the grid obtained from the converter.");
     Grid_cur_C->add_Specifition();
     Grid_act_P = new Specification(this,Grid_act_P_explain, ui->Grid_Tab, 6, 1, \
                                             "0kW", "Grid active power", \
-                                            "这是电网的有功功率\nThis is the active power of the grid");
+                                            "这是从变流器获取的当前电网的有功功率,它反映了交流电源在电阻元件上做功的能力大小\nThis is the active power of the current grid obtained from the converter, which reflects the ability of the AC power supply to do work on the resistance element.");
     Grid_act_P->add_Specifition();
     Grid_rea_P = new Specification(this,Grid_rea_P_explain, ui->Grid_Tab, 7, 1, \
                                             "0kVar", "Grid reactive power", \
-                                            "这是电网的无功功率\nThis is the reactive power of the grid");
+                                            "这是从变流器获取的当前电网的无功功率,它表达了交流电源能量与磁场或电场能量交换的最大速率\nTThis is the reactive power of the current grid obtained from the converter, which expresses the maximum rate at which the energy of the AC source is exchanged with the energy of the magnetic or electric field.");
     Grid_rea_P->add_Specifition();
     Grid_app_P = new Specification(this,Grid_app_P_explain, ui->Grid_Tab, 8, 1, \
                                             "0kVA", "Grid apparent power", \
-                                            "这是电网的视在功率\nThis is the apparent power of the grid");
+                                            "这是从变流器获取的当前电网的视在功率,它用来表示电网的容量大小\nThis is the apparent power of the current grid obtained from the converter, which is used to represent the capacity of the grid.");
     Grid_app_P->add_Specifition();
     Grid_fre = new Specification(this,Grid_fre_explain, ui->Grid_Tab, 9, 1, \
                                             "0Hz", "Grid frequency", \
-                                            "这是电网的频率\nThis is the frequency of the grid");
+                                            "这是从变流器获取的当前电网的频率\nThis is the frequency of the current grid obtained from the converter.");
     Grid_fre->add_Specifition();
     Grid_Pf = new Specification(this,Grid_Pf_explain, ui->Grid_Tab, 10, 1, \
                                             "0", "Grid power factor", \
-                                            "这是电网的功率因数\nThis is the power factor of the grid");
+                                            "这是从变流器获取的当前电网的功率因数,它是交流电路有功功率对视在功率的比值\nThis is the power factor of the current grid obtained from the converter, which is the ratio of the active power to the apparent power of the AC circuit.");
     Grid_Pf->add_Specifition();
 }
 
@@ -2392,43 +2392,43 @@ void MEGAWin::Load_Data()//负载数据 绘制button
 {
     Load_vol_AB = new Specification(this,Load_vol_AB_explain, ui->Load_Tab, 0, 1, \
                                             "0V", "Load voltage(AB)", \
-                                            "这是负载的A和B相的电压\nThis is the voltage of the A and B phases of the load");
+                                            "这是从变流器获取的负载的A相和B相之间的电压\nThis is the voltage between the A and B phases of the load obtained from the converter.");
     Load_vol_AB->add_Specifition();
     Load_vol_BC = new Specification(this,Load_vol_BC_explain, ui->Load_Tab, 1, 1, \
                                             "0V", "Load voltage(BC)", \
-                                            "这是负载的B和C相的电压\nThis is the B and C phase voltage of the load");
+                                            "这是从变流器获取的负载的B相和C相之间的电压\nThis is the voltage between the B and C phases of the load obtained from the converter.");
     Load_vol_BC->add_Specifition();
     Load_vol_CA = new Specification(this,Load_vol_CA_explain, ui->Load_Tab, 2, 1, \
                                             "0V", "Load voltage(CA)", \
-                                            "这是负载的A和C相的电压\nThis is the A and C phase voltage of the load");
+                                            "这是从变流器获取的负载的A相和C相之间的电压\nThis is the voltage between the A and C phases of the load obtained from the converter.");
     Load_vol_CA->add_Specifition();
     Load_cur_A = new Specification(this,Load_cur_A_explain, ui->Load_Tab, 3, 1, \
                                             "0A", "Load current(AB)", \
-                                            "这是负载的A相电流\nThis is the A-phase current of the load");
+                                            "这是从变流器获取的负载的A相电流\nThis is the A-phase current of the load taken from the converter.");
     Load_cur_A->add_Specifition();
     Load_cur_B = new Specification(this,Load_cur_B_explain, ui->Load_Tab, 4, 1, \
                                             "0A", "Load current(B)", \
-                                            "这是负载的B相电流\nThis is the B-phase current of the load");
+                                            "这是从变流器获取的负载的B相电流\nThis is the B-phase current of the load obtained from the converter.");
     Load_cur_B->add_Specifition();
     Load_cur_C = new Specification(this,Load_cur_C_explain, ui->Load_Tab, 5, 1, \
                                             "0A", "Load current(C)", \
-                                            "这是负载的C相电流\nThis is the C-phase current of the load");
+                                            "这是从变流器获取的负载的C相电流\nThis is the C-phase current of the load obtained from the converter.");
     Load_cur_C->add_Specifition();
     Load_act_P = new Specification(this,Load_act_P_explain, ui->Load_Tab, 6, 1, \
                                             "0kW", "Load active power", \
-                                            "这是负载的有功功率\nThis is the active power of the load");
+                                            "这是从变流器获取的负载的有功功率,它反映了交流电源在电阻元件上做功的能力大小\nThis is the active power of the load obtained from the converter, which reflects the ability of the AC supply to do work on the resistance element.");
     Load_act_P->add_Specifition();
     Load_rea_P = new Specification(this,Load_rea_P_explain, ui->Load_Tab, 7, 1, \
                                             "0kVar", "Load reactive power", \
-                                            "这是负载的无功功率\nThis is the reactive power of the load");
+                                            "这是从变流器获取的负载的无功功率,它表达了交流电源能量与磁场或电场能量交换的最大速率\nThis is the reactive power of the load obtained from the converter, which expresses the maximum rate at which the energy of the AC source is exchanged with the energy of the magnetic or electric field.");
     Load_rea_P->add_Specifition();
     Load_app_P = new Specification(this,Load_app_P_explain, ui->Load_Tab, 8, 1, \
                                             "0kVA", "Load apparent power", \
-                                            "这是负载的视在功率This is the apparent power of the load");
+                                            "这是从变流器获取的负载的视在功率,它用来表示负载的容量大小\nThis is the apparent power of the load obtained from the converter, which is used to indicate the capacity of the load.");
     Load_app_P->add_Specifition();
     Load_Pf = new Specification(this,Load_Pf_explain, ui->Load_Tab, 9, 1, \
                                             "0.99", "Load frequency", \
-                                            "这是负载的功率因数\nThis is the power factor of the load");
+                                            "这是从变流器获取的负载的功率因数，它是有功功率对视在功率的比值\nThis is the power factor of the load obtained from the converter, which is the ratio of active power to apparent power.");
     Load_Pf->add_Specifition();
 }
 
@@ -2436,91 +2436,91 @@ void MEGAWin::PCS_State()//PCS状态 绘制button
 {
     DC_input_Breaker = new Specification(this,DC_input_Breaker_explain, ui->RTState_Bypass_Tab, 0, 1, \
                                             "Close", "DC input Breaker", \
-                                            "这是直流输入断路器，用于判断PCS的运行状态\nThis is the DC input circuit breaker used to judge the operating status of PCS");
+                                            "这是当前直流输入断路器的状态，有闭合(Close)、断开(Break)两种状态，直流断路器能准确保护继电保护、自动装置免受过载、短路等故障危害\nThis is the current DC input circuit breaker state, there are Close (Close), Break (Break) two states, DC circuit breaker can accurately protect the relay protection, automatic device from overload, short circuit and other faults.");
     DC_input_Breaker->add_Specifition();
     DC_Cont = new Specification(this,DC_Cont_explain, ui->RTState_Bypass_Tab, 1, 1, \
                                             "Close", "DC contactor", \
-                                            "这是直流接触器，用于判断PCS的运行状态\nThis is a DC contactor used to judge the running state of PCS");
+                                            "这是当前直流接触器的状态，有闭合(Close)、断开(Break)两种状态,直流接触器在直流回路中用于控制接通或切断直流电路使其启停\nThis is the current state of the DC contactor, with two states: Close(Close) and Break(Break). The DC contactor is used to control the switching on or cutting off the DC circuit in the DC circuit to make it start and stop.");
     DC_Cont->add_Specifition();
     Output_Cont = new Specification(this,Output_Cont_explain, ui->RTState_Bypass_Tab, 2, 1, \
                                             "Close", "Output contactor", \
-                                            "这是输出接触器，用于判断PCS的运行状态\nThis is the output contactor used to judge the running status of PCS");
+                                            "这是当前输出接触器的状态，有闭合(Close)、断开(Break)两种状态，输出接触器在输出电路中用于控制接通或切断电路使其启停\nThis is the current state of the output contactor, with two states: Close(Close) and Break(Break). The output contactor is used in the output circuit to control on or off the circuit to make it start or stop.");
     Output_Cont->add_Specifition();
     Output_Breaker = new Specification(this,Output_Breaker_explain, ui->RTState_Bypass_Tab, 3, 1, \
                                             "Close", "Output Breaker", \
-                                            "这是输出断路器，用于判断PCS的运行状态\nThis is the output circuit breaker used to judge the operating status of PCS");
+                                            "这是当前输出断路器的状态，有闭合(Close)、断开(Break)两种状态，根据需要可以切断和接通输出电路以达到保护电路的作用\nThis is the current output circuit breaker state, there are Close (Close), Break (Break) two states, according to the need to cut off and put on the output circuit to achieve the protection of the circuit.");
     Output_Breaker->add_Specifition();
     Grid_Cont = new Specification(this,Grid_Cont_explain, ui->RTState_Bypass_Tab, 4, 1, \
                                             "Close", "Grid contactor", \
-                                            "这是电网接触器，用于判断PCS的运行状态\nThis is the power grid contactor, which is used to judge the running status of PCS");
+                                            "这是当前电网接触器的状态，有闭合(Close)、断开(Break)两种状态，电网接触器在电网中用于控制接通或切断电路使其启停\nThis is the current state of the power grid contactor, with two states: Close(Close) and Break(Break). The power grid contactor is used in the power grid to control switching on or off the circuit to make it start or stop.");
     Grid_Cont->add_Specifition();
     Grid_Breaker = new Specification(this,Grid_Breaker_explain, ui->RTState_Bypass_Tab, 5, 1, \
                                             "Close", "Grid Breaker", \
-                                            "这是电网断路器，用于判断PCS的运行状态\nThis is the power grid circuit breaker, used to judge the operating status of PCS");
+                                            "这是当前电网断路器的状态，有闭合(Close)、断开(Break)两种状态，根据需要可以切断和接通电网电路以达到保护电路的作用\nThis is the current state of the circuit breaker of the power grid, there are two states of Close (Close) and Break (Break), according to the need to cut off and connect the power grid circuit to protect the circuit.");
     Grid_Breaker->add_Specifition();
     MB_Breaker = new Specification(this,MB_Breaker_explain, ui->RTState_Bypass_Tab, 6, 1, \
                                             "Close", "Maintenance Bypass Breaker", \
-                                            "这是维修旁路，用于判断PCS的运行状态\nThis is the maintenance bypass used to judge the operating status of PCS");
+                                            "这是当前维修旁路的状态，有闭合(Close)、断开(Break)两种状态，维修旁路可以在保持提供给负载交流电的同时，使内部除了输出端变压器外其他地方无交流或直流电存在，以保证维护人员的安全\nThis is the status of the maintenance bypass, including Close(Close) and Break(Break). The maintenance bypass provides AC power to the load while ensuring that no AC or DC power exists except the output transformer, ensuring the safety of maintenance personnel.");
     MB_Breaker->add_Specifition();
     converter_available = new Specification(this,converter_available_explain, ui->RTState_Bypass_Tab, 0, 3, \
                                             "Disable", "converter available", \
-                                            "这是变流器使能，用于判断PCS的运行状态\nThis is the converter enable, which is used to judge the running status of PCS");
+                                            "这是当前变流器使能的状态，有使能(Enable)、禁止(Disable)两种状态,使能后变流器开机容许\nThis is the status of enabling the current converter. There are two states: Enable(Enable) and Disable(Disable). After enabling, the converter is allowed to start.");
     converter_available->add_Specifition();
     DC_Soft_start = new Specification(this,DC_Soft_start_explain, ui->RTState_Bypass_Tab, 1, 3, \
                                             "Not starting", "DC Soft start", \
-                                            "这是直流软启动，用于判断PCS的运行状态\nThis is DC soft startup, which is used to judge the running status of PCS");
+                                            "这是当前直流软启动的状态，有软启中(Soft starting)、软启完成(complete)、未启动(Not starting)三种启动状态,软启动是指变流器在启动时，通过控制电流或电压的变化使设备逐渐加速或减速到正常运行状态，以减少电路中的电流冲击和电压峰值，保护电路元器件并减少设备的机械损伤。软启动可以增加设备的寿命，减少能耗，提高系统效率。\nThis is the current DC Soft startup state, including Soft starting(Soft starting), complete(complete) and Not starting(Not starting). Soft startup means that the converter gradually accelerates or decelerates the device to the normal operating state by controlling the change of current or voltage during startup. To reduce the current shock and voltage peak in the circuit, protect circuit components and reduce the mechanical damage of equipment. Soft boot can prolong the service life of the device, reduce power consumption, and improve system efficiency.");
     DC_Soft_start->add_Specifition();
     converter_status = new Specification(this,converter_status_explain, ui->RTState_Bypass_Tab, 2, 3, \
                                             "Shut down", "converter status", \
-                                            "这是变流器状态，用于判断PCS的运行状态\nThis is the status of the converter, which is used to judge the running status of PCS");
+                                            "这是当前变流器的状态，有关闭(OFF)、软启动(Soft start)、并网充电(Grid-ON Charge)、并网放电(Grid-ON Discharge)、离网放电(Grid-OFF Discharge)、降额并网(Drop and Connected)、待机(Standby)、离网充电(Grid-OFF Charge)这八种状态\nThis is the current state of the converter, There are OFF(OFF), Soft start(Soft start), grid-on Charge(Grid-ON Charge), grid-on Discharge(Grid-ON Discharge), grid-off Discharge(Grid-OFF Discharge), Drop and Connected(Drop and Connected), Standby(Standby) and Grid-OFF Charge(Grid-OFF Charge) are eight states.");
     converter_status->add_Specifition();
     Reactive_P_Regulation = new Specification(this,Reactive_P_Regulation_explain, ui->RTState_Bypass_Tab, 3, 3, \
                                             "SVG", "Reactive Power Regulation", \
-                                            "这是无功调节方式，用于判断PCS的运行状态\nThis is the reactive power adjustment mode, which is used to judge the running state of PCS");
+                                            "这是无功调节方式，有禁止(Disable)、功率因数调节(Pf regulation)、无功功率调节(Q regulation)、夜间SVG模式(SVG)四种状态，无功调节主要用于调整电压，提高供电稳定性，SVG可以向电网提供动态无功补偿，降低电站孤岛运行的概率，也可一定程度提高低电压穿越能力\nThis is the reactive power regulation mode, including Disable(Disable), Pf regulation(Pf regulation), Q regulation(Q regulation) and night SVG mode(SVG). Reactive power regulation is mainly used to adjust voltage and improve power supply stability. SVG can provide dynamic reactive power compensation to the power grid. Reducing the probability of isolated operation of power station can also improve the low voltage crossing ability to some extent.");
     Reactive_P_Regulation->add_Specifition();
     Sleep_mode = new Specification(this,Sleep_mode_explain, ui->RTState_Bypass_Tab, 4, 3, \
-                                            "Sleep", "Sleep mode", \
-                                            "这是休眠模式，用于判断PCS的运行状态\nThis is the sleep mode used to judge the running status of PCS");
+                                            "No dromancy", "Sleep mode", \
+                                            "这是当前休眠模式的状态，有未休眠(No dromancy)、休眠(Dromant)两种状态\nThis is the status of the current hibernate mode, being No dromancy(No dromancy) and Dromancy(Dromant).");
     Sleep_mode->add_Specifition();
     LVRT = new Specification(this,LVRT_explain, ui->RTState_Bypass_Tab, 5, 3, \
                                             "LVRT", "LVRT", \
-                                            "这是LVRT，用于判断PCS的运行状态\nThis is LVRT, which is used to judge the running status of PCS");
+                                            "这是当前低电压穿越(LVRT)的状态，低电压穿越是在确定的时间内承受一定限值的电网低电压而不退出运行的能力，这里有两种状态，分别为无(Non)、有(LVRT)\nThis is the current state of low voltage crossing (LVRT). Low voltage crossing refers to the ability to withstand a certain limit of low voltage of the grid within a certain period of time without exiting the operation. There are two states here, namely Non(Non) and LVRT(LVRT).");
     LVRT->add_Specifition();
     Generator_signal = new Specification(this,Generator_signal_explain, ui->RTState_Bypass_Tab, 0, 5, \
                                             "Enable", "Generator signal", \
-                                            "这是柴发信号，用于判断PCS的运行状态\nThis is the Chai signal used to judge the running status of PCS");
+                                            "这是当前柴发信号的状态，输出干接点1，有使能(Enable)、禁止(Disable)两种状态,此处获取的是最真实的物理硬件状态，当该干接点电路回路接通时为1(Enable),电路回路断开时为0(Disable)\nThis is the status of the current diesel generator signal, dry contact output 1, there are two states: Enable(Enable) and Disable(Disable), here is the most real physical hardware status, when the dry contact circuit is connected to 1(Enable), when the circuit is disconnected to 0(Disable).");
     Generator_signal->add_Specifition();
     Reserve = new Specification(this,Reserve_explain, ui->RTState_Bypass_Tab, 1, 5, \
                                             "Disable", "Reserve", \
-                                            "这是保留位\nThis is the reserved bit");
+                                            "这是保留位，无作用，输出干接点2，有使能(Enable)、禁止(Disable)两种状态\nThis bit is reserved and has no effect. Dry contact 2 is output. The status of dry contact 2 is Enable(Enable) or Disable(Disable).");
     Reserve->add_Specifition();
     Reserve2 = new Specification(this,Reserve2_explain, ui->RTState_Bypass_Tab, 2, 5, \
                                             "Enable", "Reserve2", \
-                                            "这是保留位\nThis is the reserved bit");
+                                            "这是保留位，无作用，输出干接点3，有使能(Enable)、禁止(Disable)两种状态\nThis bit is reserved and has no effect. Dry contact 2 is output. The status of dry contact 3 is Enable(Enable) or Disable(Disable)");
     Reserve2->add_Specifition();
     EPO_Cont_signal1 = new Specification(this,EPO_Cont_signal1_explain, ui->RTState_Bypass_Tab, 3, 5, \
                                             "Disable", "EPO_Cont signal1", \
-                                            "这是EPO节点信号，用于判断PCS的运行状态\nThis is the EPO node signal, which is used to judge the running status of PCS");
+                                            "这是EPO节点信号1，输入干接点1，即外部停机干接点信号1，有使能(Enable)、禁止(Disable)两种状态,此处获取的是最真实的物理硬件状态，当该干接点电路回路接通时为1(Enable),电路回路断开时为0(Disable)\nThis is EPO node signal 1, input dry contact 1, that is, external stop dry contact signal 1, there are two states: Enable and Disable. What is obtained here is the most real physical hardware state. When the dry contact circuit is connected, it is 1(Enable), and when the circuit circuit is disconnected, it is 0(Disable).");
     EPO_Cont_signal1->add_Specifition();
     EPO_Cont_signal2 = new Specification(this,EPO_Cont_signal2_explain, ui->RTState_Bypass_Tab, 4, 5, \
                                             "Disable", "EPO_Cont signal2", \
-                                            "这是EPO节点信号2，用于判断PCS的运行状态\nThis is EPO node signal 2, which is used to judge the running status of PCS");
+                                            "这是EPO节点信号2，输入干接点2，即外部停机干接点信号2，有使能(Enable)、禁止(Disable)两种状态,此处获取的是最真实的物理硬件状态，当该干接点电路回路接通时为1(Enable),电路回路断开时为0(Disable)\nThis is EPO node signal 2, input dry contact 2, that is, external stop dry contact signal 2, there are two states: Enable and Disable. What is obtained here is the most real physical hardware state. When the dry contact circuit is connected, it is 1(Enable), and when the circuit circuit is disconnected, it is 0(Disable).");
     EPO_Cont_signal2->add_Specifition();
     Access_signal = new Specification(this,Access_signal_explain, ui->RTState_Bypass_Tab, 5, 5, \
                                             "Disable", "Access_signal", \
-                                            "这是门禁信号，用于判断PCS的运行状态\nThis is the access signal, which is used to judge the running state of PCS");
+                                            "这是门禁信号，输入干接点3，有使能(Enable)、禁止(Disable)两种状态,此处获取的是最真实的物理硬件状态，当该干接点电路回路接通时为1(Enable),电路回路断开时为0(Disable)\nThis is the access control signal, input to dry contact 3, there are two states: Enable(Enable) and Disable(Disable). The most real physical hardware state is obtained here, which is 1 when the dry contact circuit circuit is connected (Enable), and 0 when the circuit circuit is disconnected (Disable).");
     Access_signal->add_Specifition();
     Full_P_signal = new Specification(this,Full_P_signal_explain, ui->RTState_Bypass_Tab, 6, 5, \
                                             "Disable", "Full_P_signal", \
-                                            "这是满功率信号，用于判断PCS的运行状态\nThis is the full power signal, which is used to judge the running status of PCS");
+                                            "这是满功率信号，输入干接点4，有使能(Enable)、禁止(Disable)两种状态,此处获取的是最真实的物理硬件状态，当该干接点电路回路接通时为1(Enable),电路回路断开时为0(Disable)\nThis is the full power signal, input to dry contact 4, there are two states: Enable(Enable) and Disable(Disable). The most real physical hardware state is obtained here, which is 1 when the dry contact circuit loop is turned on (Enable), and 0 when the circuit loop is disconnected (Disable).");
     Full_P_signal->add_Specifition();
     Smoke_alarm_signal = new Specification(this,Smoke_alarm_signal_explain, ui->RTState_Bypass_Tab, 7, 5, \
                                             "Disable", "Smoke alarm signal", \
-                                            "这是烟雾告警信号，用于判断PCS的运行状态\nThis is a smoke alarm signal used to judge the running status of PCS");
+                                            "这是烟雾告警信号，输入干接点5，有使能(Enable)、禁止(Disable)两种状态,此处获取的是最真实的物理硬件状态，当该干接点电路回路接通时为1(Enable),电路回路断开时为0(Disable)\nThis is smoke alarm signal, input dry contact 5, there are two states: Enable(Enable) and Disable(Disable). The most real physical hardware state is obtained here. When the dry contact circuit circuit is connected, it is 1(Enable), and when the circuit circuit is disconnected, it is 0(Disable).");
     Smoke_alarm_signal->add_Specifition();
     Hight_temp_signal = new Specification(this,Hight_temp_signal_explain, ui->RTState_Bypass_Tab, 8, 5, \
                                             "Disable", "Hight temp signal", \
-                                            "这是高温信号，用于判断PCS的运行状态\nThis is the high temperature signal, which is used to judge the running status of PCS");
+                                            "这是高温信号，输入干接点6，有使能(Enable)、禁止(Disable)两种状态,此处获取的是最真实的物理硬件状态，当该干接点电路回路接通时为1(Enable),电路回路断开时为0(Disable)\nThis isa high temperature signal, input to dry contact 6, there are two states: Enable and Disable. The most real physical hardware state is obtained here, which is 1 when the dry contact circuit loop is connected (Enable), and 0 when the circuit loop is disconnected (Disable).");
     Hight_temp_signal->add_Specifition();
 }
 
