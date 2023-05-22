@@ -2385,7 +2385,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
          <string notr="true">color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
-         <string>500kW</string>
+         <string>100kW</string>
         </property>
        </widget>
       </item>
