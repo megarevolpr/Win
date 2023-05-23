@@ -1709,83 +1709,83 @@ void MEGAWin::Data_report_clicked(int nid)//数据报表点击槽
     switch (nid) {
     case 0:
         QMessageBox::question(this, "Discharge Day"\
-                              ,"这是当日放电电量\nThis is the daily discharge consumption", "OK");
+                              ,"这里显示当日放电电量,点击此处将跳转到每日充放电量的直方图，横轴单位为日，纵轴单位为功率(kWh)\nToday's discharge is shown here. Click here to jump to the histogram of daily charge and discharge. The horizontal axis is in days and the vertical axis is in power (kWh).", "OK");
         break;
     case 1:
         QMessageBox::question(this, "Discharge Month"\
-                              ,"这是当月放电电量\nThis is the amount of electricity discharged during the month", "OK");
+                              ,"这里显示当月放电电量,点击此处将跳转到每月充放电量的直方图，横轴单位为月，纵轴单位为功率(kWh)\nThis shows the discharge amount of this month. Click here to jump to the histogram of monthly charge and discharge amount. The horizontal axis is in month and the vertical axis is in power (kWh).", "OK");
         break;
     case 2:
         QMessageBox::question(this, "Discharge Year"\
-                              ,"这是年当放电电量\nThis is the amount of electricity discharged in years", "OK");
+                              ,"这里显示当年放电电量,点击此处将跳转到每年充放电量的直方图，横轴单位为年，纵轴单位为功率(kWh)\nThis shows the discharge amount of this year. Click here to jump to the histogram of the annual charge and discharge amount. The horizontal axis is in year, and the vertical axis is in power (kWh).", "OK");
         break;
     case 3:
         QMessageBox::question(this, "Discharge Total"\
-                              ,"这是总放电电量\nThis is the total amount of discharge", "OK");
+                              ,"这里显示总放电电量，点击此处将跳转到总览图\nThe total discharge power is displayed here. Click here to jump to the overview chart.", "OK");
         break;
     case 4:
         QMessageBox::question(this, "Charge Day"\
-                              ,"这是当日充电电量\nThis is the daily discharge consumption", "OK");
+                              ,"这里显示当日充电电量,点击此处将跳转到每日充放电量的直方图，横轴单位为日，纵轴单位为功率(kWh)\nToday's charging is shown here. Click here to jump to the histogram of daily charging and discharging. The horizontal axis is in days, and the vertical axis is in power (kWh).", "OK");
         break;
     case 5:
         QMessageBox::question(this, "Charge Month"\
-                              ,"这是当月充电电量\nThis is the charge for the month", "OK");
+                              ,"这里显示当月充电电量,点击此处将跳转到每月充放电量的直方图，横轴单位为月，纵轴单位为功率(kWh)\nThis shows the amount of charging in this month. Click here to jump to the histogram of monthly charging and discharging. The horizontal axis is in month and the vertical axis is in power (kWh).", "OK");
         break;
     case 6:
         QMessageBox::question(this, "Charge Year"\
-                              ,"这是当年充电电量\nThis is the charge for the year", "OK");
+                              ,"这里显示当年充电电量,点击此处将跳转到每年充放电量的直方图，横轴单位为年，纵轴单位为功率(kWh)\nThis shows the amount of charging for this year. Click here to jump to the histogram of charging and discharging for each year. The horizontal axis is in years and the vertical axis is in power (kWh).", "OK");
         break;
     case 7:
         QMessageBox::question(this, "Charge Total"\
-                              ,"这是总充电电量\nThis is the total charge", "OK");
+                              ,"这里显示总充电电量，点击此处将跳转到总览图\nThis shows the total amount of charging, click here to jump to the overview chart.", "OK");
         break;
     case 8:
         QMessageBox::question(this, "Month-"\
-                              ,"查看上一个月的数据\nView the data of the previous month", "OK");
+                              ,"查看上一个月的数据，点击后将显示当前显示月份的上一个月的数据\nTo view the data of the previous month, click on it to display the data of the previous month of the current displayed month.", "OK");
         break;
     case 9:
         QMessageBox::question(this, "Year-"\
-                              ,"查看上一年的数据\nCheck the previous year's data", "OK");
+                              ,"查看上一年的数据，点击后将显示当前显示年份的上一年的数据\nTo view the previous year's data, click on it to display the previous year's data for the current displayed year.", "OK");
         break;
     case 10:
         QMessageBox::question(this, "Daily electricity quantity"\
-                              ,"查看当日充放电量\nCheck the daily charge and discharge amount", "OK");
+                              ,"查看当日充放电量，点击此处将跳转到每日充放电量的直方图，横轴单位为日，纵轴单位为功率(kWh)\nTo view the daily charge and discharge volume, click here to jump to the histogram of daily charge and discharge volume. The horizontal axis is in day, and the vertical axis is in power (kWh).", "OK");
         break;
     case 11:
         QMessageBox::question(this, "Annual electricity quantity"\
-                              ,"查看当年充放电量\nCheck the charge and discharge amount of the current year", "OK");
+                              ,"查看当年充放电量,点击此处将跳转到每年充放电量的直方图，横轴单位为年，纵轴单位为功率(kWh)\nTo view the annual charge and discharge volume, click here to jump to the histogram of the annual charge and discharge volume, the horizontal axis is in year, and the vertical axis is in power (kWh).", "OK");
         break;
     case 12:
         QMessageBox::question(this, "Month+"\
-                              ,"查看下一个月的数据\nCheck the data for the next month", "OK");
+                              ,"查看下一个月的数据，点击后将显示当前显示月份的下一个月的数据\nTo view the data for the next month, click to display the data for the next month of the current displayed month.", "OK");
         break;
     case 13:
         QMessageBox::question(this, "Year+"\
-                              ,"查看下一年的数据\nLook at the next year's data", "OK");
+                              ,"查看下一年的数据，点击后将显示当前显示年份的下一年的数据\nTo view the data for the next year, click on it to display the data for the next year of the current displayed year.", "OK");
         break;
     case 14:
         QMessageBox::question(this, "Monthly electric quantity"\
-                              ,"查看当月充放电量\nCheck the charge and discharge amount of the month", "OK");
+                              ,"查看当月充放电量,点击此处将跳转到每月充放电量的直方图，横轴单位为月，纵轴单位为功率(kWh)\nTo view the monthly charge and discharge volume, click here to jump to the histogram of monthly charge and discharge volume. The horizontal axis is in month, and the vertical axis is in power (kWh).", "OK");
         break;
     case 15:
         QMessageBox::question(this, "Total electric quantity"\
-                              ,"查看总充放电量\nCheck the total charge and discharge", "OK");
+                              ,"查看总充放电量，点击此处将跳转到总览图\nTo view the total charge and discharge, click here to jump to the overview chart.", "OK");
         break;
     case 16:
         QMessageBox::question(this, "HistoricalFailure"\
-                              ,"导出历史记录\nExport history", "OK");
+                              ,"导出历史记录，点击此处将会导出历史记录到U盘里\nTo export history, click here to export history to U disk", "OK");
         break;
     case 17:
         QMessageBox::question(this, "OperationLog"\
-                              ,"导出操作日志\nExporting operation Logs", "OK");
+                              ,"导出操作日志，点击此处将会导出操作日志到U盘里\nExport operation log. Click here to export operation log to U disk.", "OK");
         break;
     case 18:
         QMessageBox::question(this, "Coulombmeter report"\
-                              ,"导出电量统计表\nThe statistical table of electric quantity is derived", "OK");
+                              ,"导出电量统计表，点击此处将会导出电量统计表到U盘里\nExport the battery statistics. Click here to export the battery statistics to the U disk.", "OK");
         break;
     case 19:
         QMessageBox::question(this, "Eject Udisk"\
-                              ,"退出U盘\nExit USB flash drive", "OK");
+                              ,"退出U盘，将挂载到显控的U盘取消挂载，以保证U盘数据不会损坏\nExit the U disk and unmount the U disk mounted to the display control to ensure that the data in the U disk will not be damaged.", "OK");
         break;
     }
 
@@ -1912,131 +1912,131 @@ void MEGAWin::History()//历史记录 绘制button
 
     Grade = new Specification(this,Grade_explain, ui->Historicalfailure_tableWidget, 0, 0, \
                                                     "0", "Level", \
-                                                    "这是等级\nThis is the level");
+                                                    "这是事件告警等级，当事件告警等级为0时标红，表示这是故障信息\nThis is the event alarm level. When the event alarm level is 0, it is marked red, indicating that this is the fault information.");
     Grade->add_Specifition();
     Grade2 = new Specification(this,Grade2_explain, ui->Historicalfailure_tableWidget, 1, 0, \
                                                     "0", "Level", \
-                                                    "这是等级\nThis is the level");
+                                                    "这是事件告警等级，当事件告警等级为0时标红，表示这是故障信息\nThis is the event alarm level. When the event alarm level is 0, it is marked red, indicating that this is the fault information.");
     Grade2->add_Specifition();
     Grade3 = new Specification(this,Grade3_explain, ui->Historicalfailure_tableWidget, 2, 0, \
                                                     "0", "Level", \
-                                                    "这是等级\nThis is the level");
+                                                    "这是事件告警等级，当事件告警等级为0时标红，表示这是故障信息\nThis is the event alarm level. When the event alarm level is 0, it is marked red, indicating that this is the fault information.");
     Grade3->add_Specifition();
     Grade4 = new Specification(this,Grade4_explain, ui->Historicalfailure_tableWidget, 3, 0, \
                                                     "0", "Level", \
-                                                    "这是等级\nThis is the level");
+                                                    "这是事件告警等级，当事件告警等级为0时标红，表示这是故障信息\nThis is the event alarm level. When the event alarm level is 0, it is marked red, indicating that this is the fault information.");
     Grade4->add_Specifition();
     Grade5 = new Specification(this,Grade5_explain, ui->Historicalfailure_tableWidget, 4, 0, \
                                                     "0", "Level", \
-                                                    "这是等级\nThis is the level");
+                                                    "这是事件告警等级，当事件告警等级为0时标红，表示这是故障信息\nThis is the event alarm level. When the event alarm level is 0, it is marked red, indicating that this is the fault information.");
     Grade5->add_Specifition();
     Grade6 = new Specification(this,Grade6_explain, ui->Historicalfailure_tableWidget, 5, 0, \
                                                     "0", "Level", \
-                                                    "这是等级\nThis is the level");
+                                                    "这是事件告警等级，当事件告警等级为0时标红，表示这是故障信息\nThis is the event alarm level. When the event alarm level is 0, it is marked red, indicating that this is the fault information.");
     Grade6->add_Specifition();
     Grade7 = new Specification(this,Grade7_explain, ui->Historicalfailure_tableWidget, 6, 0, \
                                                     "0", "Level", \
-                                                    "这是等级\nThis is the level");
+                                                    "这是事件告警等级，当事件告警等级为0时标红，表示这是故障信息\nThis is the event alarm level. When the event alarm level is 0, it is marked red, indicating that this is the fault information.");
     Grade7->add_Specifition();
     Grade8 = new Specification(this,Grade8_explain, ui->Historicalfailure_tableWidget, 7, 0, \
                                                     "0", "Level", \
-                                                    "这是等级\nThis is the level");
+                                                    "这是事件告警等级，当事件告警等级为0时标红，表示这是故障信息\nThis is the event alarm level. When the event alarm level is 0, it is marked red, indicating that this is the fault information.");
     Grade8->add_Specifition();
     StartTime = new Specification(this,StartTime_explain, ui->Historicalfailure_tableWidget, 0, 1, \
                                                     "2023.5.6 15:49:50", "Start Time", \
-                                                    "事件开始时间\nEvent start time");
+                                                    "这是事件开始时间，表示这条记录从这个时间开始出现\nThis is the event start time, which means that the record started appearing at this time.");
     StartTime->add_Specifition();
     StartTime2 = new Specification(this,StartTime2_explain, ui->Historicalfailure_tableWidget, 1, 1, \
                                                     "2023.5.6 15:48:18", "Start Time", \
-                                                    "事件开始时间\nEvent start time");
+                                                    "这是事件开始时间，表示这条记录从这个时间开始出现\nThis is the event start time, which means that the record started appearing at this time.");
     StartTime2->add_Specifition();
     StartTime3 = new Specification(this,StartTime3_explain, ui->Historicalfailure_tableWidget, 2, 1, \
                                                     "2023.5.6 15:39:3", "Start Time", \
-                                                    "事件开始时间\nEvent start time");
+                                                    "这是事件开始时间，表示这条记录从这个时间开始出现\nThis is the event start time, which means that the record started appearing at this time.");
     StartTime3->add_Specifition();
     StartTime4 = new Specification(this,StartTime4_explain, ui->Historicalfailure_tableWidget, 3, 1, \
                                                     "2023.5.6 15:39:3", "Start Time", \
-                                                    "事件开始时间\nEvent start time");
+                                                    "这是事件开始时间，表示这条记录从这个时间开始出现\nThis is the event start time, which means that the record started appearing at this time.");
     StartTime4->add_Specifition();
     StartTime5 = new Specification(this,StartTime5_explain, ui->Historicalfailure_tableWidget, 4, 1, \
                                                     "2023.5.6 15:39:3", "Start Time", \
-                                                    "事件开始时间\nEvent start time");
+                                                    "这是事件开始时间，表示这条记录从这个时间开始出现\nThis is the event start time, which means that the record started appearing at this time.");
     StartTime5->add_Specifition();
     StartTime6 = new Specification(this,StartTime6_explain, ui->Historicalfailure_tableWidget, 5, 1, \
                                                     "2023.5.6 15:21:56", "Start Time", \
-                                                    "事件开始时间\nEvent start time");
+                                                    "这是事件开始时间，表示这条记录从这个时间开始出现\nThis is the event start time, which means that the record started appearing at this time.");
     StartTime6->add_Specifition();
     StartTime7 = new Specification(this,StartTime7_explain, ui->Historicalfailure_tableWidget, 6, 1, \
                                                     "2023.5.6 15:21:38", "Start Time", \
-                                                    "事件开始时间\nEvent start time");
+                                                    "这是事件开始时间，表示这条记录从这个时间开始出现\nThis is the event start time, which means that the record started appearing at this time.");
     StartTime7->add_Specifition();
     StartTime8 = new Specification(this,StartTime8_explain, ui->Historicalfailure_tableWidget, 7, 1, \
                                                     "2023.5.6 15:21:38", "Start Time", \
-                                                    "事件开始时间\nEvent start time");
+                                                    "这是事件开始时间，表示这条记录从这个时间开始出现\nThis is the event start time, which means that the record started appearing at this time.");
     StartTime8->add_Specifition();
     EndTime = new Specification(this,EndTime_explain, ui->Historicalfailure_tableWidget, 0, 2, \
                                                     "-", "End Time", \
-                                                    "事件结束时间\nEvent end time");
+                                                    "这是事件结束时间，表示这条记录的结束时间,'...'表示无结束时间\nThis is the event end time, which means the end time of this record,'... 'means no end time.");
     EndTime->add_Specifition();
     EndTime2 = new Specification(this,EndTime2_explain, ui->Historicalfailure_tableWidget, 1, 2, \
                                                     "-", "End Time", \
-                                                    "事件结束时间\nEvent end time");
+                                                    "这是事件结束时间，表示这条记录的结束时间,'...'表示无结束时间\nThis is the event end time, which means the end time of this record,'... 'means no end time.");
     EndTime2->add_Specifition();
     EndTime3 = new Specification(this,EndTime3_explain, ui->Historicalfailure_tableWidget, 2, 2, \
                                                     "...", "End Time", \
-                                                    "事件结束时间\nEvent end time");
+                                                    "这是事件结束时间，表示这条记录的结束时间,'...'表示无结束时间\nThis is the event end time, which means the end time of this record,'... 'means no end time.");
     EndTime3->add_Specifition();
     EndTime4 = new Specification(this,EndTime4_explain, ui->Historicalfailure_tableWidget, 3, 2, \
                                                     "-", "End Time", \
-                                                    "事件结束时间\nEvent end time");
+                                                    "这是事件结束时间，表示这条记录的结束时间,'...'表示无结束时间\nThis is the event end time, which means the end time of this record,'... 'means no end time.");
     EndTime4->add_Specifition();
     EndTime5 = new Specification(this,EndTime5_explain, ui->Historicalfailure_tableWidget, 4, 2, \
                                                     "...", "End Time", \
-                                                    "事件结束时间\nEvent end time");
+                                                    "这是事件结束时间，表示这条记录的结束时间,'...'表示无结束时间\nThis is the event end time, which means the end time of this record,'... 'means no end time.");
     EndTime5->add_Specifition();
     EndTime6 = new Specification(this,EndTime6_explain, ui->Historicalfailure_tableWidget, 5, 2, \
                                                     "-", "End Time", \
-                                                    "事件结束时间\nEvent end time");
+                                                    "这是事件结束时间，表示这条记录的结束时间,'...'表示无结束时间\nThis is the event end time, which means the end time of this record,'... 'means no end time.");
     EndTime6->add_Specifition();
     EndTime7 = new Specification(this,EndTime7_explain, ui->Historicalfailure_tableWidget, 6, 2, \
                                                     "-", "End Time", \
-                                                    "事件结束时间\nEvent end time");
+                                                    "这是事件结束时间，表示这条记录的结束时间,'...'表示无结束时间\nThis is the event end time, which means the end time of this record,'... 'means no end time.");
     EndTime7->add_Specifition();
     EndTime8 = new Specification(this,EndTime8_explain, ui->Historicalfailure_tableWidget, 7, 2, \
                                                     "-", "End Time", \
-                                                    "事件结束时间\nEvent end time");
+                                                    "这是事件结束时间，表示这条记录的结束时间,'...'表示无结束时间\nThis is the event end time, which means the end time of this record,'... 'means no end time.");
     EndTime8->add_Specifition();
     Describe = new Specification(this,Describe_explain, ui->Historicalfailure_tableWidget, 0, 3, \
                                                     "CAN communication failure", "Description", \
-                                                    "事件描述\nEvent description");
+                                                    "这是事件描述，当有告警信息时，会将告警信息记录在这里\nThis is the event description, when there is an alarm information, the alarm information will be recorded here.");
     Describe->add_Specifition();
     Describe2 = new Specification(this,Describe2_explain, ui->Historicalfailure_tableWidget, 1, 3, \
                                                     "CAN communication failure", "Description", \
-                                                    "事件描述\nEvent description");
+                                                    "这是事件描述，当有告警信息时，会将告警信息记录在这里\nThis is the event description, when there is an alarm information, the alarm information will be recorded here.");
     Describe2->add_Specifition();
     Describe3 = new Specification(this,Describe3_explain, ui->Historicalfailure_tableWidget, 2, 3, \
                                                     "Fire alarm (High temp. alarm)", "Description", \
-                                                    "事件描述\nEvent description");
+                                                    "这是事件描述，当有告警信息时，会将告警信息记录在这里\nThis is the event description, when there is an alarm information, the alarm information will be recorded here.");
     Describe3->add_Specifition();
     Describe4 = new Specification(this,Describe4_explain, ui->Historicalfailure_tableWidget, 3, 3, \
                                                     "CAN communication failure", "Description", \
-                                                    "事件描述\nEvent description");
+                                                    "这是事件描述，当有告警信息时，会将告警信息记录在这里\nThis is the event description, when there is an alarm information, the alarm information will be recorded here.");
     Describe4->add_Specifition();
     Describe5 = new Specification(this,Describe5_explain, ui->Historicalfailure_tableWidget, 4, 3, \
                                                     "PowerMeter Comm fualttLead-acid abnormal", "Description", \
-                                                    "事件描述\nEvent description");
+                                                    "这是事件描述，当有告警信息时，会将告警信息记录在这里\nThis is the event description, when there is an alarm information, the alarm information will be recorded here.");
     Describe5->add_Specifition();
     Describe6 = new Specification(this,Describe6_explain, ui->Historicalfailure_tableWidget, 5, 3, \
                                                     "CAN communication failure", "Description", \
-                                                    "事件描述\nEvent description");
+                                                    "这是事件描述，当有告警信息时，会将告警信息记录在这里\nThis is the event description, when there is an alarm information, the alarm information will be recorded here.");
     Describe6->add_Specifition();
     Describe7 = new Specification(this,Describe7_explain, ui->Historicalfailure_tableWidget, 6, 3, \
                                                     "Fire alarm (High temp. alarm)", "Description", \
-                                                    "事件描述\nEvent description");
+                                                    "这是事件描述，当有告警信息时，会将告警信息记录在这里\nThis is the event description, when there is an alarm information, the alarm information will be recorded here.");
     Describe7->add_Specifition();
     Describe8 = new Specification(this,Describe8_explain, ui->Historicalfailure_tableWidget, 7, 3, \
                                                     "PowerMeter Comm fualttLead-acid abnormal", "Description", \
-                                                    "事件描述\nEvent description");
+                                                    "这是事件描述，当有告警信息时，会将告警信息记录在这里\nThis is the event description, when there is an alarm information, the alarm information will be recorded here.");
     Describe8->add_Specifition();
 }
 
@@ -2105,51 +2105,51 @@ void MEGAWin::OperationLog()//操作日志 绘制button
     ModificationTime12->add_Specifition();
     EventRecord = new Specification(this,EventRecord_explain, ui->Operation_tableWidget, 0, 1, \
                                                     "Power control type：CP_P->CP_N&&P", "RecordEvent", \
-                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
     EventRecord->add_Specifition();
     EventRecord2 = new Specification(this,EventRecord2_explain, ui->Operation_tableWidget, 1, 1, \
                                                     "Power control type：CP_N&&P->CP_P", "RecordEvent", \
-                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
     EventRecord2->add_Specifition();
     EventRecord3 = new Specification(this,EventRecord3_explain, ui->Operation_tableWidget, 2, 1, \
                                                     "Grid Fre Upper limit：0.2->3", "RecordEvent", \
-                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
     EventRecord3->add_Specifition();
     EventRecord4 = new Specification(this,EventRecord4_explain, ui->Operation_tableWidget, 3, 1, \
                                                     "Grid Fre Upper limit：3->0.2", "RecordEvent", \
-                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
     EventRecord4->add_Specifition();
     EventRecord5 = new Specification(this,EventRecord5_explain, ui->Operation_tableWidget, 4, 1, \
                                                     "Voltage protection Lower limit：-10->-15", "RecordEvent", \
-                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
     EventRecord5->add_Specifition();
     EventRecord6 = new Specification(this,EventRecord6_explain, ui->Operation_tableWidget, 5, 1, \
                                                     "Voltage protection Lower limit：-15->-10", "RecordEvent", \
-                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
     EventRecord6->add_Specifition();
     EventRecord7 = new Specification(this,EventRecord7_explain, ui->Operation_tableWidget, 6, 1, \
                                                     "Operation mode：Prevent countercurrnet->Peak valley", "RecordEvent", \
-                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
     EventRecord7->add_Specifition();
     EventRecord8 = new Specification(this,EventRecord8_explain, ui->Operation_tableWidget, 7, 1, \
                                                     "Operation mode：UPS->Prevent countercurrnet", "RecordEvent", \
-                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
     EventRecord8->add_Specifition();
     EventRecord9 = new Specification(this,EventRecord9_explain, ui->Operation_tableWidget, 8, 1, \
                                                     "Operation mode：Manual->UPS", "RecordEvent", \
-                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
     EventRecord9->add_Specifition();
     EventRecord10 = new Specification(this,EventRecord10_explain, ui->Operation_tableWidget, 9, 1, \
                                                     "Operation mode：Peak valley->Manual", "RecordEvent", \
-                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
     EventRecord10->add_Specifition();
     EventRecord11 = new Specification(this,EventRecord11_explain, ui->Operation_tableWidget, 10, 1, \
                                                     "Inv ON/Off-Grid：Off->automatic", "RecordEvent", \
-                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
     EventRecord11->add_Specifition();
     EventRecord12 = new Specification(this,EventRecord12_explain, ui->Operation_tableWidget, 11, 1, \
                                                     "Inv ON/Off-Grid：automatic->Off", "RecordEvent", \
-                                                    "系统设置修改时的事件记录\nRecords the events when system Settings are modified");
+                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
     EventRecord12->add_Specifition();
 }
 
@@ -2528,77 +2528,77 @@ void MEGAWin::ParameterSet()//系统设置 绘制button
 {
     Grid_connected_mode = new Specification(this,Grid_connected_mode_explain, ui->System_Tab, 0, 1, \
                                             "automatic", "Grid connected mode of PCS", \
-                                            "这是PCS并网方式，一共有三项可选：自动，并网，离网\nThis is PCS grid-connected mode. There are three options: automatic, grid-connected(Off) and off-grid(On)");
+                                            "这是PCS并网方式，一共有三项可选：自动(automatic)，并网(On)，离网(Off),选择'自动'时将自动识别当前的并网方式\n并网:与相邻电力系统发送电气连接，并进行功率交换(如与电网连接)\n离网：不依赖电网而独立运行(不接电网)\nThis is the PCS grid connection mode, there are three options: automatic(automatic), On(On), Off(Off), select 'automatic' will automatically identify the current grid connection mode \n grid connection: send electrical connection with the adjacent power system, and carry out power exchange (such as connection with the grid)\n off-grid: To operate independently of the grid (not connected to the grid).");
     Grid_connected_mode->add_Specifition();
 
     Constant_power = new Specification(this,Constant_power_explain, ui->System_Tab, 1, 1, \
                                        "0", "Constant power(AC)", \
-                                       "这是恒功率，可以通过修改这项数值来设置机器的功率,'-'代表充电\nThis is the constant power. You can set the power of the machine by changing this value. '-' stands for charge");
+                                       "这是恒功率，可以通过修改这项数值来设置机器的功率,当控制功率方式选择正负功率(CP_N&P)时,正数表示放电，负数表示充电\nThis is constant power, and the power of the machine can be set by modifying this value. When the power control mode is positive and negative (CP_N&P), the positive number means discharge and the negative number means charge.");
     Constant_power->add_Specifition();
 
     Charging_and_discharging = new Specification(this,Charging_and_discharging_explain, ui->System_Tab, 2, 1, \
                                                  "Charge", "Charging and discharging", \
-                                                 "这是充放电，一共有两项可选：充电，放电\nThis is charge and discharge. There are two options: charge and discharge");
+                                                 "这是充放电，一共有两项可选：充电(Charge)，放电(Discharge)，根据此处选择决定是充电还是放电，当控制功率方式选择恒功率(CP_P)时，此项可调\nThis is Charge and Discharge, and there are two options: charge(Charge) and discharge(Discharge). Charge or discharge can be determined according to the choice here. When the power control mode is Constant power(CP_P), this option can be adjusted.");
     Charging_and_discharging->add_Specifition();
 
     Work_mode = new Specification(this,Work_mode_explain, ui->System_Tab, 3, 1, \
                                   "Manual", "Work mode", \
-                                  "这是工作模式，有四项可选：手动，UPS，削峰填谷，受控制削峰填谷\nThis is the working mode, there are four options: manual, UPS, peak cutting and valley filling, controlled peak cutting and valley filling");
+                                  "这是工作模式，有四项可选：手动(Manual)，UPS(UPS)，削峰填谷(Peak valley)，受控制削峰填谷(Prevent countercurrnet)\n手动模式时，充放电由自主手动决定\n削峰填谷模式时，用电高峰时优先使用电池给负载供电，用电低谷时优先给电池充电\nUPS模式时，将为负载不间断地提供稳定电源\n受控削峰填谷模式时，对系统防逆流，一般配合电表一起使用\nThis is the working mode, with four options: Manual(Manual), UPS(UPS), Peak valley(Peak valley), Prevent countercurrnet(Prevent countercurrnet).\n Manual mode, charge and discharge are determined manually. \n In peak valley mode, the battery is preferred to supply power to the load during peak demand. When the power is low, the battery will be charged first \nUPS mode will provide a stable power supply for the load without interruption \n controlled peak peak and trough mode (Prevent countercurrnet) will prevent the system from countercurrent, generally used with the meter.");
     Work_mode->add_Specifition();
 
     Output_power_factor = new Specification(this,Output_power_factor_explain, ui->System_Tab, 4, 1, \
                                             "1", "Output power factor", \
-                                            "这是输出功率因素\nThis is the power output factor");
+                                            "这是输出功率因数，是用来衡量电气设备输出效率高低的一个系数，不可调\nThis is the power output factor");
     Output_power_factor->add_Specifition();
 
     Output_reactive_power = new Specification(this,Output_reactive_power_explain, ui->System_Tab, 5, 1, \
                                               "1", "Output reactive power", \
-                                              "这是输出无功功率\nThis is the output reactive power");
+                                              "这是输出无功功率，它表达了输出交流电源能量与磁场或电场能量交换的最大速率，不可调\nThis is the output reactive power");
     Output_reactive_power->add_Specifition();
 
     Constant_current = new Specification(this,Constant_current_explain, ui->System_Tab, 6, 1, \
                                          "100", "Constant current", \
-                                         "这是恒流值\nThis is the constant current value");
+                                         "这是恒流值，当控制功率方式选择恒流(CC)时，此项可调，电流值稳定为此值\nThis is the constant current value");
     Constant_current->add_Specifition();
 
     Constant_voltage = new Specification(this,Constant_voltage_explain, ui->System_Tab, 7, 1, \
                                          "600", "Constant voltage", \
-                                         "这是恒压值\nThis is constant pressure");
+                                         "这是恒压值，当控制功率方式选择恒压(CV)时，此项可调，电压值稳定为此值\nThis is constant pressure");
     Constant_voltage->add_Specifition();
 
     Control_mode = new Specification(this,Control_mode_explain, ui->System_Tab, 0, 4, \
                                      "Local", "Control mode", \
-                                     "这是工作模式，有两项可选：本地，远程\nThis is the working mode, with two options: Local and Remote");
+                                     "这是工作模式，有两项可选：本地(Local)，远程(Remote)，选择'本地'时，可在本地修改系统参数，选择'远程'时，可通过EMS、485等进行远程修改参数\nThis is the working mode, with two options: Local and Remote");
     Control_mode->add_Specifition();
 
     Machine_number = new Specification(this,Machine_number_explain, ui->System_Tab, 1, 4, \
                                        "Master_00", "Machine number", \
-                                       "这是设备号，可以选择主机或者从机，其中主机有一项可选，从机有九项可选\nThis is the device number. You can choose the host or slave. The host has one option(Master_00) and the slave has nine options");
+                                       "这是设备号，可以选择主机或者从机，其中主机为Master_00，其余八项Slave_01~Slave_08均为从机\nThis is the device number. You can choose the host or slave. The host has one option(Master_00) and the slave has nine options");
     Machine_number->add_Specifition();
 
     Parallel = new Specification(this,Parallel_explain, ui->System_Tab, 2, 4, \
                                  "Disable", "Parallel", \
-                                 "这是并机，有两项可选：使能，禁止\nThis is parallel, with two options: Enable and Disable");
+                                 "这是并机，有两项可选：使能，禁止，开启并机时，可将多台设备联合到一起为负载供电\nThis is parallel, with two options: Enable and Disable");
     Parallel->add_Specifition();
 
     Unbalance_power_enable = new Specification(this,Unbalance_power_enable_explain, ui->System_Tab, 3, 4, \
                                                "Disable", "Unbalance power enable", \
-                                               "这是功率不平衡使能，有两项可选：使能，禁止\nThis is to enable power imbalance, with two options: Enable and Disable");
+                                               "这是功率不平衡使能，有两项可选：使能，禁止，功率不平衡是指三相电流与电压之间的相位差不相等，平均功率不为0导致的功率偏差，使能后将使功率维持平衡\nThis is to enable power imbalance, with two options: Enable and Disable");
     Unbalance_power_enable->add_Specifition();
 
     Phase_A_power = new Specification(this,Phase_A_power_explain, ui->System_Tab, 4, 4, \
                                       "5", "Phase A power", \
-                                      "这是A相功率\nThis is Phase A power");
+                                      "这是A相功率，此处可设置A相的功率\nThis is Phase A power");
     Phase_A_power->add_Specifition();
 
     Phase_B_power = new Specification(this,Phase_B_power_explain, ui->System_Tab, 5, 4, \
                                       "5", "Phase B power", \
-                                      "T这是B相功率\nhis is Phase B power");
+                                      "这是B相功率，此处可设置B相的功率\nhis is Phase B power");
     Phase_B_power->add_Specifition();
 
     Phase_C_power = new Specification(this,Phase_C_power_explain, ui->System_Tab, 6, 4, \
                                       "5", "Phase C power", \
-                                      "这是C相功率\nThis is Phase C power");
+                                      "这是C相功率，此处可设置C相的功率\nThis is Phase C power");
     Phase_C_power->add_Specifition();
 
 }

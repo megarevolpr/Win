@@ -2534,7 +2534,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">
@@ -3608,7 +3608,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
        <item row="0" column="0">
         <widget class="QTabWidget" name="Run_tabWidget">
          <property name="currentIndex">
-          <number>0</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="RTData_page">
           <property name="minimumSize">
@@ -6379,7 +6379,7 @@ enable</string>
        <item row="0" column="0">
         <widget class="QTabWidget" name="Record_tabWidget">
          <property name="currentIndex">
-          <number>0</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="DataReport_page">
           <attribute name="title">
@@ -7375,20 +7375,6 @@ background-color: rgb(255, 0, 0);</string>
            </layout>
           </widget>
          </widget>
-         <widget class="QWidget" name="OperationLog_page">
-          <attribute name="title">
-           <string>Operation Log</string>
-          </attribute>
-          <layout class="QGridLayout" name="gridLayout_13">
-           <item row="0" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_19">
-             <item>
-              <widget class="QTableWidget" name="Operation_tableWidget"/>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </widget>
          <widget class="QWidget" name="HistoryRecord_page">
           <attribute name="title">
            <string>History Record</string>
@@ -7398,6 +7384,20 @@ background-color: rgb(255, 0, 0);</string>
             <layout class="QHBoxLayout" name="horizontalLayout_18">
              <item>
               <widget class="QTableWidget" name="Historicalfailure_tableWidget"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="OperationLog_page">
+          <attribute name="title">
+           <string>Operation Log</string>
+          </attribute>
+          <layout class="QGridLayout" name="gridLayout_13">
+           <item row="0" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_19">
+             <item>
+              <widget class="QTableWidget" name="Operation_tableWidget"/>
              </item>
             </layout>
            </item>
