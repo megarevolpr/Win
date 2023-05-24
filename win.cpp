@@ -1820,7 +1820,7 @@ void MEGAWin::SystemlnformationVer_clicked(int nid)
         break;
     case 6:
         QMessageBox::question(this, "Apply and Restart system"\
-                              ,"这是应用并重启系统，点击后重启系统\nThis is apply and restart the system, click and restart the system", "OK");
+                              ,"这是应用并重启系统，点击后将重启系统并使用新的程序\nThis is to apply and restart the system, click will restart the system and use the new program.", "OK");
         break;
     default:
         break;
@@ -2543,62 +2543,62 @@ void MEGAWin::ParameterSet()//系统设置 绘制button
 
     Work_mode = new Specification(this,Work_mode_explain, ui->System_Tab, 3, 1, \
                                   "Manual", "Work mode", \
-                                  "这是工作模式，有四项可选：手动(Manual)，UPS(UPS)，削峰填谷(Peak valley)，受控制削峰填谷(Prevent countercurrnet)\n手动模式时，充放电由自主手动决定\n削峰填谷模式时，用电高峰时优先使用电池给负载供电，用电低谷时优先给电池充电\nUPS模式时，将为负载不间断地提供稳定电源\n受控削峰填谷模式时，对系统防逆流，一般配合电表一起使用\nThis is the working mode, with four options: Manual(Manual), UPS(UPS), Peak valley(Peak valley), Prevent countercurrnet(Prevent countercurrnet).\n Manual mode, charge and discharge are determined manually. \n In peak valley mode, the battery is preferred to supply power to the load during peak demand. When the power is low, the battery will be charged first \nUPS mode will provide a stable power supply for the load without interruption \n controlled peak peak and trough mode (Prevent countercurrnet) will prevent the system from countercurrent, generally used with the meter.");
+                                  "这是工作模式，有四项可选：手动(Manual)，UPS(UPS)，削峰填谷(Peak valley)，受控制削峰填谷(Prevent countercurrnet)。\n手动模式时，充放电由自主手动决定。\n削峰填谷模式时，用电高峰时优先使用电池给负载供电，用电低谷时优先给电池充电。\nUPS模式时，将为负载不间断地提供稳定电源。\n受控削峰填谷模式时，对系统防逆流，一般配合电表一起使用。\nThis is the working mode, with four options: Manual(Manual), UPS(UPS), Peak valley(Peak valley), Prevent countercurrnet(Prevent countercurrnet).\nManual mode, charge and discharge are determined manually.\nIn peak valley mode, the battery is preferred to supply power to the load during peak demand. When the power is low, the battery will be charged first.\nUPS mode will provide a stable power supply for the load without interruption.\nIn the controlled peak-load mode(Prevent countercurrnet), the system is anti-countercurrent and generally used with the meter.");
     Work_mode->add_Specifition();
 
     Output_power_factor = new Specification(this,Output_power_factor_explain, ui->System_Tab, 4, 1, \
                                             "1", "Output power factor", \
-                                            "这是输出功率因数，是用来衡量电气设备输出效率高低的一个系数，不可调\nThis is the power output factor");
+                                            "这是输出功率因数，是用来衡量电气设备输出效率高低的一个系数，不可调\nThis is the output power factor, which is a coefficient used to measure the output efficiency of electrical equipment and cannot be adjusted.");
     Output_power_factor->add_Specifition();
 
     Output_reactive_power = new Specification(this,Output_reactive_power_explain, ui->System_Tab, 5, 1, \
                                               "1", "Output reactive power", \
-                                              "这是输出无功功率，它表达了输出交流电源能量与磁场或电场能量交换的最大速率，不可调\nThis is the output reactive power");
+                                              "这是输出无功功率，它表达了输出交流电源能量与磁场或电场能量交换的最大速率，不可调\nThis is the output reactive power, which expresses the maximum rate at which the output AC power source energy is exchanged with the magnetic or electric field energy and is not adjustable.");
     Output_reactive_power->add_Specifition();
 
     Constant_current = new Specification(this,Constant_current_explain, ui->System_Tab, 6, 1, \
                                          "100", "Constant current", \
-                                         "这是恒流值，当控制功率方式选择恒流(CC)时，此项可调，电流值稳定为此值\nThis is the constant current value");
+                                         "这是恒流值，当控制功率方式选择恒流(CC)时，此项可调，电流值稳定为此值\nThis is the constant current value, when the control power mode selects constant current (CC), this can be adjusted, the current value is stable for this value.");
     Constant_current->add_Specifition();
 
     Constant_voltage = new Specification(this,Constant_voltage_explain, ui->System_Tab, 7, 1, \
                                          "600", "Constant voltage", \
-                                         "这是恒压值，当控制功率方式选择恒压(CV)时，此项可调，电压值稳定为此值\nThis is constant pressure");
+                                         "这是恒压值，当控制功率方式选择恒压(CV)时，此项可调，电压值稳定为此值\nThis is the constant voltage value, when the control power mode selects constant voltage (CV), this can be adjusted, the voltage value is stable for this value.");
     Constant_voltage->add_Specifition();
 
     Control_mode = new Specification(this,Control_mode_explain, ui->System_Tab, 0, 4, \
                                      "Local", "Control mode", \
-                                     "这是工作模式，有两项可选：本地(Local)，远程(Remote)，选择'本地'时，可在本地修改系统参数，选择'远程'时，可通过EMS、485等进行远程修改参数\nThis is the working mode, with two options: Local and Remote");
+                                     "这是工作模式，有两项可选：本地(Local)，远程(Remote)，选择'本地'时，可在本地修改系统参数，选择'远程'时，可通过EMS、485等进行远程修改参数\nThis is the working mode, there are two options: Local (Local), Remote (Remote), select 'local', you can modify the system parameters locally, select 'remote', you can modify the parameters remotely through EMS, 485, etc.");
     Control_mode->add_Specifition();
 
     Machine_number = new Specification(this,Machine_number_explain, ui->System_Tab, 1, 4, \
                                        "Master_00", "Machine number", \
-                                       "这是设备号，可以选择主机或者从机，其中主机为Master_00，其余八项Slave_01~Slave_08均为从机\nThis is the device number. You can choose the host or slave. The host has one option(Master_00) and the slave has nine options");
+                                       "这是设备号，可以选择主机(Master)或者从机(Slave)，其中主机为Master_00，其余八项Slave_01~Slave_08均为从机\nThis is the device number, and you can choose host(Master) or slave(Slave), where master is Master_00 and Slave_01 to Slave_08 are slaves.");
     Machine_number->add_Specifition();
 
     Parallel = new Specification(this,Parallel_explain, ui->System_Tab, 2, 4, \
                                  "Disable", "Parallel", \
-                                 "这是并机，有两项可选：使能，禁止，开启并机时，可将多台设备联合到一起为负载供电\nThis is parallel, with two options: Enable and Disable");
+                                 "这是并机模式，有两项可选：使能(Enable)，禁止(Disable)，开启并机时，可将多台设备联合到一起为负载供电\nThis is the parallel mode, with two options: enabled(Enable), disabled(Disable), and when enabled, multiple devices can be combined to power the load.");
     Parallel->add_Specifition();
 
     Unbalance_power_enable = new Specification(this,Unbalance_power_enable_explain, ui->System_Tab, 3, 4, \
                                                "Disable", "Unbalance power enable", \
-                                               "这是功率不平衡使能，有两项可选：使能，禁止，功率不平衡是指三相电流与电压之间的相位差不相等，平均功率不为0导致的功率偏差，使能后将使功率维持平衡\nThis is to enable power imbalance, with two options: Enable and Disable");
+                                               "这是功率不平衡使能，有两项可选：使能(Enable)，禁止(Disable)，功率不平衡是指三相电流与电压之间的相位差不相等，平均功率不为0导致的功率偏差，使能后将使功率维持平衡\nThis is power imbalance enable, there are two options: enabled(Enable), disabled(Disable), power imbalance refers to the phase difference between the three-phase current and voltage is not equal, the average power is not 0 caused by the power deviation, after enabling will make the power balance.");
     Unbalance_power_enable->add_Specifition();
 
     Phase_A_power = new Specification(this,Phase_A_power_explain, ui->System_Tab, 4, 4, \
                                       "5", "Phase A power", \
-                                      "这是A相功率，此处可设置A相的功率\nThis is Phase A power");
+                                      "这是A相功率，此处可设置A相的功率\nThis is the power of phase A. The power of phase A can be set here.");
     Phase_A_power->add_Specifition();
 
     Phase_B_power = new Specification(this,Phase_B_power_explain, ui->System_Tab, 5, 4, \
                                       "5", "Phase B power", \
-                                      "这是B相功率，此处可设置B相的功率\nhis is Phase B power");
+                                      "这是B相功率，此处可设置B相的功率\nThis is the power of phase B. The power of phase B can be set here.");
     Phase_B_power->add_Specifition();
 
     Phase_C_power = new Specification(this,Phase_C_power_explain, ui->System_Tab, 6, 4, \
                                       "5", "Phase C power", \
-                                      "这是C相功率，此处可设置C相的功率\nThis is Phase C power");
+                                      "这是C相功率，此处可设置C相的功率\nThis is the power of phase C. The power of phase C can be set here.");
     Phase_C_power->add_Specifition();
 
 }
@@ -2606,11 +2606,11 @@ void MEGAWin::ParameterSet()//系统设置 绘制button
 void MEGAWin::BetterySetup()//电池设置 绘制button
 {
     DOD_OnGrid = new Specification(this,DOD_OnGrid_explain, ui->Lithum_Tab, 0, 1, \
-                                     "80", "DOD_OnGrid", \
+                                     "90", "DOD_OnGrid", \
                                      "并网工况下电池的放电深度，默认90\nThe default discharge depth of the battery in grid-connected condition is 90.");
     DOD_OnGrid->add_Specifition();
     DOD_OffGrid = new Specification(this,DOD_OffGrid_explain, ui->Lithum_Tab, 1, 1, \
-                                     "80", "DOD_OffGrid", \
+                                     "90", "DOD_OffGrid", \
                                      "离网工况下电池的放电深度，默认90\nThe default discharge depth of the battery in off-grid mode is 90.");
     DOD_OffGrid->add_Specifition();
     Charge_Vol_Up_Limit = new Specification(this,Charge_Vol_Up_Limit_explain, ui->Lithum_Tab, 2, 1, \
@@ -2743,11 +2743,11 @@ void MEGAWin::AutoOperation()//自动运行 绘制button
         temp[i]->add_Specifition();
         temp4[i] = new Specification(this,temp5[i], ui->Time_tableWidget, i, 1, \
                                                 temp16, temp6, \
-                                                "这是开始时间，将在此时间开始工作\nThis is the start time at which work will begin");
+                                                "这是开始时间，将在此时间开始以指定的功率进入指定的状态\nThis is the start time at which the specified state will begin to be entered with the specified power.");
         temp4[i]->add_Specifition();
         temp7[i] = new Specification(this,temp8[i], ui->Time_tableWidget, i, 2, \
                                                 temp17, temp9, \
-                                                "这是结束时间，将在此时间结束工作\nWill finish work at this time.");
+                                                "这是结束时间，将在此时间结束由'开始时间'开始的状态\nThis is the end time at which the state started with the 'start time' will end.");
         temp7[i]->add_Specifition();
 
         if(i%2==0)
@@ -2755,23 +2755,21 @@ void MEGAWin::AutoOperation()//自动运行 绘制button
             temp10[i] = new Specification(this,temp11[i], ui->Time_tableWidget, i, 3, \
                                                     "charge", temp12, \
                                                     "这是状态，将在工作时间执行此状态，有三种可供选择，分别为充电(charge)、放电(discharge)、自动(Automatic)\nThis is the state, which will be executed during working hours.  There are three options: charge（charge）, discharge（discharge）, and Automatic（Automatic）.");
-            temp10[i]->add_Specifition();
             temp13[i] = new Specification(this,temp14[i], ui->Time_tableWidget, i, 4, \
                                                     "-100", temp15, \
-                                                    "这是工作功率，此状态下工作时根据工作状态执行此功率\nThis is the working power, which is executed according to the working state when working in this state.");
-            temp13[i]->add_Specifition();
+                                                    "这是工作功率，此状态下工作时根据工作状态执行此功率，正数为放电，负数为充电\nThis is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging.");
         }
         else
         {
             temp10[i] = new Specification(this,temp11[i], ui->Time_tableWidget, i, 3, \
                                                     "discharge", temp12, \
                                                     "这是状态，将在工作时间执行此状态，有三种可供选择，分别为充电(charge)、放电(discharge)、自动(Automatic)\nThis is the state, which will be executed during working hours.  There are three options: charge（charge）, discharge（discharge）, and Automatic（Automatic）.");
-            temp10[i]->add_Specifition();
             temp13[i] = new Specification(this,temp14[i], ui->Time_tableWidget, i, 4, \
                                                     "100", temp15, \
-                                                    "这是工作功率，此状态下工作时根据工作状态执行此功率\nThis is the working power, which is executed according to the working state when working in this state");
-            temp13[i]->add_Specifition();
+                                                    "这是工作功率，此状态下工作时根据工作状态执行此功率，正数为放电，负数为充电\nThis is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging.");
         }
+        temp10[i]->add_Specifition();
+        temp13[i]->add_Specifition();
     }
 
 }
@@ -2807,80 +2805,80 @@ void MEGAWin::SystemMessages()//系统信息 绘制button
 void MEGAWin::FunctionSet()//功能设置绘制button
 {
     Battery_type = new Specification(this,Battery_type_explain, ui->UI_Parameter_Tab, 0, 1, \
-                                     "Lithium", "Battery_type", \
+                                     "Lithium", "Battery type", \
                                      "根据实际情况选择电池类型，有锂电(Lithium)和铅酸(LeadAcid)两种类型可供选择\n Choose the battery type according to the actual situation, there are two types of lithium(Lithium) and lead acid(LeadAcid) to choose from.");
     Battery_type->add_Specifition();
     BMS_Comm_type = new Specification(this,BMS_Comm_type_explain, ui->UI_Parameter_Tab, 1, 1, \
-                                      "CAN", "BMS_Comm_type", \
+                                      "CAN", "BMS Comm type", \
                                       "设置与电池之间的通信方式，可根据情况选择RS485(RS485)或CAN通信(CAN)或以太网(Ethernet)\nSet the communication mode between the battery, RS485(RS485) or CAN communication(CAN) or Ethernet(Ethernet) can be selected according to the situation.");
     BMS_Comm_type->add_Specifition();
     Power_control_type = new Specification(this,Power_control_type_explain, ui->UI_Parameter_Tab, 2, 1,\
-                                           "CP_N&&P" , "Power_control_type", \
-                                           "设置控制功率的方式，有恒压(CV)、恒流(CC)、恒功率(CP_P)、正负功率(CP_N&P)\nSet the control power mode, constant voltage(CV), constant current(CC), constant power(CP_P), positive and negative power(CP_N&P).");
+                                           "CP_N&&P" , "Power control type", \
+                                           "设置控制功率的方式，有恒压(CV)、恒流(CC)、恒功率(CP_P)、正负功率(CP_N&P)。\n恒压(CV)：输出电压值固定，不随负载、输入电压等外部工作条件而变化。\n恒流(CC)：以恒定电流工作，输出的电流大小是恒定不变的，不会随着电压的变化而变化。\n恒功率(CP_P)：可以在'恒功率'处设置功率大小，并根据选择的充电/放电执行动作。\n正负功率(CP_N&P)：可以在'恒功率'处设置功率大小，正数为放电、负数为充电。\nThe control power mode is set, including constant voltage (CV), constant current (CC), constant power (CP_P), positive and negative power (CP_N&P). \nConstant voltage (CV) : The output voltage value is fixed and does not vary with external working conditions such as load and input voltage. \nConstant current (CC) : Operating at a constant current, the output current is constant and does not change with the voltage. \nConstant power (CP_P) : Power can be set at 'constant power' and actions can be performed based on the selected charge/discharge. \nPositive and negative power (CP_N&P) : The power value can be set at the 'constant power', where the positive value is discharging and the negative value is charging.");
     Power_control_type->add_Specifition();
     EMS_Comm_type = new Specification(this,EMS_Comm_type_explain, ui->UI_Parameter_Tab, 3, 1, \
-                                      "RS485", "EMS_Comm_type", \
+                                      "RS485", "EMS Comm type", \
                                       "设置EMS的通信方式，有RS485(RS485),CAN通信(CAN)，以太网(Ethernet)三种方式\nSetting the communication mode of EMS, there are RS485(RS485),CAN communication (CAN) and Ethernet(Ethernet).");
     EMS_Comm_type->add_Specifition();
     Output_power_limit = new Specification(this,Output_power_limit_explain, ui->UI_Parameter_Tab, 4, 1,\
-                                           "100", "Output_power_limit", \
+                                           "100", "Output power limit", \
                                            "设置允许输出的功率最大值\nSet the maximum power output allowed.");
     Output_power_limit->add_Specifition();
     BAT_manufacturers = new Specification(this,BAT_manufacturers_explain, ui->UI_Parameter_Tab, 5, 1, \
-                                          "GAOTE", "BAT_manufacturers", \
+                                          "GAOTE", "BAT manufacturers", \
                                           "这是电池厂家，根据选择的电池厂家解析报文\nThis is the battery manufacturer and the packet is parsed according to the selected battery manufacturer.");
     BAT_manufacturers->add_Specifition();
     Power_Delta = new Specification(this,Power_Delta_explain, ui->UI_Parameter_Tab, 6, 1, \
-                                    "10", "Power_Delta", \
-                                    "设置功率回差，默认功率回差为10kw\nSet the power back difference, and the default power back difference is 10kw.");
+                                    "10", "Power Delta", \
+                                    "设置功率回差，默认功率回差为10kw，输出功率增加达到'输出功率限制+功率回差'时，会将输出功率降低到'输出功率-功率回差'\nSet the Power Delta, the default power delta is 10kw. When the output power increases to 'output power limit + power delta', the output power will be reduced to 'output power - power delta'.");
     Power_Delta->add_Specifition();
     Charge_power_limit = new Specification(this,Charge_power_limit_explain, ui->UI_Parameter_Tab, 7, 1, \
-                                           "100", "Charge_power_limit",\
-                                           "设置充电功率限制,可以限制充电功率\nSet the charging power limit, which can limit the charging power.");
+                                           "100", "Charge power limit",\
+                                           "设置充电功率限制,允许充电的功率最大值\nSet the charging power limit to allow the maximum power of charging.");
     Charge_power_limit->add_Specifition();
     Discharge_power_limit = new Specification(this,Discharge_power_limit_explain, ui->UI_Parameter_Tab, 8, 1, \
-                                              "100", "Charge_power_limit", \
-                                              "设置放电功率限制，可以限制放电功率\nYou can set discharge power limit to limit the discharge power.");
+                                              "100", "Charge power limit", \
+                                              "设置放电功率限制，允许放电的功率最大值\nThe discharge power limit is set to allow the maximum power of the discharge.");
     Discharge_power_limit->add_Specifition();
     Charge_Vol_upper_Limit_delta = new Specification(this,Charge_Vol_upper_Limit_delta_explain, ui->UI_Parameter_Tab, 9, 1, \
-                                                     "10", "Charge_Vol_upper_Limit_delta", \
-                                                     "设置充电电压上限回差，默认充电电压上限为10kw\nThe upper limit of charging voltage return difference is set, and the default charging voltage upper limit is 10kw.");
+                                                     "10", "Charge Vol upper Limit delta", \
+                                                     "设置充电电压上限回差，默认充电电压上限为10V，充电电压达到'充电电压上限+充电电压回差'时，将会对设备进行禁充，充电电压降到'充电电压上限-充电电压回差'时解除禁充\nSet the upper Limit of Charge voltage delta (Charge Vol upper Limit delta). The default upper limit of charge voltage is 10V. When the charge voltage reaches the 'upper limit of charge voltage + charge voltage delta', the device will be forbidden to charge, and when the charge voltage drops to the 'upper limit of charge voltage - charge voltage delta', the forbidden charge will be lifted.");
     Charge_Vol_upper_Limit_delta->add_Specifition();
     Discharge_Vol_lower_Limit_delta = new Specification(this,Discharge_Vol_lower_Limit_delta_explain, ui->UI_Parameter_Tab, 10, 1,\
-                                                        "10", "Discharge_Vol_lower_Limit_delta", \
-                                                        "设置放电电压下限回差，默认放电电压下限回差为10kw\nSet the discharge voltage lower limit back difference, the default discharge voltage lower limit back difference is 10kw.");
+                                                        "10", "Discharge Vol lower Limit delta", \
+                                                        "设置放电电压下限回差，默认放电电压下限回差为10V，放电电电压低于'放电电压下限-放电电电压回差'时，将会对设备进行禁放，放电电压达到'放电电压下限+充电电压回差'时解除禁放\nSet the Discharge voltage lower Limit delta (Discharge Vol lower Limit delta), the default discharge voltage lower limit delta is 10V, when the discharge voltage is lower than the 'discharge voltage lower limit - discharge voltage delta', the device will be prohibited, when the discharge voltage reaches the 'discharge voltage lower limit + charge voltage delta', the prohibited discharge will be lifted.");
     Discharge_Vol_lower_Limit_delta->add_Specifition();
     Host_Address = new Specification(this,Host_Address_explain, ui->UI_Parameter_Tab, 0, 4,\
-                                     "20", "Host_Address", \
-                                     "设置主机地址\nSet host address.");
+                                     "1", "Host Address", \
+                                     "这是设备地址，默认值为1，可调范围在1~255之间，用于EMS通信时匹配主机地址\nThis is the device address, which defaults to 1 and can be adjusted from 1 to 255 to match the host address during EMS communication.");
     Host_Address->add_Specifition();
     serial_port_1 = new Specification(this,serial_port_1_explain, ui->UI_Parameter_Tab, 1, 4, \
-                                      "9600", "serial_port_1", \
-                                      "这是串口1，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口1默认波特率是9600bps\nThis is serial port 1, set the baud rate, there are six options to choose from, which are 1200, 2400, 4800, 9600, 19200, 38400, and the default baud rate of serial port 1 is 9600bps.");
+                                      "9600", "serial port 1", \
+                                      "这是串口1，对应触摸屏接口中TXD2、RXD2(上位机232通信)，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口1默认波特率是9600bps\nThis is serial port 1, which corresponds to TXD2 and RXD2(upper computer 232 communication) in the touch screen interface. There are six baud rates to choose from, which are 1200, 2400, 4800, 9600, 19200 and 38400 respectively. The default baud rate of serial port 1 is 9600bps.");
     serial_port_1->add_Specifition();
     serial_port_2 = new Specification(this,serial_port_2_explain, ui->UI_Parameter_Tab, 2, 4, \
-                                      "9600", "serial_port_2", \
-                                      "这是串口2，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口2默认波特率是9600bps\nThis is serial port 2, set the baud rate, there are six options to choose from, which are 1200, 2400, 4800, 9600, 19200, 38400, and the default baud rate of serial port 2 is 9600bps");
+                                      "9600", "serial port 2", \
+                                      "这是串口2，对应触摸屏接口中485_3A、485_3B(电池BMS通信)，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口2默认波特率是9600bps\nThis is serial port 2, which corresponds to 485_3A and 485_3B(battery BMS communication) in the touch screen interface. There are six baud rates to choose from, which are 1200, 2400, 4800, 9600, 19200 and 38400 respectively. The default baud rate of serial port 2 is 9600bps.");
     serial_port_2->add_Specifition();
     serial_port_3 = new Specification(this,serial_port_3_explain, ui->UI_Parameter_Tab, 3, 4, \
-                                      "9600", "serial_port_3", \
-                                      "这是串口3，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口3默认波特率是9600bps\nThis is serial port 3, set the baud rate, there are six options to choose from, which are 1200, 2400, 4800, 9600, 19200, 38400, and the default baud rate of serial port 3 is 9600bps.");
+                                      "9600", "serial port 3", \
+                                      "这是串口3，对应触摸屏接口中485_4A、485_4B(空调)，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口3默认波特率是9600bps\nThis is serial port 3, corresponding to the touch screen interface 485_4A, 485_4B(air conditioning), set the baud rate, there are six options to choose from, respectively, 1200, 2400, 4800, 9600, 19200, 38400, serial port 3 default baud rate is 9600bps.");
     serial_port_3->add_Specifition();
     serial_port_4 = new Specification(this,serial_port_4_explain, ui->UI_Parameter_Tab, 4, 4, \
-                                      "9600", "serial_port_4", \
-                                      "这是串口4，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口4默认波特率是9600bps\nThis is serial port 4, set the baud rate, there are six options to choose from, which are 1200, 2400, 4800, 9600, 19200, 38400, and the default baud rate of serial port 4 is 9600bps.");
+                                      "9600", "serial port 4", \
+                                      "这是串口4，对应触摸屏接口中485_5A、485_5B(电能表)，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口4默认波特率是9600bps\nThis is serial port 4, which corresponds to 485_5A and 485_5B(electricity meter) in the touch screen interface. There are six baud rates to choose from, which are 1200, 2400, 4800, 9600, 19200 and 38400 respectively. The default baud rate of serial port 4 is 9600bps.");
     serial_port_4->add_Specifition();
     serial_port_5 = new Specification(this,serial_port_5_explain, ui->UI_Parameter_Tab, 5, 4, \
-                                      "9600", "serial_port_5", \
-                                      "这是串口5，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口5默认波特率是9600bps\nThis is serial port 5, set the baud rate, there are six options to choose from, which are 1200, 2400, 4800, 9600, 19200, 38400, and the default baud rate of serial port 5 is 9600bps.");
+                                      "9600", "serial port 5", \
+                                      "这是串口5，对应触摸屏接口中485_6A、485_6B(EMS通信)，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口5默认波特率是9600bps\nThis is serial port 5, which corresponds to 485_6A and 485_6B(EMS communication) in the touch screen interface. There are six baud rates to choose from, which are 1200, 2400, 4800, 9600, 19200 and 38400 respectively. The default baud rate of serial port 5 is 9600bps.");
     serial_port_5->add_Specifition();
 
     Can_port_1 = new Specification(this,Can_port_1_explain, ui->UI_Parameter_Tab, 6, 4, \
-                                   "500", "Can_port_1", \
+                                   "500", "Can port 1", \
                                    "这是CAN1端口，PCS内部通讯的波特率，默认波特率500，无需更改\nThis is the baud rate of CAN1 port and PCS internal communication. The default baud rate is 500, which need not be changed.");
     Can_port_1->add_Specifition();
     Can_port_2 = new Specification(this,Can_port_2_explain, ui->UI_Parameter_Tab, 7, 4, \
-                                   "250", "Can_port_2", \
+                                   "250", "Can port 2", \
                                    "这是CAN2端口，PCS与BMS通信的波特率，默认波特率125，根据现场BMS通信波特率进行修改，其中有五项可供选择，分别是100、125、250、500、800\nThis is the baud rate of the CAN2 port and the communication between PCS and BMS. The default baud rate is 125, which is modified according to the on-site BMS communication baud rate. There are five items to choose from, which are 100, 125, 250, 500 and 800 respectively.");
     Can_port_2->add_Specifition();
     ProtocolVersion = new Specification(this,ProtocolVersion_explain, ui->UI_Parameter_Tab, 0, 7, \
@@ -2921,48 +2919,48 @@ void MEGAWin::SystemParameter()//系统参数 绘制button
     Change_rate_of_power->add_Specifition();
     Grid_frequency_upper_limit = new Specification(this,Grid_frequency_upper_limit_explain, ui->UI_SystemParameter_Tab, 1, 1, \
                                                    "3", "Grid_frequency_upper_limit", \
-                                                   "电网频率允许超出额定频率的上限,可供选择为0.2、0.5、1、3\nThe grid frequency is allowed to exceed the upper limit of the rated frequency, which can be selected as 0.2, 0.5, 1, and 3.");
+                                                   "电网频率变化范围的最大值,可供选择为0.2、0.5、1、3\nThe maximum value of the frequency variation range of the power grid can be selected as 0.2, 0.5, 1, and 3.");
     Grid_frequency_upper_limit->add_Specifition();
     Grid_frequency_lower_limit = new Specification(this,Grid_frequency_lower_limit_explain, ui->UI_SystemParameter_Tab, 2, 1, \
                                                    "-3", "Grid_frequency_lower_limit", \
-                                                   "电网频率允许小于额定频率的下限,可供选择为-0.5、-1、-2、-3\nThe grid frequency is allowed to be less than the lower limit of the rated frequency, which can be selected as -0.5, -1, -2, -3.");
+                                                   "电网频率变化范围的最小值,可供选择为-0.5、-1、-2、-3\nThe minimum value of the frequency variation range of the power grid can be selected as -0.5, -1, -2, -3.");
     Grid_frequency_lower_limit->add_Specifition();
     Vol_protection_upper_limit = new Specification(this,Vol_protection_upper_limit_explain, ui->UI_SystemParameter_Tab, 3, 1, \
                                                    "+15", "Vol_protection_upper_limit", \
-                                                   "会进行断电保护的电压最大值,可供选择为+10、+15、+20、+30\nThe maximum voltage for power outage protection can be selected as +10, +15, +20, +30.");
+                                                   "当电压超过电压保护值一定百分比将进行电压保护,可供选择为+10、+15、+20、+30\nWhen the voltage exceeds a certain percentage of the voltage protection value, the voltage protection will be carried out, and the available options are +10, +15, +20, +30.");
     Vol_protection_upper_limit->add_Specifition();
     Vol_protection_lower_limit = new Specification(this,Vol_protection_lower_limit_explain, ui->UI_SystemParameter_Tab, 4, 1, \
                                                    "-15", "Vol_protection_lower_limit", \
-                                                   "会进行断电保护的电压最小值,可供选择为-10、-15、-20、-30\nThe minimum voltage for power outage protection can be selected as -10, -15, -20, -30.");
+                                                   "当电压低于电压保护值一定百分比将进行电压保护,可供选择为-10、-15、-20、-30\nWhen the voltage is lower than a certain percentage of the voltage protection value, voltage protection will be carried out, which can be selected as -10, -15, -20, -30.");
     Vol_protection_lower_limit->add_Specifition();
     HVRT_enable = new Specification(this,HVRT_enable_explain, ui->UI_SystemParameter_Tab, 5, 1, \
                                                     "prohibit", "HVRT_enable", \
-                                                    "高压穿越使能,使高压也能穿越，在一定时间内高压不会关机,可供选择为允许(Allow)、禁止(forbid)\nEnable the high voltage pass through, so that the high voltage can also pass through, and the high voltage will not shut down within a certain time. The options are Allow (Allow), forbid (forbid).");
+                                                    "这是高压穿越(HVRT)使能,使能后该设备不会因为短时间的高电压而停机,可供选择为允许(Enable)、禁止(prohibit)\nEThis is the High voltage ride through(HVRT) enable, after which the device will not be shut down due to a short period of high voltage. The options are Allow (Enable), forbid(prohibit).");
     HVRT_enable->add_Specifition();
     LVRT_enable = new Specification(this,LVRT_enable_explain, ui->UI_SystemParameter_Tab, 6, 1, \
                                     "prohibit", "LVRT_enable", \
-                                    "低压穿越使能，使低压也能穿越，在一定时间内低压不会关机,可供选择为允许(Allow)、禁止(forbid)\nEnable the low-voltage pass through, so that the low-voltage can also pass through, and the low-voltage will not shut down within a certain period of time. The options are Allow(Allow),, forbid(forbid).");
+                                    "这是低压穿越(LVRT)使能，使能后该设备不会因为短时间的低电压而停机,可供选择为允许(Enable)、禁止(prohibit)\nThis is a Low voltage ride through enable, which prevents the device from shutting down due to a short period of low voltage. The options are Allow(Enable),, forbid(prohibit).");
     LVRT_enable->add_Specifition();
     AFD_enable = new Specification(this,AFD_enable_explain, ui->UI_SystemParameter_Tab, 7, 1, \
                                    "prohibit", "AFD_enable", \
-                                   "    防止孤岛效应，当检测出现孤岛效应(在光伏并网系统中,当大电网出现停电事故时,光伏并网逆变器发电与电网低压侧本地负载如果刚好出现功率相匹配时,容易出现自给自足的维持发电状态,从而出现""孤岛""现象,从而危及检修人员安全)时,让逆变器自动停机,可供选择为允许(Allow)、禁止(forbid)\nPrevent island effect, When the detection of island effect (in the photovoltaic grid-connected system, when the power failure accident occurs in the large power grid, photovoltaic grid-connected inverter power generation and the local load on the low voltage side of the grid if there is just a power match, it is easy to self-contained maintenance power state, resulting in the phenomenon of ""island"", thereby endangering the safety of maintenance personnel), let the inverter automatic shutdown, optional Permit(Allow) and forbid(forbid).");
+                                   "防止孤岛效应，当检测出现孤岛效应(在光伏并网系统中,当大电网出现停电事故时,光伏并网逆变器发电与电网低压侧本地负载如果刚好出现功率相匹配时,容易出现自给自足的维持发电状态,从而出现""孤岛""现象,从而危及检修人员安全)时,让逆变器自动停机,可供选择为允许(Enable)、禁止(prohibit)\nPrevent island effect, When the detection of island effect (in the photovoltaic grid-connected system, when the power failure accident occurs in the large power grid, photovoltaic grid-connected inverter power generation and the local load on the low voltage side of the grid if there is just a power match, it is easy to self-contained maintenance power state, resulting in the phenomenon of ""island"", thereby endangering the safety of maintenance personnel), let the inverter automatic shutdown, optional Permit(Enable) and forbid(prohibit).");
     AFD_enable->add_Specifition();
     Insulation_detection_enable = new Specification(this,Insulation_detection_enable_explain, ui->UI_SystemParameter_Tab, 8, 1, \
                                                     "prohibit", "Insulation_detection_enable", \
-                                                    "   绝缘检测使能，绝缘电阻大于33KΩ要能正常起机运行，小于33KΩ不能起机，并且要告警，默认禁止,可供选择为允许(Allow)、禁止(forbid)\nEnable insulation detection. If the insulation resistance is greater than 33KΩ, the machine can start normally; if the insulation resistance is smaller than 33KΩ, the machine cannot start, and the alarm should be generated. By default, it is prohibited, which can be selected as Allow(Allow) or forbid(forbid).");
+                                                    "绝缘检测使能，绝缘电阻大于33KΩ要能正常起机运行，小于33KΩ不能起机，并且要告警，默认禁止,可供选择为允许(Enable)、禁止(prohibit)\nEnable insulation detection. If the insulation resistance is greater than 33KΩ, the machine can start normally; if the insulation resistance is smaller than 33KΩ, the machine cannot start, and the alarm should be generated. By default, it is prohibited, which can be selected as Allow(Enable) or forbid(prohibit).");
     Insulation_detection_enable->add_Specifition();
     PrimaryFreq_enable = new Specification(this,PrimaryFreq_enable_explain, ui->UI_SystemParameter_Tab, 9, 1, \
                                            "prohibit", "PrimaryFreq_enable", \
-                                           "    一次调频使能,电网的频率偏离额定值时，通过控制有功功率的增减使电网频率维持稳定，可供选择为允许(Allow)、禁止(forbid)\nWhen the frequency of the power grid deviates from the rated value, the frequency of the power grid can be maintained stable by controlling the increase or decrease of the active power. The alternatives are Allow(Allow) and forbid(forbid).");
+                                           "一次调频使能,电网的频率偏离额定值时，通过控制有功功率的增减使电网频率维持稳定，可供选择为允许(Enable)、禁止(prohibit)\nWhen the frequency of the power grid deviates from the rated value, the frequency of the power grid can be maintained stable by controlling the increase or decrease of the active power. The alternatives are Allow(Enable) and forbid(prohibit).");
     PrimaryFreq_enable->add_Specifition();
     Inertia_enable = new Specification(this,Inertia_enable_explain, ui->UI_SystemParameter_Tab, 10, 1, \
                                        "prohibit", "Inertia_enable", \
-                                       "转动惯量使能,在电力系统稳定性计算中加入转动惯量，可供选择为允许(Allow)、禁止(forbid)\nEnable the moment of inertia. Add the moment of inertia to the stability calculation of the power system. The options are Allow(Allow) and forbid(forbid).");
+                                       "转动惯量使能，可供选择为允许(Enable)、禁止(prohibit)\nThe moment of inertia is enabled (Enable, prohibit).");
     Inertia_enable->add_Specifition();
 
     CV_parallel = new Specification(this,CV_parallel_explain, ui->UI_SystemParameter_Tab, 11, 1, \
                                     "prohibit", "CV_parallel", \
-                                    "恒压并机使能,可供选择为允许(Allow)、禁止(forbid)\nAllow (Allow) forbid (forbid) Enable the constant voltage parallel machine.");
+                                    "恒压并机使能,可供选择为允许(Enable)、禁止(prohibit)\nAllow (Enable) forbid(prohibit) Enable the constant voltage parallel machine.");
     CV_parallel->add_Specifition();
 
     Machine_type = new Specification(this,Machine_type_explain, ui->UI_SystemParameter_Tab, 0, 4, \
@@ -2995,7 +2993,7 @@ void MEGAWin::SystemParameter()//系统参数 绘制button
     Grid_connected_mode_of_Inv->add_Specifition();
     Primary_FM_dead_zone = new Specification(this,Primary_FM_dead_zone_explain, ui->UI_SystemParameter_Tab, 7, 4, \
                                              "3", "Primary_FM_dead_zone", \
-                                             "一次调频死区为了防止在电网频差小范围变化时调门不必要的动作而设置的频差\nPrimary frequency modulation dead zone A frequency difference set to prevent unwanted switch action when the network frequency difference varies in a small range.");
+                                             "一次调频死区,为了防止在电网频差小范围变化时调门不必要的动作而设置的频差\nPrimary frequency modulation dead zone A frequency difference set to prevent unwanted switch action when the network frequency difference varies in a small range.");
     Primary_FM_dead_zone->add_Specifition();
     PFM_coeff = new Specification(this,PFM_coeff_explain, ui->UI_SystemParameter_Tab, 8, 4, \
                                   "20", "PFM_coeff", \
