@@ -2303,13 +2303,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
        <widget class="QLabel" name="Machine_Name">
         <property name="minimumSize">
          <size>
-          <width>66</width>
+          <width>100</width>
           <height>45</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>66</width>
+          <width>100</width>
           <height>45</height>
          </size>
         </property>
@@ -2323,7 +2323,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
          <string notr="true">color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
-         <string>MEGA</string>
+         <string>PCS-TS</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -2534,7 +2534,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">
@@ -3608,7 +3608,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
        <item row="0" column="0">
         <widget class="QTabWidget" name="Run_tabWidget">
          <property name="currentIndex">
-          <number>3</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="RTData_page">
           <property name="minimumSize">
@@ -3723,7 +3723,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                   </size>
                  </property>
                  <property name="currentIndex">
-                  <number>0</number>
+                  <number>1</number>
                  </property>
                  <widget class="QWidget" name="Bypass_Converter_page">
                   <layout class="QGridLayout" name="gridLayout_46">
@@ -4450,6 +4450,9 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                <width>971</width>
                <height>404</height>
               </size>
+             </property>
+             <property name="verticalScrollMode">
+              <enum>QAbstractItemView::ScrollPerPixel</enum>
              </property>
             </widget>
            </item>

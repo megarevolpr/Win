@@ -34,11 +34,7 @@ MEGAWin::MEGAWin(QWidget *parent) :
     ui->RTState_stackedWidget->setCurrentWidget(ui->RTState_Bypass_Y_page);
 
     MemoryAllocation(); //初始化内存空间
-    VariableInit();     //变量初始化
     UIPageInit();       //初始化界面
-
-    m_menu = new Menu(this);
-    connect(m_menu, SIGNAL(Sent(int)), this, SLOT(My_menuAction(int)));
 
 }
 
@@ -59,50 +55,10 @@ void MEGAWin::updateTimeOut()
     RTDataDisplay();
 }
 
-
 /************************初始化内存空间********************************/
 void MEGAWin::MemoryAllocation()
 {
-    /*******************************系统设置************************************/
-//    combox_ui_ChargeDischar =   new QComboBox();        //充放电设置
-//    combox_ui_ChargeDischar->setView(new QListView());
-
-//    combox_RUN  =   new QComboBox();                    //运行模式
-//    combox_RUN->setView(new QListView());
-
-//    combox_ControlMode  =   new QComboBox();            //控制模式
-//    combox_ControlMode->setView(new QListView());       //控制模式列表
-
-//    combox_ui_OnOff_Grid =   new QComboBox();           //并离网设置
-//    combox_ui_OnOff_Grid->setView(new QListView());     //并离网列表设置
-
-//    combox_MachineNumber = new QComboBox();             //设备号
-//    combox_MachineNumber->setView(new QListView());
-
-//    combox_Parallel = new QComboBox();                  //并机
-//    combox_Parallel->setView(new QListView());
-
-//    combox_UnbalancePowerEnable = new QComboBox();      //功率不平衡使能
-//    combox_UnbalancePowerEnable->setView(new QListView());
-
-
-
-
-//    Grid_CM_of_PCS_explain          = new QPushButton;
-//    Constant_power_explain          = new QPushButton; //恒功率
-//    Charg_and_Discharg_explain      = new QPushButton;
-//    Work_mode_explain               = new QPushButton;
-//    Output_power_factor_explain     = new QPushButton;
-//    Output_reactive_power_explain   = new QPushButton;
-//    Constant_current_explain        = new QPushButton;
-//    Constant_voltage_explain        = new QPushButton;
-//    Control_mode_explain            = new QPushButton;
-//    Machine_number_explain          = new QPushButton;
-//    Parallel_explain                = new QPushButton;
-//    Unbalance_power_enable_explain  = new QPushButton;
-//    Phase_A_power_explain           = new QPushButton;
-//    Phase_B_power_explain           = new QPushButton;  //B相功率说明
-//    Phase_C_power_explain           = new QPushButton;
+    m_menu = new Menu(this);
     /***************************数据报表&导出数据**********************************/
 
     pButton_History = new QButtonGroup();
@@ -516,50 +472,38 @@ void MEGAWin::MemoryAllocation()
     pButton_BatteryData->addButton(ui->pushButton_20,19);
     pButton_BatteryData->addButton(ui->pushButton_21,20);
 
-
 }
 /***************************************************************
  * @brief HOSTPAGE init
- * #attribute   Fuction
- * @param non       @see  non
- * @param Non         @see Non
- *
- * @return Non
- *     -<em>false</em> fail
- *     -<em>true</em> succeed
+ * 主页初始化
  ***************************************************************/
 void MEGAWin::FirstPage()
 {
-
     ui->Alarm_Button->setDefault(false);
     ui->Alarm_Button->setFlat(true);
     ui->Alarm_Button->setFocusPolicy(Qt::NoFocus);
 
     ui->Bypass_Running_btn->setFlat(true);
     ui->Bypass_Running_btn->setFocusPolicy(Qt::NoFocus);
+
     ui->Bypass_Grid_btn->setFlat(true);
     ui->Bypass_Grid_btn->setFocusPolicy(Qt::NoFocus);
+
     ui->Bypass_Load_Btn->setFlat(true);
     ui->Bypass_Load_Btn->setFocusPolicy(Qt::NoFocus);
+
     ui->Bypass_Batt_btn->setFlat(true);
     ui->Bypass_Batt_btn->setFocusPolicy(Qt::NoFocus);
 }
 /***************************************************************
  * @brief RunStatePage init
- * #attribute   Fuction
- * @param non       @see  non
- * @param Non         @see Non
- *
- * @return Non
- *     -<em>false</em> fail
- *     -<em>true</em> succeed
+ * 实时状态初始化
  ***************************************************************/
 void MEGAWin::RunStatePage()
 {
     ModuleData_Tab();//PCS数据
     RTAlarm();//告警信息
     ModuleState_Tab();//PCS状态
-
 }
 
 /***************************************************************
@@ -578,7 +522,10 @@ void MEGAWin::SystemSettingPage()
     Information_tbnt_released();/*系统-系统消息*/
 }
 
-void MEGAWin::LCDSetting()  //LCD标签初始化和定时器设置
+/***************************************************************
+ * LCD标签初始化和定时器设置
+ ***************************************************************/
+void MEGAWin::LCDSetting()
 {
     ui->TimeSeting_btn->setFlat(true);//设置时间显示控件无边框
     ui->TimeSeting_btn->setFocusPolicy(Qt::NoFocus); //设置无虚线
@@ -632,107 +579,16 @@ void MEGAWin::UserParam_tab()
     ui->System_Tab->setRowHeight(6, 48);
     ui->System_Tab->setRowHeight(7, 48);
 
-//    //并离网
-//    combox_ui_OnOff_Grid->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-//    combox_ui_OnOff_Grid->addItems(ui_OnOff_Grid);
-////    combox_ui_OnOff_Grid->setCurrentIndex(ui_sysDspSetData.u16OnOffGrid - 1);
-//    combox_ui_OnOffGrid_str = combox_ui_OnOff_Grid->currentText();
-//    combox_ui_OnOffGrid_index = combox_ui_OnOff_Grid->currentIndex();
-
-//    //充放电
-//    combox_ui_ChargeDischar->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-//    combox_ui_ChargeDischar->addItems(ui_ChargeDischar);
-////    combox_ui_ChargeDischar->setCurrentIndex(ui_sysDspSetData.u16ChargeOrDischarge - 1);
-//    combox_ui_ChargeDischar_str = combox_ui_ChargeDischar->currentText();
-//    combox_ui_ChargeDischar_index = combox_ui_ChargeDischar->currentIndex();
-
-//    //运行方式
-//    combox_RUN->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-//    combox_RUN->addItems(combox_Runmode);
-////    combox_RUN->setCurrentIndex(ui_sysDspSetData.u16RunMod);//默认手动控制
-//    combox_RUN_str = combox_RUN->currentText();
-//    combox_RUN_index = combox_RUN->currentIndex();
-
-//    //控制模式
-//    combox_ControlMode->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-//    combox_ControlMode->addItems(combox_CM);
-////    combox_ControlMode->setCurrentIndex(ui_sysMonSetData.u16ControlMode);
-//    combox_ControlMode_str = combox_ControlMode->currentText();
-//    combox_ControlMode_index = combox_ControlMode->currentIndex();
-
-//    combox_MachineNumber->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-//    combox_MachineNumber->addItems(combox_MNumber);
-////    combox_MachineNumber->setCurrentIndex(ui_sysDspSetData.u16MachineNumber);
-//    MachineNumber_str = combox_MachineNumber->currentText();
-//    combox_MachineNumber_index = combox_MachineNumber->currentIndex();
-
-//    combox_Parallel->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-//    combox_Parallel->addItems(combox_Para);
-////    combox_Parallel->setCurrentIndex(ui_sysDspSetData.u16EnableParallel);
-//    combox_Parallel_str = combox_Parallel->currentText();
-//    combox_Parallel_index = combox_Parallel->currentIndex();
-
-//    combox_UnbalancePowerEnable->setStyleSheet("QComboBox QAbstractItemView::item{height: 30}");
-//    combox_UnbalancePowerEnable->addItems(combox_Para);
-////    combox_UnbalancePowerEnable->setCurrentIndex(ui_sysDspSetData.u16UnbalancePowerEnable);
-//    combox_UnbalancePowerEnable_str = combox_UnbalancePowerEnable->currentText();
-//    combox_UnbalancePowerEnable_index = combox_UnbalancePowerEnable->currentIndex();
-
-
-//    Phase_C_power_btn->setText(tr("5"));
-
-//    Constant_power_explain->setText(tr("0"));
-
-
-//    ui->System_Tab->setCellWidget(0,1, (QWidget *)combox_ui_OnOff_Grid);        //并离网
-//    ui->System_Tab->setCellWidget(2,1, (QWidget *)combox_ui_ChargeDischar);     //充放电设置
-//    ui->System_Tab->setCellWidget(3,1, (QWidget *)combox_RUN);                  //运行模式
-
-//    ui->System_Tab->setCellWidget(0,4, (QWidget *)combox_ControlMode);          //控制模式
-//    ui->System_Tab->setCellWidget(1,4, (QWidget *)combox_MachineNumber);        //设备号
-//    ui->System_Tab->setCellWidget(2,4, (QWidget *)combox_Parallel);             //并机
-//    ui->System_Tab->setCellWidget(3,4, (QWidget *)combox_UnbalancePowerEnable); //功率不平衡使能
-
     AdvancedSetup_btn->setText(tr("Advance setting"));
     ui->System_Tab->setCellWidget(7,4, (QWidget *)AdvancedSetup_btn);          //高级设置
-
-
-//    Grid_CM_of_PCS = new Specification(Grid_CM_of_PCS_explain, ui->System_Tab, 0, 1, "5", "Phase_B_power", "This is Phase_B_power");
-//    Grid_CM_of_PCS->add_Specifition();
-//    Constant_power = new Specification(Constant_power_explain, ui->System_Tab, 1, 1, "5", "Phase_B_power", "This is Phase_B_power");
-//    Constant_power->add_Specifition();
-//    Charg_and_Discharg = new Specification(Charg_and_Discharg_explain, ui->System_Tab, 2, 1, "5", "Phase_B_power", "This is Phase_B_power");
-//    Charg_and_Discharg->add_Specifition();
-//    Work_mode = new Specification(Work_mode_explain, ui->System_Tab, 3, 1, "5", "Phase_B_power", "This is Phase_B_power");
-//    Work_mode->add_Specifition();
-//    Output_power_factor = new Specification(Output_power_factor_explain, ui->System_Tab, 4, 1, "5", "Phase_B_power", "This is Phase_B_power");
-//    Output_power_factor->add_Specifition();
-//    Output_reactive_power = new Specification(Output_reactive_power_explain, ui->System_Tab, 5, 1, "5", "Phase_B_power", "This is Phase_B_power");
-//    Output_reactive_power->add_Specifition();
-//    Constant_current = new Specification(Constant_current_explain, ui->System_Tab, 6, 1, "5", "Phase_B_power", "This is Phase_B_power");
-//    Constant_current->add_Specifition();
-//    Constant_voltage = new Specification(Constant_voltage_explain, ui->System_Tab, 7, 1, "5", "Phase_B_power", "This is Phase_B_power");
-//    Constant_voltage->add_Specifition();
-//    Control_mode = new Specification(Control_mode_explain, ui->System_Tab, 0, 4, "5", "Phase_B_power", "This is Phase_B_power");
-//    Control_mode->add_Specifition();
-//    Machine_number = new Specification(Machine_number_explain, ui->System_Tab, 1, 4, "5", "Phase_B_power", "This is Phase_B_power");
-//    Machine_number->add_Specifition();
-//    Parallel = new Specification(Parallel_explain, ui->System_Tab, 2, 4, "5", "Phase_B_power", "This is Phase_B_power");
-//    Parallel->add_Specifition();
-//    Unbalance_power_enable = new Specification(Unbalance_power_enable_explain, ui->System_Tab, 3, 4, "5", "Phase_B_power", "This is Phase_B_power");
-//    Unbalance_power_enable->add_Specifition();
-//    Phase_A_power = new Specification(Phase_A_power_explain, ui->System_Tab, 4, 4, "5", "Phase_B_power", "This is Phase_B_power");
-//    Phase_A_power->add_Specifition();
-//    Phase_B_power = new Specification(Phase_B_power_explain, ui->System_Tab, 5, 4, "5", "Phase_B_power", "This is Phase_B_power");
-//    Phase_B_power->add_Specifition();
-//    Phase_C_power = new Specification(Phase_C_power_explain, ui->System_Tab, 6, 4, "5", "Phase_B_power", "This is Phase_B_power");
-//    Phase_C_power->add_Specifition();
 
     ParameterSet();//系统设置 绘制button
 
 }
-
-void MEGAWin::History_tab()//历史记录设置表初始化
+/******************************************************************************
+ * 历史记录设置表初始化
+ * ***************************************************************************/
+void MEGAWin::History_tab()
 {
     History();//历史记录
     OperationLog();//操作日志
@@ -780,7 +636,6 @@ void MEGAWin::RunTimeSet_tab()
 
     AutoOperation();//自动运行 绘制button
 
-
 }
 /******************************************************************************
  * 实时数据——模拟量
@@ -796,14 +651,7 @@ void MEGAWin::RTData_Status()
 {
     ui->RTState_MEGA_Tab->clearContents();//防止内存泄漏
     ModuleState_Tab();
-
 }
-
-
-
-
-
-
 
 /*************************************************************************
  * 实时状态数据更新函数
@@ -812,10 +660,11 @@ void MEGAWin::RTDataDisplay()
 {
     RTData_Anologe();
 }
-
-void MEGAWin::Information_tbnt_released()//系统信息槽
+/*************************************************************************
+ * 系统信息槽
+ ************************************************************************/
+void MEGAWin::Information_tbnt_released()
 {
-//    ui->EquipmentInfor_tableWidget->clearContents();
     ui->EquipmentInfor_tableWidget->setColumnCount(2);
     ui->EquipmentInfor_tableWidget->setRowCount(9);
     ui->EquipmentInfor_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
@@ -835,41 +684,8 @@ void MEGAWin::Information_tbnt_released()//系统信息槽
 
     SystemMessages();//系统信息 绘制button
 
-//    QStringList Display_Par4;
-//    Display_Par4 << tr("Manufacturer name") << tr("Monitoring software version") << tr("Protocol version") << tr("Converter software version")
-//                << tr("CPLD software version") << tr("SN:");//<< tr("Converter type")
-//    for(int i = 0; i < Display_Par4.size(); i++)
-//    {
-//        ui->EquipmentInfor_tableWidget->setItem(i, 0, new QTableWidgetItem(QString(Display_Par4.at(i))));
-//    }
-
-
-
-//    QString STR_PRO;
-//    QString STR_DSP;
-//    QString STR_CPLD;
-//    QString SNCODE;
-//    ui->EquipmentInfor_tableWidget->setItem(0, 1, new QTableWidgetItem(QString(tr("PCS"))));
-//    ui->EquipmentInfor_tableWidget->item(0, 1)->setTextAlignment(Qt::AlignCenter);
-//    ui->EquipmentInfor_tableWidget->setItem(1, 1, new QTableWidgetItem("V103B500D004"));
-//    ui->EquipmentInfor_tableWidget->item(1, 1)->setTextAlignment(Qt::AlignCenter);
-//    ui->EquipmentInfor_tableWidget->setItem(2, 1, new QTableWidgetItem(STR_PRO));
-//    ui->EquipmentInfor_tableWidget->item(2, 1)->setTextAlignment(Qt::AlignCenter);
-//    ui->EquipmentInfor_tableWidget->setItem(3, 1, new QTableWidgetItem(STR_DSP));
-//    ui->EquipmentInfor_tableWidget->item(3, 1)->setTextAlignment(Qt::AlignCenter);
-//    ui->EquipmentInfor_tableWidget->setItem(4, 1, new QTableWidgetItem(STR_CPLD));
-//    ui->EquipmentInfor_tableWidget->item(4, 1)->setTextAlignment(Qt::AlignCenter);
-//    ui->EquipmentInfor_tableWidget->setItem(5, 1, new QTableWidgetItem(SNCODE));
-//    ui->EquipmentInfor_tableWidget->item(5, 1)->setTextAlignment(Qt::AlignCenter);
-
-
-
 }
 
-//void MEGAWin::GeneralParam_tbnt_released()  //一般参数槽
-//{
-
-//}
 /*************************************************************************
  * PCS故障信息表
  ************************************************************************/
@@ -1223,23 +1039,6 @@ void MEGAWin::PCS_Alarm_information_table()
         ui->RTAlarm_Data_page->item(28, i)->setTextAlignment(Qt::AlignCenter);
     }
 }
-/**************************************************
-初始化变量（system_Page）
-**************************************************/
-void MEGAWin::VariableInit()
-{
-
-}
-
-void MEGAWin::combox_ui_GridMode_change()//逆变器并网方式
-{
-
-}
-
-void MEGAWin::combox_ui_OnOff_Grid_change()//并离网
-{
-
-}
 
 /***************************************************************
  * 系统参数槽
@@ -1297,6 +1096,7 @@ void MEGAWin::SystemParam_tbnt_released()
             ui->UI_Debug_Tab->item (i,2)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
             ui->UI_Debug_Tab->item (i,4)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     }
+
     FunctionSet();/*功能设置*/
     SystemParameter();/*系统参数*/
     Peripheral();/*外设*/
@@ -1323,6 +1123,8 @@ void MEGAWin::AdvancedSetup_btn_clicked()
  ***************************************************************/
 void MEGAWin::LinkRelationship()
 {
+    connect(m_menu, SIGNAL(Sent(int)), this, SLOT(My_menuAction(int)));
+
     connect(timer, SIGNAL(timeout()), this, SLOT(onTimerOut()));
 
     connect(Update_RTData_timer, SIGNAL(timeout()), this, SLOT(updateTimeOut()));
@@ -1388,8 +1190,9 @@ void MEGAWin::ModuleData_Tab()//PCS数据
         Converter_TabList << tr("Name") << tr("Value") << tr("Name") << tr("Value")<< tr("Name") << tr("Value");
         ui->Converter_Tab->setHorizontalHeaderLabels(Converter_TabList);
         ui->Converter_Tab->setColumnWidth(0,200);
-        ui->Converter_Tab->setColumnWidth(1,100);
+        ui->Converter_Tab->setColumnWidth(1,200);
         ui->Converter_Tab->setColumnWidth(2,200);
+        ui->Converter_Tab->setColumnWidth(3,200);
         ui->Converter_Tab->horizontalHeader()->setStretchLastSection(3);
         ui->Converter_Tab->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
         ui->Converter_Tab->verticalHeader()->setVisible(false);//设置垂直头不可见
@@ -1401,10 +1204,12 @@ void MEGAWin::ModuleData_Tab()//PCS数据
         for(int i = 0; i < Converter_Tablist1.size(); i++)
         {
             ui->Converter_Tab->setItem(i, 0, new QTableWidgetItem(Converter_Tablist1.at(i)));
+            ui->Converter_Tab->item(i, 0)->setTextAlignment(Qt::AlignCenter);
         }
         for(int i = 0; i < Converter_Tablist2.size(); i++)
         {
             ui->Converter_Tab->setItem(i, 2, new QTableWidgetItem(Converter_Tablist2.at(i)));
+            ui->Converter_Tab->item(i, 2)->setTextAlignment(Qt::AlignCenter);
         }
 
         ui->Grid_Tab->setPalette(pal);
@@ -1412,7 +1217,7 @@ void MEGAWin::ModuleData_Tab()//PCS数据
         QStringList Grid_TabList;
         Grid_TabList << tr("Name") << tr("Value");
         ui->Grid_Tab->setHorizontalHeaderLabels(Grid_TabList);
-        ui->Grid_Tab->setColumnWidth(0,300);
+        ui->Grid_Tab->setColumnWidth(0,400);
         ui->Grid_Tab->horizontalHeader()->setStretchLastSection(1);
 
         ui->Grid_Tab->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
@@ -1433,7 +1238,7 @@ void MEGAWin::ModuleData_Tab()//PCS数据
         QStringList Load_TabList;
         Load_TabList << tr("Name") << tr("Value");
         ui->Load_Tab->setHorizontalHeaderLabels(Load_TabList);
-        ui->Load_Tab->setColumnWidth(0,300);
+        ui->Load_Tab->setColumnWidth(0,400);
         ui->Load_Tab->horizontalHeader()->setStretchLastSection(1);
         ui->Load_Tab->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
         ui->Load_Tab->verticalHeader()->setVisible(false);//设置垂直头不可见
@@ -1516,6 +1321,7 @@ void MEGAWin::ModuleState_Tab()//PCS状态
         }
         ui->RTState_Bypass_Tab->resizeRowsToContents();
     }
+
     PCS_State();//PCS状态 绘制button
 }
 
@@ -1538,7 +1344,6 @@ void MEGAWin::My_menuAction(int Index)
         ui->stackedWidget->setCurrentWidget(ui->Status_page);
 
         ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
-//        ui->Run_tabWidget->setCurrentIndex(0);
         break;
     case RECORDPAGE:
         ui->Record_tabWidget->setCurrentWidget(ui->HistoryRecord_page);
@@ -1584,9 +1389,8 @@ void MEGAWin::UIPageInit()
     LinkRelationship();//函数关联
 
 }
-/***********************************关联槽函数*****************************************/
 
-void MEGAWin::on_UI_MenuBtn_clicked()
+void MEGAWin::on_UI_MenuBtn_clicked()   //菜单
 {
     if(m_menu->isHidden())
     {
@@ -1600,11 +1404,6 @@ void MEGAWin::on_UI_MenuBtn_clicked()
     }
 }
 
-void MEGAWin::on_UI_Complete_Btn_clicked()
-{
-    ui->UI_stackedWidget->setCurrentWidget(ui->UI_page);
-}
-
 void MEGAWin::on_Running_btn_clicked()  //显示变流器实时数据
 {
     ui->stackedWidget->setCurrentWidget(ui->Status_page);
@@ -1614,7 +1413,7 @@ void MEGAWin::on_Running_btn_clicked()  //显示变流器实时数据
 
 }
 
-void MEGAWin::on_Grid_clicked() //显示电网端实时数据
+void MEGAWin::on_Grid_clicked()     //显示电网端实时数据
 {
     ui->stackedWidget->setCurrentWidget(ui->Status_page);
     ui->Run_tabWidget->setCurrentWidget(ui->RTData_page);
@@ -1622,20 +1421,12 @@ void MEGAWin::on_Grid_clicked() //显示电网端实时数据
     ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Grid_page);
 }
 
-void MEGAWin::on_Load_clicked() //显示负载端实时数据
+void MEGAWin::on_Load_clicked()     //显示负载端实时数据
 {
     ui->stackedWidget->setCurrentWidget(ui->Status_page);
     ui->Run_tabWidget->setCurrentWidget(ui->RTData_page);
     ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
     ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Load_page);
-}
-
-void MEGAWin::on_Batt_btn_pressed() //显示电池信息
-{
-    ui->stackedWidget->setCurrentWidget(ui->Status_page);
-    ui->Run_tabWidget->setCurrentWidget(ui->BatteryData_page);
-    ui->BAT_stackedWidget->setCurrentWidget(ui->BAT_Lithium_page);
-
 }
 
 void MEGAWin::on_Batt_btn_released()    //显示电池信息
@@ -1645,33 +1436,29 @@ void MEGAWin::on_Batt_btn_released()    //显示电池信息
     ui->BAT_stackedWidget->setCurrentWidget(ui->BAT_Lithium_page);
 }
 
-void MEGAWin::on_Alarm_btn_clicker()//显示告警信息
+void MEGAWin::on_Alarm_btn_clicker()    //显示告警信息
 {
     ui->stackedWidget->setCurrentWidget(ui->Status_page);
     ui->Run_tabWidget->setCurrentWidget(ui->RTAlarm_page);
 }
 
-void MEGAWin::on_SConverter_btn_clicked()
+void MEGAWin::on_SConverter_btn_clicked()   //显示变流器实时数据
 {
     ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Converter_page);
 }
 
-void MEGAWin::on_SGrid_btn_clicked()
+void MEGAWin::on_SGrid_btn_clicked()    //显示电网实时数据
 {
     ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Grid_page);
 }
 
-void MEGAWin::on_SLoad_btn_clicked()
+void MEGAWin::on_SLoad_btn_clicked()    //显示负载实时数据
 {
     ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Load_page);
 }
 
-void MEGAWin::on_TimeSeting_btn_released()
-{
-
-}
-
-void MEGAWin::on_Run_tabWidget_tabBarClicked(int index) //实时数据界面选项卡点击响应
+/******************实时数据界面选项卡点击响应*******************/
+void MEGAWin::on_Run_tabWidget_tabBarClicked(int index)
 {
     switch (index) {
     case Analoge_PAGE:
@@ -1692,19 +1479,8 @@ void MEGAWin::on_Run_tabWidget_tabBarClicked(int index) //实时数据界面选�
 
 }
 
-void MEGAWin::combox_ControlMode_change()
-{
-
-}
-
-
-//void MEGAWin::on_System_tabWidget_currentChanged(int index)
-//{
-//    GeneralParam_tbnt_released();
-////    Information_tbnt_released();
-//}
-
-void MEGAWin::Data_report_clicked(int nid)//数据报表点击槽
+/****************数据报表点击槽****************/
+void MEGAWin::Data_report_clicked(int nid)
 {
     switch (nid) {
     case 0:
@@ -1790,7 +1566,7 @@ void MEGAWin::Data_report_clicked(int nid)//数据报表点击槽
     }
 
 }
-//系统信息点击槽
+/******************系统信息点击槽***********************/
 void MEGAWin::SystemlnformationVer_clicked(int nid)
 {
     switch (nid) {
@@ -1812,7 +1588,7 @@ void MEGAWin::SystemlnformationVer_clicked(int nid)
         break;
     case 4:
         QMessageBox::question(this, "Gateway"\
-                              ,"这是网关，默,192.168.1.1\nThis is the gateway, Mer,192.168.1.1", "OK");
+                              ,"这是网关，默认192.168.1.1\nThis is the gateway. The default is 192.168.1.1", "OK");
         break;
     case 5:
         QMessageBox::question(this, "Serber ip"\
@@ -1820,14 +1596,14 @@ void MEGAWin::SystemlnformationVer_clicked(int nid)
         break;
     case 6:
         QMessageBox::question(this, "Apply and Restart system"\
-                              ,"这是应用并重启系统，点击后将重启系统并使用新的程序\nThis is to apply and restart the system, click will restart the system and use the new program.", "OK");
+                              ,"这是应用并重启系统，点击后将重启系统，如有升级，将会使用新的程序\nThis is the application and restart the system, click will restart the system, if there is an upgrade, will use the new program.", "OK");
         break;
     default:
         break;
     }
 }
-
-void MEGAWin::MonitorDebug_clicked(int nid)//监控调试点击槽
+/******************监控调试点击槽***********************/
+void MEGAWin::MonitorDebug_clicked(int nid)
 {
     switch (nid) {
         case 0:
@@ -1858,8 +1634,8 @@ void MEGAWin::MonitorDebug_clicked(int nid)//监控调试点击槽
             break;
     }
 }
-
-void MEGAWin::History()//历史记录 绘制button
+/******************历史记录 绘制button***********************/
+void MEGAWin::History()
 {
     QStringList table_h_headers;
     table_h_headers.clear();
@@ -2039,8 +1815,8 @@ void MEGAWin::History()//历史记录 绘制button
                                                     "这是事件描述，当有告警信息时，会将告警信息记录在这里\nThis is the event description, when there is an alarm information, the alarm information will be recorded here.");
     Describe8->add_Specifition();
 }
-
-void MEGAWin::OperationLog()//操作日志 绘制button
+/******************操作日志 绘制button***********************/
+void MEGAWin::OperationLog()
 {
     QStringList Ope_headers;
     Ope_headers.clear();
@@ -2152,8 +1928,8 @@ void MEGAWin::OperationLog()//操作日志 绘制button
                                                     "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
     EventRecord12->add_Specifition();
 }
-
-void MEGAWin::RTAlarm()//告警信息 绘表
+/******************告警信息 绘表***********************/
+void MEGAWin::RTAlarm()
 {
     ui->RTAlarm_Data_page->setColumnCount(5);
     ui->RTAlarm_Data_page->setRowCount(30);
@@ -2178,8 +1954,8 @@ void MEGAWin::RTAlarm()//告警信息 绘表
 
     PCS_Alarm_information_table();  //展示PCS故障信息表
 }
-
-void MEGAWin::BatteryData_clicked(int nid)//电池数据点击槽
+/*********电池数据点击槽**********/
+void MEGAWin::BatteryData_clicked(int nid)
 {
 
     switch (nid) {
@@ -2271,7 +2047,8 @@ void MEGAWin::BatteryData_clicked(int nid)//电池数据点击槽
         break;
     }
 }
-void MEGAWin::PCS_Data()//PCS数据 绘制button
+/*********PCS数据 绘制button**********/
+void MEGAWin::PCS_Data()
 {
     PCS_vol_AB = new Specification(this,PCS_vol_AB_explain, ui->Converter_Tab, 0, 1, \
                                             "99.9V", "PCS voltage(AB)", \
@@ -2339,8 +2116,8 @@ void MEGAWin::PCS_Data()//PCS数据 绘制button
                                             "这是从变流器获取的当前环境温度\nThis is the current ambient temperature obtained from the converter.");
     PCS_Env_T->add_Specifition();
 }
-
-void MEGAWin::Grid_Data()//电网数据 绘制button
+/*********电网数据 绘制button**********/
+void MEGAWin::Grid_Data()
 {
     Grid_vol_AB = new Specification(this,Grid_vol_AB_explain, ui->Grid_Tab, 0, 1, \
                                             "0V", "Grid voltage(AB)", \
@@ -2387,8 +2164,8 @@ void MEGAWin::Grid_Data()//电网数据 绘制button
                                             "这是从变流器获取的当前电网的功率因数,它是交流电路有功功率对视在功率的比值\nThis is the power factor of the current grid obtained from the converter, which is the ratio of the active power to the apparent power of the AC circuit.");
     Grid_Pf->add_Specifition();
 }
-
-void MEGAWin::Load_Data()//负载数据 绘制button
+/*********负载数据 绘制button**********/
+void MEGAWin::Load_Data()
 {
     Load_vol_AB = new Specification(this,Load_vol_AB_explain, ui->Load_Tab, 0, 1, \
                                             "0V", "Load voltage(AB)", \
@@ -2431,8 +2208,8 @@ void MEGAWin::Load_Data()//负载数据 绘制button
                                             "这是从变流器获取的负载的功率因数，它是有功功率对视在功率的比值\nThis is the power factor of the load obtained from the converter, which is the ratio of active power to apparent power.");
     Load_Pf->add_Specifition();
 }
-
-void MEGAWin::PCS_State()//PCS状态 绘制button
+/********PCS状态 绘制button*********/
+void MEGAWin::PCS_State()
 {
     DC_input_Breaker = new Specification(this,DC_input_Breaker_explain, ui->RTState_Bypass_Tab, 0, 1, \
                                             "Close", "DC input Breaker", \
@@ -2523,8 +2300,8 @@ void MEGAWin::PCS_State()//PCS状态 绘制button
                                             "这是高温信号，输入干接点6，有使能(Enable)、禁止(Disable)两种状态,此处获取的是最真实的物理硬件状态，当该干接点电路回路接通时为1(Enable),电路回路断开时为0(Disable)\nThis isa high temperature signal, input to dry contact 6, there are two states: Enable and Disable. The most real physical hardware state is obtained here, which is 1 when the dry contact circuit loop is connected (Enable), and 0 when the circuit loop is disconnected (Disable).");
     Hight_temp_signal->add_Specifition();
 }
-
-void MEGAWin::ParameterSet()//系统设置 绘制button
+/*********系统设置 绘制button**********/
+void MEGAWin::ParameterSet()
 {
     Grid_connected_mode = new Specification(this,Grid_connected_mode_explain, ui->System_Tab, 0, 1, \
                                             "automatic", "Grid connected mode of PCS", \
@@ -2602,8 +2379,8 @@ void MEGAWin::ParameterSet()//系统设置 绘制button
     Phase_C_power->add_Specifition();
 
 }
-
-void MEGAWin::BetterySetup()//电池设置 绘制button
+/***********电池设置 绘制button************/
+void MEGAWin::BetterySetup()
 {
     DOD_OnGrid = new Specification(this,DOD_OnGrid_explain, ui->Lithum_Tab, 0, 1, \
                                      "90", "DOD_OnGrid", \
@@ -2678,8 +2455,8 @@ void MEGAWin::BetterySetup()//电池设置 绘制button
                                      "当每月到达这一天都会进行一次充放电循环\nA charge-discharge cycle is performed once a month on that date.");
     Monthly_cycle_time->add_Specifition();
 }
-
-void MEGAWin::AutoOperation()//自动运行 绘制button
+/************自动运行 绘制button*************/
+void MEGAWin::AutoOperation()
 {
     Specification * temp[]  ={Check1,Check2,Check3,Check4,Check5,Check6,Check7,Check8,Check9,Check10,\
                            Check11,Check12,Check13,Check14,Check15,Check16,Check17,Check18,Check19,Check20};
@@ -2773,8 +2550,8 @@ void MEGAWin::AutoOperation()//自动运行 绘制button
     }
 
 }
-
-void MEGAWin::SystemMessages()//系统信息 绘制button
+/*********系统信息 绘制button**********/
+void MEGAWin::SystemMessages()
 {
     Manufacturer_name = new Specification(this,Manufacturer_name_explain, ui->EquipmentInfor_tableWidget, 0, 1, \
                                      "PCS", "Manufacturer name", \
@@ -2801,8 +2578,8 @@ void MEGAWin::SystemMessages()//系统信息 绘制button
                                      "这是SN,即产品序列号\nThis is the name of the manufacturer.");
     SN->add_Specifition();
 }
-
-void MEGAWin::FunctionSet()//功能设置绘制button
+/***********功能设置 绘制button************/
+void MEGAWin::FunctionSet()
 {
     Battery_type = new Specification(this,Battery_type_explain, ui->UI_Parameter_Tab, 0, 1, \
                                      "Lithium", "Battery type", \
@@ -2910,8 +2687,8 @@ void MEGAWin::FunctionSet()//功能设置绘制button
                                    "根据项目现场配置干接点功能，可供选择为允许(Allow)、禁止(forbid)\nAccording to the project site configuration dry contact function, can be selected as allowed(Allow), prohibited(forbid).");
     DryContact->add_Specifition();
 }
-
-void MEGAWin::SystemParameter()//系统参数 绘制button
+/***********系统参数 绘制button************/
+void MEGAWin::SystemParameter()
 {
     Change_rate_of_power = new Specification(this,Change_rate_of_power_explain, ui->UI_SystemParameter_Tab, 0, 1, \
                                              "20", "Change_rate_of_power", \
@@ -3020,8 +2797,8 @@ void MEGAWin::SystemParameter()//系统参数 绘制button
                                    "清除系统此前的记录数据及操作数据\nClear previous recorded data and operation data of the system.");
     Clear_Data->add_Specifition();
 }
-
-void MEGAWin::Peripheral()//外设 绘制button
+/***********外设 绘制button************/
+void MEGAWin::Peripheral()
 {
     DI_1_Enable = new Specification(this,DI_1_Enable_explain, ui->ExternalDevice_tW, 0, 0, \
                                    "Enable", "DI_1_Enable", \
@@ -3134,8 +2911,8 @@ void MEGAWin::Peripheral()//外设 绘制button
                                    "输出干接点3，预留功能，设置无效，信号触发时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\nDry contact 3 is output. The reserved function is invalid.The optional functions are prompt(Prompt), standby(Standby), shutdown(Shut down), full standby(Full standby), empty standby(Empty standby), fault standby(Failure standby), and power grid signal(Grid singnal)");
     DO_3_Action->add_Specifition();
 }
-
-void MEGAWin::BMS_Protect()//BMS保护 绘制button
+/***********BMS保护 绘制button************/
+void MEGAWin::BMS_Protect()
 {
     DOD_Action = new Specification(this,DOD_Action_explain, ui->BMSProtection_tW, 0, 0, \
                                    "Standby", "DOD", \
@@ -3188,8 +2965,8 @@ void MEGAWin::BMS_Protect()//BMS保护 绘制button
     BMS_fualt_DP->add_Specifition();
 
 }
-
-void MEGAWin::Debugg()//调试 绘制button
+/***********调试 绘制button************/
+void MEGAWin::Debugg()
 {
     Debug_variable_1 = new Specification(this,Debug_variable_1_explain, ui->UI_Debug_Tab, 0, 1, \
                                    "0", "Debug_variable_1", \

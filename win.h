@@ -11,8 +11,6 @@
 #include "Specification/Specification.h"
 
 
-//QComboBox * combox_OutPower;
-//QComboBox *combox_ui_ChargeDischar;
 
 
 #define CTL_STANDBY         0
@@ -685,7 +683,6 @@ public:
 
 
         void UIPageInit();//初始化界面
-        void VariableInit();//初始化变量
 
         void MemoryAllocation();
 
@@ -739,34 +736,25 @@ private slots:
     void My_menuAction(int Index);
     void SystemParam_tbnt_released();
 
-    void combox_ui_GridMode_change();
-    void combox_ui_OnOff_Grid_change();//并离网
-
     void on_UI_MenuBtn_clicked();//转到槽
-    void on_UI_Complete_Btn_clicked();//
 
     void on_Running_btn_clicked();//跳转变流器实时数据
     void on_Grid_clicked();//跳转电网实时数据
     void on_Load_clicked();//跳转负载实时数据
 
-    void on_Batt_btn_pressed();//跳转到电池信息
     void on_Batt_btn_released();//跳转到电池信息
     void on_Alarm_btn_clicker();//跳转实时告警页面
 
-    void on_SConverter_btn_clicked();
+    void on_SConverter_btn_clicked();//显示变流器实时数据
 
-    void on_SGrid_btn_clicked();
+    void on_SGrid_btn_clicked();//显示电网实时数据
 
-    void on_SLoad_btn_clicked();
-
-    void on_TimeSeting_btn_released();
+    void on_SLoad_btn_clicked();//显示负载实时数据
 
     void on_Run_tabWidget_tabBarClicked(int index); //实时数据界面选项卡点击响应
-    void combox_ControlMode_change();
 
     void AdvancedSetup_btn_clicked();//高级
 
-//    void on_System_tabWidget_currentChanged(int index);
     void BatteryData_clicked(int nid);//电池数据
     void Data_report_clicked(int nid);//数据报表
     void SystemlnformationVer_clicked(int nid);//系统信息
