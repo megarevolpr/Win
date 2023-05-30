@@ -1405,6 +1405,11 @@ void MEGAWin::on_UI_MenuBtn_clicked()   //菜单
     }
 }
 
+void MEGAWin::on_UI_Complete_Btn_clicked()//退出高级设置
+{
+    ui->UI_stackedWidget->setCurrentWidget(ui->UI_page);
+}
+
 void MEGAWin::on_Running_btn_clicked()  //显示变流器实时数据
 {
     ui->stackedWidget->setCurrentWidget(ui->Status_page);
@@ -3146,4 +3151,9 @@ void MEGAWin::on_radio_dhcp_clicked()
         ui->server_ip_explain_btn->hide();
     }
     QMessageBox::question(this ,"dhcp", "如果选择此项，表示使用自动分配的IP地址\nIf this parameter is selected, the automatically assigned IP address is used", "OK");
+}
+/*********** 调入测试数据 ************/
+void MEGAWin::on_radio_test_data_btn_clicked()
+{
+    QMessageBox::question(this ,"test data", "调入测试数据(仅供内部测试人员使用)\nCall in test data (for internal testing personnel only)", "OK");
 }

@@ -2138,7 +2138,7 @@ color: rgb(255, 255, 255);</string>
             </property>
            </widget>
           </widget>
-          <widget class="QRadioButton" name="radioButton">
+          <widget class="QRadioButton" name="radio_test_data_btn">
            <property name="geometry">
             <rect>
              <x>30</x>

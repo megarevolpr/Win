@@ -737,6 +737,7 @@ private slots:
     void SystemParam_tbnt_released();
 
     void on_UI_MenuBtn_clicked();//转到槽
+    void on_UI_Complete_Btn_clicked();//退出高级设置
 
     void on_Running_btn_clicked();//跳转变流器实时数据
     void on_Grid_clicked();//跳转电网实时数据
@@ -762,6 +763,8 @@ private slots:
     void on_radio_static_clicked();
 
     void on_radio_dhcp_clicked();
+
+    void on_radio_test_data_btn_clicked();
 
 private:
     Ui::MEGAWin *ui;
