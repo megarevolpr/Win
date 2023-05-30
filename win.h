@@ -759,6 +759,10 @@ private slots:
     void Data_report_clicked(int nid);//数据报表
     void SystemlnformationVer_clicked(int nid);//系统信息
     void MonitorDebug_clicked(int nid);//监控调试
+    void on_radio_static_clicked();
+
+    void on_radio_dhcp_clicked();
+
 private:
     Ui::MEGAWin *ui;
     QTimer *timer;
@@ -769,6 +773,7 @@ private:
     QButtonGroup *pButton_Version;
     QButtonGroup *pButton_MonitorDebug;
     bool ASKey;//高级设置钥匙
+    bool IPShow;//IP地址显示标志位
 };
 
 

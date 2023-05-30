@@ -2534,7 +2534,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">
@@ -7421,7 +7421,7 @@ background-color: rgb(255, 0, 0);</string>
         </rect>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>3</number>
        </property>
        <widget class="QWidget" name="ParameterSet_page">
         <attribute name="title">
@@ -8970,7 +8970,7 @@ B1 - A1 ≥ 30 %
                  <string>DHCP</string>
                 </property>
                </widget>
-               <widget class="QRadioButton" name="radio_dhcp_2">
+               <widget class="QRadioButton" name="radio_static">
                 <property name="geometry">
                  <rect>
                   <x>230</x>
@@ -9067,7 +9067,7 @@ B1 - A1 ≥ 30 %
                  <string>255 . 255 . 255 . 0</string>
                 </property>
                </widget>
-               <widget class="QPushButton" name="pushButton">
+               <widget class="QPushButton" name="gateway_explain_btn">
                 <property name="geometry">
                  <rect>
                   <x>190</x>
@@ -9080,7 +9080,7 @@ B1 - A1 ≥ 30 %
                  <string>192 . 168 .  1  . 1</string>
                 </property>
                </widget>
-               <widget class="QPushButton" name="pushButton_22">
+               <widget class="QPushButton" name="server_ip_explain_btn">
                 <property name="geometry">
                  <rect>
                   <x>190</x>

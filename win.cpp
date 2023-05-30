@@ -227,8 +227,8 @@ void MEGAWin::MemoryAllocation()
     pButton_Version->addButton(ui->port_explain_btn,1);
     pButton_Version->addButton(ui->ip_explain_btn,2);
     pButton_Version->addButton(ui->netmask_explain_btn,3);
-    pButton_Version->addButton(ui->pushButton,4);
-    pButton_Version->addButton(ui->pushButton_22,5);
+    pButton_Version->addButton(ui->gateway_explain_btn,4);
+    pButton_Version->addButton(ui->server_ip_explain_btn,5);
     pButton_Version->addButton(ui->ok,6);
 
     Manufacturer_name_explain   = new QPushButton;
@@ -472,6 +472,7 @@ void MEGAWin::MemoryAllocation()
     pButton_BatteryData->addButton(ui->pushButton_20,19);
     pButton_BatteryData->addButton(ui->pushButton_21,20);
 
+    IPShow = true;
 }
 /***************************************************************
  * @brief HOSTPAGE init
@@ -3105,4 +3106,44 @@ void MEGAWin::Debugg()
                                    "0", "parallel_signal", \
                                    "仅提供内部调试使用\nIt is used for internal debugging only");
     parallel_signal->add_Specifition();
+}
+/*********** 选择静态IP地址 ************/
+void MEGAWin::on_radio_static_clicked()
+{
+    IPShow = true;
+    if(IPShow)
+    {
+        ui->ip_explain_btn->show();
+        ui->netmask_explain_btn->show();
+        ui->gateway_explain_btn->show();
+        ui->server_ip_explain_btn->show();
+    }
+    else
+    {
+        ui->ip_explain_btn->hide();
+        ui->netmask_explain_btn->hide();
+        ui->gateway_explain_btn->hide();
+        ui->server_ip_explain_btn->hide();
+    }
+    QMessageBox::question(this ,"static", "如果选择此项，表示使用静态的IP地址\nIf this parameter is selected, static IP addresses are used", "OK");
+}
+/*********** 选择自动分配IP地址 ************/
+void MEGAWin::on_radio_dhcp_clicked()
+{
+    IPShow = false;
+    if(IPShow)
+    {
+        ui->ip_explain_btn->show();
+        ui->netmask_explain_btn->show();
+        ui->gateway_explain_btn->show();
+        ui->server_ip_explain_btn->show();
+    }
+    else
+    {
+        ui->ip_explain_btn->hide();
+        ui->netmask_explain_btn->hide();
+        ui->gateway_explain_btn->hide();
+        ui->server_ip_explain_btn->hide();
+    }
+    QMessageBox::question(this ,"dhcp", "如果选择此项，表示使用自动分配的IP地址\nIf this parameter is selected, the automatically assigned IP address is used", "OK");
 }
