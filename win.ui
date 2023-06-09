@@ -2274,12 +2274,12 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         </property>
         <property name="maximumSize">
          <size>
-          <width>110</width>
+          <width>99999</width>
           <height>45</height>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image: url(:/new_ui/UI/Logo.png);</string>
+         <string notr="true"/>
         </property>
         <property name="text">
          <string/>
@@ -2309,7 +2309,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         </property>
         <property name="maximumSize">
          <size>
-          <width>100</width>
+          <width>9999</width>
           <height>45</height>
          </size>
         </property>
@@ -2340,7 +2340,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         </property>
         <property name="maximumSize">
          <size>
-          <width>15</width>
+          <width>99</width>
           <height>45</height>
          </size>
         </property>
@@ -2371,7 +2371,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         </property>
         <property name="maximumSize">
          <size>
-          <width>75</width>
+          <width>9999</width>
           <height>45</height>
          </size>
         </property>
@@ -2399,7 +2399,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         </property>
         <property name="maximumSize">
          <size>
-          <width>15</width>
+          <width>99</width>
           <height>45</height>
          </size>
         </property>
@@ -2430,7 +2430,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         </property>
         <property name="maximumSize">
          <size>
-          <width>60</width>
+          <width>9999</width>
           <height>45</height>
          </size>
         </property>
@@ -2493,7 +2493,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         </property>
         <property name="maximumSize">
          <size>
-          <width>323</width>
+          <width>9999</width>
           <height>45</height>
          </size>
         </property>
@@ -2534,7 +2534,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">
@@ -2595,7 +2595,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 127);</string>
+        <string notr="true">border-image: url(:/new_ui/UI/ProcessBar2-02.png);</string>
        </property>
        <property name="text">
         <string/>
@@ -2666,7 +2666,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 127);
+        <string notr="true">border-image: url(:/new_ui/UI/ProcessBar1-02.png);
 </string>
        </property>
        <property name="text">
@@ -2683,7 +2683,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 127);</string>
+        <string notr="true">border-image: url(:/new_ui/UI/ProcessBar1-02.png);</string>
        </property>
        <property name="text">
         <string/>
@@ -2699,7 +2699,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 127);</string>
+        <string notr="true">border-image: url(:/new_ui/UI/ProcessBar1-02.png);</string>
        </property>
        <property name="text">
         <string/>
@@ -3016,7 +3016,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">border-image: url(:/new_ui/UI/Bat1.png);</string>
+        <string notr="true">border-image: url(:/new_ui/UI/Bat3.png);</string>
        </property>
        <property name="text">
         <string/>
@@ -3032,8 +3032,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 127);
-</string>
+        <string notr="true">border-image: url(:/new_ui/UI/ProcessBar2-02.png);</string>
        </property>
        <property name="text">
         <string/>
@@ -3099,7 +3098,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
       <widget class="QPushButton" name="Bypass_Grid_btn">
        <property name="geometry">
         <rect>
-         <x>660</x>
+         <x>680</x>
          <y>70</y>
          <width>121</width>
          <height>161</height>
@@ -3184,7 +3183,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 127);</string>
+        <string notr="true">border-image: url(:/new_ui/UI/ProcessBar1-02.png);</string>
        </property>
        <property name="text">
         <string/>
@@ -3206,7 +3205,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 127);</string>
+        <string notr="true">border-image: url(:/new_ui/UI/ProcessBar1-02.png);</string>
        </property>
        <property name="text">
         <string/>
@@ -3228,7 +3227,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 127);</string>
+        <string notr="true">border-image: url(:/new_ui/UI/ProcessBar1-02.png);</string>
        </property>
        <property name="text">
         <string/>
@@ -3339,8 +3338,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 127);
-</string>
+        <string notr="true">border-image: url(:/new_ui/UI/DCBar1-02.png);</string>
        </property>
        <property name="text">
         <string/>
@@ -3356,7 +3354,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 127);</string>
+        <string notr="true">border-image: url(:/new_ui/UI/DCBar1-02.png);</string>
        </property>
        <property name="text">
         <string/>
@@ -3372,7 +3370,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 127);</string>
+        <string notr="true">border-image: url(:/new_ui/UI/DCBar1-02.png);</string>
        </property>
        <property name="text">
         <string/>
@@ -9167,145 +9165,107 @@ B1 - A1 ≥ 30 %
      <property name="styleSheet">
       <string notr="true">background-color: rgb(31, 133, 227);</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout_55">
-      <property name="leftMargin">
-       <number>0</number>
+     <widget class="QPushButton" name="UI_MenuBtn">
+      <property name="geometry">
+       <rect>
+        <x>1</x>
+        <y>1</y>
+        <width>120</width>
+        <height>57</height>
+       </rect>
       </property>
-      <property name="topMargin">
-       <number>1</number>
+      <property name="minimumSize">
+       <size>
+        <width>120</width>
+        <height>57</height>
+       </size>
       </property>
-      <property name="rightMargin">
-       <number>0</number>
+      <property name="maximumSize">
+       <size>
+        <width>999</width>
+        <height>57</height>
+       </size>
       </property>
-      <property name="bottomMargin">
-       <number>0</number>
+      <property name="font">
+       <font>
+        <family>SimSun-ExtB</family>
+        <pointsize>14</pointsize>
+       </font>
       </property>
-      <property name="spacing">
-       <number>0</number>
+      <property name="text">
+       <string>Menu</string>
       </property>
-      <item row="0" column="0">
-       <layout class="QHBoxLayout" name="horizontalLayout_17" stretch="1,5,3,5,0">
-        <property name="spacing">
-         <number>6</number>
-        </property>
-        <property name="leftMargin">
-         <number>3</number>
-        </property>
-        <property name="rightMargin">
-         <number>3</number>
-        </property>
-        <item>
-         <widget class="QPushButton" name="UI_MenuBtn">
-          <property name="minimumSize">
-           <size>
-            <width>120</width>
-            <height>57</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>120</width>
-            <height>57</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>SimSun-ExtB</family>
-            <pointsize>14</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Menu</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer_11">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>150</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QLabel" name="Inverter_state_lab">
-          <property name="minimumSize">
-           <size>
-            <width>350</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>350</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>SimSun-ExtB</family>
-            <pointsize>14</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer_5">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>150</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QLabel" name="CurrentMode_lb">
-          <property name="minimumSize">
-           <size>
-            <width>210</width>
-            <height>57</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>210</width>
-            <height>57</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>14</pointsize>
-           </font>
-          </property>
-          <property name="layoutDirection">
-           <enum>Qt::RightToLeft</enum>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(255, 255, 255);</string>
-          </property>
-          <property name="text">
-           <string>Current mode:CP</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
+     </widget>
+     <widget class="QLabel" name="Inverter_state_lab">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>9</y>
+        <width>350</width>
+        <height>40</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>350</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>999</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>SimSun-ExtB</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="CurrentMode_lb">
+      <property name="geometry">
+       <rect>
+        <x>745</x>
+        <y>1</y>
+        <width>220</width>
+        <height>57</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>210</width>
+        <height>57</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>999</width>
+        <height>57</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::RightToLeft</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Current mode:CP</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
