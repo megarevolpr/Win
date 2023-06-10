@@ -2037,70 +2037,70 @@ void MEGAWin::BatteryData_clicked(int nid)
 void MEGAWin::PCS_Data()
 {
     PCS_vol_AB = new Specification(this,PCS_vol_AB_explain, ui->Converter_Tab, 0, 1, \
-                                            "99.9V", "PCS voltage(AB)", \
-                                            "这是从变流器获取的当前PCS的A相和B相之间的电压\nThis is the voltage between the A and B phases of the current PCS obtained from the converter.");
-    PCS_vol_AB->add_Specifition();
+                                            "270.2V", "PCS voltage(AB)", \
+                                            "当前PCS的逆变侧电压，此项为A相和B相之间的相电压\nThe inverter side voltage of the current PCS is the phase voltage between phase A and phase B.");
+    PCS_vol_AB->add_Specification();
     PCS_vol_BC = new Specification(this,PCS_vol_BC_explain, ui->Converter_Tab, 1, 1, \
-                                            "99.9V", "PCS voltage(BC)", \
-                                            "这是从变流器获取的当前PCS的B相和C相之间的电压\nThis is the voltage between the B and C phases of the current PCS obtained from the converter.");
-    PCS_vol_BC->add_Specifition();
+                                            "270V", "PCS voltage(BC)", \
+                                            "当前PCS的逆变侧电压，此项为B相和C相之间的相电压\nThe inverter side voltage of the current PCS is the phase voltage between phase B and phase C.");
+    PCS_vol_BC->add_Specification();
     PCS_vol_CA = new Specification(this,PCS_vol_CA_explain, ui->Converter_Tab, 2, 1, \
-                                            "99.7V", "PCS voltage(CA)", \
-                                            "这是从变流器获取的当前PCS的A相和C相之间的电压\nThis is the voltage between phase A and phase C of the current PCS obtained from the converter.");
-    PCS_vol_CA->add_Specifition();
+                                            "270.1V", "PCS voltage(CA)", \
+                                            "当前PCS的逆变侧电压，此项为A相和C相之间的相电压\nThe inverter side voltage of the current PCS is the phase voltage between phase A and phase C.");
+    PCS_vol_CA->add_Specification();
     PCS_cur_A = new Specification(this,PCS_cur_A_explain, ui->Converter_Tab, 3, 1, \
                                             "0A", "PCS current(A)", \
-                                            "这是从变流器获取的当前PCS的A相电流\nThis is the A-phase current of the current PCS obtained from the converter.");
-    PCS_cur_A->add_Specifition();
+                                            "当前PCS的逆变侧电流，此项为A相的电流\nThe current of the inverter side of the current PCS is the current of phase A.");
+    PCS_cur_A->add_Specification();
     PCS_cur_B = new Specification(this,PCS_cur_B_explain, ui->Converter_Tab, 4, 1, \
                                             "0A", "PCS current(B)", \
-                                            "这是从变流器获取的当前PCS的B相电流\nThis is the B-phase current of the current PCS obtained from the converter.");
-    PCS_cur_B->add_Specifition();
+                                            "当前PCS的逆变侧电流，此项为B相的电流\nThe current of the inverter side of the current PCS is the current of phase B.");
+    PCS_cur_B->add_Specification();
     PCS_cur_C = new Specification(this,PCS_cur_C_explain, ui->Converter_Tab, 5, 1, \
                                             "0A", "PCS current(C)", \
-                                            "这是从变流器获取的当前PCS的C相电流\nThis is the C-phase current of the current PCS obtained from the converter.");
-    PCS_cur_C->add_Specifition();
+                                            "当前PCS的逆变侧电流，此项为C相的电流\nThe current of the inverter side of the current PCS is the current of phase C.");
+    PCS_cur_C->add_Specification();
     PCS_act_P = new Specification(this,PCS_act_P_explain, ui->Converter_Tab, 6, 1, \
                                             "0kW", "PCS Active Power", \
-                                            "这是从变流器获取的当前PCS的有功功率,它反映了交流电源在电阻元件上做功的能力大小\nThis is the active power of the current PCS obtained from the converter, which reflects the capacity of the AC power supply to do work on the resistance element.");
-    PCS_act_P->add_Specifition();
+                                            "当前PCS的逆变侧有功功率P\nThe active power P of the inverter side of the current PCS.");
+    PCS_act_P->add_Specification();
     PCS_rea_P = new Specification(this,PCS_rea_P_explain, ui->Converter_Tab, 7, 1, \
                                             "0kVar", "PCS Reactive Power", \
-                                            "这是从变流器获取的当前PCS的无功功率,它表达了交流电源能量与磁场或电场能量交换的最大速率\nThis is the reactive power of the current PCS obtained from the converter, which expresses the maximum rate at which the AC power source energy is exchanged with the magnetic or electric field energy.");
-    PCS_rea_P->add_Specifition();
+                                            "当前PCS的逆变侧无功功率Q\nThe reactive power Q of the inverter side of the current PCS.");
+    PCS_rea_P->add_Specification();
     PCS_par_P = new Specification(this,PCS_par_P_explain, ui->Converter_Tab, 8, 1, \
                                             "0kVA", "PCS Parent Power", \
-                                            "这是从变流器获取的当前PCS的视在功率,它用来表示变流器的容量大小\nThis is the apparent power of the current PCS obtained from the converter, which is used to represent the capacity of the transformer.");
-    PCS_par_P->add_Specifition();
+                                            "当前PCS的逆变侧视在功率S，S= √((P^2+Q^2))\nThe inverter side view of the current PCS is at power S, S= √((P^2+Q^2)).");
+    PCS_par_P->add_Specification();
 
     PCS_Pf = new Specification(this,PCS_Pf_explain, ui->Converter_Tab, 9, 1, \
                                             "0", "PCS Power factor", \
-                                            "这是从变流器获取的当前PCS的功率因数,它是交流电路有功功率对视在功率的比值\nThis is the power factor of the current PCS obtained from the converter, which is the ratio of the active power to the apparent power of the AC circuit.");
-    PCS_Pf->add_Specifition();
+                                            "当前PCS的逆变侧功率因素Pf， Pf = P / S\nPower factor Pf on the inverter side of current PCS, Pf = P/S.");
+    PCS_Pf->add_Specification();
     PCS_Bat_vol = new Specification(this,PCS_Bat_vol_explain, ui->Converter_Tab, 0, 3, \
                                             "0V", "PCS Battery voltage", \
-                                            "这是从变流器获取的当前电池电压\nThis is the current battery voltage obtained from the converter.");
-    PCS_Bat_vol->add_Specifition();
+                                            "当前PCS从接入的电池侧采样的电池电压\nThe current PCS samples the battery voltage from the connected battery.");
+    PCS_Bat_vol->add_Specification();
     PCS_Bat_cur = new Specification(this,PCS_Bat_cur_explain, ui->Converter_Tab, 1, 3, \
                                             "0A", "PCS Battery current", \
-                                            "这是从变流器获取的当前电池电流\nThis is the current battery current obtained from the converter.");
-    PCS_Bat_cur->add_Specifition();
+                                            "当前PCS从接入的电池侧采样的电池电流\nBattery current sampled by the PCS from the connected battery.");
+    PCS_Bat_cur->add_Specification();
     PCS_Bat_P = new Specification(this,PCS_Bat_P_explain, ui->Converter_Tab, 2, 3, \
                                             "0kW", "PCS Battery power", \
-                                            "这是从变流器获取的当前电池功率\nThis is the current battery power obtained from the converter.");
-    PCS_Bat_P->add_Specifition();
+                                            "当前PCS内部计算电池电压与电池电流的乘积，得到电池功率\nAt present, PCS calculates the product of battery voltage and battery current to obtain battery power.");
+    PCS_Bat_P->add_Specification();
     PCS_Bus_vol = new Specification(this,PCS_Bus_vol_explain, ui->Converter_Tab, 3, 3, \
                                             "0V", "PCS Bus voltage", \
-                                            "这是从变流器获取的当前母线电压，母线电压是所有供电分支的源头，逆变器所有变压器输出后整流汇总在一起的高压直流电压，这里称之为母线电压\nThis is the current bus voltage obtained from the converter. The bus voltage is the source of all power supply branches and the combined high voltage DC voltage after the output of all transformers of the inverter. It is called the bus voltage here.");
-    PCS_Bus_vol->add_Specifition();
+                                            "当前PCS从母线侧采样的母线电压\nThe current bus voltage sampled by PCS from the bus side.");
+    PCS_Bus_vol->add_Specification();
     PCS_IGBT_T = new Specification(this,PCS_IGBT_T_explain, ui->Converter_Tab, 4, 3, \
                                             "39℃", "PCS IGBT temperature", \
-                                            "这是从变流器获取的当前IGBT温度，IGBT温度是指半导体芯片内的最高工作温度\nThis is the current IGBT temperature obtained from the converter. IGBT temperature is the highest operating temperature inside the semiconductor chip.");
-    PCS_IGBT_T->add_Specifition();
+                                            "当前PCS的IGBT温度，IGBT温度不得超过105℃，否则PCS将降额运行\nThe current IGBT temperature of PCS shall not exceed 105℃, otherwise PCS will run derated.");
+    PCS_IGBT_T->add_Specification();
     PCS_Env_T = new Specification(this,PCS_Env_T_explain, ui->Converter_Tab, 5, 3, \
                                             "25℃", "PCS Environment temperature", \
-                                            "这是从变流器获取的当前环境温度\nThis is the current ambient temperature obtained from the converter.");
-    PCS_Env_T->add_Specifition();
+                                            "当前PCS所处的环境温度\nThe ambient temperature of the current PCS.");
+    PCS_Env_T->add_Specification();
 }
 /*********电网数据 绘制button**********/
 void MEGAWin::Grid_Data()

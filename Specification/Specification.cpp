@@ -29,6 +29,12 @@ void Specification::add_Specifition()
     tab.target_tab->setCellWidget(tab.row, tab.column, (QWidget *)tab.explain_btn);
 }
 
+void Specification::add_Specification()
+{
+    tab.explain_btn->setText(tab.value);
+    tab.target_tab->setCellWidget(tab.row, tab.column, (QWidget *)tab.explain_btn);
+}
+
 void Specification::explain_btn_clicked()
 {
     QMessageBox::question(tab.parent , tab.explain_title, tab.specification_text, "OK");
