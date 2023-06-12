@@ -531,7 +531,6 @@ public:
         QPushButton *DC_Soft_start_explain;         //直流软启动
         QPushButton *converter_status_explain;     //变流器状态
         QPushButton *Reactive_P_Regulation_explain;  //无功调节方式
-        QPushButton *Sleep_mode_explain;       //睡眠模式
         QPushButton *LVRT_explain;            //
         QPushButton *Generator_signal_explain;//柴发信号
         QPushButton *Reserve_explain;         //保留位
