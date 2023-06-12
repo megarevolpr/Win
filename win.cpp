@@ -2107,47 +2107,47 @@ void MEGAWin::Grid_Data()
 {
     Grid_vol_AB = new Specification(this,Grid_vol_AB_explain, ui->Grid_Tab, 0, 1, \
                                             "0V", "Grid voltage(AB)", \
-                                            "这是从变流器获取的当前电网的A相和B相之间的电压\nThis is the voltage between phase A and phase B of the current grid obtained from the converter.");
+                                            "当前PCS的电网侧电压，此项为A相和B相之间的相电压\nThe grid side voltage of the current PCS, this item is the phase voltage between phase A and phase B.");
     Grid_vol_AB->add_Specification();
     Grid_vol_BC = new Specification(this,Grid_vol_BC_explain, ui->Grid_Tab, 1, 1, \
                                             "0V", "Grid voltage(BC)", \
-                                            "这是从变流器获取的当前电网的B相和C相之间的电压\nThis is the voltage between the B and C phases of the current grid obtained from the converter.");
+                                            "当前PCS的电网侧电压，此项为B相和C相之间的相电压\nThe grid side voltage of the current PCS, this item is the phase voltage between phase B and phase C.");
     Grid_vol_BC->add_Specification();
     Grid_vol_CA = new Specification(this,Grid_vol_CA_explain, ui->Grid_Tab, 2, 1, \
                                             "0V", "Grid voltage(CA)", \
-                                            "这是从变流器获取的当前电网的A相和C相之间的电压\nThis is the voltage between phase A and phase C of the current grid obtained from the converter.");
+                                            "当前PCS的电网侧电压，此项为A相和C相之间的相电压\nThe grid side voltage of the current PCS, this item is the phase voltage between phase A and phase C.");
     Grid_vol_CA->add_Specification();
     Grid_cur_A = new Specification(this,Grid_cur_A_explain, ui->Grid_Tab, 3, 1, \
                                             "0A", "Grid current(AB)", \
-                                            "这是从变流器获取的当前电网的A相电流\nThis is the current A-phase current of the grid obtained from the converter.");
+                                            "当前PCS的电网侧电流，此项为A相的电流\nThe current on the grid side of PCS, this item is the current of phase A.");
     Grid_cur_A->add_Specification();
     Grid_cur_B = new Specification(this,Grid_cur_B_explain, ui->Grid_Tab, 4, 1, \
                                             "0A", "Grid current(B)", \
-                                            "这是从变流器获取的当前电网的B相电流\nThis is the current grid B-phase current obtained from the converter.");
+                                            "当前PCS的电网侧电流，此项为B相的电流\nThe current on the grid side of PCS, this item is the current of phase B.");
     Grid_cur_B->add_Specification();
     Grid_cur_C = new Specification(this,Grid_cur_C_explain, ui->Grid_Tab, 5, 1, \
                                             "0A", "Grid current(C)", \
-                                            "这是从变流器获取的当前电网的C相电流\nThis is the current C-phase current of the grid obtained from the converter.");
+                                            "当前PCS的电网侧电流，此项为C相的电流\nThe current on the grid side of PCS, this item is the current of phase C.");
     Grid_cur_C->add_Specification();
     Grid_act_P = new Specification(this,Grid_act_P_explain, ui->Grid_Tab, 6, 1, \
                                             "0kW", "Grid active power", \
-                                            "这是从变流器获取的当前电网的有功功率,它反映了交流电源在电阻元件上做功的能力大小\nThis is the active power of the current grid obtained from the converter, which reflects the ability of the AC power supply to do work on the resistance element.");
+                                            "当前PCS的电网侧有功功率(P)\nCurrent active power (P) on the grid side of PCS.");
     Grid_act_P->add_Specification();
     Grid_rea_P = new Specification(this,Grid_rea_P_explain, ui->Grid_Tab, 7, 1, \
                                             "0kVar", "Grid reactive power", \
-                                            "这是从变流器获取的当前电网的无功功率,它表达了交流电源能量与磁场或电场能量交换的最大速率\nTThis is the reactive power of the current grid obtained from the converter, which expresses the maximum rate at which the energy of the AC source is exchanged with the energy of the magnetic or electric field.");
+                                            "当前PCS的电网侧无功功率(Q)\nCurrent reactive power (Q) on the grid side of PCS.");
     Grid_rea_P->add_Specification();
     Grid_app_P = new Specification(this,Grid_app_P_explain, ui->Grid_Tab, 8, 1, \
                                             "0kVA", "Grid apparent power", \
-                                            "这是从变流器获取的当前电网的视在功率,它用来表示电网的容量大小\nThis is the apparent power of the current grid obtained from the converter, which is used to represent the capacity of the grid.");
+                                            "当前PCS的电网侧视在功率(S)，S= √((P^2+Q^2))\nCurrent PCS grid side view power (S), S= √((P^2+Q^2)).");
     Grid_app_P->add_Specification();
     Grid_fre = new Specification(this,Grid_fre_explain, ui->Grid_Tab, 9, 1, \
                                             "0Hz", "Grid frequency", \
-                                            "这是从变流器获取的当前电网的频率\nThis is the frequency of the current grid obtained from the converter.");
+                                            "当前PCS的采集的电网频率\nCurrent PCS collection of power grid frequency.");
     Grid_fre->add_Specification();
     Grid_Pf = new Specification(this,Grid_Pf_explain, ui->Grid_Tab, 10, 1, \
                                             "0", "Grid power factor", \
-                                            "这是从变流器获取的当前电网的功率因数,它是交流电路有功功率对视在功率的比值\nThis is the power factor of the current grid obtained from the converter, which is the ratio of the active power to the apparent power of the AC circuit.");
+                                            "当前PCS的电网侧功率因素(Pf)， Pf = P/S\nGrid side power factor (Pf) of the current PCS, Pf = P/S.");
     Grid_Pf->add_Specification();
 }
 /*********负载数据 绘制button**********/
@@ -2155,43 +2155,43 @@ void MEGAWin::Load_Data()
 {
     Load_vol_AB = new Specification(this,Load_vol_AB_explain, ui->Load_Tab, 0, 1, \
                                             "0V", "Load voltage(AB)", \
-                                            "这是从变流器获取的负载的A相和B相之间的电压\nThis is the voltage between the A and B phases of the load obtained from the converter.");
+                                            "当前PCS的负载侧电压，此项为A相和B相之间的相电压\nThe load side voltage of the current PCS, this item is the phase voltage between phase A and phase B.");
     Load_vol_AB->add_Specification();
     Load_vol_BC = new Specification(this,Load_vol_BC_explain, ui->Load_Tab, 1, 1, \
                                             "0V", "Load voltage(BC)", \
-                                            "这是从变流器获取的负载的B相和C相之间的电压\nThis is the voltage between the B and C phases of the load obtained from the converter.");
+                                            "当前PCS的负载侧电压，此项为B相和C相之间的相电压\nThe load side voltage of the current PCS, this item is the phase voltage between phase B and phase C.");
     Load_vol_BC->add_Specification();
     Load_vol_CA = new Specification(this,Load_vol_CA_explain, ui->Load_Tab, 2, 1, \
                                             "0V", "Load voltage(CA)", \
-                                            "这是从变流器获取的负载的A相和C相之间的电压\nThis is the voltage between the A and C phases of the load obtained from the converter.");
+                                            "当前PCS的负载侧电压，此项为A相和C相之间的相电压\nThe load side voltage of the current PCS, this item is the phase voltage between phase A and phase C.");
     Load_vol_CA->add_Specification();
     Load_cur_A = new Specification(this,Load_cur_A_explain, ui->Load_Tab, 3, 1, \
                                             "0A", "Load current(AB)", \
-                                            "这是从变流器获取的负载的A相电流\nThis is the A-phase current of the load taken from the converter.");
+                                            "当前PCS的负载侧电流，此项为A相的电流\nThe current on the load side of PCS is the current of phase A.");
     Load_cur_A->add_Specification();
     Load_cur_B = new Specification(this,Load_cur_B_explain, ui->Load_Tab, 4, 1, \
                                             "0A", "Load current(B)", \
-                                            "这是从变流器获取的负载的B相电流\nThis is the B-phase current of the load obtained from the converter.");
+                                            "当前PCS的负载侧电流，此项为B相的电流\nThe current at the load side of PCS is the current of phase B.");
     Load_cur_B->add_Specification();
     Load_cur_C = new Specification(this,Load_cur_C_explain, ui->Load_Tab, 5, 1, \
                                             "0A", "Load current(C)", \
-                                            "这是从变流器获取的负载的C相电流\nThis is the C-phase current of the load obtained from the converter.");
+                                            "当前PCS的负载侧电流，此项为C相的电流\nThe current at the load side of PCS is the current of phase C.");
     Load_cur_C->add_Specification();
     Load_act_P = new Specification(this,Load_act_P_explain, ui->Load_Tab, 6, 1, \
                                             "0kW", "Load active power", \
-                                            "这是从变流器获取的负载的有功功率,它反映了交流电源在电阻元件上做功的能力大小\nThis is the active power of the load obtained from the converter, which reflects the ability of the AC supply to do work on the resistance element.");
+                                            "当前PCS的负载侧有功功率(P)\nCurrent PCS active power (P) on load side.");
     Load_act_P->add_Specification();
     Load_rea_P = new Specification(this,Load_rea_P_explain, ui->Load_Tab, 7, 1, \
                                             "0kVar", "Load reactive power", \
-                                            "这是从变流器获取的负载的无功功率,它表达了交流电源能量与磁场或电场能量交换的最大速率\nThis is the reactive power of the load obtained from the converter, which expresses the maximum rate at which the energy of the AC source is exchanged with the energy of the magnetic or electric field.");
+                                            "当前PCS的负载侧无功功率(Q)\nReactive power (Q) on the load side of current PCS.");
     Load_rea_P->add_Specification();
     Load_app_P = new Specification(this,Load_app_P_explain, ui->Load_Tab, 8, 1, \
                                             "0kVA", "Load apparent power", \
-                                            "这是从变流器获取的负载的视在功率,它用来表示负载的容量大小\nThis is the apparent power of the load obtained from the converter, which is used to indicate the capacity of the load.");
+                                            "当前PCS的负载侧视在功率(S)，S= √((P^2+Q^2))\nCurrent PCS load side view at power (S), S= √((P^2+Q^2)).");
     Load_app_P->add_Specification();
     Load_Pf = new Specification(this,Load_Pf_explain, ui->Load_Tab, 9, 1, \
-                                            "0.99", "Load frequency", \
-                                            "这是从变流器获取的负载的功率因数，它是有功功率对视在功率的比值\nThis is the power factor of the load obtained from the converter, which is the ratio of active power to apparent power.");
+                                            "0", "Load frequency", \
+                                            "当前PCS的负载侧功率因素(Pf)， Pf = P/S\nThe load side power factor (Pf) of the current PCS, Pf = P/S.");
     Load_Pf->add_Specification();
 }
 /********PCS状态 绘制button*********/
