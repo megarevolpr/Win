@@ -6,6 +6,7 @@
 #include <QPair>
 #include <QList>
 #include <QStandardItemModel>
+#include <QTranslator>
 #include "Menu.h"
 #include "msgbox.h"
 #include "Specification/Specification.h"
@@ -682,6 +683,7 @@ public:
 
 
         void UIPageInit();//初始化界面
+        void LoadLanguageInit();//初始化语言
 
         void MemoryAllocation();
 
@@ -729,6 +731,8 @@ private:
         void GeneralParam_tbnt_released();  //一般参数槽
         void PCS_Alarm_information_table();  //PCS故障信息表
 
+        void Change_Language(); //切换语言
+
 private slots:
     void onTimerOut();
     void updateTimeOut(); //Fun(Time)
@@ -765,6 +769,10 @@ private slots:
 
     void on_radio_test_data_btn_clicked();
 
+    void on_ChangeLanguage_btn_clicked();
+
+    void on_ChangeLanguage_btn_1_clicked();
+
 private:
     Ui::MEGAWin *ui;
     QTimer *timer;
@@ -776,6 +784,8 @@ private:
     QButtonGroup *pButton_MonitorDebug;
     bool ASKey;//高级设置钥匙
     bool IPShow;//IP地址显示标志位
+    QTranslator *translator;
+    int LanguageType;
 };
 
 

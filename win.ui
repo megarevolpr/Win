@@ -80,2136 +80,2162 @@
       <height>30</height>
      </size>
     </property>
-    <layout class="QGridLayout" name="gridLayout_6">
-     <property name="leftMargin">
+    <widget class="QPushButton" name="ChangeLanguage_btn_1">
+     <property name="geometry">
+      <rect>
+       <x>2</x>
+       <y>506</y>
+       <width>109</width>
+       <height>54</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>109</width>
+       <height>54</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>109</width>
+       <height>54</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>8</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(31, 133, 227);</string>
+     </property>
+     <property name="text">
+      <string>Change Language</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_24">
+     <property name="geometry">
+      <rect>
+       <x>1</x>
+       <y>1</y>
+       <width>979</width>
+       <height>56</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>979</width>
+       <height>56</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>979</width>
+       <height>56</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>17</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(31, 133, 227);
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Basic settings</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QTabWidget" name="BasicSettings">
+     <property name="geometry">
+      <rect>
+       <x>1</x>
+       <y>57</y>
+       <width>979</width>
+       <height>448</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>979</width>
+       <height>448</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>979</width>
+       <height>448</height>
+      </size>
+     </property>
+     <property name="currentIndex">
       <number>0</number>
      </property>
-     <property name="topMargin">
-      <number>0</number>
-     </property>
-     <property name="rightMargin">
-      <number>0</number>
-     </property>
-     <property name="bottomMargin">
-      <number>0</number>
-     </property>
-     <property name="verticalSpacing">
-      <number>0</number>
-     </property>
-     <item row="0" column="0">
-      <layout class="QVBoxLayout" name="verticalLayout_6" stretch="1,8,0">
+     <widget class="QWidget" name="UI_Parameter_page">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>973</width>
+        <height>420</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>973</width>
+        <height>420</height>
+       </size>
+      </property>
+      <attribute name="title">
+       <string>Function Setting</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_36">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
        <property name="spacing">
         <number>0</number>
        </property>
-       <item>
-        <widget class="QLabel" name="label_24">
+       <item row="0" column="0">
+        <widget class="QTableWidget" name="UI_Parameter_Tab">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
-           <width>979</width>
-           <height>56</height>
+           <width>973</width>
+           <height>420</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>979</width>
-           <height>56</height>
+           <width>973</width>
+           <height>420</height>
           </size>
          </property>
-         <property name="font">
-          <font>
-           <pointsize>17</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(31, 133, 227);
-color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="text">
-          <string>Basic settings</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QTabWidget" name="BasicSettings">
-         <property name="minimumSize">
-          <size>
-           <width>979</width>
-           <height>448</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>979</width>
-           <height>448</height>
-          </size>
-         </property>
-         <property name="currentIndex">
-          <number>0</number>
-         </property>
-         <widget class="QWidget" name="UI_Parameter_page">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
+         <attribute name="horizontalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>88</number>
+         </attribute>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <row>
+          <property name="text">
+           <string>1</string>
           </property>
-          <property name="minimumSize">
-           <size>
-            <width>973</width>
-            <height>420</height>
-           </size>
+         </row>
+         <row>
+          <property name="text">
+           <string>2</string>
           </property>
-          <property name="maximumSize">
-           <size>
-            <width>973</width>
-            <height>420</height>
-           </size>
+         </row>
+         <row>
+          <property name="text">
+           <string>3</string>
           </property>
-          <attribute name="title">
-           <string>Function Setting</string>
-          </attribute>
-          <layout class="QGridLayout" name="gridLayout_36">
-           <property name="leftMargin">
-            <number>0</number>
-           </property>
-           <property name="topMargin">
-            <number>0</number>
-           </property>
-           <property name="rightMargin">
-            <number>0</number>
-           </property>
-           <property name="bottomMargin">
-            <number>0</number>
-           </property>
-           <property name="spacing">
-            <number>0</number>
-           </property>
-           <item row="0" column="0">
-            <widget class="QTableWidget" name="UI_Parameter_Tab">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>973</width>
-               <height>420</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>973</width>
-               <height>420</height>
-              </size>
-             </property>
-             <attribute name="horizontalHeaderVisible">
-              <bool>false</bool>
-             </attribute>
-             <attribute name="horizontalHeaderDefaultSectionSize">
-              <number>88</number>
-             </attribute>
-             <attribute name="verticalHeaderVisible">
-              <bool>false</bool>
-             </attribute>
-             <row>
-              <property name="text">
-               <string>1</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>2</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>3</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>4</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>5</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>6</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>7</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>8</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>9</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>10</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>11</string>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>12</string>
-              </property>
-             </row>
-             <column>
-              <property name="text">
-               <string>1</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>2</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>3</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>4</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>5</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>6</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>7</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>8</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>9</string>
-              </property>
-             </column>
-             <item row="0" column="0">
-              <property name="text">
-               <string>Battery type</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="0" column="2">
-              <property name="text">
-               <string>-</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="0" column="3">
-              <property name="text">
-               <string>Host Address</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="0" column="5">
-              <property name="text">
-               <string>-</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="0" column="6">
-              <property name="text">
-               <string>ProtocolVersion</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="0" column="8">
-              <property name="text">
-               <string>-</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="1" column="0">
-              <property name="text">
-               <string>BMS Comm. type</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="1" column="2">
-              <property name="text">
-               <string>-</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="1" column="3">
-              <property name="text">
-               <string>serial port 1</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="1" column="5">
-              <property name="text">
-               <string>bps</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="1" column="6">
-              <property name="text">
-               <string>UserPassPort</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="1" column="8">
-              <property name="text">
-               <string>-</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="2" column="0">
-              <property name="text">
-               <string>Power control type</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="2" column="2">
-              <property name="text">
-               <string>-</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="2" column="3">
-              <property name="text">
-               <string>serial port 2</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="2" column="5">
-              <property name="text">
-               <string>bps</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="2" column="6">
-              <property name="text">
-               <string>RootPassport</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="2" column="8">
-              <property name="text">
-               <string>-</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="3" column="0">
-              <property name="text">
-               <string>EMS Comm. type</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="3" column="2">
-              <property name="text">
-               <string>-</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="3" column="3">
-              <property name="text">
-               <string>serial port 3</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="3" column="5">
-              <property name="text">
-               <string>bps</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="3" column="6">
-              <property name="text">
-               <string>Language</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="3" column="8">
-              <property name="text">
-               <string>-</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="4" column="0">
-              <property name="text">
-               <string>Output power limit</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="4" column="2">
-              <property name="text">
-               <string>kW</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="4" column="3">
-              <property name="text">
-               <string>serial port 4</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="4" column="5">
-              <property name="text">
-               <string>bps</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="4" column="6">
-              <property name="text">
-               <string>System upgrade</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="4" column="8">
-              <property name="text">
-               <string>-</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="5" column="0">
-              <property name="text">
-               <string>BAT manufacturers</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="5" column="2">
-              <property name="text">
-               <string>-</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="5" column="3">
-              <property name="text">
-               <string>serial port 5</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="5" column="5">
-              <property name="text">
-               <string>bps</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="5" column="6">
-              <property name="text">
-               <string>Sounds</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="6" column="0">
-              <property name="text">
-               <string>Power Delta</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="6" column="2">
-              <property name="text">
-               <string>kW</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="6" column="3">
-              <property name="text">
-               <string>Can port 1</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="6" column="5">
-              <property name="text">
-               <string>kbps</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="6" column="6">
-              <property name="text">
-               <string>DryContact</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="6" column="8">
-              <property name="text">
-               <string>-</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="7" column="0">
-              <property name="text">
-               <string>Charge power limit</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="7" column="2">
-              <property name="text">
-               <string>kW</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="7" column="3">
-              <property name="text">
-               <string>Can port 2</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="7" column="5">
-              <property name="text">
-               <string>kbps</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="8" column="0">
-              <property name="text">
-               <string>Discharge power limit</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="8" column="2">
-              <property name="text">
-               <string>kW</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="8" column="3">
-              <property name="text">
-               <string/>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="8" column="5">
-              <property name="text">
-               <string/>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="9" column="0">
-              <property name="text">
-               <string>Charge Vol. upper Limit delta</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="9" column="2">
-              <property name="text">
-               <string>V</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="10" column="0">
-              <property name="text">
-               <string>Discharge Vol. lower Limit delta</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="10" column="2">
-              <property name="text">
-               <string>V</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="Systerm_parameter_page">
-          <attribute name="title">
-           <string>System parameter</string>
-          </attribute>
-          <widget class="QTableWidget" name="UI_SystemParameter_Tab">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>973</width>
-             <height>420</height>
-            </rect>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>973</width>
-             <height>420</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>973</width>
-             <height>420</height>
-            </size>
-           </property>
-           <attribute name="horizontalHeaderVisible">
-            <bool>false</bool>
-           </attribute>
-           <attribute name="horizontalHeaderDefaultSectionSize">
-            <number>88</number>
-           </attribute>
-           <attribute name="verticalHeaderVisible">
-            <bool>false</bool>
-           </attribute>
-           <row>
-            <property name="text">
-             <string>1</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>2</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>3</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>4</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>5</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>6</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>7</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>8</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>9</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>10</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>11</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>12</string>
-            </property>
-           </row>
-           <column>
-            <property name="text">
-             <string>1</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>2</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>3</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>4</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>5</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>6</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>7</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>8</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>9</string>
-            </property>
-           </column>
-           <item row="0" column="0">
-            <property name="text">
-             <string>Change rate of power</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="0" column="2">
-            <property name="text">
-             <string>kW/s</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="0" column="3">
-            <property name="text">
-             <string>Machine type</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="0" column="4">
-            <property name="text">
-             <string/>
-            </property>
-           </item>
-           <item row="0" column="5">
-            <property name="text">
-             <string>-</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="0" column="6">
-            <property name="text">
-             <string>Module Number</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="0" column="7">
-            <property name="text">
-             <string/>
-            </property>
-           </item>
-           <item row="0" column="8">
-            <property name="text">
-             <string>-</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="1" column="0">
-            <property name="text">
-             <string>Grid frequency upper limit</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="1" column="1">
-            <property name="text">
-             <string/>
-            </property>
-           </item>
-           <item row="1" column="2">
-            <property name="text">
-             <string>Hz</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="1" column="3">
-            <property name="text">
-             <string>Machine capacity</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="1" column="5">
-            <property name="text">
-             <string>kW</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="1" column="6">
-            <property name="text">
-             <string>Restore factory</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="1" column="8">
-            <property name="text">
-             <string>-</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="2" column="0">
-            <property name="text">
-             <string>Grid frequency lower limit</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="2" column="2">
-            <property name="text">
-             <string>Hz</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="2" column="3">
-            <property name="text">
-             <string>Output Fre. grade</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="2" column="5">
-            <property name="text">
-             <string>Hz</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="2" column="6">
-            <property name="text">
-             <string>Clear Data</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="2" column="8">
-            <property name="text">
-             <string>-</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="3" column="0">
-            <property name="text">
-             <string>Vol protection\n upper limit</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="3" column="2">
-            <property name="text">
-             <string>%</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="3" column="3">
-            <property name="text">
-             <string>Output vol. level</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="3" column="5">
-            <property name="text">
-             <string>V</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="3" column="8">
-            <property name="text">
-             <string/>
-            </property>
-           </item>
-           <item row="4" column="0">
-            <property name="text">
-             <string>Vol protection\n lower limit</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="4" column="2">
-            <property name="text">
-             <string>%</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="4" column="3">
-            <property name="text">
-             <string>Converter side vol. level</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="4" column="5">
-            <property name="text">
-             <string>V</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="5" column="0">
-            <property name="text">
-             <string>HVRT enable</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="5" column="2">
-            <property name="text">
-             <string>-</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="5" column="3">
-            <property name="text">
-             <string>Output reactive power mode</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="5" column="5">
-            <property name="text">
-             <string>-</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="6" column="0">
-            <property name="text">
-             <string>LVRT enable</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="6" column="2">
-            <property name="text">
-             <string>-</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="6" column="3">
-            <property name="text">
-             <string>Grid connected mode of Inv</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="6" column="5">
-            <property name="text">
-             <string>-</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="7" column="0">
-            <property name="text">
-             <string>AFD enable</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="7" column="2">
-            <property name="text">
-             <string>-</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="7" column="3">
-            <property name="text">
-             <string>Primary FM dead zone</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="7" column="5">
-            <property name="text">
-             <string>Hz</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="8" column="0">
-            <property name="text">
-             <string>Insulation detection enable</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="8" column="2">
-            <property name="text">
-             <string>-</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="8" column="3">
-            <property name="text">
-             <string>PFM coeff</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="8" column="5">
-            <property name="text">
-             <string>kW/Hz</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="8" column="6">
-            <property name="text">
-             <string/>
-            </property>
-           </item>
-           <item row="9" column="0">
-            <property name="text">
-             <string>PrimaryFreq enable</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="9" column="2">
-            <property name="text">
-             <string>-</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="9" column="3">
-            <property name="text">
-             <string>Grid recover time</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="9" column="5">
-            <property name="text">
-             <string>s</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="10" column="0">
-            <property name="text">
-             <string>Inertia enable</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="10" column="2">
-            <property name="text">
-             <string>-</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="10" column="3">
-            <property name="text">
-             <string>DynamicCap</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="11" column="0">
-            <property name="text">
-             <string>CV parallel</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="11" column="1">
-            <property name="text">
-             <string/>
-            </property>
-           </item>
-           <item row="11" column="2">
-            <property name="text">
-             <string/>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="11" column="3">
-            <property name="text">
-             <string/>
-            </property>
-           </item>
-          </widget>
-         </widget>
-         <widget class="QWidget" name="ExternalDevice_page">
-          <attribute name="title">
-           <string>External device</string>
-          </attribute>
-          <layout class="QGridLayout" name="gridLayout_21">
-           <item row="0" column="0">
-            <widget class="QTableWidget" name="ExternalDevice_tW">
-             <property name="minimumSize">
-              <size>
-               <width>973</width>
-               <height>420</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>973</width>
-               <height>420</height>
-              </size>
-             </property>
-             <attribute name="horizontalHeaderDefaultSectionSize">
-              <number>175</number>
-             </attribute>
-             <attribute name="horizontalHeaderMinimumSectionSize">
-              <number>36</number>
-             </attribute>
-             <attribute name="verticalHeaderMinimumSectionSize">
-              <number>34</number>
-             </attribute>
-             <row>
-              <property name="text">
-               <string>DI_1</string>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-               </font>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>DI_2</string>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-               </font>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>DI_3</string>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-               </font>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>DI_4</string>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-               </font>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>DI_5</string>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-               </font>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>DI_6</string>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-               </font>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>DO_1</string>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-               </font>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>DO_2</string>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-               </font>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>DO_3</string>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-               </font>
-              </property>
-             </row>
-             <column>
-              <property name="text">
-               <string>Enable/Disable</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>NC/NO</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>Action</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>Function description</string>
-              </property>
-             </column>
-             <item row="0" column="0">
-              <property name="text">
-               <string/>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="0" column="3">
-              <property name="text">
-               <string>Shut Down NO</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="1" column="0">
-              <property name="text">
-               <string/>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="1" column="3">
-              <property name="text">
-               <string>Shut Down NC</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="2" column="3">
-              <property name="text">
-               <string>Access Control</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="3" column="3">
-              <property name="text">
-               <string>Full Power</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="4" column="3">
-              <property name="text">
-               <string>Smoke</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="5" column="3">
-              <property name="text">
-               <string>Temperature</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="6" column="3">
-              <property name="text">
-               <string>Generator</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="7" column="3">
-              <property name="text">
-               <string>Reserve</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="8" column="3">
-              <property name="text">
-               <string>Reserve</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="BMSProtection_page">
-          <attribute name="title">
-           <string>BMS protection</string>
-          </attribute>
-          <layout class="QGridLayout" name="gridLayout_23">
-           <item row="0" column="0">
-            <widget class="QTableWidget" name="BMSProtection_tW">
-             <property name="minimumSize">
-              <size>
-               <width>951</width>
-               <height>395</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>951</width>
-               <height>395</height>
-              </size>
-             </property>
-             <attribute name="horizontalHeaderDefaultSectionSize">
-              <number>200</number>
-             </attribute>
-             <attribute name="horizontalHeaderMinimumSectionSize">
-              <number>36</number>
-             </attribute>
-             <attribute name="verticalHeaderMinimumSectionSize">
-              <number>34</number>
-             </attribute>
-             <row>
-              <property name="text">
-               <string>DOD</string>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-               </font>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>Prohibit charging</string>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-               </font>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>Prohibit discharging</string>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-               </font>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>BMS warning</string>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-               </font>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>BMS alarm</string>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-               </font>
-              </property>
-             </row>
-             <row>
-              <property name="text">
-               <string>BMS fualt</string>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-               </font>
-              </property>
-             </row>
-             <column>
-              <property name="text">
-               <string>Action</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>Charge power</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string>Discharge power</string>
-              </property>
-             </column>
-             <item row="0" column="1">
-              <property name="text">
-               <string>-</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="0" column="2">
-              <property name="text">
-               <string>-</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="1" column="1">
-              <property name="text">
-               <string>-</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="1" column="2">
-              <property name="text">
-               <string>-</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="2" column="1">
-              <property name="text">
-               <string>-</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-             <item row="2" column="2">
-              <property name="text">
-               <string>-</string>
-              </property>
-              <property name="textAlignment">
-               <set>AlignCenter</set>
-              </property>
-             </item>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="UI_PDebug_page">
-          <attribute name="title">
-           <string>Debug</string>
-          </attribute>
-          <widget class="QTableWidget" name="UI_Debug_Tab">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>973</width>
-             <height>420</height>
-            </rect>
-           </property>
-           <attribute name="horizontalHeaderVisible">
-            <bool>false</bool>
-           </attribute>
-           <attribute name="horizontalHeaderDefaultSectionSize">
-            <number>131</number>
-           </attribute>
-           <attribute name="horizontalHeaderMinimumSectionSize">
-            <number>36</number>
-           </attribute>
-           <attribute name="verticalHeaderVisible">
-            <bool>false</bool>
-           </attribute>
-           <attribute name="verticalHeaderMinimumSectionSize">
-            <number>34</number>
-           </attribute>
-           <row>
-            <property name="text">
-             <string>1</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>2</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>3</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>4</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>5</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>6</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>7</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>8</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>9</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>10</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>11</string>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string>12</string>
-            </property>
-           </row>
-           <column>
-            <property name="text">
-             <string>1</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>2</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>3</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>4</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>5</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>6</string>
-            </property>
-           </column>
-           <item row="0" column="0">
-            <property name="text">
-             <string>Debug variable 1</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="0" column="2">
-            <property name="text">
-             <string>1.5V Voltage revise</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="0" column="4">
-            <property name="text">
-             <string>INV A inductance Cur. revise</string>
-            </property>
-           </item>
-           <item row="1" column="0">
-            <property name="text">
-             <string>Debug variable 2</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="1" column="2">
-            <property name="text">
-             <string> Bus Vol. revise</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="1" column="4">
-            <property name="text">
-             <string>INV B inductance Cur. revise</string>
-            </property>
-           </item>
-           <item row="2" column="0">
-            <property name="text">
-             <string>Debug variable 3</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="2" column="2">
-            <property name="text">
-             <string>Grid A/AB Vol. revise</string>
-            </property>
-           </item>
-           <item row="2" column="4">
-            <property name="text">
-             <string>INV C inductance Cur. revise</string>
-            </property>
-           </item>
-           <item row="3" column="0">
-            <property name="text">
-             <string>Debug variable 1 address</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="3" column="2">
-            <property name="text">
-             <string>Grid B/BC Vol. revise</string>
-            </property>
-           </item>
-           <item row="3" column="4">
-            <property name="text">
-             <string>INV On off flag</string>
-            </property>
-           </item>
-           <item row="4" column="0">
-            <property name="text">
-             <string>Debug variable 2 address</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="4" column="2">
-            <property name="text">
-             <string>Grid C/CA Vol. revise</string>
-            </property>
-           </item>
-           <item row="4" column="4">
-            <property name="text">
-             <string>Logic state</string>
-            </property>
-           </item>
-           <item row="5" column="0">
-            <property name="text">
-             <string>Debug variable 3 address</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="5" column="2">
-            <property name="text">
-             <string>Output A Cur. revise</string>
-            </property>
-           </item>
-           <item row="5" column="4">
-            <property name="text">
-             <string>INV flag</string>
-            </property>
-           </item>
-           <item row="6" column="0">
-            <property name="text">
-             <string>Debug memery var. 1</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="6" column="2">
-            <property name="text">
-             <string>Output B Cur. revise</string>
-            </property>
-           </item>
-           <item row="6" column="4">
-            <property name="text">
-             <string>Grid flag</string>
-            </property>
-           </item>
-           <item row="7" column="0">
-            <property name="text">
-             <string>Debug memery var. 2</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="7" column="2">
-            <property name="text">
-             <string>Output C Cur. revise</string>
-            </property>
-           </item>
-           <item row="7" column="4">
-            <property name="text">
-             <string>Grid protect flag</string>
-            </property>
-           </item>
-           <item row="8" column="0">
-            <property name="text">
-             <string>Debug memery var. 3</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="8" column="2">
-            <property name="text">
-             <string>INV A Vol. revise</string>
-            </property>
-           </item>
-           <item row="8" column="4">
-            <property name="text">
-             <string>Bat flag</string>
-            </property>
-           </item>
-           <item row="9" column="0">
-            <property name="text">
-             <string>Input Vol. revise</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="9" column="2">
-            <property name="text">
-             <string>INV B Vol. revise</string>
-            </property>
-           </item>
-           <item row="9" column="4">
-            <property name="text">
-             <string>DC bus flag</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="10" column="0">
-            <property name="text">
-             <string>Input. Cur. revise</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="10" column="2">
-            <property name="text">
-             <string>INV C Vol. revise</string>
-            </property>
-           </item>
-           <item row="10" column="4">
-            <property name="text">
-             <string>INT main flag</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-           <item row="11" column="4">
-            <property name="text">
-             <string>parallel signal</string>
-            </property>
-            <property name="textAlignment">
-             <set>AlignCenter</set>
-            </property>
-           </item>
-          </widget>
-         </widget>
-         <widget class="QWidget" name="MonitorDebug_page">
-          <attribute name="title">
-           <string>MonitorDebug</string>
-          </attribute>
-          <widget class="QGroupBox" name="groupBox_7">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>10</y>
-             <width>261</width>
-             <height>91</height>
-            </rect>
-           </property>
-           <property name="title">
-            <string>DO control:</string>
-           </property>
-           <widget class="QPushButton" name="DO_TurnON_btn">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>40</y>
-              <width>99</width>
-              <height>27</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>DO_TurnON_btn</string>
-            </property>
-           </widget>
-           <widget class="QPushButton" name="DO_TurnOFF_btn">
-            <property name="geometry">
-             <rect>
-              <x>150</x>
-              <y>40</y>
-              <width>99</width>
-              <height>27</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>DO_TurnOFF_btn</string>
-            </property>
-           </widget>
-          </widget>
-          <widget class="QGroupBox" name="groupBox_8">
-           <property name="geometry">
-            <rect>
-             <x>320</x>
-             <y>10</y>
-             <width>321</width>
-             <height>121</height>
-            </rect>
-           </property>
-           <property name="title">
-            <string>Soft start</string>
-           </property>
-           <widget class="QPushButton" name="localSoftstart_btn">
-            <property name="geometry">
-             <rect>
-              <x>40</x>
-              <y>40</y>
-              <width>99</width>
-              <height>27</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>Local_on</string>
-            </property>
-           </widget>
-           <widget class="QPushButton" name="localSoftend_btn">
-            <property name="geometry">
-             <rect>
-              <x>40</x>
-              <y>80</y>
-              <width>99</width>
-              <height>27</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>Local_off</string>
-            </property>
-           </widget>
-          </widget>
-          <widget class="QRadioButton" name="radio_test_data_btn">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>150</y>
-             <width>117</width>
-             <height>22</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>test data</string>
-           </property>
-          </widget>
-         </widget>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,0">
-         <property name="spacing">
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QLabel" name="label_25">
-           <property name="minimumSize">
-            <size>
-             <width>868</width>
-             <height>54</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>868</width>
-             <height>54</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(31, 133, 227);</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
+         </row>
+         <row>
+          <property name="text">
+           <string>4</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>5</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>6</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>7</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>8</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>9</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>10</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>11</string>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>12</string>
+          </property>
+         </row>
+         <column>
+          <property name="text">
+           <string>1</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>2</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>3</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>4</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>5</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>6</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>7</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>8</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>9</string>
+          </property>
+         </column>
+         <item row="0" column="0">
+          <property name="text">
+           <string>Battery type</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
          </item>
-         <item>
-          <widget class="QPushButton" name="UI_Complete_Btn">
-           <property name="minimumSize">
-            <size>
-             <width>109</width>
-             <height>54</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>109</width>
-             <height>54</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(31, 133, 227);
-color: rgb(255, 255, 255);
-border-image: url(:/new_ui/UI/Enter.png);</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
+         <item row="0" column="2">
+          <property name="text">
+           <string>-</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
          </item>
-        </layout>
+         <item row="0" column="3">
+          <property name="text">
+           <string>Host Address</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="0" column="5">
+          <property name="text">
+           <string>-</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="0" column="6">
+          <property name="text">
+           <string>ProtocolVersion</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="0" column="8">
+          <property name="text">
+           <string>-</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="1" column="0">
+          <property name="text">
+           <string>BMS Comm. type</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="1" column="2">
+          <property name="text">
+           <string>-</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="1" column="3">
+          <property name="text">
+           <string>serial port 1</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="1" column="5">
+          <property name="text">
+           <string>bps</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="1" column="6">
+          <property name="text">
+           <string>UserPassPort</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="1" column="8">
+          <property name="text">
+           <string>-</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="2" column="0">
+          <property name="text">
+           <string>Power control type</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="2" column="2">
+          <property name="text">
+           <string>-</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="2" column="3">
+          <property name="text">
+           <string>serial port 2</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="2" column="5">
+          <property name="text">
+           <string>bps</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="2" column="6">
+          <property name="text">
+           <string>RootPassport</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="2" column="8">
+          <property name="text">
+           <string>-</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="3" column="0">
+          <property name="text">
+           <string>EMS Comm. type</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="3" column="2">
+          <property name="text">
+           <string>-</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="3" column="3">
+          <property name="text">
+           <string>serial port 3</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="3" column="5">
+          <property name="text">
+           <string>bps</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="3" column="6">
+          <property name="text">
+           <string>Language</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="3" column="8">
+          <property name="text">
+           <string>-</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="4" column="0">
+          <property name="text">
+           <string>Output power limit</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="4" column="2">
+          <property name="text">
+           <string>kW</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="4" column="3">
+          <property name="text">
+           <string>serial port 4</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="4" column="5">
+          <property name="text">
+           <string>bps</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="4" column="6">
+          <property name="text">
+           <string>System upgrade</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="4" column="8">
+          <property name="text">
+           <string>-</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="5" column="0">
+          <property name="text">
+           <string>BAT manufacturers</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="5" column="2">
+          <property name="text">
+           <string>-</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="5" column="3">
+          <property name="text">
+           <string>serial port 5</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="5" column="5">
+          <property name="text">
+           <string>bps</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="5" column="6">
+          <property name="text">
+           <string>Sounds</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="6" column="0">
+          <property name="text">
+           <string>Power Delta</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="6" column="2">
+          <property name="text">
+           <string>kW</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="6" column="3">
+          <property name="text">
+           <string>Can port 1</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="6" column="5">
+          <property name="text">
+           <string>kbps</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="6" column="6">
+          <property name="text">
+           <string>DryContact</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="6" column="8">
+          <property name="text">
+           <string>-</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="7" column="0">
+          <property name="text">
+           <string>Charge power limit</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="7" column="2">
+          <property name="text">
+           <string>kW</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="7" column="3">
+          <property name="text">
+           <string>Can port 2</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="7" column="5">
+          <property name="text">
+           <string>kbps</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="8" column="0">
+          <property name="text">
+           <string>Discharge power limit</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="8" column="2">
+          <property name="text">
+           <string>kW</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="8" column="3">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="8" column="5">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="9" column="0">
+          <property name="text">
+           <string>Charge Vol. upper Limit delta</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="9" column="2">
+          <property name="text">
+           <string>V</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="10" column="0">
+          <property name="text">
+           <string>Discharge Vol. lower Limit delta</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="10" column="2">
+          <property name="text">
+           <string>V</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+        </widget>
        </item>
       </layout>
-     </item>
-    </layout>
+     </widget>
+     <widget class="QWidget" name="Systerm_parameter_page">
+      <attribute name="title">
+       <string>System parameter</string>
+      </attribute>
+      <widget class="QTableWidget" name="UI_SystemParameter_Tab">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>973</width>
+         <height>420</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>973</width>
+         <height>420</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>973</width>
+         <height>420</height>
+        </size>
+       </property>
+       <attribute name="horizontalHeaderVisible">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>88</number>
+       </attribute>
+       <attribute name="verticalHeaderVisible">
+        <bool>false</bool>
+       </attribute>
+       <row>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>3</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>4</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>5</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>6</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>7</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>8</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>9</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>10</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>11</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>12</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>3</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>4</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>5</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>6</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>7</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>8</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>9</string>
+        </property>
+       </column>
+       <item row="0" column="0">
+        <property name="text">
+         <string>Change rate of power</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="0" column="2">
+        <property name="text">
+         <string>kW/s</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="0" column="3">
+        <property name="text">
+         <string>Machine type</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="0" column="4">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="0" column="5">
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="0" column="6">
+        <property name="text">
+         <string>Module Number</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="0" column="7">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="0" column="8">
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="1" column="0">
+        <property name="text">
+         <string>Grid frequency upper limit</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="1" column="1">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="1" column="2">
+        <property name="text">
+         <string>Hz</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="1" column="3">
+        <property name="text">
+         <string>Machine capacity</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="1" column="5">
+        <property name="text">
+         <string>kW</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="1" column="6">
+        <property name="text">
+         <string>Restore factory</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="1" column="8">
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="2" column="0">
+        <property name="text">
+         <string>Grid frequency lower limit</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="2" column="2">
+        <property name="text">
+         <string>Hz</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="2" column="3">
+        <property name="text">
+         <string>Output Fre. grade</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="2" column="5">
+        <property name="text">
+         <string>Hz</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="2" column="6">
+        <property name="text">
+         <string>Clear Data</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="2" column="8">
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="3" column="0">
+        <property name="text">
+         <string>Vol protection\n upper limit</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="3" column="2">
+        <property name="text">
+         <string>%</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="3" column="3">
+        <property name="text">
+         <string>Output vol. level</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="3" column="5">
+        <property name="text">
+         <string>V</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="3" column="8">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="4" column="0">
+        <property name="text">
+         <string>Vol protection\n lower limit</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="4" column="2">
+        <property name="text">
+         <string>%</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="4" column="3">
+        <property name="text">
+         <string>Converter side vol. level</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="4" column="5">
+        <property name="text">
+         <string>V</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="5" column="0">
+        <property name="text">
+         <string>HVRT enable</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="5" column="2">
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="5" column="3">
+        <property name="text">
+         <string>Output reactive power mode</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="5" column="5">
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="6" column="0">
+        <property name="text">
+         <string>LVRT enable</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="6" column="2">
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="6" column="3">
+        <property name="text">
+         <string>Grid connected mode of Inv</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="6" column="5">
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="7" column="0">
+        <property name="text">
+         <string>AFD enable</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="7" column="2">
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="7" column="3">
+        <property name="text">
+         <string>Primary FM dead zone</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="7" column="5">
+        <property name="text">
+         <string>Hz</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="8" column="0">
+        <property name="text">
+         <string>Insulation detection enable</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="8" column="2">
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="8" column="3">
+        <property name="text">
+         <string>PFM coeff</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="8" column="5">
+        <property name="text">
+         <string>kW/Hz</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="8" column="6">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="9" column="0">
+        <property name="text">
+         <string>PrimaryFreq enable</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="9" column="2">
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="9" column="3">
+        <property name="text">
+         <string>Grid recover time</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="9" column="5">
+        <property name="text">
+         <string>s</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="10" column="0">
+        <property name="text">
+         <string>Inertia enable</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="10" column="2">
+        <property name="text">
+         <string>-</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="10" column="3">
+        <property name="text">
+         <string>DynamicCap</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="11" column="0">
+        <property name="text">
+         <string>CV parallel</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="11" column="1">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="11" column="2">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="11" column="3">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="ExternalDevice_page">
+      <attribute name="title">
+       <string>External device</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_21">
+       <item row="0" column="0">
+        <widget class="QTableWidget" name="ExternalDevice_tW">
+         <property name="minimumSize">
+          <size>
+           <width>973</width>
+           <height>420</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>973</width>
+           <height>420</height>
+          </size>
+         </property>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>175</number>
+         </attribute>
+         <attribute name="horizontalHeaderMinimumSectionSize">
+          <number>36</number>
+         </attribute>
+         <attribute name="verticalHeaderMinimumSectionSize">
+          <number>34</number>
+         </attribute>
+         <row>
+          <property name="text">
+           <string>DI_1</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>DI_2</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>DI_3</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>DI_4</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>DI_5</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>DI_6</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>DO_1</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>DO_2</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>DO_3</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+         </row>
+         <column>
+          <property name="text">
+           <string>Enable/Disable</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>NC/NO</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Action</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Function description</string>
+          </property>
+         </column>
+         <item row="0" column="0">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="0" column="3">
+          <property name="text">
+           <string>Shut Down NO</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="1" column="0">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="1" column="3">
+          <property name="text">
+           <string>Shut Down NC</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="2" column="3">
+          <property name="text">
+           <string>Access Control</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="3" column="3">
+          <property name="text">
+           <string>Full Power</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="4" column="3">
+          <property name="text">
+           <string>Smoke</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="5" column="3">
+          <property name="text">
+           <string>Temperature</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="6" column="3">
+          <property name="text">
+           <string>Generator</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="7" column="3">
+          <property name="text">
+           <string>Reserve</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="8" column="3">
+          <property name="text">
+           <string>Reserve</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="BMSProtection_page">
+      <attribute name="title">
+       <string>BMS protection</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_23">
+       <item row="0" column="0">
+        <widget class="QTableWidget" name="BMSProtection_tW">
+         <property name="minimumSize">
+          <size>
+           <width>951</width>
+           <height>395</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>951</width>
+           <height>395</height>
+          </size>
+         </property>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>200</number>
+         </attribute>
+         <attribute name="horizontalHeaderMinimumSectionSize">
+          <number>36</number>
+         </attribute>
+         <attribute name="verticalHeaderMinimumSectionSize">
+          <number>34</number>
+         </attribute>
+         <row>
+          <property name="text">
+           <string>DOD</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>Prohibit charging</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>Prohibit discharging</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>BMS warning</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>BMS alarm</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+         </row>
+         <row>
+          <property name="text">
+           <string>BMS fualt</string>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+         </row>
+         <column>
+          <property name="text">
+           <string>Action</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Charge power</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Discharge power</string>
+          </property>
+         </column>
+         <item row="0" column="1">
+          <property name="text">
+           <string>-</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="0" column="2">
+          <property name="text">
+           <string>-</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="1" column="1">
+          <property name="text">
+           <string>-</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="1" column="2">
+          <property name="text">
+           <string>-</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="2" column="1">
+          <property name="text">
+           <string>-</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+         <item row="2" column="2">
+          <property name="text">
+           <string>-</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignCenter</set>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="UI_PDebug_page">
+      <attribute name="title">
+       <string>Debug</string>
+      </attribute>
+      <widget class="QTableWidget" name="UI_Debug_Tab">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>973</width>
+         <height>420</height>
+        </rect>
+       </property>
+       <attribute name="horizontalHeaderVisible">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>131</number>
+       </attribute>
+       <attribute name="horizontalHeaderMinimumSectionSize">
+        <number>36</number>
+       </attribute>
+       <attribute name="verticalHeaderVisible">
+        <bool>false</bool>
+       </attribute>
+       <attribute name="verticalHeaderMinimumSectionSize">
+        <number>34</number>
+       </attribute>
+       <row>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>3</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>4</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>5</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>6</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>7</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>8</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>9</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>10</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>11</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>12</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>3</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>4</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>5</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>6</string>
+        </property>
+       </column>
+       <item row="0" column="0">
+        <property name="text">
+         <string>Debug variable 1</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="0" column="2">
+        <property name="text">
+         <string>1.5V Voltage revise</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="0" column="4">
+        <property name="text">
+         <string>INV A inductance Cur. revise</string>
+        </property>
+       </item>
+       <item row="1" column="0">
+        <property name="text">
+         <string>Debug variable 2</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="1" column="2">
+        <property name="text">
+         <string> Bus Vol. revise</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="1" column="4">
+        <property name="text">
+         <string>INV B inductance Cur. revise</string>
+        </property>
+       </item>
+       <item row="2" column="0">
+        <property name="text">
+         <string>Debug variable 3</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="2" column="2">
+        <property name="text">
+         <string>Grid A/AB Vol. revise</string>
+        </property>
+       </item>
+       <item row="2" column="4">
+        <property name="text">
+         <string>INV C inductance Cur. revise</string>
+        </property>
+       </item>
+       <item row="3" column="0">
+        <property name="text">
+         <string>Debug variable 1 address</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="3" column="2">
+        <property name="text">
+         <string>Grid B/BC Vol. revise</string>
+        </property>
+       </item>
+       <item row="3" column="4">
+        <property name="text">
+         <string>INV On off flag</string>
+        </property>
+       </item>
+       <item row="4" column="0">
+        <property name="text">
+         <string>Debug variable 2 address</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="4" column="2">
+        <property name="text">
+         <string>Grid C/CA Vol. revise</string>
+        </property>
+       </item>
+       <item row="4" column="4">
+        <property name="text">
+         <string>Logic state</string>
+        </property>
+       </item>
+       <item row="5" column="0">
+        <property name="text">
+         <string>Debug variable 3 address</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="5" column="2">
+        <property name="text">
+         <string>Output A Cur. revise</string>
+        </property>
+       </item>
+       <item row="5" column="4">
+        <property name="text">
+         <string>INV flag</string>
+        </property>
+       </item>
+       <item row="6" column="0">
+        <property name="text">
+         <string>Debug memery var. 1</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="6" column="2">
+        <property name="text">
+         <string>Output B Cur. revise</string>
+        </property>
+       </item>
+       <item row="6" column="4">
+        <property name="text">
+         <string>Grid flag</string>
+        </property>
+       </item>
+       <item row="7" column="0">
+        <property name="text">
+         <string>Debug memery var. 2</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="7" column="2">
+        <property name="text">
+         <string>Output C Cur. revise</string>
+        </property>
+       </item>
+       <item row="7" column="4">
+        <property name="text">
+         <string>Grid protect flag</string>
+        </property>
+       </item>
+       <item row="8" column="0">
+        <property name="text">
+         <string>Debug memery var. 3</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="8" column="2">
+        <property name="text">
+         <string>INV A Vol. revise</string>
+        </property>
+       </item>
+       <item row="8" column="4">
+        <property name="text">
+         <string>Bat flag</string>
+        </property>
+       </item>
+       <item row="9" column="0">
+        <property name="text">
+         <string>Input Vol. revise</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="9" column="2">
+        <property name="text">
+         <string>INV B Vol. revise</string>
+        </property>
+       </item>
+       <item row="9" column="4">
+        <property name="text">
+         <string>DC bus flag</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="10" column="0">
+        <property name="text">
+         <string>Input. Cur. revise</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="10" column="2">
+        <property name="text">
+         <string>INV C Vol. revise</string>
+        </property>
+       </item>
+       <item row="10" column="4">
+        <property name="text">
+         <string>INT main flag</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="11" column="4">
+        <property name="text">
+         <string>parallel signal</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="MonitorDebug_page">
+      <attribute name="title">
+       <string>MonitorDebug</string>
+      </attribute>
+      <widget class="QGroupBox" name="groupBox_7">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>10</y>
+         <width>261</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>DO control:</string>
+       </property>
+       <widget class="QPushButton" name="DO_TurnON_btn">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>40</y>
+          <width>99</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>DO_TurnON_btn</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="DO_TurnOFF_btn">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>40</y>
+          <width>99</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>DO_TurnOFF_btn</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_8">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>10</y>
+         <width>321</width>
+         <height>121</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Soft start</string>
+       </property>
+       <widget class="QPushButton" name="localSoftstart_btn">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>40</y>
+          <width>99</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Local_on</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="localSoftend_btn">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>80</y>
+          <width>99</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Local_off</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QRadioButton" name="radio_test_data_btn">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>150</y>
+         <width>117</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>test data</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="label_25">
+     <property name="geometry">
+      <rect>
+       <x>111</x>
+       <y>506</y>
+       <width>759</width>
+       <height>54</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>759</width>
+       <height>54</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>759</width>
+       <height>54</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(31, 133, 227);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="UI_Complete_Btn">
+     <property name="geometry">
+      <rect>
+       <x>870</x>
+       <y>506</y>
+       <width>109</width>
+       <height>54</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>109</width>
+       <height>54</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>109</width>
+       <height>54</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(31, 133, 227);
+color: rgb(255, 255, 255);
+border-image: url(:/new_ui/UI/Enter.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="UI_page">
     <property name="minimumSize">
@@ -2265,7 +2291,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
        <number>0</number>
       </property>
       <item row="0" column="0">
-       <widget class="QPushButton" name="Logo_lb">
+       <widget class="QPushButton" name="ChangeLanguage_btn">
         <property name="minimumSize">
          <size>
           <width>110</width>
@@ -2278,11 +2304,16 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
           <height>45</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+         </font>
+        </property>
         <property name="styleSheet">
          <string notr="true"/>
         </property>
         <property name="text">
-         <string/>
+         <string>Change Language</string>
         </property>
        </widget>
       </item>
@@ -2506,7 +2537,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
          <string notr="true">color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
-         <string>2022-01-01 12:00:00</string>
+         <string/>
         </property>
        </widget>
       </item>
@@ -2534,7 +2565,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">
@@ -2786,7 +2817,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         <string/>
        </property>
       </widget>
-      <widget class="QWidget" name="layoutWidget">
+      <widget class="QWidget" name="layoutWidget1">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -3402,7 +3433,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
         <string/>
        </property>
       </widget>
-      <widget class="QWidget" name="layoutWidget">
+      <widget class="QWidget" name="layoutWidget2">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -3606,7 +3637,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
        <item row="0" column="0">
         <widget class="QTabWidget" name="Run_tabWidget">
          <property name="currentIndex">
-          <number>0</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="RTData_page">
           <property name="minimumSize">
@@ -4579,7 +4610,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                 <height>414</height>
                </size>
               </property>
-              <widget class="QWidget" name="layoutWidget">
+              <widget class="QWidget" name="layoutWidget3">
                <property name="geometry">
                 <rect>
                  <x>732</x>
@@ -4975,7 +5006,7 @@ enable</string>
                 </item>
                </layout>
               </widget>
-              <widget class="QWidget" name="layoutWidget">
+              <widget class="QWidget" name="layoutWidget4">
                <property name="geometry">
                 <rect>
                  <x>362</x>
@@ -5577,7 +5608,7 @@ enable</string>
                 </item>
                </layout>
               </widget>
-              <widget class="QWidget" name="layoutWidget">
+              <widget class="QWidget" name="layoutWidget5">
                <property name="geometry">
                 <rect>
                  <x>0</x>

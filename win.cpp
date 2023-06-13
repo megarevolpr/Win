@@ -10,6 +10,7 @@
 #include <QDebug>
 #include <QMessageBox>
 #include <QButtonGroup>
+#include <QApplication>
 
 #define NULL_page   0
 #define Machine_MEGA 1
@@ -22,11 +23,17 @@
 #define Alarm_PAGE    2
 #define BAT_PAGE      3
 
+#define CHINESE     0
+#define ENGLISH     1
+
+#define qApp (static_cast<QApplication *>(QCoreApplication::instance()))
+
 MEGAWin::MEGAWin(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MEGAWin)
 {
     ASKey = true;
+    LanguageType = CHINESE; //开机默认为中文
     ui->setupUi(this);
     ui->UI_stackedWidget->setCurrentWidget(ui->UI_page );//开机后进入主页面
     ui->stackedWidget->setCurrentWidget(ui->Bypass_page);
@@ -35,6 +42,7 @@ MEGAWin::MEGAWin(QWidget *parent) :
 
     MemoryAllocation(); //初始化内存空间
     UIPageInit();       //初始化界面
+    LoadLanguageInit(); //初始化语言
 
 }
 
@@ -59,6 +67,7 @@ void MEGAWin::updateTimeOut()
 void MEGAWin::MemoryAllocation()
 {
     m_menu = new Menu(this);
+
     /***************************数据报表&导出数据**********************************/
 
     pButton_History = new QButtonGroup();
@@ -1036,6 +1045,28 @@ void MEGAWin::PCS_Alarm_information_table()
     }
 }
 
+void MEGAWin::Change_Language()
+{
+    if(LanguageType == CHINESE)//如果当前是中文，则切英文
+    {
+        LanguageType = ENGLISH;
+        translator->load(":/Language/EN.qm");
+//        ui->ChangeLanguage_btn->setText("");
+        ui->ChangeLanguage_btn->setText(tr("Change Language"));
+        qApp->installTranslator(translator);
+        ui->retranslateUi(this);
+    }
+    else if(LanguageType == ENGLISH)//如果当前是英文，则切中文
+    {
+        LanguageType = CHINESE;
+        translator->load(":/Language/CN.qm");
+//        ui->ChangeLanguage_btn->setText("");
+        ui->ChangeLanguage_btn->setText(tr("切换语言"));
+        qApp->installTranslator(translator);
+        ui->retranslateUi(this);
+    }
+}
+
 /***************************************************************
  * 系统参数槽
  ***************************************************************/
@@ -1383,6 +1414,25 @@ void MEGAWin::UIPageInit()
 
     LinkRelationship();//函数关联
 
+}
+
+void MEGAWin::LoadLanguageInit()
+{
+    translator = new QTranslator(qApp);
+    if(LanguageType == CHINESE)//开机语言 中文
+    {
+        translator->load(":/Language/CN.qm");
+        qApp->installTranslator(translator);
+        ui->retranslateUi(this);
+        LanguageType = CHINESE;
+    }
+    else if(LanguageType == ENGLISH)//开机语言 英文
+    {
+        translator->load(":/Language/EN.qm");
+        qApp->installTranslator(translator);
+        ui->retranslateUi(this);
+        LanguageType = ENGLISH;
+    }
 }
 
 void MEGAWin::on_UI_MenuBtn_clicked()   //菜单
@@ -3130,4 +3180,14 @@ void MEGAWin::on_radio_dhcp_clicked()
 void MEGAWin::on_radio_test_data_btn_clicked()
 {
     QMessageBox::question(this ,"test data", "调入测试数据(仅供内部测试人员使用)\nCall in test data (for internal testing personnel only)", "OK");
+}
+/****************切换语言*******************/
+void MEGAWin::on_ChangeLanguage_btn_clicked()
+{
+    Change_Language();
+}
+
+void MEGAWin::on_ChangeLanguage_btn_1_clicked()
+{
+    Change_Language();
 }
