@@ -1051,7 +1051,6 @@ void MEGAWin::Change_Language()
     {
         LanguageType = ENGLISH;
         translator->load(":/Language/EN.qm");
-//        ui->ChangeLanguage_btn->setText("");
         ui->ChangeLanguage_btn->setText(tr("Change Language"));
         qApp->installTranslator(translator);
         ui->retranslateUi(this);
@@ -1060,7 +1059,6 @@ void MEGAWin::Change_Language()
     {
         LanguageType = CHINESE;
         translator->load(":/Language/CN.qm");
-//        ui->ChangeLanguage_btn->setText("");
         ui->ChangeLanguage_btn->setText(tr("切换语言"));
         qApp->installTranslator(translator);
         ui->retranslateUi(this);

@@ -2565,7 +2565,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">
@@ -3637,7 +3637,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
        <item row="0" column="0">
         <widget class="QTabWidget" name="Run_tabWidget">
          <property name="currentIndex">
-          <number>3</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="RTData_page">
           <property name="minimumSize">
@@ -4610,256 +4610,45 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                 <height>414</height>
                </size>
               </property>
-              <widget class="QWidget" name="layoutWidget3">
+              <widget class="QWidget" name="">
                <property name="geometry">
                 <rect>
-                 <x>732</x>
-                 <y>2</y>
-                 <width>239</width>
-                 <height>416</height>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>964</width>
+                 <height>411</height>
                 </rect>
                </property>
-               <layout class="QVBoxLayout" name="verticalLayout_11">
+               <layout class="QHBoxLayout" name="horizontalLayout_3">
                 <item>
-                 <widget class="QGroupBox" name="groupBox">
-                  <property name="minimumSize">
-                   <size>
-                    <width>237</width>
-                    <height>190</height>
-                   </size>
+                 <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="3,2,1">
+                  <property name="spacing">
+                   <number>3</number>
                   </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>237</width>
-                    <height>190</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>SimSun-ExtB</family>
-                    <pointsize>16</pointsize>
-                   </font>
-                  </property>
-                  <property name="title">
-                   <string>prompt:</string>
-                  </property>
-                  <layout class="QGridLayout" name="gridLayout_7">
-                   <item row="0" column="0">
-                    <layout class="QVBoxLayout" name="verticalLayout_5">
-                     <item>
-                      <widget class="QLabel" name="label_15">
-                       <property name="minimumSize">
-                        <size>
-                         <width>112</width>
-                         <height>44</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>112</width>
-                         <height>44</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <pointsize>8</pointsize>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>Normal</string>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="label_10">
-                       <property name="minimumSize">
-                        <size>
-                         <width>112</width>
-                         <height>44</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(85, 255, 127);</string>
-                       </property>
-                       <property name="text">
-                        <string/>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </item>
-                   <item row="0" column="1">
-                    <layout class="QVBoxLayout" name="verticalLayout_7">
-                     <item>
-                      <widget class="QLabel" name="label_16">
-                       <property name="minimumSize">
-                        <size>
-                         <width>112</width>
-                         <height>44</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>112</width>
-                         <height>44</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <pointsize>8</pointsize>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>Warning1</string>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="label_12">
-                       <property name="minimumSize">
-                        <size>
-                         <width>112</width>
-                         <height>44</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(255, 255, 0);</string>
-                       </property>
-                       <property name="text">
-                        <string/>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </item>
-                   <item row="1" column="0">
-                    <layout class="QVBoxLayout" name="verticalLayout_9">
-                     <item>
-                      <widget class="QLabel" name="label_36">
-                       <property name="minimumSize">
-                        <size>
-                         <width>112</width>
-                         <height>44</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>112</width>
-                         <height>44</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <pointsize>8</pointsize>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>Warning2</string>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="label_20">
-                       <property name="minimumSize">
-                        <size>
-                         <width>112</width>
-                         <height>44</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(255, 123, 71);</string>
-                       </property>
-                       <property name="text">
-                        <string/>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </item>
-                   <item row="1" column="1">
-                    <layout class="QVBoxLayout" name="verticalLayout_10">
-                     <item>
-                      <widget class="QLabel" name="label_17">
-                       <property name="minimumSize">
-                        <size>
-                         <width>112</width>
-                         <height>44</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>112</width>
-                         <height>44</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <pointsize>8</pointsize>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>Warning3</string>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="label_22">
-                       <property name="minimumSize">
-                        <size>
-                         <width>112</width>
-                         <height>44</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true">background-color: rgb(255, 0, 0);</string>
-                       </property>
-                       <property name="text">
-                        <string/>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_12">
                   <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_2">
+                   <layout class="QVBoxLayout" name="verticalLayout_15">
+                    <property name="spacing">
+                     <number>3</number>
+                    </property>
                     <item>
-                     <widget class="QLabel" name="label_2">
+                     <widget class="QLabel" name="BATName1">
                       <property name="minimumSize">
                        <size>
-                        <width>0</width>
-                        <height>65</height>
+                        <width>173</width>
+                        <height>43</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>16777215</width>
-                        <height>65</height>
+                        <width>173</width>
+                        <height>43</height>
                        </size>
                       </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>11</pointsize>
-                       </font>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(0, 151, 226);</string>
                       </property>
                       <property name="text">
-                       <string>Alarm level:</string>
+                       <string>Name</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -4867,21 +4656,1000 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QPushButton" name="pushButton_15">
+                     <widget class="QLabel" name="BatAnalog_1">
+                      <property name="enabled">
+                       <bool>true</bool>
+                      </property>
                       <property name="minimumSize">
                        <size>
-                        <width>68</width>
-                        <height>65</height>
+                        <width>173</width>
+                        <height>42</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>64</width>
-                        <height>65</height>
+                        <width>173</width>
+                        <height>42</height>
                        </size>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">background-color: rgb(85, 255, 127);</string>
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string>Bat voltage</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatAnalog_2">
+                      <property name="minimumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string>Bat current</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatAnalog_3">
+                      <property name="minimumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string>SOC</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatAnalog_4">
+                      <property name="minimumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string>SOH</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatAnalog_5">
+                      <property name="minimumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string>Cell voltage (max)</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatAnalog_6">
+                      <property name="minimumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string>Cell voltage (min)</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatAnalog_7">
+                      <property name="minimumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string>Cell temp. (max)</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatAnalog_8">
+                      <property name="minimumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true"/>
+                      </property>
+                      <property name="text">
+                       <string>Cell temp. (min)</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QVBoxLayout" name="verticalLayout_16">
+                    <property name="spacing">
+                     <number>3</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="BatValue1">
+                      <property name="minimumSize">
+                       <size>
+                        <width>114</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>114</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(0, 151, 226);</string>
+                      </property>
+                      <property name="text">
+                       <string>Value</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_1">
+                      <property name="minimumSize">
+                       <size>
+                        <width>114</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>114</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>600</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_2">
+                      <property name="minimumSize">
+                       <size>
+                        <width>114</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>114</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>100</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_3">
+                      <property name="minimumSize">
+                       <size>
+                        <width>114</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>114</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>70</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_4">
+                      <property name="minimumSize">
+                       <size>
+                        <width>114</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>114</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>100</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_5">
+                      <property name="minimumSize">
+                       <size>
+                        <width>114</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>114</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>3300</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_6">
+                      <property name="minimumSize">
+                       <size>
+                        <width>114</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>114</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>3250</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_7">
+                      <property name="minimumSize">
+                       <size>
+                        <width>114</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>114</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>28</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_8">
+                      <property name="minimumSize">
+                       <size>
+                        <width>114</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>114</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>27</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QVBoxLayout" name="verticalLayout_20">
+                    <property name="spacing">
+                     <number>3</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="BatUnit1">
+                      <property name="minimumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(0, 151, 226);</string>
+                      </property>
+                      <property name="text">
+                       <string>Unit</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_1">
+                      <property name="minimumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::NoFrame</enum>
+                      </property>
+                      <property name="text">
+                       <string>V</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_2">
+                      <property name="minimumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>A</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_3">
+                      <property name="minimumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>%</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_4">
+                      <property name="minimumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>%</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_5">
+                      <property name="minimumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>mV</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_6">
+                      <property name="minimumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>mV</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_7">
+                      <property name="minimumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>℃</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_8">
+                      <property name="minimumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>℃</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout">
+                  <item>
+                   <layout class="QVBoxLayout" name="verticalLayout">
+                    <property name="spacing">
+                     <number>0</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="BATName1_2">
+                      <property name="minimumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(0, 151, 226);</string>
+                      </property>
+                      <property name="text">
+                       <string>Name</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_17">
+                      <property name="minimumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>8</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Charging current limite</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_18">
+                      <property name="minimumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <pointsize>7</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Discharging current limite</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_19">
+                      <property name="minimumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Allow charge power</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_20">
+                      <property name="minimumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Allow discharge power</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_21">
+                      <property name="minimumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Allow charge energy</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_22">
+                      <property name="minimumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Allow discharge energy</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_23">
+                      <property name="minimumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_24">
+                      <property name="minimumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>173</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QVBoxLayout" name="verticalLayout_6">
+                    <item>
+                     <widget class="QLabel" name="BatValue1_2">
+                      <property name="minimumSize">
+                       <size>
+                        <width>101</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>101</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(0, 151, 226);</string>
+                      </property>
+                      <property name="text">
+                       <string>Value</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_9">
+                      <property name="minimumSize">
+                       <size>
+                        <width>101</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>101</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>120</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_10">
+                      <property name="minimumSize">
+                       <size>
+                        <width>101</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>101</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>120</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_11">
+                      <property name="minimumSize">
+                       <size>
+                        <width>101</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>101</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>135</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_12">
+                      <property name="minimumSize">
+                       <size>
+                        <width>101</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>101</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>135</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_13">
+                      <property name="minimumSize">
+                       <size>
+                        <width>101</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>101</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>45</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="pushButton_14">
+                      <property name="minimumSize">
+                       <size>
+                        <width>101</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>101</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>95</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="label_30">
+                      <property name="minimumSize">
+                       <size>
+                        <width>101</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>101</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="label_31">
+                      <property name="minimumSize">
+                       <size>
+                        <width>101</width>
+                        <height>42</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>101</width>
+                        <height>42</height>
+                       </size>
                       </property>
                       <property name="text">
                        <string/>
@@ -4891,29 +5659,29 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                    </layout>
                   </item>
                   <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_5">
+                   <layout class="QVBoxLayout" name="verticalLayout_28">
+                    <property name="spacing">
+                     <number>3</number>
+                    </property>
                     <item>
-                     <widget class="QLabel" name="label_18">
+                     <widget class="QLabel" name="BatUnit1_2">
                       <property name="minimumSize">
                        <size>
-                        <width>113</width>
-                        <height>65</height>
+                        <width>56</width>
+                        <height>43</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>113</width>
-                        <height>65</height>
+                        <width>56</width>
+                        <height>43</height>
                        </size>
                       </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>11</pointsize>
-                       </font>
+                      <property name="styleSheet">
+                       <string notr="true">background-color: rgb(0, 151, 226);</string>
                       </property>
                       <property name="text">
-                       <string>Charge 
-enable</string>
+                       <string>Unit</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -4921,55 +5689,21 @@ enable</string>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QPushButton" name="pushButton_16">
+                     <widget class="QLabel" name="BatUnit_9">
                       <property name="minimumSize">
                        <size>
-                        <width>113</width>
-                        <height>65</height>
+                        <width>56</width>
+                        <height>43</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>113</width>
-                        <height>65</height>
+                        <width>56</width>
+                        <height>43</height>
                        </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>11</pointsize>
-                       </font>
                       </property>
                       <property name="text">
-                       <string>Disable</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_6">
-                    <item>
-                     <widget class="QLabel" name="label_19">
-                      <property name="minimumSize">
-                       <size>
-                        <width>113</width>
-                        <height>65</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>113</width>
-                        <height>65</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>11</pointsize>
-                       </font>
-                      </property>
-                      <property name="text">
-                       <string>Discharge 
-enable</string>
+                       <string>A</string>
                       </property>
                       <property name="alignment">
                        <set>Qt::AlignCenter</set>
@@ -4977,26 +5711,156 @@ enable</string>
                      </widget>
                     </item>
                     <item>
-                     <widget class="QPushButton" name="pushButton_17">
+                     <widget class="QLabel" name="BatUnit_10">
                       <property name="minimumSize">
                        <size>
-                        <width>104</width>
-                        <height>65</height>
+                        <width>56</width>
+                        <height>43</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>104</width>
-                        <height>65</height>
+                        <width>56</width>
+                        <height>43</height>
                        </size>
                       </property>
-                      <property name="font">
-                       <font>
-                        <pointsize>11</pointsize>
-                       </font>
+                      <property name="text">
+                       <string>A</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_11">
+                      <property name="minimumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
                       </property>
                       <property name="text">
-                       <string>Disable</string>
+                       <string>kW</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_12">
+                      <property name="minimumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>kW</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_13">
+                      <property name="minimumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>kWh</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_14">
+                      <property name="minimumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>kWh</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_15">
+                      <property name="minimumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="BatUnit_16">
+                      <property name="minimumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>56</width>
+                        <height>43</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -5004,1250 +5868,391 @@ enable</string>
                   </item>
                  </layout>
                 </item>
-               </layout>
-              </widget>
-              <widget class="QWidget" name="layoutWidget4">
-               <property name="geometry">
-                <rect>
-                 <x>362</x>
-                 <y>0</y>
-                 <width>367</width>
-                 <height>447</height>
-                </rect>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout">
                 <item>
-                 <layout class="QVBoxLayout" name="verticalLayout">
-                  <property name="spacing">
-                   <number>0</number>
-                  </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_11">
                   <item>
-                   <widget class="QLabel" name="BATName1_2">
+                   <widget class="QGroupBox" name="groupBox">
                     <property name="minimumSize">
                      <size>
-                      <width>0</width>
-                      <height>43</height>
+                      <width>237</width>
+                      <height>190</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>16777215</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">background-color: rgb(0, 151, 226);</string>
-                    </property>
-                    <property name="text">
-                     <string>Name</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_17">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>Charging current limite</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_18">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>43</height>
+                      <width>237</width>
+                      <height>190</height>
                      </size>
                     </property>
                     <property name="font">
                      <font>
-                      <pointsize>8</pointsize>
+                      <family>SimSun-ExtB</family>
+                      <pointsize>10</pointsize>
                      </font>
                     </property>
-                    <property name="text">
-                     <string>Discharging current limite</string>
+                    <property name="title">
+                     <string>prompt:</string>
                     </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
+                    <layout class="QGridLayout" name="gridLayout_7">
+                     <item row="0" column="0">
+                      <layout class="QVBoxLayout" name="verticalLayout_5">
+                       <item>
+                        <widget class="QLabel" name="label_15">
+                         <property name="minimumSize">
+                          <size>
+                           <width>112</width>
+                           <height>44</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>112</width>
+                           <height>44</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <pointsize>8</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>Normal</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_10">
+                         <property name="minimumSize">
+                          <size>
+                           <width>112</width>
+                           <height>44</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(85, 255, 127);</string>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item row="0" column="1">
+                      <layout class="QVBoxLayout" name="verticalLayout_7">
+                       <item>
+                        <widget class="QLabel" name="label_16">
+                         <property name="minimumSize">
+                          <size>
+                           <width>112</width>
+                           <height>44</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>112</width>
+                           <height>44</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <pointsize>8</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>Warning1</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_12">
+                         <property name="minimumSize">
+                          <size>
+                           <width>112</width>
+                           <height>44</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(255, 255, 0);</string>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item row="1" column="0">
+                      <layout class="QVBoxLayout" name="verticalLayout_9">
+                       <item>
+                        <widget class="QLabel" name="label_36">
+                         <property name="minimumSize">
+                          <size>
+                           <width>112</width>
+                           <height>44</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>112</width>
+                           <height>44</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <pointsize>8</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>Warning2</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_20">
+                         <property name="minimumSize">
+                          <size>
+                           <width>112</width>
+                           <height>44</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(255, 123, 71);</string>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item row="1" column="1">
+                      <layout class="QVBoxLayout" name="verticalLayout_10">
+                       <item>
+                        <widget class="QLabel" name="label_17">
+                         <property name="minimumSize">
+                          <size>
+                           <width>112</width>
+                           <height>44</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>112</width>
+                           <height>44</height>
+                          </size>
+                         </property>
+                         <property name="font">
+                          <font>
+                           <pointsize>8</pointsize>
+                          </font>
+                         </property>
+                         <property name="text">
+                          <string>Warning3</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_22">
+                         <property name="minimumSize">
+                          <size>
+                           <width>112</width>
+                           <height>44</height>
+                          </size>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(255, 0, 0);</string>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="BatUnit_19">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>Allow charge power</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_20">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>Allow discharge power</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_21">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>Allow charge energy</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_22">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>Allow discharge energy</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_23">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_24">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_13">
-                  <item>
-                   <widget class="QLabel" name="BatValue1_2">
-                    <property name="minimumSize">
-                     <size>
-                      <width>101</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>101</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">background-color: rgb(0, 151, 226);</string>
-                    </property>
-                    <property name="text">
-                     <string>Value</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_9">
-                    <property name="minimumSize">
-                     <size>
-                      <width>101</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>101</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>120</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_10">
-                    <property name="minimumSize">
-                     <size>
-                      <width>101</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>101</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>120</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_11">
-                    <property name="minimumSize">
-                     <size>
-                      <width>101</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>101</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>135</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_12">
-                    <property name="minimumSize">
-                     <size>
-                      <width>101</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>101</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>135</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_13">
-                    <property name="minimumSize">
-                     <size>
-                      <width>101</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>101</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>45</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_14">
-                    <property name="minimumSize">
-                     <size>
-                      <width>101</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>101</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>95</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label_30">
-                    <property name="minimumSize">
-                     <size>
-                      <width>101</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label_31">
-                    <property name="minimumSize">
-                     <size>
-                      <width>101</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_28">
-                  <property name="spacing">
-                   <number>3</number>
-                  </property>
-                  <item>
-                   <widget class="QLabel" name="BatUnit1_2">
-                    <property name="minimumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">background-color: rgb(0, 151, 226);</string>
-                    </property>
-                    <property name="text">
-                     <string>Unit</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_9">
-                    <property name="minimumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>A</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_10">
-                    <property name="minimumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>A</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_11">
-                    <property name="minimumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>kW</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_12">
-                    <property name="minimumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>kW</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_13">
-                    <property name="minimumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>kWh</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_14">
-                    <property name="minimumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>kWh</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_15">
-                    <property name="minimumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_16">
-                    <property name="minimumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string/>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-               </layout>
-              </widget>
-              <widget class="QWidget" name="layoutWidget5">
-               <property name="geometry">
-                <rect>
-                 <x>0</x>
-                 <y>0</y>
-                 <width>357</width>
-                 <height>415</height>
-                </rect>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="3,2,1">
-                <property name="spacing">
-                 <number>3</number>
-                </property>
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_15">
-                  <property name="spacing">
-                   <number>3</number>
-                  </property>
-                  <item>
-                   <widget class="QLabel" name="BATName1">
-                    <property name="minimumSize">
-                     <size>
-                      <width>173</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>173</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">background-color: rgb(0, 151, 226);</string>
-                    </property>
-                    <property name="text">
-                     <string>Name</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatAnalog_1">
-                    <property name="enabled">
-                     <bool>true</bool>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>173</width>
-                      <height>42</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>173</width>
-                      <height>42</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>Bat voltage</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatAnalog_2">
-                    <property name="minimumSize">
-                     <size>
-                      <width>173</width>
-                      <height>42</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>173</width>
-                      <height>42</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>Bat current</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatAnalog_3">
-                    <property name="minimumSize">
-                     <size>
-                      <width>173</width>
-                      <height>42</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>173</width>
-                      <height>42</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>SOC</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatAnalog_4">
-                    <property name="minimumSize">
-                     <size>
-                      <width>173</width>
-                      <height>42</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>173</width>
-                      <height>42</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>SOH</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatAnalog_5">
-                    <property name="minimumSize">
-                     <size>
-                      <width>173</width>
-                      <height>42</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>173</width>
-                      <height>42</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>Cell voltage (max)</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatAnalog_6">
-                    <property name="minimumSize">
-                     <size>
-                      <width>173</width>
-                      <height>42</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>173</width>
-                      <height>42</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>Cell voltage (min)</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatAnalog_7">
-                    <property name="minimumSize">
-                     <size>
-                      <width>173</width>
-                      <height>42</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>173</width>
-                      <height>42</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>Cell temp. (max)</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatAnalog_8">
-                    <property name="minimumSize">
-                     <size>
-                      <width>173</width>
-                      <height>42</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>173</width>
-                      <height>42</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true"/>
-                    </property>
-                    <property name="text">
-                     <string>Cell temp. (min)</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_16">
-                  <property name="spacing">
-                   <number>3</number>
-                  </property>
-                  <item>
-                   <widget class="QLabel" name="BatValue1">
-                    <property name="minimumSize">
-                     <size>
-                      <width>114</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>114</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">background-color: rgb(0, 151, 226);</string>
-                    </property>
-                    <property name="text">
-                     <string>Value</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_1">
-                    <property name="minimumSize">
-                     <size>
-                      <width>114</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>114</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>600</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_2">
-                    <property name="minimumSize">
-                     <size>
-                      <width>114</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>114</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>100</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_3">
-                    <property name="minimumSize">
-                     <size>
-                      <width>114</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>114</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>70</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_4">
-                    <property name="minimumSize">
-                     <size>
-                      <width>114</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>114</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>100</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_5">
-                    <property name="minimumSize">
-                     <size>
-                      <width>114</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>114</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>3300</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_6">
-                    <property name="minimumSize">
-                     <size>
-                      <width>114</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>114</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>3250</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_7">
-                    <property name="minimumSize">
-                     <size>
-                      <width>114</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>114</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>28</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="pushButton_8">
-                    <property name="minimumSize">
-                     <size>
-                      <width>114</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>114</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>27</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_20">
-                  <property name="spacing">
-                   <number>3</number>
-                  </property>
-                  <item>
-                   <widget class="QLabel" name="BatUnit1">
-                    <property name="minimumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">background-color: rgb(0, 151, 226);</string>
-                    </property>
-                    <property name="text">
-                     <string>Unit</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_1">
-                    <property name="minimumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="frameShape">
-                     <enum>QFrame::NoFrame</enum>
-                    </property>
-                    <property name="text">
-                     <string>V</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_2">
-                    <property name="minimumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>A</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_3">
-                    <property name="minimumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>%</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_4">
-                    <property name="minimumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>%</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_5">
-                    <property name="minimumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>mV</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_6">
-                    <property name="minimumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>mV</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_7">
-                    <property name="minimumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>℃</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="BatUnit_8">
-                    <property name="minimumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>56</width>
-                      <height>43</height>
-                     </size>
-                    </property>
-                    <property name="text">
-                     <string>℃</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
+                   <layout class="QVBoxLayout" name="verticalLayout_12">
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_2">
+                      <item>
+                       <widget class="QLabel" name="label_2">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>65</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>145</width>
+                          <height>65</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <pointsize>11</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Alarm level:</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="pushButton_15">
+                        <property name="minimumSize">
+                         <size>
+                          <width>68</width>
+                          <height>65</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>64</width>
+                          <height>65</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">background-color: rgb(85, 255, 127);</string>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_5">
+                      <item>
+                       <widget class="QLabel" name="label_18">
+                        <property name="minimumSize">
+                         <size>
+                          <width>113</width>
+                          <height>65</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>113</width>
+                          <height>65</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <pointsize>11</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Charge 
+enable</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="pushButton_16">
+                        <property name="minimumSize">
+                         <size>
+                          <width>113</width>
+                          <height>65</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>113</width>
+                          <height>65</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <pointsize>11</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Disable</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="horizontalLayout_6">
+                      <item>
+                       <widget class="QLabel" name="label_19">
+                        <property name="minimumSize">
+                         <size>
+                          <width>113</width>
+                          <height>65</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>113</width>
+                          <height>65</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <pointsize>11</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Discharge 
+enable</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="pushButton_17">
+                        <property name="minimumSize">
+                         <size>
+                          <width>104</width>
+                          <height>65</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>104</width>
+                          <height>65</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <pointsize>11</pointsize>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>Disable</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
                   </item>
                  </layout>
                 </item>
