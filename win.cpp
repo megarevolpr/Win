@@ -34,6 +34,7 @@ MEGAWin::MEGAWin(QWidget *parent) :
 {
     ASKey = true;
     LanguageType = CHINESE; //开机默认为中文
+
     ui->setupUi(this);
     ui->UI_stackedWidget->setCurrentWidget(ui->UI_page );//开机后进入主页面
     ui->stackedWidget->setCurrentWidget(ui->Bypass_page);
@@ -41,8 +42,8 @@ MEGAWin::MEGAWin(QWidget *parent) :
     ui->RTState_stackedWidget->setCurrentWidget(ui->RTState_Bypass_Y_page);
 
     MemoryAllocation(); //初始化内存空间
-    UIPageInit();       //初始化界面
     LoadLanguageInit(); //初始化语言
+    UIPageInit();       //初始化界面
 
 }
 
@@ -1181,10 +1182,10 @@ void MEGAWin::ModuleData_Tab()//PCS数据
         Converter_Tablist1  << tr("PCS voltage(AB)") << tr("PCS voltage(BC)") << tr("PCS voltage(CA)")
                             << tr("PCS current(A)") << tr("PCS current(B)")<< tr("PCS current(C)")
                             << tr("PCS Active P.") << tr("PCS Reactive P.") << tr("PCS Parent P.") << tr("PCS Pf");
-        QStringList Converter_Tablist2;//<< tr("Inductunce temperature") << tr("Diode temperature")
+        QStringList Converter_Tablist2;
         Converter_Tablist2  << tr("Battery voltage") << tr("Battery current") << tr("Battery power")
                             << tr("Bus voltage") << tr("IGBT temperature")
-                            << tr("Environment temperature") << tr("-")<< tr("-");
+                            << tr("Environment temperature");
 
        QStringList Grid_Tablist;
            Grid_Tablist << tr("Grid voltage(AB)") << tr("Grid voltage(BC)") << tr("Grid voltage(CA)")
@@ -2083,161 +2084,161 @@ void MEGAWin::BatteryData_clicked(int nid)
 void MEGAWin::PCS_Data()
 {
     PCS_vol_AB = new Specification(this,PCS_vol_AB_explain, ui->Converter_Tab, 0, 1, \
-                                            "270.2V", "PCS voltage(AB)", \
-                                            "当前PCS的逆变侧电压，此项为A相和B相之间的相电压\nThe inverter side voltage of the current PCS is the phase voltage between phase A and phase B.");
+                                            tr("270.2V"), tr("PCS voltage(AB)"), \
+                                            tr("The inverter side voltage of the current PCS is the phase voltage between phase A and phase B."));
     PCS_vol_AB->add_Specification();
     PCS_vol_BC = new Specification(this,PCS_vol_BC_explain, ui->Converter_Tab, 1, 1, \
-                                            "270V", "PCS voltage(BC)", \
-                                            "当前PCS的逆变侧电压，此项为B相和C相之间的相电压\nThe inverter side voltage of the current PCS is the phase voltage between phase B and phase C.");
+                                            tr("270V"), tr("PCS voltage(BC)"), \
+                                            tr("The inverter side voltage of the current PCS is the phase voltage between phase B and phase C."));
     PCS_vol_BC->add_Specification();
     PCS_vol_CA = new Specification(this,PCS_vol_CA_explain, ui->Converter_Tab, 2, 1, \
-                                            "270.1V", "PCS voltage(CA)", \
-                                            "当前PCS的逆变侧电压，此项为A相和C相之间的相电压\nThe inverter side voltage of the current PCS is the phase voltage between phase A and phase C.");
+                                            tr("270.1V"), tr("PCS voltage(CA)"), \
+                                            tr("The inverter side voltage of the current PCS is the phase voltage between phase A and phase C."));
     PCS_vol_CA->add_Specification();
     PCS_cur_A = new Specification(this,PCS_cur_A_explain, ui->Converter_Tab, 3, 1, \
-                                            "0A", "PCS current(A)", \
-                                            "当前PCS的逆变侧电流，此项为A相的电流\nThe current of the inverter side of the current PCS is the current of phase A.");
+                                            tr("0A"), tr("PCS current(A)"), \
+                                            tr("The current of the inverter side of the current PCS is the current of phase A."));
     PCS_cur_A->add_Specification();
     PCS_cur_B = new Specification(this,PCS_cur_B_explain, ui->Converter_Tab, 4, 1, \
-                                            "0A", "PCS current(B)", \
-                                            "当前PCS的逆变侧电流，此项为B相的电流\nThe current of the inverter side of the current PCS is the current of phase B.");
+                                            tr("0A"), tr("PCS current(B)"), \
+                                            tr("The current of the inverter side of the current PCS is the current of phase B."));
     PCS_cur_B->add_Specification();
     PCS_cur_C = new Specification(this,PCS_cur_C_explain, ui->Converter_Tab, 5, 1, \
-                                            "0A", "PCS current(C)", \
-                                            "当前PCS的逆变侧电流，此项为C相的电流\nThe current of the inverter side of the current PCS is the current of phase C.");
+                                            tr("0A"), tr("PCS current(C)"), \
+                                            tr("The current of the inverter side of the current PCS is the current of phase C."));
     PCS_cur_C->add_Specification();
     PCS_act_P = new Specification(this,PCS_act_P_explain, ui->Converter_Tab, 6, 1, \
-                                            "0kW", "PCS Active Power", \
-                                            "当前PCS的逆变侧有功功率P\nThe active power P of the inverter side of the current PCS.");
+                                            tr("0kW"), tr("PCS Active Power"), \
+                                            tr("The active power P of the inverter side of the current PCS."));
     PCS_act_P->add_Specification();
     PCS_rea_P = new Specification(this,PCS_rea_P_explain, ui->Converter_Tab, 7, 1, \
-                                            "0kVar", "PCS Reactive Power", \
-                                            "当前PCS的逆变侧无功功率Q\nThe reactive power Q of the inverter side of the current PCS.");
+                                            tr("0kVar"), tr("PCS Reactive Power"), \
+                                            tr("The reactive power Q of the inverter side of the current PCS."));
     PCS_rea_P->add_Specification();
     PCS_par_P = new Specification(this,PCS_par_P_explain, ui->Converter_Tab, 8, 1, \
-                                            "0kVA", "PCS Parent Power", \
-                                            "当前PCS的逆变侧视在功率S，S= √((P^2+Q^2))\nThe inverter side view of the current PCS is at power S, S= √((P^2+Q^2)).");
+                                            tr("0kVA"), tr("PCS Parent Power"), \
+                                            tr("The inverter side view of the current PCS is at power S, S= √((P^2+Q^2))."));
     PCS_par_P->add_Specification();
 
     PCS_Pf = new Specification(this,PCS_Pf_explain, ui->Converter_Tab, 9, 1, \
-                                            "0", "PCS Power factor", \
-                                            "当前PCS的逆变侧功率因素Pf， Pf = P / S\nPower factor Pf on the inverter side of current PCS, Pf = P/S.");
+                                            tr("0"), tr("PCS Power factor"), \
+                                            tr("Power factor Pf on the inverter side of current PCS, Pf = P/S."));
     PCS_Pf->add_Specification();
     PCS_Bat_vol = new Specification(this,PCS_Bat_vol_explain, ui->Converter_Tab, 0, 3, \
-                                            "0V", "PCS Battery voltage", \
-                                            "当前PCS从接入的电池侧采样的电池电压\nThe current PCS samples the battery voltage from the connected battery.");
+                                            tr("0V"), tr("PCS Battery voltage"), \
+                                            tr("The current PCS samples the battery voltage from the connected battery."));
     PCS_Bat_vol->add_Specification();
     PCS_Bat_cur = new Specification(this,PCS_Bat_cur_explain, ui->Converter_Tab, 1, 3, \
-                                            "0A", "PCS Battery current", \
-                                            "当前PCS从接入的电池侧采样的电池电流\nBattery current sampled by the PCS from the connected battery.");
+                                            tr("0A"), tr("PCS Battery current"), \
+                                            tr("Battery current sampled by the PCS from the connected battery."));
     PCS_Bat_cur->add_Specification();
     PCS_Bat_P = new Specification(this,PCS_Bat_P_explain, ui->Converter_Tab, 2, 3, \
-                                            "0kW", "PCS Battery power", \
-                                            "当前PCS内部计算电池电压与电池电流的乘积，得到电池功率\nAt present, PCS calculates the product of battery voltage and battery current to obtain battery power.");
+                                            tr("0kW"), tr("PCS Battery power"), \
+                                            tr("At present, PCS calculates the product of battery voltage and battery current to obtain battery power."));
     PCS_Bat_P->add_Specification();
     PCS_Bus_vol = new Specification(this,PCS_Bus_vol_explain, ui->Converter_Tab, 3, 3, \
-                                            "0V", "PCS Bus voltage", \
-                                            "当前PCS从母线侧采样的母线电压\nThe current bus voltage sampled by PCS from the bus side.");
+                                            tr("0V"), tr("PCS Bus voltage"), \
+                                            tr("The current bus voltage sampled by PCS from the bus side."));
     PCS_Bus_vol->add_Specification();
     PCS_IGBT_T = new Specification(this,PCS_IGBT_T_explain, ui->Converter_Tab, 4, 3, \
-                                            "39℃", "PCS IGBT temperature", \
-                                            "当前PCS的IGBT温度，IGBT温度不得超过105℃，否则PCS将降额运行\nThe current IGBT temperature of PCS shall not exceed 105℃, otherwise PCS will run derated.");
+                                            tr("39℃"), tr("PCS IGBT temperature"), \
+                                            tr("The current IGBT temperature of PCS shall not exceed 105℃, otherwise PCS will run derated."));
     PCS_IGBT_T->add_Specification();
     PCS_Env_T = new Specification(this,PCS_Env_T_explain, ui->Converter_Tab, 5, 3, \
-                                            "25℃", "PCS Environment temperature", \
-                                            "当前PCS所处的环境温度\nThe ambient temperature of the current PCS.");
+                                            tr("25℃"), tr("PCS Environment temperature"), \
+                                            tr("The ambient temperature of the current PCS."));
     PCS_Env_T->add_Specification();
 }
 /*********电网数据 绘制button**********/
 void MEGAWin::Grid_Data()
 {
     Grid_vol_AB = new Specification(this,Grid_vol_AB_explain, ui->Grid_Tab, 0, 1, \
-                                            "0V", "Grid voltage(AB)", \
-                                            "当前PCS的电网侧电压，此项为A相和B相之间的相电压\nThe grid side voltage of the current PCS, this item is the phase voltage between phase A and phase B.");
+                                            tr("0V"), tr("Grid voltage(AB)"), \
+                                            tr("The grid side voltage of the current PCS, this item is the phase voltage between phase A and phase B."));
     Grid_vol_AB->add_Specification();
     Grid_vol_BC = new Specification(this,Grid_vol_BC_explain, ui->Grid_Tab, 1, 1, \
-                                            "0V", "Grid voltage(BC)", \
-                                            "当前PCS的电网侧电压，此项为B相和C相之间的相电压\nThe grid side voltage of the current PCS, this item is the phase voltage between phase B and phase C.");
+                                            tr("0V"), tr("Grid voltage(BC)"), \
+                                            tr("The grid side voltage of the current PCS, this item is the phase voltage between phase B and phase C."));
     Grid_vol_BC->add_Specification();
     Grid_vol_CA = new Specification(this,Grid_vol_CA_explain, ui->Grid_Tab, 2, 1, \
-                                            "0V", "Grid voltage(CA)", \
-                                            "当前PCS的电网侧电压，此项为A相和C相之间的相电压\nThe grid side voltage of the current PCS, this item is the phase voltage between phase A and phase C.");
+                                            tr("0V"), tr("Grid voltage(CA)"), \
+                                            tr("The grid side voltage of the current PCS, this item is the phase voltage between phase A and phase C."));
     Grid_vol_CA->add_Specification();
     Grid_cur_A = new Specification(this,Grid_cur_A_explain, ui->Grid_Tab, 3, 1, \
-                                            "0A", "Grid current(AB)", \
-                                            "当前PCS的电网侧电流，此项为A相的电流\nThe current on the grid side of PCS, this item is the current of phase A.");
+                                            tr("0A"), tr("Grid current(A)"), \
+                                            tr("The current on the grid side of PCS, this item is the current of phase A."));
     Grid_cur_A->add_Specification();
     Grid_cur_B = new Specification(this,Grid_cur_B_explain, ui->Grid_Tab, 4, 1, \
-                                            "0A", "Grid current(B)", \
-                                            "当前PCS的电网侧电流，此项为B相的电流\nThe current on the grid side of PCS, this item is the current of phase B.");
+                                            tr("0A"), tr("Grid current(B)"), \
+                                            tr("The current on the grid side of PCS, this item is the current of phase B."));
     Grid_cur_B->add_Specification();
     Grid_cur_C = new Specification(this,Grid_cur_C_explain, ui->Grid_Tab, 5, 1, \
-                                            "0A", "Grid current(C)", \
-                                            "当前PCS的电网侧电流，此项为C相的电流\nThe current on the grid side of PCS, this item is the current of phase C.");
+                                            tr("0A"), tr("Grid current(C)"), \
+                                            tr("The current on the grid side of PCS, this item is the current of phase C."));
     Grid_cur_C->add_Specification();
     Grid_act_P = new Specification(this,Grid_act_P_explain, ui->Grid_Tab, 6, 1, \
-                                            "0kW", "Grid active power", \
-                                            "当前PCS的电网侧有功功率(P)\nCurrent active power (P) on the grid side of PCS.");
+                                            tr("0kW"), tr("Grid active power"), \
+                                            tr("Current active power (P) on the grid side of PCS."));
     Grid_act_P->add_Specification();
     Grid_rea_P = new Specification(this,Grid_rea_P_explain, ui->Grid_Tab, 7, 1, \
-                                            "0kVar", "Grid reactive power", \
-                                            "当前PCS的电网侧无功功率(Q)\nCurrent reactive power (Q) on the grid side of PCS.");
+                                            tr("0kVar"), tr("Grid reactive power"), \
+                                            tr("Current reactive power (Q) on the grid side of PCS."));
     Grid_rea_P->add_Specification();
     Grid_app_P = new Specification(this,Grid_app_P_explain, ui->Grid_Tab, 8, 1, \
-                                            "0kVA", "Grid apparent power", \
-                                            "当前PCS的电网侧视在功率(S)，S= √((P^2+Q^2))\nCurrent PCS grid side view power (S), S= √((P^2+Q^2)).");
+                                            tr("0kVA"), tr("Grid apparent power"), \
+                                            tr("Current PCS grid side view power (S), S= √((P^2+Q^2))."));
     Grid_app_P->add_Specification();
     Grid_fre = new Specification(this,Grid_fre_explain, ui->Grid_Tab, 9, 1, \
-                                            "0Hz", "Grid frequency", \
-                                            "当前PCS的采集的电网频率\nCurrent PCS collection of power grid frequency.");
+                                            tr("0Hz"), tr("Grid frequency"), \
+                                            tr("Current PCS collection of power grid frequency."));
     Grid_fre->add_Specification();
     Grid_Pf = new Specification(this,Grid_Pf_explain, ui->Grid_Tab, 10, 1, \
-                                            "0", "Grid power factor", \
-                                            "当前PCS的电网侧功率因素(Pf)， Pf = P/S\nGrid side power factor (Pf) of the current PCS, Pf = P/S.");
+                                            tr("0"), tr("Grid power factor"), \
+                                            tr("Grid side power factor (Pf) of the current PCS, Pf = P/S."));
     Grid_Pf->add_Specification();
 }
 /*********负载数据 绘制button**********/
 void MEGAWin::Load_Data()
 {
     Load_vol_AB = new Specification(this,Load_vol_AB_explain, ui->Load_Tab, 0, 1, \
-                                            "0V", "Load voltage(AB)", \
-                                            "当前PCS的负载侧电压，此项为A相和B相之间的相电压\nThe load side voltage of the current PCS, this item is the phase voltage between phase A and phase B.");
+                                            tr("0V"), tr("Load voltage(AB)"), \
+                                            tr("The load side voltage of the current PCS, this item is the phase voltage between phase A and phase B."));
     Load_vol_AB->add_Specification();
     Load_vol_BC = new Specification(this,Load_vol_BC_explain, ui->Load_Tab, 1, 1, \
-                                            "0V", "Load voltage(BC)", \
-                                            "当前PCS的负载侧电压，此项为B相和C相之间的相电压\nThe load side voltage of the current PCS, this item is the phase voltage between phase B and phase C.");
+                                            tr("0V"), tr("Load voltage(BC)"), \
+                                            tr("The load side voltage of the current PCS, this item is the phase voltage between phase B and phase C."));
     Load_vol_BC->add_Specification();
     Load_vol_CA = new Specification(this,Load_vol_CA_explain, ui->Load_Tab, 2, 1, \
-                                            "0V", "Load voltage(CA)", \
-                                            "当前PCS的负载侧电压，此项为A相和C相之间的相电压\nThe load side voltage of the current PCS, this item is the phase voltage between phase A and phase C.");
+                                            tr("0V"), tr("Load voltage(CA)"), \
+                                            tr("The load side voltage of the current PCS, this item is the phase voltage between phase A and phase C."));
     Load_vol_CA->add_Specification();
     Load_cur_A = new Specification(this,Load_cur_A_explain, ui->Load_Tab, 3, 1, \
-                                            "0A", "Load current(AB)", \
-                                            "当前PCS的负载侧电流，此项为A相的电流\nThe current on the load side of PCS is the current of phase A.");
+                                            tr("0A"), tr("Load current(A)"), \
+                                            tr("The current on the load side of PCS is the current of phase A."));
     Load_cur_A->add_Specification();
     Load_cur_B = new Specification(this,Load_cur_B_explain, ui->Load_Tab, 4, 1, \
-                                            "0A", "Load current(B)", \
-                                            "当前PCS的负载侧电流，此项为B相的电流\nThe current at the load side of PCS is the current of phase B.");
+                                            tr("0A"), tr("Load current(B)"), \
+                                            tr("The current at the load side of PCS is the current of phase B."));
     Load_cur_B->add_Specification();
     Load_cur_C = new Specification(this,Load_cur_C_explain, ui->Load_Tab, 5, 1, \
-                                            "0A", "Load current(C)", \
-                                            "当前PCS的负载侧电流，此项为C相的电流\nThe current at the load side of PCS is the current of phase C.");
+                                            tr("0A"), tr("Load current(C)"), \
+                                            tr("The current at the load side of PCS is the current of phase C."));
     Load_cur_C->add_Specification();
     Load_act_P = new Specification(this,Load_act_P_explain, ui->Load_Tab, 6, 1, \
-                                            "0kW", "Load active power", \
-                                            "当前PCS的负载侧有功功率(P)\nCurrent PCS active power (P) on load side.");
+                                            tr("0kW"), tr("Load active power"), \
+                                            tr("Current PCS active power (P) on load side."));
     Load_act_P->add_Specification();
     Load_rea_P = new Specification(this,Load_rea_P_explain, ui->Load_Tab, 7, 1, \
-                                            "0kVar", "Load reactive power", \
-                                            "当前PCS的负载侧无功功率(Q)\nReactive power (Q) on the load side of current PCS.");
+                                            tr("0kVar"), tr("Load reactive power"), \
+                                            tr("Reactive power (Q) on the load side of current PCS."));
     Load_rea_P->add_Specification();
     Load_app_P = new Specification(this,Load_app_P_explain, ui->Load_Tab, 8, 1, \
-                                            "0kVA", "Load apparent power", \
-                                            "当前PCS的负载侧视在功率(S)，S= √((P^2+Q^2))\nCurrent PCS load side view at power (S), S= √((P^2+Q^2)).");
+                                            tr("0kVA"), tr("Load apparent power"), \
+                                            tr("Current PCS load side view at power (S), S= √((P^2+Q^2))."));
     Load_app_P->add_Specification();
     Load_Pf = new Specification(this,Load_Pf_explain, ui->Load_Tab, 9, 1, \
-                                            "0", "Load frequency", \
-                                            "当前PCS的负载侧功率因素(Pf)， Pf = P/S\nThe load side power factor (Pf) of the current PCS, Pf = P/S.");
+                                            tr("0"), tr("Load power factor"), \
+                                            tr("The load side power factor (Pf) of the current PCS, Pf = P/S."));
     Load_Pf->add_Specification();
 }
 /********PCS状态 绘制button*********/

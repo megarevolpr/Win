@@ -32,6 +32,6 @@ void Specification::add_Specification()
 
 void Specification::explain_btn_clicked()
 {
-    QMessageBox::question(tab.parent , tab.explain_title, tab.specification_text, "OK");
+    QMessageBox::question(tab.parent , tab.explain_title, tab.specification_text, tr("OK"));
 }
 

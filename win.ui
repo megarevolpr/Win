@@ -3846,24 +3846,104 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                      </row>
                      <column>
                       <property name="text">
-                       <string>1</string>
+                       <string>Name</string>
                       </property>
                      </column>
                      <column>
                       <property name="text">
-                       <string>2</string>
+                       <string>Value</string>
                       </property>
                      </column>
                      <column>
                       <property name="text">
-                       <string>3</string>
+                       <string>Name</string>
                       </property>
                      </column>
                      <column>
                       <property name="text">
-                       <string>4</string>
+                       <string>Value</string>
                       </property>
                      </column>
+                     <item row="0" column="0">
+                      <property name="text">
+                       <string>PCS voltage(AB)</string>
+                      </property>
+                     </item>
+                     <item row="0" column="2">
+                      <property name="text">
+                       <string>Battery voltage</string>
+                      </property>
+                     </item>
+                     <item row="1" column="0">
+                      <property name="text">
+                       <string>PCS voltage(BC)</string>
+                      </property>
+                     </item>
+                     <item row="1" column="2">
+                      <property name="text">
+                       <string>Battery current</string>
+                      </property>
+                     </item>
+                     <item row="2" column="0">
+                      <property name="text">
+                       <string>PCS voltage(CA)</string>
+                      </property>
+                     </item>
+                     <item row="2" column="2">
+                      <property name="text">
+                       <string>Battery power</string>
+                      </property>
+                     </item>
+                     <item row="3" column="0">
+                      <property name="text">
+                       <string>PCS current(A)</string>
+                      </property>
+                     </item>
+                     <item row="3" column="2">
+                      <property name="text">
+                       <string>Bus voltage</string>
+                      </property>
+                     </item>
+                     <item row="4" column="0">
+                      <property name="text">
+                       <string>PCS current(B)</string>
+                      </property>
+                     </item>
+                     <item row="4" column="2">
+                      <property name="text">
+                       <string>IGBT temperature</string>
+                      </property>
+                     </item>
+                     <item row="5" column="0">
+                      <property name="text">
+                       <string>PCS current(C)</string>
+                      </property>
+                     </item>
+                     <item row="5" column="2">
+                      <property name="text">
+                       <string>Environment temperature</string>
+                      </property>
+                     </item>
+                     <item row="6" column="0">
+                      <property name="text">
+                       <string>PCS Active P.</string>
+                      </property>
+                     </item>
+                     <item row="7" column="0">
+                      <property name="text">
+                       <string>PCS Reactive P.</string>
+                      </property>
+                     </item>
+                     <item row="8" column="0">
+                      <property name="text">
+                       <string>PCS Parent P.</string>
+                      </property>
+                     </item>
+                     <item row="9" column="0">
+                      <property name="text">
+                       <string>PCS Pf</string>
+                      </property>
+                     </item>
                     </widget>
                    </item>
                   </layout>
@@ -4616,7 +4696,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                  <x>0</x>
                  <y>0</y>
                  <width>964</width>
-                 <height>411</height>
+                 <height>440</height>
                 </rect>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_3">
