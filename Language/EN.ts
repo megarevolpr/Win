@@ -723,8 +723,9 @@
     <message>
         <location filename="../win.ui" line="1573"/>
         <location filename="../win.ui" line="1581"/>
-        <location filename="../win.cpp" line="1309"/>
         <location filename="../win.cpp" line="1310"/>
+        <location filename="../win.cpp" line="1311"/>
+        <location filename="../win.cpp" line="2302"/>
         <source>Reserve</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1037,7 +1038,8 @@
     </message>
     <message>
         <location filename="../win.ui" line="4414"/>
-        <location filename="../win.cpp" line="1306"/>
+        <location filename="../win.cpp" line="1307"/>
+        <location filename="../win.cpp" line="2278"/>
         <source>converter available</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1050,12 +1052,14 @@
         <location filename="../win.ui" line="4424"/>
         <location filename="../win.cpp" line="1299"/>
         <location filename="../win.cpp" line="1302"/>
+        <location filename="../win.cpp" line="2254"/>
         <source>DC contactor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="4429"/>
-        <location filename="../win.cpp" line="1306"/>
+        <location filename="../win.cpp" line="1307"/>
+        <location filename="../win.cpp" line="2282"/>
         <source>DC Soft start</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1068,12 +1072,14 @@
         <location filename="../win.ui" line="4439"/>
         <location filename="../win.cpp" line="1300"/>
         <location filename="../win.cpp" line="1303"/>
+        <location filename="../win.cpp" line="2258"/>
         <source>Output contactor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="4444"/>
-        <location filename="../win.cpp" line="1307"/>
+        <location filename="../win.cpp" line="1308"/>
+        <location filename="../win.cpp" line="2286"/>
         <source>converter status</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1091,7 +1097,7 @@
     </message>
     <message>
         <location filename="../win.ui" line="4459"/>
-        <location filename="../win.cpp" line="1307"/>
+        <location filename="../win.cpp" line="1308"/>
         <source>Reactive power Regulation</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1102,13 +1108,15 @@
     </message>
     <message>
         <location filename="../win.ui" line="4469"/>
-        <location filename="../win.cpp" line="1303"/>
+        <location filename="../win.cpp" line="1304"/>
+        <location filename="../win.cpp" line="2266"/>
         <source>Grid contactor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="4474"/>
-        <location filename="../win.cpp" line="1307"/>
+        <location filename="../win.cpp" line="1308"/>
+        <location filename="../win.cpp" line="2294"/>
         <source>LVRT</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1120,7 +1128,7 @@
     <message>
         <location filename="../win.ui" line="4484"/>
         <location filename="../win.cpp" line="1300"/>
-        <location filename="../win.cpp" line="1303"/>
+        <location filename="../win.cpp" line="1304"/>
         <source>Grid breaker</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1193,6 +1201,15 @@ enable</source>
     <message>
         <location filename="../win.ui" line="6273"/>
         <location filename="../win.ui" line="6329"/>
+        <location filename="../win.cpp" line="2278"/>
+        <location filename="../win.cpp" line="2290"/>
+        <location filename="../win.cpp" line="2302"/>
+        <location filename="../win.cpp" line="2310"/>
+        <location filename="../win.cpp" line="2314"/>
+        <location filename="../win.cpp" line="2318"/>
+        <location filename="../win.cpp" line="2322"/>
+        <location filename="../win.cpp" line="2326"/>
+        <location filename="../win.cpp" line="2330"/>
         <source>Disable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1214,7 +1231,7 @@ enable</source>
         <location filename="../win.cpp" line="1216"/>
         <location filename="../win.cpp" line="1244"/>
         <location filename="../win.cpp" line="1265"/>
-        <location filename="../win.cpp" line="1323"/>
+        <location filename="../win.cpp" line="1325"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1259,7 +1276,7 @@ enable</source>
         <location filename="../win.cpp" line="1216"/>
         <location filename="../win.cpp" line="1244"/>
         <location filename="../win.cpp" line="1265"/>
-        <location filename="../win.cpp" line="1323"/>
+        <location filename="../win.cpp" line="1325"/>
         <source>Value</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2582,159 +2599,346 @@ For 1000V systems, the positive or negative ground impedance is less than 33KΩ<
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2156"/>
+        <location filename="../win.cpp" line="2159"/>
         <source>The grid side voltage of the current PCS, this item is the phase voltage between phase A and phase B.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2160"/>
+        <location filename="../win.cpp" line="2163"/>
         <source>The grid side voltage of the current PCS, this item is the phase voltage between phase B and phase C.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2164"/>
+        <location filename="../win.cpp" line="2167"/>
         <source>The grid side voltage of the current PCS, this item is the phase voltage between phase A and phase C.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2168"/>
+        <location filename="../win.cpp" line="2171"/>
         <source>The current on the grid side of PCS, this item is the current of phase A.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2172"/>
+        <location filename="../win.cpp" line="2175"/>
         <source>The current on the grid side of PCS, this item is the current of phase B.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2176"/>
+        <location filename="../win.cpp" line="2179"/>
         <source>The current on the grid side of PCS, this item is the current of phase C.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2180"/>
+        <location filename="../win.cpp" line="2183"/>
         <source>Current active power (P) on the grid side of PCS.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2184"/>
+        <location filename="../win.cpp" line="2187"/>
         <source>Current reactive power (Q) on the grid side of PCS.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2188"/>
+        <location filename="../win.cpp" line="2191"/>
         <source>Current PCS grid side view power (S), S= √((P^2+Q^2)).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2191"/>
+        <location filename="../win.cpp" line="2194"/>
         <source>0Hz</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2192"/>
+        <location filename="../win.cpp" line="2195"/>
         <source>Current PCS collection of power grid frequency.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2196"/>
+        <location filename="../win.cpp" line="2199"/>
         <source>Grid side power factor (Pf) of the current PCS, Pf = P/S.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2204"/>
+        <location filename="../win.cpp" line="2207"/>
         <source>The load side voltage of the current PCS, this item is the phase voltage between phase A and phase B.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2208"/>
+        <location filename="../win.cpp" line="2211"/>
         <source>The load side voltage of the current PCS, this item is the phase voltage between phase B and phase C.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2212"/>
+        <location filename="../win.cpp" line="2215"/>
         <source>The load side voltage of the current PCS, this item is the phase voltage between phase A and phase C.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2216"/>
+        <location filename="../win.cpp" line="2219"/>
         <source>The current on the load side of PCS is the current of phase A.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2220"/>
+        <location filename="../win.cpp" line="2223"/>
         <source>The current at the load side of PCS is the current of phase B.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2224"/>
+        <location filename="../win.cpp" line="2227"/>
         <source>The current at the load side of PCS is the current of phase C.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2228"/>
+        <location filename="../win.cpp" line="2231"/>
         <source>Current PCS active power (P) on load side.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2232"/>
+        <location filename="../win.cpp" line="2235"/>
         <source>Reactive power (Q) on the load side of current PCS.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2236"/>
+        <location filename="../win.cpp" line="2239"/>
         <source>Current PCS load side view at power (S), S= √((P^2+Q^2)).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2239"/>
+        <location filename="../win.cpp" line="2242"/>
         <source>Load power factor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2240"/>
+        <location filename="../win.cpp" line="2243"/>
         <source>The load side power factor (Pf) of the current PCS, Pf = P/S.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2250"/>
+        <location filename="../win.cpp" line="2254"/>
+        <location filename="../win.cpp" line="2258"/>
+        <location filename="../win.cpp" line="2262"/>
+        <location filename="../win.cpp" line="2266"/>
+        <location filename="../win.cpp" line="2270"/>
+        <location filename="../win.cpp" line="2274"/>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2250"/>
+        <source>DC input Breaker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2251"/>
+        <source>DC input circuit breaker has three states: Break, Close, Trip; The DC input circuit breaker can only be manually disconnected. If the DC input circuit breaker overcurrent, the DC input circuit breaker may trip.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2255"/>
+        <source>DC contactor has two states: Break, Close; When the DC side is soft Break, the DC contactor is closed. When the DC side of the battery is disconnected, the DC bus voltage drops to a certain voltage, and the DC contactor is disconnected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2259"/>
+        <source>The output circuit breaker has three states: Break, Close, Trip; If the output circuit breaker overcurrent, the output circuit breaker will trip.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2262"/>
+        <source>Output Breaker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2263"/>
+        <source>The output contactor has two states: Break, Close; When the DC side soft opening is completed, the output contactor is closed; When the converter is turned off, the output contactor is disconnected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2267"/>
+        <source>The network contactor has two states: Break, Close; When the converter is in grid-connected mode and the grid side voltage is normal, the network contactor is closed. The converter is in off-grid mode and the network contactor is disconnected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2270"/>
+        <source>Grid Breaker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2271"/>
+        <source>The power grid circuit breaker has three states: Break, Close, Trip; The power grid circuit breaker can only be manually disconnected. If the power grid circuit breaker overflows, the power grid circuit breaker may trip.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2274"/>
+        <source>Maintenance Bypass Breaker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2275"/>
+        <source>Maintenance bypass circuit breaker has two states: Break, Close; This circuit breaker is only used for machine maintenance, if necessary, please contact the maintenance personnel.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2279"/>
+        <source>The converter can be enabled in two states: Enable and Disable. When the internal self-test of the machine is no problem, the converter is enabled; Otherwise the converter is prohibited.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2282"/>
+        <source>Not starting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2283"/>
+        <source>The DC Soft boot has three states: Soft starting, complete, and Not starting. Soft start means that when the converter is started, it gradually accelerates or decelerates the device to the normal operating state by controlling the change of current or voltage, so as to reduce the current shock and voltage peak in the circuit, protect the circuit components and reduce the mechanical damage of the device. Soft start can increase device life, reduce energy consumption, and improve system efficiency.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2286"/>
+        <source>Shut down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2287"/>
+        <source>There are eight converter states:Shut down, Soft start, Grid-ON Charge, Grid-ON Discharge, Grid-OFF Discharge, Drop and Connected,Standby, Grid-OFF Charge.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2290"/>
+        <source>Reactive Power Regulation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2291"/>
+        <source>There are three types of reactive power regulation: Disable, Pf regulation, and Q regulation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2295"/>
+        <source>This is the current state of low voltage crossing (LVRT). Low voltage crossing refers to the ability to withstand a certain limit of low voltage of the grid within a certain period of time without exiting the operation. There are two states here, namely Non and LVRT.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2298"/>
+        <location filename="../win.cpp" line="2306"/>
+        <source>Enable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2299"/>
+        <source>This is the status of the current chai signal, output dry contact 1, there are Enable and Disable two states, here is the most real physical hardware status.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2303"/>
+        <source>This bit is reserved and has no effect. Dry contact 2 is output. The status of dry contact 2 is Enable(Enable) or Disable(Disable).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2306"/>
+        <source>Reserve2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2307"/>
+        <source>This bit is reserved and has no effect. Dry contact 2 is output. The status of dry contact 3 is Enable(Enable) or Disable(Disable)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2310"/>
+        <source>EPO_Cont signal1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2311"/>
+        <source>This is signal 1 of the EPO node. Enter dry contact 1, that is, dry contact signal 1 of external shutdown. There are two states: Enable and Disable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2314"/>
+        <source>EPO_Cont signal2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2315"/>
+        <source>This is signal 2 of the EPO node. Enter dry contact 2, that is, dry contact signal 2 of the external shutdown. There are two states: Enable and Disable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2318"/>
+        <source>Access_signal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2319"/>
+        <source>This is the access signal. Enter dry contact 3. The status is Enable or Disable. The actual physical hardware status is obtained here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2322"/>
+        <source>Full_P_signal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2323"/>
+        <source>This is a full power signal, the input dry contact 4 has two states of Enable and Disable, and what is obtained here is the most real physical hardware state.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2327"/>
+        <source>This isa smoke alarm signal. Enter dry contact 5. The status is Enable or Disable. The actual physical hardware status is obtained here.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2330"/>
+        <source>Hight temp signal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2331"/>
+        <source>This isa high temperature signal. Input dry contact 6. Two states are available: Enable and Disable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="3869"/>
         <location filename="../win.cpp" line="1182"/>
-        <location filename="../win.cpp" line="2086"/>
+        <location filename="../win.cpp" line="2089"/>
         <source>PCS voltage(AB)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="3879"/>
         <location filename="../win.cpp" line="1182"/>
-        <location filename="../win.cpp" line="2090"/>
+        <location filename="../win.cpp" line="2093"/>
         <source>PCS voltage(BC)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="3889"/>
         <location filename="../win.cpp" line="1182"/>
-        <location filename="../win.cpp" line="2094"/>
+        <location filename="../win.cpp" line="2097"/>
         <source>PCS voltage(CA)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="3899"/>
         <location filename="../win.cpp" line="1183"/>
-        <location filename="../win.cpp" line="2098"/>
+        <location filename="../win.cpp" line="2101"/>
         <source>PCS current(A)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="3909"/>
         <location filename="../win.cpp" line="1183"/>
-        <location filename="../win.cpp" line="2102"/>
+        <location filename="../win.cpp" line="2105"/>
         <source>PCS current(B)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="3919"/>
         <location filename="../win.cpp" line="1183"/>
-        <location filename="../win.cpp" line="2106"/>
+        <location filename="../win.cpp" line="2109"/>
         <source>PCS current(C)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2800,121 +3004,121 @@ For 1000V systems, the positive or negative ground impedance is less than 33KΩ<
     </message>
     <message>
         <location filename="../win.cpp" line="1191"/>
-        <location filename="../win.cpp" line="2155"/>
+        <location filename="../win.cpp" line="2158"/>
         <source>Grid voltage(AB)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1191"/>
-        <location filename="../win.cpp" line="2159"/>
+        <location filename="../win.cpp" line="2162"/>
         <source>Grid voltage(BC)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1191"/>
-        <location filename="../win.cpp" line="2163"/>
+        <location filename="../win.cpp" line="2166"/>
         <source>Grid voltage(CA)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1192"/>
-        <location filename="../win.cpp" line="2167"/>
+        <location filename="../win.cpp" line="2170"/>
         <source>Grid current(A)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1192"/>
-        <location filename="../win.cpp" line="2171"/>
+        <location filename="../win.cpp" line="2174"/>
         <source>Grid current(B)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1192"/>
-        <location filename="../win.cpp" line="2175"/>
+        <location filename="../win.cpp" line="2178"/>
         <source>Grid current(C)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1193"/>
-        <location filename="../win.cpp" line="2179"/>
+        <location filename="../win.cpp" line="2182"/>
         <source>Grid active power</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1193"/>
-        <location filename="../win.cpp" line="2183"/>
+        <location filename="../win.cpp" line="2186"/>
         <source>Grid reactive power</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1194"/>
-        <location filename="../win.cpp" line="2187"/>
+        <location filename="../win.cpp" line="2190"/>
         <source>Grid apparent power</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1194"/>
-        <location filename="../win.cpp" line="2191"/>
+        <location filename="../win.cpp" line="2194"/>
         <source>Grid frequency</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1194"/>
-        <location filename="../win.cpp" line="2195"/>
+        <location filename="../win.cpp" line="2198"/>
         <source>Grid power factor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1196"/>
-        <location filename="../win.cpp" line="2203"/>
+        <location filename="../win.cpp" line="2206"/>
         <source>Load voltage(AB)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1196"/>
-        <location filename="../win.cpp" line="2207"/>
+        <location filename="../win.cpp" line="2210"/>
         <source>Load voltage(BC)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1196"/>
-        <location filename="../win.cpp" line="2211"/>
+        <location filename="../win.cpp" line="2214"/>
         <source>Load voltage(CA)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1197"/>
-        <location filename="../win.cpp" line="2215"/>
+        <location filename="../win.cpp" line="2218"/>
         <source>Load current(A)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1197"/>
-        <location filename="../win.cpp" line="2219"/>
+        <location filename="../win.cpp" line="2222"/>
         <source>Load current(B)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1197"/>
-        <location filename="../win.cpp" line="2223"/>
+        <location filename="../win.cpp" line="2226"/>
         <source>Load current(C)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1198"/>
-        <location filename="../win.cpp" line="2227"/>
+        <location filename="../win.cpp" line="2230"/>
         <source>Load active power</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1198"/>
-        <location filename="../win.cpp" line="2231"/>
+        <location filename="../win.cpp" line="2234"/>
         <source>Load reactive power</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1199"/>
-        <location filename="../win.cpp" line="2235"/>
+        <location filename="../win.cpp" line="2238"/>
         <source>Load apparent power</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2925,313 +3129,315 @@ For 1000V systems, the positive or negative ground impedance is less than 33KΩ<
     </message>
     <message>
         <location filename="../win.cpp" line="1300"/>
-        <location filename="../win.cpp" line="1303"/>
+        <location filename="../win.cpp" line="1304"/>
         <source>Maintenance Bypass breaker</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="1309"/>
+        <location filename="../win.cpp" line="1310"/>
+        <location filename="../win.cpp" line="2298"/>
         <source>Generator signal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="1310"/>
+        <location filename="../win.cpp" line="1311"/>
         <source>EPO contact signal 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="1311"/>
+        <location filename="../win.cpp" line="1312"/>
         <source>EPO contact signal 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="1311"/>
+        <location filename="../win.cpp" line="1312"/>
         <source>Access control signal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="1311"/>
+        <location filename="../win.cpp" line="1313"/>
         <source>Full power signal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="1311"/>
+        <location filename="../win.cpp" line="1313"/>
+        <location filename="../win.cpp" line="2326"/>
         <source>Smoke alarm signal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="1311"/>
+        <location filename="../win.cpp" line="1313"/>
         <source>Hight temp. signal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="1690"/>
+        <location filename="../win.cpp" line="1693"/>
         <source>Level</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="1690"/>
+        <location filename="../win.cpp" line="1693"/>
         <source>Start Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="1690"/>
+        <location filename="../win.cpp" line="1693"/>
         <source>End Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="1690"/>
+        <location filename="../win.cpp" line="1693"/>
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="1871"/>
+        <location filename="../win.cpp" line="1874"/>
         <source>ModificationTime</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="1871"/>
+        <location filename="../win.cpp" line="1874"/>
         <source>RecordEvent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="1999"/>
+        <location filename="../win.cpp" line="2002"/>
         <source>告警名称
 Alarm name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="1999"/>
+        <location filename="../win.cpp" line="2002"/>
         <source>告警等级
 Alarm leve</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="1999"/>
+        <location filename="../win.cpp" line="2002"/>
         <source>触发条件
 Trigger condition</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2000"/>
+        <location filename="../win.cpp" line="2003"/>
         <source>响应动作
 Response action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2000"/>
+        <location filename="../win.cpp" line="2003"/>
         <source>是否自动复位及复位时间
 Whether to reset
 automatically and reset time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2086"/>
+        <location filename="../win.cpp" line="2089"/>
         <source>270.2V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2087"/>
+        <location filename="../win.cpp" line="2090"/>
         <source>The inverter side voltage of the current PCS is the phase voltage between phase A and phase B.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2090"/>
+        <location filename="../win.cpp" line="2093"/>
         <source>270V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2091"/>
+        <location filename="../win.cpp" line="2094"/>
         <source>The inverter side voltage of the current PCS is the phase voltage between phase B and phase C.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2094"/>
+        <location filename="../win.cpp" line="2097"/>
         <source>270.1V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2095"/>
+        <location filename="../win.cpp" line="2098"/>
         <source>The inverter side voltage of the current PCS is the phase voltage between phase A and phase C.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2098"/>
-        <location filename="../win.cpp" line="2102"/>
-        <location filename="../win.cpp" line="2106"/>
-        <location filename="../win.cpp" line="2131"/>
-        <location filename="../win.cpp" line="2167"/>
-        <location filename="../win.cpp" line="2171"/>
-        <location filename="../win.cpp" line="2175"/>
-        <location filename="../win.cpp" line="2215"/>
-        <location filename="../win.cpp" line="2219"/>
-        <location filename="../win.cpp" line="2223"/>
+        <location filename="../win.cpp" line="2101"/>
+        <location filename="../win.cpp" line="2105"/>
+        <location filename="../win.cpp" line="2109"/>
+        <location filename="../win.cpp" line="2134"/>
+        <location filename="../win.cpp" line="2170"/>
+        <location filename="../win.cpp" line="2174"/>
+        <location filename="../win.cpp" line="2178"/>
+        <location filename="../win.cpp" line="2218"/>
+        <location filename="../win.cpp" line="2222"/>
+        <location filename="../win.cpp" line="2226"/>
         <source>0A</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2099"/>
+        <location filename="../win.cpp" line="2102"/>
         <source>The current of the inverter side of the current PCS is the current of phase A.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2103"/>
+        <location filename="../win.cpp" line="2106"/>
         <source>The current of the inverter side of the current PCS is the current of phase B.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2107"/>
+        <location filename="../win.cpp" line="2110"/>
         <source>The current of the inverter side of the current PCS is the current of phase C.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2110"/>
-        <location filename="../win.cpp" line="2135"/>
-        <location filename="../win.cpp" line="2179"/>
-        <location filename="../win.cpp" line="2227"/>
+        <location filename="../win.cpp" line="2113"/>
+        <location filename="../win.cpp" line="2138"/>
+        <location filename="../win.cpp" line="2182"/>
+        <location filename="../win.cpp" line="2230"/>
         <source>0kW</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2110"/>
+        <location filename="../win.cpp" line="2113"/>
         <source>PCS Active Power</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2111"/>
+        <location filename="../win.cpp" line="2114"/>
         <source>The active power P of the inverter side of the current PCS.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2114"/>
-        <location filename="../win.cpp" line="2183"/>
-        <location filename="../win.cpp" line="2231"/>
+        <location filename="../win.cpp" line="2117"/>
+        <location filename="../win.cpp" line="2186"/>
+        <location filename="../win.cpp" line="2234"/>
         <source>0kVar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2114"/>
+        <location filename="../win.cpp" line="2117"/>
         <source>PCS Reactive Power</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2115"/>
+        <location filename="../win.cpp" line="2118"/>
         <source>The reactive power Q of the inverter side of the current PCS.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2118"/>
-        <location filename="../win.cpp" line="2187"/>
-        <location filename="../win.cpp" line="2235"/>
+        <location filename="../win.cpp" line="2121"/>
+        <location filename="../win.cpp" line="2190"/>
+        <location filename="../win.cpp" line="2238"/>
         <source>0kVA</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2118"/>
+        <location filename="../win.cpp" line="2121"/>
         <source>PCS Parent Power</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2119"/>
+        <location filename="../win.cpp" line="2122"/>
         <source>The inverter side view of the current PCS is at power S, S= √((P^2+Q^2)).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2123"/>
-        <location filename="../win.cpp" line="2195"/>
-        <location filename="../win.cpp" line="2239"/>
+        <location filename="../win.cpp" line="2126"/>
+        <location filename="../win.cpp" line="2198"/>
+        <location filename="../win.cpp" line="2242"/>
         <source>0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2123"/>
+        <location filename="../win.cpp" line="2126"/>
         <source>PCS Power factor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2124"/>
+        <location filename="../win.cpp" line="2127"/>
         <source>Power factor Pf on the inverter side of current PCS, Pf = P/S.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2127"/>
-        <location filename="../win.cpp" line="2139"/>
-        <location filename="../win.cpp" line="2155"/>
-        <location filename="../win.cpp" line="2159"/>
-        <location filename="../win.cpp" line="2163"/>
-        <location filename="../win.cpp" line="2203"/>
-        <location filename="../win.cpp" line="2207"/>
-        <location filename="../win.cpp" line="2211"/>
+        <location filename="../win.cpp" line="2130"/>
+        <location filename="../win.cpp" line="2142"/>
+        <location filename="../win.cpp" line="2158"/>
+        <location filename="../win.cpp" line="2162"/>
+        <location filename="../win.cpp" line="2166"/>
+        <location filename="../win.cpp" line="2206"/>
+        <location filename="../win.cpp" line="2210"/>
+        <location filename="../win.cpp" line="2214"/>
         <source>0V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2127"/>
+        <location filename="../win.cpp" line="2130"/>
         <source>PCS Battery voltage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2128"/>
+        <location filename="../win.cpp" line="2131"/>
         <source>The current PCS samples the battery voltage from the connected battery.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2131"/>
+        <location filename="../win.cpp" line="2134"/>
         <source>PCS Battery current</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2132"/>
+        <location filename="../win.cpp" line="2135"/>
         <source>Battery current sampled by the PCS from the connected battery.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2135"/>
+        <location filename="../win.cpp" line="2138"/>
         <source>PCS Battery power</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2136"/>
+        <location filename="../win.cpp" line="2139"/>
         <source>At present, PCS calculates the product of battery voltage and battery current to obtain battery power.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2139"/>
+        <location filename="../win.cpp" line="2142"/>
         <source>PCS Bus voltage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2140"/>
+        <location filename="../win.cpp" line="2143"/>
         <source>The current bus voltage sampled by PCS from the bus side.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2143"/>
+        <location filename="../win.cpp" line="2146"/>
         <source>39℃</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2143"/>
+        <location filename="../win.cpp" line="2146"/>
         <source>PCS IGBT temperature</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2144"/>
+        <location filename="../win.cpp" line="2147"/>
         <source>The current IGBT temperature of PCS shall not exceed 105℃, otherwise PCS will run derated.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2147"/>
+        <location filename="../win.cpp" line="2150"/>
         <source>25℃</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2147"/>
+        <location filename="../win.cpp" line="2150"/>
         <source>PCS Environment temperature</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2148"/>
+        <location filename="../win.cpp" line="2151"/>
         <source>The ambient temperature of the current PCS.</source>
         <translation type="unfinished"></translation>
     </message>

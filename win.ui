@@ -4494,6 +4494,11 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                    <string>DI3</string>
                   </property>
                  </item>
+                 <item row="6" column="0">
+                  <property name="text">
+                   <string>Maintenance Bypass Breaker</string>
+                  </property>
+                 </item>
                  <item row="6" column="4">
                   <property name="text">
                    <string>DI4</string>
@@ -4690,13 +4695,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                 <height>414</height>
                </size>
               </property>
-              <widget class="QWidget" name="">
+              <widget class="QWidget" name="layoutWidget">
                <property name="geometry">
                 <rect>
                  <x>0</x>
                  <y>0</y>
                  <width>964</width>
-                 <height>440</height>
+                 <height>411</height>
                 </rect>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_3">

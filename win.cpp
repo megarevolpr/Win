@@ -1300,7 +1300,8 @@ void MEGAWin::ModuleState_Tab()//PCS状态
             << tr("Output contactor") << tr("Output breaker") << tr("Maintenance Bypass breaker") << tr("Grid breaker");
 #else
         RTState_Bypass_List1 << tr("DC input breaker")<< tr("DC contactor")\
-                    << tr("Output contactor") << tr("Output breaker") << tr("Grid contactor") << tr("Grid breaker") << tr("Maintenance Bypass breaker");
+                             << tr("Output contactor") << tr("Output breaker") \
+                             << tr("Grid contactor") << tr("Grid breaker") << tr("Maintenance Bypass breaker");
 #endif
         QStringList RTState_Bypass_List2;
          RTState_Bypass_List2 << tr("converter available") << tr("DC Soft start")\
@@ -1308,7 +1309,8 @@ void MEGAWin::ModuleState_Tab()//PCS状态
          QStringList RTState_Bypass_List4;
           RTState_Bypass_List4 << tr("Generator signal") << tr("Reserve")\
                                << tr("Reserve") << tr("EPO contact signal 1")\
-                               << tr("EPO contact signal 2") << tr("Access control signal")<< tr("Full power signal") << tr("Smoke alarm signal")<< tr("Hight temp. signal");
+                               << tr("EPO contact signal 2") << tr("Access control signal")\
+                               << tr("Full power signal") << tr("Smoke alarm signal")<< tr("Hight temp. signal");
 
         ui->RTState_Bypass_Tab->setColumnCount(6);
         ui->RTState_Bypass_Tab->setRowCount(9);
@@ -2245,88 +2247,88 @@ void MEGAWin::Load_Data()
 void MEGAWin::PCS_State()
 {
     DC_input_Breaker = new Specification(this,DC_input_Breaker_explain, ui->RTState_Bypass_Tab, 0, 1, \
-                                            "Close", "DC input Breaker", \
-                                            "直流输入断路器有三种状态：断开(Break)，闭合(Close)，脱扣(Trip)；直流输入断路器只能手动断开，如果直流输入断路器过流，直流输入断路器会发生脱扣\nDc input circuit breaker has three states: Break, Close, Trip; The DC input circuit breaker can only be manually disconnected. If the DC input circuit breaker overcurrent, the DC input circuit breaker may trip.");
+                                            tr("Close"), tr("DC input Breaker"), \
+                                            tr("DC input circuit breaker has three states: Break, Close, Trip; The DC input circuit breaker can only be manually disconnected. If the DC input circuit breaker overcurrent, the DC input circuit breaker may trip."));
     DC_input_Breaker->add_Specification();
     DC_Cont = new Specification(this,DC_Cont_explain, ui->RTState_Bypass_Tab, 1, 1, \
-                                            "Close", "DC contactor", \
-                                            "直流接触器有两种状态：断开(Break)，闭合(Close)；当直流侧软启完成后，直流接触器闭合；当电池直流侧断开，直流母线电压下降到一定电压，直流接触器断开\nDc contactor has two states: Break, Close; When the DC side is soft Break, the DC contactor is closed. When the DC side of the battery is disconnected, the DC bus voltage drops to a certain voltage, and the DC contactor is disconnected.");
+                                            tr("Close"), tr("DC contactor"), \
+                                            tr("DC contactor has two states: Break, Close; When the DC side is soft Break, the DC contactor is closed. When the DC side of the battery is disconnected, the DC bus voltage drops to a certain voltage, and the DC contactor is disconnected."));
     DC_Cont->add_Specification();
     Output_Cont = new Specification(this,Output_Cont_explain, ui->RTState_Bypass_Tab, 2, 1, \
-                                            "Close", "Output contactor", \
-                                            "输出断路器有三种状态：断开(Break)，闭合(Close)，脱扣(Trip)；只能手动断开，如果输出断路器过流，输出断路器会发生脱扣\nThe output circuit breaker has three states: Break, Close, Trip; If the output circuit breaker overcurrent, the output circuit breaker will trip.");
+                                            tr("Close"), tr("Output contactor"), \
+                                            tr("The output circuit breaker has three states: Break, Close, Trip; If the output circuit breaker overcurrent, the output circuit breaker will trip."));
     Output_Cont->add_Specification();
     Output_Breaker = new Specification(this,Output_Breaker_explain, ui->RTState_Bypass_Tab, 3, 1, \
-                                            "Close", "Output Breaker", \
-                                            "输出接触器有两种状态：断开(Break)，闭合(Close)；当直流侧软启完成后，输出接触器闭合；当变流器关机时，输出接触器断开\nThe output contactor has two states: Break, Close; When the DC side soft opening is completed, the output contactor is closed; When the converter is turned off, the output contactor is disconnected.");
+                                            tr("Close"), tr("Output Breaker"), \
+                                            tr("The output contactor has two states: Break, Close; When the DC side soft opening is completed, the output contactor is closed; When the converter is turned off, the output contactor is disconnected."));
     Output_Breaker->add_Specification();
     Grid_Cont = new Specification(this,Grid_Cont_explain, ui->RTState_Bypass_Tab, 4, 1, \
-                                            "Close", "Grid contactor", \
-                                            "电网接触器有两种状态：断开(Break)，闭合(Close)，当变流器处于并网模式下，且电网侧电压正常时，电网接触器闭合；变流器处于离网模式下，电网接触器断开\nThe network contactor has two states: Break, Close; When the converter is in grid-connected mode and the grid side voltage is normal, the network contactor is closed. The converter is in off-grid mode and the network contactor is disconnected.");
+                                            tr("Close"), tr("Grid contactor"), \
+                                            tr("The network contactor has two states: Break, Close; When the converter is in grid-connected mode and the grid side voltage is normal, the network contactor is closed. The converter is in off-grid mode and the network contactor is disconnected."));
     Grid_Cont->add_Specification();
     Grid_Breaker = new Specification(this,Grid_Breaker_explain, ui->RTState_Bypass_Tab, 5, 1, \
-                                            "Close", "Grid Breaker", \
-                                            "电网断路器有三种状态：断开(Break)，闭合(Close)，脱扣(Trip)；电网断路器只能手动断开，如果电网断路器过流，电网断路器会发生脱扣\nThe power grid circuit breaker has three states: Break, Close, Trip; The power grid circuit breaker can only be manually disconnected. If the power grid circuit breaker overflows, the power grid circuit breaker may trip.");
+                                            tr("Close"), tr("Grid Breaker"), \
+                                            tr("The power grid circuit breaker has three states: Break, Close, Trip; The power grid circuit breaker can only be manually disconnected. If the power grid circuit breaker overflows, the power grid circuit breaker may trip."));
     Grid_Breaker->add_Specification();
     MB_Breaker = new Specification(this,MB_Breaker_explain, ui->RTState_Bypass_Tab, 6, 1, \
-                                            "Close", "Maintenance Bypass Breaker", \
-                                            "维修旁路断路器有两种状态：断开(Break)，闭合(Close)；此断路器仅用于机器维护，如有需要，请联系维护人员\nMaintenance bypass circuit breaker has two states: Break, Close; This circuit breaker is only used for machine maintenance, if necessary, please contact the maintenance personnel.");
+                                            tr("Close"), tr("Maintenance Bypass Breaker"), \
+                                            tr("Maintenance bypass circuit breaker has two states: Break, Close; This circuit breaker is only used for machine maintenance, if necessary, please contact the maintenance personnel."));
     MB_Breaker->add_Specification();
     converter_available = new Specification(this,converter_available_explain, ui->RTState_Bypass_Tab, 0, 3, \
-                                            "Disable", "converter available", \
-                                            "变流器使能有两种状态：使能(Enable)、禁止(Disable)；当机器内部自检没有问题时，变流器使能；否则变流器禁止\nThe converter can be enabled in two states: Enable and Disable. When the internal self-test of the machine is no problem, the converter is enabled; Otherwise the converter is prohibited.");
+                                            tr("Disable"), tr("converter available"), \
+                                            tr("The converter can be enabled in two states: Enable and Disable. When the internal self-test of the machine is no problem, the converter is enabled; Otherwise the converter is prohibited."));
     converter_available->add_Specification();
     DC_Soft_start = new Specification(this,DC_Soft_start_explain, ui->RTState_Bypass_Tab, 1, 3, \
-                                            "Not starting", "DC Soft start", \
-                                            "直流软启动有三种状态：软启中(Soft starting)，软启完成(complete)，未启动(Not starting)；软启动是指变流器在启动时，通过控制电流或电压的变化使设备逐渐加速或减速到正常运行状态，以减少电路中的电流冲击和电压峰值，保护电路元器件并减少设备的机械损伤。软启动可以增加设备的寿命，减少能耗，提高系统效率\nThe DC Soft boot has three states: Soft starting, complete, and Not starting. Soft start means that when the converter is started, it gradually accelerates or decelerates the device to the normal operating state by controlling the change of current or voltage, so as to reduce the current shock and voltage peak in the circuit, protect the circuit components and reduce the mechanical damage of the device. Soft start can increase device life, reduce energy consumption, and improve system efficiency.");
+                                            tr("Not starting"), tr("DC Soft start"), \
+                                            tr("The DC Soft boot has three states: Soft starting, complete, and Not starting. Soft start means that when the converter is started, it gradually accelerates or decelerates the device to the normal operating state by controlling the change of current or voltage, so as to reduce the current shock and voltage peak in the circuit, protect the circuit components and reduce the mechanical damage of the device. Soft start can increase device life, reduce energy consumption, and improve system efficiency."));
     DC_Soft_start->add_Specification();
     converter_status = new Specification(this,converter_status_explain, ui->RTState_Bypass_Tab, 2, 3, \
-                                            "Shut down", "converter status", \
-                                            "变流器状态有八种：关闭(OFF)，软启动(Soft start)，并网充电(Grid-ON Charge)，并网放电(Grid-ON Discharge)，离网放电(Grid-OFF Discharge)，降额并网(Drop and Connected)，待机(Standby)，离网充电(Grid-OFF Charge)\nThere are eight converter states:OFF, Soft start, Grid-ON Charge, Grid-ON Discharge, Grid-OFF Discharge, Drop and Connected,Standby, Grid-OFF Charge.");
+                                            tr("Shut down"), tr("converter status"), \
+                                            tr("There are eight converter states:Shut down, Soft start, Grid-ON Charge, Grid-ON Discharge, Grid-OFF Discharge, Drop and Connected,Standby, Grid-OFF Charge."));
     converter_status->add_Specification();
     Reactive_P_Regulation = new Specification(this,Reactive_P_Regulation_explain, ui->RTState_Bypass_Tab, 3, 3, \
-                                            "SVG", "Reactive Power Regulation", \
-                                            "无功调节有三种：禁止(Disable)、功率因数调节(Pf regulation)、无功功率调节(Q regulation)\nThere are three types of reactive power regulation: Disable, Pf regulation, and Q regulation.");
+                                            tr("Disable"), tr("Reactive Power Regulation"), \
+                                            tr("There are three types of reactive power regulation: Disable, Pf regulation, and Q regulation."));
     Reactive_P_Regulation->add_Specification();
     LVRT = new Specification(this,LVRT_explain, ui->RTState_Bypass_Tab, 4, 3, \
-                                            "LVRT", "LVRT", \
-                                            "这是当前低电压穿越(LVRT)的状态，低电压穿越是在确定的时间内承受一定限值的电网低电压而不退出运行的能力，这里有两种状态，分别为无(Non)、有(LVRT)\nThis is the current state of low voltage crossing (LVRT). Low voltage crossing refers to the ability to withstand a certain limit of low voltage of the grid within a certain period of time without exiting the operation. There are two states here, namely Non and LVRT.");
+                                            tr("LVRT"), tr("LVRT"), \
+                                            tr("This is the current state of low voltage crossing (LVRT). Low voltage crossing refers to the ability to withstand a certain limit of low voltage of the grid within a certain period of time without exiting the operation. There are two states here, namely Non and LVRT."));
     LVRT->add_Specification();
     Generator_signal = new Specification(this,Generator_signal_explain, ui->RTState_Bypass_Tab, 0, 5, \
-                                            "Enable", "Generator signal", \
-                                            "这是当前柴发信号的状态，输出干接点1，有使能(Enable)、禁止(Disable)两种状态,此处获取的是最真实的物理硬件状态\nThis is the status of the current chai signal, output dry contact 1, there are Enable and Disable two states, here is the most real physical hardware status.");
+                                            tr("Enable"), tr("Generator signal"), \
+                                            tr("This is the status of the current chai signal, output dry contact 1, there are Enable and Disable two states, here is the most real physical hardware status."));
     Generator_signal->add_Specification();
     Reserve = new Specification(this,Reserve_explain, ui->RTState_Bypass_Tab, 1, 5, \
-                                            "Disable", "Reserve", \
-                                            "这是保留位，无作用，输出干接点2，有使能(Enable)、禁止(Disable)两种状态\nThis bit is reserved and has no effect. Dry contact 2 is output. The status of dry contact 2 is Enable(Enable) or Disable(Disable).");
+                                            tr("Disable"), tr("Reserve"), \
+                                            tr("This bit is reserved and has no effect. Dry contact 2 is output. The status of dry contact 2 is Enable(Enable) or Disable(Disable)."));
     Reserve->add_Specification();
     Reserve2 = new Specification(this,Reserve2_explain, ui->RTState_Bypass_Tab, 2, 5, \
-                                            "Enable", "Reserve2", \
-                                            "这是保留位，无作用，输出干接点3，有使能(Enable)、禁止(Disable)两种状态\nThis bit is reserved and has no effect. Dry contact 2 is output. The status of dry contact 3 is Enable(Enable) or Disable(Disable)");
+                                            tr("Disable"), tr("Reserve2"), \
+                                            tr("This bit is reserved and has no effect. Dry contact 2 is output. The status of dry contact 3 is Enable(Enable) or Disable(Disable)"));
     Reserve2->add_Specification();
     EPO_Cont_signal1 = new Specification(this,EPO_Cont_signal1_explain, ui->RTState_Bypass_Tab, 3, 5, \
-                                            "Disable", "EPO_Cont signal1", \
-                                            "这是EPO节点信号1，输入干接点1，即外部停机干接点信号1，有使能(Enable)、禁止(Disable)两种状态,此处获取的是最真实的物理硬件状态\nThis is signal 1 of the EPO node. Enter dry contact 1, that is, dry contact signal 1 of external shutdown. There are two states: Enable and Disable.");
+                                            tr("Disable"), tr("EPO_Cont signal1"), \
+                                            tr("This is signal 1 of the EPO node. Enter dry contact 1, that is, dry contact signal 1 of external shutdown. There are two states: Enable and Disable."));
     EPO_Cont_signal1->add_Specification();
     EPO_Cont_signal2 = new Specification(this,EPO_Cont_signal2_explain, ui->RTState_Bypass_Tab, 4, 5, \
-                                            "Disable", "EPO_Cont signal2", \
-                                            "这是EPO节点信号2，输入干接点2，即外部停机干接点信号2，有使能(Enable)、禁止(Disable)两种状态,此处获取的是最真实的物理硬件状态\nThis is signal 2 of the EPO node. Enter dry contact 2, that is, dry contact signal 2 of the external shutdown. There are two states: Enable and Disable.");
+                                            tr("Disable"), tr("EPO_Cont signal2"), \
+                                            tr("This is signal 2 of the EPO node. Enter dry contact 2, that is, dry contact signal 2 of the external shutdown. There are two states: Enable and Disable."));
     EPO_Cont_signal2->add_Specification();
     Access_signal = new Specification(this,Access_signal_explain, ui->RTState_Bypass_Tab, 5, 5, \
-                                            "Disable", "Access_signal", \
-                                            "这是门禁信号，输入干接点3，有使能(Enable)、禁止(Disable)两种状态,此处获取的是最真实的物理硬件状态\nThis is the access signal. Enter dry contact 3. The status is Enable or Disable. The actual physical hardware status is obtained here.");
+                                            tr("Disable"), tr("Access_signal"), \
+                                            tr("This is the access signal. Enter dry contact 3. The status is Enable or Disable. The actual physical hardware status is obtained here."));
     Access_signal->add_Specification();
     Full_P_signal = new Specification(this,Full_P_signal_explain, ui->RTState_Bypass_Tab, 6, 5, \
-                                            "Disable", "Full_P_signal", \
-                                            "这是满功率信号，输入干接点4，有使能(Enable)、禁止(Disable)两种状态,此处获取的是最真实的物理硬件状态\nThis is a full power signal, the input dry contact 4 has two states of Enable and Disable, and what is obtained here is the most real physical hardware state.");
+                                            tr("Disable"), tr("Full_P_signal"), \
+                                            tr("This is a full power signal, the input dry contact 4 has two states of Enable and Disable, and what is obtained here is the most real physical hardware state."));
     Full_P_signal->add_Specification();
     Smoke_alarm_signal = new Specification(this,Smoke_alarm_signal_explain, ui->RTState_Bypass_Tab, 7, 5, \
-                                            "Disable", "Smoke alarm signal", \
-                                            "这是烟雾告警信号，输入干接点5，有使能(Enable)、禁止(Disable)两种状态,此处获取的是最真实的物理硬件状态\nThis isa smoke alarm signal. Enter dry contact 5. The status is Enable or Disable. The actual physical hardware status is obtained here.");
+                                            tr("Disable"), tr("Smoke alarm signal"), \
+                                            tr("This isa smoke alarm signal. Enter dry contact 5. The status is Enable or Disable. The actual physical hardware status is obtained here."));
     Smoke_alarm_signal->add_Specification();
     Hight_temp_signal = new Specification(this,Hight_temp_signal_explain, ui->RTState_Bypass_Tab, 8, 5, \
-                                            "Disable", "Hight temp signal", \
-                                            "这是高温信号，输入干接点6，有使能(Enable)、禁止(Disable)两种状态,此处获取的是最真实的物理硬件状态\nThis isa high temperature signal. Input dry contact 6. Two states are available: Enable and Disable.");
+                                            tr("Disable"), tr("Hight temp signal"), \
+                                            tr("This isa high temperature signal. Input dry contact 6. Two states are available: Enable and Disable."));
     Hight_temp_signal->add_Specification();
 }
 /*********系统设置 绘制button**********/
