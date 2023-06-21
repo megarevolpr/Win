@@ -2323,78 +2323,78 @@ void MEGAWin::PCS_State()
 void MEGAWin::ParameterSet()
 {
     Grid_connected_mode = new Specification(this,Grid_connected_mode_explain, ui->System_Tab, 0, 1, \
-                                            "automatic", "Grid connected mode of PCS", \
-                                            "这是PCS并网方式，一共有三项可选：自动(automatic)，并网(On)，离网(Off),选择'自动'时将自动识别当前的并网方式\n并网:与相邻电力系统发送电气连接，并进行功率交换(如与电网连接)\n离网：不依赖电网而独立运行(不接电网)\nThis is the PCS grid connection mode, there are three options: automatic(automatic), On(On), Off(Off), select 'automatic' will automatically identify the current grid connection mode \n grid connection: send electrical connection with the adjacent power system, and carry out power exchange (such as connection with the grid)\n off-grid: To operate independently of the grid (not connected to the grid).");
+                                            tr("automatic"), tr("Grid connected mode of PCS"), \
+                                            tr("    When automatic and off-grid is selected, it will automatically identify and switch and off-grid. When the voltage on the grid side is normal, the contactor on the grid side will close, and the machine is in grid-connected mode (PQ).When the grid is out of power, the grid side contactor will be disconnected, and the machine is in off-grid mode (VF).\n   When the grid-connected mode is selected, and the grid side voltage is normal, the grid side contactor will close, and the machine is in grid-connected mode (PQ);If the power grid loses power, the machine will give an alarm warning of the power grid low voltage.\n    When off-grid mode is selected, the machine will disconnect the grid side contactor, and the machine is in off-grid mode (VF)."));
     Grid_connected_mode->add_Specification();
 
     Constant_power = new Specification(this,Constant_power_explain, ui->System_Tab, 1, 1, \
-                                       "0", "Constant power(AC)", \
-                                       "这是恒功率，可以通过修改这项数值来设置机器的功率,当控制功率方式选择正负功率(CP_N&P)时,正数表示放电，负数表示充电\nThis is constant power, and the power of the machine can be set by modifying this value. When the power control mode is positive and negative (CP_N&P), the positive number means discharge and the negative number means charge.");
+                                       tr("0"), tr("Constant power(AC)"), \
+                                       tr("    This is the power setting of the AC side. The charging and discharging power of the AC side can be controlled by modifying the value of this item.When advanced Settings control power mode select constant power mode (CP_N&P), positive value indicates discharge, negative value indicates charging.\n    For example, set -5, indicating that the AC side will charge the battery with a power of -5kW, due to the loss of the inverter, the power on the DC side will be less than the power on the AC side.\n    For example, set 5, indicating that the AC side will be 5kW power output, due to the loss of the inverter, the DC side of the power will be greater than the AC side of the power."));
     Constant_power->add_Specification();
 
     Charging_and_discharging = new Specification(this,Charging_and_discharging_explain, ui->System_Tab, 2, 1, \
-                                                 "Charge", "Charging and discharging", \
-                                                 "这是充放电，一共有两项可选：充电(Charge)，放电(Discharge)，根据此处选择决定是充电还是放电，当控制功率方式选择恒功率(CP_P)时，此项可调\nThis is Charge and Discharge, and there are two options: charge(Charge) and discharge(Discharge). Charge or discharge can be determined according to the choice here. When the power control mode is Constant power(CP_P), this option can be adjusted.");
+                                                 tr("Charge"), tr("Charging and discharging"), \
+                                                 tr("Reserve."));
     Charging_and_discharging->add_Specification();
 
     Work_mode = new Specification(this,Work_mode_explain, ui->System_Tab, 3, 1, \
-                                  "Manual", "Work mode", \
-                                  "这是工作模式，有四项可选：手动(Manual)，UPS(UPS)，削峰填谷(Peak valley)，受控制削峰填谷(Prevent countercurrnet)。\n手动模式时，充放电由自主手动决定。\n削峰填谷模式时，用电高峰时优先使用电池给负载供电，用电低谷时优先给电池充电。\nUPS模式时，将为负载不间断地提供稳定电源。\n受控削峰填谷模式时，对系统防逆流，一般配合电表一起使用。\nThis is the working mode, with four options: Manual(Manual), UPS(UPS), Peak valley(Peak valley), Prevent countercurrnet(Prevent countercurrnet).\nManual mode, charge and discharge are determined manually.\nIn peak valley mode, the battery is preferred to supply power to the load during peak demand. When the power is low, the battery will be charged first.\nUPS mode will provide a stable power supply for the load without interruption.\nIn the controlled peak-load mode(Prevent countercurrnet), the system is anti-countercurrent and generally used with the meter.");
+                                  tr("Manual"), tr("Work mode"), \
+                                  tr("    When manual mode is selected (applicable to EMS remote scheduling), you can use the HMI or EMS to control the running status of the machine. Charge and discharge power (active power) Reactive power information such as the power factor.\n    When the UPS mode (backup mode) is selected, the system switches from zero power to off-grid discharge mode to provide energy for critical loads when the power grid loses power.Please go to the battery setting page to set this mode. Note: This mode is only used in lithium mode, and the communication between PCS and BMS is normal.\n    The peak-valley filling mode is used for peak-valley arbitrage. PCS can operate according to the local peak-valley electricity price period, and can go to the automatic operation page to set the charging and discharging mode charging and discharging power and other information during the operation period.\n    When the system anti-countercurrent mode is selected, the PCS in this mode is in the local power grid system, and the energy meter is connected at the entrance of the power grid. When the PCS discharges the system, if the PCS detects that there is energy flowing into the power grid in reverse direction, the PCS will actively reduce the power to prevent energy flowing into the power grid."));
     Work_mode->add_Specification();
 
     Output_power_factor = new Specification(this,Output_power_factor_explain, ui->System_Tab, 4, 1, \
-                                            "1", "Output power factor", \
-                                            "这是输出功率因数，是用来衡量电气设备输出效率高低的一个系数，不可调\nThis is the output power factor, which is a coefficient used to measure the output efficiency of electrical equipment and cannot be adjusted.");
+                                            tr("1"), tr("Output power factor"), \
+                                            tr("    The power factor Pf can be modified. The power factor is equal to the ratio of active power and reactive power. Positive value indicates reactive power lead and negative value indicates reactive power lag.\n    The power factor is a coefficient used to measure the output efficiency of electrical equipment, and the power factor is equal to the ratio of active power to reactive power. When the output reactive power factor is selected in the advanced settings 'system Settings' page, this output power factor can be modified to control the output of active power and reactive power."));
     Output_power_factor->add_Specification();
 
     Output_reactive_power = new Specification(this,Output_reactive_power_explain, ui->System_Tab, 5, 1, \
-                                              "1", "Output reactive power", \
-                                              "这是输出无功功率，它表达了输出交流电源能量与磁场或电场能量交换的最大速率，不可调\nThis is the output reactive power, which expresses the maximum rate at which the output AC power source energy is exchanged with the magnetic or electric field energy and is not adjustable.");
+                                              tr("1"), tr("Output reactive power"), \
+                                              tr("    This parameter can change the reactive power Q, positive value indicates reactive power lead, negative value indicates reactive power lag."));
     Output_reactive_power->add_Specification();
 
     Constant_current = new Specification(this,Constant_current_explain, ui->System_Tab, 6, 1, \
-                                         "100", "Constant current", \
-                                         "这是恒流值，当控制功率方式选择恒流(CC)时，此项可调，电流值稳定为此值\nThis is the constant current value, when the control power mode selects constant current (CC), this can be adjusted, the current value is stable for this value.");
+                                         tr("100"), tr("Constant current"), \
+                                         tr("    When the control power mode of the advanced Settings page is set to constant current (CC), modify the constant current value, then the machine will charge and discharge the battery with the current value, positive value represents discharge, negative value represents charging."));
     Constant_current->add_Specification();
 
     Constant_voltage = new Specification(this,Constant_voltage_explain, ui->System_Tab, 7, 1, \
-                                         "600", "Constant voltage", \
-                                         "这是恒压值，当控制功率方式选择恒压(CV)时，此项可调，电压值稳定为此值\nThis is the constant voltage value, when the control power mode selects constant voltage (CV), this can be adjusted, the voltage value is stable for this value.");
+                                         tr("600"), tr("Constant voltage"), \
+                                         tr("    When the control power mode of the Advanced Settings 'Function Settings' page is set to constant voltage (CV), modify the constant voltage value, the machine will operate at a constant voltage value, and the machine will be used as a constant voltage source."));
     Constant_voltage->add_Specification();
 
     Control_mode = new Specification(this,Control_mode_explain, ui->System_Tab, 0, 4, \
-                                     "Local", "Control mode", \
-                                     "这是工作模式，有两项可选：本地(Local)，远程(Remote)，选择'本地'时，可在本地修改系统参数，选择'远程'时，可通过EMS、485等进行远程修改参数\nThis is the working mode, there are two options: Local (Local), Remote (Remote), select 'local', you can modify the system parameters locally, select 'remote', you can modify the parameters remotely through EMS, 485, etc.");
+                                     tr("Local"), tr("Control mode"), \
+                                     tr("    This is the control mode;If the local mode is selected, the dispatcher (EMS, RS485) can only monitor data but cannot control PCS. If the remote mode is selected,PCS parameter setting is disabled and the dispatcher (EMS,  RS485) can read and write data."));
     Control_mode->add_Specification();
 
     Machine_number = new Specification(this,Machine_number_explain, ui->System_Tab, 1, 4, \
-                                       "Master_00", "Machine number", \
-                                       "这是设备号，可以选择主机(Master)或者从机(Slave)，其中主机为Master_00，其余八项Slave_01~Slave_08均为从机\nThis is the device number, and you can choose host(Master) or slave(Slave), where master is Master_00 and Slave_01 to Slave_08 are slaves.");
+                                       tr("Master_00"), tr("Machine number"), \
+                                       tr("    This is the device number, and you can choose host(Master) or slave(Slave), where master is Master_00 and Slave_01 to Slave_08 are slaves."));
     Machine_number->add_Specification();
 
     Parallel = new Specification(this,Parallel_explain, ui->System_Tab, 2, 4, \
-                                 "Disable", "Parallel", \
-                                 "这是并机模式，有两项可选：使能(Enable)，禁止(Disable)，开启并机时，可将多台设备联合到一起为负载供电\nThis is the parallel mode, with two options: enabled(Enable), disabled(Disable), and when enabled, multiple devices can be combined to power the load.");
+                                 tr("Disable"), tr("Parallel"), \
+                                 tr("Reserve."));
     Parallel->add_Specification();
 
     Unbalance_power_enable = new Specification(this,Unbalance_power_enable_explain, ui->System_Tab, 3, 4, \
-                                               "Disable", "Unbalance power enable", \
-                                               "这是功率不平衡使能，有两项可选：使能(Enable)，禁止(Disable)，功率不平衡是指三相电流与电压之间的相位差不相等，平均功率不为0导致的功率偏差，使能后将使功率维持平衡\nThis is power imbalance enable, there are two options: enabled(Enable), disabled(Disable), power imbalance refers to the phase difference between the three-phase current and voltage is not equal, the average power is not 0 caused by the power deviation, after enabling will make the power balance.");
+                                               tr("Disable"), tr("Unbalance power enable"), \
+                                               tr("Reserve."));
     Unbalance_power_enable->add_Specification();
 
     Phase_A_power = new Specification(this,Phase_A_power_explain, ui->System_Tab, 4, 4, \
-                                      "5", "Phase A power", \
-                                      "这是A相功率，此处可设置A相的功率\nThis is the power of phase A. The power of phase A can be set here.");
+                                      tr("5"), tr("Phase A power"), \
+                                      tr("Reserve."));
     Phase_A_power->add_Specification();
 
     Phase_B_power = new Specification(this,Phase_B_power_explain, ui->System_Tab, 5, 4, \
-                                      "5", "Phase B power", \
-                                      "这是B相功率，此处可设置B相的功率\nThis is the power of phase B. The power of phase B can be set here.");
+                                      tr("5"), tr("Phase B power"), \
+                                      tr("Reserve."));
     Phase_B_power->add_Specification();
 
     Phase_C_power = new Specification(this,Phase_C_power_explain, ui->System_Tab, 6, 4, \
-                                      "5", "Phase C power", \
-                                      "这是C相功率，此处可设置C相的功率\nThis is the power of phase C. The power of phase C can be set here.");
+                                      tr("5"), tr("Phase C power"), \
+                                      tr("Reserve."));
     Phase_C_power->add_Specification();
 
 }

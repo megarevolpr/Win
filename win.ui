@@ -7910,6 +7910,63 @@ background-color: rgb(255, 0, 0);</string>
           </property>
          </item>
         </widget>
+        <widget class="QWidget" name="Work_Mode" native="true">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>981</width>
+           <height>421</height>
+          </rect>
+         </property>
+         <widget class="QLabel" name="Title_lb">
+          <property name="geometry">
+           <rect>
+            <x>370</x>
+            <y>0</y>
+            <width>231</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>  Title</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="Description_lb">
+          <property name="geometry">
+           <rect>
+            <x>90</x>
+            <y>60</y>
+            <width>791</width>
+            <height>301</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Description</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="Return_btn">
+          <property name="geometry">
+           <rect>
+            <x>440</x>
+            <y>370</y>
+            <width>84</width>
+            <height>24</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Return</string>
+          </property>
+         </widget>
+        </widget>
+        <zorder>Work_Mode</zorder>
+        <zorder>System_Tab</zorder>
        </widget>
        <widget class="QWidget" name="BatterySet_page">
         <attribute name="title">
