@@ -1662,12 +1662,12 @@ void MEGAWin::MonitorDebug_clicked(int nid)
                               ,"这是关闭本地软启动，仅提供内部调试使用\nThis is to turn off the local soft boot for internal debugging use only.", "OK");
             break;
         case 4:
-            QMessageBox::question(this, "BMS power on"\
-                          ,"这是电池上电\nThis is power on the battery.", "OK");
+            QMessageBox::question(this, tr("BMS power on")\
+                          ,tr("This is battery power-on, which can give the BMS instructions to close the contactor (Note: only some BMS manufacturers support this function)."), tr("OK"));
             break;
         case 5:
-            QMessageBox::question(this, "BMS power off"\
-                          ,"这是电池下电\nThis is power off the battery.", "OK");
+            QMessageBox::question(this, tr("BMS power off")\
+                          ,tr("This is the battery power off, this item can give the BMS to disconnect the contactor command (note: only some BMS manufacturers support this function)."), tr("OK"));
             break;
         default:
             break;
@@ -2402,76 +2402,76 @@ void MEGAWin::ParameterSet()
 void MEGAWin::BetterySetup()
 {
     DOD_OnGrid = new Specification(this,DOD_OnGrid_explain, ui->Lithum_Tab, 0, 1, \
-                                     "90", "DOD_OnGrid", \
-                                     "并网工况下电池的放电深度，默认90\nThe default discharge depth of the battery in grid-connected condition is 90.");
+                                     tr("90"), tr("DOD_OnGrid"), \
+                                     tr("Grid-connected DOD, the depth of discharge allowed in grid-connected mode."));
     DOD_OnGrid->add_Specification();
     DOD_OffGrid = new Specification(this,DOD_OffGrid_explain, ui->Lithum_Tab, 1, 1, \
-                                     "90", "DOD_OffGrid", \
-                                     "离网工况下电池的放电深度，默认90\nThe default discharge depth of the battery in off-grid mode is 90.");
+                                     tr("90"), tr("DOD_OffGrid"), \
+                                     tr("Off-network DOD: Discharge depth allowed in off-network mode."));
     DOD_OffGrid->add_Specification();
     Charge_Vol_Up_Limit = new Specification(this,Charge_Vol_Up_Limit_explain, ui->Lithum_Tab, 2, 1, \
-                                     "792", "Charge_Vol_Up_Limit", \
-                                     "充电时电池电压所允许达到的最大值\nThe maximum allowable battery voltage during charging.");
+                                     tr("792"), tr("Charge_Vol_Up_Limit"), \
+                                     tr("This is the upper limit of the charging voltage. When the total battery voltage reaches this value during charging, the PCS will enter the constant voltage mode to prevent the battery from overcharging."));
     Charge_Vol_Up_Limit->add_Specification();
     Disc_Vol_lower_Limit = new Specification(this,Disc_Vol_lower_Limit_explain, ui->Lithum_Tab, 3, 1, \
-                                     "616", "Disc_Vol_lower_Limit", \
-                                     "放电时电池电压所允许的最小值\nThe minimum allowable battery voltage when discharging.");
+                                     tr("616"), tr("Disc_Vol_lower_Limit"), \
+                                     tr("This is the lower limit of the discharge voltage. When the total battery voltage during discharge reaches this value, PCS will trigger a battery low voltage alarm, and PCS will shut down to prevent battery overdischarge."));
     Disc_Vol_lower_Limit->add_Specification();
     Charge_Cur_Limit = new Specification(this,Charge_Cur_Limit_explain, ui->Lithum_Tab, 4, 1, \
-                                     "160", "Charge_Cur_Limit", \
-                                     "允许的最大充电电流\nThe maximum allowable charging current.");
+                                     tr("160"), tr("Charge_Cur_Limit"), \
+                                     tr("This is the upper limit of charging current, which is the maximum current allowed on the DC side of PCS to prevent charging overcurrent."));
     Charge_Cur_Limit->add_Specification();
     Gen_turn_off_SOC = new Specification(this,Gen_turn_off_SOC_explain, ui->Lithum_Tab, 5, 1, \
-                                     "85", "Gen_turn_off_SOC", \
-                                     "达到指定SCO值时，柴油发电机关闭\nWhen the specified SCO value is reached, the diesel generator shuts down.");
+                                     tr("85"), tr("Gen_turn_off_SOC"), \
+                                     tr("When the specified SCO value is reached, the diesel generator shuts down."));
     Gen_turn_off_SOC->add_Specification();
     Gen_turn_on_SOC = new Specification(this,Gen_turn_on_SOC_explain, ui->Lithum_Tab, 6, 1, \
-                                     "25", "Gen_turn_on_SOC", \
-                                     "达到指定SOC值时，柴油发电机开启\nWhen the specified SOC value is reached, the diesel generator starts.");
+                                     tr("25"), tr("Gen_turn_on_SOC"), \
+                                     tr("When the specified SOC value is reached, the diesel generator starts."));
     Gen_turn_on_SOC->add_Specification();
     Gen_charge_SOC = new Specification(this,Gen_charge_SOC_explain, ui->Lithum_Tab, 7, 1, \
-                                     "10", "Gen_charge_SOC", \
-                                     "达到指定SOC值时，柴油发电机开始充电\nWhen the specified SOC value is reached, the diesel generator starts charging.");
+                                     tr("10"), tr("Gen_charge_SOC"), \
+                                     tr("This is the diesel generator charging SOC, this parameter is used in the combined power supply mode, when the battery SOC reaches this value, the PCS starts charging."));
     Gen_charge_SOC->add_Specification();
     Grid_charge_SOC = new Specification(this,Grid_charge_SOC_explain, ui->Lithum_Tab, 8, 1, \
-                                     "15", "Grid_charge_SOC", \
-                                     "到达指定SOC值时，开始电网充电\nWhen the specified SOC value is reached, grid charging begins.");
+                                     tr("15"), tr("Grid_charge_SOC"), \
+                                     tr("This is the grid charging SOC, this parameter is used in the combined power supply mode, when the battery SOC reaches this value, the PCS starts charging."));
     Grid_charge_SOC->add_Specification();
     Grid_capacity = new Specification(this,Grid_capacity_explain, ui->Lithum_Tab, 9, 1, \
-                                     "150", "Grid_capacity", \
-                                     "电网容量，电网允许带的总负荷\nThe capacity of the grid, the total load allowed on the grid.");
+                                     tr("100"), tr("Grid_capacity"), \
+                                     tr("This is the power grid capacity, the maximum capacity input on the AC side of PCS, and this parameter takes effect in the combined power supply mode."));
     Grid_capacity->add_Specification();
     Turn_on_SOC = new Specification(this,Turn_on_SOC_explain, ui->Lithum_Tab, 0, 4, \
-                                     "20", "Turn_on_SOC", \
-                                     "当电池剩余电量百分比达到此值时开始充电\nCharging begins when the percentage of remaining battery capacity reaches this value.");
+                                     tr("20"), tr("Turn_on_SOC"), \
+                                     tr("When UPS mode is selected and battery SOC reaches this value,PCS starts charging."));
     Turn_on_SOC->add_Specification();
     Turn_off_SOC = new Specification(this,Turn_off_SOC_explain, ui->Lithum_Tab, 1, 4, \
-                                     "50", "Turn_off_SOC", \
-                                     "当电池剩余电量百分比达到此值时停止充电\nStop charging when the percentage of remaining battery power reaches this value.");
+                                     tr("50"), tr("Turn_off_SOC"), \
+                                     tr("When UPS mode is selected,PCS stops charging when battery SOC reaches this value."));
     Turn_off_SOC->add_Specification();
     Turn_on_cell_vol = new Specification(this,Turn_on_cell_vol_explain, ui->Lithum_Tab, 2, 4, \
-                                     "3100", "Turn_on_cell_vol", \
-                                     "所有单体中的最高电压达到此值时开始充电\nCharge begins when the highest voltage in all cells reaches this value.");
+                                     tr("3100"), tr("Turn_on_cell_vol"), \
+                                     tr("When UPS mode is selected, the PCS starts charging when the minimum battery voltage reaches the value."));
     Turn_on_cell_vol->add_Specification();
     Turn_off_cell_vol = new Specification(this,Turn_off_cell_vol_explain, ui->Lithum_Tab, 3, 4, \
-                                     "3500", "Turn_off_cell_vol", \
-                                     "所有单体中的最高电压达到此值时停止充电\nThe highest voltage in all cells stops charging when it reaches this value.");
+                                     tr("3500"), tr("Turn_off_cell_vol"), \
+                                     tr("When UPS mode is selected, PCS stops charging when the maximum battery voltage reaches this value."));
     Turn_off_cell_vol->add_Specification();
     Turn_on_total_vol = new Specification(this,Turn_on_total_vol_explain, ui->Lithum_Tab, 4, 4, \
-                                     "400", "Turn_on_total_vol", \
-                                     "当电池电压达到此值时开始充电\nCharge begins when the battery voltage reaches this value.");
+                                     tr("400"), tr("Turn_on_total_vol"), \
+                                     tr("When the UPS mode is selected, the PCS starts charging when the total battery voltage reaches the value."));
     Turn_on_total_vol->add_Specification();
     Turn_off_total_vol = new Specification(this,Turn_off_total_vol_explain, ui->Lithum_Tab, 5, 4, \
-                                     "650", "Turn_off_total_vol", \
-                                     "当电池电压达到此值时停止充电\nStop charging when the battery voltage reaches this value.");
+                                     tr("650"), tr("Turn_off_total_vol"), \
+                                     tr("When UPS mode is selected, PCS stops charging when the total battery voltage reaches this value."));
     Turn_off_total_vol->add_Specification();
     UPS_charge_power = new Specification(this,UPS_charge_power_explain, ui->Lithum_Tab, 6, 4, \
-                                     "-1", "UPS_charge_power", \
-                                     "工作模式为后备模式时的充电功率\nThe charging power when the working mode is backup mode.");
+                                     tr("-1"), tr("UPS_charge_power"), \
+                                     tr("When UPS mode is selected, the backup charging power of PCS is used when the battery starts charging."));
     UPS_charge_power->add_Specification();
     Monthly_cycle_time = new Specification(this,Monthly_cycle_time_explain, ui->Lithum_Tab, 7, 4, \
-                                     "0", "Monthly_cycle_time", \
-                                     "当每月到达这一天都会进行一次充放电循环\nA charge-discharge cycle is performed once a month on that date.");
+                                     tr("0"), tr("Monthly_cycle_time"), \
+                                     tr("On the same day of each month, there is a deep charge and discharge."));
     Monthly_cycle_time->add_Specification();
 }
 /************自动运行 绘制button*************/

@@ -194,6 +194,7 @@
         <location filename="../win.ui" line="4027"/>
         <location filename="../win.ui" line="4125"/>
         <location filename="../win.ui" line="8435"/>
+        <location filename="../win.cpp" line="2433"/>
         <source>10</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1384,6 +1385,7 @@ enable</source>
         <location filename="../win.ui" line="5012"/>
         <location filename="../win.ui" line="5050"/>
         <location filename="../win.cpp" line="2356"/>
+        <location filename="../win.cpp" line="2441"/>
         <source>100</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1919,11 +1921,13 @@ B1 - A1 ≥ 30 %
     </message>
     <message>
         <location filename="../win.ui" line="8795"/>
+        <location filename="../win.cpp" line="1665"/>
         <source>BMS power on</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="8814"/>
+        <location filename="../win.cpp" line="1669"/>
         <source>BMS power off</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2195,6 +2199,22 @@ B1 - A1 ≥ 30 %
     <message>
         <location filename="../win.cpp" line="762"/>
         <source>DC bus short circuit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="1666"/>
+        <location filename="../win.cpp" line="1670"/>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="1666"/>
+        <source>This is battery power-on, which can give the BMS instructions to close the contactor (Note: only some BMS manufacturers support this function).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="1670"/>
+        <source>This is the battery power off, this item can give the BMS to disconnect the contactor command (note: only some BMS manufacturers support this function).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2475,6 +2495,257 @@ automatically and reset time</source>
     <message>
         <location filename="../win.cpp" line="2372"/>
         <source>    This is the device number, and you can choose host(Master) or slave(Slave), where master is Master_00 and Slave_01 to Slave_08 are slaves.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2405"/>
+        <location filename="../win.cpp" line="2409"/>
+        <source>90</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2405"/>
+        <source>DOD_OnGrid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2406"/>
+        <source>Grid-connected DOD, the depth of discharge allowed in grid-connected mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2409"/>
+        <source>DOD_OffGrid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2410"/>
+        <source>Off-network DOD: Discharge depth allowed in off-network mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2413"/>
+        <source>792</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2413"/>
+        <source>Charge_Vol_Up_Limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2414"/>
+        <source>This is the upper limit of the charging voltage. When the total battery voltage reaches this value during charging, the PCS will enter the constant voltage mode to prevent the battery from overcharging.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2417"/>
+        <source>616</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2417"/>
+        <source>Disc_Vol_lower_Limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2418"/>
+        <source>This is the lower limit of the discharge voltage. When the total battery voltage during discharge reaches this value, PCS will trigger a battery low voltage alarm, and PCS will shut down to prevent battery overdischarge.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2421"/>
+        <source>160</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2421"/>
+        <source>Charge_Cur_Limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2422"/>
+        <source>This is the upper limit of charging current, which is the maximum current allowed on the DC side of PCS to prevent charging overcurrent.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2425"/>
+        <source>85</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2425"/>
+        <source>Gen_turn_off_SOC</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2426"/>
+        <source>When the specified SCO value is reached, the diesel generator shuts down.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2429"/>
+        <source>25</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2429"/>
+        <source>Gen_turn_on_SOC</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2430"/>
+        <source>When the specified SOC value is reached, the diesel generator starts.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2433"/>
+        <source>Gen_charge_SOC</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2434"/>
+        <source>This is the diesel generator charging SOC, this parameter is used in the combined power supply mode, when the battery SOC reaches this value, the PCS starts charging.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2437"/>
+        <source>15</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2437"/>
+        <source>Grid_charge_SOC</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2438"/>
+        <source>This is the grid charging SOC, this parameter is used in the combined power supply mode, when the battery SOC reaches this value, the PCS starts charging.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2441"/>
+        <source>Grid_capacity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2442"/>
+        <source>This is the power grid capacity, the maximum capacity input on the AC side of PCS, and this parameter takes effect in the combined power supply mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2445"/>
+        <source>20</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2445"/>
+        <source>Turn_on_SOC</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2446"/>
+        <source>When UPS mode is selected and battery SOC reaches this value,PCS starts charging.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2449"/>
+        <source>50</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2449"/>
+        <source>Turn_off_SOC</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2450"/>
+        <source>When UPS mode is selected,PCS stops charging when battery SOC reaches this value.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2453"/>
+        <source>3100</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2453"/>
+        <source>Turn_on_cell_vol</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2454"/>
+        <source>When UPS mode is selected, the PCS starts charging when the minimum battery voltage reaches the value.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2457"/>
+        <source>3500</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2457"/>
+        <source>Turn_off_cell_vol</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2458"/>
+        <source>When UPS mode is selected, PCS stops charging when the maximum battery voltage reaches this value.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2461"/>
+        <source>400</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2461"/>
+        <source>Turn_on_total_vol</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2462"/>
+        <source>When the UPS mode is selected, the PCS starts charging when the total battery voltage reaches the value.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2465"/>
+        <source>650</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2465"/>
+        <source>Turn_off_total_vol</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2466"/>
+        <source>When UPS mode is selected, PCS stops charging when the total battery voltage reaches this value.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2469"/>
+        <source>-1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2469"/>
+        <source>UPS_charge_power</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2470"/>
+        <source>When UPS mode is selected, the backup charging power of PCS is used when the battery starts charging.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2473"/>
+        <source>Monthly_cycle_time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2474"/>
+        <source>On the same day of each month, there is a deep charge and discharge.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3389,6 +3660,7 @@ fault</source>
         <location filename="../win.cpp" line="2186"/>
         <location filename="../win.cpp" line="2230"/>
         <location filename="../win.cpp" line="2331"/>
+        <location filename="../win.cpp" line="2473"/>
         <source>0</source>
         <translation type="unfinished"></translation>
     </message>

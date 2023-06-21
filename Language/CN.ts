@@ -194,6 +194,7 @@
         <location filename="../win.ui" line="4027"/>
         <location filename="../win.ui" line="4125"/>
         <location filename="../win.ui" line="8435"/>
+        <location filename="../win.cpp" line="2433"/>
         <source>10</source>
         <translation></translation>
     </message>
@@ -1384,6 +1385,7 @@ enable</source>
         <location filename="../win.ui" line="5012"/>
         <location filename="../win.ui" line="5050"/>
         <location filename="../win.cpp" line="2356"/>
+        <location filename="../win.cpp" line="2441"/>
         <source>100</source>
         <translation>100</translation>
     </message>
@@ -1933,11 +1935,13 @@ B1 - A1 ≥ 30 %
     </message>
     <message>
         <location filename="../win.ui" line="8795"/>
+        <location filename="../win.cpp" line="1665"/>
         <source>BMS power on</source>
         <translation>电池上电</translation>
     </message>
     <message>
         <location filename="../win.ui" line="8814"/>
+        <location filename="../win.cpp" line="1669"/>
         <source>BMS power off</source>
         <translation>电池下电</translation>
     </message>
@@ -2210,6 +2214,22 @@ B1 - A1 ≥ 30 %
         <location filename="../win.cpp" line="762"/>
         <source>DC bus short circuit</source>
         <translation>直流母线短路</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="1666"/>
+        <location filename="../win.cpp" line="1670"/>
+        <source>OK</source>
+        <translation>确定</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="1666"/>
+        <source>This is battery power-on, which can give the BMS instructions to close the contactor (Note: only some BMS manufacturers support this function).</source>
+        <translation>这是电池上电，该项可以给BMS下发闭合接触器的指令(注：仅部分BMS厂家支持该功能)。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="1670"/>
+        <source>This is the battery power off, this item can give the BMS to disconnect the contactor command (note: only some BMS manufacturers support this function).</source>
+        <translation>这是电池下电，该项可以给BMS下发断开接触器的指令(注：仅部分BMS厂家支持该功能)。</translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1990"/>
@@ -2496,6 +2516,257 @@ automatically and reset time</source>
         <location filename="../win.cpp" line="2372"/>
         <source>    This is the device number, and you can choose host(Master) or slave(Slave), where master is Master_00 and Slave_01 to Slave_08 are slaves.</source>
         <translation>    这是设备号，可以选择主机(Master)或者从机(Slave)，其中主机为Master_00，其余八项Slave_01~Slave_08均为从机。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2405"/>
+        <location filename="../win.cpp" line="2409"/>
+        <source>90</source>
+        <translation>90</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2405"/>
+        <source>DOD_OnGrid</source>
+        <translation>并网DOD</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2406"/>
+        <source>Grid-connected DOD, the depth of discharge allowed in grid-connected mode.</source>
+        <translation>并网DOD，并网模式下允许的放电深度。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2409"/>
+        <source>DOD_OffGrid</source>
+        <translation>离网DOD</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2410"/>
+        <source>Off-network DOD: Discharge depth allowed in off-network mode.</source>
+        <translation>离网DOD，离网模式下允许的放电深度。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2413"/>
+        <source>792</source>
+        <translation>792</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2413"/>
+        <source>Charge_Vol_Up_Limit</source>
+        <translation>充电电压上限</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2414"/>
+        <source>This is the upper limit of the charging voltage. When the total battery voltage reaches this value during charging, the PCS will enter the constant voltage mode to prevent the battery from overcharging.</source>
+        <translation>这是充电电压上限，当充电时电池总电压达到这个值时，PCS将会进入到恒压模式，防止电池过充。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2417"/>
+        <source>616</source>
+        <translation>616</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2417"/>
+        <source>Disc_Vol_lower_Limit</source>
+        <translation>放电电压下限</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2418"/>
+        <source>This is the lower limit of the discharge voltage. When the total battery voltage during discharge reaches this value, PCS will trigger a battery low voltage alarm, and PCS will shut down to prevent battery overdischarge.</source>
+        <translation>这是放电电压下限，当放电时电池总电压达到这个值时，PCS将会触发电池电压低告警，PCS关机，防止电池过放.</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2421"/>
+        <source>160</source>
+        <translation>160</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2421"/>
+        <source>Charge_Cur_Limit</source>
+        <translation>充电限流点</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2422"/>
+        <source>This is the upper limit of charging current, which is the maximum current allowed on the DC side of PCS to prevent charging overcurrent.</source>
+        <translation>这是充电电流上限，这是PCS直流侧允许的最大电流，防止充电过流。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2425"/>
+        <source>85</source>
+        <translation>85</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2425"/>
+        <source>Gen_turn_off_SOC</source>
+        <translation>柴发关闭SOC</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2426"/>
+        <source>When the specified SCO value is reached, the diesel generator shuts down.</source>
+        <translation>达到指定SCO值时，柴油发电机关闭。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2429"/>
+        <source>25</source>
+        <translation>25</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2429"/>
+        <source>Gen_turn_on_SOC</source>
+        <translation>柴发开启SOC</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2430"/>
+        <source>When the specified SOC value is reached, the diesel generator starts.</source>
+        <translation>达到指定SOC值时，柴油发电机开启。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2433"/>
+        <source>Gen_charge_SOC</source>
+        <translation>柴发充电</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2434"/>
+        <source>This is the diesel generator charging SOC, this parameter is used in the combined power supply mode, when the battery SOC reaches this value, the PCS starts charging.</source>
+        <translation>这是柴发充电SOC，该参数在联合供电模式下使用，当电池SOC达到该值时，PCS开启充电。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2437"/>
+        <source>15</source>
+        <translation>15</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2437"/>
+        <source>Grid_charge_SOC</source>
+        <translation>电网充电</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2438"/>
+        <source>This is the grid charging SOC, this parameter is used in the combined power supply mode, when the battery SOC reaches this value, the PCS starts charging.</source>
+        <translation>这是电网充电SOC，该参数在联合供电模式下使用，当电池SOC达到该值时，PCS开启充电。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2441"/>
+        <source>Grid_capacity</source>
+        <translation>电网容量</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2442"/>
+        <source>This is the power grid capacity, the maximum capacity input on the AC side of PCS, and this parameter takes effect in the combined power supply mode.</source>
+        <translation>这是电网容量，PCS交流侧输入的最大容量，该参数在联合供电模式下生效。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2445"/>
+        <source>20</source>
+        <translation>20</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2445"/>
+        <source>Turn_on_SOC</source>
+        <translation>启动SOC</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2446"/>
+        <source>When UPS mode is selected and battery SOC reaches this value,PCS starts charging.</source>
+        <translation>当工作模式选择UPS模式时，电池SOC达到该值时，PCS开启充电。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2449"/>
+        <source>50</source>
+        <translation>50</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2449"/>
+        <source>Turn_off_SOC</source>
+        <translation>停止SOC</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2450"/>
+        <source>When UPS mode is selected,PCS stops charging when battery SOC reaches this value.</source>
+        <translation>当工作模式选择UPS模式时，电池SOC达到该值时，PCS停止充电。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2453"/>
+        <source>3100</source>
+        <translation>3100</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2453"/>
+        <source>Turn_on_cell_vol</source>
+        <translation>启动单体电压</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2454"/>
+        <source>When UPS mode is selected, the PCS starts charging when the minimum battery voltage reaches the value.</source>
+        <translation>当工作模式选择UPS模式时，电池单体最低电压达到该值时，PCS开启充电。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2457"/>
+        <source>3500</source>
+        <translation>3500</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2457"/>
+        <source>Turn_off_cell_vol</source>
+        <translation>停止单体电压</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2458"/>
+        <source>When UPS mode is selected, PCS stops charging when the maximum battery voltage reaches this value.</source>
+        <translation>当工作模式选择UPS模式时，电池单体最高电压达到该值时，PCS停止充电。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2461"/>
+        <source>400</source>
+        <translation>400</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2461"/>
+        <source>Turn_on_total_vol</source>
+        <translation>启动总压</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2462"/>
+        <source>When the UPS mode is selected, the PCS starts charging when the total battery voltage reaches the value.</source>
+        <translation>当工作模式选择UPS模式时，电池总压达到该值时，PCS开启充电。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2465"/>
+        <source>650</source>
+        <translation>650</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2465"/>
+        <source>Turn_off_total_vol</source>
+        <translation>停止总压</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2466"/>
+        <source>When UPS mode is selected, PCS stops charging when the total battery voltage reaches this value.</source>
+        <translation>当工作模式选择UPS模式时，电池总压达到该值时，PCS停止充电。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2469"/>
+        <source>-1</source>
+        <translation>-1</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2469"/>
+        <source>UPS_charge_power</source>
+        <translation>后备充电功率</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2470"/>
+        <source>When UPS mode is selected, the backup charging power of PCS is used when the battery starts charging.</source>
+        <translation>当工作模式选择UPS模式时，电池启动充电时PCS的后备充电功率。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2473"/>
+        <source>Monthly_cycle_time</source>
+        <translation>月循环日期</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2474"/>
+        <source>On the same day of each month, there is a deep charge and discharge.</source>
+        <translation>每月的当日，会进行一次深度充放电。</translation>
     </message>
     <message>
         <location filename="../win.cpp" line="2366"/>
@@ -3409,6 +3680,7 @@ fault</source>
         <location filename="../win.cpp" line="2186"/>
         <location filename="../win.cpp" line="2230"/>
         <location filename="../win.cpp" line="2331"/>
+        <location filename="../win.cpp" line="2473"/>
         <source>0</source>
         <translation>0</translation>
     </message>
