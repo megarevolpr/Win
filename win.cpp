@@ -169,6 +169,21 @@ void MEGAWin::MemoryAllocation()
     Phase_A_power_explain = new QPushButton;            //A相功率说明
     Phase_B_power_explain = new QPushButton;            //B相功率说明
     Phase_C_power_explain = new QPushButton;            //C相功率说明
+    Grid_connected_mode = nullptr;
+    Constant_power = nullptr;
+    Charging_and_discharging = nullptr;
+    Work_mode = nullptr;
+    Output_power_factor = nullptr;
+    Output_reactive_power = nullptr;
+    Constant_current = nullptr;
+    Constant_voltage = nullptr;
+    Control_mode = nullptr;
+    Machine_number = nullptr;
+    Parallel = nullptr;
+    Unbalance_power_enable = nullptr;
+    Phase_A_power = nullptr;
+    Phase_B_power = nullptr;
+    Phase_C_power = nullptr;
 
     /***************************电池设置**********************************/
 
@@ -600,7 +615,7 @@ void MEGAWin::LCDSetting()
 #endif
 }
 /******************************************************************************
- * 一般设置表初始化
+ * 参数设置表初始化
  * ***************************************************************************/
 void MEGAWin::UserParam_tab()
 {
@@ -1097,6 +1112,7 @@ void MEGAWin::Change_Language()
         ui->retranslateUi(this);
     }
 
+    UserParam_tab();    //参数设置
     BatterySet_tab();   //电池设置
     RunTimeSet_tab();   //自动运行
     Information_tbnt_released();    //系统信息
@@ -2372,76 +2388,136 @@ void MEGAWin::PCS_State()
 /*********系统设置 绘制button**********/
 void MEGAWin::ParameterSet()
 {
+    if(Grid_connected_mode != NULL)
+    {
+        delete Grid_connected_mode;
+    }
     Grid_connected_mode = new Specification(this,Grid_connected_mode_explain, ui->System_Tab, 0, 1, \
                                             tr("automatic"), tr("Grid connected mode of PCS"), \
                                             tr("    When automatic and off-grid is selected, it will automatically identify and switch and off-grid. When the voltage on the grid side is normal, the contactor on the grid side will close, and the machine is in grid-connected mode (PQ).When the grid is out of power, the grid side contactor will be disconnected, and the machine is in off-grid mode (VF).\n   When the grid-connected mode is selected, and the grid side voltage is normal, the grid side contactor will close, and the machine is in grid-connected mode (PQ);If the power grid loses power, the machine will give an alarm warning of the power grid low voltage.\n    When off-grid mode is selected, the machine will disconnect the grid side contactor, and the machine is in off-grid mode (VF)."));
     Grid_connected_mode->add_Specification();
 
+    if(Constant_power != NULL)
+    {
+        delete Constant_power;
+    }
     Constant_power = new Specification(this,Constant_power_explain, ui->System_Tab, 1, 1, \
                                        tr("0"), tr("Constant power(AC)"), \
                                        tr("    This is the power setting of the AC side. The charging and discharging power of the AC side can be controlled by modifying the value of this item.When advanced Settings control power mode select constant power mode (CP_N&P), positive value indicates discharge, negative value indicates charging.\n    For example, set -5, indicating that the AC side will charge the battery with a power of -5kW, due to the loss of the inverter, the power on the DC side will be less than the power on the AC side.\n    For example, set 5, indicating that the AC side will be 5kW power output, due to the loss of the inverter, the DC side of the power will be greater than the AC side of the power."));
     Constant_power->add_Specification();
 
+    if(Charging_and_discharging != NULL)
+    {
+        delete Charging_and_discharging;
+    }
     Charging_and_discharging = new Specification(this,Charging_and_discharging_explain, ui->System_Tab, 2, 1, \
                                                  tr("Charge"), tr("Charging and discharging"), \
                                                  tr("Reserve."));
     Charging_and_discharging->add_Specification();
 
+    if(Work_mode != NULL)
+    {
+        delete Work_mode;
+    }
     Work_mode = new Specification(this,Work_mode_explain, ui->System_Tab, 3, 1, \
                                   tr("Manual"), tr("Work mode"), \
                                   tr("    When manual mode is selected (applicable to EMS remote scheduling), you can use the HMI or EMS to control the running status of the machine. Charge and discharge power (active power) Reactive power information such as the power factor.\n    When the UPS mode (backup mode) is selected, the system switches from zero power to off-grid discharge mode to provide energy for critical loads when the power grid loses power.Please go to the battery setting page to set this mode. Note: This mode is only used in lithium mode, and the communication between PCS and BMS is normal.\n    The peak-valley filling mode is used for peak-valley arbitrage. PCS can operate according to the local peak-valley electricity price period, and can go to the automatic operation page to set the charging and discharging mode charging and discharging power and other information during the operation period.\n    When the system anti-countercurrent mode is selected, the PCS in this mode is in the local power grid system, and the energy meter is connected at the entrance of the power grid. When the PCS discharges the system, if the PCS detects that there is energy flowing into the power grid in reverse direction, the PCS will actively reduce the power to prevent energy flowing into the power grid."));
     Work_mode->add_Specification();
 
+    if(Output_power_factor != NULL)
+    {
+        delete Output_power_factor;
+    }
     Output_power_factor = new Specification(this,Output_power_factor_explain, ui->System_Tab, 4, 1, \
                                             tr("1"), tr("Output power factor"), \
                                             tr("    The power factor Pf can be modified. The power factor is equal to the ratio of active power and reactive power. Positive value indicates reactive power lead and negative value indicates reactive power lag.\n    The power factor is a coefficient used to measure the output efficiency of electrical equipment, and the power factor is equal to the ratio of active power to reactive power. When the output reactive power factor is selected in the advanced settings 'system Settings' page, this output power factor can be modified to control the output of active power and reactive power."));
     Output_power_factor->add_Specification();
 
+    if(Output_reactive_power != NULL)
+    {
+        delete Output_reactive_power;
+    }
     Output_reactive_power = new Specification(this,Output_reactive_power_explain, ui->System_Tab, 5, 1, \
                                               tr("1"), tr("Output reactive power"), \
                                               tr("    This parameter can change the reactive power Q, positive value indicates reactive power lead, negative value indicates reactive power lag."));
     Output_reactive_power->add_Specification();
 
+    if(Constant_current != NULL)
+    {
+        delete Constant_current;
+    }
     Constant_current = new Specification(this,Constant_current_explain, ui->System_Tab, 6, 1, \
                                          tr("100"), tr("Constant current"), \
                                          tr("    When the control power mode of the advanced Settings page is set to constant current (CC), modify the constant current value, then the machine will charge and discharge the battery with the current value, positive value represents discharge, negative value represents charging."));
     Constant_current->add_Specification();
 
+    if(Constant_voltage != NULL)
+    {
+        delete Constant_voltage;
+    }
     Constant_voltage = new Specification(this,Constant_voltage_explain, ui->System_Tab, 7, 1, \
                                          tr("600"), tr("Constant voltage"), \
                                          tr("    When the control power mode of the Advanced Settings 'Function Settings' page is set to constant voltage (CV), modify the constant voltage value, the machine will operate at a constant voltage value, and the machine will be used as a constant voltage source."));
     Constant_voltage->add_Specification();
 
+    if(Control_mode != NULL)
+    {
+        delete Control_mode;
+    }
     Control_mode = new Specification(this,Control_mode_explain, ui->System_Tab, 0, 4, \
                                      tr("Local"), tr("Control mode"), \
                                      tr("    This is the control mode;If the local mode is selected, the dispatcher (EMS, RS485) can only monitor data but cannot control PCS. If the remote mode is selected,PCS parameter setting is disabled and the dispatcher (EMS,  RS485) can read and write data."));
     Control_mode->add_Specification();
 
+    if(Machine_number != NULL)
+    {
+        delete Machine_number;
+    }
     Machine_number = new Specification(this,Machine_number_explain, ui->System_Tab, 1, 4, \
                                        tr("Master_00"), tr("Machine number"), \
                                        tr("    This is the device number, and you can choose host(Master) or slave(Slave), where master is Master_00 and Slave_01 to Slave_08 are slaves."));
     Machine_number->add_Specification();
 
+    if(Parallel != NULL)
+    {
+        delete Parallel;
+    }
     Parallel = new Specification(this,Parallel_explain, ui->System_Tab, 2, 4, \
                                  tr("Disable"), tr("Parallel"), \
                                  tr("Reserve."));
     Parallel->add_Specification();
 
+    if(Unbalance_power_enable != NULL)
+    {
+        delete Unbalance_power_enable;
+    }
     Unbalance_power_enable = new Specification(this,Unbalance_power_enable_explain, ui->System_Tab, 3, 4, \
                                                tr("Disable"), tr("Unbalance power enable"), \
                                                tr("Reserve."));
     Unbalance_power_enable->add_Specification();
 
+    if(Phase_A_power != NULL)
+    {
+        delete Phase_A_power;
+    }
     Phase_A_power = new Specification(this,Phase_A_power_explain, ui->System_Tab, 4, 4, \
                                       tr("5"), tr("Phase A power"), \
                                       tr("Reserve."));
     Phase_A_power->add_Specification();
 
+    if(Phase_B_power != NULL)
+    {
+        delete Phase_B_power;
+    }
     Phase_B_power = new Specification(this,Phase_B_power_explain, ui->System_Tab, 5, 4, \
                                       tr("5"), tr("Phase B power"), \
                                       tr("Reserve."));
     Phase_B_power->add_Specification();
 
+    if(Phase_C_power != NULL)
+    {
+        delete Phase_C_power;
+    }
     Phase_C_power = new Specification(this,Phase_C_power_explain, ui->System_Tab, 6, 4, \
                                       tr("5"), tr("Phase C power"), \
                                       tr("Reserve."));
