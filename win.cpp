@@ -191,45 +191,67 @@ void MEGAWin::MemoryAllocation()
     UPS_charge_power_explain    = new QPushButton;
     Monthly_cycle_time_explain  = new QPushButton;
 
-    Check1_explain = new QPushButton;Check2_explain= new QPushButton;Check3_explain= new QPushButton;
+    /*****************************自动运行*******************************/
+
+    Check1_explain= new QPushButton;Check2_explain= new QPushButton;Check3_explain= new QPushButton;
     Check4_explain= new QPushButton;Check5_explain= new QPushButton;Check6_explain= new QPushButton;
     Check7_explain= new QPushButton;Check8_explain= new QPushButton;Check9_explain= new QPushButton;
     Check10_explain= new QPushButton;Check11_explain= new QPushButton;Check12_explain= new QPushButton;
     Check13_explain= new QPushButton;Check14_explain= new QPushButton;Check15_explain= new QPushButton;
     Check16_explain= new QPushButton;Check17_explain= new QPushButton;Check18_explain= new QPushButton;
     Check19_explain= new QPushButton;Check20_explain= new QPushButton;
+    Check1 = nullptr;Check2 = nullptr;Check3 = nullptr;Check4 = nullptr;Check5 = nullptr;Check6 = nullptr;
+    Check7 = nullptr;Check8 = nullptr;Check9 = nullptr;Check10 = nullptr;Check11 = nullptr;Check12 = nullptr;
+    Check13 = nullptr;Check14 = nullptr;Check15 = nullptr;Check16 = nullptr;Check17 = nullptr;Check18 = nullptr;
+    Check19 = nullptr;Check20 = nullptr;
 
-    Start_T1_explain = new QPushButton;Start_T2_explain= new QPushButton;Start_T3_explain= new QPushButton;
+    Start_T1_explain= new QPushButton;Start_T2_explain= new QPushButton;Start_T3_explain= new QPushButton;
     Start_T4_explain= new QPushButton;Start_T5_explain= new QPushButton;Start_T6_explain= new QPushButton;
     Start_T7_explain= new QPushButton;Start_T8_explain= new QPushButton;Start_T9_explain= new QPushButton;
     Start_T10_explain= new QPushButton;Start_T11_explain= new QPushButton;Start_T12_explain= new QPushButton;
     Start_T13_explain= new QPushButton;Start_T14_explain= new QPushButton;Start_T15_explain= new QPushButton;
     Start_T16_explain= new QPushButton;Start_T17_explain= new QPushButton;Start_T18_explain= new QPushButton;
     Start_T19_explain= new QPushButton;Start_T20_explain= new QPushButton;
+    Start_T1 = nullptr;Start_T2 = nullptr;Start_T3 = nullptr;Start_T4 = nullptr;Start_T5 = nullptr;Start_T6 = nullptr;
+    Start_T7 = nullptr;Start_T8 = nullptr;Start_T9 = nullptr;Start_T10 = nullptr;Start_T11 = nullptr;Start_T12 = nullptr;
+    Start_T13 = nullptr;Start_T14 = nullptr;Start_T15 = nullptr;Start_T16 = nullptr;Start_T17 = nullptr;Start_T18 = nullptr;
+    Start_T19 = nullptr;Start_T20 = nullptr;
 
-    End_T1_explain = new QPushButton;End_T2_explain= new QPushButton;End_T3_explain= new QPushButton;
+    End_T1_explain= new QPushButton;End_T2_explain= new QPushButton;End_T3_explain= new QPushButton;
     End_T4_explain= new QPushButton;End_T5_explain= new QPushButton;End_T6_explain= new QPushButton;
     End_T7_explain= new QPushButton;End_T8_explain= new QPushButton;End_T9_explain= new QPushButton;
     End_T10_explain= new QPushButton;End_T11_explain= new QPushButton;End_T12_explain= new QPushButton;
     End_T13_explain= new QPushButton;End_T14_explain= new QPushButton;End_T15_explain= new QPushButton;
     End_T16_explain= new QPushButton;End_T17_explain= new QPushButton;End_T18_explain= new QPushButton;
     End_T19_explain= new QPushButton;End_T20_explain= new QPushButton;
+    End_T1 = nullptr;End_T2 = nullptr;End_T3 = nullptr;End_T4 = nullptr;End_T5 = nullptr;End_T6 = nullptr;
+    End_T7 = nullptr;End_T8 = nullptr;End_T9 = nullptr;End_T10 = nullptr;End_T11 = nullptr;End_T12 = nullptr;
+    End_T13 = nullptr;End_T14 = nullptr;End_T15 = nullptr;End_T16 = nullptr;End_T17 = nullptr;End_T18 = nullptr;
+    End_T19 = nullptr;End_T20 = nullptr;
 
-    State1_explain = new QPushButton;State2_explain= new QPushButton;State3_explain= new QPushButton;
+    State1_explain= new QPushButton;State2_explain= new QPushButton;State3_explain= new QPushButton;
     State4_explain= new QPushButton;State5_explain= new QPushButton;State6_explain= new QPushButton;
     State7_explain= new QPushButton;State8_explain= new QPushButton;State9_explain= new QPushButton;
     State10_explain= new QPushButton;State11_explain= new QPushButton;State12_explain= new QPushButton;
     State13_explain= new QPushButton;State14_explain= new QPushButton;State15_explain= new QPushButton;
     State16_explain= new QPushButton;State17_explain= new QPushButton;State18_explain= new QPushButton;
     State19_explain= new QPushButton;State20_explain= new QPushButton;
+    State1 = nullptr;State2 = nullptr;State3 = nullptr;State4 = nullptr;State5 = nullptr;State6 = nullptr;
+    State7 = nullptr;State8 = nullptr;State9 = nullptr;State10 = nullptr;State11 = nullptr;State12 = nullptr;
+    State13 = nullptr;State14 = nullptr;State15 = nullptr;State16 = nullptr;State17 = nullptr;State18 = nullptr;
+    State19 = nullptr;State20 = nullptr;
 
-    Power1_explain = new QPushButton;Power2_explain= new QPushButton;Power3_explain= new QPushButton;
+    Power1_explain= new QPushButton;Power2_explain= new QPushButton;Power3_explain= new QPushButton;
     Power4_explain= new QPushButton;Power5_explain= new QPushButton;Power6_explain= new QPushButton;
     Power7_explain= new QPushButton;Power8_explain= new QPushButton;Power9_explain= new QPushButton;
     Power10_explain= new QPushButton;Power11_explain= new QPushButton;Power12_explain= new QPushButton;
     Power13_explain= new QPushButton;Power14_explain= new QPushButton;Power15_explain= new QPushButton;
     Power16_explain= new QPushButton;Power17_explain= new QPushButton;Power18_explain= new QPushButton;
     Power19_explain= new QPushButton;Power20_explain= new QPushButton;
+    Power1 = nullptr;Power2 = nullptr;Power3 = nullptr;Power4 = nullptr;Power5 = nullptr;Power6 = nullptr;
+    Power7 = nullptr;Power8 = nullptr;Power9 = nullptr;Power10 = nullptr;Power11 = nullptr;Power12 = nullptr;
+    Power13 = nullptr;Power14 = nullptr;Power15 = nullptr;Power16 = nullptr;Power17 = nullptr;Power18 = nullptr;
+    Power19 = nullptr;Power20 = nullptr;
 
     /***************************系统消息**********************************/
     pButton_Version = new QButtonGroup();
@@ -508,6 +530,7 @@ void MEGAWin::FirstPage()
 void MEGAWin::RunStatePage()
 {
     ModuleData_Tab();//PCS数据
+    RTData_Status();
     RTAlarm();//告警信息
     ModuleState_Tab();//PCS状态
 }
@@ -636,9 +659,6 @@ void MEGAWin::RunTimeSet_tab()
     ui->Time_tableWidget->setColumnWidth(2,180);
     ui->Time_tableWidget->setColumnWidth(3,130);
     ui->Time_tableWidget->horizontalHeader()->setStretchLastSection(4);
-
-    QStringList choice;
-    choice <<tr("charge") << tr("discharge") << tr("Automatic");
 
     AutoOperation();//自动运行 绘制button
 
@@ -1052,6 +1072,8 @@ void MEGAWin::Change_Language()
         qApp->installTranslator(translator);
         ui->retranslateUi(this);
     }
+
+    RunTimeSet_tab();
 }
 
 /***************************************************************
@@ -1422,6 +1444,8 @@ void MEGAWin::LoadLanguageInit()
         ui->retranslateUi(this);
         LanguageType = ENGLISH;
     }
+
+
 }
 
 void MEGAWin::on_UI_MenuBtn_clicked()   //菜单
@@ -2477,96 +2501,924 @@ void MEGAWin::BetterySetup()
 /************自动运行 绘制button*************/
 void MEGAWin::AutoOperation()
 {
-    Specification * temp[]  ={Check1,Check2,Check3,Check4,Check5,Check6,Check7,Check8,Check9,Check10,\
-                           Check11,Check12,Check13,Check14,Check15,Check16,Check17,Check18,Check19,Check20};
+    QString temp1 = QString(tr("Check"));
+    QString temp2 = QString(tr("Start_Time"));
+    QString temp3 = QString(tr("End_Time"));
+    QString temp4 = QString(tr("State"));
+    QString temp5 = QString(tr("Power"));
+    QString temp6 = QString(tr("9:00"));
+    QString temp7 = QString(tr("10:00"));
 
-    QPushButton * temp2[] ={Check1_explain,Check2_explain,Check3_explain,Check4_explain,Check5_explain,\
-                           Check6_explain,Check7_explain,Check8_explain,Check9_explain,Check10_explain,\
-                           Check11_explain,Check12_explain,Check13_explain,Check14_explain,Check15_explain,\
-                           Check16_explain,Check17_explain,Check18_explain,Check19_explain,Check20_explain};
-
-    Specification * temp4[]  ={Start_T1,Start_T2,Start_T3,Start_T4,Start_T5,Start_T6,Start_T7,Start_T8,Start_T9,Start_T10,\
-                           Start_T11,Start_T12,Start_T13,Start_T14,Start_T15,Start_T16,Start_T17,Start_T18,Start_T19,Start_T20};
-
-    QPushButton * temp5[] ={Start_T1_explain,Start_T2_explain,Start_T3_explain,Start_T4_explain,Start_T5_explain,\
-                           Start_T6_explain,Start_T7_explain,Start_T8_explain,Start_T9_explain,Start_T10_explain,\
-                           Start_T11_explain,Start_T12_explain,Start_T13_explain,Start_T14_explain,Start_T15_explain,\
-                           Start_T16_explain,Start_T17_explain,Start_T18_explain,Start_T19_explain,Start_T20_explain};
-
-    Specification * temp7[]  ={End_T1,End_T2,End_T3,End_T4,End_T5,End_T6,End_T7,End_T8,End_T9,End_T10,\
-                           End_T11,End_T12,End_T13,End_T14,End_T15,End_T16,End_T17,End_T18,End_T19,End_T20};
-
-    QPushButton * temp8[] ={End_T1_explain,End_T2_explain,End_T3_explain,End_T4_explain,End_T5_explain,\
-                           End_T6_explain,End_T7_explain,End_T8_explain,End_T9_explain,End_T10_explain,\
-                           End_T11_explain,End_T12_explain,End_T13_explain,End_T14_explain,End_T15_explain,\
-                           End_T16_explain,End_T17_explain,End_T18_explain,End_T19_explain,End_T20_explain};
-
-    Specification * temp10[]  ={State1,State2,State3,State4,State5,State6,State7,State8,State9,State10,\
-                           State11,State12,State13,State14,State15,State16,State17,State18,State19,State20};
-
-    QPushButton * temp11[] ={State1_explain,State2_explain,State3_explain,State4_explain,State5_explain,\
-                           State6_explain,State7_explain,State8_explain,State9_explain,State10_explain,\
-                           State11_explain,State12_explain,State13_explain,State14_explain,State15_explain,\
-                           State16_explain,State17_explain,State18_explain,State19_explain,State20_explain};
-
-    Specification * temp13[]  ={Power1,Power2,Power3,Power4,Power5,Power6,Power7,Power8,Power9,Power10,\
-                           Power11,Power12,Power13,Power14,Power15,Power16,Power17,Power18,Power19,Power20};
-
-    QPushButton * temp14[] ={Power1_explain,Power2_explain,Power3_explain,Power4_explain,Power5_explain,\
-                           Power6_explain,Power7_explain,Power8_explain,Power9_explain,Power10_explain,\
-                           Power11_explain,Power12_explain,Power13_explain,Power14_explain,Power15_explain,\
-                           Power16_explain,Power17_explain,Power18_explain,Power19_explain,Power20_explain};
-
-    for(int i=0;i<20;i++)
+    if(Check1 != nullptr)
     {
-        QString temp3 = QString("Check%1").arg(i+1);
-        QString temp6 = QString("Start_T%1").arg(i+1);
-        QString temp9 = QString("End_T%1").arg(i+1);
-        QString temp12 = QString("State%1").arg(i+1);
-        QString temp15 = QString("Power%1").arg(i+1);
-
-        QString temp16 = QString("%1:00").arg(i+8);
-        QString temp17 = QString("%1:00").arg(i+9);
-
-        if(i<5)
-            temp[i] = new Specification(this,temp2[i], ui->Time_tableWidget, i, 0, \
-                                                "√", temp3, \
-                                                "这是'使能'，选择后将在指定的时间以指定的功率开启指定的状态，并在指定的时间结束\nThis is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time.");
-        else
-            temp[i] = new Specification(this,temp2[i], ui->Time_tableWidget, i, 0, \
-                                                "", temp3, \
-                                                "这是'使能'，选择后将在指定的时间以指定的功率开启指定的状态，并在指定的时间结束\nThis is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time.");
-        temp[i]->add_Specification();
-        temp4[i] = new Specification(this,temp5[i], ui->Time_tableWidget, i, 1, \
-                                                temp16, temp6, \
-                                                "这是开始时间，将在此时间开始以指定的功率进入指定的状态\nThis is the start time at which the specified state will begin to be entered with the specified power.");
-        temp4[i]->add_Specification();
-        temp7[i] = new Specification(this,temp8[i], ui->Time_tableWidget, i, 2, \
-                                                temp17, temp9, \
-                                                "这是结束时间，将在此时间结束由'开始时间'开始的状态\nThis is the end time at which the state started with the 'start time' will end.");
-        temp7[i]->add_Specification();
-
-        if(i%2==0)
-        {
-            temp10[i] = new Specification(this,temp11[i], ui->Time_tableWidget, i, 3, \
-                                                    "charge", temp12, \
-                                                    "这是状态，将在工作时间执行此状态，有三种可供选择，分别为充电(charge)、放电(discharge)、自动(Automatic)\nThis is the state, which will be executed during working hours.  There are three options: charge（charge）, discharge（discharge）, and Automatic（Automatic）.");
-            temp13[i] = new Specification(this,temp14[i], ui->Time_tableWidget, i, 4, \
-                                                    "-100", temp15, \
-                                                    "这是工作功率，此状态下工作时根据工作状态执行此功率，正数为放电，负数为充电\nThis is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging.");
-        }
-        else
-        {
-            temp10[i] = new Specification(this,temp11[i], ui->Time_tableWidget, i, 3, \
-                                                    "discharge", temp12, \
-                                                    "这是状态，将在工作时间执行此状态，有三种可供选择，分别为充电(charge)、放电(discharge)、自动(Automatic)\nThis is the state, which will be executed during working hours.  There are three options: charge（charge）, discharge（discharge）, and Automatic（Automatic）.");
-            temp13[i] = new Specification(this,temp14[i], ui->Time_tableWidget, i, 4, \
-                                                    "100", temp15, \
-                                                    "这是工作功率，此状态下工作时根据工作状态执行此功率，正数为放电，负数为充电\nThis is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging.");
-        }
-        temp10[i]->add_Specification();
-        temp13[i]->add_Specification();
+        delete Check1;
     }
+    Check1 = new Specification(this,Check1_explain, ui->Time_tableWidget, 0, 0, \
+                                tr("√"), temp1, \
+                                tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check1->add_Specification();
+
+    if(Check2 != nullptr)
+    {
+        delete Check2;
+    }
+    Check2 = new Specification(this,Check2_explain, ui->Time_tableWidget, 1, 0, \
+                                tr("√"), temp1, \
+                                tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check2->add_Specification();
+
+    if(Check3 != nullptr)
+    {
+        delete Check3;
+    }
+    Check3 = new Specification(this,Check3_explain, ui->Time_tableWidget, 2, 0, \
+                                tr("√"), temp1, \
+                                tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check3->add_Specification();
+
+    if(Check4 != nullptr)
+    {
+        delete Check4;
+    }
+    Check4 = new Specification(this,Check4_explain, ui->Time_tableWidget, 3, 0, \
+                                tr("√"), temp1, \
+                                tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check4->add_Specification();
+
+    if(Check5 != nullptr)
+    {
+        delete Check5;
+    }
+    Check5 = new Specification(this,Check5_explain, ui->Time_tableWidget, 4, 0, \
+                                tr("√"), temp1, \
+                                tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check5->add_Specification();
+
+    if(Check6 != nullptr)
+    {
+        delete Check6;
+    }
+    Check6 = new Specification(this,Check6_explain, ui->Time_tableWidget, 5, 0, \
+                                 tr(""), temp1, \
+                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check6->add_Specification();
+
+    if(Check7 != nullptr)
+    {
+        delete Check7;
+    }
+    Check7 = new Specification(this,Check7_explain, ui->Time_tableWidget, 6, 0, \
+                                 tr(""), temp1, \
+                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check7->add_Specification();
+
+    if(Check8 != nullptr)
+    {
+        delete Check8;
+    }
+    Check8 = new Specification(this,Check8_explain, ui->Time_tableWidget, 7, 0, \
+                                 tr(""), temp1, \
+                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check8->add_Specification();
+
+    if(Check9 != nullptr)
+    {
+        delete Check9;
+    }
+    Check9 = new Specification(this,Check9_explain, ui->Time_tableWidget, 8, 0, \
+                                 tr(""), temp1, \
+                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check9->add_Specification();
+
+    if(Check10 != nullptr)
+    {
+        delete Check10;
+    }
+    Check10 = new Specification(this,Check10_explain, ui->Time_tableWidget, 9, 0, \
+                                 tr(""), temp1, \
+                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check10->add_Specification();
+
+    if(Check11 != nullptr)
+    {
+        delete Check11;
+    }
+    Check11 = new Specification(this,Check11_explain, ui->Time_tableWidget, 10, 0, \
+                                 tr(""), temp1, \
+                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check11->add_Specification();
+
+    if(Check11 != nullptr)
+    {
+        delete Check12;
+    }
+    Check12 = new Specification(this,Check12_explain, ui->Time_tableWidget, 11, 0, \
+                                 tr(""), temp1, \
+                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check12->add_Specification();
+
+    if(Check13 != nullptr)
+    {
+        delete Check13;
+    }
+    Check13 = new Specification(this,Check13_explain, ui->Time_tableWidget, 12, 0, \
+                                 tr(""), temp1, \
+                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check13->add_Specification();
+
+    if(Check14 != nullptr)
+    {
+        delete Check14;
+    }
+    Check14 = new Specification(this,Check14_explain, ui->Time_tableWidget, 13, 0, \
+                                 tr(""), temp1, \
+                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check14->add_Specification();
+
+    if(Check15 != nullptr)
+    {
+        delete Check15;
+    }
+    Check15 = new Specification(this,Check15_explain, ui->Time_tableWidget, 14, 0, \
+                                 tr(""), temp1, \
+                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check15->add_Specification();
+
+    if(Check16 != nullptr)
+    {
+        delete Check16;
+    }
+    Check16 = new Specification(this,Check16_explain, ui->Time_tableWidget, 15, 0, \
+                                 tr(""), temp1, \
+                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check16->add_Specification();
+
+    if(Check17 != nullptr)
+    {
+        delete Check17;
+    }
+    Check17 = new Specification(this,Check17_explain, ui->Time_tableWidget, 16, 0, \
+                                 tr(""), temp1, \
+                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check17->add_Specification();
+
+    if(Check18 != nullptr)
+    {
+        delete Check18;
+    }
+    Check18 = new Specification(this,Check18_explain, ui->Time_tableWidget, 17, 0, \
+                                 tr(""), temp1, \
+                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check18->add_Specification();
+
+    if(Check19 != nullptr)
+    {
+        delete Check19;
+    }
+    Check19 = new Specification(this,Check19_explain, ui->Time_tableWidget, 18, 0, \
+                                 tr(""), temp1, \
+                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check19->add_Specification();
+
+    if(Check20 != nullptr)
+    {
+        delete Check20;
+    }
+    Check20 = new Specification(this,Check20_explain, ui->Time_tableWidget, 19, 0, \
+                                 tr(""), temp1, \
+                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check20->add_Specification();
+
+
+    if(Start_T1 != nullptr)
+    {
+        delete Start_T1;
+    }
+    Start_T1 = new Specification(this,Start_T1_explain, ui->Time_tableWidget, 0, 1, \
+                                  temp6, temp2, \
+                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T1->add_Specification();
+
+    if(Start_T2 != nullptr)
+    {
+        delete Start_T2;
+    }
+    Start_T2 = new Specification(this,Start_T2_explain, ui->Time_tableWidget, 1, 1, \
+                                  temp6, temp2, \
+                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T2->add_Specification();
+
+    if(Start_T3 != nullptr)
+    {
+        delete Start_T3;
+    }
+    Start_T3 = new Specification(this,Start_T3_explain, ui->Time_tableWidget, 2, 1, \
+                                  temp6, temp2, \
+                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T3->add_Specification();
+
+    if(Start_T4 != nullptr)
+    {
+        delete Start_T4;
+    }
+    Start_T4 = new Specification(this,Start_T4_explain, ui->Time_tableWidget, 3, 1, \
+                                  temp6, temp2, \
+                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T4->add_Specification();
+
+    if(Start_T5 != nullptr)
+    {
+        delete Start_T5;
+    }
+    Start_T5 = new Specification(this,Start_T5_explain, ui->Time_tableWidget, 4, 1, \
+                                  temp6, temp2, \
+                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T5->add_Specification();
+
+    if(Start_T6 != nullptr)
+    {
+        delete Start_T6;
+    }
+    Start_T6 = new Specification(this,Start_T6_explain, ui->Time_tableWidget, 5, 1, \
+                                  temp6, temp2, \
+                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T6->add_Specification();
+
+    if(Start_T7 != nullptr)
+    {
+        delete Start_T7;
+    }
+    Start_T7 = new Specification(this,Start_T7_explain, ui->Time_tableWidget, 6, 1, \
+                                  temp6, temp2, \
+                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T7->add_Specification();
+
+    if(Start_T8 != nullptr)
+    {
+        delete Start_T8;
+    }
+    Start_T8 = new Specification(this,Start_T8_explain, ui->Time_tableWidget, 7, 1, \
+                                  temp6, temp2, \
+                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T8->add_Specification();
+
+    if(Start_T9 != nullptr)
+    {
+        delete Start_T9;
+    }
+    Start_T9 = new Specification(this,Start_T9_explain, ui->Time_tableWidget, 8, 1, \
+                                  temp6, temp2, \
+                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T9->add_Specification();
+
+    if(Start_T10 != nullptr)
+    {
+        delete Start_T10;
+    }
+    Start_T10 = new Specification(this,Start_T10_explain, ui->Time_tableWidget, 9, 1, \
+                                  temp6, temp2, \
+                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T10->add_Specification();
+
+    if(Start_T11 != nullptr)
+    {
+        delete Start_T11;
+    }
+    Start_T11 = new Specification(this,Start_T11_explain, ui->Time_tableWidget, 10, 1, \
+                                  temp6, temp2, \
+                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T11->add_Specification();
+
+    if(Start_T12 != nullptr)
+    {
+        delete Start_T12;
+    }
+    Start_T12 = new Specification(this,Start_T12_explain, ui->Time_tableWidget, 11, 1, \
+                                  temp6, temp2, \
+                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T12->add_Specification();
+
+    if(Start_T13 != nullptr)
+    {
+        delete Start_T13;
+    }
+    Start_T13 = new Specification(this,Start_T13_explain, ui->Time_tableWidget, 12, 1, \
+                                  temp6, temp2, \
+                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T13->add_Specification();
+
+    if(Start_T14 != nullptr)
+    {
+        delete Start_T14;
+    }
+    Start_T14 = new Specification(this,Start_T14_explain, ui->Time_tableWidget, 13, 1, \
+                                  temp6, temp2, \
+                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T14->add_Specification();
+
+    if(Start_T15 != nullptr)
+    {
+        delete Start_T15;
+    }
+    Start_T15 = new Specification(this,Start_T15_explain, ui->Time_tableWidget, 14, 1, \
+                                  temp6, temp2, \
+                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T15->add_Specification();
+
+    if(Start_T16 != nullptr)
+    {
+        delete Start_T16;
+    }
+    Start_T16 = new Specification(this,Start_T16_explain, ui->Time_tableWidget, 15, 1, \
+                                  temp6, temp2, \
+                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T16->add_Specification();
+
+    if(Start_T17 != nullptr)
+    {
+        delete Start_T17;
+    }
+    Start_T17 = new Specification(this,Start_T17_explain, ui->Time_tableWidget, 16, 1, \
+                                  temp6, temp2, \
+                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T17->add_Specification();
+
+    if(Start_T18 != nullptr)
+    {
+        delete Start_T18;
+    }
+    Start_T18 = new Specification(this,Start_T18_explain, ui->Time_tableWidget, 17, 1, \
+                                  temp6, temp2, \
+                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T18->add_Specification();
+
+    if(Start_T19 != nullptr)
+    {
+        delete Start_T19;
+    }
+    Start_T19 = new Specification(this,Start_T19_explain, ui->Time_tableWidget, 18, 1, \
+                                  temp6, temp2, \
+                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T19->add_Specification();
+
+    if(Start_T20 != nullptr)
+    {
+        delete Start_T20;
+    }
+    Start_T20 = new Specification(this,Start_T20_explain, ui->Time_tableWidget, 19, 1, \
+                                  temp6, temp2, \
+                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T20->add_Specification();
+
+
+    if(End_T1 != nullptr)
+    {
+        delete End_T1;
+    }
+    End_T1 = new Specification(this,End_T1_explain, ui->Time_tableWidget, 0, 2, \
+                                temp7, temp3, \
+                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T1->add_Specification();
+
+    if(End_T2 != nullptr)
+    {
+        delete End_T2;
+    }
+    End_T2 = new Specification(this,End_T2_explain, ui->Time_tableWidget, 1, 2, \
+                                temp7, temp3, \
+                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T2->add_Specification();
+
+    if(End_T3 != nullptr)
+    {
+        delete End_T3;
+    }
+    End_T3 = new Specification(this,End_T3_explain, ui->Time_tableWidget, 2, 2, \
+                                temp7, temp3, \
+                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T3->add_Specification();
+
+    if(End_T4 != nullptr)
+    {
+        delete End_T4;
+    }
+    End_T4 = new Specification(this,End_T4_explain, ui->Time_tableWidget, 3, 2, \
+                                temp7, temp3, \
+                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T4->add_Specification();
+
+    if(End_T5 != nullptr)
+    {
+        delete End_T5;
+    }
+    End_T5 = new Specification(this,End_T5_explain, ui->Time_tableWidget, 4, 2, \
+                                temp7, temp3, \
+                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T5->add_Specification();
+
+    if(End_T6 != nullptr)
+    {
+        delete End_T6;
+    }
+    End_T6 = new Specification(this,End_T6_explain, ui->Time_tableWidget, 5, 2, \
+                                temp7, temp3, \
+                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T6->add_Specification();
+
+    if(End_T7 != nullptr)
+    {
+        delete End_T7;
+    }
+    End_T7 = new Specification(this,End_T7_explain, ui->Time_tableWidget, 6, 2, \
+                                temp7, temp3, \
+                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T7->add_Specification();
+
+    if(End_T8 != nullptr)
+    {
+        delete End_T8;
+    }
+    End_T8 = new Specification(this,End_T8_explain, ui->Time_tableWidget, 7, 2, \
+                                temp7, temp3, \
+                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T8->add_Specification();
+
+    if(End_T9 != nullptr)
+    {
+        delete End_T9;
+    }
+    End_T9 = new Specification(this,End_T9_explain, ui->Time_tableWidget, 8, 2, \
+                                temp7, temp3, \
+                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T9->add_Specification();
+
+    if(End_T10 != nullptr)
+    {
+        delete End_T10;
+    }
+    End_T10 = new Specification(this,End_T10_explain, ui->Time_tableWidget, 9, 2, \
+                                temp7, temp3, \
+                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T10->add_Specification();
+
+    if(End_T11 != nullptr)
+    {
+        delete End_T11;
+    }
+    End_T11 = new Specification(this,End_T11_explain, ui->Time_tableWidget, 10, 2, \
+                                temp7, temp3, \
+                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T11->add_Specification();
+
+    if(End_T12 != nullptr)
+    {
+        delete End_T12;
+    }
+    End_T12 = new Specification(this,End_T12_explain, ui->Time_tableWidget, 11, 2, \
+                                temp7, temp3, \
+                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T12->add_Specification();
+
+    if(End_T13 != nullptr)
+    {
+        delete End_T13;
+    }
+    End_T13 = new Specification(this,End_T13_explain, ui->Time_tableWidget, 12, 2, \
+                                temp7, temp3, \
+                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T13->add_Specification();
+
+    if(End_T14 != nullptr)
+    {
+        delete End_T14;
+    }
+    End_T14 = new Specification(this,End_T14_explain, ui->Time_tableWidget, 13, 2, \
+                                temp7, temp3, \
+                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T14->add_Specification();
+
+    if(End_T15 != nullptr)
+    {
+        delete End_T15;
+    }
+    End_T15 = new Specification(this,End_T15_explain, ui->Time_tableWidget, 14, 2, \
+                                temp7, temp3, \
+                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T15->add_Specification();
+
+    if(End_T16 != nullptr)
+    {
+        delete End_T16;
+    }
+    End_T16 = new Specification(this,End_T16_explain, ui->Time_tableWidget, 15, 2, \
+                                temp7, temp3, \
+                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T16->add_Specification();
+
+    if(End_T17 != nullptr)
+    {
+        delete End_T17;
+    }
+    End_T17 = new Specification(this,End_T17_explain, ui->Time_tableWidget, 16, 2, \
+                                temp7, temp3, \
+                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T17->add_Specification();
+
+    if(End_T18 != nullptr)
+    {
+        delete End_T18;
+    }
+    End_T18 = new Specification(this,End_T18_explain, ui->Time_tableWidget, 17, 2, \
+                                temp7, temp3, \
+                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T18->add_Specification();
+
+    if(End_T19 != nullptr)
+    {
+        delete End_T19;
+    }
+    End_T19 = new Specification(this,End_T19_explain, ui->Time_tableWidget, 18, 2, \
+                                temp7, temp3, \
+                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T19->add_Specification();
+
+    if(End_T20 != nullptr)
+    {
+        delete End_T20;
+    }
+    End_T20 = new Specification(this,End_T20_explain, ui->Time_tableWidget, 19, 2, \
+                                temp7, temp3, \
+                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T20->add_Specification();
+
+
+    if(State1 != nullptr)
+    {
+        delete State1;
+    }
+    State1 = new Specification(this,State1_explain, ui->Time_tableWidget, 0, 3, \
+                                tr("charge"), temp4, \
+                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State1->add_Specification();
+
+    if(State2 != nullptr)
+    {
+        delete State2;
+    }
+    State2 = new Specification(this,State2_explain, ui->Time_tableWidget, 1, 3, \
+                                tr("discharge"), temp4, \
+                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State2->add_Specification();
+
+    if(State3 != nullptr)
+    {
+        delete State3;
+    }
+    State3 = new Specification(this,State3_explain, ui->Time_tableWidget, 2, 3, \
+                                tr("charge"), temp4, \
+                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State3->add_Specification();
+
+    if(State4 != nullptr)
+    {
+        delete State4;
+    }
+    State4 = new Specification(this,State4_explain, ui->Time_tableWidget, 3, 3, \
+                                tr("discharge"), temp4, \
+                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State4->add_Specification();
+
+    if(State5 != nullptr)
+    {
+        delete State5;
+    }
+    State5 = new Specification(this,State5_explain, ui->Time_tableWidget, 4, 3, \
+                                tr("charge"), temp4, \
+                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State5->add_Specification();
+
+    if(State6 != nullptr)
+    {
+        delete State6;
+    }
+    State6 = new Specification(this,State6_explain, ui->Time_tableWidget, 5, 3, \
+                                tr("discharge"), temp4, \
+                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State6->add_Specification();
+
+    if(State7 != nullptr)
+    {
+        delete State7;
+    }
+    State7 = new Specification(this,State7_explain, ui->Time_tableWidget, 6, 3, \
+                                tr("charge"), temp4, \
+                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State7->add_Specification();
+
+    if(State8 != nullptr)
+    {
+        delete State8;
+    }
+    State8 = new Specification(this,State8_explain, ui->Time_tableWidget, 7, 3, \
+                                tr("discharge"), temp4, \
+                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State8->add_Specification();
+
+    if(State9 != nullptr)
+    {
+        delete State9;
+    }
+    State9 = new Specification(this,State9_explain, ui->Time_tableWidget, 8, 3, \
+                                tr("charge"), temp4, \
+                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State9->add_Specification();
+
+    if(State10 != nullptr)
+    {
+        delete State10;
+    }
+    State10 = new Specification(this,State10_explain, ui->Time_tableWidget, 9, 3, \
+                                tr("discharge"), temp4, \
+                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State10->add_Specification();
+
+    if(State11 != nullptr)
+    {
+        delete State11;
+    }
+    State11 = new Specification(this,State11_explain, ui->Time_tableWidget, 10, 3, \
+                                tr("charge"), temp4, \
+                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State11->add_Specification();
+
+    if(State12 != nullptr)
+    {
+        delete State12;
+    }
+    State12 = new Specification(this,State12_explain, ui->Time_tableWidget, 11, 3, \
+                                tr("discharge"), temp4, \
+                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State12->add_Specification();
+
+    if(State13 != nullptr)
+    {
+        delete State13;
+    }
+    State13 = new Specification(this,State13_explain, ui->Time_tableWidget, 12, 3, \
+                                tr("charge"), temp4, \
+                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State13->add_Specification();
+
+    if(State14 != nullptr)
+    {
+        delete State14;
+    }
+    State14 = new Specification(this,State14_explain, ui->Time_tableWidget, 13, 3, \
+                                tr("discharge"), temp4, \
+                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State14->add_Specification();
+
+    if(State15 != nullptr)
+    {
+        delete State15;
+    }
+    State15 = new Specification(this,State15_explain, ui->Time_tableWidget, 14, 3, \
+                                tr("charge"), temp4, \
+                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State15->add_Specification();
+
+    if(State16 != nullptr)
+    {
+        delete State16;
+    }
+    State16 = new Specification(this,State16_explain, ui->Time_tableWidget, 15, 3, \
+                                tr("discharge"), temp4, \
+                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State16->add_Specification();
+
+    if(State17 != nullptr)
+    {
+        delete State17;
+    }
+    State17 = new Specification(this,State17_explain, ui->Time_tableWidget, 16, 3, \
+                                tr("charge"), temp4, \
+                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State17->add_Specification();
+
+    if(State18 != nullptr)
+    {
+        delete State18;
+    }
+    State18 = new Specification(this,State18_explain, ui->Time_tableWidget, 17, 3, \
+                                tr("discharge"), temp4, \
+                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State18->add_Specification();
+
+    if(State19 != nullptr)
+    {
+        delete State19;
+    }
+    State19 = new Specification(this,State19_explain, ui->Time_tableWidget, 18, 3, \
+                                tr("charge"), temp4, \
+                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State19->add_Specification();
+
+    if(State20 != nullptr)
+    {
+        delete State20;
+    }
+    State20 = new Specification(this,State20_explain, ui->Time_tableWidget, 19, 3, \
+                                tr("discharge"), temp4, \
+                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State20->add_Specification();
+
+
+    if(Power1 != nullptr)
+    {
+        delete Power1;
+    }
+    Power1 = new Specification(this,Power1_explain, ui->Time_tableWidget, 0, 4, \
+                                tr("-50"), temp5, \
+                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power1->add_Specification();
+
+    if(Power2 != nullptr)
+    {
+        delete Power2;
+    }
+    Power2 = new Specification(this,Power2_explain, ui->Time_tableWidget, 1, 4, \
+                                tr("50"), temp5, \
+                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power2->add_Specification();
+
+    if(Power3 != nullptr)
+    {
+        delete Power3;
+    }
+    Power3 = new Specification(this,Power3_explain, ui->Time_tableWidget, 2, 4, \
+                                tr("-50"), temp5, \
+                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power3->add_Specification();
+
+    if(Power4 != nullptr)
+    {
+        delete Power4;
+    }
+    Power4 = new Specification(this,Power4_explain, ui->Time_tableWidget, 3, 4, \
+                                tr("50"), temp5, \
+                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power4->add_Specification();
+
+
+    if(Power5 != nullptr)
+    {
+        delete Power5;
+    }
+    Power5 = new Specification(this,Power5_explain, ui->Time_tableWidget, 4, 4, \
+                                tr("-50"), temp5, \
+                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power5->add_Specification();
+
+    if(Power6 != nullptr)
+    {
+        delete Power6;
+    }
+    Power6 = new Specification(this,Power6_explain, ui->Time_tableWidget, 5, 4, \
+                                tr("50"), temp5, \
+                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power6->add_Specification();
+
+
+    if(Power7 != nullptr)
+    {
+        delete Power7;
+    }
+    Power7 = new Specification(this,Power7_explain, ui->Time_tableWidget, 6, 4, \
+                                tr("-50"), temp5, \
+                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power7->add_Specification();
+
+    if(Power8 != nullptr)
+    {
+        delete Power8;
+    }
+    Power8 = new Specification(this,Power8_explain, ui->Time_tableWidget, 7, 4, \
+                                tr("50"), temp5, \
+                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power8->add_Specification();
+
+
+    if(Power9 != nullptr)
+    {
+        delete Power9;
+    }
+    Power9 = new Specification(this,Power9_explain, ui->Time_tableWidget, 8, 4, \
+                                tr("-50"), temp5, \
+                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power9->add_Specification();
+
+    if(Power10 != nullptr)
+    {
+        delete Power10;
+    }
+    Power10 = new Specification(this,Power10_explain, ui->Time_tableWidget, 9, 4, \
+                                tr("50"), temp5, \
+                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power10->add_Specification();
+
+
+    if(Power11 != nullptr)
+    {
+        delete Power11;
+    }
+    Power11 = new Specification(this,Power11_explain, ui->Time_tableWidget, 10, 4, \
+                                tr("-50"), temp5, \
+                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power11->add_Specification();
+
+    if(Power12 != nullptr)
+    {
+        delete Power12;
+    }
+    Power12 = new Specification(this,Power12_explain, ui->Time_tableWidget, 11, 4, \
+                                tr("50"), temp5, \
+                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power12->add_Specification();
+
+
+    if(Power13 != nullptr)
+    {
+        delete Power13;
+    }
+    Power13 = new Specification(this,Power13_explain, ui->Time_tableWidget, 12, 4, \
+                                tr("-50"), temp5, \
+                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power13->add_Specification();
+
+    if(Power14 != nullptr)
+    {
+        delete Power14;
+    }
+    Power14 = new Specification(this,Power14_explain, ui->Time_tableWidget, 13, 4, \
+                                tr("50"), temp5, \
+                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power14->add_Specification();
+
+
+    if(Power15 != nullptr)
+    {
+        delete Power15;
+    }
+    Power15 = new Specification(this,Power15_explain, ui->Time_tableWidget, 14, 4, \
+                                tr("-50"), temp5, \
+                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power15->add_Specification();
+
+    if(Power16 != nullptr)
+    {
+        delete Power16;
+    }
+    Power16 = new Specification(this,Power16_explain, ui->Time_tableWidget, 15, 4, \
+                                tr("50"), temp5, \
+                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power16->add_Specification();
+
+
+    if(Power17 != nullptr)
+    {
+        delete Power17;
+    }
+    Power17 = new Specification(this,Power17_explain, ui->Time_tableWidget, 16, 4, \
+                                tr("-50"), temp5, \
+                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power17->add_Specification();
+
+    if(Power18 != nullptr)
+    {
+        delete Power18;
+    }
+    Power18 = new Specification(this,Power18_explain, ui->Time_tableWidget, 17, 4, \
+                                tr("50"), temp5, \
+                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power18->add_Specification();
+
+    if(Power19 != nullptr)
+    {
+        delete Power19;
+    }
+    Power19 = new Specification(this,Power19_explain, ui->Time_tableWidget, 18, 4, \
+                                tr("-50"), temp5, \
+                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power19->add_Specification();
+
+    if(Power20 != nullptr)
+    {
+        delete Power20;
+    }
+    Power20 = new Specification(this,Power20_explain, ui->Time_tableWidget, 19, 4, \
+                                tr("50"), temp5, \
+                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power20->add_Specification();
 
 }
 /*********系统信息 绘制button**********/

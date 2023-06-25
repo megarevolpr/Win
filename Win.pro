@@ -25,11 +25,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 #include         ($$PWD/UI_NumberKeyboard/UI_NumberKeyboard.pri)
 #include         ($$PWD/UI_Network/UI_Network.pri)
-include         ($$PWD/Messagebox/Messagebox.pri)
+#include         ($$PWD/Messagebox/Messagebox.pri)
 include         ($$PWD/UI_Menu/UI_Menu.pri)
 include         ($$PWD/Specification/Specification.pri)
 
-INCLUDEPATH     +=$$PWD/Messagebox/
+#INCLUDEPATH     +=$$PWD/Messagebox/
 INCLUDEPATH     +=$$PWD/UI_Menu/
 INCLUDEPATH     +=$$PWD/Specification/
 
