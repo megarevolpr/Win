@@ -2565,7 +2565,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">
@@ -4701,7 +4701,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                  <x>0</x>
                  <y>0</y>
                  <width>964</width>
-                 <height>440</height>
+                 <height>411</height>
                 </rect>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_3">
