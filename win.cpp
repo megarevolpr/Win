@@ -172,24 +172,42 @@ void MEGAWin::MemoryAllocation()
 
     /***************************电池设置**********************************/
 
-    DOD_OnGrid_explain          = new QPushButton;
-    DOD_OffGrid_explain         = new QPushButton;
-    Charge_Vol_Up_Limit_explain = new QPushButton;
-    Disc_Vol_lower_Limit_explain= new QPushButton;
-    Charge_Cur_Limit_explain    = new QPushButton;
-    Gen_turn_off_SOC_explain    = new QPushButton;       //柴发关闭SOC
-    Gen_turn_on_SOC_explain     = new QPushButton;       //柴发开启SOC
-    Gen_charge_SOC_explain      = new QPushButton;       //柴发充电SOC
-    Grid_charge_SOC_explain     = new QPushButton;       //电网充电SOC
-    Grid_capacity_explain       = new QPushButton;       //电网容量
-    Turn_on_SOC_explain         = new QPushButton;
-    Turn_off_SOC_explain        = new QPushButton;
-    Turn_on_cell_vol_explain    = new QPushButton;
-    Turn_off_cell_vol_explain   = new QPushButton;
-    Turn_on_total_vol_explain   = new QPushButton;
-    Turn_off_total_vol_explain  = new QPushButton;
-    UPS_charge_power_explain    = new QPushButton;
-    Monthly_cycle_time_explain  = new QPushButton;
+    DOD_OnGrid_explain          = new QPushButton;      //并网DOD
+    DOD_OffGrid_explain         = new QPushButton;      //离网DOD
+    Charge_Vol_Up_Limit_explain = new QPushButton;      //充电电压上限
+    Disc_Vol_lower_Limit_explain= new QPushButton;      //放电电压下限
+    Charge_Cur_Limit_explain    = new QPushButton;      //充电限流点
+    Gen_turn_off_SOC_explain    = new QPushButton;      //柴发关闭SOC
+    Gen_turn_on_SOC_explain     = new QPushButton;      //柴发开启SOC
+    Gen_charge_SOC_explain      = new QPushButton;      //柴发充电SOC
+    Grid_charge_SOC_explain     = new QPushButton;      //电网充电SOC
+    Grid_capacity_explain       = new QPushButton;      //电网容量
+    Turn_on_SOC_explain         = new QPushButton;      //启动SOC
+    Turn_off_SOC_explain        = new QPushButton;      //停止SOC
+    Turn_on_cell_vol_explain    = new QPushButton;      //启动单体电压
+    Turn_off_cell_vol_explain   = new QPushButton;      //停止单体电压
+    Turn_on_total_vol_explain   = new QPushButton;      //启动总压
+    Turn_off_total_vol_explain  = new QPushButton;      //停止总压
+    UPS_charge_power_explain    = new QPushButton;      //后备充电功率
+    Monthly_cycle_time_explain  = new QPushButton;      //月循环日期
+    DOD_OnGrid = nullptr;
+    DOD_OffGrid = nullptr;
+    Charge_Vol_Up_Limit = nullptr;
+    Disc_Vol_lower_Limit = nullptr;
+    Charge_Cur_Limit = nullptr;
+    Gen_turn_off_SOC = nullptr;
+    Gen_turn_on_SOC = nullptr;
+    Gen_charge_SOC = nullptr;
+    Grid_charge_SOC = nullptr;
+    Grid_capacity = nullptr;
+    Turn_on_SOC = nullptr;
+    Turn_off_SOC = nullptr;
+    Turn_on_cell_vol = nullptr;
+    Turn_off_cell_vol = nullptr;
+    Turn_on_total_vol = nullptr;
+    Turn_off_total_vol = nullptr;
+    UPS_charge_power = nullptr;
+    Monthly_cycle_time = nullptr;
 
     /*****************************自动运行*******************************/
 
@@ -1079,6 +1097,7 @@ void MEGAWin::Change_Language()
         ui->retranslateUi(this);
     }
 
+    BatterySet_tab();   //电池设置
     RunTimeSet_tab();   //自动运行
     Information_tbnt_released();    //系统信息
 }
@@ -2432,74 +2451,163 @@ void MEGAWin::ParameterSet()
 /***********电池设置 绘制button************/
 void MEGAWin::BetterySetup()
 {
+    if(DOD_OnGrid != nullptr)
+    {
+        delete DOD_OnGrid;
+    }
     DOD_OnGrid = new Specification(this,DOD_OnGrid_explain, ui->Lithum_Tab, 0, 1, \
                                      tr("90"), tr("DOD_OnGrid"), \
                                      tr("Grid-connected DOD, the depth of discharge allowed in grid-connected mode."));
     DOD_OnGrid->add_Specification();
+
+    if(DOD_OffGrid != nullptr)
+    {
+        delete DOD_OffGrid;
+    }
     DOD_OffGrid = new Specification(this,DOD_OffGrid_explain, ui->Lithum_Tab, 1, 1, \
                                      tr("90"), tr("DOD_OffGrid"), \
                                      tr("Off-network DOD: Discharge depth allowed in off-network mode."));
     DOD_OffGrid->add_Specification();
+
+    if(Charge_Vol_Up_Limit != nullptr)
+    {
+        delete Charge_Vol_Up_Limit;
+    }
     Charge_Vol_Up_Limit = new Specification(this,Charge_Vol_Up_Limit_explain, ui->Lithum_Tab, 2, 1, \
                                      tr("792"), tr("Charge_Vol_Up_Limit"), \
                                      tr("This is the upper limit of the charging voltage. When the total battery voltage reaches this value during charging, the PCS will enter the constant voltage mode to prevent the battery from overcharging."));
     Charge_Vol_Up_Limit->add_Specification();
+
+    if(Disc_Vol_lower_Limit != nullptr)
+    {
+        delete Disc_Vol_lower_Limit;
+    }
     Disc_Vol_lower_Limit = new Specification(this,Disc_Vol_lower_Limit_explain, ui->Lithum_Tab, 3, 1, \
                                      tr("616"), tr("Disc_Vol_lower_Limit"), \
                                      tr("This is the lower limit of the discharge voltage. When the total battery voltage during discharge reaches this value, PCS will trigger a battery low voltage alarm, and PCS will shut down to prevent battery overdischarge."));
     Disc_Vol_lower_Limit->add_Specification();
+
+    if(Charge_Cur_Limit != nullptr)
+    {
+        delete Charge_Cur_Limit;
+    }
     Charge_Cur_Limit = new Specification(this,Charge_Cur_Limit_explain, ui->Lithum_Tab, 4, 1, \
                                      tr("160"), tr("Charge_Cur_Limit"), \
                                      tr("This is the upper limit of charging current, which is the maximum current allowed on the DC side of PCS to prevent charging overcurrent."));
     Charge_Cur_Limit->add_Specification();
+
+    if(Gen_turn_off_SOC != nullptr)
+    {
+        delete Gen_turn_off_SOC;
+    }
     Gen_turn_off_SOC = new Specification(this,Gen_turn_off_SOC_explain, ui->Lithum_Tab, 5, 1, \
                                      tr("85"), tr("Gen_turn_off_SOC"), \
                                      tr("When the specified SCO value is reached, the diesel generator shuts down."));
     Gen_turn_off_SOC->add_Specification();
+
+    if(Gen_turn_on_SOC != nullptr)
+    {
+        delete Gen_turn_on_SOC;
+    }
     Gen_turn_on_SOC = new Specification(this,Gen_turn_on_SOC_explain, ui->Lithum_Tab, 6, 1, \
                                      tr("25"), tr("Gen_turn_on_SOC"), \
                                      tr("When the specified SOC value is reached, the diesel generator starts."));
     Gen_turn_on_SOC->add_Specification();
+
+    if(Gen_charge_SOC != nullptr)
+    {
+        delete Gen_charge_SOC;
+    }
     Gen_charge_SOC = new Specification(this,Gen_charge_SOC_explain, ui->Lithum_Tab, 7, 1, \
                                      tr("10"), tr("Gen_charge_SOC"), \
                                      tr("This is the diesel generator charging SOC, this parameter is used in the combined power supply mode, when the battery SOC reaches this value, the PCS starts charging."));
     Gen_charge_SOC->add_Specification();
+
+    if(Grid_charge_SOC != nullptr)
+    {
+        delete Grid_charge_SOC;
+    }
     Grid_charge_SOC = new Specification(this,Grid_charge_SOC_explain, ui->Lithum_Tab, 8, 1, \
                                      tr("15"), tr("Grid_charge_SOC"), \
                                      tr("This is the grid charging SOC, this parameter is used in the combined power supply mode, when the battery SOC reaches this value, the PCS starts charging."));
     Grid_charge_SOC->add_Specification();
+
+    if(Grid_capacity != nullptr)
+    {
+        delete Grid_capacity;
+    }
     Grid_capacity = new Specification(this,Grid_capacity_explain, ui->Lithum_Tab, 9, 1, \
                                      tr("100"), tr("Grid_capacity"), \
                                      tr("This is the power grid capacity, the maximum capacity input on the AC side of PCS, and this parameter takes effect in the combined power supply mode."));
     Grid_capacity->add_Specification();
+
+    if(Turn_on_SOC != nullptr)
+    {
+        delete Turn_on_SOC;
+    }
     Turn_on_SOC = new Specification(this,Turn_on_SOC_explain, ui->Lithum_Tab, 0, 4, \
                                      tr("20"), tr("Turn_on_SOC"), \
                                      tr("When UPS mode is selected and battery SOC reaches this value,PCS starts charging."));
     Turn_on_SOC->add_Specification();
+
+    if(Turn_off_SOC != nullptr)
+    {
+        delete Turn_off_SOC;
+    }
     Turn_off_SOC = new Specification(this,Turn_off_SOC_explain, ui->Lithum_Tab, 1, 4, \
                                      tr("50"), tr("Turn_off_SOC"), \
                                      tr("When UPS mode is selected,PCS stops charging when battery SOC reaches this value."));
     Turn_off_SOC->add_Specification();
+
+    if(Turn_on_cell_vol != nullptr)
+    {
+        delete Turn_on_cell_vol;
+    }
     Turn_on_cell_vol = new Specification(this,Turn_on_cell_vol_explain, ui->Lithum_Tab, 2, 4, \
                                      tr("3100"), tr("Turn_on_cell_vol"), \
                                      tr("When UPS mode is selected, the PCS starts charging when the minimum battery voltage reaches the value."));
     Turn_on_cell_vol->add_Specification();
+
+    if(Turn_off_cell_vol != nullptr)
+    {
+        delete Turn_off_cell_vol;
+    }
     Turn_off_cell_vol = new Specification(this,Turn_off_cell_vol_explain, ui->Lithum_Tab, 3, 4, \
                                      tr("3500"), tr("Turn_off_cell_vol"), \
                                      tr("When UPS mode is selected, PCS stops charging when the maximum battery voltage reaches this value."));
     Turn_off_cell_vol->add_Specification();
+
+    if(Turn_on_total_vol != nullptr)
+    {
+        delete Turn_on_total_vol;
+    }
     Turn_on_total_vol = new Specification(this,Turn_on_total_vol_explain, ui->Lithum_Tab, 4, 4, \
                                      tr("400"), tr("Turn_on_total_vol"), \
                                      tr("When the UPS mode is selected, the PCS starts charging when the total battery voltage reaches the value."));
     Turn_on_total_vol->add_Specification();
+
+    if(Turn_off_total_vol != nullptr)
+    {
+        delete Turn_off_total_vol;
+    }
     Turn_off_total_vol = new Specification(this,Turn_off_total_vol_explain, ui->Lithum_Tab, 5, 4, \
                                      tr("650"), tr("Turn_off_total_vol"), \
                                      tr("When UPS mode is selected, PCS stops charging when the total battery voltage reaches this value."));
     Turn_off_total_vol->add_Specification();
+
+    if(UPS_charge_power != nullptr)
+    {
+        delete UPS_charge_power;
+    }
     UPS_charge_power = new Specification(this,UPS_charge_power_explain, ui->Lithum_Tab, 6, 4, \
                                      tr("-1"), tr("UPS_charge_power"), \
                                      tr("When UPS mode is selected, the backup charging power of PCS is used when the battery starts charging."));
     UPS_charge_power->add_Specification();
+
+    if(Monthly_cycle_time != nullptr)
+    {
+        delete Monthly_cycle_time;
+    }
     Monthly_cycle_time = new Specification(this,Monthly_cycle_time_explain, ui->Lithum_Tab, 7, 4, \
                                      tr("0"), tr("Monthly_cycle_time"), \
                                      tr("On the same day of each month, there is a deep charge and discharge."));
