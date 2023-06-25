@@ -269,6 +269,12 @@ void MEGAWin::MemoryAllocation()
     ConverterVersion_explain    = new QPushButton;
     CPLD_Version_explain        = new QPushButton;
     SN_explain                  = new QPushButton;
+    Manufacturer_name = nullptr;
+    MonitoringVersion = nullptr;
+    SysProtocol_Version = nullptr;
+    ConverterVersion = nullptr;
+    CPLD_Version = nullptr;
+    SN = nullptr;
     /***************************高级设置**********************************/
     AdvancedSetup_btn = new QPushButton;                //高级设置
 
@@ -687,7 +693,7 @@ void MEGAWin::RTDataDisplay()
     RTData_Anologe();
 }
 /*************************************************************************
- * 系统信息槽
+ * 系统信息
  ************************************************************************/
 void MEGAWin::Information_tbnt_released()
 {
@@ -1073,7 +1079,8 @@ void MEGAWin::Change_Language()
         ui->retranslateUi(this);
     }
 
-    RunTimeSet_tab();
+    RunTimeSet_tab();   //自动运行
+    Information_tbnt_released();    //系统信息
 }
 
 /***************************************************************
@@ -1634,32 +1641,32 @@ void MEGAWin::SystemlnformationVer_clicked(int nid)
 {
     switch (nid) {
     case 0:
-        QMessageBox::question(this, "Interface"\
-                              ,"这是接口号，默认eth0\nThis is the interface number, which defaults to eth0", "OK");
+        QMessageBox::question(this, tr("Interface")\
+                              ,tr("This is the interface number, which defaults to eth0."), tr("OK"));
         break;
     case 1:
-        QMessageBox::question(this, "Port"\
-                              ,"这是端口号，默认502\nThis is the port number, default 502", "OK");
+        QMessageBox::question(this, tr("Port")\
+                              ,tr("This is the port number, which defaults to 502 and can be changed as needed."), tr("OK"));
         break;
     case 2:
-        QMessageBox::question(this, "Ip"\
-                              ,"这是IP地址，默认192.168.1.100\nThis is the IP address. The default is 192.168.1.100", "OK");
+        QMessageBox::question(this, tr("Ip")\
+                              ,tr("This is the IP address. The default is 192.168.1.100."), tr("OK"));
         break;
     case 3:
-        QMessageBox::question(this, "Netmask"\
-                              ,"这是子网掩码，255.255.255.0\nThis is the subnet mask, 255.255.255.0", "OK");
+        QMessageBox::question(this, tr("Netmask")\
+                              ,tr("This is the subnet mask, 255.255.255.0."), tr("OK"));
         break;
     case 4:
-        QMessageBox::question(this, "Gateway"\
-                              ,"这是网关，默认192.168.1.1\nThis is the gateway. The default is 192.168.1.1", "OK");
+        QMessageBox::question(this, tr("Gateway")\
+                              ,tr("This is the gateway. The default is 192.168.1.1."), tr("OK"));
         break;
     case 5:
-        QMessageBox::question(this, "Serber ip"\
-                              ,"这是服务器IP，默认192.168.1.200\nThis is the server IP address. The default is 192.168.1.200", "OK");
+        QMessageBox::question(this, tr("Serber ip")\
+                              ,tr("This is the server IP address. The default is 192.168.1.200."), tr("OK"));
         break;
     case 6:
-        QMessageBox::question(this, "Apply and Restart system"\
-                              ,"这是应用并重启系统，点击后将重启系统，如有升级，将会使用新的程序\nThis is the application and restart the system, click will restart the system, if there is an upgrade, will use the new program.", "OK");
+        QMessageBox::question(this, tr("Apply and Restart system")\
+                              ,tr("This is the application and restart the system. After clicking, the system will be restarted. If there is an upgrade of the monitoring screen program, the new monitoring screen program will be used after the restart."), tr("OK"));
         break;
     default:
         break;
@@ -3424,29 +3431,58 @@ void MEGAWin::AutoOperation()
 /*********系统信息 绘制button**********/
 void MEGAWin::SystemMessages()
 {
+    if(Manufacturer_name != nullptr)
+    {
+        delete Manufacturer_name;
+    }
     Manufacturer_name = new Specification(this,Manufacturer_name_explain, ui->EquipmentInfor_tableWidget, 0, 1, \
-                                     "PCS", "Manufacturer name", \
-                                     "这是厂家名称\nThis is the name of the manufacturer.");
+                                     "PCS", tr("Manufacturer name"), \
+                                     tr("This is the name of the manufacturer."));
     Manufacturer_name->add_Specification();
+
+    if(MonitoringVersion != nullptr)
+    {
+        delete MonitoringVersion;
+    }
     MonitoringVersion = new Specification(this,MonitoringVersion_explain, ui->EquipmentInfor_tableWidget, 1, 1, \
-                                     "V103B500D004", "Monitoring software version", \
-                                     "这是监控版本\nThis is the name of the manufacturer.");
+                                     "V103B500D004", tr("Monitoring software version"), \
+                                     tr("This is the name of the manufacturer."));
     MonitoringVersion->add_Specification();
+
+    if(SysProtocol_Version != nullptr)
+    {
+        delete SysProtocol_Version;
+    }
     SysProtocol_Version = new Specification(this,SysProtocol_Version_explain, ui->EquipmentInfor_tableWidget, 2, 1, \
-                                     "V001B001D001", "Manufacturer name", \
-                                     "这是协议版本号\nThis is the name of the manufacturer.");
+                                     "V001B001D001", tr("Protocol Version"), \
+                                     tr("This is the protocol version number."));
     SysProtocol_Version->add_Specification();
+
+    if(ConverterVersion != nullptr)
+    {
+        delete ConverterVersion;
+    }
     ConverterVersion = new Specification(this,ConverterVersion_explain, ui->EquipmentInfor_tableWidget, 3, 1, \
-                                     "V105B500D008", "Manufacturer name", \
-                                     "这是变流器软件版本\nThis is the name of the manufacturer.");
+                                     "V105B500D008", tr("Converter software version"), \
+                                     tr("This is the converter software version."));
     ConverterVersion->add_Specification();
+
+    if(CPLD_Version != nullptr)
+    {
+        delete CPLD_Version;
+    }
     CPLD_Version = new Specification(this,CPLD_Version_explain, ui->EquipmentInfor_tableWidget, 4, 1, \
-                                     "V001B001D000", "Manufacturer name", \
-                                     "这是CPLD软件版本\nThis is the name of the manufacturer.");
+                                     "V001B001D000", tr("CPLD software version"), \
+                                     tr("This is the CPLD software version."));
     CPLD_Version->add_Specification();
+
+    if(SN != nullptr)
+    {
+        delete SN;
+    }
     SN = new Specification(this,SN_explain, ui->EquipmentInfor_tableWidget, 5, 1, \
-                                     "F12200000001", "Manufacturer name", \
-                                     "这是SN,即产品序列号\nThis is the name of the manufacturer.");
+                                     "F12200000001", tr("SN"), \
+                                     tr("This is SN, the serial number of the product."));
     SN->add_Specification();
 }
 /***********功能设置 绘制button************/
@@ -3995,7 +4031,7 @@ void MEGAWin::on_radio_static_clicked()
         ui->gateway_explain_btn->hide();
         ui->server_ip_explain_btn->hide();
     }
-    QMessageBox::question(this ,"static", "如果选择此项，表示使用静态的IP地址\nIf this parameter is selected, static IP addresses are used", "OK");
+    QMessageBox::question(this ,tr("static"), tr("If this parameter is selected, static IP addresses are used."), tr("OK"));
 }
 /*********** 选择自动分配IP地址 ************/
 void MEGAWin::on_radio_dhcp_clicked()
@@ -4015,7 +4051,7 @@ void MEGAWin::on_radio_dhcp_clicked()
         ui->gateway_explain_btn->hide();
         ui->server_ip_explain_btn->hide();
     }
-    QMessageBox::question(this ,"dhcp", "如果选择此项，表示使用自动分配的IP地址\nIf this parameter is selected, the automatically assigned IP address is used", "OK");
+    QMessageBox::question(this ,tr("dhcp"), tr("This is an automatic IP acquisition, currently not supported."), tr("OK"));
 }
 /*********** 调入测试数据 ************/
 void MEGAWin::on_radio_test_data_btn_clicked()
