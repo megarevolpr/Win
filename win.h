@@ -23,7 +23,6 @@
 
 
 
-
 namespace Ui {
 class MEGAWin;
 }
@@ -704,6 +703,9 @@ public:
         void RunTimeSet_tab();//系统自动运行表初始化
 
 
+        void PCS_Data_Tab();//PCS数据表
+        void Grid_Data_Tab();//电网数据表
+        void Load_Data_Tab();//负载数据表
         void RTData_Anologe();//实时模拟量数据
         void RTData_Status();//实时状态量数据
 private:

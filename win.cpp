@@ -472,6 +472,22 @@ void MEGAWin::MemoryAllocation()
     PCS_Bus_vol_explain= new QPushButton;
     PCS_IGBT_T_explain = new QPushButton;
     PCS_Env_T_explain  = new QPushButton;
+    PCS_vol_AB = nullptr;
+    PCS_vol_BC = nullptr;
+    PCS_vol_CA = nullptr;
+    PCS_cur_A = nullptr;
+    PCS_cur_B = nullptr;
+    PCS_cur_C = nullptr;
+    PCS_act_P = nullptr;
+    PCS_rea_P = nullptr;
+    PCS_par_P = nullptr;
+    PCS_Pf = nullptr;
+    PCS_Bat_vol = nullptr;
+    PCS_Bat_cur = nullptr;
+    PCS_Bat_P = nullptr;
+    PCS_Bus_vol = nullptr;
+    PCS_IGBT_T = nullptr;
+    PCS_Env_T = nullptr;
 
     Grid_vol_AB_explain = new QPushButton;
     Grid_vol_BC_explain = new QPushButton;
@@ -484,6 +500,17 @@ void MEGAWin::MemoryAllocation()
     Grid_app_P_explain  = new QPushButton;
     Grid_fre_explain    = new QPushButton;
     Grid_Pf_explain     = new QPushButton;
+    Grid_vol_AB = nullptr;
+    Grid_vol_BC = nullptr;
+    Grid_vol_CA = nullptr;
+    Grid_cur_A = nullptr;
+    Grid_cur_B = nullptr;
+    Grid_cur_C = nullptr;
+    Grid_act_P = nullptr;
+    Grid_rea_P = nullptr;
+    Grid_app_P = nullptr;
+    Grid_fre = nullptr;
+    Grid_Pf = nullptr;
 
     Load_vol_AB_explain = new QPushButton;
     Load_vol_BC_explain = new QPushButton;
@@ -495,6 +522,17 @@ void MEGAWin::MemoryAllocation()
     Load_rea_P_explain  = new QPushButton;
     Load_app_P_explain  = new QPushButton;
     Load_Pf_explain     = new QPushButton;
+    Load_vol_AB = nullptr;
+    Load_vol_BC = nullptr;
+    Load_vol_CA = nullptr;
+    Load_cur_A = nullptr;
+    Load_cur_B = nullptr;
+    Load_cur_C = nullptr;
+    Load_act_P = nullptr;
+    Load_rea_P = nullptr;
+    Load_app_P = nullptr;
+    Load_Pf = nullptr;
+
     /***************************PCS状态**********************************/
     DC_input_Breaker_explain    = new QPushButton;//直流输入断路器
     DC_Cont_explain             = new QPushButton;//直流输入器
@@ -589,7 +627,9 @@ void MEGAWin::FirstPage()
  ***************************************************************/
 void MEGAWin::RunStatePage()
 {
-    ModuleData_Tab();//PCS数据
+    PCS_Data_Tab();//变流器实时数据
+    Grid_Data_Tab();//电网实时数据
+    Load_Data_Tab();//负载实时数据
     RTAlarm();//告警信息
     ModuleState_Tab();//PCS状态
 }
@@ -721,6 +761,143 @@ void MEGAWin::RunTimeSet_tab()
 
     AutoOperation();//自动运行 绘制button
 
+}
+/******************************************************************************
+ * 变流器实时数据表初始化
+ * ***************************************************************************/
+void MEGAWin::PCS_Data_Tab()
+{
+//    ui->Converter_Tab->clearContents();
+    QStringList Converter_Tablist1;
+    Converter_Tablist1  << tr("PCS voltage(AB)") << tr("PCS voltage(BC)") << tr("PCS voltage(CA)")
+                        << tr("PCS current(A)") << tr("PCS current(B)")<< tr("PCS current(C)")
+                        << tr("PCS Active P.") << tr("PCS Reactive P.") << tr("PCS Parent P.") << tr("PCS Pf");
+    QStringList Converter_Tablist2;
+    Converter_Tablist2  << tr("Battery voltage") << tr("Battery current") << tr("Battery power")
+                        << tr("Bus voltage") << tr("IGBT temperature")
+                        << tr("Environment temperature");
+
+    ui->Converter_Tab->setColumnCount(4);
+    ui->Converter_Tab->setRowCount(Converter_Tablist1.size());
+
+    //设置表格背景颜色
+    QPalette pal;
+    pal.setColor(QPalette::Base, QColor(255, 0, 0));
+    pal.setColor(QPalette::AlternateBase, QColor(100, 149, 237));
+
+    ui->Converter_Tab->setPalette(pal);
+    ui->Converter_Tab->setAlternatingRowColors(true);
+    QStringList Converter_TabList;
+    Converter_TabList << tr("Name") << tr("Value") << tr("Name") << tr("Value")<< tr("Name") << tr("Value");
+    ui->Converter_Tab->setHorizontalHeaderLabels(Converter_TabList);
+    ui->Converter_Tab->setColumnWidth(0,200);
+    ui->Converter_Tab->setColumnWidth(1,200);
+    ui->Converter_Tab->setColumnWidth(2,200);
+    ui->Converter_Tab->setColumnWidth(3,200);
+    ui->Converter_Tab->horizontalHeader()->setStretchLastSection(3);
+    ui->Converter_Tab->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+    ui->Converter_Tab->verticalHeader()->setVisible(false);//设置垂直头不可见
+    ui->Converter_Tab->setFrameShape(QFrame::NoFrame);//设置无边框
+    ui->Converter_Tab->setShowGrid(true);//设置不显示格子
+    ui->Converter_Tab->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+    ui->Converter_Tab->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
+    ui->Converter_Tab->setStyleSheet("selection-background-color:lightblue;");
+    for(int i = 0; i < Converter_Tablist1.size(); i++)
+    {
+        ui->Converter_Tab->setItem(i, 0, new QTableWidgetItem(Converter_Tablist1.at(i)));
+        ui->Converter_Tab->item(i, 0)->setTextAlignment(Qt::AlignCenter);
+    }
+    for(int i = 0; i < Converter_Tablist2.size(); i++)
+    {
+        ui->Converter_Tab->setItem(i, 2, new QTableWidgetItem(Converter_Tablist2.at(i)));
+        ui->Converter_Tab->item(i, 2)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    PCS_Data();//PCS数据 绘制button
+}
+/******************************************************************************
+ * 电网实时数据表初始化
+ * ***************************************************************************/
+void MEGAWin::Grid_Data_Tab()
+{
+//    ui->Grid_Tab->clearContents();
+
+    QStringList Grid_Tablist;
+    Grid_Tablist << tr("Grid voltage(AB)") << tr("Grid voltage(BC)") << tr("Grid voltage(CA)")
+                    << tr("Grid current(A)") << tr("Grid current(B)")<< tr("Grid current(C)")
+                    << tr("Grid active power") << tr("Grid reactive power")
+                     << tr("Grid apparent power") << tr("Grid frequency") << tr("Grid power factor");
+    ui->Grid_Tab->setColumnCount(2);
+    ui->Grid_Tab->setRowCount(Grid_Tablist.size());
+
+
+    //设置表格背景颜色
+    QPalette pal;
+    pal.setColor(QPalette::Base, QColor(255, 0, 0));
+    pal.setColor(QPalette::AlternateBase, QColor(100, 149, 237));
+
+    ui->Grid_Tab->setPalette(pal);
+    ui->Grid_Tab->setAlternatingRowColors(true);
+    QStringList Grid_TabList;
+    Grid_TabList << tr("Name") << tr("Value");
+    ui->Grid_Tab->setHorizontalHeaderLabels(Grid_TabList);
+    ui->Grid_Tab->setColumnWidth(0,400);
+    ui->Grid_Tab->horizontalHeader()->setStretchLastSection(1);
+
+    ui->Grid_Tab->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+    ui->Grid_Tab->verticalHeader()->setVisible(false);//设置垂直头不可见
+    ui->Grid_Tab->setFrameShape(QFrame::NoFrame);//设置无边框
+    ui->Grid_Tab->setShowGrid(true);//设置不显示格子
+    ui->Grid_Tab->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+    ui->Grid_Tab->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
+    ui->Grid_Tab->setStyleSheet("selection-background-color:lightblue;");
+    for(int i = 0; i < Grid_Tablist.size(); i++)
+    {
+        ui->Grid_Tab->setItem(i, 0, new QTableWidgetItem(Grid_Tablist.at(i)));
+        ui->Grid_Tab->item(i, 0)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    Grid_Data();//电网数据 绘制button
+}
+/******************************************************************************
+ * 负载实时数据表初始化
+ * ***************************************************************************/
+void MEGAWin::Load_Data_Tab()
+{
+//    ui->Load_Tab->clearContents();
+    QStringList Load_Tablist;
+    Load_Tablist << tr("Load voltage(AB)") << tr("Load voltage(BC)") << tr("Load voltage(CA)")
+                        << tr("Load current(A)") << tr("Load current(B)")<< tr("Load current(C)")
+                        << tr("Load active power") << tr("Load reactive power")
+                        << tr("Load apparent power") << tr("Load power fator");
+    ui->Load_Tab->setColumnCount(2);
+    ui->Load_Tab->setRowCount(Load_Tablist.size());
+    //设置表格背景颜色
+    QPalette pal;
+    pal.setColor(QPalette::Base, QColor(255, 0, 0));
+    pal.setColor(QPalette::AlternateBase, QColor(100, 149, 237));
+
+    ui->Load_Tab->setPalette(pal);
+    ui->Load_Tab->setAlternatingRowColors(true);
+    QStringList Load_TabList;
+    Load_TabList << tr("Name") << tr("Value");
+    ui->Load_Tab->setHorizontalHeaderLabels(Load_TabList);
+    ui->Load_Tab->setColumnWidth(0,400);
+    ui->Load_Tab->horizontalHeader()->setStretchLastSection(1);
+    ui->Load_Tab->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+    ui->Load_Tab->verticalHeader()->setVisible(false);//设置垂直头不可见
+    ui->Load_Tab->setFrameShape(QFrame::NoFrame);//设置无边框
+    ui->Load_Tab->setShowGrid(true);//设置不显示格子
+    ui->Load_Tab->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+    ui->Load_Tab->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
+    ui->Load_Tab->setStyleSheet("selection-background-color:lightblue;");
+    for(int i = 0; i < Load_Tablist.size(); i++)
+    {
+        ui->Load_Tab->setItem(i, 0, new QTableWidgetItem(Load_Tablist.at(i)));
+        ui->Load_Tab->item(i, 0)->setTextAlignment(Qt::AlignCenter);
+    }
+
+    Load_Data();//负载数据 绘制button
 }
 /******************************************************************************
  * 实时数据——模拟量
@@ -1132,8 +1309,7 @@ void MEGAWin::Change_Language()
         ui->retranslateUi(this);
     }
 
-    ModuleState_Tab();  //PCS状态
-    RTAlarm();          //告警信息
+    RunStatePage();
 
     UserParam_tab();    //参数设置
     BatterySet_tab();   //电池设置
@@ -1250,112 +1426,6 @@ void MEGAWin::LinkRelationship()
  * ***************************************************************************/
 void MEGAWin::ModuleData_Tab()//PCS数据
 {
-        ui->Converter_Tab->clearContents();
-        ui->Grid_Tab->clearContents();
-        ui->Load_Tab->clearContents();
-        QStringList Converter_Tablist1;
-        Converter_Tablist1  << tr("PCS voltage(AB)") << tr("PCS voltage(BC)") << tr("PCS voltage(CA)")
-                            << tr("PCS current(A)") << tr("PCS current(B)")<< tr("PCS current(C)")
-                            << tr("PCS Active P.") << tr("PCS Reactive P.") << tr("PCS Parent P.") << tr("PCS Pf");
-        QStringList Converter_Tablist2;
-        Converter_Tablist2  << tr("Battery voltage") << tr("Battery current") << tr("Battery power")
-                            << tr("Bus voltage") << tr("IGBT temperature")
-                            << tr("Environment temperature");
-
-       QStringList Grid_Tablist;
-           Grid_Tablist << tr("Grid voltage(AB)") << tr("Grid voltage(BC)") << tr("Grid voltage(CA)")
-                           << tr("Grid current(A)") << tr("Grid current(B)")<< tr("Grid current(C)")
-                           << tr("Grid active power") << tr("Grid reactive power")
-                            << tr("Grid apparent power") << tr("Grid frequency") << tr("Grid power factor");
-       QStringList Load_Tablist;
-       Load_Tablist << tr("Load voltage(AB)") << tr("Load voltage(BC)") << tr("Load voltage(CA)")
-                           << tr("Load current(A)") << tr("Load current(B)")<< tr("Load current(C)")
-                           << tr("Load active power") << tr("Load reactive power")
-                           << tr("Load apparent power") << tr("Load power fator");
-        ui->Converter_Tab->setColumnCount(4);
-        ui->Converter_Tab->setRowCount(Converter_Tablist1.size());
-
-        ui->Grid_Tab->setColumnCount(2);
-        ui->Grid_Tab->setRowCount(Grid_Tablist.size());
-
-        ui->Load_Tab->setColumnCount(2);
-        ui->Load_Tab->setRowCount(Load_Tablist.size());
-        //设置表格背景颜色
-        QPalette pal;
-        pal.setColor(QPalette::Base, QColor(255, 0, 0));
-        pal.setColor(QPalette::AlternateBase, QColor(100, 149, 237));
-
-        ui->Converter_Tab->setPalette(pal);
-        ui->Converter_Tab->setAlternatingRowColors(true);
-        QStringList Converter_TabList;
-        Converter_TabList << tr("Name") << tr("Value") << tr("Name") << tr("Value")<< tr("Name") << tr("Value");
-        ui->Converter_Tab->setHorizontalHeaderLabels(Converter_TabList);
-        ui->Converter_Tab->setColumnWidth(0,200);
-        ui->Converter_Tab->setColumnWidth(1,200);
-        ui->Converter_Tab->setColumnWidth(2,200);
-        ui->Converter_Tab->setColumnWidth(3,200);
-        ui->Converter_Tab->horizontalHeader()->setStretchLastSection(3);
-        ui->Converter_Tab->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
-        ui->Converter_Tab->verticalHeader()->setVisible(false);//设置垂直头不可见
-        ui->Converter_Tab->setFrameShape(QFrame::NoFrame);//设置无边框
-        ui->Converter_Tab->setShowGrid(true);//设置不显示格子
-        ui->Converter_Tab->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
-        ui->Converter_Tab->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
-        ui->Converter_Tab->setStyleSheet("selection-background-color:lightblue;");
-        for(int i = 0; i < Converter_Tablist1.size(); i++)
-        {
-            ui->Converter_Tab->setItem(i, 0, new QTableWidgetItem(Converter_Tablist1.at(i)));
-            ui->Converter_Tab->item(i, 0)->setTextAlignment(Qt::AlignCenter);
-        }
-        for(int i = 0; i < Converter_Tablist2.size(); i++)
-        {
-            ui->Converter_Tab->setItem(i, 2, new QTableWidgetItem(Converter_Tablist2.at(i)));
-            ui->Converter_Tab->item(i, 2)->setTextAlignment(Qt::AlignCenter);
-        }
-
-        ui->Grid_Tab->setPalette(pal);
-        ui->Grid_Tab->setAlternatingRowColors(true);
-        QStringList Grid_TabList;
-        Grid_TabList << tr("Name") << tr("Value");
-        ui->Grid_Tab->setHorizontalHeaderLabels(Grid_TabList);
-        ui->Grid_Tab->setColumnWidth(0,400);
-        ui->Grid_Tab->horizontalHeader()->setStretchLastSection(1);
-
-        ui->Grid_Tab->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
-        ui->Grid_Tab->verticalHeader()->setVisible(false);//设置垂直头不可见
-        ui->Grid_Tab->setFrameShape(QFrame::NoFrame);//设置无边框
-        ui->Grid_Tab->setShowGrid(true);//设置不显示格子
-        ui->Grid_Tab->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
-        ui->Grid_Tab->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
-        ui->Grid_Tab->setStyleSheet("selection-background-color:lightblue;");
-        for(int i = 0; i < Grid_Tablist.size(); i++)
-        {
-            ui->Grid_Tab->setItem(i, 0, new QTableWidgetItem(Grid_Tablist.at(i)));
-            ui->Grid_Tab->item(i, 0)->setTextAlignment(Qt::AlignCenter);
-        }
-
-        ui->Load_Tab->setPalette(pal);
-        ui->Load_Tab->setAlternatingRowColors(true);
-        QStringList Load_TabList;
-        Load_TabList << tr("Name") << tr("Value");
-        ui->Load_Tab->setHorizontalHeaderLabels(Load_TabList);
-        ui->Load_Tab->setColumnWidth(0,400);
-        ui->Load_Tab->horizontalHeader()->setStretchLastSection(1);
-        ui->Load_Tab->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
-        ui->Load_Tab->verticalHeader()->setVisible(false);//设置垂直头不可见
-        ui->Load_Tab->setFrameShape(QFrame::NoFrame);//设置无边框
-        ui->Load_Tab->setShowGrid(true);//设置不显示格子
-        ui->Load_Tab->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
-        ui->Load_Tab->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
-        ui->Load_Tab->setStyleSheet("selection-background-color:lightblue;");
-        for(int i = 0; i < Load_Tablist.size(); i++)
-        {
-            ui->Load_Tab->setItem(i, 0, new QTableWidgetItem(Load_Tablist.at(i)));
-            ui->Load_Tab->item(i, 0)->setTextAlignment(Qt::AlignCenter);
-        }
-        PCS_Data();//PCS数据 绘制button
-        Grid_Data();//电网数据 绘制button
-        Load_Data();//负载数据 绘制button
 
 }
 /******************************************************************************
@@ -1538,7 +1608,6 @@ void MEGAWin::on_Running_btn_clicked()  //显示变流器实时数据
     ui->Run_tabWidget->setCurrentWidget(ui->RTData_page);
     ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
     ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Converter_page);
-
 }
 
 void MEGAWin::on_Grid_clicked()     //显示电网端实时数据
@@ -2161,67 +2230,146 @@ void MEGAWin::BatteryData_clicked(int nid)
 /*********PCS数据 绘制button**********/
 void MEGAWin::PCS_Data()
 {
+    if(PCS_vol_AB != nullptr)
+    {
+        delete PCS_vol_AB;
+    }
     PCS_vol_AB = new Specification(this,PCS_vol_AB_explain, ui->Converter_Tab, 0, 1, \
                                             tr("270.2V"), tr("PCS voltage(AB)"), \
                                             tr("The inverter side voltage of the current PCS is the phase voltage between phase A and phase B."));
     PCS_vol_AB->add_Specification();
+
+    if(PCS_vol_BC != nullptr)
+    {
+        delete PCS_vol_BC;
+    }
     PCS_vol_BC = new Specification(this,PCS_vol_BC_explain, ui->Converter_Tab, 1, 1, \
                                             tr("270V"), tr("PCS voltage(BC)"), \
                                             tr("The inverter side voltage of the current PCS is the phase voltage between phase B and phase C."));
     PCS_vol_BC->add_Specification();
+
+    if(PCS_vol_CA != nullptr)
+    {
+        delete PCS_vol_CA;
+    }
     PCS_vol_CA = new Specification(this,PCS_vol_CA_explain, ui->Converter_Tab, 2, 1, \
                                             tr("270.1V"), tr("PCS voltage(CA)"), \
                                             tr("The inverter side voltage of the current PCS is the phase voltage between phase A and phase C."));
     PCS_vol_CA->add_Specification();
+
+    if(PCS_cur_A != nullptr)
+    {
+        delete PCS_cur_A;
+    }
     PCS_cur_A = new Specification(this,PCS_cur_A_explain, ui->Converter_Tab, 3, 1, \
                                             tr("0A"), tr("PCS current(A)"), \
                                             tr("The current of the inverter side of the current PCS is the current of phase A."));
     PCS_cur_A->add_Specification();
+
+    if(PCS_cur_B != nullptr)
+    {
+        delete PCS_cur_B;
+    }
     PCS_cur_B = new Specification(this,PCS_cur_B_explain, ui->Converter_Tab, 4, 1, \
                                             tr("0A"), tr("PCS current(B)"), \
                                             tr("The current of the inverter side of the current PCS is the current of phase B."));
     PCS_cur_B->add_Specification();
+
+    if(PCS_cur_C != nullptr)
+    {
+        delete PCS_cur_C;
+    }
     PCS_cur_C = new Specification(this,PCS_cur_C_explain, ui->Converter_Tab, 5, 1, \
                                             tr("0A"), tr("PCS current(C)"), \
                                             tr("The current of the inverter side of the current PCS is the current of phase C."));
     PCS_cur_C->add_Specification();
+
+    if(PCS_act_P != nullptr)
+    {
+        delete PCS_act_P;
+    }
     PCS_act_P = new Specification(this,PCS_act_P_explain, ui->Converter_Tab, 6, 1, \
                                             tr("0kW"), tr("PCS Active Power"), \
                                             tr("The active power P of the inverter side of the current PCS."));
     PCS_act_P->add_Specification();
+
+    if(PCS_rea_P != nullptr)
+    {
+        delete PCS_rea_P;
+    }
     PCS_rea_P = new Specification(this,PCS_rea_P_explain, ui->Converter_Tab, 7, 1, \
                                             tr("0kVar"), tr("PCS Reactive Power"), \
                                             tr("The reactive power Q of the inverter side of the current PCS."));
     PCS_rea_P->add_Specification();
+
+    if(PCS_par_P != nullptr)
+    {
+        delete PCS_par_P;
+    }
     PCS_par_P = new Specification(this,PCS_par_P_explain, ui->Converter_Tab, 8, 1, \
                                             tr("0kVA"), tr("PCS Parent Power"), \
                                             tr("The inverter side view of the current PCS is at power S, S= √((P^2+Q^2))."));
     PCS_par_P->add_Specification();
 
+    if(PCS_Pf != nullptr)
+    {
+        delete PCS_Pf;
+    }
+
     PCS_Pf = new Specification(this,PCS_Pf_explain, ui->Converter_Tab, 9, 1, \
                                             tr("0"), tr("PCS Power factor"), \
                                             tr("Power factor Pf on the inverter side of current PCS, Pf = P/S."));
     PCS_Pf->add_Specification();
+
+    if(PCS_Bat_vol != nullptr)
+    {
+        delete PCS_Bat_vol;
+    }
     PCS_Bat_vol = new Specification(this,PCS_Bat_vol_explain, ui->Converter_Tab, 0, 3, \
                                             tr("0V"), tr("PCS Battery voltage"), \
                                             tr("The current PCS samples the battery voltage from the connected battery."));
     PCS_Bat_vol->add_Specification();
+
+    if(PCS_Bat_cur != nullptr)
+    {
+        delete PCS_Bat_cur;
+    }
     PCS_Bat_cur = new Specification(this,PCS_Bat_cur_explain, ui->Converter_Tab, 1, 3, \
                                             tr("0A"), tr("PCS Battery current"), \
                                             tr("Battery current sampled by the PCS from the connected battery."));
     PCS_Bat_cur->add_Specification();
+
+    if(PCS_Bat_P != nullptr)
+    {
+        delete PCS_Bat_P;
+    }
     PCS_Bat_P = new Specification(this,PCS_Bat_P_explain, ui->Converter_Tab, 2, 3, \
                                             tr("0kW"), tr("PCS Battery power"), \
                                             tr("At present, PCS calculates the product of battery voltage and battery current to obtain battery power."));
     PCS_Bat_P->add_Specification();
+
+    if(PCS_Bus_vol != nullptr)
+    {
+        delete PCS_Bus_vol;
+    }
     PCS_Bus_vol = new Specification(this,PCS_Bus_vol_explain, ui->Converter_Tab, 3, 3, \
                                             tr("0V"), tr("PCS Bus voltage"), \
                                             tr("The current bus voltage sampled by PCS from the bus side."));
     PCS_Bus_vol->add_Specification();
+
+    if(PCS_IGBT_T != nullptr)
+    {
+        delete PCS_IGBT_T;
+    }
     PCS_IGBT_T = new Specification(this,PCS_IGBT_T_explain, ui->Converter_Tab, 4, 3, \
                                             tr("39℃"), tr("PCS IGBT temperature"), \
                                             tr("The current IGBT temperature of PCS shall not exceed 105℃, otherwise PCS will run derated."));
     PCS_IGBT_T->add_Specification();
+
+    if(PCS_Env_T != nullptr)
+    {
+        delete PCS_Env_T;
+    }
     PCS_Env_T = new Specification(this,PCS_Env_T_explain, ui->Converter_Tab, 5, 3, \
                                             tr("25℃"), tr("PCS Environment temperature"), \
                                             tr("The ambient temperature of the current PCS."));
@@ -2230,46 +2378,100 @@ void MEGAWin::PCS_Data()
 /*********电网数据 绘制button**********/
 void MEGAWin::Grid_Data()
 {
+    if(Grid_vol_AB != nullptr)
+    {
+        delete Grid_vol_AB;
+    }
     Grid_vol_AB = new Specification(this,Grid_vol_AB_explain, ui->Grid_Tab, 0, 1, \
                                             tr("0V"), tr("Grid voltage(AB)"), \
                                             tr("The grid side voltage of the current PCS, this item is the phase voltage between phase A and phase B."));
     Grid_vol_AB->add_Specification();
+
+    if(Grid_vol_BC != nullptr)
+    {
+        delete Grid_vol_BC;
+    }
     Grid_vol_BC = new Specification(this,Grid_vol_BC_explain, ui->Grid_Tab, 1, 1, \
                                             tr("0V"), tr("Grid voltage(BC)"), \
                                             tr("The grid side voltage of the current PCS, this item is the phase voltage between phase B and phase C."));
     Grid_vol_BC->add_Specification();
+
+    if(Grid_vol_CA != nullptr)
+    {
+        delete Grid_vol_CA;
+    }
     Grid_vol_CA = new Specification(this,Grid_vol_CA_explain, ui->Grid_Tab, 2, 1, \
                                             tr("0V"), tr("Grid voltage(CA)"), \
                                             tr("The grid side voltage of the current PCS, this item is the phase voltage between phase A and phase C."));
     Grid_vol_CA->add_Specification();
+
+    if(Grid_cur_A != nullptr)
+    {
+        delete Grid_cur_A;
+    }
     Grid_cur_A = new Specification(this,Grid_cur_A_explain, ui->Grid_Tab, 3, 1, \
                                             tr("0A"), tr("Grid current(A)"), \
                                             tr("The current on the grid side of PCS, this item is the current of phase A."));
     Grid_cur_A->add_Specification();
+
+    if(Grid_cur_B != nullptr)
+    {
+        delete Grid_cur_B;
+    }
     Grid_cur_B = new Specification(this,Grid_cur_B_explain, ui->Grid_Tab, 4, 1, \
                                             tr("0A"), tr("Grid current(B)"), \
                                             tr("The current on the grid side of PCS, this item is the current of phase B."));
     Grid_cur_B->add_Specification();
+
+    if(Grid_cur_C != nullptr)
+    {
+        delete Grid_cur_C;
+    }
     Grid_cur_C = new Specification(this,Grid_cur_C_explain, ui->Grid_Tab, 5, 1, \
                                             tr("0A"), tr("Grid current(C)"), \
                                             tr("The current on the grid side of PCS, this item is the current of phase C."));
     Grid_cur_C->add_Specification();
+
+    if(Grid_act_P != nullptr)
+    {
+        delete Grid_act_P;
+    }
     Grid_act_P = new Specification(this,Grid_act_P_explain, ui->Grid_Tab, 6, 1, \
                                             tr("0kW"), tr("Grid active power"), \
                                             tr("Current active power (P) on the grid side of PCS."));
     Grid_act_P->add_Specification();
+
+    if(Grid_rea_P != nullptr)
+    {
+        delete Grid_rea_P;
+    }
     Grid_rea_P = new Specification(this,Grid_rea_P_explain, ui->Grid_Tab, 7, 1, \
                                             tr("0kVar"), tr("Grid reactive power"), \
                                             tr("Current reactive power (Q) on the grid side of PCS."));
     Grid_rea_P->add_Specification();
+
+    if(Grid_app_P != nullptr)
+    {
+        delete Grid_app_P;
+    }
     Grid_app_P = new Specification(this,Grid_app_P_explain, ui->Grid_Tab, 8, 1, \
                                             tr("0kVA"), tr("Grid apparent power"), \
                                             tr("Current PCS grid side view power (S), S= √((P^2+Q^2))."));
     Grid_app_P->add_Specification();
+
+    if(Grid_fre != nullptr)
+    {
+        delete Grid_fre;
+    }
     Grid_fre = new Specification(this,Grid_fre_explain, ui->Grid_Tab, 9, 1, \
                                             tr("0Hz"), tr("Grid frequency"), \
                                             tr("Current PCS collection of power grid frequency."));
     Grid_fre->add_Specification();
+
+    if(Grid_Pf != nullptr)
+    {
+        delete Grid_Pf;
+    }
     Grid_Pf = new Specification(this,Grid_Pf_explain, ui->Grid_Tab, 10, 1, \
                                             tr("0"), tr("Grid power factor"), \
                                             tr("Grid side power factor (Pf) of the current PCS, Pf = P/S."));
@@ -2278,42 +2480,91 @@ void MEGAWin::Grid_Data()
 /*********负载数据 绘制button**********/
 void MEGAWin::Load_Data()
 {
+    if(Load_vol_AB != nullptr)
+    {
+        delete Load_vol_AB;
+    }
     Load_vol_AB = new Specification(this,Load_vol_AB_explain, ui->Load_Tab, 0, 1, \
                                             tr("0V"), tr("Load voltage(AB)"), \
                                             tr("The load side voltage of the current PCS, this item is the phase voltage between phase A and phase B."));
     Load_vol_AB->add_Specification();
+
+    if(Load_vol_BC != nullptr)
+    {
+        delete Load_vol_BC;
+    }
     Load_vol_BC = new Specification(this,Load_vol_BC_explain, ui->Load_Tab, 1, 1, \
                                             tr("0V"), tr("Load voltage(BC)"), \
                                             tr("The load side voltage of the current PCS, this item is the phase voltage between phase B and phase C."));
     Load_vol_BC->add_Specification();
+
+    if(Load_vol_CA != nullptr)
+    {
+        delete Load_vol_CA;
+    }
     Load_vol_CA = new Specification(this,Load_vol_CA_explain, ui->Load_Tab, 2, 1, \
                                             tr("0V"), tr("Load voltage(CA)"), \
                                             tr("The load side voltage of the current PCS, this item is the phase voltage between phase A and phase C."));
     Load_vol_CA->add_Specification();
+
+    if(Load_cur_A != nullptr)
+    {
+        delete Load_cur_A;
+    }
     Load_cur_A = new Specification(this,Load_cur_A_explain, ui->Load_Tab, 3, 1, \
                                             tr("0A"), tr("Load current(A)"), \
                                             tr("The current on the load side of PCS is the current of phase A."));
     Load_cur_A->add_Specification();
+
+    if(Load_cur_B != nullptr)
+    {
+        delete Load_cur_B;
+    }
     Load_cur_B = new Specification(this,Load_cur_B_explain, ui->Load_Tab, 4, 1, \
                                             tr("0A"), tr("Load current(B)"), \
                                             tr("The current at the load side of PCS is the current of phase B."));
     Load_cur_B->add_Specification();
+
+    if(Load_cur_C != nullptr)
+    {
+        delete Load_cur_C;
+    }
     Load_cur_C = new Specification(this,Load_cur_C_explain, ui->Load_Tab, 5, 1, \
                                             tr("0A"), tr("Load current(C)"), \
                                             tr("The current at the load side of PCS is the current of phase C."));
     Load_cur_C->add_Specification();
+
+    if(Load_act_P != nullptr)
+    {
+        delete Load_act_P;
+    }
     Load_act_P = new Specification(this,Load_act_P_explain, ui->Load_Tab, 6, 1, \
                                             tr("0kW"), tr("Load active power"), \
                                             tr("Current PCS active power (P) on load side."));
     Load_act_P->add_Specification();
+
+    if(Load_rea_P != nullptr)
+    {
+        delete Load_rea_P;
+    }
     Load_rea_P = new Specification(this,Load_rea_P_explain, ui->Load_Tab, 7, 1, \
                                             tr("0kVar"), tr("Load reactive power"), \
                                             tr("Reactive power (Q) on the load side of current PCS."));
     Load_rea_P->add_Specification();
+
+    if(Load_app_P != nullptr)
+    {
+        delete Load_app_P;
+    }
     Load_app_P = new Specification(this,Load_app_P_explain, ui->Load_Tab, 8, 1, \
                                             tr("0kVA"), tr("Load apparent power"), \
                                             tr("Current PCS load side view at power (S), S= √((P^2+Q^2))."));
     Load_app_P->add_Specification();
+
+    if(Load_Pf != nullptr)
+    {
+        delete Load_Pf;
+    }
     Load_Pf = new Specification(this,Load_Pf_explain, ui->Load_Tab, 9, 1, \
                                             tr("0"), tr("Load power factor"), \
                                             tr("The load side power factor (Pf) of the current PCS, Pf = P/S."));
