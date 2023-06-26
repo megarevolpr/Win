@@ -660,7 +660,7 @@ color: rgb(255, 255, 255);</string>
          </item>
          <item row="6" column="6">
           <property name="text">
-           <string>DryContact</string>
+           <string/>
           </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
@@ -668,7 +668,7 @@ color: rgb(255, 255, 255);</string>
          </item>
          <item row="6" column="8">
           <property name="text">
-           <string>-</string>
+           <string/>
           </property>
           <property name="textAlignment">
            <set>AlignCenter</set>

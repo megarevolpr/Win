@@ -126,6 +126,38 @@ void MEGAWin::MemoryAllocation()
     Describe6_explain   = new QPushButton;
     Describe7_explain   = new QPushButton;
     Describe8_explain   = new QPushButton;
+    Grade = nullptr;
+    Grade2 = nullptr;
+    Grade3 = nullptr;
+    Grade4 = nullptr;
+    Grade5 = nullptr;
+    Grade6 = nullptr;
+    Grade7 = nullptr;
+    Grade8 = nullptr;
+    StartTime = nullptr;
+    StartTime2 = nullptr;
+    StartTime3 = nullptr;
+    StartTime4 = nullptr;
+    StartTime5 = nullptr;
+    StartTime6 = nullptr;
+    StartTime7 = nullptr;
+    StartTime8 = nullptr;
+    EndTime = nullptr;
+    EndTime2 = nullptr;
+    EndTime3 = nullptr;
+    EndTime4 = nullptr;
+    EndTime5 = nullptr;
+    EndTime6 = nullptr;
+    EndTime7 = nullptr;
+    EndTime8 = nullptr;
+    Describe = nullptr;
+    Describe2 = nullptr;
+    Describe3 = nullptr;
+    Describe4 = nullptr;
+    Describe5 = nullptr;
+    Describe6 = nullptr;
+    Describe7 = nullptr;
+    Describe8 = nullptr;
 
     /***************************操作日志**********************************/
     ModificationTime_explain    = new QPushButton;
@@ -152,6 +184,30 @@ void MEGAWin::MemoryAllocation()
     EventRecord10_explain       = new QPushButton;
     EventRecord11_explain       = new QPushButton;
     EventRecord12_explain       = new QPushButton;
+    ModificationTime = nullptr;
+    ModificationTime2 = nullptr;
+    ModificationTime3 = nullptr;
+    ModificationTime4 = nullptr;
+    ModificationTime5 = nullptr;
+    ModificationTime6 = nullptr;
+    ModificationTime7 = nullptr;
+    ModificationTime8 = nullptr;
+    ModificationTime9 = nullptr;
+    ModificationTime10 = nullptr;
+    ModificationTime11 = nullptr;
+    ModificationTime12 = nullptr;
+    EventRecord = nullptr;
+    EventRecord2 = nullptr;
+    EventRecord3 = nullptr;
+    EventRecord4 = nullptr;
+    EventRecord5 = nullptr;
+    EventRecord6 = nullptr;
+    EventRecord7 = nullptr;
+    EventRecord8 = nullptr;
+    EventRecord9 = nullptr;
+    EventRecord10 = nullptr;
+    EventRecord11 = nullptr;
+    EventRecord12 = nullptr;
     /***************************参数设置**********************************/
 
     Grid_connected_mode_explain = new QPushButton;      //PCS并离网方式说明
@@ -317,7 +373,7 @@ void MEGAWin::MemoryAllocation()
     Power_control_type_explain              = new QPushButton;
     EMS_Comm_type_explain                   = new QPushButton;
     Output_power_limit_explain              = new QPushButton;
-    BAT_manufacturers_explain               = new QPushButton;
+    BAT_protocol_explain                    = new QPushButton;
     Power_Delta_explain                     = new QPushButton;
     Charge_power_limit_explain              = new QPushButton;
     Discharge_power_limit_explain           = new QPushButton;
@@ -337,7 +393,31 @@ void MEGAWin::MemoryAllocation()
     Language_explain        = new QPushButton;
     System_upgrade_explain  = new QPushButton;
     Sounds_explain          = new QPushButton;
-    DryContact_explain      = new QPushButton;
+    Battery_type = nullptr;
+    BMS_Comm_type = nullptr;
+    Power_control_type = nullptr;
+    EMS_Comm_type = nullptr;
+    Output_power_limit = nullptr;
+    BAT_protocol = nullptr;
+    Power_Delta = nullptr;
+    Charge_power_limit = nullptr;
+    Discharge_power_limit = nullptr;
+    Charge_Vol_upper_Limit_delta = nullptr;
+    Discharge_Vol_lower_Limit_delta = nullptr;
+    Host_Address = nullptr;
+    serial_port_1 = nullptr;
+    serial_port_2 = nullptr;
+    serial_port_3 = nullptr;
+    serial_port_4 = nullptr;
+    serial_port_5 = nullptr;
+    Can_port_1 = nullptr;
+    Can_port_2 = nullptr;
+    ProtocolVersion = nullptr;
+    UserPassPort = nullptr;
+    RootPassport = nullptr;
+    Language = nullptr;
+    System_upgrade = nullptr;
+    Sounds = nullptr;
 
     //系统参数
     Change_rate_of_power_explain        = new QPushButton;
@@ -645,9 +725,13 @@ void MEGAWin::SystemSettingPage()
 
     RunTimeSet_tab();/*系统-自动运行时间设置表*/
 
-    History_tab();/*记录-历史记录、操作日志设置表*/
-
     Information_tbnt_released();/*系统-系统消息*/
+}
+
+void MEGAWin::RecordPage()
+{
+    History_tab();//历史记录表
+    OperationLog_tab();//操作日志表
 }
 
 /***************************************************************
@@ -718,7 +802,78 @@ void MEGAWin::UserParam_tab()
  * ***************************************************************************/
 void MEGAWin::History_tab()
 {
+    QStringList table_h_headers;
+    table_h_headers.clear();
+    table_h_headers << tr("Level") << tr("Start Time") << tr("End Time") << tr("Description");
+    ui->Historicalfailure_tableWidget->setColumnCount(table_h_headers.size());
+    ui->Historicalfailure_tableWidget->setRowCount(8);
+    ui->Historicalfailure_tableWidget->setHorizontalHeaderLabels(table_h_headers);
+    ui->Historicalfailure_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+    ui->Historicalfailure_tableWidget->verticalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+    ui->Historicalfailure_tableWidget->setStyleSheet("selection-background-color:lightblue;");
+    ui->Historicalfailure_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
+    ui->Historicalfailure_tableWidget->setShowGrid(true);//设置显示格子
+    ui->Historicalfailure_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+    ui->Historicalfailure_tableWidget->setEditTriggers(QAbstractItemView::SelectedClicked);//单机修改
+    ui->Historicalfailure_tableWidget->setColumnWidth(0,50);
+    ui->Historicalfailure_tableWidget->setColumnWidth(1,180);
+    ui->Historicalfailure_tableWidget->setColumnWidth(2,180);
+    ui->Historicalfailure_tableWidget->horizontalHeader()->setStretchLastSection(true);
+
+    Grade_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Grade2_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Grade3_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Grade4_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Grade5_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Grade6_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Grade7_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Grade8_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    StartTime_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    StartTime2_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    StartTime3_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    StartTime4_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    StartTime5_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    StartTime6_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    StartTime7_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    StartTime8_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    EndTime_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    EndTime2_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    EndTime3_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    EndTime4_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    EndTime5_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    EndTime6_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    EndTime7_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    EndTime8_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Describe_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Describe2_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Describe3_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Describe4_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Describe5_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Describe6_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Describe7_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    Describe8_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+
     History();//历史记录
+}
+
+void MEGAWin::OperationLog_tab()
+{
+    QStringList Ope_headers;
+    Ope_headers.clear();
+    Ope_headers << tr("ModificationTime") << tr("RecordEvent");
+    ui->Operation_tableWidget->setColumnCount(Ope_headers.size());
+    ui->Operation_tableWidget->setRowCount(8);
+    ui->Operation_tableWidget->setHorizontalHeaderLabels(Ope_headers);
+    ui->Operation_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
+    ui->Operation_tableWidget->setShowGrid(true);//设置显示格子
+    ui->Operation_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+    ui->Operation_tableWidget->setEditTriggers(QAbstractItemView::SelectedClicked);//单机修改
+    ui->Operation_tableWidget->setColumnWidth(0,260);
+    ui->Operation_tableWidget->horizontalHeader()->setStretchLastSection(true);
+    ui->Operation_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+    ui->Operation_tableWidget->verticalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+    ui->Operation_tableWidget->setStyleSheet("selection-background-color:lightblue;");
+
     OperationLog();//操作日志
 }
 
@@ -1309,16 +1464,17 @@ void MEGAWin::Change_Language()
         ui->retranslateUi(this);
     }
 
-    RunStatePage();
+    RunStatePage();//重新加载实时数据的UI
 
-    UserParam_tab();    //参数设置
-    BatterySet_tab();   //电池设置
-    RunTimeSet_tab();   //自动运行
-    Information_tbnt_released();    //系统信息
+    SystemSettingPage();//重新加载系统的UI
+
+    RecordPage();//重新加载记录的UI
+
+    SystemParam_tbnt_released();//重新加载高级设置的UI
 }
 
 /***************************************************************
- * 系统参数槽
+ * 高级设置表初始化
  ***************************************************************/
 void MEGAWin::SystemParam_tbnt_released()
 {
@@ -1555,6 +1711,8 @@ void MEGAWin::UIPageInit()
     RunStatePage();//PCS运行状态页
 
     SystemSettingPage();//系统设置页面初始化
+
+    RecordPage();//记录页面初始化
 
     LCDSetting();//时间设置
 
@@ -1834,295 +1992,330 @@ void MEGAWin::MonitorDebug_clicked(int nid)
 /******************历史记录 绘制button***********************/
 void MEGAWin::History()
 {
-    QStringList table_h_headers;
-    table_h_headers.clear();
-    table_h_headers << tr("Level") << tr("Start Time") << tr("End Time") << tr("Description");
-    ui->Historicalfailure_tableWidget->setColumnCount(table_h_headers.size());
-    ui->Historicalfailure_tableWidget->setRowCount(8);
-    ui->Historicalfailure_tableWidget->setHorizontalHeaderLabels(table_h_headers);
-    ui->Historicalfailure_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
-    ui->Historicalfailure_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
-    ui->Historicalfailure_tableWidget->setShowGrid(true);//设置显示格子
-    ui->Historicalfailure_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
-    ui->Historicalfailure_tableWidget->setEditTriggers(QAbstractItemView::SelectedClicked);//单机修改
-    ui->Historicalfailure_tableWidget->setColumnWidth(0,50);
-    ui->Historicalfailure_tableWidget->setColumnWidth(1,180);
-    ui->Historicalfailure_tableWidget->setColumnWidth(2,180);
-    ui->Historicalfailure_tableWidget->horizontalHeader()->setStretchLastSection(true);
+    QString str1 = tr("0");
+    QString str2 = tr("Level");
+    QString str3 = tr("This is the event alarm level. When the event alarm level is 0, it is marked red, indicating that this is the fault information.");
+    QString str4 = tr("Start Time");
+    QString str5 = tr("This is the event start time, which means that the record started appearing at this time.");
+    QString str6 = tr("End Time");
+    QString str7 = tr("This is the event end time, which means the end time of this record,'... 'means no end time.");
+    QString str8 = tr("CAN communication failure");
+    QString str9 = tr("Description");
+    QString str10 = tr("This is the event description, when there is an alarm information, the alarm information will be recorded here.");
+    QString str11 = tr("Fire alarm (High temp. alarm)");
+    QString str12 = tr("Power Meter Comm fualttLead-acid abnormal");
 
-    Grade_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Grade2_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Grade3_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Grade4_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Grade5_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Grade6_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Grade7_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Grade8_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    StartTime_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    StartTime2_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    StartTime3_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    StartTime4_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    StartTime5_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    StartTime6_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    StartTime7_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    StartTime8_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    EndTime_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    EndTime2_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    EndTime3_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    EndTime4_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    EndTime5_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    EndTime6_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    EndTime7_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    EndTime8_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Describe_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Describe2_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Describe3_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Describe4_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Describe5_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Describe6_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Describe7_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Describe8_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-
-    Grade = new Specification(this,Grade_explain, ui->Historicalfailure_tableWidget, 0, 0, \
-                                                    "0", "Level", \
-                                                    "这是事件告警等级，当事件告警等级为0时标红，表示这是故障信息\nThis is the event alarm level. When the event alarm level is 0, it is marked red, indicating that this is the fault information.");
+    if(Grade != nullptr)
+    {
+        delete Grade;
+    }
+    Grade = new Specification(this,Grade_explain, ui->Historicalfailure_tableWidget, 0, 0, str1, str2, str3);
     Grade->add_Specification();
-    Grade2 = new Specification(this,Grade2_explain, ui->Historicalfailure_tableWidget, 1, 0, \
-                                                    "0", "Level", \
-                                                    "这是事件告警等级，当事件告警等级为0时标红，表示这是故障信息\nThis is the event alarm level. When the event alarm level is 0, it is marked red, indicating that this is the fault information.");
+
+    if(Grade2 != nullptr)
+    {
+        delete Grade2;
+    }
+    Grade2 = new Specification(this,Grade2_explain, ui->Historicalfailure_tableWidget, 1, 0, str1, str2, str3);
     Grade2->add_Specification();
-    Grade3 = new Specification(this,Grade3_explain, ui->Historicalfailure_tableWidget, 2, 0, \
-                                                    "0", "Level", \
-                                                    "这是事件告警等级，当事件告警等级为0时标红，表示这是故障信息\nThis is the event alarm level. When the event alarm level is 0, it is marked red, indicating that this is the fault information.");
+
+    if(Grade2 != nullptr)
+    {
+        delete Grade3;
+    }
+    Grade3 = new Specification(this,Grade3_explain, ui->Historicalfailure_tableWidget, 2, 0, str1, str2, str3);
     Grade3->add_Specification();
-    Grade4 = new Specification(this,Grade4_explain, ui->Historicalfailure_tableWidget, 3, 0, \
-                                                    "0", "Level", \
-                                                    "这是事件告警等级，当事件告警等级为0时标红，表示这是故障信息\nThis is the event alarm level. When the event alarm level is 0, it is marked red, indicating that this is the fault information.");
+
+    if(Grade4 != nullptr)
+    {
+        delete Grade4;
+    }
+    Grade4 = new Specification(this,Grade4_explain, ui->Historicalfailure_tableWidget, 3, 0, str1, str2, str3);
     Grade4->add_Specification();
-    Grade5 = new Specification(this,Grade5_explain, ui->Historicalfailure_tableWidget, 4, 0, \
-                                                    "0", "Level", \
-                                                    "这是事件告警等级，当事件告警等级为0时标红，表示这是故障信息\nThis is the event alarm level. When the event alarm level is 0, it is marked red, indicating that this is the fault information.");
+
+    if(Grade5 != nullptr)
+    {
+        delete Grade5;
+    }
+    Grade5 = new Specification(this,Grade5_explain, ui->Historicalfailure_tableWidget, 4, 0, str1, str2, str3);
     Grade5->add_Specification();
-    Grade6 = new Specification(this,Grade6_explain, ui->Historicalfailure_tableWidget, 5, 0, \
-                                                    "0", "Level", \
-                                                    "这是事件告警等级，当事件告警等级为0时标红，表示这是故障信息\nThis is the event alarm level. When the event alarm level is 0, it is marked red, indicating that this is the fault information.");
+
+    if(Grade6 != nullptr)
+    {
+        delete Grade6;
+    }
+    Grade6 = new Specification(this,Grade6_explain, ui->Historicalfailure_tableWidget, 5, 0, str1, str2, str3);
     Grade6->add_Specification();
-    Grade7 = new Specification(this,Grade7_explain, ui->Historicalfailure_tableWidget, 6, 0, \
-                                                    "0", "Level", \
-                                                    "这是事件告警等级，当事件告警等级为0时标红，表示这是故障信息\nThis is the event alarm level. When the event alarm level is 0, it is marked red, indicating that this is the fault information.");
+
+    if(Grade7 != nullptr)
+    {
+        delete Grade7;
+    }
+    Grade7 = new Specification(this,Grade7_explain, ui->Historicalfailure_tableWidget, 6, 0, str1, str2, str3);
     Grade7->add_Specification();
-    Grade8 = new Specification(this,Grade8_explain, ui->Historicalfailure_tableWidget, 7, 0, \
-                                                    "0", "Level", \
-                                                    "这是事件告警等级，当事件告警等级为0时标红，表示这是故障信息\nThis is the event alarm level. When the event alarm level is 0, it is marked red, indicating that this is the fault information.");
+
+    if(Grade8 != nullptr)
+    {
+        delete Grade8;
+    }
+    Grade8 = new Specification(this,Grade8_explain, ui->Historicalfailure_tableWidget, 7, 0, str1, str2, str3);
     Grade8->add_Specification();
+
+    if(StartTime != nullptr)
+    {
+        delete StartTime;
+    }
     StartTime = new Specification(this,StartTime_explain, ui->Historicalfailure_tableWidget, 0, 1, \
-                                                    "2023.5.6 15:49:50", "Start Time", \
-                                                    "这是事件开始时间，表示这条记录从这个时间开始出现\nThis is the event start time, which means that the record started appearing at this time.");
+                                                    "2023.5.6 15:49:50", str4, str5);
     StartTime->add_Specification();
+
+    if(StartTime2 != nullptr)
+    {
+        delete StartTime2;
+    }
     StartTime2 = new Specification(this,StartTime2_explain, ui->Historicalfailure_tableWidget, 1, 1, \
-                                                    "2023.5.6 15:48:18", "Start Time", \
-                                                    "这是事件开始时间，表示这条记录从这个时间开始出现\nThis is the event start time, which means that the record started appearing at this time.");
+                                                    "2023.5.6 15:48:18", str4, str5);
     StartTime2->add_Specification();
+
+    if(StartTime3 != nullptr)
+    {
+        delete StartTime3;
+    }
     StartTime3 = new Specification(this,StartTime3_explain, ui->Historicalfailure_tableWidget, 2, 1, \
-                                                    "2023.5.6 15:39:3", "Start Time", \
-                                                    "这是事件开始时间，表示这条记录从这个时间开始出现\nThis is the event start time, which means that the record started appearing at this time.");
+                                                    "2023.5.6 15:39:3", str4, str5);
     StartTime3->add_Specification();
+
+    if(StartTime4 != nullptr)
+    {
+        delete StartTime4;
+    }
     StartTime4 = new Specification(this,StartTime4_explain, ui->Historicalfailure_tableWidget, 3, 1, \
-                                                    "2023.5.6 15:39:3", "Start Time", \
-                                                    "这是事件开始时间，表示这条记录从这个时间开始出现\nThis is the event start time, which means that the record started appearing at this time.");
+                                                    "2023.5.6 15:39:3", str4, str5);
     StartTime4->add_Specification();
+
+    if(StartTime5 != nullptr)
+    {
+        delete StartTime5;
+    }
     StartTime5 = new Specification(this,StartTime5_explain, ui->Historicalfailure_tableWidget, 4, 1, \
-                                                    "2023.5.6 15:39:3", "Start Time", \
-                                                    "这是事件开始时间，表示这条记录从这个时间开始出现\nThis is the event start time, which means that the record started appearing at this time.");
+                                                    "2023.5.6 15:39:3", str4, str5);
     StartTime5->add_Specification();
+
+    if(StartTime6 != nullptr)
+    {
+        delete StartTime6;
+    }
     StartTime6 = new Specification(this,StartTime6_explain, ui->Historicalfailure_tableWidget, 5, 1, \
-                                                    "2023.5.6 15:21:56", "Start Time", \
-                                                    "这是事件开始时间，表示这条记录从这个时间开始出现\nThis is the event start time, which means that the record started appearing at this time.");
+                                                    "2023.5.6 15:21:56", str4, str5);
     StartTime6->add_Specification();
+
+    if(StartTime7 != nullptr)
+    {
+        delete StartTime7;
+    }
     StartTime7 = new Specification(this,StartTime7_explain, ui->Historicalfailure_tableWidget, 6, 1, \
-                                                    "2023.5.6 15:21:38", "Start Time", \
-                                                    "这是事件开始时间，表示这条记录从这个时间开始出现\nThis is the event start time, which means that the record started appearing at this time.");
+                                                    "2023.5.6 15:21:38", str4, str5);
     StartTime7->add_Specification();
+
+    if(StartTime8 != nullptr)
+    {
+        delete StartTime8;
+    }
     StartTime8 = new Specification(this,StartTime8_explain, ui->Historicalfailure_tableWidget, 7, 1, \
-                                                    "2023.5.6 15:21:38", "Start Time", \
-                                                    "这是事件开始时间，表示这条记录从这个时间开始出现\nThis is the event start time, which means that the record started appearing at this time.");
+                                                    "2023.5.6 15:21:38", str4, str5);
     StartTime8->add_Specification();
-    EndTime = new Specification(this,EndTime_explain, ui->Historicalfailure_tableWidget, 0, 2, \
-                                                    "-", "End Time", \
-                                                    "这是事件结束时间，表示这条记录的结束时间,'...'表示无结束时间\nThis is the event end time, which means the end time of this record,'... 'means no end time.");
+
+    if(EndTime != nullptr)
+    {
+        delete EndTime;
+    }
+    EndTime = new Specification(this,EndTime_explain, ui->Historicalfailure_tableWidget, 0, 2, "-", str6, str7);
     EndTime->add_Specification();
-    EndTime2 = new Specification(this,EndTime2_explain, ui->Historicalfailure_tableWidget, 1, 2, \
-                                                    "-", "End Time", \
-                                                    "这是事件结束时间，表示这条记录的结束时间,'...'表示无结束时间\nThis is the event end time, which means the end time of this record,'... 'means no end time.");
+
+    if(EndTime2 != nullptr)
+    {
+        delete EndTime2;
+    }
+    EndTime2 = new Specification(this,EndTime2_explain, ui->Historicalfailure_tableWidget, 1, 2, "-", str6, str7);
     EndTime2->add_Specification();
-    EndTime3 = new Specification(this,EndTime3_explain, ui->Historicalfailure_tableWidget, 2, 2, \
-                                                    "...", "End Time", \
-                                                    "这是事件结束时间，表示这条记录的结束时间,'...'表示无结束时间\nThis is the event end time, which means the end time of this record,'... 'means no end time.");
+
+    if(EndTime3 != nullptr)
+    {
+        delete EndTime3;
+    }
+    EndTime3 = new Specification(this,EndTime3_explain, ui->Historicalfailure_tableWidget, 2, 2, "...", str6, str7);
     EndTime3->add_Specification();
-    EndTime4 = new Specification(this,EndTime4_explain, ui->Historicalfailure_tableWidget, 3, 2, \
-                                                    "-", "End Time", \
-                                                    "这是事件结束时间，表示这条记录的结束时间,'...'表示无结束时间\nThis is the event end time, which means the end time of this record,'... 'means no end time.");
+
+    if(EndTime4 != nullptr)
+    {
+        delete EndTime4;
+    }
+    EndTime4 = new Specification(this,EndTime4_explain, ui->Historicalfailure_tableWidget, 3, 2, "-", str6, str7);
     EndTime4->add_Specification();
-    EndTime5 = new Specification(this,EndTime5_explain, ui->Historicalfailure_tableWidget, 4, 2, \
-                                                    "...", "End Time", \
-                                                    "这是事件结束时间，表示这条记录的结束时间,'...'表示无结束时间\nThis is the event end time, which means the end time of this record,'... 'means no end time.");
+
+    if(EndTime5 != nullptr)
+    {
+        delete EndTime5;
+    }
+    EndTime5 = new Specification(this,EndTime5_explain, ui->Historicalfailure_tableWidget, 4, 2, "...", str6, str7);
     EndTime5->add_Specification();
-    EndTime6 = new Specification(this,EndTime6_explain, ui->Historicalfailure_tableWidget, 5, 2, \
-                                                    "-", "End Time", \
-                                                    "这是事件结束时间，表示这条记录的结束时间,'...'表示无结束时间\nThis is the event end time, which means the end time of this record,'... 'means no end time.");
+
+    if(EndTime6 != nullptr)
+    {
+        delete EndTime6;
+    }
+    EndTime6 = new Specification(this,EndTime6_explain, ui->Historicalfailure_tableWidget, 5, 2, "-", str6, str7);
     EndTime6->add_Specification();
-    EndTime7 = new Specification(this,EndTime7_explain, ui->Historicalfailure_tableWidget, 6, 2, \
-                                                    "-", "End Time", \
-                                                    "这是事件结束时间，表示这条记录的结束时间,'...'表示无结束时间\nThis is the event end time, which means the end time of this record,'... 'means no end time.");
+
+    if(EndTime7 != nullptr)
+    {
+        delete EndTime7;
+    }
+    EndTime7 = new Specification(this,EndTime7_explain, ui->Historicalfailure_tableWidget, 6, 2, "-", str6, str7);
     EndTime7->add_Specification();
-    EndTime8 = new Specification(this,EndTime8_explain, ui->Historicalfailure_tableWidget, 7, 2, \
-                                                    "-", "End Time", \
-                                                    "这是事件结束时间，表示这条记录的结束时间,'...'表示无结束时间\nThis is the event end time, which means the end time of this record,'... 'means no end time.");
+
+    if(EndTime8 != nullptr)
+    {
+        delete EndTime8;
+    }
+    EndTime8 = new Specification(this,EndTime8_explain, ui->Historicalfailure_tableWidget, 7, 2, "-", str6, str7);
     EndTime8->add_Specification();
-    Describe = new Specification(this,Describe_explain, ui->Historicalfailure_tableWidget, 0, 3, \
-                                                    "CAN communication failure", "Description", \
-                                                    "这是事件描述，当有告警信息时，会将告警信息记录在这里\nThis is the event description, when there is an alarm information, the alarm information will be recorded here.");
+
+    if(Describe != nullptr)
+    {
+        delete Describe;
+    }
+    Describe = new Specification(this,Describe_explain, ui->Historicalfailure_tableWidget, 0, 3, str8, str9, str10);
     Describe->add_Specification();
-    Describe2 = new Specification(this,Describe2_explain, ui->Historicalfailure_tableWidget, 1, 3, \
-                                                    "CAN communication failure", "Description", \
-                                                    "这是事件描述，当有告警信息时，会将告警信息记录在这里\nThis is the event description, when there is an alarm information, the alarm information will be recorded here.");
+
+    if(Describe2 != nullptr)
+    {
+        delete Describe2;
+    }
+    Describe2 = new Specification(this,Describe2_explain, ui->Historicalfailure_tableWidget, 1, 3, str8, str9, str10);
     Describe2->add_Specification();
-    Describe3 = new Specification(this,Describe3_explain, ui->Historicalfailure_tableWidget, 2, 3, \
-                                                    "Fire alarm (High temp. alarm)", "Description", \
-                                                    "这是事件描述，当有告警信息时，会将告警信息记录在这里\nThis is the event description, when there is an alarm information, the alarm information will be recorded here.");
+
+    if(Describe3 != nullptr)
+    {
+        delete Describe3;
+    }
+    Describe3 = new Specification(this,Describe3_explain, ui->Historicalfailure_tableWidget, 2, 3, str11, str9, str10);
     Describe3->add_Specification();
-    Describe4 = new Specification(this,Describe4_explain, ui->Historicalfailure_tableWidget, 3, 3, \
-                                                    "CAN communication failure", "Description", \
-                                                    "这是事件描述，当有告警信息时，会将告警信息记录在这里\nThis is the event description, when there is an alarm information, the alarm information will be recorded here.");
+
+    if(Describe4 != nullptr)
+    {
+        delete Describe4;
+    }
+    Describe4 = new Specification(this,Describe4_explain, ui->Historicalfailure_tableWidget, 3, 3, str8, str9, str10);
     Describe4->add_Specification();
-    Describe5 = new Specification(this,Describe5_explain, ui->Historicalfailure_tableWidget, 4, 3, \
-                                                    "PowerMeter Comm fualttLead-acid abnormal", "Description", \
-                                                    "这是事件描述，当有告警信息时，会将告警信息记录在这里\nThis is the event description, when there is an alarm information, the alarm information will be recorded here.");
+
+    if(Describe5 != nullptr)
+    {
+        delete Describe5;
+    }
+    Describe5 = new Specification(this,Describe5_explain, ui->Historicalfailure_tableWidget, 4, 3, str12, str9, str10);
     Describe5->add_Specification();
-    Describe6 = new Specification(this,Describe6_explain, ui->Historicalfailure_tableWidget, 5, 3, \
-                                                    "CAN communication failure", "Description", \
-                                                    "这是事件描述，当有告警信息时，会将告警信息记录在这里\nThis is the event description, when there is an alarm information, the alarm information will be recorded here.");
+
+    if(Describe6 != nullptr)
+    {
+        delete Describe6;
+    }
+    Describe6 = new Specification(this,Describe6_explain, ui->Historicalfailure_tableWidget, 5, 3, str8, str9, str10);
     Describe6->add_Specification();
-    Describe7 = new Specification(this,Describe7_explain, ui->Historicalfailure_tableWidget, 6, 3, \
-                                                    "Fire alarm (High temp. alarm)", "Description", \
-                                                    "这是事件描述，当有告警信息时，会将告警信息记录在这里\nThis is the event description, when there is an alarm information, the alarm information will be recorded here.");
+
+    if(Describe7 != nullptr)
+    {
+        delete Describe7;
+    }
+    Describe7 = new Specification(this,Describe7_explain, ui->Historicalfailure_tableWidget, 6, 3, str11, str9, str10);
     Describe7->add_Specification();
-    Describe8 = new Specification(this,Describe8_explain, ui->Historicalfailure_tableWidget, 7, 3, \
-                                                    "PowerMeter Comm fualttLead-acid abnormal", "Description", \
-                                                    "这是事件描述，当有告警信息时，会将告警信息记录在这里\nThis is the event description, when there is an alarm information, the alarm information will be recorded here.");
+
+    if(Describe8 != nullptr)
+    {
+        delete Describe8;
+    }
+    Describe8 = new Specification(this,Describe8_explain, ui->Historicalfailure_tableWidget, 7, 3, str12, str9, str10);
     Describe8->add_Specification();
 }
 /******************操作日志 绘制button***********************/
 void MEGAWin::OperationLog()
 {
-    QStringList Ope_headers;
-    Ope_headers.clear();
-    Ope_headers << tr("ModificationTime") << tr("RecordEvent");
-    ui->Operation_tableWidget->setColumnCount(Ope_headers.size());
-    ui->Operation_tableWidget->setRowCount(8);
-    ui->Operation_tableWidget->setHorizontalHeaderLabels(Ope_headers);
-    ui->Operation_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
-    ui->Operation_tableWidget->setShowGrid(true);//设置显示格子
-    ui->Operation_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
-    ui->Operation_tableWidget->setEditTriggers(QAbstractItemView::SelectedClicked);//单机修改
-    ui->Operation_tableWidget->setColumnWidth(0,260);
-    ui->Operation_tableWidget->horizontalHeader()->setStretchLastSection(true);
+    QString str = tr("ModificationTime");
+    QString str1 = tr("Time when the system Settings are modified.");
+    QString str2 = tr("RecordEvent");
+    QString str3 = tr("Here is a record of the operation when a change is made to the system Settings.");
 
     ModificationTime = new Specification(this,ModificationTime_explain, ui->Operation_tableWidget, 0, 0, \
-                                                    "2023-05-12 11:32:45", "ModificationTime", \
-                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+                                                    "2023-05-12 11:32:45", str, str1);
     ModificationTime->add_Specification();
     ModificationTime2 = new Specification(this,ModificationTime2_explain, ui->Operation_tableWidget, 1, 0, \
-                                                    "2023-05-12 11:32:33", "ModificationTime", \
-                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+                                                    "2023-05-12 11:32:33", str, str1);
     ModificationTime2->add_Specification();
     ModificationTime3 = new Specification(this,ModificationTime3_explain, ui->Operation_tableWidget, 2, 0, \
-                                                    "2023-05-11 19:29:24", "ModificationTime", \
-                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+                                                    "2023-05-11 19:29:24", str, str1);
     ModificationTime3->add_Specification();
     ModificationTime4 = new Specification(this,ModificationTime4_explain, ui->Operation_tableWidget, 3, 0, \
-                                                    "2023-05-11 19:29:21", "ModificationTime", \
-                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+                                                    "2023-05-11 19:29:21", str, str1);
     ModificationTime4->add_Specification();
     ModificationTime5 = new Specification(this,ModificationTime5_explain, ui->Operation_tableWidget, 4, 0, \
-                                                    "2023-05-11 19:29:10", "ModificationTime", \
-                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+                                                    "2023-05-11 19:29:10", str, str1);
     ModificationTime5->add_Specification();
     ModificationTime6 = new Specification(this,ModificationTime6_explain, ui->Operation_tableWidget, 5, 0, \
-                                                    "2023-05-11 19:29:07", "ModificationTime", \
-                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+                                                    "2023-05-11 19:29:07", str, str1);
     ModificationTime6->add_Specification();
     ModificationTime7 = new Specification(this,ModificationTime7_explain, ui->Operation_tableWidget, 6, 0, \
-                                                    "2023-05-11 17:21:16", "ModificationTime", \
-                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+                                                    "2023-05-11 17:21:16", str, str1);
     ModificationTime7->add_Specification();
     ModificationTime8 = new Specification(this,ModificationTime8_explain, ui->Operation_tableWidget, 7, 0, \
-                                                    "2023-05-11 11:21:02", "ModificationTime", \
-                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+                                                    "2023-05-11 11:21:02", str, str1);
     ModificationTime8->add_Specification();
     ModificationTime9 = new Specification(this,ModificationTime9_explain, ui->Operation_tableWidget, 8, 0, \
-                                                    "2023-05-11 11:20:58", "ModificationTime", \
-                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+                                                    "2023-05-11 11:20:58", str, str1);
     ModificationTime9->add_Specification();
     ModificationTime10 = new Specification(this,ModificationTime10_explain, ui->Operation_tableWidget, 9, 0, \
-                                                    "2023-05-11 11:02:22", "ModificationTime", \
-                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+                                                    "2023-05-11 11:02:22", str, str1);
     ModificationTime10->add_Specification();
     ModificationTime11 = new Specification(this,ModificationTime11_explain, ui->Operation_tableWidget, 10, 0, \
-                                                    "2023-05-11 11:02:18", "ModificationTime", \
-                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+                                                    "2023-05-11 11:02:18", str,  str1);
     ModificationTime11->add_Specification();
     ModificationTime12 = new Specification(this,ModificationTime12_explain, ui->Operation_tableWidget, 11, 0, \
-                                                    "2023-05-11 11:02:14", "ModificationTime", \
-                                                    "系统设置修改时的时间\nTime when the system Settings are modified");
+                                                    "2023-05-11 11:02:14", str, str1);
     ModificationTime12->add_Specification();
     EventRecord = new Specification(this,EventRecord_explain, ui->Operation_tableWidget, 0, 1, \
-                                                    "Power control type：CP_P->CP_N&&P", "RecordEvent", \
-                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
+                                                    tr("Power control type：CP_P->CP_N&&P"), str2, str3);
     EventRecord->add_Specification();
     EventRecord2 = new Specification(this,EventRecord2_explain, ui->Operation_tableWidget, 1, 1, \
-                                                    "Power control type：CP_N&&P->CP_P", "RecordEvent", \
-                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
+                                                    tr("Power control type：CP_N&&P->CP_P"), str2, str3);
     EventRecord2->add_Specification();
     EventRecord3 = new Specification(this,EventRecord3_explain, ui->Operation_tableWidget, 2, 1, \
-                                                    "Grid Fre Upper limit：0.2->3", "RecordEvent", \
-                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
+                                                    tr("Grid Fre Upper limit：0.2->3"), str2, str3);
     EventRecord3->add_Specification();
     EventRecord4 = new Specification(this,EventRecord4_explain, ui->Operation_tableWidget, 3, 1, \
-                                                    "Grid Fre Upper limit：3->0.2", "RecordEvent", \
-                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
+                                                    tr("Grid Fre Upper limit：3->0.2"), str2, str3);
     EventRecord4->add_Specification();
     EventRecord5 = new Specification(this,EventRecord5_explain, ui->Operation_tableWidget, 4, 1, \
-                                                    "Voltage protection Lower limit：-10->-15", "RecordEvent", \
-                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
+                                                    tr("Voltage protection Lower limit：-10->-15"), str2, str3);
     EventRecord5->add_Specification();
     EventRecord6 = new Specification(this,EventRecord6_explain, ui->Operation_tableWidget, 5, 1, \
-                                                    "Voltage protection Lower limit：-15->-10", "RecordEvent", \
-                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
+                                                    tr("Voltage protection Lower limit：-15->-10"), str2, str3);
     EventRecord6->add_Specification();
     EventRecord7 = new Specification(this,EventRecord7_explain, ui->Operation_tableWidget, 6, 1, \
-                                                    "Operation mode：Prevent countercurrnet->Peak valley", "RecordEvent", \
-                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
+                                                    tr("Operation mode：Prevent countercurrnet->Peak valley"), str2, str3);
     EventRecord7->add_Specification();
     EventRecord8 = new Specification(this,EventRecord8_explain, ui->Operation_tableWidget, 7, 1, \
-                                                    "Operation mode：UPS->Prevent countercurrnet", "RecordEvent", \
-                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
+                                                    tr("Operation mode：Peak valley->Manual"), str2, str3);
     EventRecord8->add_Specification();
     EventRecord9 = new Specification(this,EventRecord9_explain, ui->Operation_tableWidget, 8, 1, \
-                                                    "Operation mode：Manual->UPS", "RecordEvent", \
-                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
+                                                    tr("Operation mode：Manual->UPS"), str2, str3);
     EventRecord9->add_Specification();
     EventRecord10 = new Specification(this,EventRecord10_explain, ui->Operation_tableWidget, 9, 1, \
-                                                    "Operation mode：Peak valley->Manual", "RecordEvent", \
-                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
+                                                    tr("Operation mode：UPS->Prevent countercurrnet"), str2, str3);
     EventRecord10->add_Specification();
     EventRecord11 = new Specification(this,EventRecord11_explain, ui->Operation_tableWidget, 10, 1, \
-                                                    "Inv ON/Off-Grid：Off->automatic", "RecordEvent", \
-                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
+                                                    tr("Inv ON/Off-Grid：Off->automatic"), str2, str3);
     EventRecord11->add_Specification();
     EventRecord12 = new Specification(this,EventRecord12_explain, ui->Operation_tableWidget, 11, 1, \
-                                                    "Inv ON/Off-Grid：automatic->Off", "RecordEvent", \
-                                                    "这里是对系统设置进行修改时的操作记录\nHere is a record of the operation when a change is made to the system Settings.");
+                                                    tr("Inv ON/Off-Grid：automatic->Off"), str2, str3);
     EventRecord12->add_Specification();
 }
 /******************告警信息 绘表***********************/
@@ -4049,111 +4242,232 @@ void MEGAWin::SystemMessages()
 /***********功能设置 绘制button************/
 void MEGAWin::FunctionSet()
 {
+    if(Battery_type != nullptr)
+    {
+        delete Battery_type;
+    }
     Battery_type = new Specification(this,Battery_type_explain, ui->UI_Parameter_Tab, 0, 1, \
-                                     "Lithium", "Battery type", \
-                                     "根据实际情况选择电池类型，有锂电(Lithium)和铅酸(LeadAcid)两种类型可供选择\n Choose the battery type according to the actual situation, there are two types of lithium(Lithium) and lead acid(LeadAcid) to choose from.");
+                                     tr("Lithium"), tr("Battery type"), \
+                                     tr("Choose the battery type according to the actual situation, there are two types of Lithium and LeadAcid to choose from."));
     Battery_type->add_Specification();
+
+    if(BMS_Comm_type != nullptr)
+    {
+        delete BMS_Comm_type;
+    }
     BMS_Comm_type = new Specification(this,BMS_Comm_type_explain, ui->UI_Parameter_Tab, 1, 1, \
-                                      "CAN", "BMS Comm type", \
-                                      "设置与电池之间的通信方式，可根据情况选择RS485(RS485)或CAN通信(CAN)或以太网(Ethernet)\nSet the communication mode between the battery, RS485(RS485) or CAN communication(CAN) or Ethernet(Ethernet) can be selected according to the situation.");
+                                      "CAN", tr("BMS Comm type"), \
+                                      tr("Set the communication mode between the battery, RS485 or CAN communication or Ethernet can be selected according to the situation."));
     BMS_Comm_type->add_Specification();
+
+    if(Power_control_type != nullptr)
+    {
+        delete Power_control_type;
+    }
     Power_control_type = new Specification(this,Power_control_type_explain, ui->UI_Parameter_Tab, 2, 1,\
-                                           "CP_N&&P" , "Power control type", \
-                                           "设置控制功率的方式，有恒压(CV)、恒流(CC)、恒功率(CP_P)、正负功率(CP_N&P)。\n恒压(CV)：输出电压值固定，不随负载、输入电压等外部工作条件而变化。\n恒流(CC)：以恒定电流工作，输出的电流大小是恒定不变的，不会随着电压的变化而变化。\n恒功率(CP_P)：可以在'恒功率'处设置功率大小，并根据选择的充电/放电执行动作。\n正负功率(CP_N&P)：可以在'恒功率'处设置功率大小，正数为放电、负数为充电。\nThe control power mode is set, including constant voltage (CV), constant current (CC), constant power (CP_P), positive and negative power (CP_N&P). \nConstant voltage (CV) : The output voltage value is fixed and does not vary with external working conditions such as load and input voltage. \nConstant current (CC) : Operating at a constant current, the output current is constant and does not change with the voltage. \nConstant power (CP_P) : Power can be set at 'constant power' and actions can be performed based on the selected charge/discharge. \nPositive and negative power (CP_N&P) : The power value can be set at the 'constant power', where the positive value is discharging and the negative value is charging.");
+                                           "CP_N&&P" , tr("Power control type"), \
+                                           tr("Set the control power mode, including constant voltage (CV), constant current (CC), constant power (CP_P), and positive and negative power (CP_N&P).\nIf constant voltage (CV) mode is selected, the converter will operate in constant voltage mode.\nIf constant current (CC) mode is selected, the converter will operate in constant current mode.\nIf you choose constant power (CP_P) or positive and negative power (CP_N&P) mode: you can set the power size at 'constant power', the value is the size of the power size, positive for discharge, negative for charging."));
     Power_control_type->add_Specification();
+
+    if(EMS_Comm_type != nullptr)
+    {
+        delete EMS_Comm_type;
+    }
     EMS_Comm_type = new Specification(this,EMS_Comm_type_explain, ui->UI_Parameter_Tab, 3, 1, \
-                                      "RS485", "EMS Comm type", \
-                                      "设置EMS的通信方式，有RS485(RS485),CAN通信(CAN)，以太网(Ethernet)三种方式\nSetting the communication mode of EMS, there are RS485(RS485),CAN communication (CAN) and Ethernet(Ethernet).");
+                                      "RS485", tr("EMS Comm type"), \
+                                      tr("You CAN set the communication mode of the EMS, including RS485,CAN, and Ethernet. Select one communication mode that can be read and written remotely, and the other two communication modes can be read only."));
     EMS_Comm_type->add_Specification();
+
+    if(Output_power_limit != nullptr)
+    {
+        delete Output_power_limit;
+    }
     Output_power_limit = new Specification(this,Output_power_limit_explain, ui->UI_Parameter_Tab, 4, 1,\
-                                           "100", "Output power limit", \
-                                           "设置允许输出的功率最大值\nSet the maximum power output allowed.");
+                                           "100", tr("Output power limit"), \
+                                           tr("HMI Limits the range of power Settings on the AC side."));
     Output_power_limit->add_Specification();
-    BAT_manufacturers = new Specification(this,BAT_manufacturers_explain, ui->UI_Parameter_Tab, 5, 1, \
-                                          "GAOTE", "BAT manufacturers", \
-                                          "这是电池厂家，根据选择的电池厂家解析报文\nThis is the battery manufacturer and the packet is parsed according to the selected battery manufacturer.");
-    BAT_manufacturers->add_Specification();
+
+    if(BAT_protocol != nullptr)
+    {
+        delete BAT_protocol;
+    }
+    BAT_protocol = new Specification(this,BAT_protocol_explain, ui->UI_Parameter_Tab, 5, 1, \
+                                          tr("Auto"), tr("BAT protocol"), \
+                                          tr("This is the battery protocol that parses the packets sent by the BMS according to the selected battery protocol."));
+    BAT_protocol->add_Specification();
+
+    if(Power_Delta != nullptr)
+    {
+        delete Power_Delta;
+    }
     Power_Delta = new Specification(this,Power_Delta_explain, ui->UI_Parameter_Tab, 6, 1, \
-                                    "10", "Power Delta", \
-                                    "设置功率回差，默认功率回差为10kw，输出功率增加达到'输出功率限制+功率回差'时，会将输出功率降低到'输出功率-功率回差'\nSet the Power Delta, the default power delta is 10kw. When the output power increases to 'output power limit + power delta', the output power will be reduced to 'output power - power delta'.");
+                                    "10", tr("Power Delta"), \
+                                    tr("Set the power back difference, the default power back difference is 10kw, the output power increases to 'output power limit + power back difference', will reduce the output power to 'output power - power back difference', (Note: this setting only takes effect in the system anti-countercurrent mode, for control of power grid inlet power back difference)."));
     Power_Delta->add_Specification();
+
+    if(Charge_power_limit != nullptr)
+    {
+        delete Charge_power_limit;
+    }
     Charge_power_limit = new Specification(this,Charge_power_limit_explain, ui->UI_Parameter_Tab, 7, 1, \
-                                           "100", "Charge power limit",\
-                                           "设置充电功率限制,允许充电的功率最大值\nSet the charging power limit to allow the maximum power of charging.");
+                                           "100", tr("Charge power limit"),\
+                                           tr("Set the charging power limit to allow the maximum power of charging."));
     Charge_power_limit->add_Specification();
+
+    if(Discharge_power_limit != nullptr)
+    {
+        delete Discharge_power_limit;
+    }
     Discharge_power_limit = new Specification(this,Discharge_power_limit_explain, ui->UI_Parameter_Tab, 8, 1, \
-                                              "100", "Charge power limit", \
-                                              "设置放电功率限制，允许放电的功率最大值\nThe discharge power limit is set to allow the maximum power of the discharge.");
+                                              "100", tr("Charge power limit"), \
+                                              tr("The discharge power limit is set to allow the maximum power of the discharge."));
     Discharge_power_limit->add_Specification();
+
+    if(Charge_Vol_upper_Limit_delta != nullptr)
+    {
+        delete Charge_Vol_upper_Limit_delta;
+    }
     Charge_Vol_upper_Limit_delta = new Specification(this,Charge_Vol_upper_Limit_delta_explain, ui->UI_Parameter_Tab, 9, 1, \
-                                                     "10", "Charge Vol upper Limit delta", \
-                                                     "设置充电电压上限回差，默认充电电压上限为10V，充电电压达到'充电电压上限+充电电压回差'时，将会对设备进行禁充，充电电压降到'充电电压上限-充电电压回差'时解除禁充\nSet the upper Limit of Charge voltage delta (Charge Vol upper Limit delta). The default upper limit of charge voltage is 10V. When the charge voltage reaches the 'upper limit of charge voltage + charge voltage delta', the device will be forbidden to charge, and when the charge voltage drops to the 'upper limit of charge voltage - charge voltage delta', the forbidden charge will be lifted.");
+                                                     "10", tr("Charge Vol upper Limit delta"), \
+                                                     tr("Set the upper Limit of Charge voltage delta (Charge Vol upper Limit delta). The default upper limit of charge voltage is 10V. When the charge voltage reaches the 'upper limit of charge voltage + charge voltage delta', the device will be forbidden to charge, and when the charge voltage drops to the 'upper limit of charge voltage - charge voltage delta', the forbidden charge will be lifted."));
     Charge_Vol_upper_Limit_delta->add_Specification();
+
+    if(Discharge_Vol_lower_Limit_delta != nullptr)
+    {
+        delete Discharge_Vol_lower_Limit_delta;
+    }
     Discharge_Vol_lower_Limit_delta = new Specification(this,Discharge_Vol_lower_Limit_delta_explain, ui->UI_Parameter_Tab, 10, 1,\
-                                                        "10", "Discharge Vol lower Limit delta", \
-                                                        "设置放电电压下限回差，默认放电电压下限回差为10V，放电电电压低于'放电电压下限-放电电电压回差'时，将会对设备进行禁放，放电电压达到'放电电压下限+充电电压回差'时解除禁放\nSet the Discharge voltage lower Limit delta (Discharge Vol lower Limit delta), the default discharge voltage lower limit delta is 10V, when the discharge voltage is lower than the 'discharge voltage lower limit - discharge voltage delta', the device will be prohibited, when the discharge voltage reaches the 'discharge voltage lower limit + charge voltage delta', the prohibited discharge will be lifted.");
+                                                        "10", tr("Discharge Vol lower Limit delta"), \
+                                                        tr("Set the Discharge voltage lower Limit delta (Discharge Vol lower Limit delta), the default discharge voltage lower limit delta is 10V, when the discharge voltage is lower than the 'discharge voltage lower limit - discharge voltage delta', the device will be prohibited, when the discharge voltage reaches the 'discharge voltage lower limit + charge voltage delta', the prohibited discharge will be lifted."));
     Discharge_Vol_lower_Limit_delta->add_Specification();
+
+    if(Host_Address != nullptr)
+    {
+        delete Host_Address;
+    }
     Host_Address = new Specification(this,Host_Address_explain, ui->UI_Parameter_Tab, 0, 4,\
-                                     "1", "Host Address", \
-                                     "这是设备地址，默认值为1，可调范围在1~255之间，用于EMS通信时匹配主机地址\nThis is the device address, which defaults to 1 and can be adjusted from 1 to 255 to match the host address during EMS communication.");
+                                     "1", tr("Host Address"), \
+                                     tr("This is the device address, which defaults to 1 and can be adjusted from 1 to 255 to match the host address during EMS communication."));
     Host_Address->add_Specification();
+
+    if(serial_port_1 != nullptr)
+    {
+        delete serial_port_1;
+    }
     serial_port_1 = new Specification(this,serial_port_1_explain, ui->UI_Parameter_Tab, 1, 4, \
-                                      "9600", "serial port 1", \
-                                      "这是串口1，对应触摸屏接口中TXD2、RXD2(上位机232通信)，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口1默认波特率是9600bps\nThis is serial port 1, which corresponds to TXD2 and RXD2(upper computer 232 communication) in the touch screen interface. There are six baud rates to choose from, which are 1200, 2400, 4800, 9600, 19200 and 38400 respectively. The default baud rate of serial port 1 is 9600bps.");
+                                      "9600", tr("serial port 1"), \
+                                      tr("This is serial port 1, there are six options, namely 1200, 2400, 4800, 9600, 19200, 38400, serial port 1 default baud rate is 9600 BPS, eight data bits, no check, one stop bit(8, N, 1)."));
     serial_port_1->add_Specification();
+
+    if(serial_port_2 != nullptr)
+    {
+        delete serial_port_2;
+    }
     serial_port_2 = new Specification(this,serial_port_2_explain, ui->UI_Parameter_Tab, 2, 4, \
-                                      "9600", "serial port 2", \
-                                      "这是串口2，对应触摸屏接口中485_3A、485_3B(电池BMS通信)，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口2默认波特率是9600bps\nThis is serial port 2, which corresponds to 485_3A and 485_3B(battery BMS communication) in the touch screen interface. There are six baud rates to choose from, which are 1200, 2400, 4800, 9600, 19200 and 38400 respectively. The default baud rate of serial port 2 is 9600bps.");
+                                      "9600", tr("serial port 2"), \
+                                      tr("This is serial port 2, there are six options, namely 1200, 2400, 4800, 9600, 19200, 38400, serial port 2 default baud rate is 9600 BPS, eight data bits, no check, one stop bit(8, N, 1)."));
     serial_port_2->add_Specification();
+
+    if(serial_port_3 != nullptr)
+    {
+
+        delete serial_port_3;
+    }
     serial_port_3 = new Specification(this,serial_port_3_explain, ui->UI_Parameter_Tab, 3, 4, \
-                                      "9600", "serial port 3", \
-                                      "这是串口3，对应触摸屏接口中485_4A、485_4B(空调)，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口3默认波特率是9600bps\nThis is serial port 3, corresponding to the touch screen interface 485_4A, 485_4B(air conditioning), set the baud rate, there are six options to choose from, respectively, 1200, 2400, 4800, 9600, 19200, 38400, serial port 3 default baud rate is 9600bps.");
+                                      "9600", tr("serial port 3"), \
+                                      tr("This is serial port 3, there are six options, namely 1200, 2400, 4800, 9600, 19200, 38400, serial port 3 default baud rate is 9600 BPS, eight data bits, no check, one stop bit(8, N, 1)."));
     serial_port_3->add_Specification();
+
+    if(serial_port_4 != nullptr)
+    {
+        delete serial_port_4;
+    }
     serial_port_4 = new Specification(this,serial_port_4_explain, ui->UI_Parameter_Tab, 4, 4, \
-                                      "9600", "serial port 4", \
-                                      "这是串口4，对应触摸屏接口中485_5A、485_5B(电能表)，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口4默认波特率是9600bps\nThis is serial port 4, which corresponds to 485_5A and 485_5B(electricity meter) in the touch screen interface. There are six baud rates to choose from, which are 1200, 2400, 4800, 9600, 19200 and 38400 respectively. The default baud rate of serial port 4 is 9600bps.");
+                                      "9600", tr("serial port 4"), \
+                                      tr("This is serial port 4, there are six options, namely 1200, 2400, 4800, 9600, 19200, 38400, serial port 4 default baud rate is 9600 BPS, eight data bits, no check, one stop bit(8, N, 1)."));
     serial_port_4->add_Specification();
+
+    if(serial_port_5 != nullptr)
+    {
+        delete serial_port_5;
+    }
     serial_port_5 = new Specification(this,serial_port_5_explain, ui->UI_Parameter_Tab, 5, 4, \
-                                      "9600", "serial port 5", \
-                                      "这是串口5，对应触摸屏接口中485_6A、485_6B(EMS通信)，设置波特率，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口5默认波特率是9600bps\nThis is serial port 5, which corresponds to 485_6A and 485_6B(EMS communication) in the touch screen interface. There are six baud rates to choose from, which are 1200, 2400, 4800, 9600, 19200 and 38400 respectively. The default baud rate of serial port 5 is 9600bps.");
+                                      "9600", tr("serial port 5"), \
+                                      tr("This is serial port 5, there are six options, namely 1200, 2400, 4800, 9600, 19200, 38400, serial port 5 default baud rate is 9600 BPS, eight data bits, no check, one stop bit(8, N, 1)."));
     serial_port_5->add_Specification();
 
+    if(Can_port_1 != nullptr)
+    {
+        delete Can_port_1;
+    }
     Can_port_1 = new Specification(this,Can_port_1_explain, ui->UI_Parameter_Tab, 6, 4, \
-                                   "500", "Can port 1", \
-                                   "这是CAN1端口，PCS内部通讯的波特率，默认波特率500，无需更改\nThis is the baud rate of CAN1 port and PCS internal communication. The default baud rate is 500, which need not be changed.");
+                                   "500", tr("Can port 1"), \
+                                   tr("This is the CAN1 port, the baud rate of PCS internal communication, the default baud rate is 500kbps, eight data bits, no check, one stop bit(8, N, 1)."));
     Can_port_1->add_Specification();
+
+    if(Can_port_2 != nullptr)
+    {
+        delete Can_port_2;
+    }
     Can_port_2 = new Specification(this,Can_port_2_explain, ui->UI_Parameter_Tab, 7, 4, \
-                                   "250", "Can port 2", \
-                                   "这是CAN2端口，PCS与BMS通信的波特率，默认波特率125，根据现场BMS通信波特率进行修改，其中有五项可供选择，分别是100、125、250、500、800\nThis is the baud rate of the CAN2 port and the communication between PCS and BMS. The default baud rate is 125, which is modified according to the on-site BMS communication baud rate. There are five items to choose from, which are 100, 125, 250, 500 and 800 respectively.");
+                                   "125", tr("Can port 2"), \
+                                   tr("This is the CAN2 port, the baud rate of PCS internal communication, the default baud rate is 125kbps, eight data bits, no check, one stop bit(8, N, 1)."));
     Can_port_2->add_Specification();
+
+    if(ProtocolVersion != nullptr)
+    {
+        delete ProtocolVersion;
+    }
     ProtocolVersion = new Specification(this,ProtocolVersion_explain, ui->UI_Parameter_Tab, 0, 7, \
-                                        "5612", "ProtocolVersion", \
-                                        "这是协议版本号，用于查看当前协议版本\nThis is the protocol version number used to see the current protocol version.");
+                                        "V1.0", tr("ProtocolVersion"), \
+                                        tr("This is the protocol version number, which is used to view the current protocol version. The protocol version number defaults to V1.0."));
     ProtocolVersion->add_Specification();
+
+    if(UserPassPort != nullptr)
+    {
+        delete UserPassPort;
+    }
     UserPassPort = new Specification(this,UserPassPort_explain, ui->UI_Parameter_Tab, 1, 7, \
-                                     "123456", "UserPassPort", \
-                                     "这是用户密码，可供重新设置用户密码，默认用户密码123456\nThis is the user password, you can reset the user password, the default user password 123456.");
+                                     "123456", tr("UserPassPort"), \
+                                     tr("This is the user password, you can reset the user password, the default user password 123456, (note: User password must be six digits)."));
     UserPassPort->add_Specification();
+
+    if(RootPassport != nullptr)
+    {
+        delete RootPassport;
+    }
     RootPassport = new Specification(this,RootPassport_explain, ui->UI_Parameter_Tab, 2, 7,\
-                                     "888888", "RootPassport", \
-                                     "这是超级权限密码，可供重新设置超级权限密码，默认超级权限密码888888\nThis is the super privilege password. You can reset the super privilege password. The default super privilege password is 888888.");
+                                     "888888", tr("RootPassport"), \
+                                     tr("This is the super permission password, you can reset the super permission password, the default super permission password 888888, (Note: super permission password must be six digits)."));
     RootPassport->add_Specification();
+
+    if(Language != nullptr)
+    {
+        delete Language;
+    }
     Language = new Specification(this,Language_explain, ui->UI_Parameter_Tab, 3, 7, \
-                                 "English", "Language", \
-                                 "设置显示屏的显示语言，可供选择为中文与英文，切换语言时系统会重启\nSet the display language of the display screen, which can be selected as Chinese and English. The system will restart when switching languages.");
+                                 tr("English"), tr("Language"), \
+                                 tr("Set the display language of the display screen, which can be selected as Chinese and English. The system will restart when switching languages."));
     Language->add_Specification();
+
+    if(System_upgrade != nullptr)
+    {
+        delete System_upgrade;
+    }
     System_upgrade = new Specification(this,System_upgrade_explain, ui->UI_Parameter_Tab, 4, 7, \
-                                       "upgrade", "System_upgrade", \
-                                       "点击即可进入系统升级应用程序，根据升级文档进行系统升级\nClick to enter the system upgrade application and upgrade the system according to the upgrade document.");
+                                       tr("upgrade"), tr("System upgrade"), \
+                                       tr("Click to enter the system upgrade application and upgrade the system according to the upgrade document."));
     System_upgrade->add_Specification();
+
+    if(Sounds != nullptr)
+    {
+        delete Sounds;
+    }
     Sounds = new Specification(this,Sounds_explain, ui->UI_Parameter_Tab, 5, 7, \
-                               "Allow", "Sounds", \
-                               "设置显示屏是否开启声音，可供选择为允许(Allow)、禁止(forbid)\nSet whether the display is enabled sound, which can be allowed(Allow) or prohibited(forbid).");
+                               tr("Allow"), tr("Sounds"), \
+                               tr("Set whether the display is enabled sound, which can be allowed(Allow) or prohibited(forbid)."));
     Sounds->add_Specification();
-    DryContact = new Specification(this,DryContact_explain, ui->UI_Parameter_Tab, 6, 7, \
-                                   "forbid", "DryContact", \
-                                   "根据项目现场配置干接点功能，可供选择为允许(Allow)、禁止(forbid)\nAccording to the project site configuration dry contact function, can be selected as allowed(Allow), prohibited(forbid).");
-    DryContact->add_Specification();
+
 }
 /***********系统参数 绘制button************/
 void MEGAWin::SystemParameter()

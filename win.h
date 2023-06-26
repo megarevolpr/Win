@@ -162,7 +162,7 @@ public:
         QPushButton *Power_control_type_explain;
         QPushButton *EMS_Comm_type_explain;
         QPushButton *Output_power_limit_explain;
-        QPushButton *BAT_manufacturers_explain;
+        QPushButton *BAT_protocol_explain;
         QPushButton *Power_Delta_explain;
         QPushButton *Charge_power_limit_explain;
         QPushButton *Discharge_power_limit_explain;
@@ -182,14 +182,13 @@ public:
         QPushButton *Language_explain;
         QPushButton *System_upgrade_explain;
         QPushButton *Sounds_explain;
-        QPushButton *DryContact_explain;
 
         Specification *Battery_type;
         Specification *BMS_Comm_type;
         Specification *Power_control_type;
         Specification *EMS_Comm_type;
         Specification *Output_power_limit;
-        Specification *BAT_manufacturers;
+        Specification *BAT_protocol;
         Specification *Power_Delta;
         Specification *Charge_power_limit;
         Specification *Discharge_power_limit;
@@ -209,7 +208,7 @@ public:
         Specification *Language;
         Specification *System_upgrade;
         Specification *Sounds;
-        Specification *DryContact;
+
         /***************************系统信息**************************/
         QPushButton *Manufacturer_name_explain;
         QPushButton *MonitoringVersion_explain;
@@ -689,6 +688,8 @@ public:
         void RunStatePage();
 
         void SystemSettingPage();//系统设置界面
+        void RecordPage();//记录页面
+
         void LCDSetting();  //LCD标签初始化和定时器设置
 
         void LinkRelationship();
@@ -697,6 +698,7 @@ public:
         void ModuleState_Tab();//实时状态表初始化
         void UserParam_tab();//一般设置表初始化
         void History_tab();//历史记录设置表初始化
+        void OperationLog_tab();//操作日志表初始化
 
         void EquipmentInfor_tab();//设备信息表初始化
         void BatterySet_tab();//电池设置表初始化
