@@ -517,6 +517,27 @@ void MEGAWin::MemoryAllocation()
     Full_P_signal_explain       = new QPushButton;//满功率信号
     Smoke_alarm_signal_explain  = new QPushButton;//烟感信号
     Hight_temp_signal_explain   = new QPushButton;//高温信号
+    DC_input_Breaker = nullptr;
+    DC_Cont = nullptr;
+    Output_Cont = nullptr;
+    Output_Breaker = nullptr;
+    Grid_Cont = nullptr;
+    Grid_Breaker = nullptr;
+    MB_Breaker = nullptr;
+    converter_available = nullptr;
+    DC_Soft_start = nullptr;
+    converter_status = nullptr;
+    Reactive_P_Regulation = nullptr;
+    LVRT = nullptr;
+    Generator_signal = nullptr;
+    Reserve = nullptr;
+    Reserve2 = nullptr;
+    EPO_Cont_signal1 = nullptr;
+    EPO_Cont_signal2 = nullptr;
+    Access_signal = nullptr;
+    Full_P_signal = nullptr;
+    Smoke_alarm_signal = nullptr;
+    Hight_temp_signal = nullptr;
 
     /***************************电池数据**********************************/
     pButton_BatteryData  = new QButtonGroup();
@@ -569,7 +590,6 @@ void MEGAWin::FirstPage()
 void MEGAWin::RunStatePage()
 {
     ModuleData_Tab();//PCS数据
-    RTData_Status();
     RTAlarm();//告警信息
     ModuleState_Tab();//PCS状态
 }
@@ -1111,6 +1131,9 @@ void MEGAWin::Change_Language()
         qApp->installTranslator(translator);
         ui->retranslateUi(this);
     }
+
+    ModuleState_Tab();  //PCS状态
+    RTAlarm();          //告警信息
 
     UserParam_tab();    //参数设置
     BatterySet_tab();   //电池设置
@@ -2299,86 +2322,190 @@ void MEGAWin::Load_Data()
 /********PCS状态 绘制button*********/
 void MEGAWin::PCS_State()
 {
+    if(DC_input_Breaker != nullptr)
+    {
+        delete DC_input_Breaker;
+    }
     DC_input_Breaker = new Specification(this,DC_input_Breaker_explain, ui->RTState_Bypass_Tab, 0, 1, \
                                             tr("Close"), tr("DC input Breaker"), \
                                             tr("DC input circuit breaker has three states: Break, Close, Trip; The DC input circuit breaker can only be manually disconnected. If the DC input circuit breaker overcurrent, the DC input circuit breaker may trip."));
     DC_input_Breaker->add_Specification();
+
+    if(DC_Cont != nullptr)
+    {
+        delete DC_Cont;
+    }
     DC_Cont = new Specification(this,DC_Cont_explain, ui->RTState_Bypass_Tab, 1, 1, \
                                             tr("Close"), tr("DC contactor"), \
                                             tr("DC contactor has two states: Break, Close; When the DC side is soft Break, the DC contactor is closed. When the DC side of the battery is disconnected, the DC bus voltage drops to a certain voltage, and the DC contactor is disconnected."));
     DC_Cont->add_Specification();
+
+    if(Output_Cont != nullptr)
+    {
+        delete Output_Cont;
+    }
     Output_Cont = new Specification(this,Output_Cont_explain, ui->RTState_Bypass_Tab, 2, 1, \
                                             tr("Close"), tr("Output contactor"), \
                                             tr("The output circuit breaker has three states: Break, Close, Trip; If the output circuit breaker overcurrent, the output circuit breaker will trip."));
     Output_Cont->add_Specification();
+
+    if(Output_Breaker != nullptr)
+    {
+        delete Output_Breaker;
+    }
     Output_Breaker = new Specification(this,Output_Breaker_explain, ui->RTState_Bypass_Tab, 3, 1, \
                                             tr("Close"), tr("Output Breaker"), \
                                             tr("The output contactor has two states: Break, Close; When the DC side soft opening is completed, the output contactor is closed; When the converter is turned off, the output contactor is disconnected."));
     Output_Breaker->add_Specification();
+
+    if(Grid_Cont != nullptr)
+    {
+        delete Grid_Cont;
+    }
     Grid_Cont = new Specification(this,Grid_Cont_explain, ui->RTState_Bypass_Tab, 4, 1, \
                                             tr("Close"), tr("Grid contactor"), \
                                             tr("The network contactor has two states: Break, Close; When the converter is in grid-connected mode and the grid side voltage is normal, the network contactor is closed. The converter is in off-grid mode and the network contactor is disconnected."));
     Grid_Cont->add_Specification();
+
+    if(Grid_Breaker != nullptr)
+    {
+        delete Grid_Breaker;
+    }
     Grid_Breaker = new Specification(this,Grid_Breaker_explain, ui->RTState_Bypass_Tab, 5, 1, \
                                             tr("Close"), tr("Grid Breaker"), \
                                             tr("The power grid circuit breaker has three states: Break, Close, Trip; The power grid circuit breaker can only be manually disconnected. If the power grid circuit breaker overflows, the power grid circuit breaker may trip."));
     Grid_Breaker->add_Specification();
+
+    if(MB_Breaker != nullptr)
+    {
+        delete MB_Breaker;
+    }
     MB_Breaker = new Specification(this,MB_Breaker_explain, ui->RTState_Bypass_Tab, 6, 1, \
                                             tr("Close"), tr("Maintenance Bypass Breaker"), \
                                             tr("Maintenance bypass circuit breaker has two states: Break, Close; This circuit breaker is only used for machine maintenance, if necessary, please contact the maintenance personnel."));
     MB_Breaker->add_Specification();
+
+    if(converter_available != nullptr)
+    {
+        delete converter_available;
+    }
     converter_available = new Specification(this,converter_available_explain, ui->RTState_Bypass_Tab, 0, 3, \
                                             tr("Disable"), tr("converter available"), \
                                             tr("The converter can be enabled in two states: Enable and Disable. When the internal self-test of the machine is no problem, the converter is enabled; Otherwise the converter is prohibited."));
     converter_available->add_Specification();
+
+    if(DC_Soft_start != nullptr)
+    {
+        delete DC_Soft_start;
+    }
     DC_Soft_start = new Specification(this,DC_Soft_start_explain, ui->RTState_Bypass_Tab, 1, 3, \
                                             tr("Not starting"), tr("DC Soft start"), \
                                             tr("The DC Soft boot has three states: Soft starting, complete, and Not starting. Soft start means that when the converter is started, it gradually accelerates or decelerates the device to the normal operating state by controlling the change of current or voltage, so as to reduce the current shock and voltage peak in the circuit, protect the circuit components and reduce the mechanical damage of the device. Soft start can increase device life, reduce energy consumption, and improve system efficiency."));
     DC_Soft_start->add_Specification();
+
+    if(converter_status != nullptr)
+    {
+        delete converter_status;
+    }
     converter_status = new Specification(this,converter_status_explain, ui->RTState_Bypass_Tab, 2, 3, \
                                             tr("Shut down"), tr("converter status"), \
                                             tr("There are eight converter states:Shut down, Soft start, Grid-ON Charge, Grid-ON Discharge, Grid-OFF Discharge, Drop and Connected,Standby, Grid-OFF Charge."));
     converter_status->add_Specification();
+
+    if(Reactive_P_Regulation != nullptr)
+    {
+        delete Reactive_P_Regulation;
+    }
     Reactive_P_Regulation = new Specification(this,Reactive_P_Regulation_explain, ui->RTState_Bypass_Tab, 3, 3, \
                                             tr("Disable"), tr("Reactive Power Regulation"), \
                                             tr("There are three types of reactive power regulation: Disable, Pf regulation, and Q regulation."));
     Reactive_P_Regulation->add_Specification();
+
+    if(LVRT != nullptr)
+    {
+        delete LVRT;
+    }
     LVRT = new Specification(this,LVRT_explain, ui->RTState_Bypass_Tab, 4, 3, \
                                             tr("LVRT"), tr("LVRT"), \
                                             tr("This is the current state of low voltage crossing (LVRT). Low voltage crossing refers to the ability to withstand a certain limit of low voltage of the grid within a certain period of time without exiting the operation. There are two states here, namely Non and LVRT."));
     LVRT->add_Specification();
+
+    if(Generator_signal != nullptr)
+    {
+        delete Generator_signal;
+    }
     Generator_signal = new Specification(this,Generator_signal_explain, ui->RTState_Bypass_Tab, 0, 5, \
                                             tr("Enable"), tr("Generator signal"), \
                                             tr("This is the status of the current chai signal, output dry contact 1, there are Enable and Disable two states, here is the most real physical hardware status."));
     Generator_signal->add_Specification();
+
+    if(Reserve != nullptr)
+    {
+        delete Reserve;
+    }
     Reserve = new Specification(this,Reserve_explain, ui->RTState_Bypass_Tab, 1, 5, \
                                             tr("Disable"), tr("Reserve"), \
                                             tr("This bit is reserved and has no effect. Dry contact 2 is output. The status of dry contact 2 is Enable(Enable) or Disable(Disable)."));
     Reserve->add_Specification();
+
+    if(Reserve2 != nullptr)
+    {
+        delete Reserve2;
+    }
     Reserve2 = new Specification(this,Reserve2_explain, ui->RTState_Bypass_Tab, 2, 5, \
                                             tr("Disable"), tr("Reserve2"), \
                                             tr("This bit is reserved and has no effect. Dry contact 2 is output. The status of dry contact 3 is Enable(Enable) or Disable(Disable)"));
     Reserve2->add_Specification();
+
+    if(EPO_Cont_signal1 != nullptr)
+    {
+        delete EPO_Cont_signal1;
+    }
     EPO_Cont_signal1 = new Specification(this,EPO_Cont_signal1_explain, ui->RTState_Bypass_Tab, 3, 5, \
                                             tr("Disable"), tr("EPO_Cont signal1"), \
                                             tr("This is signal 1 of the EPO node. Enter dry contact 1, that is, dry contact signal 1 of external shutdown. There are two states: Enable and Disable."));
     EPO_Cont_signal1->add_Specification();
+
+    if(EPO_Cont_signal2 != nullptr)
+    {
+        delete EPO_Cont_signal2;
+    }
     EPO_Cont_signal2 = new Specification(this,EPO_Cont_signal2_explain, ui->RTState_Bypass_Tab, 4, 5, \
                                             tr("Disable"), tr("EPO_Cont signal2"), \
                                             tr("This is signal 2 of the EPO node. Enter dry contact 2, that is, dry contact signal 2 of the external shutdown. There are two states: Enable and Disable."));
     EPO_Cont_signal2->add_Specification();
+
+    if(Access_signal != nullptr)
+    {
+        delete Access_signal;
+    }
     Access_signal = new Specification(this,Access_signal_explain, ui->RTState_Bypass_Tab, 5, 5, \
                                             tr("Disable"), tr("Access_signal"), \
                                             tr("This is the access signal. Enter dry contact 3. The status is Enable or Disable. The actual physical hardware status is obtained here."));
     Access_signal->add_Specification();
+
+    if(Full_P_signal != nullptr)
+    {
+        delete Full_P_signal;
+    }
     Full_P_signal = new Specification(this,Full_P_signal_explain, ui->RTState_Bypass_Tab, 6, 5, \
                                             tr("Disable"), tr("Full_P_signal"), \
                                             tr("This is a full power signal, the input dry contact 4 has two states of Enable and Disable, and what is obtained here is the most real physical hardware state."));
     Full_P_signal->add_Specification();
+
+    if(Smoke_alarm_signal != nullptr)
+    {
+        delete Smoke_alarm_signal;
+    }
     Smoke_alarm_signal = new Specification(this,Smoke_alarm_signal_explain, ui->RTState_Bypass_Tab, 7, 5, \
                                             tr("Disable"), tr("Smoke alarm signal"), \
                                             tr("This isa smoke alarm signal. Enter dry contact 5. The status is Enable or Disable. The actual physical hardware status is obtained here."));
     Smoke_alarm_signal->add_Specification();
+
+    if(Hight_temp_signal != nullptr)
+    {
+        delete Hight_temp_signal;
+    }
     Hight_temp_signal = new Specification(this,Hight_temp_signal_explain, ui->RTState_Bypass_Tab, 8, 5, \
                                             tr("Disable"), tr("Hight temp signal"), \
                                             tr("This isa high temperature signal. Input dry contact 6. Two states are available: Enable and Disable."));
