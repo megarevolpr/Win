@@ -1681,84 +1681,84 @@ void MEGAWin::Data_report_clicked(int nid)
 {
     switch (nid) {
     case 0:
-        QMessageBox::question(this, "Discharge Day"\
-                              ,"这里显示当日放电电量,点击此处将跳转到每日充放电量的直方图，横轴单位为日，纵轴单位为功率(kWh)\nToday's discharge is shown here. Click here to jump to the histogram of daily charge and discharge. The horizontal axis is in days and the vertical axis is in power (kWh).", "OK");
+        QMessageBox::question(this, tr("Discharge Day")\
+                              ,tr("The discharge quantity of the day is shown here; Click here to jump to a histogram of daily charge and discharge, with the horizontal axis in days and the vertical axis in power (kWh)The discharge quantity of the day is shown here; Click here to jump to a histogram of daily charge and discharge, with the horizontal axis in days and the vertical axis in power (kWh)."), tr("OK"));
         break;
     case 1:
-        QMessageBox::question(this, "Discharge Month"\
-                              ,"这里显示当月放电电量,点击此处将跳转到每月充放电量的直方图，横轴单位为月，纵轴单位为功率(kWh)\nThis shows the discharge amount of this month. Click here to jump to the histogram of monthly charge and discharge amount. The horizontal axis is in month and the vertical axis is in power (kWh).", "OK");
+        QMessageBox::question(this, tr("Discharge Month")\
+                              ,tr("This shows the discharge amount of this month. Click here to jump to the histogram of monthly charge and discharge amount. The horizontal axis is in month and the vertical axis is in power (kWh)."), tr("OK"));
         break;
     case 2:
-        QMessageBox::question(this, "Discharge Year"\
-                              ,"这里显示当年放电电量,点击此处将跳转到每年充放电量的直方图，横轴单位为年，纵轴单位为功率(kWh)\nThis shows the discharge amount of this year. Click here to jump to the histogram of the annual charge and discharge amount. The horizontal axis is in year, and the vertical axis is in power (kWh).", "OK");
+        QMessageBox::question(this, tr("Discharge Year")\
+                              ,tr("This shows the discharge amount of this year. Click here to jump to the histogram of the annual charge and discharge amount. The horizontal axis is in year, and the vertical axis is in power (kWh)."), tr("OK"));
         break;
     case 3:
-        QMessageBox::question(this, "Discharge Total"\
-                              ,"这里显示总放电电量，点击此处将跳转到总览图\nThe total discharge power is displayed here. Click here to jump to the overview chart.", "OK");
+        QMessageBox::question(this, tr("Discharge Total")\
+                              ,tr("The total discharge power is displayed here. Click here to jump to the overview chart."), tr("OK"));
         break;
     case 4:
-        QMessageBox::question(this, "Charge Day"\
-                              ,"这里显示当日充电电量,点击此处将跳转到每日充放电量的直方图，横轴单位为日，纵轴单位为功率(kWh)\nToday's charging is shown here. Click here to jump to the histogram of daily charging and discharging. The horizontal axis is in days, and the vertical axis is in power (kWh).", "OK");
+        QMessageBox::question(this, tr("Charge Day")\
+                              ,tr("Here shows the charge of the day; Click here to jump to a histogram of daily charge and discharge, with the horizontal axis in days and the vertical axis in power (kWh)."), tr("OK"));
         break;
     case 5:
-        QMessageBox::question(this, "Charge Month"\
-                              ,"这里显示当月充电电量,点击此处将跳转到每月充放电量的直方图，横轴单位为月，纵轴单位为功率(kWh)\nThis shows the amount of charging in this month. Click here to jump to the histogram of monthly charging and discharging. The horizontal axis is in month and the vertical axis is in power (kWh).", "OK");
+        QMessageBox::question(this, tr("Charge Month")\
+                              ,tr("This shows the amount of charging in this month. Click here to jump to the histogram of monthly charging and discharging. The horizontal axis is in month and the vertical axis is in power (kWh)."), tr("OK"));
         break;
     case 6:
-        QMessageBox::question(this, "Charge Year"\
-                              ,"这里显示当年充电电量,点击此处将跳转到每年充放电量的直方图，横轴单位为年，纵轴单位为功率(kWh)\nThis shows the amount of charging for this year. Click here to jump to the histogram of charging and discharging for each year. The horizontal axis is in years and the vertical axis is in power (kWh).", "OK");
+        QMessageBox::question(this, tr("Charge Year")\
+                              ,tr("This shows the amount of charging for this year. Click here to jump to the histogram of charging and discharging for each year. The horizontal axis is in years and the vertical axis is in power (kWh)."), tr("OK"));
         break;
     case 7:
-        QMessageBox::question(this, "Charge Total"\
-                              ,"这里显示总充电电量，点击此处将跳转到总览图\nThis shows the total amount of charging, click here to jump to the overview chart.", "OK");
+        QMessageBox::question(this, tr("Charge Total")\
+                              ,tr("This shows the total amount of charging, click here to jump to the overview chart."), tr("OK"));
         break;
     case 8:
-        QMessageBox::question(this, "Month-"\
-                              ,"查看上一个月的数据，点击后将显示当前显示月份的上一个月的数据\nTo view the data of the previous month, click on it to display the data of the previous month of the current displayed month.", "OK");
+        QMessageBox::question(this, tr("Month-")\
+                              ,tr("To view the data of the previous month, click on it to display the data of the previous month of the current displayed month."), tr("OK"));
         break;
     case 9:
-        QMessageBox::question(this, "Year-"\
-                              ,"查看上一年的数据，点击后将显示当前显示年份的上一年的数据\nTo view the previous year's data, click on it to display the previous year's data for the current displayed year.", "OK");
+        QMessageBox::question(this, tr("Year-")\
+                              ,tr("To view the previous year's data, click on it to display the previous year's data for the current displayed year."), tr("OK"));
         break;
     case 10:
-        QMessageBox::question(this, "Daily electricity quantity"\
-                              ,"查看当日充放电量，点击此处将跳转到每日充放电量的直方图，横轴单位为日，纵轴单位为功率(kWh)\nTo view the daily charge and discharge volume, click here to jump to the histogram of daily charge and discharge volume. The horizontal axis is in day, and the vertical axis is in power (kWh).", "OK");
+        QMessageBox::question(this, tr("Daily electricity quantity")\
+                              ,tr("To view the daily charge and discharge volume, click here to jump to the histogram of daily charge and discharge volume. The horizontal axis is in day, and the vertical axis is in power (kWh)."), tr("OK"));
         break;
     case 11:
-        QMessageBox::question(this, "Annual electricity quantity"\
-                              ,"查看当年充放电量,点击此处将跳转到每年充放电量的直方图，横轴单位为年，纵轴单位为功率(kWh)\nTo view the annual charge and discharge volume, click here to jump to the histogram of the annual charge and discharge volume, the horizontal axis is in year, and the vertical axis is in power (kWh).", "OK");
+        QMessageBox::question(this, tr("Annual electricity quantity")\
+                              ,tr("To view the annual charge and discharge volume, click here to jump to the histogram of the annual charge and discharge volume, the horizontal axis is in year, and the vertical axis is in power (kWh)."), tr("OK"));
         break;
     case 12:
-        QMessageBox::question(this, "Month+"\
-                              ,"查看下一个月的数据，点击后将显示当前显示月份的下一个月的数据\nTo view the data for the next month, click to display the data for the next month of the current displayed month.", "OK");
+        QMessageBox::question(this, tr("Month+")\
+                              ,tr("To view the data for the next month, click to display the data for the next month of the current displayed month."), tr("OK"));
         break;
     case 13:
-        QMessageBox::question(this, "Year+"\
-                              ,"查看下一年的数据，点击后将显示当前显示年份的下一年的数据\nTo view the data for the next year, click on it to display the data for the next year of the current displayed year.", "OK");
+        QMessageBox::question(this, tr("Year+")\
+                              ,tr("To view the data for the next year, click on it to display the data for the next year of the current displayed year."), tr("OK"));
         break;
     case 14:
-        QMessageBox::question(this, "Monthly electric quantity"\
-                              ,"查看当月充放电量,点击此处将跳转到每月充放电量的直方图，横轴单位为月，纵轴单位为功率(kWh)\nTo view the monthly charge and discharge volume, click here to jump to the histogram of monthly charge and discharge volume. The horizontal axis is in month, and the vertical axis is in power (kWh).", "OK");
+        QMessageBox::question(this, tr("Monthly electric quantity")\
+                              ,tr("To view the monthly charge and discharge volume, click here to jump to the histogram of monthly charge and discharge volume. The horizontal axis is in month, and the vertical axis is in power (kWh)."), tr("OK"));
         break;
     case 15:
-        QMessageBox::question(this, "Total electric quantity"\
-                              ,"查看总充放电量，点击此处将跳转到总览图\nTo view the total charge and discharge, click here to jump to the overview chart.", "OK");
+        QMessageBox::question(this, tr("Total electric quantity")\
+                              ,tr("To view the total charge and discharge, click here to jump to the overview chart."), tr("OK"));
         break;
     case 16:
-        QMessageBox::question(this, "HistoricalFailure"\
-                              ,"导出历史记录，点击此处将会导出历史记录到U盘里\nTo export history, click here to export history to U disk", "OK");
+        QMessageBox::question(this, tr("HistoricalFailure")\
+                              ,tr("To export history records, click here to export history records to the USB flash drive. The file exported to the USB flash drive is HistoryRecord.csv, which needs to be opened with Excel."), tr("OK"));
         break;
     case 17:
-        QMessageBox::question(this, "OperationLog"\
-                              ,"导出操作日志，点击此处将会导出操作日志到U盘里\nExport operation log. Click here to export operation log to U disk.", "OK");
+        QMessageBox::question(this, tr("OperationLog")\
+                              ,tr("Click here to export operation logs to the USB flash drive. The Log file is Log.csv, and you need to open the file using Excel."), tr("OK"));
         break;
     case 18:
-        QMessageBox::question(this, "Coulombmeter report"\
-                              ,"导出电量统计表，点击此处将会导出电量统计表到U盘里\nExport the battery statistics. Click here to export the battery statistics to the U disk.", "OK");
+        QMessageBox::question(this, tr("Coulombmeter report")\
+                              ,tr("To export the battery table, click here to export the battery table to the USB flash drive. The file exported to the USB flash drive is Report.csv, which needs to be opened with Excel."), tr("OK"));
         break;
     case 19:
-        QMessageBox::question(this, "Eject Udisk"\
-                              ,"退出U盘，将挂载到显控的U盘取消挂载，以保证U盘数据不会损坏\nExit the U disk and unmount the U disk mounted to the display control to ensure that the data in the U disk will not be damaged.", "OK");
+        QMessageBox::question(this, tr("Eject Udisk")\
+                              ,tr("Exit the U disk and unmount the U disk mounted to the display control to ensure that the data in the U disk will not be damaged."), tr("OK"));
         break;
     }
 

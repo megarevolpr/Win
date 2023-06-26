@@ -2565,7 +2565,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">
@@ -7125,7 +7125,7 @@ kW.h</string>
                 <rect>
                  <x>40</x>
                  <y>60</y>
-                 <width>181</width>
+                 <width>211</width>
                  <height>31</height>
                 </rect>
                </property>
@@ -7136,7 +7136,7 @@ kW.h</string>
               <widget class="QLabel" name="label_26">
                <property name="geometry">
                 <rect>
-                 <x>260</x>
+                 <x>280</x>
                  <y>60</y>
                  <width>121</width>
                  <height>31</height>
