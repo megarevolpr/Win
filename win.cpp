@@ -446,6 +446,32 @@ void MEGAWin::MemoryAllocation()
     Module_Number_explain               = new QPushButton;
     Restore_factory_explain             = new QPushButton;
     Clear_Data_explain                  = new QPushButton;
+    Change_rate_of_power = nullptr;
+    Grid_frequency_upper_limit = nullptr;
+    Grid_frequency_lower_limit = nullptr;
+    Vol_protection_upper_limit = nullptr;
+    Vol_protection_lower_limit = nullptr;
+    HVRT_enable = nullptr;
+    LVRT_enable = nullptr;
+    AFD_enable = nullptr;
+    Insulation_detection_enable = nullptr;
+    PrimaryFreq_enable = nullptr;
+    Inertia_enable = nullptr;
+    CV_parallel = nullptr;
+    Machine_type = nullptr;
+    Machine_capacity = nullptr;
+    Output_Fre_grade = nullptr;
+    Output_vol_level = nullptr;
+    Converter_side_vol_level = nullptr;
+    Output_reactive_power_mode = nullptr;
+    Grid_connected_mode_of_Inv = nullptr;
+    Primary_FM_dead_zone = nullptr;
+    PFM_coeff = nullptr;
+    Grid_recover_time = nullptr;
+    DynamicCap = nullptr;
+    Module_Number = nullptr;
+    Restore_factory = nullptr;
+    Clear_Data = nullptr;
 
     //外设
     DI_1_Enable_explain = new QPushButton;
@@ -4472,111 +4498,238 @@ void MEGAWin::FunctionSet()
 /***********系统参数 绘制button************/
 void MEGAWin::SystemParameter()
 {
+    if(Change_rate_of_power != nullptr)
+    {
+        delete Change_rate_of_power;
+    }
     Change_rate_of_power = new Specification(this,Change_rate_of_power_explain, ui->UI_SystemParameter_Tab, 0, 1, \
-                                             "20", "Change_rate_of_power", \
-                                             "功率变化率是与额定功率相比功率变化的大小\nPower change ratio is the magnitude of the power change compared to the rated power.");
+                                             "20", tr("Change rate of power"), \
+                                             tr("How fast the power changes per unit time."));
     Change_rate_of_power->add_Specification();
+
+    if(Grid_frequency_upper_limit != nullptr)
+    {
+        delete Grid_frequency_upper_limit;
+    }
     Grid_frequency_upper_limit = new Specification(this,Grid_frequency_upper_limit_explain, ui->UI_SystemParameter_Tab, 1, 1, \
-                                                   "3", "Grid_frequency_upper_limit", \
-                                                   "电网频率变化范围的最大值,可供选择为0.2、0.5、1、3\nThe maximum value of the frequency variation range of the power grid can be selected as 0.2, 0.5, 1, and 3.");
+                                                   "3", tr("Grid frequency upper limit"), \
+                                                   tr("The upper limit of the frequency range allowed on the AC side is 0.2, 0.5, 1, and 3."));
     Grid_frequency_upper_limit->add_Specification();
+
+    if(Grid_frequency_lower_limit != nullptr)
+    {
+        delete Grid_frequency_lower_limit;
+    }
     Grid_frequency_lower_limit = new Specification(this,Grid_frequency_lower_limit_explain, ui->UI_SystemParameter_Tab, 2, 1, \
-                                                   "-3", "Grid_frequency_lower_limit", \
-                                                   "电网频率变化范围的最小值,可供选择为-0.5、-1、-2、-3\nThe minimum value of the frequency variation range of the power grid can be selected as -0.5, -1, -2, -3.");
+                                                   "-3", tr("Grid frequency lower limit"), \
+                                                   tr("The lower limit of the frequency range allowed on the AC side can be selected as -0.2, -0.5, -1, or -3."));
     Grid_frequency_lower_limit->add_Specification();
+
+    if(Vol_protection_upper_limit != nullptr)
+    {
+        delete Vol_protection_upper_limit;
+    }
     Vol_protection_upper_limit = new Specification(this,Vol_protection_upper_limit_explain, ui->UI_SystemParameter_Tab, 3, 1, \
-                                                   "+15", "Vol_protection_upper_limit", \
-                                                   "当电压超过电压保护值一定百分比将进行电压保护,可供选择为+10、+15、+20、+30\nWhen the voltage exceeds a certain percentage of the voltage protection value, the voltage protection will be carried out, and the available options are +10, +15, +20, +30.");
+                                                   "+15", tr("Vol protection upper limit"), \
+                                                   tr("The upper limit of the voltage range allowed on the AC side can be +10, +15, +20, or +30."));
     Vol_protection_upper_limit->add_Specification();
+
+    if(Vol_protection_lower_limit != nullptr)
+    {
+        delete Vol_protection_lower_limit;
+    }
     Vol_protection_lower_limit = new Specification(this,Vol_protection_lower_limit_explain, ui->UI_SystemParameter_Tab, 4, 1, \
-                                                   "-15", "Vol_protection_lower_limit", \
-                                                   "当电压低于电压保护值一定百分比将进行电压保护,可供选择为-10、-15、-20、-30\nWhen the voltage is lower than a certain percentage of the voltage protection value, voltage protection will be carried out, which can be selected as -10, -15, -20, -30.");
+                                                   "-15", tr("Vol protection lower limit"), \
+                                                   tr("The lower limit of the voltage variation range allowed on the AC side can be -10, -15, -20, or -30."));
     Vol_protection_lower_limit->add_Specification();
+
+    if(HVRT_enable != nullptr)
+    {
+        delete HVRT_enable;
+    }
     HVRT_enable = new Specification(this,HVRT_enable_explain, ui->UI_SystemParameter_Tab, 5, 1, \
-                                                    "prohibit", "HVRT_enable", \
-                                                    "这是高压穿越(HVRT)使能,使能后该设备不会因为短时间的高电压而停机,可供选择为允许(Enable)、禁止(prohibit)\nEThis is the High voltage ride through(HVRT) enable, after which the device will not be shut down due to a short period of high voltage. The options are Allow (Enable), forbid(prohibit).");
+                                                    tr("prohibit"), tr("HVRT enable"), \
+                                                    tr("This is the high voltage crossing (HVRT) Enable, enable the device will not stop because of a short period of high voltage, the option is to Enable, prohibit, (note: this is generally used in large grid-connected power stations)."));
     HVRT_enable->add_Specification();
+
+    if(LVRT_enable != nullptr)
+    {
+        delete LVRT_enable;
+    }
     LVRT_enable = new Specification(this,LVRT_enable_explain, ui->UI_SystemParameter_Tab, 6, 1, \
-                                    "prohibit", "LVRT_enable", \
-                                    "这是低压穿越(LVRT)使能，使能后该设备不会因为短时间的低电压而停机,可供选择为允许(Enable)、禁止(prohibit)\nThis is a Low voltage ride through enable, which prevents the device from shutting down due to a short period of low voltage. The options are Allow(Enable),, forbid(prohibit).");
+                                    tr("prohibit"), tr("LVRT enable"), \
+                                    tr("This is the low voltage crossing (LVRT) Enable, enable the device will not stop because of a short period of low voltage, the option is to Enable, prohibit, (note: this is generally used in large grid-connected power stations)."));
     LVRT_enable->add_Specification();
+
+    if(AFD_enable != nullptr)
+    {
+        delete AFD_enable;
+    }
     AFD_enable = new Specification(this,AFD_enable_explain, ui->UI_SystemParameter_Tab, 7, 1, \
-                                   "prohibit", "AFD_enable", \
-                                   "防止孤岛效应，当检测出现孤岛效应(在光伏并网系统中,当大电网出现停电事故时,光伏并网逆变器发电与电网低压侧本地负载如果刚好出现功率相匹配时,容易出现自给自足的维持发电状态,从而出现""孤岛""现象,从而危及检修人员安全)时,让逆变器自动停机,可供选择为允许(Enable)、禁止(prohibit)\nPrevent island effect, When the detection of island effect (in the photovoltaic grid-connected system, when the power failure accident occurs in the large power grid, photovoltaic grid-connected inverter power generation and the local load on the low voltage side of the grid if there is just a power match, it is easy to self-contained maintenance power state, resulting in the phenomenon of ""island"", thereby endangering the safety of maintenance personnel), let the inverter automatic shutdown, optional Permit(Enable) and forbid(prohibit).");
+                                   tr("prohibit"), tr("AFD enable"), \
+                                   tr("Prevent islanding effect, When the detection of the island effect (in the photovoltaic grid-connected system, when the power failure occurs in the large power grid, the photovoltaic grid-connected inverter power generation and the local load on the low-voltage side of the grid if the power is just matched, it is easy to appear self-sufficient maintenance power state, resulting in the 'island' phenomenon, thereby endangering the safety of maintenance personnel), the inverter automatically shut down, and the option is allowed Enable, prohibit, (Note: this is generally used in large grid-connected power stations)."));
     AFD_enable->add_Specification();
+
+    if(Insulation_detection_enable != nullptr)
+    {
+        delete Insulation_detection_enable;
+    }
     Insulation_detection_enable = new Specification(this,Insulation_detection_enable_explain, ui->UI_SystemParameter_Tab, 8, 1, \
-                                                    "prohibit", "Insulation_detection_enable", \
-                                                    "绝缘检测使能，绝缘电阻大于33KΩ要能正常起机运行，小于33KΩ不能起机，并且要告警，默认禁止,可供选择为允许(Enable)、禁止(prohibit)\nEnable insulation detection. If the insulation resistance is greater than 33KΩ, the machine can start normally; if the insulation resistance is smaller than 33KΩ, the machine cannot start, and the alarm should be generated. By default, it is prohibited, which can be selected as Allow(Enable) or forbid(prohibit).");
+                                                    tr("prohibit"), tr("Insulation detection enable"), \
+                                                    tr("Insulation detection Enable, insulation resistance greater than 33KΩ to be able to operate normally, less than 33KΩ can not start, and to alarm, the default prohibition, the choice is to Enable, prohibit, (Note: this is generally used in large grid-connected power stations)."));
     Insulation_detection_enable->add_Specification();
+
+    if(PrimaryFreq_enable != nullptr)
+    {
+        delete PrimaryFreq_enable;
+    }
     PrimaryFreq_enable = new Specification(this,PrimaryFreq_enable_explain, ui->UI_SystemParameter_Tab, 9, 1, \
-                                           "prohibit", "PrimaryFreq_enable", \
-                                           "一次调频使能,电网的频率偏离额定值时，通过控制有功功率的增减使电网频率维持稳定，可供选择为允许(Enable)、禁止(prohibit)\nWhen the frequency of the power grid deviates from the rated value, the frequency of the power grid can be maintained stable by controlling the increase or decrease of the active power. The alternatives are Allow(Enable) and forbid(prohibit).");
+                                           tr("prohibit"), tr("PrimaryFreq enable"), \
+                                           tr("When the frequency of the power grid deviates from the rated value, the power grid frequency is maintained stable by controlling the increase or decrease of the active power, which can be selected to Enable, prohibit, (Note: this is generally used in large grid-connected power stations)."));
     PrimaryFreq_enable->add_Specification();
+
+    if(Inertia_enable != nullptr)
+    {
+        delete Inertia_enable;
+    }
     Inertia_enable = new Specification(this,Inertia_enable_explain, ui->UI_SystemParameter_Tab, 10, 1, \
-                                       "prohibit", "Inertia_enable", \
-                                       "转动惯量使能，可供选择为允许(Enable)、禁止(prohibit)\nThe moment of inertia is enabled (Enable, prohibit).");
+                                       tr("prohibit"), tr("Inertia enable"), \
+                                       tr("Moment of inertia Enable, can be selected to Enable, prohibit, (Note: this is generally used in large grid-connected power stations)."));
     Inertia_enable->add_Specification();
 
+    if(CV_parallel != nullptr)
+    {
+        delete CV_parallel;
+    }
     CV_parallel = new Specification(this,CV_parallel_explain, ui->UI_SystemParameter_Tab, 11, 1, \
-                                    "prohibit", "CV_parallel", \
-                                    "恒压并机使能,可供选择为允许(Enable)、禁止(prohibit)\nAllow (Enable) forbid(prohibit) Enable the constant voltage parallel machine.");
+                                    tr("prohibit"), tr("CV parallel"), \
+                                    tr("Constant voltage parallel Enable, you can choose to Enable, prohibit, (Note: this setting is used in constant voltage parallel mode)."));
     CV_parallel->add_Specification();
 
+    if(Machine_type != nullptr)
+    {
+        delete Machine_type;
+    }
     Machine_type = new Specification(this,Machine_type_explain, ui->UI_SystemParameter_Tab, 0, 4, \
-                                     "PCS-TS", "Machine_type", \
-                                     "根据现场机器机器型号设置，以出厂值为准,可供选择为PCS、PCS-T、PCS-TS、PCS-TS-T\nSet according to the machine model and factory value. PCS, PCs-T, PCS-TS, and PCS-TS-T can be selected.");
+                                     "PCS-TS", tr("Machine type"), \
+                                     tr("Set according to the machine model and factory value. The default MPS-TS."));
     Machine_type->add_Specification();
+
+    if(Machine_capacity != nullptr)
+    {
+        delete Machine_capacity;
+    }
     Machine_capacity = new Specification(this,Machine_capacity_explain, ui->UI_SystemParameter_Tab, 1, 4, \
-                                     "100", "Machine_capacity", \
-                                     "PCS的额定容量，以出厂值为准，不可随意更改\nThe rated capacity of PCS is subject to the factory value and cannot be changed at will.");
+                                     "100", tr("Machine capacity"), \
+                                     tr("The rated capacity of PCS is subject to the ex-factory value and cannot be changed."));
     Machine_capacity->add_Specification();
+
+    if(Output_Fre_grade != nullptr)
+    {
+        delete Output_Fre_grade;
+    }
     Output_Fre_grade = new Specification(this,Output_Fre_grade_explain, ui->UI_SystemParameter_Tab, 2, 4, \
-                                         "50", "Output_Fre_grade", \
-                                         "设置输出频率的等级，一般默认50HZ，根据项目地可更改为60Hz\nSet the output frequency level. The default frequency is 50HZ, but it can be changed to 60Hz according to the project.");
+                                         "50", tr("Output Fre grade"), \
+                                         tr("Set the output frequency level, the default is 50Hz, generally 50Hz or 60Hz, can be fine-tuned according to the project."));
     Output_Fre_grade->add_Specification();
+
+    if(Output_vol_level != nullptr)
+    {
+        delete Output_vol_level;
+    }
     Output_vol_level = new Specification(this,Output_vol_level_explain, ui->UI_SystemParameter_Tab, 3, 4, \
-                                         "400", "Output_vol_level", \
-                                         "电压等级是通过变压器后输出的电压等级，要根据变压器的变比来设置，以出厂默认值为准，不可更改\nVoltage level is the output voltage level through the transformer, according to the transformer ratio to set, to the factory default value prevail, can not be changed.");
+                                         "400", tr("Output vol level"), \
+                                         tr("The voltage level is changed according to the actual local power grid voltage. The voltage level is subject to delivery. If you need to change it, contact customer service for confirmation."));
     Output_vol_level->add_Specification();
+
+    if(Converter_side_vol_level != nullptr)
+    {
+        delete Converter_side_vol_level;
+    }
     Converter_side_vol_level = new Specification(this,Converter_side_vol_level_explain, ui->UI_SystemParameter_Tab, 4, 4, \
-                                         "270:400", "Converter_side_vol_level", \
-                                         "逆变电压等级是逆变器逆变出来的电压等级，要根据变压器来设置，以出厂默认值为准，不可随意更改，可供更改选择为1:1、60:400、100:400、200:400、270:400、315:400、315:480\n");
+                                         "270:400", tr("Converter side vol level"), \
+                                         tr("The inverter voltage level is the voltage level of the inverter, which should be set according to the transformer nameplate, subject to the factory default value, and cannot be changed at will. If you need to change, please contact customer service to confirm."));
     Converter_side_vol_level->add_Specification();
+
+    if(Output_reactive_power_mode != nullptr)
+    {
+        delete Output_reactive_power_mode;
+    }
     Output_reactive_power_mode = new Specification(this,Output_reactive_power_mode_explain, ui->UI_SystemParameter_Tab, 5, 4, \
-                                         "Non adjustab", "Output_reactive_power_mode", \
-                                         "输出无功方式，默认不可调节，可供选择为功率因数(PF)、无功功率(Q)、不可调节(Non adjustable)\nadjustable output reactive power mode, adjustable by default, adjustable power factor (PF), adjustable power (Q), Non adjustable(Non adjustable).");
+                                         tr("Non adjustable"), tr("Output reactive power mode"), \
+                                         tr("Output reactive mode, the default is not adjustable, can be selected as power factor (Pf), reactive power (Q), Non adjustable."));
     Output_reactive_power_mode->add_Specification();
+
+    if(Grid_connected_mode_of_Inv != nullptr)
+    {
+        delete Grid_connected_mode_of_Inv;
+    }
     Grid_connected_mode_of_Inv = new Specification(this,Grid_connected_mode_of_Inv_explain, ui->UI_SystemParameter_Tab, 6, 4, \
-                                                   "Non counterc", "Grid_connected_mode_of_Inv", \
-                                                   "设置逆变器的并网方式，可逆流即光伏发电转换成交流电后可以并入电网；不可逆则是光伏发电的电流不会流向电网。默认可逆流，可供选择为可逆流(Counterc)、不可逆流(Non counterc)\nThe grid-connected mode of the inverter can be countercurrent, that is, photovoltaic power generation can be converted into alternating current, which can be incorporated into the power grid; Irreversible means that photovoltaic electricity does not flow to the grid. Countercurrent is available by default. The options are Counterc(Counterc) and Non counterc(Non counterc).");
+                                                   tr("Non countercurrent"), tr("Grid connected mode of Inv"), \
+                                                   tr("Set the grid-connected mode of the inverter, which can be countercurrent, that is, DC can be converted into AC power and then incorporated into the power grid; Irreversible means that the current on the DC side does not flow to the grid. The default value can be Countercurrent. The options can be countercurrent or Non countercurrent. With the local grid qualification, it can be changed to 'countercurrent'; When using Prevent countercurrent mode, you can change to 'countercurrent'."));
     Grid_connected_mode_of_Inv->add_Specification();
+
+    if(Primary_FM_dead_zone != nullptr)
+    {
+        delete Primary_FM_dead_zone;
+    }
     Primary_FM_dead_zone = new Specification(this,Primary_FM_dead_zone_explain, ui->UI_SystemParameter_Tab, 7, 4, \
-                                             "3", "Primary_FM_dead_zone", \
-                                             "一次调频死区,为了防止在电网频差小范围变化时调门不必要的动作而设置的频差\nPrimary frequency modulation dead zone A frequency difference set to prevent unwanted switch action when the network frequency difference varies in a small range.");
+                                             "3", tr("Primary FM dead zone"), \
+                                             tr("Primary frequency modulation dead zone, in order to prevent unnecessary action of the switch when the frequency difference of the grid changes in a small range, (Note: This is generally used in large grid-connected power stations)."));
     Primary_FM_dead_zone->add_Specification();
+
+    if(PFM_coeff != nullptr)
+    {
+        delete PFM_coeff;
+    }
     PFM_coeff = new Specification(this,PFM_coeff_explain, ui->UI_SystemParameter_Tab, 8, 4, \
-                                  "20", "PFM_coeff", \
-                                  "设置有功调频系数\nSet the active power frequency modulation coefficient.");
+                                  "20", tr("PFM coeff"), \
+                                  tr("This can set the active power frequency modulation coefficient, (Note: this is generally used in large grid-connected power stations)."));
     PFM_coeff->add_Specification();
+
+    if(Grid_recover_time != nullptr)
+    {
+        delete Grid_recover_time;
+    }
     Grid_recover_time = new Specification(this,Grid_recover_time_explain, ui->UI_SystemParameter_Tab, 9, 4, \
-                                          "10", "Grid_recover_time", \
-                                          "电网恢复并网时间：预留功能，设置无效\nGrid restoration time: reserved function, setting invalid.");
+                                          "10", tr("Grid recover time"), \
+                                          tr("Grid restoration time: reserved function, setting invalid."));
     Grid_recover_time->add_Specification();
+
+    if(DynamicCap!= nullptr)
+    {
+        delete DynamicCap;
+    }
     DynamicCap = new Specification(this,DynamicCap_explain, ui->UI_SystemParameter_Tab, 10, 4, \
-                                   "9600", "DynamicCap", \
-                                   "电网扩容使能,当负载在短时间内所需功率大于电网容量时，可暂时从电池辅助供电以达到功率要求，可供选择为允许(Allow)、禁止(forbid)\nEnable the power network expansion. The options are Allow(Allow) and forbid(forbid).");
+                                   tr("Enable"), tr("DynamicCap"), \
+                                   tr("Enable the power network expansion. The options are Enable and Disable."));
     DynamicCap->add_Specification();
+
+    if(Module_Number != nullptr)
+    {
+        delete Module_Number;
+    }
     Module_Number = new Specification(this,Module_Number_explain, ui->UI_SystemParameter_Tab, 0, 7, \
-                                      "1", "Module_Number", \
-                                      "PCS的模块数量，默认值1(无效设置)\nNumber of modules for PCS, default 1(invalid setting).");
+                                      "1", tr("Module Number"), \
+                                      tr("Number of modules for PCS, default 1(invalid setting)."));
     Module_Number->add_Specification();
+
+    if(Restore_factory != nullptr)
+    {
+        delete Restore_factory;
+    }
     Restore_factory = new Specification(this,Restore_factory_explain, ui->UI_SystemParameter_Tab,1, 7, \
-                                        "restore", "Restore_factory", \
-                                        "恢复出厂时的默认设置\nRestore the factory default Settings.");
+                                        tr("restore"), tr("Restore factory"), \
+                                        tr("Restore the factory default Settings."));
     Restore_factory->add_Specification();
+
+    if(Clear_Data != nullptr)
+    {
+        delete Clear_Data;
+    }
     Clear_Data = new Specification(this,Clear_Data_explain, ui->UI_SystemParameter_Tab, 2, 7, \
-                                   "Clear", "Clear_Data", \
-                                   "清除系统此前的记录数据及操作数据\nClear previous recorded data and operation data of the system.");
+                                   tr("Clear"), tr("Clear Data"), \
+                                   tr("Clear previous recorded data and operation data of the system."));
     Clear_Data->add_Specification();
 }
 /***********外设 绘制button************/
