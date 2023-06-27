@@ -83,8 +83,8 @@
     <widget class="QPushButton" name="ChangeLanguage_btn_1">
      <property name="geometry">
       <rect>
-       <x>2</x>
-       <y>506</y>
+       <x>1</x>
+       <y>1</y>
        <width>109</width>
        <height>54</height>
       </rect>
@@ -2181,21 +2181,21 @@ color: rgb(255, 255, 255);</string>
     <widget class="QLabel" name="label_25">
      <property name="geometry">
       <rect>
-       <x>111</x>
+       <x>1</x>
        <y>506</y>
-       <width>759</width>
+       <width>870</width>
        <height>54</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
-       <width>759</width>
+       <width>870</width>
        <height>54</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>759</width>
+       <width>870</width>
        <height>54</height>
       </size>
      </property>
@@ -2236,6 +2236,11 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
       <string/>
      </property>
     </widget>
+    <zorder>label_24</zorder>
+    <zorder>BasicSettings</zorder>
+    <zorder>label_25</zorder>
+    <zorder>UI_Complete_Btn</zorder>
+    <zorder>ChangeLanguage_btn_1</zorder>
    </widget>
    <widget class="QWidget" name="UI_page">
     <property name="minimumSize">
@@ -2565,7 +2570,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">

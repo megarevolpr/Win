@@ -501,6 +501,33 @@ void MEGAWin::MemoryAllocation()
     DO_1_Action_explain = new QPushButton;
     DO_2_Action_explain = new QPushButton;
     DO_3_Action_explain = new QPushButton;
+    DI_1_Enable = nullptr;
+    DI_2_Enable = nullptr;
+    DI_3_Enable = nullptr;
+    DI_4_Enable = nullptr;
+    DI_5_Enable = nullptr;
+    DI_6_Enable = nullptr;
+    DO_1_Enable = nullptr;
+    DO_2_Enable = nullptr;
+    DO_3_Enable = nullptr;
+    DI_1_NC_O = nullptr;
+    DI_2_NC_O = nullptr;
+    DI_3_NC_O = nullptr;
+    DI_4_NC_O = nullptr;
+    DI_5_NC_O = nullptr;
+    DI_6_NC_O = nullptr;
+    DO_1_NC_O = nullptr;
+    DO_2_NC_O = nullptr;
+    DO_3_NC_O = nullptr;
+    DI_1_Action = nullptr;
+    DI_2_Action = nullptr;
+    DI_3_Action = nullptr;
+    DI_4_Action = nullptr;
+    DI_5_Action = nullptr;
+    DI_6_Action = nullptr;
+    DO_1_Action = nullptr;
+    DO_2_Action = nullptr;
+    DO_3_Action = nullptr;
 
     //BMS保护
     DOD_Action_explain                 = new QPushButton;
@@ -515,6 +542,18 @@ void MEGAWin::MemoryAllocation()
     BMS_warning_DP_explain             = new QPushButton;
     BMS_alarm_DP_explain               = new QPushButton;
     BMS_fualt_DP_explain               = new QPushButton;
+    DOD_Action = nullptr;
+    Prohibit_charging_Action = nullptr;
+    Prohibit_discharging_Action = nullptr;
+    BMS_warning_Action = nullptr;
+    BMS_alarm_Action = nullptr;
+    BMS_fualt_Action = nullptr;
+    BMS_warning_CP = nullptr;
+    BMS_alarm_CP = nullptr;
+    BMS_fualt_CP = nullptr;
+    BMS_warning_DP = nullptr;
+    BMS_alarm_DP = nullptr;
+    BMS_fualt_DP = nullptr;
 
     //调试
     Debug_variable_1_explain        = new QPushButton;
@@ -528,6 +567,17 @@ void MEGAWin::MemoryAllocation()
     Debug_memery_var_3_explain      = new QPushButton;
     Input_Vol_revise_explain        = new QPushButton;
     Input_Cur_revise_explain        = new QPushButton;
+    Debug_variable_1 = nullptr;
+    Debug_variable_2 = nullptr;
+    Debug_variable_3 = nullptr;
+    Debug_variable_1_addr = nullptr;
+    Debug_variable_2_addr = nullptr;
+    Debug_variable_3_addr = nullptr;
+    Debug_memery_var_1 = nullptr;
+    Debug_memery_var_2 = nullptr;
+    Debug_memery_var_3 = nullptr;
+    Input_Vol_revise = nullptr;
+    Input_Cur_revise = nullptr;
 
     Voltage_1_5_revise_explain      = new QPushButton;
     Bus_Vol_revise_explain          = new QPushButton;
@@ -540,6 +590,17 @@ void MEGAWin::MemoryAllocation()
     INV_A_Vol_revise_explain        = new QPushButton;
     INV_B_Vol_revise_explain        = new QPushButton;
     INV_C_Vol_revise_explain        = new QPushButton;
+    Voltage_1_5_revise = nullptr;
+    Bus_Vol_revise = nullptr;
+    Grid_A_AB_Vol_revise = nullptr;
+    Grid_B_BC_Vol_revise = nullptr;
+    Grid_C_CA_Vol_revise = nullptr;
+    Output_A_Cur_revise = nullptr;
+    Output_B_Cur_revise = nullptr;
+    Output_C_Cur_revise = nullptr;
+    INV_A_Vol_revise = nullptr;
+    INV_B_Vol_revise = nullptr;
+    INV_C_Vol_revise = nullptr;
 
     INV_A_ind_Cur_revise_explain    = new QPushButton;
     INV_B_ind_Cur_revise_explain    = new QPushButton;
@@ -553,6 +614,19 @@ void MEGAWin::MemoryAllocation()
     DC_bus_flag_explain             = new QPushButton;
     INT_main_flag_explain           = new QPushButton;
     parallel_signal_explain         = new QPushButton;
+    INV_A_ind_Cur_revise = nullptr;
+    INV_B_ind_Cur_revise = nullptr;
+    INV_C_ind_Cur_revise = nullptr;
+    INV_On_off_flag = nullptr;
+    Logic_state = nullptr;
+    INV_flag = nullptr;
+    Grid_flag = nullptr;
+    Grid_protect_flag = nullptr;
+    Bat_flag = nullptr;
+    DC_bus_flag = nullptr;
+    INT_main_flag = nullptr;
+    parallel_signal = nullptr;
+
     /*****************************监控调试****************************************/
     pButton_MonitorDebug = new QButtonGroup();
     pButton_MonitorDebug->addButton(ui->DO_TurnON_btn,0);
@@ -1522,6 +1596,10 @@ void MEGAWin::SystemParam_tbnt_released()
         ui->UI_SystemParameter_Tab->setColumnWidth(i,55);
         ui->UI_SystemParameter_Tab->setRowHeight(i,50);
     }
+
+    ui->ExternalDevice_tW->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+    ui->ExternalDevice_tW->verticalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+    ui->ExternalDevice_tW->setStyleSheet("selection-background-color:lightblue;");
     for(int i=0;i<9;i++)//调整 外设 的列宽列高
     {
         ui->ExternalDevice_tW->setColumnWidth(i,200);
@@ -1531,11 +1609,16 @@ void MEGAWin::SystemParam_tbnt_released()
             ui->ExternalDevice_tW->setRowHeight(i,50);
         }
     }
+
+    ui->BMSProtection_tW->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+    ui->BMSProtection_tW->verticalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+    ui->BMSProtection_tW->setStyleSheet("selection-background-color:lightblue;");
     for(int i=0;i<3;i++)//调整 BMS保护 的列宽列高
     {
         ui->BMSProtection_tW->setColumnWidth(i,220);
         ui->BMSProtection_tW->setRowHeight(i,50);
     }
+
     for(int i=0;i<12;i++)//调整 调试 的列宽列高
     {
         if(i%2==0)
@@ -1988,20 +2071,20 @@ void MEGAWin::MonitorDebug_clicked(int nid)
 {
     switch (nid) {
         case 0:
-            QMessageBox::question(this, "DO turn on"\
-                              ,"这是DO控制闭合，仅提供内部调试使用\nThis is the DO control closure, provided for internal debugging use only.", "OK");
+            QMessageBox::question(this, tr("DO turn on")\
+                              ,tr("This is the DO control closure, provided for internal debugging use only."), tr("OK"));
             break;
         case 1:
-            QMessageBox::question(this, "Do turn off"\
-                              ,"这是DO控制断开，仅提供内部调试使用\nThis is the DO control off, provided for internal debugging use only.", "OK");
+            QMessageBox::question(this, tr("Do turn off")\
+                              ,tr("This is the DO control off, provided for internal debugging use only."), tr("OK"));
             break;
         case 2:
-            QMessageBox::question(this, "Local on"\
-                              ,"这是启动本地软启动，仅提供内部调试使用\nThis is to start a local soft boot, only for internal debugging use.", "OK");
+            QMessageBox::question(this, tr("Local on")\
+                              ,tr("This is to start a local soft boot, only for internal debugging use."), tr("OK"));
             break;
         case 3:
-            QMessageBox::question(this, "Local off"\
-                              ,"这是关闭本地软启动，仅提供内部调试使用\nThis is to turn off the local soft boot for internal debugging use only.", "OK");
+            QMessageBox::question(this, tr("Local off")\
+                              ,tr("This is to turn off the local soft boot for internal debugging use only."), tr("OK"));
             break;
         case 4:
             QMessageBox::question(this, tr("BMS power on")\
@@ -4735,310 +4818,621 @@ void MEGAWin::SystemParameter()
 /***********外设 绘制button************/
 void MEGAWin::Peripheral()
 {
+    QString str = tr("Normally closed circuit (NC) or normally open circuit (NO) according to field Settings.");
+    QString str1 = tr("When the dry contact is enabled and an abnormal signal is received, the device performs the selected action.");
+
+    if(DI_1_Enable != nullptr)
+    {
+        delete DI_1_Enable;
+    }
     DI_1_Enable = new Specification(this,DI_1_Enable_explain, ui->ExternalDevice_tW, 0, 0, \
-                                   "Enable", "DI_1_Enable", \
-                                   "输入干接点1，发生NO关机时执行动作的开关,可选功能为使能(Enable)、禁止(Disable)\nInput dry contact 1, the switch to perform the action when NO shutdown occurs. The optional functions are Enable(Enable) or Disable(Disable).");
+                                   tr("Enable"), tr("DI_1_Enable"), \
+                                   tr("Enter dry contact 1. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set."));
     DI_1_Enable->add_Specification();
+
+    if(DI_2_Enable != nullptr)
+    {
+        delete DI_2_Enable;
+    }
     DI_2_Enable = new Specification(this,DI_2_Enable_explain, ui->ExternalDevice_tW, 1, 0, \
-                                   "Disable", "DI_2_Enable", \
-                                   "输入干接点2，发生NC关机时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\nEnter dry contact 2, the switch that performs the action when NC shutdown occurs.The optional functions are Enable(Enable) or Disable(Disable).");
+                                   tr("Disable"), tr("DI_2_Enable"), \
+                                   tr("Enter dry contact 2. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set."));
     DI_2_Enable->add_Specification();
+
+    if(DI_3_Enable != nullptr)
+    {
+        delete DI_3_Enable;
+    }
     DI_3_Enable = new Specification(this,DI_3_Enable_explain, ui->ExternalDevice_tW, 2, 0, \
-                                   "Enable", "DI_3_Enable", \
-                                   "输入干接点3，门禁开启时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\nEnter dry contact 3. The switch that performs the action when the access control is opened.The optional functions are Enable(Enable) or Disable(Disable).");
+                                   tr("Enable"), tr("DI_3_Enable"), \
+                                   tr("Enter dry contact 3. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set."));
     DI_3_Enable->add_Specification();
+
+    if(DI_4_Enable != nullptr)
+    {
+        delete DI_4_Enable;
+    }
     DI_4_Enable = new Specification(this,DI_4_Enable_explain, ui->ExternalDevice_tW, 3, 0, \
-                                   "Enable", "DI_4_Enable", \
-                                   "输入干接点4，柴发信号发出时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\nInput dry contact 4, the switch to perform the action when the firewood signal is sent.The optional functions are Enable(Enable) or Disable(Disable).");
+                                   tr("Enable"), tr("DI_4_Enable"), \
+                                   tr("Enter dry contact 4. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set."));
     DI_4_Enable->add_Specification();
+
+    if(DI_5_Enable != nullptr)
+    {
+        delete DI_5_Enable;
+    }
     DI_5_Enable = new Specification(this,DI_5_Enable_explain, ui->ExternalDevice_tW, 4, 0, \
-                                   "Enable", "DI_5_Enable", \
-                                   "输入干接点5，发生水浸时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\nEnter dry contact 5, the switch that performs the action when flooding occurs.The optional functions are Enable(Enable) or Disable(Disable).");
+                                   tr("Enable"), tr("DI_5_Enable"), \
+                                   tr("Enter dry contact 5. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set."));
     DI_5_Enable->add_Specification();
+
+    if(DI_6_Enable != nullptr)
+    {
+        delete DI_6_Enable;
+    }
     DI_6_Enable = new Specification(this,DI_6_Enable_explain, ui->ExternalDevice_tW, 5, 0, \
-                                   "Enable", "DI_6_Enable", \
-                                   "输入干接点6，消防信号发出时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\nInput dry contact 6, the switch to perform action when the fire signal is sent.The optional functions are Enable(Enable) or Disable(Disable).");
+                                   tr("Enable"), tr("DI_6_Enable"), \
+                                   tr("Enter dry contact 6. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set."));
     DI_6_Enable->add_Specification();
+
+    if(DO_1_Enable != nullptr)
+    {
+        delete DO_1_Enable;
+    }
     DO_1_Enable = new Specification(this,DO_1_Enable_explain, ui->ExternalDevice_tW, 6, 0, \
-                                   "Disable", "DO_1_Enable", \
-                                   "输出干接点1，发电机开启时执行动作的开关，可选功能为使能(Enable)、禁止(Disable)\nOutput dry contact 1, the switch that performs the action when the generator is on.The optional functions are Enable(Enable) or Disable(Disable).");
+                                   tr("Disable"), tr("DO_1_Enable"), \
+                                   tr("Output dry contact 1. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set."));
     DO_1_Enable->add_Specification();
+
+    if(DO_2_Enable != nullptr)
+    {
+        delete DO_2_Enable;
+    }
     DO_2_Enable = new Specification(this,DO_2_Enable_explain, ui->ExternalDevice_tW, 7, 0, \
-                                   "Disable", "DO_2_Enable", \
-                                   "输出干接点2，预留功能，设置无效，可选功能为使能(Enable)、禁止(Disable)\nDry contact 2 is output. The reserved function is invalid.The optional functions are Enable(Enable) or Disable(Disable).");
+                                   tr("Disable"), tr("DO_2_Enable"), \
+                                   tr("Output dry contact 2. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set."));
     DO_2_Enable->add_Specification();
+
+    if(DO_3_Enable != nullptr)
+    {
+        delete DO_3_Enable;
+    }
     DO_3_Enable = new Specification(this,DO_3_Enable_explain, ui->ExternalDevice_tW, 8, 0, \
-                                   "Disable", "DO_3_Enable", \
-                                   "输出干接点3，预留功能，设置无效，可选功能为使能(Enable)、禁止(Disable)\nDry contact 3 is output. The reserved function is invalid.The optional functions are Enable(Enable) or Disable(Disable).");
+                                   tr("Disable"), tr("DO_3_Enable"), \
+                                   tr("Output dry contact 3. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set."));
     DO_3_Enable->add_Specification();
 
+    if(DI_1_NC_O != nullptr)
+    {
+        delete DI_1_NC_O;
+    }
     DI_1_NC_O = new Specification(this,DI_1_NC_O_explain, ui->ExternalDevice_tW, 0, 1, \
-                                   "N_O", "DI_1_NC_O", \
-                                   "输入干接点1，设置NO关机是常闭电路还是常开电路,可选功能为常开(N_O)常闭(N_C)\nInput dry contact 1, set NO shutdown is normally closed circuit or normally open circuit, optional function is normally open (N_O) normally closed (N_C).");
+                                   "N_O", tr("DI_1_NC_O"), str);
     DI_1_NC_O->add_Specification();
+
+    if(DI_2_NC_O != nullptr)
+    {
+        delete DI_2_NC_O;
+    }
     DI_2_NC_O = new Specification(this,DI_2_NC_O_explain, ui->ExternalDevice_tW, 1, 1, \
-                                   "N_O", "DI_2_NC_O", \
-                                   "输入干接点2，设置NC关机是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\nInput dry contact 2, set NC shutdown is normally closed circuit or normally open circuit Optional function is normally open (N_O) normally closed (N_C).");
+                                   "N_O", tr("DI_2_NC_O"), str);
     DI_2_NC_O->add_Specification();
+
+    if(DI_3_NC_O != nullptr)
+    {
+        delete DI_3_NC_O;
+    }
     DI_3_NC_O = new Specification(this,DI_3_NC_O_explain, ui->ExternalDevice_tW, 2, 1, \
-                                   "N_C", "DI_3_NC_O", \
-                                   "输入干接点3，设置门禁开是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\nInput dry contact 3, set the access control open normally closed circuit or normally open circuit Optional function: normally open (N_O) normally closed (N_C).");
+                                   "N_C", tr("DI_3_NC_O"), str);
     DI_3_NC_O->add_Specification();
+
+    if(DI_4_NC_O != nullptr)
+    {
+        delete DI_4_NC_O;
+    }
     DI_4_NC_O = new Specification(this,DI_4_NC_O_explain, ui->ExternalDevice_tW, 3, 1, \
-                                   "N_O", "DI_4_NC_O", \
-                                   "输入干接点4，设置柴发信号是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\nInput dry contact 4, set the firewood signal is normally closed circuit or normally open circuit Optional function is normally open (N_O) normally closed (N_C).");
+                                   "N_O", tr("DI_4_NC_O"), str);
     DI_4_NC_O->add_Specification();
+
+    if(DI_5_NC_O != nullptr)
+    {
+        delete DI_5_NC_O;
+    }
     DI_5_NC_O = new Specification(this,DI_5_NC_O_explain, ui->ExternalDevice_tW, 4, 1, \
-                                   "N_O", "DI_5_NC_O", \
-                                   "输入干接点5，设置水浸是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\nInput dry contact 5, set the flooding is normally closed circuit or normally open circuit Optional function is normally open (N_O) normally closed (N_C).");
+                                   "N_O", tr("DI_5_NC_O"), str);
     DI_5_NC_O->add_Specification();
+
+    if(DI_6_NC_O != nullptr)
+    {
+        delete DI_6_NC_O;
+    }
     DI_6_NC_O = new Specification(this,DI_6_NC_O_explain, ui->ExternalDevice_tW, 5, 1, \
-                                   "N_O", "DI_6_NC_O", \
-                                   "输入干接点6，设置消防是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\nInput dry contact 6, set fire is normally closed circuit or normally open circuit Optional function is normally open (N_O) normally closed (N_C).");
+                                   "N_O", tr("DI_6_NC_O"), str);
     DI_6_NC_O->add_Specification();
+
+    if(DO_1_NC_O != nullptr)
+    {
+        delete DO_1_NC_O;
+    }
     DO_1_NC_O = new Specification(this,DO_1_NC_O_explain, ui->ExternalDevice_tW, 6, 1, \
-                                   "N_O", "DO_1_NC_O", \
-                                   "输出干接点1，设置发电机是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\nOutput dry contact 1, set the generator is normally closed circuit or normally open circuit Optional function is normally open (N_O) normally closed (N_C).");
+                                   "N_O", tr("DO_1_NC_O"), str);
     DO_1_NC_O->add_Specification();
+
+    if(DO_2_NC_O != nullptr)
+    {
+        delete DO_2_NC_O;
+    }
     DO_2_NC_O = new Specification(this,DO_2_NC_O_explain, ui->ExternalDevice_tW, 7, 1, \
-                                   "N_O", "DO_2_NC_O", \
-                                   "输出干接点2，预留功能，设置无效，设置是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\nOutput dry contact 2, reserved function, setting invalid, setting is normally closed circuit or normally open circuit Optional function: normally open (N_O) normally closed (N_C).");
+                                   "N_O", tr("DO_2_NC_O"), str);
     DO_2_NC_O->add_Specification();
+
+    if(DO_3_NC_O != nullptr)
+    {
+        delete DO_3_NC_O;
+    }
     DO_3_NC_O = new Specification(this,DO_3_NC_O_explain, ui->ExternalDevice_tW, 8, 1, \
-                                   "N_O", "DO_3_NC_O", \
-                                   "输出干接点3，预留功能，设置无效，设置是常闭电路还是常开电路可选功能为常开(N_O)常闭(N_C)\nOutput dry contact 3, reserved function, setting invalid, setting is normally closed circuit or normally open circuit Optional function: normally open (N_O) normally closed (N_C).");
+                                   "N_O", tr("DO_3_NC_O"), str);
     DO_3_NC_O->add_Specification();
 
+    if(DI_1_Action != nullptr)
+    {
+        delete DI_1_Action;
+    }
     DI_1_Action = new Specification(this,DI_1_Action_explain, ui->ExternalDevice_tW, 0, 2, \
-                                   "Shut down", "DI_1_Action", \
-                                   "输入干接点1，发生NO关机时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\nInput dry contact 1 to perform the action when NO shutdown occurs. The optional functions are prompt(Prompt), standby(Standby), shutdown(Shut down), full standby(Full standby), empty standby(Empty standby), fault standby(Failure standby), and power grid signal(Grid singnal).");
+                                   tr("Shut down"), tr("DI_1_Action"), str1);
     DI_1_Action->add_Specification();
+
+    if(DI_2_Action != nullptr)
+    {
+        delete DI_2_Action;
+    }
     DI_2_Action = new Specification(this,DI_2_Action_explain, ui->ExternalDevice_tW, 1, 2, \
-                                   "Prompt", "DI_2_Action", \
-                                   "输入干接点2，发生NC关机时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\nEnter dry contact 2 to perform the action when the NC is shut down.The optional functions are prompt(Prompt), standby(Standby), shutdown(Shut down), full standby(Full standby), empty standby(Empty standby), fault standby(Failure standby), and power grid signal(Grid singnal)");
+                                   tr("Prompt"), tr("DI_2_Action"), str1);
     DI_2_Action->add_Specification();
+
+    if(DI_3_Action != nullptr)
+    {
+        delete DI_3_Action;
+    }
     DI_3_Action = new Specification(this,DI_3_Action_explain, ui->ExternalDevice_tW, 2, 2, \
-                                   "Prompt", "DI_3_Action", \
-                                   "输入干接点3，门禁打开时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\nEnter dry contact 3. The action is performed when the access control is opened.The optional functions are prompt(Prompt), standby(Standby), shutdown(Shut down), full standby(Full standby), empty standby(Empty standby), fault standby(Failure standby), and power grid signal(Grid singnal)");
+                                   tr("Prompt"), tr("DI_3_Action"), str1);
     DI_3_Action->add_Specification();
+
+    if(DI_4_Action != nullptr)
+    {
+        delete DI_4_Action;
+    }
     DI_4_Action = new Specification(this,DI_4_Action_explain, ui->ExternalDevice_tW, 3, 2, \
-                                   "Prompt", "DI_4_Action", \
-                                   "输入干接点4，柴发信号发出时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\nInput dry contact 4, the action to be performed when the chai signal is issued.The optional functions are prompt(Prompt), standby(Standby), shutdown(Shut down), full standby(Full standby), empty standby(Empty standby), fault standby(Failure standby), and power grid signal(Grid singnal)");
+                                   tr("Prompt"), tr("DI_4_Action"), str1);
     DI_4_Action->add_Specification();
+
+    if(DI_5_Action != nullptr)
+    {
+        delete DI_5_Action;
+    }
     DI_5_Action = new Specification(this,DI_5_Action_explain, ui->ExternalDevice_tW, 4, 2, \
-                                   "Shut down", "DI_5_Action", \
-                                   "输入干接点5，发生水浸时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\nEnter dry contact 5 to perform the action when flooding occurs.The optional functions are prompt(Prompt), standby(Standby), shutdown(Shut down), full standby(Full standby), empty standby(Empty standby), fault standby(Failure standby), and power grid signal(Grid singnal)");
+                                   tr("Shut down"), tr("DI_5_Action"), str1);
     DI_5_Action->add_Specification();
+
+    if(DI_6_Action != nullptr)
+    {
+        delete DI_6_Action;
+    }
     DI_6_Action = new Specification(this,DI_6_Action_explain, ui->ExternalDevice_tW, 5, 2, \
-                                   "Shut down", "DI_6_Action", \
-                                   "输入干接点6，触发消防时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\nEnter dry contact 6 to trigger the fire extinguishing action.The optional functions are prompt(Prompt), standby(Standby), shutdown(Shut down), full standby(Full standby), empty standby(Empty standby), fault standby(Failure standby), and power grid signal(Grid singnal)");
+                                   tr("Shut down"), tr("DI_6_Action"), str1);
     DI_6_Action->add_Specification();
+
+    if(DO_1_Action != nullptr)
+    {
+        delete DO_1_Action;
+    }
     DO_1_Action = new Specification(this,DO_1_Action_explain, ui->ExternalDevice_tW, 6, 2, \
-                                   "Prompt", "DO_1_Action", \
-                                   "输出干接点1，启动发电机时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\nOutput dry contact 1, the action to be performed when starting the generator.The optional functions are prompt(Prompt), standby(Standby), shutdown(Shut down), full standby(Full standby), empty standby(Empty standby), fault standby(Failure standby), and power grid signal(Grid singnal)");
+                                   tr("Prompt"), tr("DO_1_Action"), str1);
     DO_1_Action->add_Specification();
+
+    if(DO_2_Action != nullptr)
+    {
+        delete DO_2_Action;
+    }
     DO_2_Action = new Specification(this,DO_2_Action_explain, ui->ExternalDevice_tW, 7, 2, \
-                                   "Prompt", "DO_2_Action", \
-                                   "输出干接点2，预留功能，设置无效，信号触发时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\nOutput dry contact 2, reserved function, set invalid, the action to be performed when the signal is triggered.The optional functions are prompt(Prompt), standby(Standby), shutdown(Shut down), full standby(Full standby), empty standby(Empty standby), fault standby(Failure standby), and power grid signal(Grid singnal)");
+                                   tr("Prompt"), tr("DO_2_Action"), str1);
     DO_2_Action->add_Specification();
+
+    if(DO_3_Action != nullptr)
+    {
+        delete DO_3_Action;
+    }
     DO_3_Action = new Specification(this,DO_3_Action_explain, ui->ExternalDevice_tW, 8, 2, \
-                                   "Prompt", "DO_3_Action", \
-                                   "输出干接点3，预留功能，设置无效，信号触发时执行的动作,可选功能为提示(Prompt)、待机(Standby)、关机(Shut down)、充满待机(Full standby)、放空待机(Empty standby)、故障待机(Failure standby)、电网信号(Grid singnal)\nDry contact 3 is output. The reserved function is invalid.The optional functions are prompt(Prompt), standby(Standby), shutdown(Shut down), full standby(Full standby), empty standby(Empty standby), fault standby(Failure standby), and power grid signal(Grid singnal)");
+                                   tr("Prompt"), tr("DO_3_Action"), str1);
     DO_3_Action->add_Specification();
 }
 /***********BMS保护 绘制button************/
 void MEGAWin::BMS_Protect()
 {
+    if(DOD_Action != nullptr)
+    {
+        delete DOD_Action;
+    }
     DOD_Action = new Specification(this,DOD_Action_explain, ui->BMSProtection_tW, 0, 0, \
-                                   "Standby", "DOD", \
-                                   "DOD保护，触发DOD保护时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\nDOD protection: Actions to be performed when DOD protection is triggered. The optional functions are NO action(NO action), Power down(Power down), Standby(Standby), Shut down(Shut down).");
+                                   tr("Standby"), "DOD", \
+                                   tr("DOD protection: Actions to be performed when DOD protection is triggered. The optional functions are NO action, Power down, Standby, Shut down."));
     DOD_Action->add_Specification();
+
+    if(Prohibit_charging_Action != nullptr)
+    {
+        delete Prohibit_charging_Action;
+    }
     Prohibit_charging_Action = new Specification(this,Prohibit_charging_Action_explain, ui->BMSProtection_tW, 1, 0, \
-                                   "Standby", "Prohibit_charging", \
-                                   "触发禁充时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\naction to be performed when the charging ban is triggered. The optional functions are NO action(NO action), Power down(Power down), Standby(Standby), Shut down(Shut down).");
+                                   tr("Standby"), tr("Prohibit charging"), \
+                                   tr("The action performed when the charge ban is triggered;Optional function: NO action, Power down, Standby, Shut down."));
     Prohibit_charging_Action->add_Specification();
+
+    if(Prohibit_discharging_Action != nullptr)
+    {
+        delete Prohibit_discharging_Action;
+    }
     Prohibit_discharging_Action = new Specification(this,Prohibit_discharging_Action_explain, ui->BMSProtection_tW, 2, 0, \
-                                   "Standby", "Prohibit_discharging", \
-                                   "触发禁放时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\nThe action to be performed when a ban is triggered.The optional functions are NO action(NO action), Power down(Power down), Standby(Standby), Shut down(Shut down).");
+                                   tr("Standby"), tr("Prohibit discharging"), \
+                                   tr("The action to be performed when a ban is triggered.The optional functions are NO action, Power down, Standby, Shut down."));
     Prohibit_discharging_Action->add_Specification();
+
+    if(BMS_warning_Action != nullptr)
+    {
+        delete BMS_warning_Action;
+    }
     BMS_warning_Action = new Specification(this,BMS_warning_Action_explain, ui->BMSProtection_tW, 3, 0, \
-                                   "NO action", "BMS_warning", \
-                                   "触发BMS提示时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\nAction to be performed when a BMS prompt is triggered.The optional functions are NO action(NO action), Power down(Power down), Standby(Standby), Shut down(Shut down).");
+                                   tr("NO action"), tr("BMS warning"), \
+                                   tr("Action to be performed when a BMS prompt is triggered.The optional functions are NO action, Power down, Standby, Shut down."));
     BMS_warning_Action->add_Specification();
+
+    if(BMS_alarm_Action != nullptr)
+    {
+        delete BMS_alarm_Action;
+    }
     BMS_alarm_Action = new Specification(this,BMS_alarm_Action_explain, ui->BMSProtection_tW, 4, 0, \
-                                   "Standby", "BMS_alarm", \
-                                   "触发BMS告警时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\nAction when a BMS alarm is triggered.The optional functions are NO action(NO action), Power down(Power down), Standby(Standby), Shut down(Shut down).");
+                                   tr("Standby"), tr("BMS alarm"), \
+                                   tr("Action when a BMS alarm is triggered.The optional functions are NO action, Power down, Standby, Shut down."));
     BMS_alarm_Action->add_Specification();
+
+    if(BMS_fualt_Action != nullptr)
+    {
+        delete BMS_fualt_Action;
+    }
     BMS_fualt_Action = new Specification(this,BMS_fualt_Action_explain, ui->BMSProtection_tW, 5, 0, \
-                                   "Shut down", "BMS_fualt", \
-                                   "触发BMS故障时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)\nAction that is performed when a BMS fault is triggered.The optional functions are NO action(NO action), Power down(Power down), Standby(Standby), Shut down(Shut down).");
+                                   tr("Shut down"), tr("BMS fualt"), \
+                                   tr("Action that is performed when a BMS fault is triggered.The optional functions are NO action, Power down, Standby, Shut down."));
     BMS_fualt_Action->add_Specification();
+
+    if(BMS_warning_CP != nullptr)
+    {
+        delete BMS_warning_CP;
+    }
     BMS_warning_CP = new Specification(this,BMS_warning_CP_explain, ui->BMSProtection_tW, 3, 1, \
-                                   "0", "BMS_warning_CP", \
-                                   "触发BMS提示时的充电功率\nCharge power when BMS prompt is triggered.");
+                                   "0", tr("BMS warning CP"), \
+                                   tr("The charge power when the BMS prompt is triggered."));
     BMS_warning_CP->add_Specification();
+
+    if(BMS_alarm_CP != nullptr)
+    {
+        delete BMS_alarm_CP;
+    }
     BMS_alarm_CP = new Specification(this,BMS_alarm_CP_explain, ui->BMSProtection_tW, 4, 1, \
-                                   "0", "BMS_alarm_CP", \
-                                   "触发BMS告警时执行的的充电功率\nCharge power that is executed when a BMS alarm is triggered.");
+                                   "0", tr("BMS alarm CP"), \
+                                   tr("Charge power that is executed when a BMS alarm is triggered."));
     BMS_alarm_CP->add_Specification();
+
+    if(BMS_fualt_CP != nullptr)
+    {
+        delete BMS_fualt_CP;
+    }
     BMS_fualt_CP = new Specification(this,BMS_fualt_CP_explain, ui->BMSProtection_tW, 5, 1, \
-                                   "0", "BMS_fualt_CP", \
-                                   "触发BMS故障时的充电功率\nCharging power when a BMS fault is triggered.");
+                                   "0", tr("BMS fualt CP"), \
+                                   tr("Charging power when a BMS fault is triggered."));
     BMS_fualt_CP->add_Specification();
 
+    if(BMS_warning_DP != nullptr)
+    {
+        delete BMS_warning_DP;
+    }
     BMS_warning_DP = new Specification(this,BMS_warning_DP_explain, ui->BMSProtection_tW, 3, 2, \
-                                   "0", "BMS_warning_DP", \
-                                   "触发BMS提示时的放电功率\nDischarge power when the BMS prompt is triggered.");
+                                   "0", tr("BMS warning DP"), \
+                                   tr("Discharge power when the BMS prompt is triggered."));
     BMS_warning_DP->add_Specification();
+
+    if(BMS_alarm_DP != nullptr)
+    {
+        delete BMS_alarm_DP;
+    }
     BMS_alarm_DP = new Specification(this,BMS_alarm_DP_explain, ui->BMSProtection_tW, 4, 2, \
-                                   "0", "BMS_alarm_DP", \
-                                   "触发BMS告警时的放电功率\nDischarge power when a BMS alarm is triggered.");
+                                   "0", tr("BMS alarm DP"), \
+                                   tr("Discharge power when a BMS alarm is triggered."));
     BMS_alarm_DP->add_Specification();
+
+    if(BMS_fualt_DP != nullptr)
+    {
+        delete BMS_fualt_DP;
+    }
     BMS_fualt_DP = new Specification(this,BMS_fualt_DP_explain, ui->BMSProtection_tW, 5, 2, \
-                                   "0", "BMS_fualt_DP", \
-                                   "触发BMS故障时的放电功率\nDischarge power when triggering a BMS fault.");
+                                   "0", tr("BMS fualt DP"), \
+                                   tr("Discharge power when triggering a BMS fault."));
     BMS_fualt_DP->add_Specification();
 
 }
 /***********调试 绘制button************/
 void MEGAWin::Debugg()
 {
+    QString str = tr("It is used for internal debugging only.");
+
+    if(Debug_variable_1 != nullptr)
+    {
+        delete Debug_variable_1;
+    }
     Debug_variable_1 = new Specification(this,Debug_variable_1_explain, ui->UI_Debug_Tab, 0, 1, \
-                                   "0", "Debug_variable_1", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "0", tr("Debug variable 1"), str);
     Debug_variable_1->add_Specification();
+
+    if(Debug_variable_2 != nullptr)
+    {
+        delete Debug_variable_2;
+    }
     Debug_variable_2 = new Specification(this,Debug_variable_2_explain, ui->UI_Debug_Tab, 1, 1, \
-                                   "0", "Debug_variable_2", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "0", tr("Debug variable 2"), str);
     Debug_variable_2->add_Specification();
+
+    if(Debug_variable_3 != nullptr)
+    {
+        delete Debug_variable_3;
+    }
     Debug_variable_3 = new Specification(this,Debug_variable_3_explain, ui->UI_Debug_Tab, 2, 1, \
-                                   "0", "Debug_variable_3", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "0", tr("Debug variable 3"), str);
     Debug_variable_3->add_Specification();
+
+    if(Debug_variable_1_addr != nullptr)
+    {
+        delete Debug_variable_1_addr;
+    }
     Debug_variable_1_addr = new Specification(this,Debug_variable_1_addr_explain, ui->UI_Debug_Tab, 3, 1, \
-                                   "4096", "Debug_variable_1_addr", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "4096", tr("Debug variable 1 addr"), str);
     Debug_variable_1_addr->add_Specification();
+
+    if(Debug_variable_2_addr != nullptr)
+    {
+        delete Debug_variable_2_addr;
+    }
     Debug_variable_2_addr = new Specification(this,Debug_variable_2_addr_explain, ui->UI_Debug_Tab, 4, 1, \
-                                   "4096", "Debug_variable_2_addr", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "4096", tr("Debug variable 2 addr"), str);
     Debug_variable_2_addr->add_Specification();
+
+    if(Debug_variable_3_addr != nullptr)
+    {
+        delete Debug_variable_3_addr;
+    }
     Debug_variable_3_addr = new Specification(this,Debug_variable_3_addr_explain, ui->UI_Debug_Tab, 5, 1, \
-                                   "4096", "Debug_variable_3_addr", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "4096", tr("Debug variable 3 addr"), str);
     Debug_variable_3_addr->add_Specification();
+
+    if(Debug_memery_var_1 != nullptr)
+    {
+        delete Debug_memery_var_1;
+    }
     Debug_memery_var_1 = new Specification(this,Debug_memery_var_1_explain, ui->UI_Debug_Tab, 6, 1, \
-                                   "0", "Debug_memery_var_1", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "0", tr("Debug memery var 1"), str);
     Debug_memery_var_1->add_Specification();
+
+    if(Debug_memery_var_2 != nullptr)
+    {
+        delete Debug_memery_var_2;
+    }
     Debug_memery_var_2 = new Specification(this,Debug_memery_var_2_explain, ui->UI_Debug_Tab, 7, 1, \
-                                   "0", "Debug_memery_var_2", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "0", tr("Debug memery var 2"), str);
     Debug_memery_var_2->add_Specification();
+
+    if(Debug_memery_var_3 != nullptr)
+    {
+        delete Debug_memery_var_3;
+    }
     Debug_memery_var_3 = new Specification(this,Debug_memery_var_3_explain, ui->UI_Debug_Tab, 8, 1, \
-                                   "0", "Debug_memery_var_3", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "0", tr("Debug memery var 3"), str);
     Debug_memery_var_3->add_Specification();
+
+    if(Input_Vol_revise != nullptr)
+    {
+        delete Input_Vol_revise;
+    }
     Input_Vol_revise = new Specification(this,Input_Vol_revise_explain, ui->UI_Debug_Tab, 9, 1, \
-                                   "", "Input_Vol_revise", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "", tr("Input Vol revise"), str);
     Input_Vol_revise->add_Specification();
+
+    if(Input_Cur_revise != nullptr)
+    {
+        delete Input_Cur_revise;
+    }
     Input_Cur_revise = new Specification(this,Input_Cur_revise_explain, ui->UI_Debug_Tab, 10, 1, \
-                                   "", "Input_Cur_revise", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "", tr("Input Cur revise"), str);
     Input_Cur_revise->add_Specification();
+
+    if(Voltage_1_5_revise != nullptr)
+    {
+        delete Voltage_1_5_revise;
+    }
     Voltage_1_5_revise = new Specification(this,Voltage_1_5_revise_explain, ui->UI_Debug_Tab, 0, 3, \
-                                   "", "Voltage_1_5_revise", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "", tr("1.5 Voltage revise"), str);
     Voltage_1_5_revise->add_Specification();
+
+    if(Bus_Vol_revise != nullptr)
+    {
+        delete Bus_Vol_revise;
+    }
     Bus_Vol_revise = new Specification(this,Bus_Vol_revise_explain, ui->UI_Debug_Tab, 1, 3, \
-                                   "", "Bus_Vol_revise", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "", tr("Bus Vol revise"), str);
     Bus_Vol_revise->add_Specification();
+
+    if(Grid_A_AB_Vol_revise != nullptr)
+    {
+        delete Grid_A_AB_Vol_revise;
+    }
     Grid_A_AB_Vol_revise = new Specification(this,Grid_A_AB_Vol_revise_explain, ui->UI_Debug_Tab, 2, 3, \
-                                   "", "Grid_A_AB_Vol_revise", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "", tr("Grid A AB Vol revise"), str);
     Grid_A_AB_Vol_revise->add_Specification();
+
+    if(Grid_B_BC_Vol_revise != nullptr)
+    {
+        delete Grid_B_BC_Vol_revise;
+    }
     Grid_B_BC_Vol_revise = new Specification(this,Grid_B_BC_Vol_revise_explain, ui->UI_Debug_Tab, 3, 3, \
-                                   "", "Grid_B_BC_Vol_revise", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "", tr("Grid B BC Vol revise"), str);
     Grid_B_BC_Vol_revise->add_Specification();
+
+    if(Grid_C_CA_Vol_revise != nullptr)
+    {
+        delete Grid_C_CA_Vol_revise;
+    }
     Grid_C_CA_Vol_revise = new Specification(this,Grid_C_CA_Vol_revise_explain, ui->UI_Debug_Tab, 4, 3, \
-                                   "", "Grid_C_CA_Vol_revise", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "", tr("Grid C CA Vol revise"), str);
     Grid_C_CA_Vol_revise->add_Specification();
+
+    if(Output_A_Cur_revise != nullptr)
+    {
+        delete Output_A_Cur_revise;
+    }
     Output_A_Cur_revise = new Specification(this,Output_A_Cur_revise_explain, ui->UI_Debug_Tab, 5, 3, \
-                                   "", "Output_A_Cur_revise", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "", tr("Output A Cur revise"), str);
     Output_A_Cur_revise->add_Specification();
+
+    if(Output_B_Cur_revise != nullptr)
+    {
+        delete Output_B_Cur_revise;
+    }
     Output_B_Cur_revise = new Specification(this,Output_B_Cur_revise_explain, ui->UI_Debug_Tab, 6, 3, \
-                                   "", "Output_B_Cur_revise", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "", tr("Output B Cur revise"), str);
     Output_B_Cur_revise->add_Specification();
+
+    if(Output_C_Cur_revise != nullptr)
+    {
+        delete Output_C_Cur_revise;
+    }
     Output_C_Cur_revise = new Specification(this,Output_C_Cur_revise_explain, ui->UI_Debug_Tab, 7, 3, \
-                                   "", "Output_C_Cur_revise", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "", tr("Output C Cur revise"), str);
     Output_C_Cur_revise->add_Specification();
+
+    if(INV_A_Vol_revise != nullptr)
+    {
+        delete INV_A_Vol_revise;
+    }
     INV_A_Vol_revise = new Specification(this,INV_A_Vol_revise_explain, ui->UI_Debug_Tab, 8, 3, \
-                                   "", "INV_A_Vol_revise", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "", tr("INV A Vol revise"), str);
     INV_A_Vol_revise->add_Specification();
+
+    if(INV_B_Vol_revise != nullptr)
+    {
+        delete INV_B_Vol_revise;
+    }
     INV_B_Vol_revise = new Specification(this,INV_B_Vol_revise_explain, ui->UI_Debug_Tab, 9, 3, \
-                                   "", "INV_B_Vol_revise", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "", tr("INV B Vol revise"), str);
     INV_B_Vol_revise->add_Specification();
+
+    if(INV_C_Vol_revise != nullptr)
+    {
+        delete INV_C_Vol_revise;
+    }
     INV_C_Vol_revise = new Specification(this,INV_C_Vol_revise_explain, ui->UI_Debug_Tab, 10, 3, \
-                                   "", "INV_C_Vol_revise", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "", tr("INV C Vol revise"), str);
     INV_C_Vol_revise->add_Specification();
 
+    if(INV_A_ind_Cur_revise != nullptr)
+    {
+        delete INV_A_ind_Cur_revise;
+    }
     INV_A_ind_Cur_revise = new Specification(this,INV_A_ind_Cur_revise_explain, ui->UI_Debug_Tab, 0, 5, \
-                                   "", "INV_A_ind_Cur_revise", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "", tr("INV A ind Cur revise"), str);
     INV_A_ind_Cur_revise->add_Specification();
+
+    if(INV_B_ind_Cur_revise != nullptr)
+    {
+        delete INV_B_ind_Cur_revise;
+    }
     INV_B_ind_Cur_revise = new Specification(this,INV_B_ind_Cur_revise_explain, ui->UI_Debug_Tab, 1, 5, \
-                                   "", "INV_B_ind_Cur_revise", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "", tr("INV B ind Cur revise"), str);
     INV_B_ind_Cur_revise->add_Specification();
+
+    if(INV_C_ind_Cur_revise != nullptr)
+    {
+        delete INV_C_ind_Cur_revise;
+    }
     INV_C_ind_Cur_revise = new Specification(this,INV_C_ind_Cur_revise_explain, ui->UI_Debug_Tab, 2, 5, \
-                                   "", "INV_C_ind_Cur_revise", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "", tr("INV_C_ind_Cur_revise"), str);
     INV_C_ind_Cur_revise->add_Specification();
+
+    if(INV_On_off_flag != nullptr)
+    {
+        delete INV_On_off_flag;
+    }
     INV_On_off_flag = new Specification(this,INV_On_off_flag_explain, ui->UI_Debug_Tab, 3, 5, \
-                                   "0", "INV_On_off_flag", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "0", tr("INV On off flag"), str);
     INV_On_off_flag->add_Specification();
+
+    if(Logic_state != nullptr)
+    {
+        delete Logic_state;
+    }
     Logic_state = new Specification(this,Logic_state_explain, ui->UI_Debug_Tab, 4, 5, \
-                                   "0", "Logic_state", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "0", tr("Logic state"), str);
     Logic_state->add_Specification();
+
+    if(INV_flag != nullptr)
+    {
+        delete INV_flag;
+    }
     INV_flag = new Specification(this,INV_flag_explain, ui->UI_Debug_Tab, 5, 5, \
-                                   "0", "INV_flag", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "0", tr("INV flag"), str);
     INV_flag->add_Specification();
+
+    if(Grid_flag != nullptr)
+    {
+        delete Grid_flag;
+    }
     Grid_flag = new Specification(this,Grid_flag_explain, ui->UI_Debug_Tab, 6, 5, \
-                                   "0", "Grid_flag", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "0", tr("Grid flag"), str);
     Grid_flag->add_Specification();
+
+    if(Grid_protect_flag != nullptr)
+    {
+        delete Grid_protect_flag;
+    }
     Grid_protect_flag = new Specification(this,Grid_protect_flag_explain, ui->UI_Debug_Tab, 7, 5, \
-                                   "0", "Grid_protect_flag", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "0", tr("Grid protect flag"), str);
     Grid_protect_flag->add_Specification();
+
+    if(Bat_flag != nullptr)
+    {
+        delete Bat_flag;
+    }
     Bat_flag = new Specification(this,Bat_flag_explain, ui->UI_Debug_Tab, 8, 5, \
-                                   "0", "Bat_flag", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "0", tr("Bat flag"), str);
     Bat_flag->add_Specification();
+
+    if(DC_bus_flag != nullptr)
+    {
+        delete DC_bus_flag;
+    }
     DC_bus_flag = new Specification(this,DC_bus_flag_explain, ui->UI_Debug_Tab, 9, 5, \
-                                   "0", "DC_bus_flag", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "0", tr("DC bus flag"), str);
     DC_bus_flag->add_Specification();
+
+    if(INT_main_flag != nullptr)
+    {
+        delete INT_main_flag;
+    }
     INT_main_flag = new Specification(this,INT_main_flag_explain, ui->UI_Debug_Tab, 10, 5, \
-                                   "0", "INT_main_flag", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "0", tr("INT main flag"), str);
     INT_main_flag->add_Specification();
+
+    if(parallel_signal != nullptr)
+    {
+        delete parallel_signal;
+    }
     parallel_signal = new Specification(this,parallel_signal_explain, ui->UI_Debug_Tab, 11, 5, \
-                                   "0", "parallel_signal", \
-                                   "仅提供内部调试使用\nIt is used for internal debugging only");
+                                   "0", tr("parallel signal"), str);
     parallel_signal->add_Specification();
 }
 /*********** 选择静态IP地址 ************/
@@ -5084,7 +5478,7 @@ void MEGAWin::on_radio_dhcp_clicked()
 /*********** 调入测试数据 ************/
 void MEGAWin::on_radio_test_data_btn_clicked()
 {
-    QMessageBox::question(this ,"test data", "调入测试数据(仅供内部测试人员使用)\nCall in test data (for internal testing personnel only)", "OK");
+    QMessageBox::question(this ,tr("test data"), tr("Call in test data (for internal testing personnel only)."), tr("OK"));
 }
 /****************切换语言*******************/
 void MEGAWin::on_ChangeLanguage_btn_clicked()
