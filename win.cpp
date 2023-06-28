@@ -32,7 +32,6 @@ MEGAWin::MEGAWin(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MEGAWin)
 {
-    ASKey = true;
     LanguageType = CHINESE; //开机默认为中文
 
     ui->setupUi(this);
@@ -41,8 +40,8 @@ MEGAWin::MEGAWin(QWidget *parent) :
     ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
     ui->RTState_stackedWidget->setCurrentWidget(ui->RTState_Bypass_Y_page);
 
-    MemoryAllocation(); //初始化内存空间
     LoadLanguageInit(); //初始化语言
+    MemoryAllocation(); //初始化内存空间
     UIPageInit();       //初始化界面
 
 }
@@ -67,6 +66,8 @@ void MEGAWin::updateTimeOut()
 /************************初始化内存空间********************************/
 void MEGAWin::MemoryAllocation()
 {
+    ASKey = true;
+
     m_menu = new Menu(this);
 
     /***************************数据报表&导出数据**********************************/
@@ -1547,6 +1548,8 @@ void MEGAWin::PCS_Alarm_information_table()
 
 void MEGAWin::Change_Language()
 {
+    m_menu->hide();//隐藏菜单界面
+
     if(LanguageType == CHINESE)//如果当前是中文，则切英文
     {
         LanguageType = ENGLISH;
@@ -1652,6 +1655,8 @@ void MEGAWin::SystemParam_tbnt_released()
  ***************************************************************/
 void MEGAWin::AdvancedSetup_btn_clicked()
 {
+    m_menu->hide();//隐藏菜单界面
+
     ui->UI_stackedWidget->setCurrentWidget(ui->BasicSet_page);
     if(ASKey)//保证只执行一次这句话，否则多次进出高级设置，会多次绘制页面，点击一次button，出现个消息对话框
     {
@@ -1795,16 +1800,16 @@ void MEGAWin::My_menuAction(int Index)
         ui->System_tabWidget->setCurrentIndex(0);
         break;
     case MACHINECLOSE:
-        QMessageBox::question(this, "Turn off"\
-                              ,"这是变流器关闭开关，点击后开关闭变流器\nThis is the converter off switch. Click to turn on and off the converter", "OK");
+        QMessageBox::question(this, tr("Turn off")\
+                              ,tr("This is the converter off switch. Click to turn on and off the converter."), tr("OK"));
         break;
     case MACHINESTANDBY:
-        QMessageBox::question(this, "Stand-by"\
-                              ,"这是变流器待机开关，点击后变流器进入待机状态\nThis is the converter standby switch. Click the converter to enter the standby state", "OK");
+        QMessageBox::question(this, tr("Stand-by")\
+                              ,tr("This is the converter standby switch. Click the converter to enter the standby state."), tr("OK"));
         break;
     case MACHINEOPEN:
-        QMessageBox::question(this, "Turn on"\
-                              ,"这是变流器打开开关,点击后开启变流器\nThis is the converter on switch, click to turn on the converter", "OK");
+        QMessageBox::question(this, tr("Turn on")\
+                              ,tr("This is the converter on switch, click to turn on the converter."), tr("OK"));
         break;
     default:
         break;
@@ -1846,14 +1851,19 @@ void MEGAWin::LoadLanguageInit()
         ui->retranslateUi(this);
         LanguageType = ENGLISH;
     }
-
-
 }
 
 void MEGAWin::on_UI_MenuBtn_clicked()   //菜单
 {
     if(m_menu->isHidden())
     {
+        if(m_menu != nullptr)
+        {
+            delete m_menu;
+        }
+        m_menu = new Menu(this);
+        connect(m_menu, SIGNAL(Sent(int)), this, SLOT(My_menuAction(int)));
+
         m_menu->setGeometry(0, 0, 250, 453);
         m_menu->move(QPoint((this->pos().x() + 10),(this->pos().y() + 85)));
         m_menu->show();
@@ -5479,6 +5489,11 @@ void MEGAWin::on_radio_dhcp_clicked()
 void MEGAWin::on_radio_test_data_btn_clicked()
 {
     QMessageBox::question(this ,tr("test data"), tr("Call in test data (for internal testing personnel only)."), tr("OK"));
+}
+/*********** 修改时间 ************/
+void MEGAWin::on_TimeSeting_btn_clicked()
+{
+    QMessageBox::question(this ,tr("Time"), tr("Click here to modify the time displayed on the HMI."), tr("OK"));
 }
 /****************切换语言*******************/
 void MEGAWin::on_ChangeLanguage_btn_clicked()

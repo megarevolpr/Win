@@ -772,6 +772,8 @@ private slots:
 
     void on_radio_test_data_btn_clicked();
 
+    void on_TimeSeting_btn_clicked();//修改时间
+
     void on_ChangeLanguage_btn_clicked();
 
     void on_ChangeLanguage_btn_1_clicked();
