@@ -2441,7 +2441,7 @@ void MEGAWin::OperationLog()
 void MEGAWin::RTAlarm()
 {
     ui->RTAlarm_Data_page->setColumnCount(5);
-    ui->RTAlarm_Data_page->setRowCount(30);
+    ui->RTAlarm_Data_page->setRowCount(28);
     ui->RTAlarm_Data_page->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
     ui->RTAlarm_Data_page->verticalHeader()->setVisible(false);//设置垂直头不可见
     ui->RTAlarm_Data_page->setFrameShape(QFrame::NoFrame);//设置无边框
@@ -5504,4 +5504,42 @@ void MEGAWin::on_ChangeLanguage_btn_clicked()
 void MEGAWin::on_ChangeLanguage_btn_1_clicked()
 {
     Change_Language();
+}
+
+/****************故障信息表搜索功能***************/
+void MEGAWin::on_search_btn_clicked()
+{
+    QString search = ui->search_le->text();
+    int row=ui->RTAlarm_Data_page->rowCount();
+
+    if (search == "")   //判断是否是空，如果是空就显示所有行
+    {
+        for(int i=0; i<row; i++)
+        {
+            ui->RTAlarm_Data_page->setRowHidden(i,false);//为false就是显示
+        }
+    }
+    else
+    {
+        //找到符合条件的索引 是通过你输入的和表格里面所有内容进行比对
+        QList <QTableWidgetItem *> item = ui->RTAlarm_Data_page->findItems(ui->search_le->text(), Qt::MatchContains);
+
+        for(int i=0; i<row; i++)    //然后把所有行都隐藏
+        {
+            ui->RTAlarm_Data_page->setRowHidden(i,true);//隐藏
+
+        }
+
+        if(!item.empty())   //判断符合条件索引是不是空
+        {
+            //恢复对应的行
+            for(int i=0; i<item.count(); i++)
+            {
+                ui->RTAlarm_Data_page->setRowHidden(item.at(i)->row(),false);//回复对应的行，也可以回复列
+
+            }
+        }
+
+    }
+
 }

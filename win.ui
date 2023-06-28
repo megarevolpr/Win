@@ -4556,24 +4556,76 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
            <property name="bottomMargin">
             <number>0</number>
            </property>
+           <property name="spacing">
+            <number>0</number>
+           </property>
            <item row="0" column="0">
-            <widget class="QTableWidget" name="RTAlarm_Data_page">
-             <property name="minimumSize">
-              <size>
-               <width>971</width>
-               <height>404</height>
-              </size>
+            <layout class="QVBoxLayout" name="verticalLayout_13">
+             <property name="spacing">
+              <number>0</number>
              </property>
-             <property name="maximumSize">
-              <size>
-               <width>971</width>
-               <height>404</height>
-              </size>
-             </property>
-             <property name="verticalScrollMode">
-              <enum>QAbstractItemView::ScrollPerPixel</enum>
-             </property>
-            </widget>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_8">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QLineEdit" name="search_le">
+                 <property name="minimumSize">
+                  <size>
+                   <width>860</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>860</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="search_btn">
+                 <property name="minimumSize">
+                  <size>
+                   <width>110</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>110</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Search</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QTableWidget" name="RTAlarm_Data_page">
+               <property name="minimumSize">
+                <size>
+                 <width>971</width>
+                 <height>375</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>971</width>
+                 <height>404</height>
+                </size>
+               </property>
+               <property name="verticalScrollMode">
+                <enum>QAbstractItemView::ScrollPerPixel</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
           </layout>
          </widget>

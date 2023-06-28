@@ -778,6 +778,8 @@ private slots:
 
     void on_ChangeLanguage_btn_1_clicked();
 
+    void on_search_btn_clicked();
+
 private:
     Ui::MEGAWin *ui;
     QTimer *timer;
