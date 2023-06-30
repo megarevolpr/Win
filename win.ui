@@ -86,19 +86,19 @@
        <x>1</x>
        <y>1</y>
        <width>109</width>
-       <height>54</height>
+       <height>45</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
        <width>109</width>
-       <height>54</height>
+       <height>45</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>109</width>
-       <height>54</height>
+       <height>45</height>
       </size>
      </property>
      <property name="font">
@@ -119,19 +119,19 @@
        <x>1</x>
        <y>1</y>
        <width>979</width>
-       <height>56</height>
+       <height>45</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
        <width>979</width>
-       <height>56</height>
+       <height>45</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>979</width>
-       <height>56</height>
+       <height>45</height>
       </size>
      </property>
      <property name="font">
@@ -154,21 +154,21 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>1</x>
-       <y>57</y>
+       <y>46</y>
        <width>979</width>
-       <height>448</height>
+       <height>455</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
        <width>979</width>
-       <height>448</height>
+       <height>455</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>979</width>
-       <height>448</height>
+       <height>455</height>
       </size>
      </property>
      <property name="currentIndex">
@@ -2182,21 +2182,21 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>1</x>
-       <y>506</y>
+       <y>500</y>
        <width>870</width>
-       <height>54</height>
+       <height>59</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
        <width>870</width>
-       <height>54</height>
+       <height>59</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>870</width>
-       <height>54</height>
+       <height>59</height>
       </size>
      </property>
      <property name="styleSheet">
@@ -2210,21 +2210,21 @@ color: rgb(255, 255, 255);</string>
      <property name="geometry">
       <rect>
        <x>870</x>
-       <y>506</y>
+       <y>500</y>
        <width>109</width>
-       <height>54</height>
+       <height>59</height>
       </rect>
      </property>
      <property name="minimumSize">
       <size>
        <width>109</width>
-       <height>54</height>
+       <height>59</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>109</width>
-       <height>54</height>
+       <height>59</height>
       </size>
      </property>
      <property name="styleSheet">
@@ -2570,7 +2570,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">

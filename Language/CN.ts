@@ -1039,7 +1039,7 @@
     <message>
         <location filename="../win.ui" line="2162"/>
         <source>Local_off</source>
-        <translation>远程关闭</translation>
+        <translation>本地关闭</translation>
     </message>
     <message>
         <location filename="../win.ui" line="2176"/>
