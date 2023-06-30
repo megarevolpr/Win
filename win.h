@@ -693,7 +693,6 @@ public:
         void LCDSetting();  //LCD标签初始化和定时器设置
 
         void LinkRelationship();
-        void ModuleData_Tab();//模块数据表格初始化
 
         void ModuleState_Tab();//实时状态表初始化
         void UserParam_tab();//一般设置表初始化

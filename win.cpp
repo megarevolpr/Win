@@ -43,6 +43,7 @@ MEGAWin::MEGAWin(QWidget *parent) :
     LoadLanguageInit(); //初始化语言
     MemoryAllocation(); //初始化内存空间
     UIPageInit();       //初始化界面
+    LinkRelationship(); //函数关联
 
 }
 
@@ -66,9 +67,9 @@ void MEGAWin::updateTimeOut()
 /************************初始化内存空间********************************/
 void MEGAWin::MemoryAllocation()
 {
-    ASKey = true;
+    ASKey = true;//确保只绘制一次高级设置页面
 
-    m_menu = new Menu(this);
+    m_menu = new Menu(this);//菜单创建
 
     /***************************数据报表&导出数据**********************************/
 
@@ -365,8 +366,9 @@ void MEGAWin::MemoryAllocation()
     ConverterVersion = nullptr;
     CPLD_Version = nullptr;
     SN = nullptr;
+
     /***************************高级设置**********************************/
-    AdvancedSetup_btn = new QPushButton;                //高级设置
+    AdvancedSetup_btn = new QPushButton;                //高级设置入口
 
     //功能设置
     Battery_type_explain                    = new QPushButton;
@@ -634,9 +636,12 @@ void MEGAWin::MemoryAllocation()
     pButton_MonitorDebug->addButton(ui->DO_TurnOFF_btn,1);
     pButton_MonitorDebug->addButton(ui->localSoftstart_btn,2);
     pButton_MonitorDebug->addButton(ui->localSoftend_btn,3);
-    pButton_MonitorDebug->addButton(ui->BMSPowerOn_btn,4);//电池设置-电池上电
-    pButton_MonitorDebug->addButton(ui->BMSPowerOff_btn,5);//电池设置-电池下电
-    /*****************************PCS数据****************************************/
+    /*****************************电池设置****************************************/
+    pButton_MonitorDebug->addButton(ui->BMSPowerOn_btn,4);//电池上电
+    pButton_MonitorDebug->addButton(ui->BMSPowerOff_btn,5);//电池下电
+
+    /*****************************PCS 实时数据****************************************/
+    //变流器
     PCS_vol_AB_explain = new QPushButton;
     PCS_vol_BC_explain = new QPushButton;
     PCS_vol_CA_explain = new QPushButton;
@@ -670,6 +675,7 @@ void MEGAWin::MemoryAllocation()
     PCS_IGBT_T = nullptr;
     PCS_Env_T = nullptr;
 
+    //电网
     Grid_vol_AB_explain = new QPushButton;
     Grid_vol_BC_explain = new QPushButton;
     Grid_vol_CA_explain = new QPushButton;
@@ -693,6 +699,7 @@ void MEGAWin::MemoryAllocation()
     Grid_fre = nullptr;
     Grid_Pf = nullptr;
 
+    //负载
     Load_vol_AB_explain = new QPushButton;
     Load_vol_BC_explain = new QPushButton;
     Load_vol_CA_explain = new QPushButton;
@@ -726,7 +733,7 @@ void MEGAWin::MemoryAllocation()
     DC_Soft_start_explain       = new QPushButton;//直流软启动
     converter_status_explain    = new QPushButton;//变流器状态
     Reactive_P_Regulation_explain = new QPushButton;//无功调节方式
-    LVRT_explain                = new QPushButton;//
+    LVRT_explain                = new QPushButton;//低压穿越
     Generator_signal_explain    = new QPushButton;//发电机信号
     Reserve_explain             = new QPushButton;//保留位
     Reserve2_explain            = new QPushButton;//保留位
@@ -778,10 +785,10 @@ void MEGAWin::MemoryAllocation()
     pButton_BatteryData->addButton(ui->pushButton_16,15);
     pButton_BatteryData->addButton(ui->pushButton_17,16);
 
+    /***********静态/动态IP地址显示标志位**********/
     IPShow = true;
 }
 /***************************************************************
- * @brief HOSTPAGE init
  * 主页初始化
  ***************************************************************/
 void MEGAWin::FirstPage()
@@ -803,7 +810,6 @@ void MEGAWin::FirstPage()
     ui->Bypass_Batt_btn->setFocusPolicy(Qt::NoFocus);
 }
 /***************************************************************
- * @brief RunStatePage init
  * 实时状态初始化
  ***************************************************************/
 void MEGAWin::RunStatePage()
@@ -829,6 +835,9 @@ void MEGAWin::SystemSettingPage()
     Information_tbnt_released();/*系统-系统消息*/
 }
 
+/***************************************************************
+ * 记录页面初始化
+ ***************************************************************/
 void MEGAWin::RecordPage()
 {
     History_tab();//历史记录表
@@ -893,9 +902,9 @@ void MEGAWin::UserParam_tab()
     ui->System_Tab->setRowHeight(7, 48);
 
     AdvancedSetup_btn->setText(tr("Advance setting"));
-    ui->System_Tab->setCellWidget(7,4, (QWidget *)AdvancedSetup_btn);          //高级设置
+    ui->System_Tab->setCellWidget(7,4, (QWidget *)AdvancedSetup_btn);          //高级设置入口
 
-    ParameterSet();//系统设置 绘制button
+    ParameterSet();//系统设置
 
 }
 /******************************************************************************
@@ -957,6 +966,9 @@ void MEGAWin::History_tab()
     History();//历史记录
 }
 
+/***************************************************************
+ * 操作日志表初始化
+ ***************************************************************/
 void MEGAWin::OperationLog_tab()
 {
     QStringList Ope_headers;
@@ -990,7 +1002,7 @@ void MEGAWin::BatterySet_tab()
     ui->Lithum_Tab->setColumnWidth(4,120);
     ui->Lithum_Tab->setColumnWidth(5,100);
 
-    BetterySetup();//电池设置 绘制button
+    BetterySetup();//电池设置
 
 }
 /******************************************************************************
@@ -1015,7 +1027,7 @@ void MEGAWin::RunTimeSet_tab()
     ui->Time_tableWidget->setColumnWidth(3,130);
     ui->Time_tableWidget->horizontalHeader()->setStretchLastSection(4);
 
-    AutoOperation();//自动运行 绘制button
+    AutoOperation();//自动运行
 
 }
 /******************************************************************************
@@ -1069,7 +1081,7 @@ void MEGAWin::PCS_Data_Tab()
         ui->Converter_Tab->item(i, 2)->setTextAlignment(Qt::AlignCenter);
     }
 
-    PCS_Data();//PCS数据 绘制button
+    PCS_Data();//PCS数据
 }
 /******************************************************************************
  * 电网实时数据表初始化
@@ -1113,7 +1125,7 @@ void MEGAWin::Grid_Data_Tab()
         ui->Grid_Tab->item(i, 0)->setTextAlignment(Qt::AlignCenter);
     }
 
-    Grid_Data();//电网数据 绘制button
+    Grid_Data();//电网数据
 }
 /******************************************************************************
  * 负载实时数据表初始化
@@ -1153,7 +1165,7 @@ void MEGAWin::Load_Data_Tab()
         ui->Load_Tab->item(i, 0)->setTextAlignment(Qt::AlignCenter);
     }
 
-    Load_Data();//负载数据 绘制button
+    Load_Data();//负载数据
 }
 /******************************************************************************
  * 实时数据——模拟量
@@ -1168,7 +1180,6 @@ void MEGAWin::RTData_Anologe()
 void MEGAWin::RTData_Status()
 {
     ui->RTState_MEGA_Tab->clearContents();//防止内存泄漏
-    ModuleState_Tab();
 }
 
 /*************************************************************************
@@ -1200,7 +1211,7 @@ void MEGAWin::Information_tbnt_released()
     ui->EquipmentInfor_tableWidget->setColumnWidth(0,230);
     ui->EquipmentInfor_tableWidget->horizontalHeader()->setStretchLastSection(1);//自动占用剩余空间
 
-    SystemMessages();//系统信息 绘制button
+    SystemMessages();//系统信息
 
 }
 
@@ -1546,21 +1557,24 @@ void MEGAWin::PCS_Alarm_information_table()
     }
 }
 
+/***************************************************************
+ * 切换语言并应用到所有页面
+ ***************************************************************/
 void MEGAWin::Change_Language()
 {
     m_menu->hide();//隐藏菜单界面
 
-    if(LanguageType == CHINESE)//如果当前是中文，则切英文
+    if(LanguageType == CHINESE)
     {
-        LanguageType = ENGLISH;
+        LanguageType = ENGLISH;//如果当前是中文，则切英文
         translator->load(":/Language/EN.qm");
         ui->ChangeLanguage_btn->setText(tr("Change Language"));
         qApp->installTranslator(translator);
         ui->retranslateUi(this);
     }
-    else if(LanguageType == ENGLISH)//如果当前是英文，则切中文
+    else if(LanguageType == ENGLISH)
     {
-        LanguageType = CHINESE;
+        LanguageType = CHINESE;//如果当前是英文，则切中文
         translator->load(":/Language/CN.qm");
         ui->ChangeLanguage_btn->setText(tr("切换语言"));
         qApp->installTranslator(translator);
@@ -1651,7 +1665,7 @@ void MEGAWin::SystemParam_tbnt_released()
 }
 
 /***************************************************************
- *高级设置按钮点击功能
+ *高级设置入口
  ***************************************************************/
 void MEGAWin::AdvancedSetup_btn_clicked()
 {
@@ -1692,13 +1706,6 @@ void MEGAWin::LinkRelationship()
 }
 
 /******************************************************************************
- * 模块实时数据表初始化
- * ***************************************************************************/
-void MEGAWin::ModuleData_Tab()//PCS数据
-{
-
-}
-/******************************************************************************
  * 模块实时状态表初始化
  * ***************************************************************************/
 void MEGAWin::ModuleState_Tab()//PCS状态
@@ -1709,7 +1716,7 @@ void MEGAWin::ModuleState_Tab()//PCS状态
     pal.setColor(QPalette::AlternateBase, QColor(100, 149, 237));
 
     {
-        QStringList RTState_Bypass_List1;// << tr("DC input breaker 2")
+        QStringList RTState_Bypass_List1;
 #ifdef Machine_V2
         RTState_Bypass_List1 << tr("DC input breaker")<< tr("DC contactor")\
             << tr("Output contactor") << tr("Output breaker") << tr("Maintenance Bypass breaker") << tr("Grid breaker");
@@ -1764,7 +1771,7 @@ void MEGAWin::ModuleState_Tab()//PCS状态
         ui->RTState_Bypass_Tab->resizeRowsToContents();
     }
 
-    PCS_State();//PCS状态 绘制button
+    PCS_State();//PCS状态
 }
 
 
@@ -1816,8 +1823,9 @@ void MEGAWin::My_menuAction(int Index)
     }
 }
 
-
-/************************初始化界面********************************/
+/***************************************************************
+ * 初始化界面
+ ***************************************************************/
 void MEGAWin::UIPageInit()
 {
     FirstPage();//主页点击
@@ -1828,12 +1836,13 @@ void MEGAWin::UIPageInit()
 
     RecordPage();//记录页面初始化
 
-    LCDSetting();//时间设置
-
-    LinkRelationship();//函数关联
+    LCDSetting();//时间实时刷新显示
 
 }
 
+/***************************************************************
+ * 初始化语言
+ ***************************************************************/
 void MEGAWin::LoadLanguageInit()
 {
     translator = new QTranslator(qApp);
@@ -1853,7 +1862,10 @@ void MEGAWin::LoadLanguageInit()
     }
 }
 
-void MEGAWin::on_UI_MenuBtn_clicked()   //菜单
+/***************************************************************
+ * 菜单弹出与隐藏
+ ***************************************************************/
+void MEGAWin::on_UI_MenuBtn_clicked()
 {
     if(m_menu->isHidden())
     {
@@ -1874,12 +1886,18 @@ void MEGAWin::on_UI_MenuBtn_clicked()   //菜单
     }
 }
 
-void MEGAWin::on_UI_Complete_Btn_clicked()//退出高级设置
+/***************************************************************
+ * 退出高级设置
+ ***************************************************************/
+void MEGAWin::on_UI_Complete_Btn_clicked()
 {
     ui->UI_stackedWidget->setCurrentWidget(ui->UI_page);
 }
 
-void MEGAWin::on_Running_btn_clicked()  //显示变流器实时数据
+/***************************************************************
+ * 显示变流器实时数据
+ ***************************************************************/
+void MEGAWin::on_Running_btn_clicked()
 {
     ui->stackedWidget->setCurrentWidget(ui->Status_page);
     ui->Run_tabWidget->setCurrentWidget(ui->RTData_page);
@@ -1887,7 +1905,10 @@ void MEGAWin::on_Running_btn_clicked()  //显示变流器实时数据
     ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Converter_page);
 }
 
-void MEGAWin::on_Grid_clicked()     //显示电网端实时数据
+/***************************************************************
+ * 显示电网端实时数据
+ ***************************************************************/
+void MEGAWin::on_Grid_clicked()
 {
     ui->stackedWidget->setCurrentWidget(ui->Status_page);
     ui->Run_tabWidget->setCurrentWidget(ui->RTData_page);
@@ -1895,7 +1916,10 @@ void MEGAWin::on_Grid_clicked()     //显示电网端实时数据
     ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Grid_page);
 }
 
-void MEGAWin::on_Load_clicked()     //显示负载端实时数据
+/***************************************************************
+ * 显示负载端实时数据
+ ***************************************************************/
+void MEGAWin::on_Load_clicked()
 {
     ui->stackedWidget->setCurrentWidget(ui->Status_page);
     ui->Run_tabWidget->setCurrentWidget(ui->RTData_page);
@@ -1903,35 +1927,52 @@ void MEGAWin::on_Load_clicked()     //显示负载端实时数据
     ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Load_page);
 }
 
-void MEGAWin::on_Batt_btn_released()    //显示电池信息
+/***************************************************************
+ * 显示电池信息
+ ***************************************************************/
+void MEGAWin::on_Batt_btn_released()
 {
     ui->stackedWidget->setCurrentWidget(ui->Status_page);
     ui->Run_tabWidget->setCurrentWidget(ui->BatteryData_page);
     ui->BAT_stackedWidget->setCurrentWidget(ui->BAT_Lithium_page);
 }
 
-void MEGAWin::on_Alarm_btn_clicker()    //显示告警信息
+/***************************************************************
+ * 显示故障信息表
+ ***************************************************************/
+void MEGAWin::on_Alarm_btn_clicker()
 {
     ui->stackedWidget->setCurrentWidget(ui->Status_page);
     ui->Run_tabWidget->setCurrentWidget(ui->RTAlarm_page);
 }
 
-void MEGAWin::on_SConverter_btn_clicked()   //显示变流器实时数据
+/***************************************************************
+ * 显示变流器实时数据
+ ***************************************************************/
+void MEGAWin::on_SConverter_btn_clicked()
 {
     ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Converter_page);
 }
 
-void MEGAWin::on_SGrid_btn_clicked()    //显示电网实时数据
+/***************************************************************
+ * 显示电网实时数据
+ ***************************************************************/
+void MEGAWin::on_SGrid_btn_clicked()
 {
     ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Grid_page);
 }
 
-void MEGAWin::on_SLoad_btn_clicked()    //显示负载实时数据
+/***************************************************************
+ * 显示负载实时数据
+ ***************************************************************/
+void MEGAWin::on_SLoad_btn_clicked()
 {
     ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Load_page);
 }
 
-/******************实时数据界面选项卡点击响应*******************/
+/***************************************************************
+ * 实时数据界面选项卡点击响应
+ ***************************************************************/
 void MEGAWin::on_Run_tabWidget_tabBarClicked(int index)
 {
     switch (index) {
@@ -1953,7 +1994,9 @@ void MEGAWin::on_Run_tabWidget_tabBarClicked(int index)
 
 }
 
-/****************数据报表点击槽****************/
+/***************************************************************
+ * 数据报表
+ ***************************************************************/
 void MEGAWin::Data_report_clicked(int nid)
 {
     switch (nid) {
@@ -2040,7 +2083,10 @@ void MEGAWin::Data_report_clicked(int nid)
     }
 
 }
-/******************系统信息点击槽***********************/
+
+/***************************************************************
+ * 系统信息
+ ***************************************************************/
 void MEGAWin::SystemlnformationVer_clicked(int nid)
 {
     switch (nid) {
@@ -2076,7 +2122,10 @@ void MEGAWin::SystemlnformationVer_clicked(int nid)
         break;
     }
 }
-/******************监控调试点击槽***********************/
+
+/***************************************************************
+ * 监控调试
+ ***************************************************************/
 void MEGAWin::MonitorDebug_clicked(int nid)
 {
     switch (nid) {
@@ -2108,7 +2157,10 @@ void MEGAWin::MonitorDebug_clicked(int nid)
             break;
     }
 }
-/******************历史记录 绘制button***********************/
+
+/***************************************************************
+ * 历史记录
+ ***************************************************************/
 void MEGAWin::History()
 {
     QString str1 = tr("0");
@@ -2356,7 +2408,10 @@ void MEGAWin::History()
     Describe8 = new Specification(this,Describe8_explain, ui->Historicalfailure_tableWidget, 7, 3, str12, str9, str10);
     Describe8->add_Specification();
 }
-/******************操作日志 绘制button***********************/
+
+/***************************************************************
+ * 操作日志
+ ***************************************************************/
 void MEGAWin::OperationLog()
 {
     QString str = tr("ModificationTime");
@@ -2437,7 +2492,10 @@ void MEGAWin::OperationLog()
                                                     tr("Inv ON/Off-Grid：automatic->Off"), str2, str3);
     EventRecord12->add_Specification();
 }
-/******************告警信息 绘表***********************/
+
+/***************************************************************
+ * PCS故障信息表初始化
+ ***************************************************************/
 void MEGAWin::RTAlarm()
 {
     ui->RTAlarm_Data_page->setColumnCount(5);
@@ -2463,7 +2521,10 @@ void MEGAWin::RTAlarm()
 
     PCS_Alarm_information_table();  //展示PCS故障信息表
 }
-/*********电池数据点击槽**********/
+
+/***************************************************************
+ * 电池数据
+ ***************************************************************/
 void MEGAWin::BatteryData_clicked(int nid)
 {
     switch (nid) {
@@ -2539,7 +2600,10 @@ void MEGAWin::BatteryData_clicked(int nid)
         break;
     }
 }
-/*********PCS数据 绘制button**********/
+
+/***************************************************************
+ * PCS数据
+ ***************************************************************/
 void MEGAWin::PCS_Data()
 {
     if(PCS_vol_AB != nullptr)
@@ -2547,7 +2611,7 @@ void MEGAWin::PCS_Data()
         delete PCS_vol_AB;
     }
     PCS_vol_AB = new Specification(this,PCS_vol_AB_explain, ui->Converter_Tab, 0, 1, \
-                                            tr("270.2V"), tr("PCS voltage(AB)"), \
+                                            "270.2V", tr("PCS voltage(AB)"), \
                                             tr("The inverter side voltage of the current PCS is the phase voltage between phase A and phase B."));
     PCS_vol_AB->add_Specification();
 
@@ -2556,7 +2620,7 @@ void MEGAWin::PCS_Data()
         delete PCS_vol_BC;
     }
     PCS_vol_BC = new Specification(this,PCS_vol_BC_explain, ui->Converter_Tab, 1, 1, \
-                                            tr("270V"), tr("PCS voltage(BC)"), \
+                                            "270V", tr("PCS voltage(BC)"), \
                                             tr("The inverter side voltage of the current PCS is the phase voltage between phase B and phase C."));
     PCS_vol_BC->add_Specification();
 
@@ -2565,7 +2629,7 @@ void MEGAWin::PCS_Data()
         delete PCS_vol_CA;
     }
     PCS_vol_CA = new Specification(this,PCS_vol_CA_explain, ui->Converter_Tab, 2, 1, \
-                                            tr("270.1V"), tr("PCS voltage(CA)"), \
+                                            "270.1V", tr("PCS voltage(CA)"), \
                                             tr("The inverter side voltage of the current PCS is the phase voltage between phase A and phase C."));
     PCS_vol_CA->add_Specification();
 
@@ -2574,7 +2638,7 @@ void MEGAWin::PCS_Data()
         delete PCS_cur_A;
     }
     PCS_cur_A = new Specification(this,PCS_cur_A_explain, ui->Converter_Tab, 3, 1, \
-                                            tr("0A"), tr("PCS current(A)"), \
+                                            "0A", tr("PCS current(A)"), \
                                             tr("The current of the inverter side of the current PCS is the current of phase A."));
     PCS_cur_A->add_Specification();
 
@@ -2583,7 +2647,7 @@ void MEGAWin::PCS_Data()
         delete PCS_cur_B;
     }
     PCS_cur_B = new Specification(this,PCS_cur_B_explain, ui->Converter_Tab, 4, 1, \
-                                            tr("0A"), tr("PCS current(B)"), \
+                                            "0A", tr("PCS current(B)"), \
                                             tr("The current of the inverter side of the current PCS is the current of phase B."));
     PCS_cur_B->add_Specification();
 
@@ -2592,7 +2656,7 @@ void MEGAWin::PCS_Data()
         delete PCS_cur_C;
     }
     PCS_cur_C = new Specification(this,PCS_cur_C_explain, ui->Converter_Tab, 5, 1, \
-                                            tr("0A"), tr("PCS current(C)"), \
+                                            "0A", tr("PCS current(C)"), \
                                             tr("The current of the inverter side of the current PCS is the current of phase C."));
     PCS_cur_C->add_Specification();
 
@@ -2601,7 +2665,7 @@ void MEGAWin::PCS_Data()
         delete PCS_act_P;
     }
     PCS_act_P = new Specification(this,PCS_act_P_explain, ui->Converter_Tab, 6, 1, \
-                                            tr("0kW"), tr("PCS Active Power"), \
+                                            "0kW", tr("PCS Active Power"), \
                                             tr("The active power P of the inverter side of the current PCS."));
     PCS_act_P->add_Specification();
 
@@ -2610,7 +2674,7 @@ void MEGAWin::PCS_Data()
         delete PCS_rea_P;
     }
     PCS_rea_P = new Specification(this,PCS_rea_P_explain, ui->Converter_Tab, 7, 1, \
-                                            tr("0kVar"), tr("PCS Reactive Power"), \
+                                            "0kVar", tr("PCS Reactive Power"), \
                                             tr("The reactive power Q of the inverter side of the current PCS."));
     PCS_rea_P->add_Specification();
 
@@ -2619,7 +2683,7 @@ void MEGAWin::PCS_Data()
         delete PCS_par_P;
     }
     PCS_par_P = new Specification(this,PCS_par_P_explain, ui->Converter_Tab, 8, 1, \
-                                            tr("0kVA"), tr("PCS Parent Power"), \
+                                            "0kVA", tr("PCS Parent Power"), \
                                             tr("The inverter side view of the current PCS is at power S, S= √((P^2+Q^2))."));
     PCS_par_P->add_Specification();
 
@@ -2629,7 +2693,7 @@ void MEGAWin::PCS_Data()
     }
 
     PCS_Pf = new Specification(this,PCS_Pf_explain, ui->Converter_Tab, 9, 1, \
-                                            tr("0"), tr("PCS Power factor"), \
+                                            "0", tr("PCS Power factor"), \
                                             tr("Power factor Pf on the inverter side of current PCS, Pf = P/S."));
     PCS_Pf->add_Specification();
 
@@ -2638,7 +2702,7 @@ void MEGAWin::PCS_Data()
         delete PCS_Bat_vol;
     }
     PCS_Bat_vol = new Specification(this,PCS_Bat_vol_explain, ui->Converter_Tab, 0, 3, \
-                                            tr("0V"), tr("PCS Battery voltage"), \
+                                            "0V", tr("PCS Battery voltage"), \
                                             tr("The current PCS samples the battery voltage from the connected battery."));
     PCS_Bat_vol->add_Specification();
 
@@ -2647,7 +2711,7 @@ void MEGAWin::PCS_Data()
         delete PCS_Bat_cur;
     }
     PCS_Bat_cur = new Specification(this,PCS_Bat_cur_explain, ui->Converter_Tab, 1, 3, \
-                                            tr("0A"), tr("PCS Battery current"), \
+                                            "0A", tr("PCS Battery current"), \
                                             tr("Battery current sampled by the PCS from the connected battery."));
     PCS_Bat_cur->add_Specification();
 
@@ -2656,7 +2720,7 @@ void MEGAWin::PCS_Data()
         delete PCS_Bat_P;
     }
     PCS_Bat_P = new Specification(this,PCS_Bat_P_explain, ui->Converter_Tab, 2, 3, \
-                                            tr("0kW"), tr("PCS Battery power"), \
+                                            "0kW", tr("PCS Battery power"), \
                                             tr("At present, PCS calculates the product of battery voltage and battery current to obtain battery power."));
     PCS_Bat_P->add_Specification();
 
@@ -2665,7 +2729,7 @@ void MEGAWin::PCS_Data()
         delete PCS_Bus_vol;
     }
     PCS_Bus_vol = new Specification(this,PCS_Bus_vol_explain, ui->Converter_Tab, 3, 3, \
-                                            tr("0V"), tr("PCS Bus voltage"), \
+                                            "0V", tr("PCS Bus voltage"), \
                                             tr("The current bus voltage sampled by PCS from the bus side."));
     PCS_Bus_vol->add_Specification();
 
@@ -2674,7 +2738,7 @@ void MEGAWin::PCS_Data()
         delete PCS_IGBT_T;
     }
     PCS_IGBT_T = new Specification(this,PCS_IGBT_T_explain, ui->Converter_Tab, 4, 3, \
-                                            tr("39℃"), tr("PCS IGBT temperature"), \
+                                            "39℃", tr("PCS IGBT temperature"), \
                                             tr("The current IGBT temperature of PCS shall not exceed 105℃, otherwise PCS will run derated."));
     PCS_IGBT_T->add_Specification();
 
@@ -2683,11 +2747,14 @@ void MEGAWin::PCS_Data()
         delete PCS_Env_T;
     }
     PCS_Env_T = new Specification(this,PCS_Env_T_explain, ui->Converter_Tab, 5, 3, \
-                                            tr("25℃"), tr("PCS Environment temperature"), \
+                                            "25℃", tr("PCS Environment temperature"), \
                                             tr("The ambient temperature of the current PCS."));
     PCS_Env_T->add_Specification();
 }
-/*********电网数据 绘制button**********/
+
+/***************************************************************
+ * 电网数据
+ ***************************************************************/
 void MEGAWin::Grid_Data()
 {
     if(Grid_vol_AB != nullptr)
@@ -2695,7 +2762,7 @@ void MEGAWin::Grid_Data()
         delete Grid_vol_AB;
     }
     Grid_vol_AB = new Specification(this,Grid_vol_AB_explain, ui->Grid_Tab, 0, 1, \
-                                            tr("0V"), tr("Grid voltage(AB)"), \
+                                            "0V", tr("Grid voltage(AB)"), \
                                             tr("The grid side voltage of the current PCS, this item is the phase voltage between phase A and phase B."));
     Grid_vol_AB->add_Specification();
 
@@ -2704,7 +2771,7 @@ void MEGAWin::Grid_Data()
         delete Grid_vol_BC;
     }
     Grid_vol_BC = new Specification(this,Grid_vol_BC_explain, ui->Grid_Tab, 1, 1, \
-                                            tr("0V"), tr("Grid voltage(BC)"), \
+                                            "0V", tr("Grid voltage(BC)"), \
                                             tr("The grid side voltage of the current PCS, this item is the phase voltage between phase B and phase C."));
     Grid_vol_BC->add_Specification();
 
@@ -2713,7 +2780,7 @@ void MEGAWin::Grid_Data()
         delete Grid_vol_CA;
     }
     Grid_vol_CA = new Specification(this,Grid_vol_CA_explain, ui->Grid_Tab, 2, 1, \
-                                            tr("0V"), tr("Grid voltage(CA)"), \
+                                            "0V", tr("Grid voltage(CA)"), \
                                             tr("The grid side voltage of the current PCS, this item is the phase voltage between phase A and phase C."));
     Grid_vol_CA->add_Specification();
 
@@ -2722,7 +2789,7 @@ void MEGAWin::Grid_Data()
         delete Grid_cur_A;
     }
     Grid_cur_A = new Specification(this,Grid_cur_A_explain, ui->Grid_Tab, 3, 1, \
-                                            tr("0A"), tr("Grid current(A)"), \
+                                            "0A", tr("Grid current(A)"), \
                                             tr("The current on the grid side of PCS, this item is the current of phase A."));
     Grid_cur_A->add_Specification();
 
@@ -2731,7 +2798,7 @@ void MEGAWin::Grid_Data()
         delete Grid_cur_B;
     }
     Grid_cur_B = new Specification(this,Grid_cur_B_explain, ui->Grid_Tab, 4, 1, \
-                                            tr("0A"), tr("Grid current(B)"), \
+                                            "0A", tr("Grid current(B)"), \
                                             tr("The current on the grid side of PCS, this item is the current of phase B."));
     Grid_cur_B->add_Specification();
 
@@ -2740,7 +2807,7 @@ void MEGAWin::Grid_Data()
         delete Grid_cur_C;
     }
     Grid_cur_C = new Specification(this,Grid_cur_C_explain, ui->Grid_Tab, 5, 1, \
-                                            tr("0A"), tr("Grid current(C)"), \
+                                            "0A", tr("Grid current(C)"), \
                                             tr("The current on the grid side of PCS, this item is the current of phase C."));
     Grid_cur_C->add_Specification();
 
@@ -2749,7 +2816,7 @@ void MEGAWin::Grid_Data()
         delete Grid_act_P;
     }
     Grid_act_P = new Specification(this,Grid_act_P_explain, ui->Grid_Tab, 6, 1, \
-                                            tr("0kW"), tr("Grid active power"), \
+                                            "0kW", tr("Grid active power"), \
                                             tr("Current active power (P) on the grid side of PCS."));
     Grid_act_P->add_Specification();
 
@@ -2758,7 +2825,7 @@ void MEGAWin::Grid_Data()
         delete Grid_rea_P;
     }
     Grid_rea_P = new Specification(this,Grid_rea_P_explain, ui->Grid_Tab, 7, 1, \
-                                            tr("0kVar"), tr("Grid reactive power"), \
+                                            "0kVar", tr("Grid reactive power"), \
                                             tr("Current reactive power (Q) on the grid side of PCS."));
     Grid_rea_P->add_Specification();
 
@@ -2767,7 +2834,7 @@ void MEGAWin::Grid_Data()
         delete Grid_app_P;
     }
     Grid_app_P = new Specification(this,Grid_app_P_explain, ui->Grid_Tab, 8, 1, \
-                                            tr("0kVA"), tr("Grid apparent power"), \
+                                            "0kVA", tr("Grid apparent power"), \
                                             tr("Current PCS grid side view power (S), S= √((P^2+Q^2))."));
     Grid_app_P->add_Specification();
 
@@ -2776,7 +2843,7 @@ void MEGAWin::Grid_Data()
         delete Grid_fre;
     }
     Grid_fre = new Specification(this,Grid_fre_explain, ui->Grid_Tab, 9, 1, \
-                                            tr("0Hz"), tr("Grid frequency"), \
+                                            "0Hz", tr("Grid frequency"), \
                                             tr("Current PCS collection of power grid frequency."));
     Grid_fre->add_Specification();
 
@@ -2785,11 +2852,14 @@ void MEGAWin::Grid_Data()
         delete Grid_Pf;
     }
     Grid_Pf = new Specification(this,Grid_Pf_explain, ui->Grid_Tab, 10, 1, \
-                                            tr("0"), tr("Grid power factor"), \
+                                            "0", tr("Grid power factor"), \
                                             tr("Grid side power factor (Pf) of the current PCS, Pf = P/S."));
     Grid_Pf->add_Specification();
 }
-/*********负载数据 绘制button**********/
+
+/***************************************************************
+ * 负载数据
+ ***************************************************************/
 void MEGAWin::Load_Data()
 {
     if(Load_vol_AB != nullptr)
@@ -2797,7 +2867,7 @@ void MEGAWin::Load_Data()
         delete Load_vol_AB;
     }
     Load_vol_AB = new Specification(this,Load_vol_AB_explain, ui->Load_Tab, 0, 1, \
-                                            tr("0V"), tr("Load voltage(AB)"), \
+                                            "0V", tr("Load voltage(AB)"), \
                                             tr("The load side voltage of the current PCS, this item is the phase voltage between phase A and phase B."));
     Load_vol_AB->add_Specification();
 
@@ -2806,7 +2876,7 @@ void MEGAWin::Load_Data()
         delete Load_vol_BC;
     }
     Load_vol_BC = new Specification(this,Load_vol_BC_explain, ui->Load_Tab, 1, 1, \
-                                            tr("0V"), tr("Load voltage(BC)"), \
+                                            "0V", tr("Load voltage(BC)"), \
                                             tr("The load side voltage of the current PCS, this item is the phase voltage between phase B and phase C."));
     Load_vol_BC->add_Specification();
 
@@ -2815,7 +2885,7 @@ void MEGAWin::Load_Data()
         delete Load_vol_CA;
     }
     Load_vol_CA = new Specification(this,Load_vol_CA_explain, ui->Load_Tab, 2, 1, \
-                                            tr("0V"), tr("Load voltage(CA)"), \
+                                            "0V", tr("Load voltage(CA)"), \
                                             tr("The load side voltage of the current PCS, this item is the phase voltage between phase A and phase C."));
     Load_vol_CA->add_Specification();
 
@@ -2824,7 +2894,7 @@ void MEGAWin::Load_Data()
         delete Load_cur_A;
     }
     Load_cur_A = new Specification(this,Load_cur_A_explain, ui->Load_Tab, 3, 1, \
-                                            tr("0A"), tr("Load current(A)"), \
+                                            "0A", tr("Load current(A)"), \
                                             tr("The current on the load side of PCS is the current of phase A."));
     Load_cur_A->add_Specification();
 
@@ -2833,7 +2903,7 @@ void MEGAWin::Load_Data()
         delete Load_cur_B;
     }
     Load_cur_B = new Specification(this,Load_cur_B_explain, ui->Load_Tab, 4, 1, \
-                                            tr("0A"), tr("Load current(B)"), \
+                                            "0A", tr("Load current(B)"), \
                                             tr("The current at the load side of PCS is the current of phase B."));
     Load_cur_B->add_Specification();
 
@@ -2842,7 +2912,7 @@ void MEGAWin::Load_Data()
         delete Load_cur_C;
     }
     Load_cur_C = new Specification(this,Load_cur_C_explain, ui->Load_Tab, 5, 1, \
-                                            tr("0A"), tr("Load current(C)"), \
+                                            "0A", tr("Load current(C)"), \
                                             tr("The current at the load side of PCS is the current of phase C."));
     Load_cur_C->add_Specification();
 
@@ -2851,7 +2921,7 @@ void MEGAWin::Load_Data()
         delete Load_act_P;
     }
     Load_act_P = new Specification(this,Load_act_P_explain, ui->Load_Tab, 6, 1, \
-                                            tr("0kW"), tr("Load active power"), \
+                                            "0kW", tr("Load active power"), \
                                             tr("Current PCS active power (P) on load side."));
     Load_act_P->add_Specification();
 
@@ -2860,7 +2930,7 @@ void MEGAWin::Load_Data()
         delete Load_rea_P;
     }
     Load_rea_P = new Specification(this,Load_rea_P_explain, ui->Load_Tab, 7, 1, \
-                                            tr("0kVar"), tr("Load reactive power"), \
+                                            "0kVar", tr("Load reactive power"), \
                                             tr("Reactive power (Q) on the load side of current PCS."));
     Load_rea_P->add_Specification();
 
@@ -2869,7 +2939,7 @@ void MEGAWin::Load_Data()
         delete Load_app_P;
     }
     Load_app_P = new Specification(this,Load_app_P_explain, ui->Load_Tab, 8, 1, \
-                                            tr("0kVA"), tr("Load apparent power"), \
+                                            "0kVA", tr("Load apparent power"), \
                                             tr("Current PCS load side view at power (S), S= √((P^2+Q^2))."));
     Load_app_P->add_Specification();
 
@@ -2878,11 +2948,14 @@ void MEGAWin::Load_Data()
         delete Load_Pf;
     }
     Load_Pf = new Specification(this,Load_Pf_explain, ui->Load_Tab, 9, 1, \
-                                            tr("0"), tr("Load power factor"), \
+                                            "0", tr("Load power factor"), \
                                             tr("The load side power factor (Pf) of the current PCS, Pf = P/S."));
     Load_Pf->add_Specification();
 }
-/********PCS状态 绘制button*********/
+
+/***************************************************************
+ * PCS状态
+ ***************************************************************/
 void MEGAWin::PCS_State()
 {
     if(DC_input_Breaker != nullptr)
@@ -3074,7 +3147,10 @@ void MEGAWin::PCS_State()
                                             tr("This isa high temperature signal. Input dry contact 6. Two states are available: Enable and Disable."));
     Hight_temp_signal->add_Specification();
 }
-/*********系统设置 绘制button**********/
+
+/***************************************************************
+ * 系统设置
+ ***************************************************************/
 void MEGAWin::ParameterSet()
 {
     if(Grid_connected_mode != NULL)
@@ -3213,7 +3289,10 @@ void MEGAWin::ParameterSet()
     Phase_C_power->add_Specification();
 
 }
-/***********电池设置 绘制button************/
+
+/***************************************************************
+ * 电池设置
+ ***************************************************************/
 void MEGAWin::BetterySetup()
 {
     if(DOD_OnGrid != nullptr)
@@ -3221,7 +3300,7 @@ void MEGAWin::BetterySetup()
         delete DOD_OnGrid;
     }
     DOD_OnGrid = new Specification(this,DOD_OnGrid_explain, ui->Lithum_Tab, 0, 1, \
-                                     tr("90"), tr("DOD_OnGrid"), \
+                                     "90", tr("DOD_OnGrid"), \
                                      tr("Grid-connected DOD, the depth of discharge allowed in grid-connected mode."));
     DOD_OnGrid->add_Specification();
 
@@ -3230,7 +3309,7 @@ void MEGAWin::BetterySetup()
         delete DOD_OffGrid;
     }
     DOD_OffGrid = new Specification(this,DOD_OffGrid_explain, ui->Lithum_Tab, 1, 1, \
-                                     tr("90"), tr("DOD_OffGrid"), \
+                                     "90", tr("DOD_OffGrid"), \
                                      tr("Off-network DOD: Discharge depth allowed in off-network mode."));
     DOD_OffGrid->add_Specification();
 
@@ -3239,7 +3318,7 @@ void MEGAWin::BetterySetup()
         delete Charge_Vol_Up_Limit;
     }
     Charge_Vol_Up_Limit = new Specification(this,Charge_Vol_Up_Limit_explain, ui->Lithum_Tab, 2, 1, \
-                                     tr("792"), tr("Charge_Vol_Up_Limit"), \
+                                     "792", tr("Charge_Vol_Up_Limit"), \
                                      tr("This is the upper limit of the charging voltage. When the total battery voltage reaches this value during charging, the PCS will enter the constant voltage mode to prevent the battery from overcharging."));
     Charge_Vol_Up_Limit->add_Specification();
 
@@ -3248,7 +3327,7 @@ void MEGAWin::BetterySetup()
         delete Disc_Vol_lower_Limit;
     }
     Disc_Vol_lower_Limit = new Specification(this,Disc_Vol_lower_Limit_explain, ui->Lithum_Tab, 3, 1, \
-                                     tr("616"), tr("Disc_Vol_lower_Limit"), \
+                                     "616", tr("Disc_Vol_lower_Limit"), \
                                      tr("This is the lower limit of the discharge voltage. When the total battery voltage during discharge reaches this value, PCS will trigger a battery low voltage alarm, and PCS will shut down to prevent battery overdischarge."));
     Disc_Vol_lower_Limit->add_Specification();
 
@@ -3257,7 +3336,7 @@ void MEGAWin::BetterySetup()
         delete Charge_Cur_Limit;
     }
     Charge_Cur_Limit = new Specification(this,Charge_Cur_Limit_explain, ui->Lithum_Tab, 4, 1, \
-                                     tr("160"), tr("Charge_Cur_Limit"), \
+                                     "160", tr("Charge_Cur_Limit"), \
                                      tr("This is the upper limit of charging current, which is the maximum current allowed on the DC side of PCS to prevent charging overcurrent."));
     Charge_Cur_Limit->add_Specification();
 
@@ -3266,7 +3345,7 @@ void MEGAWin::BetterySetup()
         delete Gen_turn_off_SOC;
     }
     Gen_turn_off_SOC = new Specification(this,Gen_turn_off_SOC_explain, ui->Lithum_Tab, 5, 1, \
-                                     tr("85"), tr("Gen_turn_off_SOC"), \
+                                     "85", tr("Gen_turn_off_SOC"), \
                                      tr("When the specified SCO value is reached, the diesel generator shuts down."));
     Gen_turn_off_SOC->add_Specification();
 
@@ -3275,7 +3354,7 @@ void MEGAWin::BetterySetup()
         delete Gen_turn_on_SOC;
     }
     Gen_turn_on_SOC = new Specification(this,Gen_turn_on_SOC_explain, ui->Lithum_Tab, 6, 1, \
-                                     tr("25"), tr("Gen_turn_on_SOC"), \
+                                     "25", tr("Gen_turn_on_SOC"), \
                                      tr("When the specified SOC value is reached, the diesel generator starts."));
     Gen_turn_on_SOC->add_Specification();
 
@@ -3284,7 +3363,7 @@ void MEGAWin::BetterySetup()
         delete Gen_charge_SOC;
     }
     Gen_charge_SOC = new Specification(this,Gen_charge_SOC_explain, ui->Lithum_Tab, 7, 1, \
-                                     tr("10"), tr("Gen_charge_SOC"), \
+                                     "10", tr("Gen_charge_SOC"), \
                                      tr("This is the diesel generator charging SOC, this parameter is used in the combined power supply mode, when the battery SOC reaches this value, the PCS starts charging."));
     Gen_charge_SOC->add_Specification();
 
@@ -3293,7 +3372,7 @@ void MEGAWin::BetterySetup()
         delete Grid_charge_SOC;
     }
     Grid_charge_SOC = new Specification(this,Grid_charge_SOC_explain, ui->Lithum_Tab, 8, 1, \
-                                     tr("15"), tr("Grid_charge_SOC"), \
+                                     "15", tr("Grid_charge_SOC"), \
                                      tr("This is the grid charging SOC, this parameter is used in the combined power supply mode, when the battery SOC reaches this value, the PCS starts charging."));
     Grid_charge_SOC->add_Specification();
 
@@ -3302,7 +3381,7 @@ void MEGAWin::BetterySetup()
         delete Grid_capacity;
     }
     Grid_capacity = new Specification(this,Grid_capacity_explain, ui->Lithum_Tab, 9, 1, \
-                                     tr("100"), tr("Grid_capacity"), \
+                                     "100", tr("Grid_capacity"), \
                                      tr("This is the power grid capacity, the maximum capacity input on the AC side of PCS, and this parameter takes effect in the combined power supply mode."));
     Grid_capacity->add_Specification();
 
@@ -3311,7 +3390,7 @@ void MEGAWin::BetterySetup()
         delete Turn_on_SOC;
     }
     Turn_on_SOC = new Specification(this,Turn_on_SOC_explain, ui->Lithum_Tab, 0, 4, \
-                                     tr("20"), tr("Turn_on_SOC"), \
+                                     "20", tr("Turn_on_SOC"), \
                                      tr("When UPS mode is selected and battery SOC reaches this value,PCS starts charging."));
     Turn_on_SOC->add_Specification();
 
@@ -3320,7 +3399,7 @@ void MEGAWin::BetterySetup()
         delete Turn_off_SOC;
     }
     Turn_off_SOC = new Specification(this,Turn_off_SOC_explain, ui->Lithum_Tab, 1, 4, \
-                                     tr("50"), tr("Turn_off_SOC"), \
+                                     "50", tr("Turn_off_SOC"), \
                                      tr("When UPS mode is selected,PCS stops charging when battery SOC reaches this value."));
     Turn_off_SOC->add_Specification();
 
@@ -3329,7 +3408,7 @@ void MEGAWin::BetterySetup()
         delete Turn_on_cell_vol;
     }
     Turn_on_cell_vol = new Specification(this,Turn_on_cell_vol_explain, ui->Lithum_Tab, 2, 4, \
-                                     tr("3100"), tr("Turn_on_cell_vol"), \
+                                     "3100", tr("Turn_on_cell_vol"), \
                                      tr("When UPS mode is selected, the PCS starts charging when the minimum battery voltage reaches the value."));
     Turn_on_cell_vol->add_Specification();
 
@@ -3338,7 +3417,7 @@ void MEGAWin::BetterySetup()
         delete Turn_off_cell_vol;
     }
     Turn_off_cell_vol = new Specification(this,Turn_off_cell_vol_explain, ui->Lithum_Tab, 3, 4, \
-                                     tr("3500"), tr("Turn_off_cell_vol"), \
+                                     "3500", tr("Turn_off_cell_vol"), \
                                      tr("When UPS mode is selected, PCS stops charging when the maximum battery voltage reaches this value."));
     Turn_off_cell_vol->add_Specification();
 
@@ -3347,7 +3426,7 @@ void MEGAWin::BetterySetup()
         delete Turn_on_total_vol;
     }
     Turn_on_total_vol = new Specification(this,Turn_on_total_vol_explain, ui->Lithum_Tab, 4, 4, \
-                                     tr("400"), tr("Turn_on_total_vol"), \
+                                     "400", tr("Turn_on_total_vol"), \
                                      tr("When the UPS mode is selected, the PCS starts charging when the total battery voltage reaches the value."));
     Turn_on_total_vol->add_Specification();
 
@@ -3356,7 +3435,7 @@ void MEGAWin::BetterySetup()
         delete Turn_off_total_vol;
     }
     Turn_off_total_vol = new Specification(this,Turn_off_total_vol_explain, ui->Lithum_Tab, 5, 4, \
-                                     tr("650"), tr("Turn_off_total_vol"), \
+                                     "650", tr("Turn_off_total_vol"), \
                                      tr("When UPS mode is selected, PCS stops charging when the total battery voltage reaches this value."));
     Turn_off_total_vol->add_Specification();
 
@@ -3365,7 +3444,7 @@ void MEGAWin::BetterySetup()
         delete UPS_charge_power;
     }
     UPS_charge_power = new Specification(this,UPS_charge_power_explain, ui->Lithum_Tab, 6, 4, \
-                                     tr("-1"), tr("UPS_charge_power"), \
+                                     "-1", tr("UPS_charge_power"), \
                                      tr("When UPS mode is selected, the backup charging power of PCS is used when the battery starts charging."));
     UPS_charge_power->add_Specification();
 
@@ -3374,199 +3453,167 @@ void MEGAWin::BetterySetup()
         delete Monthly_cycle_time;
     }
     Monthly_cycle_time = new Specification(this,Monthly_cycle_time_explain, ui->Lithum_Tab, 7, 4, \
-                                     tr("0"), tr("Monthly_cycle_time"), \
+                                     "0", tr("Monthly_cycle_time"), \
                                      tr("On the same day of each month, there is a deep charge and discharge."));
     Monthly_cycle_time->add_Specification();
 }
-/************自动运行 绘制button*************/
+
+/***************************************************************
+ * 自动运行
+ ***************************************************************/
 void MEGAWin::AutoOperation()
 {
-    QString temp1 = QString(tr("Check"));
-    QString temp2 = QString(tr("Start_Time"));
-    QString temp3 = QString(tr("End_Time"));
-    QString temp4 = QString(tr("State"));
-    QString temp5 = QString(tr("Power"));
-    QString temp6 = QString(tr("9:00"));
-    QString temp7 = QString(tr("10:00"));
+    QString temp1 = tr("Check");
+    QString temp2 = tr("Start_Time");
+    QString temp3 = tr("End_Time");
+    QString temp4 = tr("State");
+    QString temp5 = tr("Power");
+    QString temp6 = tr("9:00");
+    QString temp7 = tr("10:00");
+    QString temp8 = tr("This is the end time at which the state started with the 'start time' will end.");
+    QString temp9 = tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic.");
+    QString temp10 = tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging.");
+    QString temp11 = tr("This is the start time at which the specified state will begin to be entered with the specified power.");
+    QString temp12 = tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time.");
 
     if(Check1 != nullptr)
     {
         delete Check1;
     }
-    Check1 = new Specification(this,Check1_explain, ui->Time_tableWidget, 0, 0, \
-                                tr("√"), temp1, \
-                                tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check1 = new Specification(this,Check1_explain, ui->Time_tableWidget, 0, 0, "√", temp1, temp12);
     Check1->add_Specification();
 
     if(Check2 != nullptr)
     {
         delete Check2;
     }
-    Check2 = new Specification(this,Check2_explain, ui->Time_tableWidget, 1, 0, \
-                                tr("√"), temp1, \
-                                tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check2 = new Specification(this,Check2_explain, ui->Time_tableWidget, 1, 0, "√", temp1, temp12);
     Check2->add_Specification();
 
     if(Check3 != nullptr)
     {
         delete Check3;
     }
-    Check3 = new Specification(this,Check3_explain, ui->Time_tableWidget, 2, 0, \
-                                tr("√"), temp1, \
-                                tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check3 = new Specification(this,Check3_explain, ui->Time_tableWidget, 2, 0, "√", temp1, temp12);
     Check3->add_Specification();
 
     if(Check4 != nullptr)
     {
         delete Check4;
     }
-    Check4 = new Specification(this,Check4_explain, ui->Time_tableWidget, 3, 0, \
-                                tr("√"), temp1, \
-                                tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check4 = new Specification(this,Check4_explain, ui->Time_tableWidget, 3, 0, "√", temp1, temp12);
     Check4->add_Specification();
 
     if(Check5 != nullptr)
     {
         delete Check5;
     }
-    Check5 = new Specification(this,Check5_explain, ui->Time_tableWidget, 4, 0, \
-                                tr("√"), temp1, \
-                                tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check5 = new Specification(this,Check5_explain, ui->Time_tableWidget, 4, 0, "√", temp1, temp12);
     Check5->add_Specification();
 
     if(Check6 != nullptr)
     {
         delete Check6;
     }
-    Check6 = new Specification(this,Check6_explain, ui->Time_tableWidget, 5, 0, \
-                                 tr(""), temp1, \
-                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check6 = new Specification(this,Check6_explain, ui->Time_tableWidget, 5, 0, "", temp1, temp12);
     Check6->add_Specification();
 
     if(Check7 != nullptr)
     {
         delete Check7;
     }
-    Check7 = new Specification(this,Check7_explain, ui->Time_tableWidget, 6, 0, \
-                                 tr(""), temp1, \
-                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check7 = new Specification(this,Check7_explain, ui->Time_tableWidget, 6, 0, "", temp1, temp12);
     Check7->add_Specification();
 
     if(Check8 != nullptr)
     {
         delete Check8;
     }
-    Check8 = new Specification(this,Check8_explain, ui->Time_tableWidget, 7, 0, \
-                                 tr(""), temp1, \
-                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check8 = new Specification(this,Check8_explain, ui->Time_tableWidget, 7, 0, "", temp1, temp12);
     Check8->add_Specification();
 
     if(Check9 != nullptr)
     {
         delete Check9;
     }
-    Check9 = new Specification(this,Check9_explain, ui->Time_tableWidget, 8, 0, \
-                                 tr(""), temp1, \
-                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check9 = new Specification(this,Check9_explain, ui->Time_tableWidget, 8, 0, "", temp1, temp12);
     Check9->add_Specification();
 
     if(Check10 != nullptr)
     {
         delete Check10;
     }
-    Check10 = new Specification(this,Check10_explain, ui->Time_tableWidget, 9, 0, \
-                                 tr(""), temp1, \
-                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check10 = new Specification(this,Check10_explain, ui->Time_tableWidget, 9, 0, "", temp1, temp12);
     Check10->add_Specification();
 
     if(Check11 != nullptr)
     {
         delete Check11;
     }
-    Check11 = new Specification(this,Check11_explain, ui->Time_tableWidget, 10, 0, \
-                                 tr(""), temp1, \
-                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check11 = new Specification(this,Check11_explain, ui->Time_tableWidget, 10, 0, "", temp1, temp12);
     Check11->add_Specification();
 
     if(Check11 != nullptr)
     {
         delete Check12;
     }
-    Check12 = new Specification(this,Check12_explain, ui->Time_tableWidget, 11, 0, \
-                                 tr(""), temp1, \
-                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check12 = new Specification(this,Check12_explain, ui->Time_tableWidget, 11, 0, "", temp1, temp12);
     Check12->add_Specification();
 
     if(Check13 != nullptr)
     {
         delete Check13;
     }
-    Check13 = new Specification(this,Check13_explain, ui->Time_tableWidget, 12, 0, \
-                                 tr(""), temp1, \
-                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check13 = new Specification(this,Check13_explain, ui->Time_tableWidget, 12, 0, "", temp1, temp12);
     Check13->add_Specification();
 
     if(Check14 != nullptr)
     {
         delete Check14;
     }
-    Check14 = new Specification(this,Check14_explain, ui->Time_tableWidget, 13, 0, \
-                                 tr(""), temp1, \
-                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check14 = new Specification(this,Check14_explain, ui->Time_tableWidget, 13, 0, "", temp1, temp12);
     Check14->add_Specification();
 
     if(Check15 != nullptr)
     {
         delete Check15;
     }
-    Check15 = new Specification(this,Check15_explain, ui->Time_tableWidget, 14, 0, \
-                                 tr(""), temp1, \
-                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check15 = new Specification(this,Check15_explain, ui->Time_tableWidget, 14, 0, "", temp1, temp12);
     Check15->add_Specification();
 
     if(Check16 != nullptr)
     {
         delete Check16;
     }
-    Check16 = new Specification(this,Check16_explain, ui->Time_tableWidget, 15, 0, \
-                                 tr(""), temp1, \
-                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check16 = new Specification(this,Check16_explain, ui->Time_tableWidget, 15, 0, "", temp1, temp12);
     Check16->add_Specification();
 
     if(Check17 != nullptr)
     {
         delete Check17;
     }
-    Check17 = new Specification(this,Check17_explain, ui->Time_tableWidget, 16, 0, \
-                                 tr(""), temp1, \
-                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check17 = new Specification(this,Check17_explain, ui->Time_tableWidget, 16, 0, "", temp1, temp12);
     Check17->add_Specification();
 
     if(Check18 != nullptr)
     {
         delete Check18;
     }
-    Check18 = new Specification(this,Check18_explain, ui->Time_tableWidget, 17, 0, \
-                                 tr(""), temp1, \
-                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check18 = new Specification(this,Check18_explain, ui->Time_tableWidget, 17, 0, "", temp1, temp12);
     Check18->add_Specification();
 
     if(Check19 != nullptr)
     {
         delete Check19;
     }
-    Check19 = new Specification(this,Check19_explain, ui->Time_tableWidget, 18, 0, \
-                                 tr(""), temp1, \
-                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check19 = new Specification(this,Check19_explain, ui->Time_tableWidget, 18, 0, "", temp1, temp12);
     Check19->add_Specification();
 
     if(Check20 != nullptr)
     {
         delete Check20;
     }
-    Check20 = new Specification(this,Check20_explain, ui->Time_tableWidget, 19, 0, \
-                                 tr(""), temp1, \
-                                 tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time."));
+    Check20 = new Specification(this,Check20_explain, ui->Time_tableWidget, 19, 0, "", temp1, temp12);
     Check20->add_Specification();
 
 
@@ -3574,180 +3621,140 @@ void MEGAWin::AutoOperation()
     {
         delete Start_T1;
     }
-    Start_T1 = new Specification(this,Start_T1_explain, ui->Time_tableWidget, 0, 1, \
-                                  temp6, temp2, \
-                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T1 = new Specification(this,Start_T1_explain, ui->Time_tableWidget, 0, 1, temp6, temp2, temp11);
     Start_T1->add_Specification();
 
     if(Start_T2 != nullptr)
     {
         delete Start_T2;
     }
-    Start_T2 = new Specification(this,Start_T2_explain, ui->Time_tableWidget, 1, 1, \
-                                  temp6, temp2, \
-                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T2 = new Specification(this,Start_T2_explain, ui->Time_tableWidget, 1, 1, temp6, temp2, temp11);
     Start_T2->add_Specification();
 
     if(Start_T3 != nullptr)
     {
         delete Start_T3;
     }
-    Start_T3 = new Specification(this,Start_T3_explain, ui->Time_tableWidget, 2, 1, \
-                                  temp6, temp2, \
-                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T3 = new Specification(this,Start_T3_explain, ui->Time_tableWidget, 2, 1, temp6, temp2, temp11);
     Start_T3->add_Specification();
 
     if(Start_T4 != nullptr)
     {
         delete Start_T4;
     }
-    Start_T4 = new Specification(this,Start_T4_explain, ui->Time_tableWidget, 3, 1, \
-                                  temp6, temp2, \
-                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T4 = new Specification(this,Start_T4_explain, ui->Time_tableWidget, 3, 1, temp6, temp2, temp11);
     Start_T4->add_Specification();
 
     if(Start_T5 != nullptr)
     {
         delete Start_T5;
     }
-    Start_T5 = new Specification(this,Start_T5_explain, ui->Time_tableWidget, 4, 1, \
-                                  temp6, temp2, \
-                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T5 = new Specification(this,Start_T5_explain, ui->Time_tableWidget, 4, 1, temp6, temp2, temp11);
     Start_T5->add_Specification();
 
     if(Start_T6 != nullptr)
     {
         delete Start_T6;
     }
-    Start_T6 = new Specification(this,Start_T6_explain, ui->Time_tableWidget, 5, 1, \
-                                  temp6, temp2, \
-                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T6 = new Specification(this,Start_T6_explain, ui->Time_tableWidget, 5, 1, temp6, temp2, temp11);
     Start_T6->add_Specification();
 
     if(Start_T7 != nullptr)
     {
         delete Start_T7;
     }
-    Start_T7 = new Specification(this,Start_T7_explain, ui->Time_tableWidget, 6, 1, \
-                                  temp6, temp2, \
-                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T7 = new Specification(this,Start_T7_explain, ui->Time_tableWidget, 6, 1, temp6, temp2, temp11);
     Start_T7->add_Specification();
 
     if(Start_T8 != nullptr)
     {
         delete Start_T8;
     }
-    Start_T8 = new Specification(this,Start_T8_explain, ui->Time_tableWidget, 7, 1, \
-                                  temp6, temp2, \
-                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T8 = new Specification(this,Start_T8_explain, ui->Time_tableWidget, 7, 1, temp6, temp2, temp11);
     Start_T8->add_Specification();
 
     if(Start_T9 != nullptr)
     {
         delete Start_T9;
     }
-    Start_T9 = new Specification(this,Start_T9_explain, ui->Time_tableWidget, 8, 1, \
-                                  temp6, temp2, \
-                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T9 = new Specification(this,Start_T9_explain, ui->Time_tableWidget, 8, 1, temp6, temp2, temp11);
     Start_T9->add_Specification();
 
     if(Start_T10 != nullptr)
     {
         delete Start_T10;
     }
-    Start_T10 = new Specification(this,Start_T10_explain, ui->Time_tableWidget, 9, 1, \
-                                  temp6, temp2, \
-                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T10 = new Specification(this,Start_T10_explain, ui->Time_tableWidget, 9, 1, temp6, temp2, temp11);
     Start_T10->add_Specification();
 
     if(Start_T11 != nullptr)
     {
         delete Start_T11;
     }
-    Start_T11 = new Specification(this,Start_T11_explain, ui->Time_tableWidget, 10, 1, \
-                                  temp6, temp2, \
-                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T11 = new Specification(this,Start_T11_explain, ui->Time_tableWidget, 10, 1, temp6, temp2, temp11);
     Start_T11->add_Specification();
 
     if(Start_T12 != nullptr)
     {
         delete Start_T12;
     }
-    Start_T12 = new Specification(this,Start_T12_explain, ui->Time_tableWidget, 11, 1, \
-                                  temp6, temp2, \
-                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T12 = new Specification(this,Start_T12_explain, ui->Time_tableWidget, 11, 1, temp6, temp2, temp11);
     Start_T12->add_Specification();
 
     if(Start_T13 != nullptr)
     {
         delete Start_T13;
     }
-    Start_T13 = new Specification(this,Start_T13_explain, ui->Time_tableWidget, 12, 1, \
-                                  temp6, temp2, \
-                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T13 = new Specification(this,Start_T13_explain, ui->Time_tableWidget, 12, 1, temp6, temp2, temp11);
     Start_T13->add_Specification();
 
     if(Start_T14 != nullptr)
     {
         delete Start_T14;
     }
-    Start_T14 = new Specification(this,Start_T14_explain, ui->Time_tableWidget, 13, 1, \
-                                  temp6, temp2, \
-                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T14 = new Specification(this,Start_T14_explain, ui->Time_tableWidget, 13, 1, temp6, temp2, temp11);
     Start_T14->add_Specification();
 
     if(Start_T15 != nullptr)
     {
         delete Start_T15;
     }
-    Start_T15 = new Specification(this,Start_T15_explain, ui->Time_tableWidget, 14, 1, \
-                                  temp6, temp2, \
-                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T15 = new Specification(this,Start_T15_explain, ui->Time_tableWidget, 14, 1, temp6, temp2, temp11);
     Start_T15->add_Specification();
 
     if(Start_T16 != nullptr)
     {
         delete Start_T16;
     }
-    Start_T16 = new Specification(this,Start_T16_explain, ui->Time_tableWidget, 15, 1, \
-                                  temp6, temp2, \
-                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T16 = new Specification(this,Start_T16_explain, ui->Time_tableWidget, 15, 1, temp6, temp2, temp11);
     Start_T16->add_Specification();
 
     if(Start_T17 != nullptr)
     {
         delete Start_T17;
     }
-    Start_T17 = new Specification(this,Start_T17_explain, ui->Time_tableWidget, 16, 1, \
-                                  temp6, temp2, \
-                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T17 = new Specification(this,Start_T17_explain, ui->Time_tableWidget, 16, 1, temp6, temp2, temp11);
     Start_T17->add_Specification();
 
     if(Start_T18 != nullptr)
     {
         delete Start_T18;
     }
-    Start_T18 = new Specification(this,Start_T18_explain, ui->Time_tableWidget, 17, 1, \
-                                  temp6, temp2, \
-                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T18 = new Specification(this,Start_T18_explain, ui->Time_tableWidget, 17, 1, temp6, temp2, temp11);
     Start_T18->add_Specification();
 
     if(Start_T19 != nullptr)
     {
         delete Start_T19;
     }
-    Start_T19 = new Specification(this,Start_T19_explain, ui->Time_tableWidget, 18, 1, \
-                                  temp6, temp2, \
-                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T19 = new Specification(this,Start_T19_explain, ui->Time_tableWidget, 18, 1, temp6, temp2, temp11);
     Start_T19->add_Specification();
 
     if(Start_T20 != nullptr)
     {
         delete Start_T20;
     }
-    Start_T20 = new Specification(this,Start_T20_explain, ui->Time_tableWidget, 19, 1, \
-                                  temp6, temp2, \
-                                  tr("This is the start time at which the specified state will begin to be entered with the specified power."));
+    Start_T20 = new Specification(this,Start_T20_explain, ui->Time_tableWidget, 19, 1, temp6, temp2, temp11);
     Start_T20->add_Specification();
 
 
@@ -3755,180 +3762,140 @@ void MEGAWin::AutoOperation()
     {
         delete End_T1;
     }
-    End_T1 = new Specification(this,End_T1_explain, ui->Time_tableWidget, 0, 2, \
-                                temp7, temp3, \
-                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T1 = new Specification(this,End_T1_explain, ui->Time_tableWidget, 0, 2, temp7, temp3, temp8);
     End_T1->add_Specification();
 
     if(End_T2 != nullptr)
     {
         delete End_T2;
     }
-    End_T2 = new Specification(this,End_T2_explain, ui->Time_tableWidget, 1, 2, \
-                                temp7, temp3, \
-                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T2 = new Specification(this,End_T2_explain, ui->Time_tableWidget, 1, 2, temp7, temp3, temp8);
     End_T2->add_Specification();
 
     if(End_T3 != nullptr)
     {
         delete End_T3;
     }
-    End_T3 = new Specification(this,End_T3_explain, ui->Time_tableWidget, 2, 2, \
-                                temp7, temp3, \
-                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T3 = new Specification(this,End_T3_explain, ui->Time_tableWidget, 2, 2, temp7, temp3, temp8);
     End_T3->add_Specification();
 
     if(End_T4 != nullptr)
     {
         delete End_T4;
     }
-    End_T4 = new Specification(this,End_T4_explain, ui->Time_tableWidget, 3, 2, \
-                                temp7, temp3, \
-                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T4 = new Specification(this,End_T4_explain, ui->Time_tableWidget, 3, 2, temp7, temp3, temp8);
     End_T4->add_Specification();
 
     if(End_T5 != nullptr)
     {
         delete End_T5;
     }
-    End_T5 = new Specification(this,End_T5_explain, ui->Time_tableWidget, 4, 2, \
-                                temp7, temp3, \
-                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T5 = new Specification(this,End_T5_explain, ui->Time_tableWidget, 4, 2, temp7, temp3, temp8);
     End_T5->add_Specification();
 
     if(End_T6 != nullptr)
     {
         delete End_T6;
     }
-    End_T6 = new Specification(this,End_T6_explain, ui->Time_tableWidget, 5, 2, \
-                                temp7, temp3, \
-                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T6 = new Specification(this,End_T6_explain, ui->Time_tableWidget, 5, 2, temp7, temp3, temp8);
     End_T6->add_Specification();
 
     if(End_T7 != nullptr)
     {
         delete End_T7;
     }
-    End_T7 = new Specification(this,End_T7_explain, ui->Time_tableWidget, 6, 2, \
-                                temp7, temp3, \
-                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T7 = new Specification(this,End_T7_explain, ui->Time_tableWidget, 6, 2, temp7, temp3, temp8);
     End_T7->add_Specification();
 
     if(End_T8 != nullptr)
     {
         delete End_T8;
     }
-    End_T8 = new Specification(this,End_T8_explain, ui->Time_tableWidget, 7, 2, \
-                                temp7, temp3, \
-                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T8 = new Specification(this,End_T8_explain, ui->Time_tableWidget, 7, 2, temp7, temp3, temp8);
     End_T8->add_Specification();
 
     if(End_T9 != nullptr)
     {
         delete End_T9;
     }
-    End_T9 = new Specification(this,End_T9_explain, ui->Time_tableWidget, 8, 2, \
-                                temp7, temp3, \
-                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T9 = new Specification(this,End_T9_explain, ui->Time_tableWidget, 8, 2, temp7, temp3, temp8);
     End_T9->add_Specification();
 
     if(End_T10 != nullptr)
     {
         delete End_T10;
     }
-    End_T10 = new Specification(this,End_T10_explain, ui->Time_tableWidget, 9, 2, \
-                                temp7, temp3, \
-                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T10 = new Specification(this,End_T10_explain, ui->Time_tableWidget, 9, 2, temp7, temp3, temp8);
     End_T10->add_Specification();
 
     if(End_T11 != nullptr)
     {
         delete End_T11;
     }
-    End_T11 = new Specification(this,End_T11_explain, ui->Time_tableWidget, 10, 2, \
-                                temp7, temp3, \
-                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T11 = new Specification(this,End_T11_explain, ui->Time_tableWidget, 10, 2, temp7, temp3, temp8);
     End_T11->add_Specification();
 
     if(End_T12 != nullptr)
     {
         delete End_T12;
     }
-    End_T12 = new Specification(this,End_T12_explain, ui->Time_tableWidget, 11, 2, \
-                                temp7, temp3, \
-                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T12 = new Specification(this,End_T12_explain, ui->Time_tableWidget, 11, 2, temp7, temp3, temp8);
     End_T12->add_Specification();
 
     if(End_T13 != nullptr)
     {
         delete End_T13;
     }
-    End_T13 = new Specification(this,End_T13_explain, ui->Time_tableWidget, 12, 2, \
-                                temp7, temp3, \
-                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T13 = new Specification(this,End_T13_explain, ui->Time_tableWidget, 12, 2, temp7, temp3, temp8);
     End_T13->add_Specification();
 
     if(End_T14 != nullptr)
     {
         delete End_T14;
     }
-    End_T14 = new Specification(this,End_T14_explain, ui->Time_tableWidget, 13, 2, \
-                                temp7, temp3, \
-                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T14 = new Specification(this,End_T14_explain, ui->Time_tableWidget, 13, 2, temp7, temp3, temp8);
     End_T14->add_Specification();
 
     if(End_T15 != nullptr)
     {
         delete End_T15;
     }
-    End_T15 = new Specification(this,End_T15_explain, ui->Time_tableWidget, 14, 2, \
-                                temp7, temp3, \
-                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T15 = new Specification(this,End_T15_explain, ui->Time_tableWidget, 14, 2, temp7, temp3, temp8);
     End_T15->add_Specification();
 
     if(End_T16 != nullptr)
     {
         delete End_T16;
     }
-    End_T16 = new Specification(this,End_T16_explain, ui->Time_tableWidget, 15, 2, \
-                                temp7, temp3, \
-                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T16 = new Specification(this,End_T16_explain, ui->Time_tableWidget, 15, 2, temp7, temp3, temp8);
     End_T16->add_Specification();
 
     if(End_T17 != nullptr)
     {
         delete End_T17;
     }
-    End_T17 = new Specification(this,End_T17_explain, ui->Time_tableWidget, 16, 2, \
-                                temp7, temp3, \
-                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T17 = new Specification(this,End_T17_explain, ui->Time_tableWidget, 16, 2, temp7, temp3, temp8);
     End_T17->add_Specification();
 
     if(End_T18 != nullptr)
     {
         delete End_T18;
     }
-    End_T18 = new Specification(this,End_T18_explain, ui->Time_tableWidget, 17, 2, \
-                                temp7, temp3, \
-                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T18 = new Specification(this,End_T18_explain, ui->Time_tableWidget, 17, 2, temp7, temp3, temp8);
     End_T18->add_Specification();
 
     if(End_T19 != nullptr)
     {
         delete End_T19;
     }
-    End_T19 = new Specification(this,End_T19_explain, ui->Time_tableWidget, 18, 2, \
-                                temp7, temp3, \
-                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T19 = new Specification(this,End_T19_explain, ui->Time_tableWidget, 18, 2, temp7, temp3, temp8);
     End_T19->add_Specification();
 
     if(End_T20 != nullptr)
     {
         delete End_T20;
     }
-    End_T20 = new Specification(this,End_T20_explain, ui->Time_tableWidget, 19, 2, \
-                                temp7, temp3, \
-                                tr("This is the end time at which the state started with the 'start time' will end."));
+    End_T20 = new Specification(this,End_T20_explain, ui->Time_tableWidget, 19, 2, temp7, temp3, temp8);
     End_T20->add_Specification();
 
 
@@ -3936,180 +3903,140 @@ void MEGAWin::AutoOperation()
     {
         delete State1;
     }
-    State1 = new Specification(this,State1_explain, ui->Time_tableWidget, 0, 3, \
-                                tr("charge"), temp4, \
-                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State1 = new Specification(this,State1_explain, ui->Time_tableWidget, 0, 3, tr("charge"), temp4, temp9);
     State1->add_Specification();
 
     if(State2 != nullptr)
     {
         delete State2;
     }
-    State2 = new Specification(this,State2_explain, ui->Time_tableWidget, 1, 3, \
-                                tr("discharge"), temp4, \
-                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State2 = new Specification(this,State2_explain, ui->Time_tableWidget, 1, 3, tr("discharge"), temp4, temp9);
     State2->add_Specification();
 
     if(State3 != nullptr)
     {
         delete State3;
     }
-    State3 = new Specification(this,State3_explain, ui->Time_tableWidget, 2, 3, \
-                                tr("charge"), temp4, \
-                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State3 = new Specification(this,State3_explain, ui->Time_tableWidget, 2, 3, tr("charge"), temp4, temp9);
     State3->add_Specification();
 
     if(State4 != nullptr)
     {
         delete State4;
     }
-    State4 = new Specification(this,State4_explain, ui->Time_tableWidget, 3, 3, \
-                                tr("discharge"), temp4, \
-                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State4 = new Specification(this,State4_explain, ui->Time_tableWidget, 3, 3, tr("discharge"), temp4, temp9);
     State4->add_Specification();
 
     if(State5 != nullptr)
     {
         delete State5;
     }
-    State5 = new Specification(this,State5_explain, ui->Time_tableWidget, 4, 3, \
-                                tr("charge"), temp4, \
-                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State5 = new Specification(this,State5_explain, ui->Time_tableWidget, 4, 3, tr("charge"), temp4, temp9);
     State5->add_Specification();
 
     if(State6 != nullptr)
     {
         delete State6;
     }
-    State6 = new Specification(this,State6_explain, ui->Time_tableWidget, 5, 3, \
-                                tr("discharge"), temp4, \
-                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State6 = new Specification(this,State6_explain, ui->Time_tableWidget, 5, 3, tr("discharge"), temp4, temp9);
     State6->add_Specification();
 
     if(State7 != nullptr)
     {
         delete State7;
     }
-    State7 = new Specification(this,State7_explain, ui->Time_tableWidget, 6, 3, \
-                                tr("charge"), temp4, \
-                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State7 = new Specification(this,State7_explain, ui->Time_tableWidget, 6, 3, tr("charge"), temp4, temp9);
     State7->add_Specification();
 
     if(State8 != nullptr)
     {
         delete State8;
     }
-    State8 = new Specification(this,State8_explain, ui->Time_tableWidget, 7, 3, \
-                                tr("discharge"), temp4, \
-                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State8 = new Specification(this,State8_explain, ui->Time_tableWidget, 7, 3, tr("discharge"), temp4, temp9);
     State8->add_Specification();
 
     if(State9 != nullptr)
     {
         delete State9;
     }
-    State9 = new Specification(this,State9_explain, ui->Time_tableWidget, 8, 3, \
-                                tr("charge"), temp4, \
-                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State9 = new Specification(this,State9_explain, ui->Time_tableWidget, 8, 3, tr("charge"), temp4, temp9);
     State9->add_Specification();
 
     if(State10 != nullptr)
     {
         delete State10;
     }
-    State10 = new Specification(this,State10_explain, ui->Time_tableWidget, 9, 3, \
-                                tr("discharge"), temp4, \
-                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State10 = new Specification(this,State10_explain, ui->Time_tableWidget, 9, 3, tr("discharge"), temp4, temp9);
     State10->add_Specification();
 
     if(State11 != nullptr)
     {
         delete State11;
     }
-    State11 = new Specification(this,State11_explain, ui->Time_tableWidget, 10, 3, \
-                                tr("charge"), temp4, \
-                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State11 = new Specification(this,State11_explain, ui->Time_tableWidget, 10, 3, tr("charge"), temp4, temp9);
     State11->add_Specification();
 
     if(State12 != nullptr)
     {
         delete State12;
     }
-    State12 = new Specification(this,State12_explain, ui->Time_tableWidget, 11, 3, \
-                                tr("discharge"), temp4, \
-                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State12 = new Specification(this,State12_explain, ui->Time_tableWidget, 11, 3, tr("discharge"), temp4, temp9);
     State12->add_Specification();
 
     if(State13 != nullptr)
     {
         delete State13;
     }
-    State13 = new Specification(this,State13_explain, ui->Time_tableWidget, 12, 3, \
-                                tr("charge"), temp4, \
-                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State13 = new Specification(this,State13_explain, ui->Time_tableWidget, 12, 3, tr("charge"), temp4, temp9);
     State13->add_Specification();
 
     if(State14 != nullptr)
     {
         delete State14;
     }
-    State14 = new Specification(this,State14_explain, ui->Time_tableWidget, 13, 3, \
-                                tr("discharge"), temp4, \
-                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State14 = new Specification(this,State14_explain, ui->Time_tableWidget, 13, 3, tr("discharge"), temp4, temp9);
     State14->add_Specification();
 
     if(State15 != nullptr)
     {
         delete State15;
     }
-    State15 = new Specification(this,State15_explain, ui->Time_tableWidget, 14, 3, \
-                                tr("charge"), temp4, \
-                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State15 = new Specification(this,State15_explain, ui->Time_tableWidget, 14, 3, tr("charge"), temp4, temp9);
     State15->add_Specification();
 
     if(State16 != nullptr)
     {
         delete State16;
     }
-    State16 = new Specification(this,State16_explain, ui->Time_tableWidget, 15, 3, \
-                                tr("discharge"), temp4, \
-                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State16 = new Specification(this,State16_explain, ui->Time_tableWidget, 15, 3, tr("discharge"), temp4, temp9);
     State16->add_Specification();
 
     if(State17 != nullptr)
     {
         delete State17;
     }
-    State17 = new Specification(this,State17_explain, ui->Time_tableWidget, 16, 3, \
-                                tr("charge"), temp4, \
-                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State17 = new Specification(this,State17_explain, ui->Time_tableWidget, 16, 3, tr("charge"), temp4, temp9);
     State17->add_Specification();
 
     if(State18 != nullptr)
     {
         delete State18;
     }
-    State18 = new Specification(this,State18_explain, ui->Time_tableWidget, 17, 3, \
-                                tr("discharge"), temp4, \
-                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State18 = new Specification(this,State18_explain, ui->Time_tableWidget, 17, 3, tr("discharge"), temp4, temp9);
     State18->add_Specification();
 
     if(State19 != nullptr)
     {
         delete State19;
     }
-    State19 = new Specification(this,State19_explain, ui->Time_tableWidget, 18, 3, \
-                                tr("charge"), temp4, \
-                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State19 = new Specification(this,State19_explain, ui->Time_tableWidget, 18, 3, tr("charge"), temp4, temp9);
     State19->add_Specification();
 
     if(State20 != nullptr)
     {
         delete State20;
     }
-    State20 = new Specification(this,State20_explain, ui->Time_tableWidget, 19, 3, \
-                                tr("discharge"), temp4, \
-                                tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic."));
+    State20 = new Specification(this,State20_explain, ui->Time_tableWidget, 19, 3, tr("discharge"), temp4, temp9);
     State20->add_Specification();
 
 
@@ -4117,36 +4044,28 @@ void MEGAWin::AutoOperation()
     {
         delete Power1;
     }
-    Power1 = new Specification(this,Power1_explain, ui->Time_tableWidget, 0, 4, \
-                                tr("-50"), temp5, \
-                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power1 = new Specification(this,Power1_explain, ui->Time_tableWidget, 0, 4, "-50", temp5, temp10);
     Power1->add_Specification();
 
     if(Power2 != nullptr)
     {
         delete Power2;
     }
-    Power2 = new Specification(this,Power2_explain, ui->Time_tableWidget, 1, 4, \
-                                tr("50"), temp5, \
-                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power2 = new Specification(this,Power2_explain, ui->Time_tableWidget, 1, 4, "50", temp5, temp10);
     Power2->add_Specification();
 
     if(Power3 != nullptr)
     {
         delete Power3;
     }
-    Power3 = new Specification(this,Power3_explain, ui->Time_tableWidget, 2, 4, \
-                                tr("-50"), temp5, \
-                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power3 = new Specification(this,Power3_explain, ui->Time_tableWidget, 2, 4, "-50", temp5, temp10);
     Power3->add_Specification();
 
     if(Power4 != nullptr)
     {
         delete Power4;
     }
-    Power4 = new Specification(this,Power4_explain, ui->Time_tableWidget, 3, 4, \
-                                tr("50"), temp5, \
-                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power4 = new Specification(this,Power4_explain, ui->Time_tableWidget, 3, 4, "50", temp5, temp10);
     Power4->add_Specification();
 
 
@@ -4154,18 +4073,14 @@ void MEGAWin::AutoOperation()
     {
         delete Power5;
     }
-    Power5 = new Specification(this,Power5_explain, ui->Time_tableWidget, 4, 4, \
-                                tr("-50"), temp5, \
-                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power5 = new Specification(this,Power5_explain, ui->Time_tableWidget, 4, 4, "-50", temp5, temp10);
     Power5->add_Specification();
 
     if(Power6 != nullptr)
     {
         delete Power6;
     }
-    Power6 = new Specification(this,Power6_explain, ui->Time_tableWidget, 5, 4, \
-                                tr("50"), temp5, \
-                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power6 = new Specification(this,Power6_explain, ui->Time_tableWidget, 5, 4, "50", temp5, temp10);
     Power6->add_Specification();
 
 
@@ -4173,18 +4088,14 @@ void MEGAWin::AutoOperation()
     {
         delete Power7;
     }
-    Power7 = new Specification(this,Power7_explain, ui->Time_tableWidget, 6, 4, \
-                                tr("-50"), temp5, \
-                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power7 = new Specification(this,Power7_explain, ui->Time_tableWidget, 6, 4, "-50", temp5, temp10);
     Power7->add_Specification();
 
     if(Power8 != nullptr)
     {
         delete Power8;
     }
-    Power8 = new Specification(this,Power8_explain, ui->Time_tableWidget, 7, 4, \
-                                tr("50"), temp5, \
-                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power8 = new Specification(this,Power8_explain, ui->Time_tableWidget, 7, 4, "50", temp5, temp10);
     Power8->add_Specification();
 
 
@@ -4192,18 +4103,14 @@ void MEGAWin::AutoOperation()
     {
         delete Power9;
     }
-    Power9 = new Specification(this,Power9_explain, ui->Time_tableWidget, 8, 4, \
-                                tr("-50"), temp5, \
-                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power9 = new Specification(this,Power9_explain, ui->Time_tableWidget, 8, 4, "-50", temp5, temp10);
     Power9->add_Specification();
 
     if(Power10 != nullptr)
     {
         delete Power10;
     }
-    Power10 = new Specification(this,Power10_explain, ui->Time_tableWidget, 9, 4, \
-                                tr("50"), temp5, \
-                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power10 = new Specification(this,Power10_explain, ui->Time_tableWidget, 9, 4, "50", temp5, temp10);
     Power10->add_Specification();
 
 
@@ -4211,18 +4118,14 @@ void MEGAWin::AutoOperation()
     {
         delete Power11;
     }
-    Power11 = new Specification(this,Power11_explain, ui->Time_tableWidget, 10, 4, \
-                                tr("-50"), temp5, \
-                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power11 = new Specification(this,Power11_explain, ui->Time_tableWidget, 10, 4, "-50", temp5, temp10);
     Power11->add_Specification();
 
     if(Power12 != nullptr)
     {
         delete Power12;
     }
-    Power12 = new Specification(this,Power12_explain, ui->Time_tableWidget, 11, 4, \
-                                tr("50"), temp5, \
-                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power12 = new Specification(this,Power12_explain, ui->Time_tableWidget, 11, 4, "50", temp5, temp10);
     Power12->add_Specification();
 
 
@@ -4230,18 +4133,14 @@ void MEGAWin::AutoOperation()
     {
         delete Power13;
     }
-    Power13 = new Specification(this,Power13_explain, ui->Time_tableWidget, 12, 4, \
-                                tr("-50"), temp5, \
-                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power13 = new Specification(this,Power13_explain, ui->Time_tableWidget, 12, 4, "-50", temp5, temp10);
     Power13->add_Specification();
 
     if(Power14 != nullptr)
     {
         delete Power14;
     }
-    Power14 = new Specification(this,Power14_explain, ui->Time_tableWidget, 13, 4, \
-                                tr("50"), temp5, \
-                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power14 = new Specification(this,Power14_explain, ui->Time_tableWidget, 13, 4, "50", temp5, temp10);
     Power14->add_Specification();
 
 
@@ -4249,18 +4148,14 @@ void MEGAWin::AutoOperation()
     {
         delete Power15;
     }
-    Power15 = new Specification(this,Power15_explain, ui->Time_tableWidget, 14, 4, \
-                                tr("-50"), temp5, \
-                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power15 = new Specification(this,Power15_explain, ui->Time_tableWidget, 14, 4, "-50", temp5, temp10);
     Power15->add_Specification();
 
     if(Power16 != nullptr)
     {
         delete Power16;
     }
-    Power16 = new Specification(this,Power16_explain, ui->Time_tableWidget, 15, 4, \
-                                tr("50"), temp5, \
-                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power16 = new Specification(this,Power16_explain, ui->Time_tableWidget, 15, 4, "50", temp5, temp10);
     Power16->add_Specification();
 
 
@@ -4268,40 +4163,35 @@ void MEGAWin::AutoOperation()
     {
         delete Power17;
     }
-    Power17 = new Specification(this,Power17_explain, ui->Time_tableWidget, 16, 4, \
-                                tr("-50"), temp5, \
-                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power17 = new Specification(this,Power17_explain, ui->Time_tableWidget, 16, 4, "-50", temp5, temp10);
     Power17->add_Specification();
 
     if(Power18 != nullptr)
     {
         delete Power18;
     }
-    Power18 = new Specification(this,Power18_explain, ui->Time_tableWidget, 17, 4, \
-                                tr("50"), temp5, \
-                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power18 = new Specification(this,Power18_explain, ui->Time_tableWidget, 17, 4, "50", temp5, temp10);
     Power18->add_Specification();
 
     if(Power19 != nullptr)
     {
         delete Power19;
     }
-    Power19 = new Specification(this,Power19_explain, ui->Time_tableWidget, 18, 4, \
-                                tr("-50"), temp5, \
-                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power19 = new Specification(this,Power19_explain, ui->Time_tableWidget, 18, 4, "-50", temp5, temp10);
     Power19->add_Specification();
 
     if(Power20 != nullptr)
     {
         delete Power20;
     }
-    Power20 = new Specification(this,Power20_explain, ui->Time_tableWidget, 19, 4, \
-                                tr("50"), temp5, \
-                                tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging."));
+    Power20 = new Specification(this,Power20_explain, ui->Time_tableWidget, 19, 4, "50", temp5, temp10);
     Power20->add_Specification();
 
 }
-/*********系统信息 绘制button**********/
+
+/***************************************************************
+ * 系统信息
+ ***************************************************************/
 void MEGAWin::SystemMessages()
 {
     if(Manufacturer_name != nullptr)
@@ -4358,7 +4248,10 @@ void MEGAWin::SystemMessages()
                                      tr("This is SN, the serial number of the product."));
     SN->add_Specification();
 }
-/***********功能设置 绘制button************/
+
+/***************************************************************
+ * 功能设置
+ ***************************************************************/
 void MEGAWin::FunctionSet()
 {
     if(Battery_type != nullptr)
@@ -4588,7 +4481,10 @@ void MEGAWin::FunctionSet()
     Sounds->add_Specification();
 
 }
-/***********系统参数 绘制button************/
+
+/***************************************************************
+ * 系统参数
+ ***************************************************************/
 void MEGAWin::SystemParameter()
 {
     if(Change_rate_of_power != nullptr)
@@ -4705,7 +4601,7 @@ void MEGAWin::SystemParameter()
     }
     Machine_type = new Specification(this,Machine_type_explain, ui->UI_SystemParameter_Tab, 0, 4, \
                                      "PCS-TS", tr("Machine type"), \
-                                     tr("Set according to the machine model and factory value. The default MPS-TS."));
+                                     tr("Set according to the machine model on site, the factory value prevails, the default PCS-TS, if you need to change, please contact customer service."));
     Machine_type->add_Specification();
 
     if(Machine_capacity != nullptr)
@@ -4825,7 +4721,10 @@ void MEGAWin::SystemParameter()
                                    tr("Clear previous recorded data and operation data of the system."));
     Clear_Data->add_Specification();
 }
-/***********外设 绘制button************/
+
+/***************************************************************
+ * 外设
+ ***************************************************************/
 void MEGAWin::Peripheral()
 {
     QString str = tr("Normally closed circuit (NC) or normally open circuit (NO) according to field Settings.");
@@ -5056,7 +4955,10 @@ void MEGAWin::Peripheral()
                                    tr("Prompt"), tr("DO_3_Action"), str1);
     DO_3_Action->add_Specification();
 }
-/***********BMS保护 绘制button************/
+
+/***************************************************************
+ * BMS保护
+ ***************************************************************/
 void MEGAWin::BMS_Protect()
 {
     if(DOD_Action != nullptr)
@@ -5168,7 +5070,10 @@ void MEGAWin::BMS_Protect()
     BMS_fualt_DP->add_Specification();
 
 }
-/***********调试 绘制button************/
+
+/***************************************************************
+ * 调试
+ ***************************************************************/
 void MEGAWin::Debugg()
 {
     QString str = tr("It is used for internal debugging only.");
@@ -5445,7 +5350,10 @@ void MEGAWin::Debugg()
                                    "0", tr("parallel signal"), str);
     parallel_signal->add_Specification();
 }
-/*********** 选择静态IP地址 ************/
+
+/***************************************************************
+ * 选择静态IP地址
+ ***************************************************************/
 void MEGAWin::on_radio_static_clicked()
 {
     IPShow = true;
@@ -5465,7 +5373,10 @@ void MEGAWin::on_radio_static_clicked()
     }
     QMessageBox::question(this ,tr("static"), tr("If this parameter is selected, static IP addresses are used."), tr("OK"));
 }
-/*********** 选择自动分配IP地址 ************/
+
+/***************************************************************
+ * 选择自动分配IP地址
+ ***************************************************************/
 void MEGAWin::on_radio_dhcp_clicked()
 {
     IPShow = false;
@@ -5485,49 +5396,61 @@ void MEGAWin::on_radio_dhcp_clicked()
     }
     QMessageBox::question(this ,tr("dhcp"), tr("This is an automatic IP acquisition, currently not supported."), tr("OK"));
 }
-/*********** 调入测试数据 ************/
+
+/***************************************************************
+ * 调入测试数据
+ ***************************************************************/
 void MEGAWin::on_radio_test_data_btn_clicked()
 {
     QMessageBox::question(this ,tr("test data"), tr("Call in test data (for internal testing personnel only)."), tr("OK"));
 }
-/*********** 修改时间 ************/
+
+/***************************************************************
+ * 修改时间
+ ***************************************************************/
 void MEGAWin::on_TimeSeting_btn_clicked()
 {
     QMessageBox::question(this ,tr("Time"), tr("Click here to modify the time displayed on the HMI."), tr("OK"));
 }
-/****************切换语言*******************/
+
+/***************************************************************
+ * 切换语言
+ ***************************************************************/
 void MEGAWin::on_ChangeLanguage_btn_clicked()
 {
     Change_Language();
 }
-
+/***************************************************************
+ * 高级设置切换语言
+ ***************************************************************/
 void MEGAWin::on_ChangeLanguage_btn_1_clicked()
 {
     Change_Language();
 }
 
-/****************故障信息表搜索功能***************/
+/***************************************************************
+ * 故障信息表搜索功能
+ ***************************************************************/
 void MEGAWin::on_search_btn_clicked()
 {
     QString search = ui->search_le->text();
     int row=ui->RTAlarm_Data_page->rowCount();
 
-    if (search == "")   //判断是否是空，如果是空就显示所有行
+    if (search == "")   //判断搜索框是否是空，如果是空就显示所有行
     {
         for(int i=0; i<row; i++)
         {
-            ui->RTAlarm_Data_page->setRowHidden(i,false);//为false就是显示
+            ui->RTAlarm_Data_page->setRowHidden(i,false);
         }
     }
     else
     {
-        //找到符合条件的索引 是通过你输入的和表格里面所有内容进行比对
+        //通过你输入的和表格里面所有内容进行比对，找到符合条件的索引
         QList <QTableWidgetItem *> item = ui->RTAlarm_Data_page->findItems(ui->search_le->text(), Qt::MatchContains);
 
-        for(int i=0; i<row; i++)    //然后把所有行都隐藏
+        for(int i=0; i<row; i++)
         {
-            ui->RTAlarm_Data_page->setRowHidden(i,true);//隐藏
-
+            ui->RTAlarm_Data_page->setRowHidden(i,true);//然后把所有行都隐藏
         }
 
         if(!item.empty())   //判断符合条件索引是不是空
@@ -5535,11 +5458,8 @@ void MEGAWin::on_search_btn_clicked()
             //恢复对应的行
             for(int i=0; i<item.count(); i++)
             {
-                ui->RTAlarm_Data_page->setRowHidden(item.at(i)->row(),false);//回复对应的行，也可以回复列
-
+                ui->RTAlarm_Data_page->setRowHidden(item.at(i)->row(),false);//恢复对应的行
             }
         }
-
     }
-
 }
