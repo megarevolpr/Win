@@ -1238,17 +1238,17 @@
     <message>
         <location filename="../win.ui" line="6108"/>
         <source>Warning1</source>
-        <translation>告警1</translation>
+        <translation>一级告警</translation>
     </message>
     <message>
         <location filename="../win.ui" line="6155"/>
         <source>Warning2</source>
-        <translation>告警2</translation>
+        <translation>二级告警</translation>
     </message>
     <message>
         <location filename="../win.ui" line="6202"/>
         <source>Warning3</source>
-        <translation>告警3</translation>
+        <translation>三级告警</translation>
     </message>
     <message>
         <location filename="../win.ui" line="6254"/>
