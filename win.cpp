@@ -840,6 +840,7 @@ void MEGAWin::SystemSettingPage()
  ***************************************************************/
 void MEGAWin::RecordPage()
 {
+    OperationLog_tab_delete();//操作日志delete
     History_tab();//历史记录表
     OperationLog_tab();//操作日志表
 }
@@ -975,7 +976,7 @@ void MEGAWin::OperationLog_tab()
     Ope_headers.clear();
     Ope_headers << tr("ModificationTime") << tr("RecordEvent");
     ui->Operation_tableWidget->setColumnCount(Ope_headers.size());
-    ui->Operation_tableWidget->setRowCount(8);
+    ui->Operation_tableWidget->setRowCount(12);
     ui->Operation_tableWidget->setHorizontalHeaderLabels(Ope_headers);
     ui->Operation_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
     ui->Operation_tableWidget->setShowGrid(true);//设置显示格子
@@ -1588,6 +1589,7 @@ void MEGAWin::Change_Language()
     RecordPage();//重新加载记录的UI
 
     SystemParam_tbnt_released();//重新加载高级设置的UI
+
 }
 
 /***************************************************************
@@ -1860,6 +1862,7 @@ void MEGAWin::LoadLanguageInit()
         ui->retranslateUi(this);
         LanguageType = ENGLISH;
     }
+
 }
 
 /***************************************************************
@@ -2982,7 +2985,7 @@ void MEGAWin::PCS_State()
     }
     Output_Cont = new Specification(this,Output_Cont_explain, ui->RTState_Bypass_Tab, 2, 1, \
                                             tr("Close"), tr("Output contactor"), \
-                                            tr("The output circuit breaker has three states: Break, Close, Trip; If the output circuit breaker overcurrent, the output circuit breaker will trip."));
+                                            tr("The output contactor has two states: Break, Close; When the DC side soft opening is completed, the output contactor is closed; When the converter is turned off, the output contactor is disconnected."));
     Output_Cont->add_Specification();
 
     if(Output_Breaker != nullptr)
@@ -2991,7 +2994,7 @@ void MEGAWin::PCS_State()
     }
     Output_Breaker = new Specification(this,Output_Breaker_explain, ui->RTState_Bypass_Tab, 3, 1, \
                                             tr("Close"), tr("Output Breaker"), \
-                                            tr("The output contactor has two states: Break, Close; When the DC side soft opening is completed, the output contactor is closed; When the converter is turned off, the output contactor is disconnected."));
+                                            tr("The output circuit breaker has three states: Break, Close, Trip; If the output circuit breaker overcurrent, the output circuit breaker will trip."));
     Output_Breaker->add_Specification();
 
     if(Grid_Cont != nullptr)
@@ -5068,7 +5071,6 @@ void MEGAWin::BMS_Protect()
                                    "0", tr("BMS fualt DP"), \
                                    tr("Discharge power when triggering a BMS fault."));
     BMS_fualt_DP->add_Specification();
-
 }
 
 /***************************************************************
@@ -5462,4 +5464,32 @@ void MEGAWin::on_search_btn_clicked()
             }
         }
     }
+}
+/************操作日志 释放 说明************/
+void MEGAWin::OperationLog_tab_delete()
+{
+    delete ModificationTime;
+    delete ModificationTime2;
+    delete ModificationTime3;
+    delete ModificationTime4;
+    delete ModificationTime5;
+    delete ModificationTime6;
+    delete ModificationTime7;
+    delete ModificationTime8;
+    delete ModificationTime9;
+    delete ModificationTime10;
+    delete ModificationTime11;
+    delete ModificationTime12;
+    delete EventRecord;
+    delete EventRecord2;
+    delete EventRecord3;
+    delete EventRecord4;
+    delete EventRecord5;
+    delete EventRecord6;
+    delete EventRecord7;
+    delete EventRecord8;
+    delete EventRecord9;
+    delete EventRecord10;
+    delete EventRecord11;
+    delete EventRecord12;
 }

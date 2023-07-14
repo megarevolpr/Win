@@ -735,6 +735,8 @@ private:
 
         void Change_Language(); //切换语言
 
+        void OperationLog_tab_delete();//操作日志 释放 说明
+
 private slots:
     void onTimerOut();
     void updateTimeOut(); //Fun(Time)

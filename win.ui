@@ -28,6 +28,9 @@
     <height>0</height>
    </size>
   </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::DefaultContextMenu</enum>
+  </property>
   <property name="windowTitle">
    <string>MEGAWin</string>
   </property>
@@ -588,7 +591,7 @@ color: rgb(255, 255, 255);</string>
          </item>
          <item row="5" column="0">
           <property name="text">
-           <string>BAT manufacturers</string>
+           <string>BAT protocol</string>
           </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
@@ -3642,7 +3645,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
        <item row="0" column="0">
         <widget class="QTabWidget" name="Run_tabWidget">
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="RTData_page">
           <property name="minimumSize">
@@ -4758,7 +4761,7 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
                  <x>0</x>
                  <y>0</y>
                  <width>964</width>
-                 <height>411</height>
+                 <height>432</height>
                 </rect>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_3">
