@@ -102,6 +102,33 @@ public:
         QPushButton *UPS_charge_power_explain;
         QPushButton *Monthly_cycle_time_explain;
 
+        QPushButton *Capacity_explain;//铅酸
+        QPushButton *Cell_number_2V_explain;
+        QPushButton *Bat_float_vol_explain;
+        QPushButton *Bat_filling_vol_explain;
+        QPushButton *Charge_limiting_value_explain;
+        QPushButton *Discharge_limiting_value_explain;
+        QPushButton *Generator_turn_off_SOC_B1_explain;
+        QPushButton *Generator_turn_on_SOC_A1_explain;
+        QPushButton *Grid_off_EOD_explain;
+        QPushButton *Grid_on_EOD_explain;
+        QPushButton *Uniform_To_Flushing_current_explain;
+        QPushButton *Flushing_To_Uniform_current_explain;
+
+
+        Specification *Capacity;//铅酸
+        Specification *Cell_number_2V;
+        Specification *Bat_float_vol;
+        Specification *Bat_filling_vol;
+        Specification *Charge_limiting_value;
+        Specification *Discharge_limiting_value;
+        Specification *Generator_turn_off_SOC_B1;
+        Specification *Generator_turn_on_SOC_A1;
+        Specification *Grid_off_EOD;
+        Specification *Grid_on_EOD;
+        Specification *Uniform_To_Flushing_current;
+        Specification *Flushing_To_Uniform_current;
+
         Specification *DOD_OnGrid;
         Specification *DOD_OffGrid;
         Specification *Charge_Vol_Up_Limit;
@@ -719,6 +746,7 @@ private:
         void PCS_State();//PCS状态 绘制button
         void ParameterSet();//系统设置 绘制button
         void BetterySetup();//电池设置 绘制button
+        void Battery_Setup_Lead_Tab(QTableWidget *myTable); //电池设置页说明_铅酸
         void AutoOperation();//自动运行 绘制button
         void SystemMessages();//系统信息 绘制button
 
@@ -736,6 +764,7 @@ private:
         void Change_Language(); //切换语言
 
         void OperationLog_tab_delete();//操作日志 释放 说明
+        void Battery_Setup_Lead_Tab_delete();//铅酸电池设置 释放 说明
 
 private slots:
     void onTimerOut();

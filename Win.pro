@@ -57,3 +57,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     image.qrc \
     language.qrc
+
+DISTFILES += \
+    Language/CN.ts \
+    Language/EN.ts

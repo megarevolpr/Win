@@ -282,6 +282,19 @@ void MEGAWin::MemoryAllocation()
     UPS_charge_power = nullptr;
     Monthly_cycle_time = nullptr;
 
+    Capacity_explain                    = new QPushButton;//铅酸
+    Cell_number_2V_explain              = new QPushButton;
+    Bat_float_vol_explain               = new QPushButton;
+    Bat_filling_vol_explain             = new QPushButton;
+    Charge_limiting_value_explain       = new QPushButton;
+    Discharge_limiting_value_explain    = new QPushButton;
+    Generator_turn_off_SOC_B1_explain   = new QPushButton;
+    Generator_turn_on_SOC_A1_explain    = new QPushButton;
+    Grid_off_EOD_explain                = new QPushButton;
+    Grid_on_EOD_explain                 = new QPushButton;
+    Uniform_To_Flushing_current_explain = new QPushButton;
+    Flushing_To_Uniform_current_explain = new QPushButton;
+
     /*****************************自动运行*******************************/
 
     Check1_explain= new QPushButton;Check2_explain= new QPushButton;Check3_explain= new QPushButton;
@@ -788,6 +801,52 @@ void MEGAWin::MemoryAllocation()
     /***********静态/动态IP地址显示标志位**********/
     IPShow = true;
 }
+/************操作日志 释放 说明************/
+void MEGAWin::OperationLog_tab_delete()
+{
+    delete ModificationTime;
+    delete ModificationTime2;
+    delete ModificationTime3;
+    delete ModificationTime4;
+    delete ModificationTime5;
+    delete ModificationTime6;
+    delete ModificationTime7;
+    delete ModificationTime8;
+    delete ModificationTime9;
+    delete ModificationTime10;
+    delete ModificationTime11;
+    delete ModificationTime12;
+    delete EventRecord;
+    delete EventRecord2;
+    delete EventRecord3;
+    delete EventRecord4;
+    delete EventRecord5;
+    delete EventRecord6;
+    delete EventRecord7;
+    delete EventRecord8;
+    delete EventRecord9;
+    delete EventRecord10;
+    delete EventRecord11;
+    delete EventRecord12;
+}
+
+/************铅酸电池设置 释放 说明************/
+void MEGAWin::Battery_Setup_Lead_Tab_delete()
+{
+    delete Capacity;
+    delete Cell_number_2V;
+    delete Charge_limiting_value;
+    delete Discharge_limiting_value;
+    delete Generator_turn_off_SOC_B1;
+    delete Generator_turn_on_SOC_A1;
+    delete Grid_off_EOD;
+    delete Grid_on_EOD;
+    delete Bat_float_vol;
+    delete Bat_filling_vol;
+    delete Uniform_To_Flushing_current;
+    delete Flushing_To_Uniform_current;
+}
+
 /***************************************************************
  * 主页初始化
  ***************************************************************/
@@ -840,7 +899,8 @@ void MEGAWin::SystemSettingPage()
  ***************************************************************/
 void MEGAWin::RecordPage()
 {
-    OperationLog_tab_delete();//操作日志delete
+
+
     History_tab();//历史记录表
     OperationLog_tab();//操作日志表
 }
@@ -1003,7 +1063,15 @@ void MEGAWin::BatterySet_tab()
     ui->Lithum_Tab->setColumnWidth(4,120);
     ui->Lithum_Tab->setColumnWidth(5,100);
 
+    ui->Lead_Tab->setColumnWidth(0,175);
+    ui->Lead_Tab->setColumnWidth(1,100);
+    ui->Lead_Tab->setColumnWidth(2,80);
+    ui->Lead_Tab->setColumnWidth(3,175);
+    ui->Lead_Tab->setColumnWidth(4,100);
+    ui->Lead_Tab->setColumnWidth(5,80);
+
     BetterySetup();//电池设置
+    Battery_Setup_Lead_Tab(ui->Lead_Tab);
 
 }
 /******************************************************************************
@@ -1582,6 +1650,9 @@ void MEGAWin::Change_Language()
         ui->retranslateUi(this);
     }
 
+    Battery_Setup_Lead_Tab_delete();//铅酸电池delete
+    OperationLog_tab_delete();//操作日志delete
+
     RunStatePage();//重新加载实时数据的UI
 
     SystemSettingPage();//重新加载系统的UI
@@ -1805,7 +1876,7 @@ void MEGAWin::My_menuAction(int Index)
         break;
     case SYSTEMPAGE:
         ui->stackedWidget->setCurrentWidget(ui->System_page);
-        ui->BatterSet_stackedWidget->setCurrentWidget(ui->Lithium_stackedWidgetPage);
+        ui->BatterSet_tabWidget->setCurrentWidget(ui->Lithium_tabWidgetPage);
         ui->System_tabWidget->setCurrentIndex(0);
         break;
     case MACHINECLOSE:
@@ -3459,6 +3530,72 @@ void MEGAWin::BetterySetup()
                                      "0", tr("Monthly_cycle_time"), \
                                      tr("On the same day of each month, there is a deep charge and discharge."));
     Monthly_cycle_time->add_Specification();
+}
+//电池设置页说明_铅酸电池
+void MEGAWin::Battery_Setup_Lead_Tab(QTableWidget *myTable)
+{
+
+    //容量
+    Capacity = new Specification(this,Capacity_explain, myTable, 0, 1, \
+                                        "0", tr("Capacity"), \
+                                        tr("Capacity, the capacity of the lead-acid battery."));
+    Capacity->add_Specification();//容量，铅酸电池的容量大小
+    //电池节数
+    Cell_number_2V = new Specification(this,Cell_number_2V_explain, myTable, 1, 1, \
+                                        "0", tr("Cell_number_2V"), \
+                                        tr("The number of cells connected in a battery stack."));
+    Cell_number_2V->add_Specification();
+    //浮充电压
+    Bat_float_vol = new Specification(this,Bat_float_vol_explain, myTable, 2, 1, \
+                                        "0", tr("Battery float voltage"), \
+                                        tr("This is the floating charge voltage."));
+    Bat_float_vol->add_Specification();
+    //均充电压
+    Bat_filling_vol = new Specification(this,Bat_filling_vol_explain, myTable, 3, 1, \
+                                        "0", tr("Battery filling voltage"), \
+                                        tr("This is the filling voltage."));
+    Bat_filling_vol->add_Specification();
+    //充电限流值
+    Charge_limiting_value = new Specification(this,Charge_limiting_value_explain, myTable, 4, 1, \
+                                        "0", tr("Charge_limiting_value"), \
+                                        tr("Upper limit of charging current, which is the maximum current allowed on the DC side of PCS to prevent charging overcurrent."));
+    Charge_limiting_value->add_Specification();
+    //放电限流值
+    Discharge_limiting_value = new Specification(this,Discharge_limiting_value_explain, myTable, 5, 1, \
+                                        "0", tr("Discharge_limiting_value"), \
+                                        tr("The upper limit of discharge current, which is the maximum current allowed to discharge on the DC side of PCS to prevent discharge from overcurrent."));
+    Discharge_limiting_value->add_Specification();
+    //发电机关闭SOC
+    Generator_turn_off_SOC_B1 = new Specification(this,Generator_turn_off_SOC_B1_explain, myTable, 6, 1, \
+                                        "0", tr("Generator turn off voltage"), \
+                                        tr("Generator shutdown voltage."));
+    Generator_turn_off_SOC_B1->add_Specification();
+    //发电机开启SOC
+    Generator_turn_on_SOC_A1 = new Specification(this,Generator_turn_on_SOC_A1_explain, myTable, 7, 1, \
+                                        "0", tr("Generator turn on voltage"), \
+                                        tr("Generator opening voltage."));
+    Generator_turn_on_SOC_A1->add_Specification();
+    //离网EOD
+    Grid_off_EOD = new Specification(this,Grid_off_EOD_explain, myTable, 0, 4, \
+                                        "0", tr("Grid_off_EOD"), \
+                                        tr("Off-grid discharge cut-off voltage."));
+    Grid_off_EOD->add_Specification();
+    //并网EOD
+    Grid_on_EOD = new Specification(this,Grid_on_EOD_explain, myTable, 1, 4, \
+                                        "0", tr("Grid_on_EOD"), \
+                                        tr("Grid-connected discharge cut-off voltage."));
+    Grid_on_EOD->add_Specification();
+
+    //浮充转均充电流
+    Uniform_To_Flushing_current = new Specification(this,Uniform_To_Flushing_current_explain, myTable, 7, 4, \
+                                        "0", tr("Uniform charging and flushing current"), \
+                                        tr("This is uniform charging and flushing current."));
+    Uniform_To_Flushing_current->add_Specification();//
+    //均充转浮充电流
+    Flushing_To_Uniform_current = new Specification(this,Flushing_To_Uniform_current_explain, myTable, 8, 4, \
+                                        "0", tr("Float turn uniform charging current"), \
+                                        tr("This is float turn uniform charging current."));
+    Flushing_To_Uniform_current->add_Specification();//
 }
 
 /***************************************************************
@@ -5464,32 +5601,4 @@ void MEGAWin::on_search_btn_clicked()
             }
         }
     }
-}
-/************操作日志 释放 说明************/
-void MEGAWin::OperationLog_tab_delete()
-{
-    delete ModificationTime;
-    delete ModificationTime2;
-    delete ModificationTime3;
-    delete ModificationTime4;
-    delete ModificationTime5;
-    delete ModificationTime6;
-    delete ModificationTime7;
-    delete ModificationTime8;
-    delete ModificationTime9;
-    delete ModificationTime10;
-    delete ModificationTime11;
-    delete ModificationTime12;
-    delete EventRecord;
-    delete EventRecord2;
-    delete EventRecord3;
-    delete EventRecord4;
-    delete EventRecord5;
-    delete EventRecord6;
-    delete EventRecord7;
-    delete EventRecord8;
-    delete EventRecord9;
-    delete EventRecord10;
-    delete EventRecord11;
-    delete EventRecord12;
 }

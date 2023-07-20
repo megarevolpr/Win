@@ -61,6 +61,7 @@
         <file>UI/型号选择.png</file>
         <file>UI/一般设置.png</file>
         <file>UI/Logo_jk.png</file>
+        <file>UI/BatterySOC_new.png</file>
     </qresource>
     <qresource prefix="/Massagebox">
         <file>UI/Close.png</file>
