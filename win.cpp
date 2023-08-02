@@ -2030,7 +2030,7 @@ void MEGAWin::on_UI_MenuBtn_clicked()
         connect(m_menu, SIGNAL(Sent(int)), this, SLOT(My_menuAction(int)));
 
         m_menu->setGeometry(0, 0, 250, 453);
-        m_menu->move(QPoint((this->pos().x() + 30),(this->pos().y()+87)));
+        m_menu->move(QPoint((this->pos().x() + 10),(this->pos().y()+87)));
 //        m_menu->move(QPoint((this->pos().x() + 30),(this->pos().y()+(this->frameGeometry().height()-(450+110)))));
         m_menu->show();
     }
@@ -4477,7 +4477,7 @@ void MEGAWin::FunctionSet()
     }
     BAT_protocol = new Specification(this,BAT_protocol_explain, ui->UI_Parameter_Tab, 5, 1, \
                                           tr("Auto"), tr("BAT protocol"), \
-                                          tr("This is the battery protocol that parses the packets sent by the BMS according to the selected battery protocol."));
+                                          tr("Battery Protocol: This is the battery protocol that parses the packets sent by the BMS according to the selected battery protocol.\nCurrently, the following battery manufacturer protocols are supported: MEGA, LISHEN, PENGHUI, GOLD, BMSER, LANLI, SHENLAN, PAINENG, NINGDESHIDAI, SUOYING, XINGWANGDA, KUBO, GAOTE_V2, TOGOOD,PGS, WOBO, KGOOER, LIDE, PAINENG_L, WEILAN, ALPHA, TUOPU, JIEHUI, JDI, ECUBE, FARO, BGS, JDITEC, HUASU, LIGAO.\nWhen you select AUTO, the system automatically determines the battery manufacturer."));
     BAT_protocol->add_Specification();
 
     if(Power_Delta != nullptr)
