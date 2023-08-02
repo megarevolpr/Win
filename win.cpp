@@ -35,6 +35,8 @@ MEGAWin::MEGAWin(QWidget *parent) :
     LanguageType = CHINESE; //开机默认为中文
 
     ui->setupUi(this);
+
+    this->setMinimumSize(1150,780);
     ui->UI_stackedWidget->setCurrentWidget(ui->UI_page );//开机后进入主页面
     ui->stackedWidget->setCurrentWidget(ui->Bypass_page);
     ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
@@ -104,6 +106,13 @@ void MEGAWin::MemoryAllocation()
     Grade6_explain      = new QPushButton;
     Grade7_explain      = new QPushButton;
     Grade8_explain      = new QPushButton;
+    Grade9_explain      = new QPushButton;
+    Grade10_explain     = new QPushButton;
+    Grade11_explain     = new QPushButton;
+    Grade12_explain     = new QPushButton;
+    Grade13_explain     = new QPushButton;
+    Grade14_explain     = new QPushButton;
+    Grade15_explain     = new QPushButton;
     StartTime_explain   = new QPushButton;
     StartTime2_explain  = new QPushButton;
     StartTime3_explain  = new QPushButton;
@@ -112,6 +121,13 @@ void MEGAWin::MemoryAllocation()
     StartTime6_explain  = new QPushButton;
     StartTime7_explain  = new QPushButton;
     StartTime8_explain  = new QPushButton;
+    StartTime9_explain  = new QPushButton;
+    StartTime10_explain = new QPushButton;
+    StartTime11_explain = new QPushButton;
+    StartTime12_explain = new QPushButton;
+    StartTime13_explain = new QPushButton;
+    StartTime14_explain = new QPushButton;
+    StartTime15_explain = new QPushButton;
     EndTime_explain     = new QPushButton;
     EndTime2_explain    = new QPushButton;
     EndTime3_explain    = new QPushButton;
@@ -120,6 +136,13 @@ void MEGAWin::MemoryAllocation()
     EndTime6_explain    = new QPushButton;
     EndTime7_explain    = new QPushButton;
     EndTime8_explain    = new QPushButton;
+    EndTime9_explain    = new QPushButton;
+    EndTime10_explain   = new QPushButton;
+    EndTime11_explain   = new QPushButton;
+    EndTime12_explain   = new QPushButton;
+    EndTime13_explain   = new QPushButton;
+    EndTime14_explain   = new QPushButton;
+    EndTime15_explain   = new QPushButton;
     Describe_explain    = new QPushButton;
     Describe2_explain   = new QPushButton;
     Describe3_explain   = new QPushButton;
@@ -128,6 +151,13 @@ void MEGAWin::MemoryAllocation()
     Describe6_explain   = new QPushButton;
     Describe7_explain   = new QPushButton;
     Describe8_explain   = new QPushButton;
+    Describe9_explain   = new QPushButton;
+    Describe10_explain  = new QPushButton;
+    Describe11_explain  = new QPushButton;
+    Describe12_explain  = new QPushButton;
+    Describe13_explain  = new QPushButton;
+    Describe14_explain  = new QPushButton;
+    Describe15_explain  = new QPushButton;
     Grade = nullptr;
     Grade2 = nullptr;
     Grade3 = nullptr;
@@ -214,7 +244,6 @@ void MEGAWin::MemoryAllocation()
 
     Grid_connected_mode_explain = new QPushButton;      //PCS并离网方式说明
     Constant_power_explain  = new QPushButton;           //恒功率说明
-    Charging_and_discharging_explain = new QPushButton; //充放电说明status
     Work_mode_explain = new QPushButton;                //工作模式说明
     Output_power_factor_explain = new QPushButton;      //输出功率因素说明
     Output_reactive_power_explain = new QPushButton;    //输出无功功率说明
@@ -223,13 +252,9 @@ void MEGAWin::MemoryAllocation()
     Control_mode_explain = new QPushButton;             //控制模式说明
     Machine_number_explain = new QPushButton;           //设备号说明
     Parallel_explain = new QPushButton;                 //并机说明
-    Unbalance_power_enable_explain = new QPushButton;   //功率不平衡使能说明
-    Phase_A_power_explain = new QPushButton;            //A相功率说明
-    Phase_B_power_explain = new QPushButton;            //B相功率说明
-    Phase_C_power_explain = new QPushButton;            //C相功率说明
+
     Grid_connected_mode = nullptr;
     Constant_power = nullptr;
-    Charging_and_discharging = nullptr;
     Work_mode = nullptr;
     Output_power_factor = nullptr;
     Output_reactive_power = nullptr;
@@ -238,10 +263,6 @@ void MEGAWin::MemoryAllocation()
     Control_mode = nullptr;
     Machine_number = nullptr;
     Parallel = nullptr;
-    Unbalance_power_enable = nullptr;
-    Phase_A_power = nullptr;
-    Phase_B_power = nullptr;
-    Phase_C_power = nullptr;
 
     /***************************电池设置**********************************/
 
@@ -254,6 +275,8 @@ void MEGAWin::MemoryAllocation()
     Gen_turn_on_SOC_explain     = new QPushButton;      //柴发开启SOC
     Gen_charge_SOC_explain      = new QPushButton;      //柴发充电SOC
     Grid_charge_SOC_explain     = new QPushButton;      //电网充电SOC
+    ChargeStopSOC_explain       = new QPushButton;
+    DischargeStopSOC_explain    = new QPushButton;
     Grid_capacity_explain       = new QPushButton;      //电网容量
     Turn_on_SOC_explain         = new QPushButton;      //启动SOC
     Turn_off_SOC_explain        = new QPushButton;      //停止SOC
@@ -272,6 +295,8 @@ void MEGAWin::MemoryAllocation()
     Gen_turn_on_SOC = nullptr;
     Gen_charge_SOC = nullptr;
     Grid_charge_SOC = nullptr;
+    ChargeStopSOC = nullptr;
+    DischargeStopSOC = nullptr;
     Grid_capacity = nullptr;
     Turn_on_SOC = nullptr;
     Turn_off_SOC = nullptr;
@@ -409,6 +434,10 @@ void MEGAWin::MemoryAllocation()
     Language_explain        = new QPushButton;
     System_upgrade_explain  = new QPushButton;
     Sounds_explain          = new QPushButton;
+    EnergyMeterModel_explain= new QPushButton;
+    BmsComFaultTime_explain = new QPushButton;
+    EMSComFaultModel_explain= new QPushButton;
+
     Battery_type = nullptr;
     BMS_Comm_type = nullptr;
     Power_control_type = nullptr;
@@ -434,6 +463,9 @@ void MEGAWin::MemoryAllocation()
     Language = nullptr;
     System_upgrade = nullptr;
     Sounds = nullptr;
+    EnergyMeterModel= nullptr;
+    BmsComFaultTime = nullptr;
+    EMSComFaultModel= nullptr;
 
     //系统参数
     Change_rate_of_power_explain        = new QPushButton;
@@ -461,6 +493,8 @@ void MEGAWin::MemoryAllocation()
     DynamicCap_explain                  = new QPushButton;
     Module_Number_explain               = new QPushButton;
     Restore_factory_explain             = new QPushButton;
+    BackupSetParameters_explain         = new QPushButton;
+    RestoreBackupSetParameters_explain  = new QPushButton;
     Clear_Data_explain                  = new QPushButton;
     Change_rate_of_power = nullptr;
     Grid_frequency_upper_limit = nullptr;
@@ -487,6 +521,8 @@ void MEGAWin::MemoryAllocation()
     DynamicCap = nullptr;
     Module_Number = nullptr;
     Restore_factory = nullptr;
+    BackupSetParameters = nullptr;
+    RestoreBackupSetParameters = nullptr;
     Clear_Data = nullptr;
 
     //外设
@@ -496,54 +532,36 @@ void MEGAWin::MemoryAllocation()
     DI_4_Enable_explain = new QPushButton;
     DI_5_Enable_explain = new QPushButton;
     DI_6_Enable_explain = new QPushButton;
-    DO_1_Enable_explain = new QPushButton;
-    DO_2_Enable_explain = new QPushButton;
-    DO_3_Enable_explain = new QPushButton;
     DI_1_NC_O_explain   = new QPushButton;
     DI_2_NC_O_explain   = new QPushButton;
     DI_3_NC_O_explain   = new QPushButton;
     DI_4_NC_O_explain   = new QPushButton;
     DI_5_NC_O_explain   = new QPushButton;
     DI_6_NC_O_explain   = new QPushButton;
-    DO_1_NC_O_explain   = new QPushButton;
-    DO_2_NC_O_explain   = new QPushButton;
-    DO_3_NC_O_explain   = new QPushButton;
     DI_1_Action_explain = new QPushButton;
     DI_2_Action_explain = new QPushButton;
     DI_3_Action_explain = new QPushButton;
     DI_4_Action_explain = new QPushButton;
     DI_5_Action_explain = new QPushButton;
     DI_6_Action_explain = new QPushButton;
-    DO_1_Action_explain = new QPushButton;
-    DO_2_Action_explain = new QPushButton;
-    DO_3_Action_explain = new QPushButton;
     DI_1_Enable = nullptr;
     DI_2_Enable = nullptr;
     DI_3_Enable = nullptr;
     DI_4_Enable = nullptr;
     DI_5_Enable = nullptr;
     DI_6_Enable = nullptr;
-    DO_1_Enable = nullptr;
-    DO_2_Enable = nullptr;
-    DO_3_Enable = nullptr;
     DI_1_NC_O = nullptr;
     DI_2_NC_O = nullptr;
     DI_3_NC_O = nullptr;
     DI_4_NC_O = nullptr;
     DI_5_NC_O = nullptr;
     DI_6_NC_O = nullptr;
-    DO_1_NC_O = nullptr;
-    DO_2_NC_O = nullptr;
-    DO_3_NC_O = nullptr;
     DI_1_Action = nullptr;
     DI_2_Action = nullptr;
     DI_3_Action = nullptr;
     DI_4_Action = nullptr;
     DI_5_Action = nullptr;
     DI_6_Action = nullptr;
-    DO_1_Action = nullptr;
-    DO_2_Action = nullptr;
-    DO_3_Action = nullptr;
 
     //BMS保护
     DOD_Action_explain                 = new QPushButton;
@@ -846,6 +864,70 @@ void MEGAWin::Battery_Setup_Lead_Tab_delete()
     delete Uniform_To_Flushing_current;
     delete Flushing_To_Uniform_current;
 }
+/************历史数据 释放 说明************/
+void MEGAWin::HistoryRecord_delete()
+{
+    delete Grade;
+    delete Grade2;
+    delete Grade3;
+    delete Grade4;
+    delete Grade5;
+    delete Grade6;
+    delete Grade7;
+    delete Grade8;
+    delete Grade9;
+    delete Grade10;
+    delete Grade11;
+    delete Grade12;
+    delete Grade13;
+    delete Grade14;
+    delete Grade15;
+    delete StartTime;
+    delete StartTime2;
+    delete StartTime3;
+    delete StartTime4;
+    delete StartTime5;
+    delete StartTime6;
+    delete StartTime7;
+    delete StartTime8;
+    delete StartTime9;
+    delete StartTime10;
+    delete StartTime11;
+    delete StartTime12;
+    delete StartTime13;
+    delete StartTime14;
+    delete StartTime15;
+    delete EndTime;
+    delete EndTime2;
+    delete EndTime3;
+    delete EndTime4;
+    delete EndTime5;
+    delete EndTime6;
+    delete EndTime7;
+    delete EndTime8;
+    delete EndTime9;
+    delete EndTime10;
+    delete EndTime11;
+    delete EndTime12;
+    delete EndTime13;
+    delete EndTime14;
+    delete EndTime15;
+    delete Describe;
+    delete Describe2;
+    delete Describe3;
+    delete Describe4;
+    delete Describe5;
+    delete Describe6;
+    delete Describe7;
+    delete Describe8;
+    delete Describe9;
+    delete Describe10;
+    delete Describe11;
+    delete Describe12;
+    delete Describe13;
+    delete Describe14;
+    delete Describe15;
+}
 
 /***************************************************************
  * 主页初始化
@@ -899,8 +981,6 @@ void MEGAWin::SystemSettingPage()
  ***************************************************************/
 void MEGAWin::RecordPage()
 {
-
-
     History_tab();//历史记录表
     OperationLog_tab();//操作日志表
 }
@@ -977,7 +1057,7 @@ void MEGAWin::History_tab()
     table_h_headers.clear();
     table_h_headers << tr("Level") << tr("Start Time") << tr("End Time") << tr("Description");
     ui->Historicalfailure_tableWidget->setColumnCount(table_h_headers.size());
-    ui->Historicalfailure_tableWidget->setRowCount(8);
+    ui->Historicalfailure_tableWidget->setRowCount(15);
     ui->Historicalfailure_tableWidget->setHorizontalHeaderLabels(table_h_headers);
     ui->Historicalfailure_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
     ui->Historicalfailure_tableWidget->verticalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
@@ -999,30 +1079,10 @@ void MEGAWin::History_tab()
     Grade6_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
     Grade7_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
     Grade8_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    StartTime_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    StartTime2_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    StartTime3_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    StartTime4_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    StartTime5_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    StartTime6_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    StartTime7_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    StartTime8_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    EndTime_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    EndTime2_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    EndTime3_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    EndTime4_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    EndTime5_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    EndTime6_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    EndTime7_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    EndTime8_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Describe_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Describe2_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Describe3_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Describe4_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Describe5_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Describe6_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Describe7_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    Describe8_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
+    for(int i=0;i<15;i++)
+    {
+        ui->Historicalfailure_tableWidget->setRowHeight(i,40);
+    }
 
     History();//历史记录
 }
@@ -1048,6 +1108,10 @@ void MEGAWin::OperationLog_tab()
     ui->Operation_tableWidget->verticalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
     ui->Operation_tableWidget->setStyleSheet("selection-background-color:lightblue;");
 
+    for(int i=0;i<12;i++)
+    {
+        ui->Operation_tableWidget->setRowHeight(i,40);
+    }
     OperationLog();//操作日志
 }
 
@@ -1065,11 +1129,15 @@ void MEGAWin::BatterySet_tab()
 
     ui->Lead_Tab->setColumnWidth(0,175);
     ui->Lead_Tab->setColumnWidth(1,100);
-    ui->Lead_Tab->setColumnWidth(2,80);
+    ui->Lead_Tab->setColumnWidth(2,75);
     ui->Lead_Tab->setColumnWidth(3,175);
     ui->Lead_Tab->setColumnWidth(4,100);
-    ui->Lead_Tab->setColumnWidth(5,80);
-
+    ui->Lead_Tab->setColumnWidth(5,75);
+    for(int i=0;i<11;i++)
+    {
+        ui->Lithum_Tab->setRowHeight(i,50);
+        ui->Lead_Tab->setRowHeight(i,50);
+    }
     BetterySetup();//电池设置
     Battery_Setup_Lead_Tab(ui->Lead_Tab);
 
@@ -1095,6 +1163,10 @@ void MEGAWin::RunTimeSet_tab()
     ui->Time_tableWidget->setColumnWidth(2,180);
     ui->Time_tableWidget->setColumnWidth(3,130);
     ui->Time_tableWidget->horizontalHeader()->setStretchLastSection(4);
+    for(int i=0;i<20;i++)
+    {
+        ui->Time_tableWidget->setRowHeight(i,40);
+    }
 
     AutoOperation();//自动运行
 
@@ -1264,7 +1336,7 @@ void MEGAWin::RTDataDisplay()
 void MEGAWin::Information_tbnt_released()
 {
     ui->EquipmentInfor_tableWidget->setColumnCount(2);
-    ui->EquipmentInfor_tableWidget->setRowCount(9);
+    ui->EquipmentInfor_tableWidget->setRowCount(6);
     ui->EquipmentInfor_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
     ui->EquipmentInfor_tableWidget->verticalHeader()->setVisible(false);//设置垂直头不可见
     ui->EquipmentInfor_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
@@ -1280,6 +1352,10 @@ void MEGAWin::Information_tbnt_released()
     ui->EquipmentInfor_tableWidget->setColumnWidth(0,230);
     ui->EquipmentInfor_tableWidget->horizontalHeader()->setStretchLastSection(1);//自动占用剩余空间
 
+    for(int i=0;i<6;i++)
+    {
+        ui->EquipmentInfor_tableWidget->setRowHeight(i,40);
+    }
     SystemMessages();//系统信息
 
 }
@@ -1652,6 +1728,7 @@ void MEGAWin::Change_Language()
 
     Battery_Setup_Lead_Tab_delete();//铅酸电池delete
     OperationLog_tab_delete();//操作日志delete
+    HistoryRecord_delete();//历史记录delete
 
     RunStatePage();//重新加载实时数据的UI
 
@@ -1673,19 +1750,20 @@ void MEGAWin::SystemParam_tbnt_released()
     {
         ui->UI_Parameter_Tab->setColumnWidth(i,165);
         ui->UI_Parameter_Tab->setRowHeight(i,50);
-        ui->UI_SystemParameter_Tab->setColumnWidth(i,165);
+        ui->UI_SystemParameter_Tab->setColumnWidth(i,160);
         ui->UI_SystemParameter_Tab->setRowHeight(i++,50);
 
         ui->UI_Parameter_Tab->setColumnWidth(i,90);
         ui->UI_Parameter_Tab->setRowHeight(i,50);
-        ui->UI_SystemParameter_Tab->setColumnWidth(i,90);
+        ui->UI_SystemParameter_Tab->setColumnWidth(i,115);
         ui->UI_SystemParameter_Tab->setRowHeight(i++,50);
 
         ui->UI_Parameter_Tab->setColumnWidth(i,55);
         ui->UI_Parameter_Tab->setRowHeight(i,50);
-        ui->UI_SystemParameter_Tab->setColumnWidth(i,55);
+        ui->UI_SystemParameter_Tab->setColumnWidth(i,42);
         ui->UI_SystemParameter_Tab->setRowHeight(i,50);
     }
+
 
     ui->ExternalDevice_tW->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
     ui->ExternalDevice_tW->verticalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
@@ -1703,7 +1781,7 @@ void MEGAWin::SystemParam_tbnt_released()
     ui->BMSProtection_tW->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
     ui->BMSProtection_tW->verticalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
     ui->BMSProtection_tW->setStyleSheet("selection-background-color:lightblue;");
-    for(int i=0;i<3;i++)//调整 BMS保护 的列宽列高
+    for(int i=0;i<6;i++)//调整 BMS保护 的列宽列高
     {
         ui->BMSProtection_tW->setColumnWidth(i,220);
         ui->BMSProtection_tW->setRowHeight(i,50);
@@ -1775,6 +1853,7 @@ void MEGAWin::LinkRelationship()
     connect(pButton_BatteryData, SIGNAL(buttonClicked(int)), this,SLOT(BatteryData_clicked(int)));//电池数据
     connect(pButton_Version, SIGNAL(buttonClicked(int)), this,SLOT(SystemlnformationVer_clicked(int)));//系统信息
     connect(pButton_MonitorDebug, SIGNAL(buttonClicked(int)), this,SLOT(MonitorDebug_clicked(int)));//监控调试
+    connect(ui->search_le,SIGNAL(editingFinished()), this, SLOT(on_search_btn_clicked()));//搜索栏关联搜索槽，使LineEdit失去焦点或回车键回车也生效
 
 }
 
@@ -1803,8 +1882,8 @@ void MEGAWin::ModuleState_Tab()//PCS状态
                     << tr("converter status") << tr("Reactive power Regulation") << tr("LVRT");
          QStringList RTState_Bypass_List4;
           RTState_Bypass_List4 << tr("Generator signal") << tr("Reserve")\
-                               << tr("Reserve") << tr("EPO contact signal 1")\
-                               << tr("EPO contact signal 2") << tr("Access control signal")\
+                               << tr("Reserve") << tr("EPO signal")\
+                               << tr("Shutdown") << tr("Access control signal")\
                                << tr("Full power signal") << tr("Smoke alarm signal")<< tr("Hight temp. signal");
 
         ui->RTState_Bypass_Tab->setColumnCount(6);
@@ -1951,7 +2030,7 @@ void MEGAWin::on_UI_MenuBtn_clicked()
         connect(m_menu, SIGNAL(Sent(int)), this, SLOT(My_menuAction(int)));
 
         m_menu->setGeometry(0, 0, 250, 453);
-        m_menu->move(QPoint((this->pos().x() + 10),(this->pos().y() + 85)));
+        m_menu->move(QPoint((this->pos().x() + 30),(this->pos().y()+(this->frameGeometry().height()-(450+110)))));
         m_menu->show();
     }
     else
@@ -2018,6 +2097,8 @@ void MEGAWin::on_Alarm_btn_clicker()
 {
     ui->stackedWidget->setCurrentWidget(ui->Status_page);
     ui->Run_tabWidget->setCurrentWidget(ui->RTAlarm_page);
+    QMessageBox::question(this,tr("Alarm icon"), tr("Alarm icon: It is not displayed when there is no alarm. When there is a minor alarm, a yellow icon is displayed. When there is a fault alarm, a red icon is displayed."),\
+                          tr("OK"));
 }
 
 /***************************************************************
@@ -2148,7 +2229,7 @@ void MEGAWin::Data_report_clicked(int nid)
         break;
     case 18:
         QMessageBox::question(this, tr("Coulombmeter report")\
-                              ,tr("To export the battery table, click here to export the battery table to the USB flash drive. The file exported to the USB flash drive is Report.csv, which needs to be opened with Excel."), tr("OK"));
+                              ,tr("Export the battery statistics. Click here to export the battery statistics to the U disk.\nThe accuracy is 0.1, which means that the obtained data multiplied by 0.1 gives the actual value."), tr("OK"));
         break;
     case 19:
         QMessageBox::question(this, tr("Eject Udisk")\
@@ -2250,236 +2331,206 @@ void MEGAWin::History()
     QString str11 = tr("Fire alarm (High temp. alarm)");
     QString str12 = tr("Power Meter Comm fualttLead-acid abnormal");
 
-    if(Grade != nullptr)
-    {
-        delete Grade;
-    }
-    Grade = new Specification(this,Grade_explain, ui->Historicalfailure_tableWidget, 0, 0, str1, str2, str3);
+    QString str13 = tr("Converter Standby.");//变换器待机
+    QString str14 = tr("The grid contactor connected");//电网接触器闭合
+    QString str15 = tr("The grid breaker connected");//电网断路器闭合
+    QString str16 = tr("The output breaker connected");//输出断路器闭合
+    QString str17 = tr("Buck not softened");//低压侧未软起
+    QString str18 = tr("Contactor off buck");//低压侧接触器断开
+    QString str20 = tr("The grid breaker disconnected");//电网断路器断开
+    QString str24 = tr("1");
+
+    int line=0;int column=0;
+    Grade9 = new Specification(this,Grade9_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str24, str2, str3);
+    Grade9->add_Specification();
+    Grade10 = new Specification(this,Grade10_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str24, str2, str3);
+    Grade10->add_Specification();
+    Grade11 = new Specification(this,Grade11_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str24, str2, str3);
+    Grade11->add_Specification();
+    Grade12 = new Specification(this,Grade12_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str24, str2, str3);
+    Grade12->add_Specification();
+    Grade13 = new Specification(this,Grade13_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str24, str2, str3);
+    Grade13->add_Specification();
+    Grade14 = new Specification(this,Grade14_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str24, str2, str3);
+    Grade14->add_Specification();
+    Grade15 = new Specification(this,Grade15_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str24, str2, str3);
+    Grade15->add_Specification();
+
+    Grade = new Specification(this,Grade_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str1, str2, str3);
     Grade->add_Specification();
-
-    if(Grade2 != nullptr)
-    {
-        delete Grade2;
-    }
-    Grade2 = new Specification(this,Grade2_explain, ui->Historicalfailure_tableWidget, 1, 0, str1, str2, str3);
+    Grade2 = new Specification(this,Grade2_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str1, str2, str3);
     Grade2->add_Specification();
-
-    if(Grade2 != nullptr)
-    {
-        delete Grade3;
-    }
-    Grade3 = new Specification(this,Grade3_explain, ui->Historicalfailure_tableWidget, 2, 0, str1, str2, str3);
+    Grade3 = new Specification(this,Grade3_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str1, str2,  str3);
     Grade3->add_Specification();
-
-    if(Grade4 != nullptr)
-    {
-        delete Grade4;
-    }
-    Grade4 = new Specification(this,Grade4_explain, ui->Historicalfailure_tableWidget, 3, 0, str1, str2, str3);
+    Grade4 = new Specification(this,Grade4_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str1, str2, str3);
     Grade4->add_Specification();
-
-    if(Grade5 != nullptr)
-    {
-        delete Grade5;
-    }
-    Grade5 = new Specification(this,Grade5_explain, ui->Historicalfailure_tableWidget, 4, 0, str1, str2, str3);
+    Grade5 = new Specification(this,Grade5_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str1, str2, str3);
     Grade5->add_Specification();
-
-    if(Grade6 != nullptr)
-    {
-        delete Grade6;
-    }
-    Grade6 = new Specification(this,Grade6_explain, ui->Historicalfailure_tableWidget, 5, 0, str1, str2, str3);
+    Grade6 = new Specification(this,Grade6_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str1, str2, str3);
     Grade6->add_Specification();
-
-    if(Grade7 != nullptr)
-    {
-        delete Grade7;
-    }
-    Grade7 = new Specification(this,Grade7_explain, ui->Historicalfailure_tableWidget, 6, 0, str1, str2, str3);
+    Grade7 = new Specification(this,Grade7_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str1, str2, \
+                                                    str3);
     Grade7->add_Specification();
-
-    if(Grade8 != nullptr)
-    {
-        delete Grade8;
-    }
-    Grade8 = new Specification(this,Grade8_explain, ui->Historicalfailure_tableWidget, 7, 0, str1, str2, str3);
+    Grade8 = new Specification(this,Grade8_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str1, str2, str3);
     Grade8->add_Specification();
+    line=0;
+    column=1;
+    StartTime9 = new Specification(this,StartTime9_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "2023.7.29 14:59:56", str4, str5);
+    StartTime9->add_Specification();
+    StartTime10 = new Specification(this,StartTime10_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "2023.7.29 14:59:55", str4, str5);
+    StartTime10->add_Specification();
+    StartTime11 = new Specification(this,StartTime11_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "2023.7.29 14:59:51", str4, str5);
+    StartTime11->add_Specification();
+    StartTime12 = new Specification(this,StartTime12_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "2023.7.29 14:59:51", str4, str5);
+    StartTime12->add_Specification();
+    StartTime13 = new Specification(this,StartTime13_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "2023.7.29 14:59:50", str4, str5);
+    StartTime13->add_Specification();
+    StartTime14 = new Specification(this,StartTime14_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "2023.7.29 14:57:50", str4, str5);
+    StartTime14->add_Specification();
+    StartTime15 = new Specification(this,StartTime15_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "2023.7.29 14:57:50", str4, str5);
+    StartTime15->add_Specification();
 
-    if(StartTime != nullptr)
-    {
-        delete StartTime;
-    }
-    StartTime = new Specification(this,StartTime_explain, ui->Historicalfailure_tableWidget, 0, 1, \
+    StartTime = new Specification(this,StartTime_explain, ui->Historicalfailure_tableWidget, line++, column, \
                                                     "2023.5.6 15:49:50", str4, str5);
     StartTime->add_Specification();
-
-    if(StartTime2 != nullptr)
-    {
-        delete StartTime2;
-    }
-    StartTime2 = new Specification(this,StartTime2_explain, ui->Historicalfailure_tableWidget, 1, 1, \
+    StartTime2 = new Specification(this,StartTime2_explain, ui->Historicalfailure_tableWidget, line++, column, \
                                                     "2023.5.6 15:48:18", str4, str5);
     StartTime2->add_Specification();
-
-    if(StartTime3 != nullptr)
-    {
-        delete StartTime3;
-    }
-    StartTime3 = new Specification(this,StartTime3_explain, ui->Historicalfailure_tableWidget, 2, 1, \
+    StartTime3 = new Specification(this,StartTime3_explain, ui->Historicalfailure_tableWidget, line++, column, \
                                                     "2023.5.6 15:39:3", str4, str5);
     StartTime3->add_Specification();
-
-    if(StartTime4 != nullptr)
-    {
-        delete StartTime4;
-    }
-    StartTime4 = new Specification(this,StartTime4_explain, ui->Historicalfailure_tableWidget, 3, 1, \
+    StartTime4 = new Specification(this,StartTime4_explain, ui->Historicalfailure_tableWidget, line++, column, \
                                                     "2023.5.6 15:39:3", str4, str5);
     StartTime4->add_Specification();
-
-    if(StartTime5 != nullptr)
-    {
-        delete StartTime5;
-    }
-    StartTime5 = new Specification(this,StartTime5_explain, ui->Historicalfailure_tableWidget, 4, 1, \
+    StartTime5 = new Specification(this,StartTime5_explain, ui->Historicalfailure_tableWidget, line++, column, \
                                                     "2023.5.6 15:39:3", str4, str5);
     StartTime5->add_Specification();
-
-    if(StartTime6 != nullptr)
-    {
-        delete StartTime6;
-    }
-    StartTime6 = new Specification(this,StartTime6_explain, ui->Historicalfailure_tableWidget, 5, 1, \
+    StartTime6 = new Specification(this,StartTime6_explain, ui->Historicalfailure_tableWidget, line++, column, \
                                                     "2023.5.6 15:21:56", str4, str5);
     StartTime6->add_Specification();
-
-    if(StartTime7 != nullptr)
-    {
-        delete StartTime7;
-    }
-    StartTime7 = new Specification(this,StartTime7_explain, ui->Historicalfailure_tableWidget, 6, 1, \
+    StartTime7 = new Specification(this,StartTime7_explain, ui->Historicalfailure_tableWidget, line++, column, \
                                                     "2023.5.6 15:21:38", str4, str5);
     StartTime7->add_Specification();
-
-    if(StartTime8 != nullptr)
-    {
-        delete StartTime8;
-    }
-    StartTime8 = new Specification(this,StartTime8_explain, ui->Historicalfailure_tableWidget, 7, 1, \
+    StartTime8 = new Specification(this,StartTime8_explain, ui->Historicalfailure_tableWidget, line++, column, \
                                                     "2023.5.6 15:21:38", str4, str5);
     StartTime8->add_Specification();
+    line=0;
+    column=2;
+    EndTime9 = new Specification(this,EndTime9_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "...", str6, str7);
+    EndTime9->add_Specification();
+    EndTime10 = new Specification(this,EndTime10_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "...", str6, str7);
+    EndTime10->add_Specification();
+    EndTime11 = new Specification(this,EndTime11_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "...", str6, str7);
+    EndTime11->add_Specification();
+    EndTime12 = new Specification(this,EndTime12_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "...", str6, str7);
+    EndTime12->add_Specification();
+    EndTime13 = new Specification(this,EndTime13_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "...", str6, str7);
+    EndTime13->add_Specification();
+    EndTime14 = new Specification(this,EndTime14_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "...", str6, str7);
+    EndTime14->add_Specification();
+    EndTime15 = new Specification(this,EndTime15_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "2023.7.29 16:42:24", str6, str7);
+    EndTime15->add_Specification();
 
-    if(EndTime != nullptr)
-    {
-        delete EndTime;
-    }
-    EndTime = new Specification(this,EndTime_explain, ui->Historicalfailure_tableWidget, 0, 2, "-", str6, str7);
+    EndTime = new Specification(this,EndTime_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "-", str6, str7);
     EndTime->add_Specification();
-
-    if(EndTime2 != nullptr)
-    {
-        delete EndTime2;
-    }
-    EndTime2 = new Specification(this,EndTime2_explain, ui->Historicalfailure_tableWidget, 1, 2, "-", str6, str7);
+    EndTime2 = new Specification(this,EndTime2_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "-", str6, str7);
     EndTime2->add_Specification();
-
-    if(EndTime3 != nullptr)
-    {
-        delete EndTime3;
-    }
-    EndTime3 = new Specification(this,EndTime3_explain, ui->Historicalfailure_tableWidget, 2, 2, "...", str6, str7);
+    EndTime3 = new Specification(this,EndTime3_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "...", str6, str7);
     EndTime3->add_Specification();
-
-    if(EndTime4 != nullptr)
-    {
-        delete EndTime4;
-    }
-    EndTime4 = new Specification(this,EndTime4_explain, ui->Historicalfailure_tableWidget, 3, 2, "-", str6, str7);
+    EndTime4 = new Specification(this,EndTime4_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "-", str6, str7);
     EndTime4->add_Specification();
-
-    if(EndTime5 != nullptr)
-    {
-        delete EndTime5;
-    }
-    EndTime5 = new Specification(this,EndTime5_explain, ui->Historicalfailure_tableWidget, 4, 2, "...", str6, str7);
+    EndTime5 = new Specification(this,EndTime5_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "...", str6, str7);
     EndTime5->add_Specification();
-
-    if(EndTime6 != nullptr)
-    {
-        delete EndTime6;
-    }
-    EndTime6 = new Specification(this,EndTime6_explain, ui->Historicalfailure_tableWidget, 5, 2, "-", str6, str7);
+    EndTime6 = new Specification(this,EndTime6_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "-", str6, str7);
     EndTime6->add_Specification();
-
-    if(EndTime7 != nullptr)
-    {
-        delete EndTime7;
-    }
-    EndTime7 = new Specification(this,EndTime7_explain, ui->Historicalfailure_tableWidget, 6, 2, "-", str6, str7);
+    EndTime7 = new Specification(this,EndTime7_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "-", str6, str7);
     EndTime7->add_Specification();
-
-    if(EndTime8 != nullptr)
-    {
-        delete EndTime8;
-    }
-    EndTime8 = new Specification(this,EndTime8_explain, ui->Historicalfailure_tableWidget, 7, 2, "-", str6, str7);
+    EndTime8 = new Specification(this,EndTime8_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    "-", str6, str7);
     EndTime8->add_Specification();
+    line=0;
+    column=3;
+    Describe9 = new Specification(this,Describe9_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str13, str9, str10);
+    Describe9->add_Specification();
+    Describe10 = new Specification(this,Describe10_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str14, str9, str10);
+    Describe10->add_Specification();
+    Describe11 = new Specification(this,Describe11_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str15, str9, str10);
+    Describe11->add_Specification();
+    Describe12 = new Specification(this,Describe12_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str16, str9, str10);
+    Describe12->add_Specification();
+    Describe13 = new Specification(this,Describe13_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str17, str9, str10);
+    Describe13->add_Specification();
+    Describe14 = new Specification(this,Describe14_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str18, str9, str10);
+    Describe14->add_Specification();
+    Describe15 = new Specification(this,Describe15_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str20, str9, str10);
+    Describe15->add_Specification();
 
-    if(Describe != nullptr)
-    {
-        delete Describe;
-    }
-    Describe = new Specification(this,Describe_explain, ui->Historicalfailure_tableWidget, 0, 3, str8, str9, str10);
+    Describe = new Specification(this,Describe_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str8, str9, str10);
     Describe->add_Specification();
-
-    if(Describe2 != nullptr)
-    {
-        delete Describe2;
-    }
-    Describe2 = new Specification(this,Describe2_explain, ui->Historicalfailure_tableWidget, 1, 3, str8, str9, str10);
+    Describe2 = new Specification(this,Describe2_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str8, str9, str10);
     Describe2->add_Specification();
-
-    if(Describe3 != nullptr)
-    {
-        delete Describe3;
-    }
-    Describe3 = new Specification(this,Describe3_explain, ui->Historicalfailure_tableWidget, 2, 3, str11, str9, str10);
+    Describe3 = new Specification(this,Describe3_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str11, str9, str10);
     Describe3->add_Specification();
-
-    if(Describe4 != nullptr)
-    {
-        delete Describe4;
-    }
-    Describe4 = new Specification(this,Describe4_explain, ui->Historicalfailure_tableWidget, 3, 3, str8, str9, str10);
+    Describe4 = new Specification(this,Describe4_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str8, str9, str10);
     Describe4->add_Specification();
-
-    if(Describe5 != nullptr)
-    {
-        delete Describe5;
-    }
-    Describe5 = new Specification(this,Describe5_explain, ui->Historicalfailure_tableWidget, 4, 3, str12, str9, str10);
+    Describe5 = new Specification(this,Describe5_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str12, str9, str10);
     Describe5->add_Specification();
-
-    if(Describe6 != nullptr)
-    {
-        delete Describe6;
-    }
-    Describe6 = new Specification(this,Describe6_explain, ui->Historicalfailure_tableWidget, 5, 3, str8, str9, str10);
+    Describe6 = new Specification(this,Describe6_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str8, str9, str10);
     Describe6->add_Specification();
-
-    if(Describe7 != nullptr)
-    {
-        delete Describe7;
-    }
-    Describe7 = new Specification(this,Describe7_explain, ui->Historicalfailure_tableWidget, 6, 3, str11, str9, str10);
+    Describe7 = new Specification(this,Describe7_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str11, str9, str10);
     Describe7->add_Specification();
-
-    if(Describe8 != nullptr)
-    {
-        delete Describe8;
-    }
-    Describe8 = new Specification(this,Describe8_explain, ui->Historicalfailure_tableWidget, 7, 3, str12, str9, str10);
+    Describe8 = new Specification(this,Describe8_explain, ui->Historicalfailure_tableWidget, line++, column, \
+                                                    str12, str9, str10);
     Describe8->add_Specification();
 }
 
@@ -2644,11 +2695,11 @@ void MEGAWin::BatteryData_clicked(int nid)
         break;
     case 10:
         QMessageBox::question(this, tr("Allow charge power")\
-                              ,tr("This is the rechargeable power uploaded from the BMS through the CAN/485 communication protocol. The charging power of the battery cannot exceed this limit value."), tr("OK"));
+                              ,tr("This is the allowable charging capacity uploaded from BMS through CAN/485/TCP communication protocol. It represents the current battery pack's capacity for charging. This value is not displayed when it does not exist (Note: Only certain BMSs provide this value)."), tr("OK"));
         break;
     case 11:
         QMessageBox::question(this, tr("Allow discharge power")\
-                              ,tr("This is the discharge power uploaded from the BMS using the CAN/485 communication protocol. The discharge power of the battery cannot exceed this limit."), tr("OK"));
+                              ,tr("This is the allowable discharge power obtained by PCS from BMS through CAN/485/TCP communication protocol, or obtained by multiplying the current discharge limit value uploaded from BMS through CAN/485/TCP communication protocol with the current voltage value. The battery's discharge power should not exceed this limitation value."), tr("OK"));
         break;
     case 12:
         QMessageBox::question(this, tr("Allow charge energy")\
@@ -2656,7 +2707,7 @@ void MEGAWin::BatteryData_clicked(int nid)
         break;
     case 13:
         QMessageBox::question(this, tr("Allow discharge energy")\
-                              ,tr("This is the allowable discharge from the BMS via the CAN/485/TCP communication protocol, the current capacity of the battery pack allowed to discharge (Note: only some BMS will provide this value)."), tr("OK"));
+                              ,tr("This is the allowable discharge capacity uploaded from BMS through CAN/485/TCP communication protocol. It represents the current battery pack's capacity for discharging. This value is not displayed when it does not exist (Note: Only certain BMSs provide this value)."), tr("OK"));
         break;
     case 14:
         QMessageBox::question(this, tr("Alarm level")\
@@ -2813,7 +2864,7 @@ void MEGAWin::PCS_Data()
     }
     PCS_IGBT_T = new Specification(this,PCS_IGBT_T_explain, ui->Converter_Tab, 4, 3, \
                                             "39℃", tr("PCS IGBT temperature"), \
-                                            tr("The current IGBT temperature of PCS shall not exceed 105℃, otherwise PCS will run derated."));
+                                            tr("The current IGBT temperature of the MPS must not exceed 105 ° C. Otherwise, the MPS will derate and can resume full power operation at 73 ° C after derating."));
     PCS_IGBT_T->add_Specification();
 
     if(PCS_Env_T != nullptr)
@@ -3065,7 +3116,7 @@ void MEGAWin::PCS_State()
     }
     Output_Breaker = new Specification(this,Output_Breaker_explain, ui->RTState_Bypass_Tab, 3, 1, \
                                             tr("Close"), tr("Output Breaker"), \
-                                            tr("The output circuit breaker has three states: Break, Close, Trip; If the output circuit breaker overcurrent, the output circuit breaker will trip."));
+                                            tr("The output circuit breaker has three states: open, closed, and tripped. It can only be manually opened and closed. If there is an overcurrent in the output circuit breaker, it will trip."));
     Output_Breaker->add_Specification();
 
     if(Grid_Cont != nullptr)
@@ -3074,7 +3125,7 @@ void MEGAWin::PCS_State()
     }
     Grid_Cont = new Specification(this,Grid_Cont_explain, ui->RTState_Bypass_Tab, 4, 1, \
                                             tr("Close"), tr("Grid contactor"), \
-                                            tr("The network contactor has two states: Break, Close; When the converter is in grid-connected mode and the grid side voltage is normal, the network contactor is closed. The converter is in off-grid mode and the network contactor is disconnected."));
+                                            tr("The grid contactor has two states: open and closed. When the inverter is in grid-connected mode and the grid voltage is normal, the grid contactor is closed. When the inverter is in island mode, the grid contactor is open. In the islanded state, the grid contactor remains open."));
     Grid_Cont->add_Specification();
 
     if(Grid_Breaker != nullptr)
@@ -3172,7 +3223,7 @@ void MEGAWin::PCS_State()
         delete EPO_Cont_signal1;
     }
     EPO_Cont_signal1 = new Specification(this,EPO_Cont_signal1_explain, ui->RTState_Bypass_Tab, 3, 5, \
-                                            tr("Disable"), tr("EPO_Cont signal1"), \
+                                            tr("Disable"), tr("EPO signal"), \
                                             tr("This is signal 1 of the EPO node. Enter dry contact 1, that is, dry contact signal 1 of external shutdown. There are two states: Enable and Disable."));
     EPO_Cont_signal1->add_Specification();
 
@@ -3181,7 +3232,7 @@ void MEGAWin::PCS_State()
         delete EPO_Cont_signal2;
     }
     EPO_Cont_signal2 = new Specification(this,EPO_Cont_signal2_explain, ui->RTState_Bypass_Tab, 4, 5, \
-                                            tr("Disable"), tr("EPO_Cont signal2"), \
+                                            tr("Disable"), tr("Shutdown"), \
                                             tr("This is signal 2 of the EPO node. Enter dry contact 2, that is, dry contact signal 2 of the external shutdown. There are two states: Enable and Disable."));
     EPO_Cont_signal2->add_Specification();
 
@@ -3227,11 +3278,12 @@ void MEGAWin::PCS_State()
  ***************************************************************/
 void MEGAWin::ParameterSet()
 {
+    int line=0;int column=1;
     if(Grid_connected_mode != NULL)
     {
         delete Grid_connected_mode;
     }
-    Grid_connected_mode = new Specification(this,Grid_connected_mode_explain, ui->System_Tab, 0, 1, \
+    Grid_connected_mode = new Specification(this,Grid_connected_mode_explain, ui->System_Tab, line++, column, \
                                             tr("automatic"), tr("Grid connected mode of PCS"), \
                                             tr("    When automatic and off-grid is selected, it will automatically identify and switch and off-grid. When the voltage on the grid side is normal, the contactor on the grid side will close, and the machine is in grid-connected mode (PQ).When the grid is out of power, the grid side contactor will be disconnected, and the machine is in off-grid mode (VF).\n   When the grid-connected mode is selected, and the grid side voltage is normal, the grid side contactor will close, and the machine is in grid-connected mode (PQ);If the power grid loses power, the machine will give an alarm warning of the power grid low voltage.\n    When off-grid mode is selected, the machine will disconnect the grid side contactor, and the machine is in off-grid mode (VF)."));
     Grid_connected_mode->add_Specification();
@@ -3240,25 +3292,17 @@ void MEGAWin::ParameterSet()
     {
         delete Constant_power;
     }
-    Constant_power = new Specification(this,Constant_power_explain, ui->System_Tab, 1, 1, \
+    Constant_power = new Specification(this,Constant_power_explain, ui->System_Tab, line++, column, \
                                        tr("0"), tr("Constant power(AC)"), \
                                        tr("    This is the power setting of the AC side. The charging and discharging power of the AC side can be controlled by modifying the value of this item.When advanced Settings control power mode select constant power mode (CP_N&P), positive value indicates discharge, negative value indicates charging.\n    For example, set -5, indicating that the AC side will charge the battery with a power of -5kW, due to the loss of the inverter, the power on the DC side will be less than the power on the AC side.\n    For example, set 5, indicating that the AC side will be 5kW power output, due to the loss of the inverter, the DC side of the power will be greater than the AC side of the power."));
     Constant_power->add_Specification();
 
-    if(Charging_and_discharging != NULL)
-    {
-        delete Charging_and_discharging;
-    }
-    Charging_and_discharging = new Specification(this,Charging_and_discharging_explain, ui->System_Tab, 2, 1, \
-                                                 tr("Charge"), tr("Charging and discharging"), \
-                                                 tr("Reserve."));
-    Charging_and_discharging->add_Specification();
 
     if(Work_mode != NULL)
     {
         delete Work_mode;
     }
-    Work_mode = new Specification(this,Work_mode_explain, ui->System_Tab, 3, 1, \
+    Work_mode = new Specification(this,Work_mode_explain, ui->System_Tab, line++, column, \
                                   tr("Manual"), tr("Work mode"), \
                                   tr("    When manual mode is selected (applicable to EMS remote scheduling), you can use the HMI or EMS to control the running status of the machine. Charge and discharge power (active power) Reactive power information such as the power factor.\n    When the UPS mode (backup mode) is selected, the system switches from zero power to off-grid discharge mode to provide energy for critical loads when the power grid loses power.Please go to the battery setting page to set this mode. Note: This mode is only used in lithium mode, and the communication between PCS and BMS is normal.\n    The peak-valley filling mode is used for peak-valley arbitrage. PCS can operate according to the local peak-valley electricity price period, and can go to the automatic operation page to set the charging and discharging mode charging and discharging power and other information during the operation period.\n    When the system anti-countercurrent mode is selected, the PCS in this mode is in the local power grid system, and the energy meter is connected at the entrance of the power grid. When the PCS discharges the system, if the PCS detects that there is energy flowing into the power grid in reverse direction, the PCS will actively reduce the power to prevent energy flowing into the power grid."));
     Work_mode->add_Specification();
@@ -3267,7 +3311,7 @@ void MEGAWin::ParameterSet()
     {
         delete Output_power_factor;
     }
-    Output_power_factor = new Specification(this,Output_power_factor_explain, ui->System_Tab, 4, 1, \
+    Output_power_factor = new Specification(this,Output_power_factor_explain, ui->System_Tab, line++, column, \
                                             tr("1"), tr("Output power factor"), \
                                             tr("    The power factor Pf can be modified. The power factor is equal to the ratio of active power and reactive power. Positive value indicates reactive power lead and negative value indicates reactive power lag.\n    The power factor is a coefficient used to measure the output efficiency of electrical equipment, and the power factor is equal to the ratio of active power to reactive power. When the output reactive power factor is selected in the advanced settings 'system Settings' page, this output power factor can be modified to control the output of active power and reactive power."));
     Output_power_factor->add_Specification();
@@ -3276,7 +3320,7 @@ void MEGAWin::ParameterSet()
     {
         delete Output_reactive_power;
     }
-    Output_reactive_power = new Specification(this,Output_reactive_power_explain, ui->System_Tab, 5, 1, \
+    Output_reactive_power = new Specification(this,Output_reactive_power_explain, ui->System_Tab, line++, column, \
                                               tr("1"), tr("Output reactive power"), \
                                               tr("    This parameter can change the reactive power Q, positive value indicates reactive power lead, negative value indicates reactive power lag."));
     Output_reactive_power->add_Specification();
@@ -3285,7 +3329,7 @@ void MEGAWin::ParameterSet()
     {
         delete Constant_current;
     }
-    Constant_current = new Specification(this,Constant_current_explain, ui->System_Tab, 6, 1, \
+    Constant_current = new Specification(this,Constant_current_explain, ui->System_Tab, line++, column, \
                                          tr("100"), tr("Constant current"), \
                                          tr("    When the control power mode of the advanced Settings page is set to constant current (CC), modify the constant current value, then the machine will charge and discharge the battery with the current value, positive value represents discharge, negative value represents charging."));
     Constant_current->add_Specification();
@@ -3294,7 +3338,7 @@ void MEGAWin::ParameterSet()
     {
         delete Constant_voltage;
     }
-    Constant_voltage = new Specification(this,Constant_voltage_explain, ui->System_Tab, 7, 1, \
+    Constant_voltage = new Specification(this,Constant_voltage_explain, ui->System_Tab, line++, column, \
                                          tr("600"), tr("Constant voltage"), \
                                          tr("    When the control power mode of the Advanced Settings 'Function Settings' page is set to constant voltage (CV), modify the constant voltage value, the machine will operate at a constant voltage value, and the machine will be used as a constant voltage source."));
     Constant_voltage->add_Specification();
@@ -3303,16 +3347,18 @@ void MEGAWin::ParameterSet()
     {
         delete Control_mode;
     }
-    Control_mode = new Specification(this,Control_mode_explain, ui->System_Tab, 0, 4, \
+    line = 0;
+    column = 4;
+    Control_mode = new Specification(this,Control_mode_explain, ui->System_Tab, line++, column, \
                                      tr("Local"), tr("Control mode"), \
-                                     tr("    This is the control mode;If the local mode is selected, the dispatcher (EMS, RS485) can only monitor data but cannot control PCS. If the remote mode is selected,PCS parameter setting is disabled and the dispatcher (EMS,  RS485) can read and write data."));
+                                     tr("This is the control mode: the dispatching machine can only monitor data through Ethernet cable, RS485 tool, and CAN tool, but cannot control the PCS.\nThe remote mode: the dispatching machine can only read and write data through Ethernet cable, RS485 tool, and CAN tool."));
     Control_mode->add_Specification();
 
     if(Machine_number != NULL)
     {
         delete Machine_number;
     }
-    Machine_number = new Specification(this,Machine_number_explain, ui->System_Tab, 1, 4, \
+    Machine_number = new Specification(this,Machine_number_explain, ui->System_Tab, line++, column, \
                                        tr("Master_00"), tr("Machine number"), \
                                        tr("    This is the device number, and you can choose host(Master) or slave(Slave), where master is Master_00 and Slave_01 to Slave_08 are slaves."));
     Machine_number->add_Specification();
@@ -3321,47 +3367,10 @@ void MEGAWin::ParameterSet()
     {
         delete Parallel;
     }
-    Parallel = new Specification(this,Parallel_explain, ui->System_Tab, 2, 4, \
+    Parallel = new Specification(this,Parallel_explain, ui->System_Tab, line++, column, \
                                  tr("Disable"), tr("Parallel"), \
-                                 tr("Reserve."));
+                                 tr("Parallel Operation: When multiple devices are operating off-grid in parallel, this setting needs to be enabled."));
     Parallel->add_Specification();
-
-    if(Unbalance_power_enable != NULL)
-    {
-        delete Unbalance_power_enable;
-    }
-    Unbalance_power_enable = new Specification(this,Unbalance_power_enable_explain, ui->System_Tab, 3, 4, \
-                                               tr("Disable"), tr("Unbalance power enable"), \
-                                               tr("Reserve."));
-    Unbalance_power_enable->add_Specification();
-
-    if(Phase_A_power != NULL)
-    {
-        delete Phase_A_power;
-    }
-    Phase_A_power = new Specification(this,Phase_A_power_explain, ui->System_Tab, 4, 4, \
-                                      tr("5"), tr("Phase A power"), \
-                                      tr("Reserve."));
-    Phase_A_power->add_Specification();
-
-    if(Phase_B_power != NULL)
-    {
-        delete Phase_B_power;
-    }
-    Phase_B_power = new Specification(this,Phase_B_power_explain, ui->System_Tab, 5, 4, \
-                                      tr("5"), tr("Phase B power"), \
-                                      tr("Reserve."));
-    Phase_B_power->add_Specification();
-
-    if(Phase_C_power != NULL)
-    {
-        delete Phase_C_power;
-    }
-    Phase_C_power = new Specification(this,Phase_C_power_explain, ui->System_Tab, 6, 4, \
-                                      tr("5"), tr("Phase C power"), \
-                                      tr("Reserve."));
-    Phase_C_power->add_Specification();
-
 }
 
 /***************************************************************
@@ -3369,11 +3378,12 @@ void MEGAWin::ParameterSet()
  ***************************************************************/
 void MEGAWin::BetterySetup()
 {
+    int line=0;int column=1;
     if(DOD_OnGrid != nullptr)
     {
         delete DOD_OnGrid;
     }
-    DOD_OnGrid = new Specification(this,DOD_OnGrid_explain, ui->Lithum_Tab, 0, 1, \
+    DOD_OnGrid = new Specification(this,DOD_OnGrid_explain, ui->Lithum_Tab, line++, column, \
                                      "90", tr("DOD_OnGrid"), \
                                      tr("Grid-connected DOD, the depth of discharge allowed in grid-connected mode."));
     DOD_OnGrid->add_Specification();
@@ -3382,7 +3392,7 @@ void MEGAWin::BetterySetup()
     {
         delete DOD_OffGrid;
     }
-    DOD_OffGrid = new Specification(this,DOD_OffGrid_explain, ui->Lithum_Tab, 1, 1, \
+    DOD_OffGrid = new Specification(this,DOD_OffGrid_explain, ui->Lithum_Tab, line++, column, \
                                      "90", tr("DOD_OffGrid"), \
                                      tr("Off-network DOD: Discharge depth allowed in off-network mode."));
     DOD_OffGrid->add_Specification();
@@ -3391,7 +3401,7 @@ void MEGAWin::BetterySetup()
     {
         delete Charge_Vol_Up_Limit;
     }
-    Charge_Vol_Up_Limit = new Specification(this,Charge_Vol_Up_Limit_explain, ui->Lithum_Tab, 2, 1, \
+    Charge_Vol_Up_Limit = new Specification(this,Charge_Vol_Up_Limit_explain, ui->Lithum_Tab, line++, column, \
                                      "792", tr("Charge_Vol_Up_Limit"), \
                                      tr("This is the upper limit of the charging voltage. When the total battery voltage reaches this value during charging, the PCS will enter the constant voltage mode to prevent the battery from overcharging."));
     Charge_Vol_Up_Limit->add_Specification();
@@ -3400,7 +3410,7 @@ void MEGAWin::BetterySetup()
     {
         delete Disc_Vol_lower_Limit;
     }
-    Disc_Vol_lower_Limit = new Specification(this,Disc_Vol_lower_Limit_explain, ui->Lithum_Tab, 3, 1, \
+    Disc_Vol_lower_Limit = new Specification(this,Disc_Vol_lower_Limit_explain, ui->Lithum_Tab, line++, column, \
                                      "616", tr("Disc_Vol_lower_Limit"), \
                                      tr("This is the lower limit of the discharge voltage. When the total battery voltage during discharge reaches this value, PCS will trigger a battery low voltage alarm, and PCS will shut down to prevent battery overdischarge."));
     Disc_Vol_lower_Limit->add_Specification();
@@ -3409,7 +3419,7 @@ void MEGAWin::BetterySetup()
     {
         delete Charge_Cur_Limit;
     }
-    Charge_Cur_Limit = new Specification(this,Charge_Cur_Limit_explain, ui->Lithum_Tab, 4, 1, \
+    Charge_Cur_Limit = new Specification(this,Charge_Cur_Limit_explain, ui->Lithum_Tab, line++, column, \
                                      "160", tr("Charge_Cur_Limit"), \
                                      tr("This is the upper limit of charging current, which is the maximum current allowed on the DC side of PCS to prevent charging overcurrent."));
     Charge_Cur_Limit->add_Specification();
@@ -3418,7 +3428,7 @@ void MEGAWin::BetterySetup()
     {
         delete Gen_turn_off_SOC;
     }
-    Gen_turn_off_SOC = new Specification(this,Gen_turn_off_SOC_explain, ui->Lithum_Tab, 5, 1, \
+    Gen_turn_off_SOC = new Specification(this,Gen_turn_off_SOC_explain, ui->Lithum_Tab, line++, column, \
                                      "85", tr("Gen_turn_off_SOC"), \
                                      tr("When the specified SCO value is reached, the diesel generator shuts down."));
     Gen_turn_off_SOC->add_Specification();
@@ -3427,7 +3437,7 @@ void MEGAWin::BetterySetup()
     {
         delete Gen_turn_on_SOC;
     }
-    Gen_turn_on_SOC = new Specification(this,Gen_turn_on_SOC_explain, ui->Lithum_Tab, 6, 1, \
+    Gen_turn_on_SOC = new Specification(this,Gen_turn_on_SOC_explain, ui->Lithum_Tab, line++, column, \
                                      "25", tr("Gen_turn_on_SOC"), \
                                      tr("When the specified SOC value is reached, the diesel generator starts."));
     Gen_turn_on_SOC->add_Specification();
@@ -3436,7 +3446,7 @@ void MEGAWin::BetterySetup()
     {
         delete Gen_charge_SOC;
     }
-    Gen_charge_SOC = new Specification(this,Gen_charge_SOC_explain, ui->Lithum_Tab, 7, 1, \
+    Gen_charge_SOC = new Specification(this,Gen_charge_SOC_explain, ui->Lithum_Tab, line++, column, \
                                      "10", tr("Gen_charge_SOC"), \
                                      tr("This is the diesel generator charging SOC, this parameter is used in the combined power supply mode, when the battery SOC reaches this value, the PCS starts charging."));
     Gen_charge_SOC->add_Specification();
@@ -3445,25 +3455,45 @@ void MEGAWin::BetterySetup()
     {
         delete Grid_charge_SOC;
     }
-    Grid_charge_SOC = new Specification(this,Grid_charge_SOC_explain, ui->Lithum_Tab, 8, 1, \
+    Grid_charge_SOC = new Specification(this,Grid_charge_SOC_explain, ui->Lithum_Tab, line++, column, \
                                      "15", tr("Grid_charge_SOC"), \
                                      tr("This is the grid charging SOC, this parameter is used in the combined power supply mode, when the battery SOC reaches this value, the PCS starts charging."));
     Grid_charge_SOC->add_Specification();
+
+    if(ChargeStopSOC != nullptr)
+    {
+        delete ChargeStopSOC;
+    }
+    ChargeStopSOC = new Specification(this,ChargeStopSOC_explain, ui->Lithum_Tab, line++, column, \
+                                     "90", tr("Charge Stop SOC"), \
+                                     tr("Charge stop SOC: The battery will stop charging when the current SOC is higher than the preset value."));
+    ChargeStopSOC->add_Specification();
+
+    if(DischargeStopSOC != nullptr)
+    {
+        delete DischargeStopSOC;
+    }
+    DischargeStopSOC = new Specification(this,DischargeStopSOC_explain, ui->Lithum_Tab, line++, column, \
+                                     "10", tr("Discharge Stop SOC"), \
+                                     tr("Discharge stop SOC: The battery will stop discharging when the current SOC is below a preset value."));
+    DischargeStopSOC->add_Specification();
 
     if(Grid_capacity != nullptr)
     {
         delete Grid_capacity;
     }
-    Grid_capacity = new Specification(this,Grid_capacity_explain, ui->Lithum_Tab, 9, 1, \
+    Grid_capacity = new Specification(this,Grid_capacity_explain, ui->Lithum_Tab, line++, column, \
                                      "100", tr("Grid_capacity"), \
                                      tr("This is the power grid capacity, the maximum capacity input on the AC side of PCS, and this parameter takes effect in the combined power supply mode."));
     Grid_capacity->add_Specification();
 
+    line = 0;
+    column = 4;
     if(Turn_on_SOC != nullptr)
     {
         delete Turn_on_SOC;
     }
-    Turn_on_SOC = new Specification(this,Turn_on_SOC_explain, ui->Lithum_Tab, 0, 4, \
+    Turn_on_SOC = new Specification(this,Turn_on_SOC_explain, ui->Lithum_Tab, line++, column, \
                                      "20", tr("Turn_on_SOC"), \
                                      tr("When UPS mode is selected and battery SOC reaches this value,PCS starts charging."));
     Turn_on_SOC->add_Specification();
@@ -3472,7 +3502,7 @@ void MEGAWin::BetterySetup()
     {
         delete Turn_off_SOC;
     }
-    Turn_off_SOC = new Specification(this,Turn_off_SOC_explain, ui->Lithum_Tab, 1, 4, \
+    Turn_off_SOC = new Specification(this,Turn_off_SOC_explain, ui->Lithum_Tab, line++, column, \
                                      "50", tr("Turn_off_SOC"), \
                                      tr("When UPS mode is selected,PCS stops charging when battery SOC reaches this value."));
     Turn_off_SOC->add_Specification();
@@ -3481,7 +3511,7 @@ void MEGAWin::BetterySetup()
     {
         delete Turn_on_cell_vol;
     }
-    Turn_on_cell_vol = new Specification(this,Turn_on_cell_vol_explain, ui->Lithum_Tab, 2, 4, \
+    Turn_on_cell_vol = new Specification(this,Turn_on_cell_vol_explain, ui->Lithum_Tab, line++, column, \
                                      "3100", tr("Turn_on_cell_vol"), \
                                      tr("When UPS mode is selected, the PCS starts charging when the minimum battery voltage reaches the value."));
     Turn_on_cell_vol->add_Specification();
@@ -3490,7 +3520,7 @@ void MEGAWin::BetterySetup()
     {
         delete Turn_off_cell_vol;
     }
-    Turn_off_cell_vol = new Specification(this,Turn_off_cell_vol_explain, ui->Lithum_Tab, 3, 4, \
+    Turn_off_cell_vol = new Specification(this,Turn_off_cell_vol_explain, ui->Lithum_Tab, line++, column, \
                                      "3500", tr("Turn_off_cell_vol"), \
                                      tr("When UPS mode is selected, PCS stops charging when the maximum battery voltage reaches this value."));
     Turn_off_cell_vol->add_Specification();
@@ -3499,7 +3529,7 @@ void MEGAWin::BetterySetup()
     {
         delete Turn_on_total_vol;
     }
-    Turn_on_total_vol = new Specification(this,Turn_on_total_vol_explain, ui->Lithum_Tab, 4, 4, \
+    Turn_on_total_vol = new Specification(this,Turn_on_total_vol_explain, ui->Lithum_Tab, line++, column, \
                                      "400", tr("Turn_on_total_vol"), \
                                      tr("When the UPS mode is selected, the PCS starts charging when the total battery voltage reaches the value."));
     Turn_on_total_vol->add_Specification();
@@ -3508,7 +3538,7 @@ void MEGAWin::BetterySetup()
     {
         delete Turn_off_total_vol;
     }
-    Turn_off_total_vol = new Specification(this,Turn_off_total_vol_explain, ui->Lithum_Tab, 5, 4, \
+    Turn_off_total_vol = new Specification(this,Turn_off_total_vol_explain, ui->Lithum_Tab, line++, column, \
                                      "650", tr("Turn_off_total_vol"), \
                                      tr("When UPS mode is selected, PCS stops charging when the total battery voltage reaches this value."));
     Turn_off_total_vol->add_Specification();
@@ -3517,7 +3547,7 @@ void MEGAWin::BetterySetup()
     {
         delete UPS_charge_power;
     }
-    UPS_charge_power = new Specification(this,UPS_charge_power_explain, ui->Lithum_Tab, 6, 4, \
+    UPS_charge_power = new Specification(this,UPS_charge_power_explain, ui->Lithum_Tab, line++, column, \
                                      "-1", tr("UPS_charge_power"), \
                                      tr("When UPS mode is selected, the backup charging power of PCS is used when the battery starts charging."));
     UPS_charge_power->add_Specification();
@@ -3526,7 +3556,7 @@ void MEGAWin::BetterySetup()
     {
         delete Monthly_cycle_time;
     }
-    Monthly_cycle_time = new Specification(this,Monthly_cycle_time_explain, ui->Lithum_Tab, 7, 4, \
+    Monthly_cycle_time = new Specification(this,Monthly_cycle_time_explain, ui->Lithum_Tab, line++, column, \
                                      "0", tr("Monthly_cycle_time"), \
                                      tr("On the same day of each month, there is a deep charge and discharge."));
     Monthly_cycle_time->add_Specification();
@@ -3610,11 +3640,11 @@ void MEGAWin::AutoOperation()
     QString temp5 = tr("Power");
     QString temp6 = tr("9:00");
     QString temp7 = tr("10:00");
-    QString temp8 = tr("This is the end time at which the state started with the 'start time' will end.");
+    QString temp8 = tr("End time: The system stops automatically running when the system reaches this time.");
     QString temp9 = tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic.");
     QString temp10 = tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging.");
-    QString temp11 = tr("This is the start time at which the specified state will begin to be entered with the specified power.");
-    QString temp12 = tr("This is' Enable ', which will enable the specified state at the specified time with the specified power, and end at the specified time.");
+    QString temp11 = tr("Start time: When the system reaches this time, it starts to run automatically.");
+    QString temp12 = tr("Select: After this function is enabled, the system automatically runs the selected function mode within the specified period.");
 
     if(Check1 != nullptr)
     {
@@ -4343,6 +4373,7 @@ void MEGAWin::SystemMessages()
                                      tr("This is the name of the manufacturer."));
     Manufacturer_name->add_Specification();
 
+
     if(MonitoringVersion != nullptr)
     {
         delete MonitoringVersion;
@@ -4620,6 +4651,34 @@ void MEGAWin::FunctionSet()
                                tr("Set whether the display is enabled sound, which can be allowed(Allow) or prohibited(forbid)."));
     Sounds->add_Specification();
 
+    if(EnergyMeterModel != nullptr)
+    {
+        delete EnergyMeterModel;
+    }
+    EnergyMeterModel = new Specification(this,EnergyMeterModel_explain, ui->UI_Parameter_Tab, 6, 7, \
+                               tr("NONE"), tr("Energy Meter Model"), \
+                               tr("Energy meter model: The energy meter model is selected according to the type of energy meter that is connected. According to the characteristics and specifications of the connected watt-hour meter, select the corresponding watt-hour meter model, which can be selected NONE, DTSD1352, AMC96-E4/KC or ADL3000-E-B."));
+    EnergyMeterModel->add_Specification();
+
+    if(BmsComFaultTime != nullptr)
+    {
+        delete BmsComFaultTime;
+    }
+    BmsComFaultTime = new Specification(this,BmsComFaultTime_explain, ui->UI_Parameter_Tab, 7, 7, \
+                               tr("20"), tr("Bms Com. Fault Time"), \
+                               tr("BMS communication fault determination time: The BMS communication fault determination time refers to the BMS communication fault when the BMS communication is disconnected and the communication is not recovered after a preset period of time."));
+    BmsComFaultTime->add_Specification();
+
+    if(EMSComFaultModel != nullptr)
+    {
+        delete EMSComFaultModel;
+    }
+    EMSComFaultModel = new Specification(this,EMSComFaultModel_explain, ui->UI_Parameter_Tab, 8, 7, \
+                               tr("120"), tr("EMS Com. Fault Model"), \
+                               tr("EMS communication fault determination time: The EMS communication fault determination time refers to the time when the communication between the EMS is disconnected and the communication is not recovered after a preset period of time."));
+    EMSComFaultModel->add_Specification();
+
+
 }
 
 /***************************************************************
@@ -4705,7 +4764,7 @@ void MEGAWin::SystemParameter()
     }
     Insulation_detection_enable = new Specification(this,Insulation_detection_enable_explain, ui->UI_SystemParameter_Tab, 8, 1, \
                                                     tr("prohibit"), tr("Insulation detection enable"), \
-                                                    tr("Insulation detection Enable, insulation resistance greater than 33KΩ to be able to operate normally, less than 33KΩ can not start, and to alarm, the default prohibition, the choice is to Enable, prohibit, (Note: this is generally used in large grid-connected power stations)."));
+                                                    tr("Insulation detection Enable, insulation resistance greater than 33KΩ to be able to operate normally, less than 33KΩ can not start, and to alarm, the default prohibition, the choice is to Enable, prohibit."));
     Insulation_detection_enable->add_Specification();
 
     if(PrimaryFreq_enable != nullptr)
@@ -4776,8 +4835,8 @@ void MEGAWin::SystemParameter()
         delete Converter_side_vol_level;
     }
     Converter_side_vol_level = new Specification(this,Converter_side_vol_level_explain, ui->UI_SystemParameter_Tab, 4, 4, \
-                                         "270:400", tr("Converter side vol level"), \
-                                         tr("The inverter voltage level is the voltage level of the inverter, which should be set according to the transformer nameplate, subject to the factory default value, and cannot be changed at will. If you need to change, please contact customer service to confirm."));
+                                         "270:400", tr("Transformer Turns Ratio"), \
+                                         tr("Transformer Turns Ratio: Please refer to the factory nameplate for the turns ratio setting based on the built-in transformer. If any changes are required, please contact customer service for confirmation."));
     Converter_side_vol_level->add_Specification();
 
     if(Output_reactive_power_mode != nullptr)
@@ -4785,7 +4844,7 @@ void MEGAWin::SystemParameter()
         delete Output_reactive_power_mode;
     }
     Output_reactive_power_mode = new Specification(this,Output_reactive_power_mode_explain, ui->UI_SystemParameter_Tab, 5, 4, \
-                                         tr("Non adjustable"), tr("Output reactive power mode"), \
+                                         tr("Non\nadjustable"), tr("Output reactive power mode"), \
                                          tr("Output reactive mode, the default is not adjustable, can be selected as power factor (Pf), reactive power (Q), Non adjustable."));
     Output_reactive_power_mode->add_Specification();
 
@@ -4794,7 +4853,7 @@ void MEGAWin::SystemParameter()
         delete Grid_connected_mode_of_Inv;
     }
     Grid_connected_mode_of_Inv = new Specification(this,Grid_connected_mode_of_Inv_explain, ui->UI_SystemParameter_Tab, 6, 4, \
-                                                   tr("Non countercurrent"), tr("Grid connected mode of Inv"), \
+                                                   tr("Non\ncountercurrent"), tr("Grid connected mode of Inv"), \
                                                    tr("Set the grid-connected mode of the inverter, which can be countercurrent, that is, DC can be converted into AC power and then incorporated into the power grid; Irreversible means that the current on the DC side does not flow to the grid. The default value can be Countercurrent. The options can be countercurrent or Non countercurrent. With the local grid qualification, it can be changed to 'countercurrent'; When using Prevent countercurrent mode, you can change to 'countercurrent'."));
     Grid_connected_mode_of_Inv->add_Specification();
 
@@ -4852,11 +4911,29 @@ void MEGAWin::SystemParameter()
                                         tr("Restore the factory default Settings."));
     Restore_factory->add_Specification();
 
+    if(BackupSetParameters != nullptr)
+    {
+        delete BackupSetParameters;
+    }
+    BackupSetParameters = new Specification(this,BackupSetParameters_explain, ui->UI_SystemParameter_Tab,2, 7, \
+                                        tr("Backup\nSettings"), tr("Backup Set Parameters"), \
+                                        tr("Backup setting parameters: Backup setting parameters refers to backing up the parameters set on the current device so that the backup parameter Settings can be restored when needed."));
+    BackupSetParameters->add_Specification();
+
+    if(RestoreBackupSetParameters != nullptr)
+    {
+        delete RestoreBackupSetParameters;
+    }
+    RestoreBackupSetParameters = new Specification(this,RestoreBackupSetParameters_explain, ui->UI_SystemParameter_Tab,3, 7, \
+                                        tr("Restore\nBackup"), tr("Restore Backup Set Parameters"), \
+                                        tr("Restore backup setting parameters: Restore backup setting parameters means to restore the device to the last backup setting parameters and restart the device."));
+    RestoreBackupSetParameters->add_Specification();
+
     if(Clear_Data != nullptr)
     {
         delete Clear_Data;
     }
-    Clear_Data = new Specification(this,Clear_Data_explain, ui->UI_SystemParameter_Tab, 2, 7, \
+    Clear_Data = new Specification(this,Clear_Data_explain, ui->UI_SystemParameter_Tab, 4, 7, \
                                    tr("Clear"), tr("Clear Data"), \
                                    tr("Clear previous recorded data and operation data of the system."));
     Clear_Data->add_Specification();
@@ -4924,33 +5001,6 @@ void MEGAWin::Peripheral()
                                    tr("Enter dry contact 6. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set."));
     DI_6_Enable->add_Specification();
 
-    if(DO_1_Enable != nullptr)
-    {
-        delete DO_1_Enable;
-    }
-    DO_1_Enable = new Specification(this,DO_1_Enable_explain, ui->ExternalDevice_tW, 6, 0, \
-                                   tr("Disable"), tr("DO_1_Enable"), \
-                                   tr("Output dry contact 1. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set."));
-    DO_1_Enable->add_Specification();
-
-    if(DO_2_Enable != nullptr)
-    {
-        delete DO_2_Enable;
-    }
-    DO_2_Enable = new Specification(this,DO_2_Enable_explain, ui->ExternalDevice_tW, 7, 0, \
-                                   tr("Disable"), tr("DO_2_Enable"), \
-                                   tr("Output dry contact 2. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set."));
-    DO_2_Enable->add_Specification();
-
-    if(DO_3_Enable != nullptr)
-    {
-        delete DO_3_Enable;
-    }
-    DO_3_Enable = new Specification(this,DO_3_Enable_explain, ui->ExternalDevice_tW, 8, 0, \
-                                   tr("Disable"), tr("DO_3_Enable"), \
-                                   tr("Output dry contact 3. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set."));
-    DO_3_Enable->add_Specification();
-
     if(DI_1_NC_O != nullptr)
     {
         delete DI_1_NC_O;
@@ -4999,30 +5049,6 @@ void MEGAWin::Peripheral()
                                    "N_O", tr("DI_6_NC_O"), str);
     DI_6_NC_O->add_Specification();
 
-    if(DO_1_NC_O != nullptr)
-    {
-        delete DO_1_NC_O;
-    }
-    DO_1_NC_O = new Specification(this,DO_1_NC_O_explain, ui->ExternalDevice_tW, 6, 1, \
-                                   "N_O", tr("DO_1_NC_O"), str);
-    DO_1_NC_O->add_Specification();
-
-    if(DO_2_NC_O != nullptr)
-    {
-        delete DO_2_NC_O;
-    }
-    DO_2_NC_O = new Specification(this,DO_2_NC_O_explain, ui->ExternalDevice_tW, 7, 1, \
-                                   "N_O", tr("DO_2_NC_O"), str);
-    DO_2_NC_O->add_Specification();
-
-    if(DO_3_NC_O != nullptr)
-    {
-        delete DO_3_NC_O;
-    }
-    DO_3_NC_O = new Specification(this,DO_3_NC_O_explain, ui->ExternalDevice_tW, 8, 1, \
-                                   "N_O", tr("DO_3_NC_O"), str);
-    DO_3_NC_O->add_Specification();
-
     if(DI_1_Action != nullptr)
     {
         delete DI_1_Action;
@@ -5070,30 +5096,6 @@ void MEGAWin::Peripheral()
     DI_6_Action = new Specification(this,DI_6_Action_explain, ui->ExternalDevice_tW, 5, 2, \
                                    tr("Shut down"), tr("DI_6_Action"), str1);
     DI_6_Action->add_Specification();
-
-    if(DO_1_Action != nullptr)
-    {
-        delete DO_1_Action;
-    }
-    DO_1_Action = new Specification(this,DO_1_Action_explain, ui->ExternalDevice_tW, 6, 2, \
-                                   tr("Prompt"), tr("DO_1_Action"), str1);
-    DO_1_Action->add_Specification();
-
-    if(DO_2_Action != nullptr)
-    {
-        delete DO_2_Action;
-    }
-    DO_2_Action = new Specification(this,DO_2_Action_explain, ui->ExternalDevice_tW, 7, 2, \
-                                   tr("Prompt"), tr("DO_2_Action"), str1);
-    DO_2_Action->add_Specification();
-
-    if(DO_3_Action != nullptr)
-    {
-        delete DO_3_Action;
-    }
-    DO_3_Action = new Specification(this,DO_3_Action_explain, ui->ExternalDevice_tW, 8, 2, \
-                                   tr("Prompt"), tr("DO_3_Action"), str1);
-    DO_3_Action->add_Specification();
 }
 
 /***************************************************************
@@ -5107,7 +5109,7 @@ void MEGAWin::BMS_Protect()
     }
     DOD_Action = new Specification(this,DOD_Action_explain, ui->BMSProtection_tW, 0, 0, \
                                    tr("Standby"), "DOD", \
-                                   tr("DOD protection: Actions to be performed when DOD protection is triggered. The optional functions are NO action, Power down, Standby, Shut down."));
+                                   tr("DOD protection: Actions to be performed when DOD protection is triggered. The optional functions are NO action, Power down, Standby, Shut down,0 power standby."));
     DOD_Action->add_Specification();
 
     if(Prohibit_charging_Action != nullptr)
@@ -5602,3 +5604,12 @@ void MEGAWin::on_search_btn_clicked()
         }
     }
 }
+
+
+//void MEGAWin::resizeEvent(QResizeEvent *event)
+//{
+//    int x = this->frameGeometry().width(); //获取ui形成窗口宽度
+//    int y = this->frameGeometry().height();//获取窗口高度
+
+//    ui->UI_stackedWidget->setGeometry(0,0,x,y);
+//}

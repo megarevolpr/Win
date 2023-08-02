@@ -44,9 +44,6 @@ public:
         QPushButton *Constant_power_explain;     //功率说明
         Specification *Constant_power;
 
-        QPushButton *Charging_and_discharging_explain;  //充放电说明
-        Specification *Charging_and_discharging;
-
         QPushButton *Work_mode_explain;  //工作模式说明
         Specification *Work_mode;
 
@@ -71,17 +68,6 @@ public:
         QPushButton *Parallel_explain;  //并机说明
         Specification *Parallel;
 
-        QPushButton *Unbalance_power_enable_explain;    //功率不平衡使能说明
-        Specification *Unbalance_power_enable;
-
-        QPushButton *Phase_A_power_explain;      //A相功率说明
-        Specification *Phase_A_power;
-
-        QPushButton *Phase_B_power_explain;      //B相功率说明
-        Specification *Phase_B_power;
-
-        QPushButton *Phase_C_power_explain;      //C相功率说明
-        Specification *Phase_C_power;
         /***************************电池设置****************************/
         QPushButton *DOD_OnGrid_explain;
         QPushButton *DOD_OffGrid_explain;
@@ -92,6 +78,8 @@ public:
         QPushButton *Gen_turn_on_SOC_explain;     //柴发开启SOC
         QPushButton *Gen_charge_SOC_explain;      //柴发充电SOC
         QPushButton *Grid_charge_SOC_explain;     //电网充电SOC
+        QPushButton *ChargeStopSOC_explain;
+        QPushButton *DischargeStopSOC_explain;
         QPushButton *Grid_capacity_explain;       //电网容量
         QPushButton *Turn_on_SOC_explain;
         QPushButton *Turn_off_SOC_explain;
@@ -138,6 +126,8 @@ public:
         Specification *Gen_turn_on_SOC;     //柴发开启SOC
         Specification *Gen_charge_SOC;      //柴发充电SOC
         Specification *Grid_charge_SOC;     //电网充电SOC
+        Specification *ChargeStopSOC;
+        Specification *DischargeStopSOC;
         Specification *Grid_capacity;       //电网容量
         Specification *Turn_on_SOC;
         Specification *Turn_off_SOC;
@@ -209,6 +199,9 @@ public:
         QPushButton *Language_explain;
         QPushButton *System_upgrade_explain;
         QPushButton *Sounds_explain;
+        QPushButton *EnergyMeterModel_explain;
+        QPushButton *BmsComFaultTime_explain;
+        QPushButton *EMSComFaultModel_explain;
 
         Specification *Battery_type;
         Specification *BMS_Comm_type;
@@ -235,6 +228,9 @@ public:
         Specification *Language;
         Specification *System_upgrade;
         Specification *Sounds;
+        Specification *EnergyMeterModel;
+        Specification *BmsComFaultTime;
+        Specification *EMSComFaultModel;
 
         /***************************系统信息**************************/
         QPushButton *Manufacturer_name_explain;
@@ -276,6 +272,8 @@ public:
         QPushButton *DynamicCap_explain;
         QPushButton *Module_Number_explain;
         QPushButton *Restore_factory_explain;
+        QPushButton *BackupSetParameters_explain;
+        QPushButton *RestoreBackupSetParameters_explain;
         QPushButton *Clear_Data_explain;
 
         Specification *Change_rate_of_power;
@@ -303,6 +301,8 @@ public:
         Specification *DynamicCap;
         Specification *Module_Number;
         Specification *Restore_factory;
+        Specification *BackupSetParameters;
+        Specification *RestoreBackupSetParameters;
         Specification *Clear_Data;
         /***************************外设**************************/
         QPushButton *DI_1_Enable_explain;
@@ -311,27 +311,18 @@ public:
         QPushButton *DI_4_Enable_explain;
         QPushButton *DI_5_Enable_explain;
         QPushButton *DI_6_Enable_explain;
-        QPushButton *DO_1_Enable_explain;
-        QPushButton *DO_2_Enable_explain;
-        QPushButton *DO_3_Enable_explain;
         QPushButton *DI_1_NC_O_explain;
         QPushButton *DI_2_NC_O_explain;
         QPushButton *DI_3_NC_O_explain;
         QPushButton *DI_4_NC_O_explain;
         QPushButton *DI_5_NC_O_explain;
         QPushButton *DI_6_NC_O_explain;
-        QPushButton *DO_1_NC_O_explain;
-        QPushButton *DO_2_NC_O_explain;
-        QPushButton *DO_3_NC_O_explain;
         QPushButton *DI_1_Action_explain;
         QPushButton *DI_2_Action_explain;
         QPushButton *DI_3_Action_explain;
         QPushButton *DI_4_Action_explain;
         QPushButton *DI_5_Action_explain;
         QPushButton *DI_6_Action_explain;
-        QPushButton *DO_1_Action_explain;
-        QPushButton *DO_2_Action_explain;
-        QPushButton *DO_3_Action_explain;
 
         Specification *DI_1_Enable;
         Specification *DI_2_Enable;
@@ -339,27 +330,18 @@ public:
         Specification *DI_4_Enable;
         Specification *DI_5_Enable;
         Specification *DI_6_Enable;
-        Specification *DO_1_Enable;
-        Specification *DO_2_Enable;
-        Specification *DO_3_Enable;
         Specification *DI_1_NC_O;
         Specification *DI_2_NC_O;
         Specification *DI_3_NC_O;
         Specification *DI_4_NC_O;
         Specification *DI_5_NC_O;
         Specification *DI_6_NC_O;
-        Specification *DO_1_NC_O;
-        Specification *DO_2_NC_O;
-        Specification *DO_3_NC_O;
         Specification *DI_1_Action;
         Specification *DI_2_Action;
         Specification *DI_3_Action;
         Specification *DI_4_Action;
         Specification *DI_5_Action;
         Specification *DI_6_Action;
-        Specification *DO_1_Action;
-        Specification *DO_2_Action;
-        Specification *DO_3_Action;
         /***************************BMS保护**************************/
         QPushButton *DOD_Action_explain;
         QPushButton *Prohibit_charging_Action_explain;
@@ -598,6 +580,13 @@ public:
         QPushButton *Grade6_explain;
         QPushButton *Grade7_explain;
         QPushButton *Grade8_explain;
+        QPushButton *Grade9_explain;
+        QPushButton *Grade10_explain;
+        QPushButton *Grade11_explain;
+        QPushButton *Grade12_explain;
+        QPushButton *Grade13_explain;
+        QPushButton *Grade14_explain;
+        QPushButton *Grade15_explain;
         QPushButton *StartTime_explain;
         QPushButton *StartTime2_explain;
         QPushButton *StartTime3_explain;
@@ -606,6 +595,13 @@ public:
         QPushButton *StartTime6_explain;
         QPushButton *StartTime7_explain;
         QPushButton *StartTime8_explain;
+        QPushButton *StartTime9_explain;
+        QPushButton *StartTime10_explain;
+        QPushButton *StartTime11_explain;
+        QPushButton *StartTime12_explain;
+        QPushButton *StartTime13_explain;
+        QPushButton *StartTime14_explain;
+        QPushButton *StartTime15_explain;
         QPushButton *EndTime_explain;
         QPushButton *EndTime2_explain;
         QPushButton *EndTime3_explain;
@@ -614,6 +610,13 @@ public:
         QPushButton *EndTime6_explain;
         QPushButton *EndTime7_explain;
         QPushButton *EndTime8_explain;
+        QPushButton *EndTime9_explain;
+        QPushButton *EndTime10_explain;
+        QPushButton *EndTime11_explain;
+        QPushButton *EndTime12_explain;
+        QPushButton *EndTime13_explain;
+        QPushButton *EndTime14_explain;
+        QPushButton *EndTime15_explain;
         QPushButton *Describe_explain;
         QPushButton *Describe2_explain;
         QPushButton *Describe3_explain;
@@ -622,6 +625,13 @@ public:
         QPushButton *Describe6_explain;
         QPushButton *Describe7_explain;
         QPushButton *Describe8_explain;
+        QPushButton *Describe9_explain;
+        QPushButton *Describe10_explain;
+        QPushButton *Describe11_explain;
+        QPushButton *Describe12_explain;
+        QPushButton *Describe13_explain;
+        QPushButton *Describe14_explain;
+        QPushButton *Describe15_explain;
         Specification *Grade;
         Specification *Grade2;
         Specification *Grade3;
@@ -630,6 +640,13 @@ public:
         Specification *Grade6;
         Specification *Grade7;
         Specification *Grade8;
+        Specification *Grade9;
+        Specification *Grade10;
+        Specification *Grade11;
+        Specification *Grade12;
+        Specification *Grade13;
+        Specification *Grade14;
+        Specification *Grade15;
         Specification *StartTime;
         Specification *StartTime2;
         Specification *StartTime3;
@@ -638,6 +655,13 @@ public:
         Specification *StartTime6;
         Specification *StartTime7;
         Specification *StartTime8;
+        Specification *StartTime9;
+        Specification *StartTime10;
+        Specification *StartTime11;
+        Specification *StartTime12;
+        Specification *StartTime13;
+        Specification *StartTime14;
+        Specification *StartTime15;
         Specification *EndTime;
         Specification *EndTime2;
         Specification *EndTime3;
@@ -646,6 +670,13 @@ public:
         Specification *EndTime6;
         Specification *EndTime7;
         Specification *EndTime8;
+        Specification *EndTime9;
+        Specification *EndTime10;
+        Specification *EndTime11;
+        Specification *EndTime12;
+        Specification *EndTime13;
+        Specification *EndTime14;
+        Specification *EndTime15;
         Specification *Describe;
         Specification *Describe2;
         Specification *Describe3;
@@ -654,6 +685,13 @@ public:
         Specification *Describe6;
         Specification *Describe7;
         Specification *Describe8;
+        Specification *Describe9;
+        Specification *Describe10;
+        Specification *Describe11;
+        Specification *Describe12;
+        Specification *Describe13;
+        Specification *Describe14;
+        Specification *Describe15;
         /**********************操作日志*************************/
         QPushButton *ModificationTime_explain;
         QPushButton *ModificationTime2_explain;
@@ -765,6 +803,9 @@ private:
 
         void OperationLog_tab_delete();//操作日志 释放 说明
         void Battery_Setup_Lead_Tab_delete();//铅酸电池设置 释放 说明
+        void HistoryRecord_delete();//历史数据 释放 说明
+
+//        virtual void resizeEvent(QResizeEvent *event)override;//调整控件大小
 
 private slots:
     void onTimerOut();

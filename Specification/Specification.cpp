@@ -27,6 +27,7 @@ Specification::~Specification()
 void Specification::add_Specification()
 {
     tab.explain_btn->setText(tab.value);
+    tab.explain_btn->setFont(QFont("Microsoft YaHei UI",11));
     tab.target_tab->setCellWidget(tab.row, tab.column, (QWidget *)tab.explain_btn);
 }
 
