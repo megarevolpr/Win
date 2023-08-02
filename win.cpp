@@ -36,7 +36,7 @@ MEGAWin::MEGAWin(QWidget *parent) :
 
     ui->setupUi(this);
 
-    this->setMinimumSize(1150,780);
+//    this->setMinimumSize(1150,780);
     ui->UI_stackedWidget->setCurrentWidget(ui->UI_page );//开机后进入主页面
     ui->stackedWidget->setCurrentWidget(ui->Bypass_page);
     ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
@@ -2030,7 +2030,8 @@ void MEGAWin::on_UI_MenuBtn_clicked()
         connect(m_menu, SIGNAL(Sent(int)), this, SLOT(My_menuAction(int)));
 
         m_menu->setGeometry(0, 0, 250, 453);
-        m_menu->move(QPoint((this->pos().x() + 30),(this->pos().y()+(this->frameGeometry().height()-(450+110)))));
+        m_menu->move(QPoint((this->pos().x() + 30),(this->pos().y()+87)));
+//        m_menu->move(QPoint((this->pos().x() + 30),(this->pos().y()+(this->frameGeometry().height()-(450+110)))));
         m_menu->show();
     }
     else
