@@ -272,6 +272,7 @@ void MEGAWin::MemoryAllocation()
     Charge_Vol_Up_Limit_explain = new QPushButton;      //充电电压上限
     Disc_Vol_lower_Limit_explain= new QPushButton;      //放电电压下限
     Charge_Cur_Limit_explain    = new QPushButton;      //充电限流点
+    Discharge_Cur_Limit_explain = new QPushButton;   //放电限流点
     Gen_turn_off_SOC_explain    = new QPushButton;      //柴发关闭SOC
     Gen_turn_on_SOC_explain     = new QPushButton;      //柴发开启SOC
     Gen_charge_SOC_explain      = new QPushButton;      //柴发充电SOC
@@ -287,11 +288,17 @@ void MEGAWin::MemoryAllocation()
     Turn_off_total_vol_explain  = new QPushButton;      //停止总压
     UPS_charge_power_explain    = new QPushButton;      //后备充电功率
     Monthly_cycle_time_explain  = new QPushButton;      //月循环日期
+    Charge_power_limit_explain              = new QPushButton;
+    Discharge_power_limit_explain           = new QPushButton;
+    Charge_Vol_upper_Limit_delta_explain    = new QPushButton;
+    Discharge_Vol_lower_Limit_delta_explain = new QPushButton;
+
     DOD_OnGrid = nullptr;
     DOD_OffGrid = nullptr;
     Charge_Vol_Up_Limit = nullptr;
     Disc_Vol_lower_Limit = nullptr;
     Charge_Cur_Limit = nullptr;
+    Discharge_Cur_Limit = nullptr;
     Gen_turn_off_SOC = nullptr;
     Gen_turn_on_SOC = nullptr;
     Gen_charge_SOC = nullptr;
@@ -307,6 +314,10 @@ void MEGAWin::MemoryAllocation()
     Turn_off_total_vol = nullptr;
     UPS_charge_power = nullptr;
     Monthly_cycle_time = nullptr;
+    Charge_power_limit = nullptr;
+    Discharge_power_limit = nullptr;
+    Charge_Vol_upper_Limit_delta = nullptr;
+    Discharge_Vol_lower_Limit_delta = nullptr;
 
     Capacity_explain                    = new QPushButton;//铅酸
     Cell_number_2V_explain              = new QPushButton;
@@ -417,10 +428,6 @@ void MEGAWin::MemoryAllocation()
     Output_power_limit_explain              = new QPushButton;
     BAT_protocol_explain                    = new QPushButton;
     Power_Delta_explain                     = new QPushButton;
-    Charge_power_limit_explain              = new QPushButton;
-    Discharge_power_limit_explain           = new QPushButton;
-    Charge_Vol_upper_Limit_delta_explain    = new QPushButton;
-    Discharge_Vol_lower_Limit_delta_explain = new QPushButton;
     Host_Address_explain                    = new QPushButton;
     serial_port_1_explain                   = new QPushButton;
     serial_port_2_explain                   = new QPushButton;
@@ -446,10 +453,6 @@ void MEGAWin::MemoryAllocation()
     Output_power_limit = nullptr;
     BAT_protocol = nullptr;
     Power_Delta = nullptr;
-    Charge_power_limit = nullptr;
-    Discharge_power_limit = nullptr;
-    Charge_Vol_upper_Limit_delta = nullptr;
-    Discharge_Vol_lower_Limit_delta = nullptr;
     Host_Address = nullptr;
     serial_port_1 = nullptr;
     serial_port_2 = nullptr;
@@ -1134,7 +1137,7 @@ void MEGAWin::BatterySet_tab()
     ui->Lead_Tab->setColumnWidth(3,175);
     ui->Lead_Tab->setColumnWidth(4,100);
     ui->Lead_Tab->setColumnWidth(5,75);
-    for(int i=0;i<11;i++)
+    for(int i=0;i<17;i++)
     {
         ui->Lithum_Tab->setRowHeight(i,50);
         ui->Lead_Tab->setRowHeight(i,50);
@@ -2321,12 +2324,12 @@ void MEGAWin::MonitorDebug_clicked(int nid)
                               ,tr("This is to turn off the local soft boot for internal debugging use only."), tr("OK"));
             break;
         case 4:
-            QMessageBox::question(this, tr("BMS power on")\
-                          ,tr("This is battery power-on, which can give the BMS instructions to close the contactor (Note: only some BMS manufacturers support this function)."), tr("OK"));
+            QMessageBox::question(this, tr("Battery power on")\
+                          ,tr("Battery power-on: This function allows the BMS to send a command to close the contactor (Note: this feature is only supported by some BMS manufacturers)."), tr("OK"));
             break;
         case 5:
-            QMessageBox::question(this, tr("BMS power off")\
-                          ,tr("This is the battery power off, this item can give the BMS to disconnect the contactor command (note: only some BMS manufacturers support this function)."), tr("OK"));
+            QMessageBox::question(this, tr("Battery power off")\
+                          ,tr("Battery power-off: This function allows the BMS to send a command to open the contactor (Note: this feature is only supported by some BMS manufacturers)."), tr("OK"));
             break;
         default:
             break;
@@ -3413,8 +3416,8 @@ void MEGAWin::BetterySetup()
         delete DOD_OnGrid;
     }
     DOD_OnGrid = new Specification(this,DOD_OnGrid_explain, ui->Lithum_Tab, line++, column, \
-                                     "90", tr("DOD_OnGrid"), \
-                                     tr("Grid-connected DOD, the depth of discharge allowed in grid-connected mode."));
+                                     "90", tr("Grid-on DOD"), \
+                                     tr("Grid-on DOD, allowable depth of discharge in grid-on mode."));
     DOD_OnGrid->add_Specification();
 
     if(DOD_OffGrid != nullptr)
@@ -3422,8 +3425,8 @@ void MEGAWin::BetterySetup()
         delete DOD_OffGrid;
     }
     DOD_OffGrid = new Specification(this,DOD_OffGrid_explain, ui->Lithum_Tab, line++, column, \
-                                     "90", tr("DOD_OffGrid"), \
-                                     tr("Off-network DOD: Discharge depth allowed in off-network mode."));
+                                     "90", tr("Grid-off DOD"), \
+                                     tr("Grid-off DOD, allowable depth of discharge in grid-off mode."));
     DOD_OffGrid->add_Specification();
 
     if(Charge_Vol_Up_Limit != nullptr)
@@ -3431,35 +3434,76 @@ void MEGAWin::BetterySetup()
         delete Charge_Vol_Up_Limit;
     }
     Charge_Vol_Up_Limit = new Specification(this,Charge_Vol_Up_Limit_explain, ui->Lithum_Tab, line++, column, \
-                                     "792", tr("Charge_Vol_Up_Limit"), \
-                                     tr("This is the upper limit of the charging voltage. When the total battery voltage reaches this value during charging, the PCS will enter the constant voltage mode to prevent the battery from overcharging."));
+                                     "792", tr("Charge Volt upper Limit"), \
+                                     tr("Charging voltage upper limit: When the battery total voltage reaches this value during charging, the converter will shut down."));
     Charge_Vol_Up_Limit->add_Specification();
+
+    if(Charge_Vol_upper_Limit_delta != nullptr)
+    {
+        delete Charge_Vol_upper_Limit_delta;
+    }
+    Charge_Vol_upper_Limit_delta = new Specification(this,Charge_Vol_upper_Limit_delta_explain, ui->Lithum_Tab, line++, column, \
+                                                     "10", tr("Charge Vol upper Limit delta"), \
+                                                     tr("Charging voltage upper limit hysteresis: When the battery is charging, if the battery total voltage reaches the charging voltage upper limit, the converter will shut down. When the battery total voltage drops below the charging voltage upper limit minus the hysteresis value, the converter will automatically turn on."));
+    Charge_Vol_upper_Limit_delta->add_Specification();
 
     if(Disc_Vol_lower_Limit != nullptr)
     {
         delete Disc_Vol_lower_Limit;
     }
     Disc_Vol_lower_Limit = new Specification(this,Disc_Vol_lower_Limit_explain, ui->Lithum_Tab, line++, column, \
-                                     "616", tr("Disc_Vol_lower_Limit"), \
-                                     tr("This is the lower limit of the discharge voltage. When the total battery voltage during discharge reaches this value, PCS will trigger a battery low voltage alarm, and PCS will shut down to prevent battery overdischarge."));
+                                     "616", tr("Discharge Volt lower Limit"), \
+                                     tr("Discharge voltage lower limit: When the battery total voltage reaches this value during discharge, the converter will shut down."));
     Disc_Vol_lower_Limit->add_Specification();
+
+    if(Discharge_Vol_lower_Limit_delta != nullptr)
+    {
+        delete Discharge_Vol_lower_Limit_delta;
+    }
+    Discharge_Vol_lower_Limit_delta = new Specification(this,Discharge_Vol_lower_Limit_delta_explain, ui->Lithum_Tab, line++, column,\
+                                                        "10", tr("Discharge Vol lower Limit delta"), \
+                                                        tr("Discharge voltage lower limit hysteresis: When the battery is discharging, if the battery total voltage drops below the discharge voltage lower limit, the converter will shut down. When the battery total voltage exceeds the discharge voltage lower limit plus the hysteresis value, the converter will automatically turn on."));
+    Discharge_Vol_lower_Limit_delta->add_Specification();
 
     if(Charge_Cur_Limit != nullptr)
     {
         delete Charge_Cur_Limit;
     }
     Charge_Cur_Limit = new Specification(this,Charge_Cur_Limit_explain, ui->Lithum_Tab, line++, column, \
-                                     "160", tr("Charge_Cur_Limit"), \
-                                     tr("This is the upper limit of charging current, which is the maximum current allowed on the DC side of PCS to prevent charging overcurrent."));
+                                     "160", tr("Charge Current Limit"), \
+                                     tr("Charging current limit: The maximum allowable current on the battery side to prevent overcurrent during charging."));
     Charge_Cur_Limit->add_Specification();
+
+    if(Discharge_Cur_Limit != nullptr)
+    {
+        delete Discharge_Cur_Limit;
+    }
+    Discharge_Cur_Limit = new Specification(this,Discharge_Cur_Limit_explain, ui->Lithum_Tab, line++, column, \
+                                     "160", tr("Discharge Current Limit"), \
+                                     tr("Discharging current limit: The maximum allowable current on the battery side to prevent overcurrent during Discharging."));
+    Discharge_Cur_Limit->add_Specification();
+
+    Charge_power_limit = new Specification(this,Charge_power_limit_explain, ui->Lithum_Tab, line++, column, \
+                                           "100", tr("Charge power limit"),\
+                                           tr("Set the charging power limit to allow the maximum power of charging."));
+    Charge_power_limit->add_Specification();
+
+    if(Discharge_power_limit != nullptr)
+    {
+        delete Discharge_power_limit;
+    }
+    Discharge_power_limit = new Specification(this,Discharge_power_limit_explain, ui->Lithum_Tab, line++, column, \
+                                              "100", tr("Charge power limit"), \
+                                              tr("The discharge power limit is set to allow the maximum power of the discharge."));
+    Discharge_power_limit->add_Specification();
 
     if(Gen_turn_off_SOC != nullptr)
     {
         delete Gen_turn_off_SOC;
     }
     Gen_turn_off_SOC = new Specification(this,Gen_turn_off_SOC_explain, ui->Lithum_Tab, line++, column, \
-                                     "85", tr("Gen_turn_off_SOC"), \
-                                     tr("When the specified SCO value is reached, the diesel generator shuts down."));
+                                     "85", tr("Generator turn off SOC"), \
+                                     tr("When the specified SOC is reached, the diesel generator shuts down."));
     Gen_turn_off_SOC->add_Specification();
 
     if(Gen_turn_on_SOC != nullptr)
@@ -3467,8 +3511,8 @@ void MEGAWin::BetterySetup()
         delete Gen_turn_on_SOC;
     }
     Gen_turn_on_SOC = new Specification(this,Gen_turn_on_SOC_explain, ui->Lithum_Tab, line++, column, \
-                                     "25", tr("Gen_turn_on_SOC"), \
-                                     tr("When the specified SOC value is reached, the diesel generator starts."));
+                                     "25", tr("Genertor turn on SOC"), \
+                                     tr("When the specified SOC is reached, the diesel generator starts."));
     Gen_turn_on_SOC->add_Specification();
 
     if(Gen_charge_SOC != nullptr)
@@ -3476,8 +3520,8 @@ void MEGAWin::BetterySetup()
         delete Gen_charge_SOC;
     }
     Gen_charge_SOC = new Specification(this,Gen_charge_SOC_explain, ui->Lithum_Tab, line++, column, \
-                                     "10", tr("Gen_charge_SOC"), \
-                                     tr("This is the diesel generator charging SOC, this parameter is used in the combined power supply mode, when the battery SOC reaches this value, the PCS starts charging."));
+                                     "10", tr("Genertor charge SOC"), \
+                                     tr("Diesel Generator Charging SOC: In the grid expansion mode, when the diesel generator is connected, if the battery's SOC is lower than this value, the battery will be charged."));
     Gen_charge_SOC->add_Specification();
 
     if(Grid_charge_SOC != nullptr)
@@ -3485,8 +3529,8 @@ void MEGAWin::BetterySetup()
         delete Grid_charge_SOC;
     }
     Grid_charge_SOC = new Specification(this,Grid_charge_SOC_explain, ui->Lithum_Tab, line++, column, \
-                                     "15", tr("Grid_charge_SOC"), \
-                                     tr("This is the grid charging SOC, this parameter is used in the combined power supply mode, when the battery SOC reaches this value, the PCS starts charging."));
+                                     "15", tr("Grid charge SOC"), \
+                                     tr("Grid Charging SOC: In the grid expansion mode, when the diesel generator is not connected, if the battery's SOC is lower than this value, the battery will be charged."));
     Grid_charge_SOC->add_Specification();
 
     if(ChargeStopSOC != nullptr)
@@ -3495,7 +3539,7 @@ void MEGAWin::BetterySetup()
     }
     ChargeStopSOC = new Specification(this,ChargeStopSOC_explain, ui->Lithum_Tab, line++, column, \
                                      "90", tr("Charge Stop SOC"), \
-                                     tr("Charge stop SOC: The battery will stop charging when the current SOC is higher than the preset value."));
+                                     tr("Stop Charging SOC: When the current State of Charge (SOC) of the battery is higher than the preset value, the converter will stop charging. "));
     ChargeStopSOC->add_Specification();
 
     if(DischargeStopSOC != nullptr)
@@ -3504,7 +3548,7 @@ void MEGAWin::BetterySetup()
     }
     DischargeStopSOC = new Specification(this,DischargeStopSOC_explain, ui->Lithum_Tab, line++, column, \
                                      "10", tr("Discharge Stop SOC"), \
-                                     tr("Discharge stop SOC: The battery will stop discharging when the current SOC is below a preset value."));
+                                     tr("Stop Discharging SOC: When the current SOC of the battery is lower than the preset value, the converter will stop discharging. "));
     DischargeStopSOC->add_Specification();
 
     if(Grid_capacity != nullptr)
@@ -3513,8 +3557,16 @@ void MEGAWin::BetterySetup()
     }
     Grid_capacity = new Specification(this,Grid_capacity_explain, ui->Lithum_Tab, line++, column, \
                                      "100", tr("Grid_capacity"), \
-                                     tr("This is the power grid capacity, the maximum capacity input on the AC side of PCS, and this parameter takes effect in the combined power supply mode."));
+                                     tr("Grid Capacity: The maximum capacity of the converter's AC side input, which takes effect in the converter power supply mode."));
     Grid_capacity->add_Specification();
+    if(Charge_power_limit != nullptr)
+    {
+        delete Charge_power_limit;
+    }
+
+
+
+
 
     line = 0;
     column = 4;
@@ -3524,7 +3576,7 @@ void MEGAWin::BetterySetup()
     }
     Turn_on_SOC = new Specification(this,Turn_on_SOC_explain, ui->Lithum_Tab, line++, column, \
                                      "20", tr("Turn_on_SOC"), \
-                                     tr("When UPS mode is selected and battery SOC reaches this value,PCS starts charging."));
+                                     tr("Start SOC: In UPS mode, when the battery SOC reaches that value, the converter starts charging."));
     Turn_on_SOC->add_Specification();
 
     if(Turn_off_SOC != nullptr)
@@ -3533,7 +3585,7 @@ void MEGAWin::BetterySetup()
     }
     Turn_off_SOC = new Specification(this,Turn_off_SOC_explain, ui->Lithum_Tab, line++, column, \
                                      "50", tr("Turn_off_SOC"), \
-                                     tr("When UPS mode is selected,PCS stops charging when battery SOC reaches this value."));
+                                     tr("Stop SOC: In UPS mode, when the battery SOC reaches that value, the converter stops charging."));
     Turn_off_SOC->add_Specification();
 
     if(Turn_on_cell_vol != nullptr)
@@ -3542,7 +3594,7 @@ void MEGAWin::BetterySetup()
     }
     Turn_on_cell_vol = new Specification(this,Turn_on_cell_vol_explain, ui->Lithum_Tab, line++, column, \
                                      "3100", tr("Turn_on_cell_vol"), \
-                                     tr("When UPS mode is selected, the PCS starts charging when the minimum battery voltage reaches the value."));
+                                     tr("Start cell voltage: In UPS mode, when the lowest voltage of a battery cell reaches that value, the converter starts charging."));
     Turn_on_cell_vol->add_Specification();
 
     if(Turn_off_cell_vol != nullptr)
@@ -3551,7 +3603,7 @@ void MEGAWin::BetterySetup()
     }
     Turn_off_cell_vol = new Specification(this,Turn_off_cell_vol_explain, ui->Lithum_Tab, line++, column, \
                                      "3500", tr("Turn_off_cell_vol"), \
-                                     tr("When UPS mode is selected, PCS stops charging when the maximum battery voltage reaches this value."));
+                                     tr("Stop cell voltage: In UPS mode, when the highest voltage of a battery cell reaches that value, the converter stops charging."));
     Turn_off_cell_vol->add_Specification();
 
     if(Turn_on_total_vol != nullptr)
@@ -3560,7 +3612,7 @@ void MEGAWin::BetterySetup()
     }
     Turn_on_total_vol = new Specification(this,Turn_on_total_vol_explain, ui->Lithum_Tab, line++, column, \
                                      "400", tr("Turn_on_total_vol"), \
-                                     tr("When the UPS mode is selected, the PCS starts charging when the total battery voltage reaches the value."));
+                                     tr("Start total voltage: In UPS mode, when the total voltage of the battery reaches that value, the converter starts charging."));
     Turn_on_total_vol->add_Specification();
 
     if(Turn_off_total_vol != nullptr)
@@ -3569,7 +3621,7 @@ void MEGAWin::BetterySetup()
     }
     Turn_off_total_vol = new Specification(this,Turn_off_total_vol_explain, ui->Lithum_Tab, line++, column, \
                                      "650", tr("Turn_off_total_vol"), \
-                                     tr("When UPS mode is selected, PCS stops charging when the total battery voltage reaches this value."));
+                                     tr("Stop total voltage: In UPS mode, when the total voltage of the battery reaches that value, the converter stops charging."));
     Turn_off_total_vol->add_Specification();
 
     if(UPS_charge_power != nullptr)
@@ -3578,7 +3630,7 @@ void MEGAWin::BetterySetup()
     }
     UPS_charge_power = new Specification(this,UPS_charge_power_explain, ui->Lithum_Tab, line++, column, \
                                      "-1", tr("UPS_charge_power"), \
-                                     tr("When UPS mode is selected, the backup charging power of PCS is used when the battery starts charging."));
+                                     tr("Backup charging power: In UPS mode, the backup charging power of the converter when the battery starts charging."));
     UPS_charge_power->add_Specification();
 
     if(Monthly_cycle_time != nullptr)
@@ -3587,13 +3639,12 @@ void MEGAWin::BetterySetup()
     }
     Monthly_cycle_time = new Specification(this,Monthly_cycle_time_explain, ui->Lithum_Tab, line++, column, \
                                      "0", tr("Monthly_cycle_time"), \
-                                     tr("On the same day of each month, there is a deep charge and discharge."));
+                                     tr("Monthly cycling date: On the same day of each month, a deep discharge and recharge will be performed."));
     Monthly_cycle_time->add_Specification();
 }
 //电池设置页说明_铅酸电池
 void MEGAWin::Battery_Setup_Lead_Tab(QTableWidget *myTable)
 {
-
     //容量
     Capacity = new Specification(this,Capacity_explain, myTable, 0, 1, \
                                         "0", tr("Capacity"), \
@@ -3602,7 +3653,7 @@ void MEGAWin::Battery_Setup_Lead_Tab(QTableWidget *myTable)
     //电池节数
     Cell_number_2V = new Specification(this,Cell_number_2V_explain, myTable, 1, 1, \
                                         "0", tr("Cell_number_2V"), \
-                                        tr("The number of cells connected in a battery stack."));
+                                        tr("The number of battery cells connected in series in the battery stack (based on a 2V unit)."));
     Cell_number_2V->add_Specification();
     //浮充电压
     Bat_float_vol = new Specification(this,Bat_float_vol_explain, myTable, 2, 1, \
@@ -3616,44 +3667,43 @@ void MEGAWin::Battery_Setup_Lead_Tab(QTableWidget *myTable)
     Bat_filling_vol->add_Specification();
     //充电限流值
     Charge_limiting_value = new Specification(this,Charge_limiting_value_explain, myTable, 4, 1, \
-                                        "0", tr("Charge_limiting_value"), \
-                                        tr("Upper limit of charging current, which is the maximum current allowed on the DC side of PCS to prevent charging overcurrent."));
+                                        "0", tr("Charge limiting value"), \
+                                        tr("Charging Current Limit: The maximum allowable current on the battery side to prevent overcurrent during charging. (Upper limit: 0.25C)"));
     Charge_limiting_value->add_Specification();
     //放电限流值
     Discharge_limiting_value = new Specification(this,Discharge_limiting_value_explain, myTable, 5, 1, \
-                                        "0", tr("Discharge_limiting_value"), \
-                                        tr("The upper limit of discharge current, which is the maximum current allowed to discharge on the DC side of PCS to prevent discharge from overcurrent."));
+                                        "0", tr("Discharge limiting value"), \
+                                        tr("Discharge Current Limit: The maximum allowable current on the battery side to prevent overcurrent during discharge. (Upper limit: 0.5C)"));
     Discharge_limiting_value->add_Specification();
     //发电机关闭SOC
     Generator_turn_off_SOC_B1 = new Specification(this,Generator_turn_off_SOC_B1_explain, myTable, 6, 1, \
                                         "0", tr("Generator turn off voltage"), \
-                                        tr("Generator shutdown voltage."));
+                                        tr("Generator Shutdown Voltage: When the specified voltage is reached, the diesel generator will shut down."));
     Generator_turn_off_SOC_B1->add_Specification();
     //发电机开启SOC
     Generator_turn_on_SOC_A1 = new Specification(this,Generator_turn_on_SOC_A1_explain, myTable, 7, 1, \
                                         "0", tr("Generator turn on voltage"), \
-                                        tr("Generator opening voltage."));
+                                        tr("Generator Start Voltage: When the specified voltage is reached, the diesel generator will start up."));
     Generator_turn_on_SOC_A1->add_Specification();
     //离网EOD
     Grid_off_EOD = new Specification(this,Grid_off_EOD_explain, myTable, 0, 4, \
-                                        "0", tr("Grid_off_EOD"), \
-                                        tr("Off-grid discharge cut-off voltage."));
-    Grid_off_EOD->add_Specification();
+                                        "0", tr("Grid-off EOD"), \
+                                        tr("Grid-off discharge cut-off voltage."));
+    Grid_off_EOD->add_Specification();//
     //并网EOD
     Grid_on_EOD = new Specification(this,Grid_on_EOD_explain, myTable, 1, 4, \
-                                        "0", tr("Grid_on_EOD"), \
-                                        tr("Grid-connected discharge cut-off voltage."));
-    Grid_on_EOD->add_Specification();
-
-    //浮充转均充电流
+                                        "0", tr("Grid-on EOD"), \
+                                        tr("Grid-on discharge cut-off voltage."));
+    Grid_on_EOD->add_Specification();//
+    //均充转浮充电流
     Uniform_To_Flushing_current = new Specification(this,Uniform_To_Flushing_current_explain, myTable, 7, 4, \
                                         "0", tr("Uniform charging and flushing current"), \
-                                        tr("This is uniform charging and flushing current."));
+                                        tr("Uniform charging to flushing current: Upper limit of 0.025C."));
     Uniform_To_Flushing_current->add_Specification();//
-    //均充转浮充电流
+    //浮充转均充电流
     Flushing_To_Uniform_current = new Specification(this,Flushing_To_Uniform_current_explain, myTable, 8, 4, \
                                         "0", tr("Float turn uniform charging current"), \
-                                        tr("This is float turn uniform charging current."));
+                                        tr("Float turn to uniform charging current: Upper limit of 0.15C."));
     Flushing_To_Uniform_current->add_Specification();//
 }
 
@@ -4517,41 +4567,6 @@ void MEGAWin::FunctionSet()
                                     tr("Set the power back difference, the default power back difference is 10kw, the output power increases to 'output power limit + power back difference', will reduce the output power to 'output power - power back difference', (Note: this setting only takes effect in the system anti-countercurrent mode, for control of power grid inlet power back difference)."));
     Power_Delta->add_Specification();
 
-    if(Charge_power_limit != nullptr)
-    {
-        delete Charge_power_limit;
-    }
-    Charge_power_limit = new Specification(this,Charge_power_limit_explain, ui->UI_Parameter_Tab, 7, 1, \
-                                           "100", tr("Charge power limit"),\
-                                           tr("Set the charging power limit to allow the maximum power of charging."));
-    Charge_power_limit->add_Specification();
-
-    if(Discharge_power_limit != nullptr)
-    {
-        delete Discharge_power_limit;
-    }
-    Discharge_power_limit = new Specification(this,Discharge_power_limit_explain, ui->UI_Parameter_Tab, 8, 1, \
-                                              "100", tr("Charge power limit"), \
-                                              tr("The discharge power limit is set to allow the maximum power of the discharge."));
-    Discharge_power_limit->add_Specification();
-
-    if(Charge_Vol_upper_Limit_delta != nullptr)
-    {
-        delete Charge_Vol_upper_Limit_delta;
-    }
-    Charge_Vol_upper_Limit_delta = new Specification(this,Charge_Vol_upper_Limit_delta_explain, ui->UI_Parameter_Tab, 9, 1, \
-                                                     "10", tr("Charge Vol upper Limit delta"), \
-                                                     tr("Set the upper Limit of Charge voltage delta (Charge Vol upper Limit delta). The default upper limit of charge voltage is 10V. When the charge voltage reaches the 'upper limit of charge voltage + charge voltage delta', the device will be forbidden to charge, and when the charge voltage drops to the 'upper limit of charge voltage - charge voltage delta', the forbidden charge will be lifted."));
-    Charge_Vol_upper_Limit_delta->add_Specification();
-
-    if(Discharge_Vol_lower_Limit_delta != nullptr)
-    {
-        delete Discharge_Vol_lower_Limit_delta;
-    }
-    Discharge_Vol_lower_Limit_delta = new Specification(this,Discharge_Vol_lower_Limit_delta_explain, ui->UI_Parameter_Tab, 10, 1,\
-                                                        "10", tr("Discharge Vol lower Limit delta"), \
-                                                        tr("Set the Discharge voltage lower Limit delta (Discharge Vol lower Limit delta), the default discharge voltage lower limit delta is 10V, when the discharge voltage is lower than the 'discharge voltage lower limit - discharge voltage delta', the device will be prohibited, when the discharge voltage reaches the 'discharge voltage lower limit + charge voltage delta', the prohibited discharge will be lifted."));
-    Discharge_Vol_lower_Limit_delta->add_Specification();
 
     if(Host_Address != nullptr)
     {

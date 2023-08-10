@@ -75,6 +75,7 @@ public:
         QPushButton *Charge_Vol_Up_Limit_explain;
         QPushButton *Disc_Vol_lower_Limit_explain;
         QPushButton *Charge_Cur_Limit_explain;
+        QPushButton *Discharge_Cur_Limit_explain;
         QPushButton *Gen_turn_off_SOC_explain;    //柴发关闭SOC
         QPushButton *Gen_turn_on_SOC_explain;     //柴发开启SOC
         QPushButton *Gen_charge_SOC_explain;      //柴发充电SOC
@@ -90,6 +91,10 @@ public:
         QPushButton *Turn_off_total_vol_explain;
         QPushButton *UPS_charge_power_explain;
         QPushButton *Monthly_cycle_time_explain;
+        QPushButton *Charge_power_limit_explain;
+        QPushButton *Discharge_power_limit_explain;
+        QPushButton *Charge_Vol_upper_Limit_delta_explain;
+        QPushButton *Discharge_Vol_lower_Limit_delta_explain;
 
         QPushButton *Capacity_explain;//铅酸
         QPushButton *Cell_number_2V_explain;
@@ -123,6 +128,7 @@ public:
         Specification *Charge_Vol_Up_Limit;
         Specification *Disc_Vol_lower_Limit;
         Specification *Charge_Cur_Limit;
+        Specification *Discharge_Cur_Limit;
         Specification *Gen_turn_off_SOC;    //柴发关闭SOC
         Specification *Gen_turn_on_SOC;     //柴发开启SOC
         Specification *Gen_charge_SOC;      //柴发充电SOC
@@ -138,6 +144,10 @@ public:
         Specification *Turn_off_total_vol;
         Specification *UPS_charge_power;
         Specification *Monthly_cycle_time;
+        Specification *Charge_power_limit;
+        Specification *Discharge_power_limit;
+        Specification *Charge_Vol_upper_Limit_delta;
+        Specification *Discharge_Vol_lower_Limit_delta;
         /***************************自动运行**************************/
         //选择
         QPushButton *Check1_explain,*Check2_explain,*Check3_explain,*Check4_explain,*Check5_explain, \
@@ -182,10 +192,6 @@ public:
         QPushButton *Output_power_limit_explain;
         QPushButton *BAT_protocol_explain;
         QPushButton *Power_Delta_explain;
-        QPushButton *Charge_power_limit_explain;
-        QPushButton *Discharge_power_limit_explain;
-        QPushButton *Charge_Vol_upper_Limit_delta_explain;
-        QPushButton *Discharge_Vol_lower_Limit_delta_explain;
         QPushButton *Host_Address_explain;
         QPushButton *serial_port_1_explain;
         QPushButton *serial_port_2_explain;
@@ -211,10 +217,6 @@ public:
         Specification *Output_power_limit;
         Specification *BAT_protocol;
         Specification *Power_Delta;
-        Specification *Charge_power_limit;
-        Specification *Discharge_power_limit;
-        Specification *Charge_Vol_upper_Limit_delta;
-        Specification *Discharge_Vol_lower_Limit_delta;
         Specification *Host_Address;
         Specification *serial_port_1;
         Specification *serial_port_2;
