@@ -24,17 +24,17 @@
         <location filename="../win.ui" line="904"/>
         <location filename="../win.ui" line="1966"/>
         <location filename="../win.ui" line="2026"/>
-        <location filename="../win.ui" line="3916"/>
-        <location filename="../win.ui" line="4109"/>
-        <location filename="../win.ui" line="4154"/>
-        <location filename="../win.ui" line="4207"/>
-        <location filename="../win.ui" line="4257"/>
-        <location filename="../win.ui" line="4546"/>
-        <location filename="../win.ui" line="4591"/>
-        <location filename="../win.ui" line="7907"/>
-        <location filename="../win.ui" line="7947"/>
-        <location filename="../win.ui" line="8472"/>
-        <location filename="../win.ui" line="8532"/>
+        <location filename="../win.ui" line="3922"/>
+        <location filename="../win.ui" line="4115"/>
+        <location filename="../win.ui" line="4160"/>
+        <location filename="../win.ui" line="4213"/>
+        <location filename="../win.ui" line="4263"/>
+        <location filename="../win.ui" line="4552"/>
+        <location filename="../win.ui" line="4597"/>
+        <location filename="../win.ui" line="8098"/>
+        <location filename="../win.ui" line="8138"/>
+        <location filename="../win.ui" line="8663"/>
+        <location filename="../win.ui" line="8723"/>
         <location filename="../win.cpp" line="2361"/>
         <location filename="../win.cpp" line="3335"/>
         <location filename="../win.cpp" line="3344"/>
@@ -48,17 +48,17 @@
         <location filename="../win.ui" line="909"/>
         <location filename="../win.ui" line="1971"/>
         <location filename="../win.ui" line="2031"/>
-        <location filename="../win.ui" line="3921"/>
-        <location filename="../win.ui" line="4114"/>
-        <location filename="../win.ui" line="4159"/>
-        <location filename="../win.ui" line="4212"/>
-        <location filename="../win.ui" line="4262"/>
-        <location filename="../win.ui" line="4551"/>
-        <location filename="../win.ui" line="4596"/>
-        <location filename="../win.ui" line="7912"/>
-        <location filename="../win.ui" line="7955"/>
-        <location filename="../win.ui" line="8477"/>
-        <location filename="../win.ui" line="8537"/>
+        <location filename="../win.ui" line="3927"/>
+        <location filename="../win.ui" line="4120"/>
+        <location filename="../win.ui" line="4165"/>
+        <location filename="../win.ui" line="4218"/>
+        <location filename="../win.ui" line="4268"/>
+        <location filename="../win.ui" line="4557"/>
+        <location filename="../win.ui" line="4602"/>
+        <location filename="../win.ui" line="8103"/>
+        <location filename="../win.ui" line="8146"/>
+        <location filename="../win.ui" line="8668"/>
+        <location filename="../win.ui" line="8728"/>
         <source>2</source>
         <translation></translation>
     </message>
@@ -69,15 +69,15 @@
         <location filename="../win.ui" line="914"/>
         <location filename="../win.ui" line="1976"/>
         <location filename="../win.ui" line="2036"/>
-        <location filename="../win.ui" line="3926"/>
-        <location filename="../win.ui" line="4119"/>
-        <location filename="../win.ui" line="4217"/>
-        <location filename="../win.ui" line="4556"/>
-        <location filename="../win.ui" line="4601"/>
-        <location filename="../win.ui" line="7917"/>
-        <location filename="../win.ui" line="7963"/>
-        <location filename="../win.ui" line="8482"/>
-        <location filename="../win.ui" line="8542"/>
+        <location filename="../win.ui" line="3932"/>
+        <location filename="../win.ui" line="4125"/>
+        <location filename="../win.ui" line="4223"/>
+        <location filename="../win.ui" line="4562"/>
+        <location filename="../win.ui" line="4607"/>
+        <location filename="../win.ui" line="8108"/>
+        <location filename="../win.ui" line="8154"/>
+        <location filename="../win.ui" line="8673"/>
+        <location filename="../win.ui" line="8733"/>
         <source>3</source>
         <translation></translation>
     </message>
@@ -88,15 +88,15 @@
         <location filename="../win.ui" line="919"/>
         <location filename="../win.ui" line="1981"/>
         <location filename="../win.ui" line="2041"/>
-        <location filename="../win.ui" line="3931"/>
-        <location filename="../win.ui" line="4124"/>
-        <location filename="../win.ui" line="4222"/>
-        <location filename="../win.ui" line="4561"/>
-        <location filename="../win.ui" line="4606"/>
-        <location filename="../win.ui" line="7922"/>
-        <location filename="../win.ui" line="7971"/>
-        <location filename="../win.ui" line="8487"/>
-        <location filename="../win.ui" line="8547"/>
+        <location filename="../win.ui" line="3937"/>
+        <location filename="../win.ui" line="4130"/>
+        <location filename="../win.ui" line="4228"/>
+        <location filename="../win.ui" line="4567"/>
+        <location filename="../win.ui" line="4612"/>
+        <location filename="../win.ui" line="8113"/>
+        <location filename="../win.ui" line="8162"/>
+        <location filename="../win.ui" line="8678"/>
+        <location filename="../win.ui" line="8738"/>
         <source>4</source>
         <translation></translation>
     </message>
@@ -107,15 +107,15 @@
         <location filename="../win.ui" line="924"/>
         <location filename="../win.ui" line="1986"/>
         <location filename="../win.ui" line="2046"/>
-        <location filename="../win.ui" line="3936"/>
-        <location filename="../win.ui" line="4129"/>
-        <location filename="../win.ui" line="4227"/>
-        <location filename="../win.ui" line="4566"/>
-        <location filename="../win.ui" line="4611"/>
-        <location filename="../win.ui" line="7927"/>
-        <location filename="../win.ui" line="7976"/>
-        <location filename="../win.ui" line="8492"/>
-        <location filename="../win.ui" line="8552"/>
+        <location filename="../win.ui" line="3942"/>
+        <location filename="../win.ui" line="4135"/>
+        <location filename="../win.ui" line="4233"/>
+        <location filename="../win.ui" line="4572"/>
+        <location filename="../win.ui" line="4617"/>
+        <location filename="../win.ui" line="8118"/>
+        <location filename="../win.ui" line="8167"/>
+        <location filename="../win.ui" line="8683"/>
+        <location filename="../win.ui" line="8743"/>
         <source>5</source>
         <translation></translation>
     </message>
@@ -126,15 +126,15 @@
         <location filename="../win.ui" line="929"/>
         <location filename="../win.ui" line="1991"/>
         <location filename="../win.ui" line="2051"/>
-        <location filename="../win.ui" line="3941"/>
-        <location filename="../win.ui" line="4134"/>
-        <location filename="../win.ui" line="4232"/>
-        <location filename="../win.ui" line="4571"/>
-        <location filename="../win.ui" line="4616"/>
-        <location filename="../win.ui" line="7932"/>
-        <location filename="../win.ui" line="7981"/>
-        <location filename="../win.ui" line="8497"/>
-        <location filename="../win.ui" line="8557"/>
+        <location filename="../win.ui" line="3947"/>
+        <location filename="../win.ui" line="4140"/>
+        <location filename="../win.ui" line="4238"/>
+        <location filename="../win.ui" line="4577"/>
+        <location filename="../win.ui" line="4622"/>
+        <location filename="../win.ui" line="8123"/>
+        <location filename="../win.ui" line="8172"/>
+        <location filename="../win.ui" line="8688"/>
+        <location filename="../win.ui" line="8748"/>
         <source>6</source>
         <translation></translation>
     </message>
@@ -144,12 +144,12 @@
         <location filename="../win.ui" line="874"/>
         <location filename="../win.ui" line="934"/>
         <location filename="../win.ui" line="1996"/>
-        <location filename="../win.ui" line="3946"/>
-        <location filename="../win.ui" line="4139"/>
-        <location filename="../win.ui" line="4237"/>
-        <location filename="../win.ui" line="4576"/>
-        <location filename="../win.ui" line="7937"/>
-        <location filename="../win.ui" line="8502"/>
+        <location filename="../win.ui" line="3952"/>
+        <location filename="../win.ui" line="4145"/>
+        <location filename="../win.ui" line="4243"/>
+        <location filename="../win.ui" line="4582"/>
+        <location filename="../win.ui" line="8128"/>
+        <location filename="../win.ui" line="8693"/>
         <source>7</source>
         <translation></translation>
     </message>
@@ -159,13 +159,13 @@
         <location filename="../win.ui" line="879"/>
         <location filename="../win.ui" line="939"/>
         <location filename="../win.ui" line="2001"/>
-        <location filename="../win.ui" line="3951"/>
-        <location filename="../win.ui" line="4144"/>
-        <location filename="../win.ui" line="4242"/>
-        <location filename="../win.ui" line="4581"/>
-        <location filename="../win.ui" line="7942"/>
-        <location filename="../win.ui" line="8507"/>
-        <location filename="../win.ui" line="9078"/>
+        <location filename="../win.ui" line="3957"/>
+        <location filename="../win.ui" line="4150"/>
+        <location filename="../win.ui" line="4248"/>
+        <location filename="../win.ui" line="4587"/>
+        <location filename="../win.ui" line="8133"/>
+        <location filename="../win.ui" line="8698"/>
+        <location filename="../win.ui" line="9269"/>
         <source>8</source>
         <translation></translation>
     </message>
@@ -175,11 +175,11 @@
         <location filename="../win.ui" line="884"/>
         <location filename="../win.ui" line="944"/>
         <location filename="../win.ui" line="2006"/>
-        <location filename="../win.ui" line="3956"/>
-        <location filename="../win.ui" line="4247"/>
-        <location filename="../win.ui" line="4586"/>
-        <location filename="../win.ui" line="8512"/>
-        <location filename="../win.ui" line="9083"/>
+        <location filename="../win.ui" line="3962"/>
+        <location filename="../win.ui" line="4253"/>
+        <location filename="../win.ui" line="4592"/>
+        <location filename="../win.ui" line="8703"/>
+        <location filename="../win.ui" line="9274"/>
         <source>9</source>
         <translation></translation>
     </message>
@@ -187,10 +187,10 @@
         <location filename="../win.ui" line="274"/>
         <location filename="../win.ui" line="889"/>
         <location filename="../win.ui" line="2011"/>
-        <location filename="../win.ui" line="3961"/>
-        <location filename="../win.ui" line="4149"/>
-        <location filename="../win.ui" line="4252"/>
-        <location filename="../win.ui" line="8517"/>
+        <location filename="../win.ui" line="3967"/>
+        <location filename="../win.ui" line="4155"/>
+        <location filename="../win.ui" line="4258"/>
+        <location filename="../win.ui" line="8708"/>
         <source>10</source>
         <translation></translation>
     </message>
@@ -198,7 +198,7 @@
         <location filename="../win.ui" line="279"/>
         <location filename="../win.ui" line="894"/>
         <location filename="../win.ui" line="2016"/>
-        <location filename="../win.ui" line="8522"/>
+        <location filename="../win.ui" line="8713"/>
         <source>11</source>
         <translation></translation>
     </message>
@@ -206,7 +206,7 @@
         <location filename="../win.ui" line="284"/>
         <location filename="../win.ui" line="899"/>
         <location filename="../win.ui" line="2021"/>
-        <location filename="../win.ui" line="8527"/>
+        <location filename="../win.ui" line="8718"/>
         <source>12</source>
         <translation></translation>
     </message>
@@ -249,20 +249,20 @@
         <location filename="../win.ui" line="1902"/>
         <location filename="../win.ui" line="1910"/>
         <location filename="../win.ui" line="1918"/>
-        <location filename="../win.ui" line="8002"/>
-        <location filename="../win.ui" line="8026"/>
-        <location filename="../win.ui" line="8074"/>
-        <location filename="../win.ui" line="8098"/>
-        <location filename="../win.ui" line="8122"/>
-        <location filename="../win.ui" line="8146"/>
-        <location filename="../win.ui" line="8194"/>
-        <location filename="../win.ui" line="8810"/>
-        <location filename="../win.ui" line="9126"/>
-        <location filename="../win.ui" line="9158"/>
-        <location filename="../win.ui" line="9305"/>
-        <location filename="../win.ui" line="9369"/>
-        <location filename="../win.ui" line="9433"/>
-        <location filename="../win.ui" line="9497"/>
+        <location filename="../win.ui" line="8193"/>
+        <location filename="../win.ui" line="8217"/>
+        <location filename="../win.ui" line="8265"/>
+        <location filename="../win.ui" line="8289"/>
+        <location filename="../win.ui" line="8313"/>
+        <location filename="../win.ui" line="8337"/>
+        <location filename="../win.ui" line="8385"/>
+        <location filename="../win.ui" line="9001"/>
+        <location filename="../win.ui" line="9317"/>
+        <location filename="../win.ui" line="9349"/>
+        <location filename="../win.ui" line="9496"/>
+        <location filename="../win.ui" line="9560"/>
+        <location filename="../win.ui" line="9624"/>
+        <location filename="../win.ui" line="9688"/>
         <source>-</source>
         <translation>-</translation>
     </message>
@@ -351,11 +351,11 @@
         <location filename="../win.ui" line="675"/>
         <location filename="../win.ui" line="723"/>
         <location filename="../win.ui" line="1036"/>
-        <location filename="../win.ui" line="6165"/>
-        <location filename="../win.ui" line="6187"/>
-        <location filename="../win.ui" line="8050"/>
-        <location filename="../win.ui" line="8778"/>
-        <location filename="../win.ui" line="8874"/>
+        <location filename="../win.ui" line="6355"/>
+        <location filename="../win.ui" line="6382"/>
+        <location filename="../win.ui" line="8241"/>
+        <location filename="../win.ui" line="8969"/>
+        <location filename="../win.ui" line="9065"/>
         <source>kW</source>
         <translation>kW</translation>
     </message>
@@ -432,17 +432,17 @@
         <location filename="../win.ui" line="787"/>
         <location filename="../win.ui" line="1132"/>
         <location filename="../win.ui" line="1180"/>
-        <location filename="../win.ui" line="5490"/>
-        <location filename="../win.ui" line="8290"/>
-        <location filename="../win.ui" line="8634"/>
-        <location filename="../win.ui" line="8666"/>
-        <location filename="../win.ui" line="8714"/>
-        <location filename="../win.ui" line="8746"/>
-        <location filename="../win.ui" line="9142"/>
-        <location filename="../win.ui" line="9174"/>
-        <location filename="../win.ui" line="9190"/>
-        <location filename="../win.ui" line="9235"/>
-        <location filename="../win.ui" line="9251"/>
+        <location filename="../win.ui" line="5584"/>
+        <location filename="../win.ui" line="8481"/>
+        <location filename="../win.ui" line="8825"/>
+        <location filename="../win.ui" line="8857"/>
+        <location filename="../win.ui" line="8905"/>
+        <location filename="../win.ui" line="8937"/>
+        <location filename="../win.ui" line="9333"/>
+        <location filename="../win.ui" line="9365"/>
+        <location filename="../win.ui" line="9381"/>
+        <location filename="../win.ui" line="9426"/>
+        <location filename="../win.ui" line="9442"/>
         <source>V</source>
         <translation>V</translation>
     </message>
@@ -529,20 +529,20 @@
     <message>
         <location filename="../win.ui" line="1116"/>
         <location filename="../win.ui" line="1164"/>
-        <location filename="../win.ui" line="5534"/>
-        <location filename="../win.ui" line="5556"/>
-        <location filename="../win.ui" line="8570"/>
-        <location filename="../win.ui" line="8586"/>
-        <location filename="../win.ui" line="8602"/>
-        <location filename="../win.ui" line="8618"/>
-        <location filename="../win.ui" line="8730"/>
-        <location filename="../win.ui" line="8762"/>
-        <location filename="../win.ui" line="8794"/>
-        <location filename="../win.ui" line="8826"/>
-        <location filename="../win.ui" line="8842"/>
-        <location filename="../win.ui" line="8858"/>
-        <location filename="../win.ui" line="9449"/>
-        <location filename="../win.ui" line="9513"/>
+        <location filename="../win.ui" line="5638"/>
+        <location filename="../win.ui" line="5665"/>
+        <location filename="../win.ui" line="8761"/>
+        <location filename="../win.ui" line="8777"/>
+        <location filename="../win.ui" line="8793"/>
+        <location filename="../win.ui" line="8809"/>
+        <location filename="../win.ui" line="8921"/>
+        <location filename="../win.ui" line="8953"/>
+        <location filename="../win.ui" line="8985"/>
+        <location filename="../win.ui" line="9017"/>
+        <location filename="../win.ui" line="9033"/>
+        <location filename="../win.ui" line="9049"/>
+        <location filename="../win.ui" line="9640"/>
+        <location filename="../win.ui" line="9704"/>
         <source>%</source>
         <translation>%</translation>
     </message>
@@ -1086,17 +1086,17 @@
         <translation type="vanished">PCS 数据</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4302"/>
+        <location filename="../win.ui" line="4308"/>
         <source>Converter</source>
         <translation>变流器</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4341"/>
+        <location filename="../win.ui" line="4347"/>
         <source>Grid</source>
         <translation>电网</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4380"/>
+        <location filename="../win.ui" line="4386"/>
         <source>Load</source>
         <translation>负载</translation>
     </message>
@@ -1105,26 +1105,26 @@
         <translation type="vanished">PCS 状态</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4621"/>
+        <location filename="../win.ui" line="4627"/>
         <location filename="../win.cpp" line="1886"/>
         <location filename="../win.cpp" line="1889"/>
         <source>DC input breaker</source>
         <translation>直流输入断路器</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4626"/>
+        <location filename="../win.ui" line="4632"/>
         <location filename="../win.cpp" line="1894"/>
         <location filename="../win.cpp" line="3174"/>
         <source>converter available</source>
         <translation>变流器使能</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4631"/>
+        <location filename="../win.ui" line="4637"/>
         <source>DO1</source>
         <translation>柴发信号</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4636"/>
+        <location filename="../win.ui" line="4642"/>
         <location filename="../win.cpp" line="1886"/>
         <location filename="../win.cpp" line="1889"/>
         <location filename="../win.cpp" line="3120"/>
@@ -1132,21 +1132,21 @@
         <translation>直流接触器</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4641"/>
+        <location filename="../win.ui" line="4647"/>
         <location filename="../win.cpp" line="1894"/>
         <location filename="../win.cpp" line="3183"/>
         <source>DC Soft start</source>
         <translation>直流软启动</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4646"/>
+        <location filename="../win.ui" line="4652"/>
         <location filename="../win.cpp" line="1897"/>
         <location filename="../win.cpp" line="3228"/>
         <source>DO2</source>
         <translation>DO2</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4651"/>
+        <location filename="../win.ui" line="4657"/>
         <location filename="../win.cpp" line="1887"/>
         <location filename="../win.cpp" line="1890"/>
         <location filename="../win.cpp" line="3129"/>
@@ -1154,80 +1154,80 @@
         <translation>输出接触器</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4656"/>
+        <location filename="../win.ui" line="4662"/>
         <location filename="../win.cpp" line="1895"/>
         <location filename="../win.cpp" line="3192"/>
         <source>converter status</source>
         <translation>变流器状态</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4661"/>
+        <location filename="../win.ui" line="4667"/>
         <location filename="../win.cpp" line="1898"/>
         <location filename="../win.cpp" line="3237"/>
         <source>DO3</source>
         <translation>DO3</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4666"/>
+        <location filename="../win.ui" line="4672"/>
         <location filename="../win.cpp" line="1887"/>
         <location filename="../win.cpp" line="1890"/>
         <source>Output breaker</source>
         <translation>输出断路器</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4671"/>
+        <location filename="../win.ui" line="4677"/>
         <location filename="../win.cpp" line="1895"/>
         <source>Reactive power Regulation</source>
         <translation>无功调节方式</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4676"/>
+        <location filename="../win.ui" line="4682"/>
         <source>DI1</source>
         <translation>EPO节点 信号1</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4681"/>
+        <location filename="../win.ui" line="4687"/>
         <location filename="../win.cpp" line="1891"/>
         <location filename="../win.cpp" line="3147"/>
         <source>Grid contactor</source>
         <translation>电网接触器</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4686"/>
+        <location filename="../win.ui" line="4692"/>
         <location filename="../win.cpp" line="1895"/>
         <location filename="../win.cpp" line="3210"/>
         <source>LVRT</source>
         <translation>LVRT</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4691"/>
+        <location filename="../win.ui" line="4697"/>
         <source>DI2</source>
         <translation>EPO节点 信号2</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4696"/>
+        <location filename="../win.ui" line="4702"/>
         <location filename="../win.cpp" line="1887"/>
         <location filename="../win.cpp" line="1891"/>
         <source>Grid breaker</source>
         <translation>电网断路器</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4706"/>
+        <location filename="../win.ui" line="4712"/>
         <source>DI3</source>
         <translation>门禁信号</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4716"/>
+        <location filename="../win.ui" line="4722"/>
         <source>DI4</source>
         <translation>满功率信号</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4721"/>
+        <location filename="../win.ui" line="4727"/>
         <source>DI5</source>
         <translation>水浸信号</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4726"/>
+        <location filename="../win.ui" line="4732"/>
         <source>DI6</source>
         <translation>高温信号</translation>
     </message>
@@ -1236,27 +1236,27 @@
         <translation type="vanished">PCS告警</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4794"/>
+        <location filename="../win.ui" line="4800"/>
         <source>Please enter search keywords</source>
         <translation>请输入搜索关键词</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4813"/>
+        <location filename="../win.ui" line="4819"/>
         <source>Search</source>
         <translation>搜索</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4861"/>
+        <location filename="../win.ui" line="4867"/>
         <source>Battery Data</source>
         <translation>电池数据</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="6309"/>
+        <location filename="../win.ui" line="6514"/>
         <source>prompt:</source>
         <translation>提示：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="6334"/>
+        <location filename="../win.ui" line="6539"/>
         <source>Normal</source>
         <translation>正常</translation>
     </message>
@@ -1273,7 +1273,7 @@
         <translation type="vanished">三级告警</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="6527"/>
+        <location filename="../win.ui" line="6732"/>
         <source>Alarm level:</source>
         <translation>告警等级：</translation>
     </message>
@@ -1283,8 +1283,8 @@ enable</source>
         <translation type="vanished">充电使能</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="6608"/>
-        <location filename="../win.ui" line="6664"/>
+        <location filename="../win.ui" line="6813"/>
+        <location filename="../win.ui" line="6869"/>
         <location filename="../win.cpp" line="3201"/>
         <location filename="../win.cpp" line="3228"/>
         <location filename="../win.cpp" line="3237"/>
@@ -1305,12 +1305,12 @@ enable</source>
         <translation type="vanished">放电使能</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="3966"/>
-        <location filename="../win.ui" line="3976"/>
-        <location filename="../win.ui" line="5006"/>
-        <location filename="../win.ui" line="5680"/>
-        <location filename="../win.ui" line="9088"/>
-        <location filename="../win.ui" line="9103"/>
+        <location filename="../win.ui" line="3972"/>
+        <location filename="../win.ui" line="3982"/>
+        <location filename="../win.ui" line="5045"/>
+        <location filename="../win.ui" line="5814"/>
+        <location filename="../win.ui" line="9279"/>
+        <location filename="../win.ui" line="9294"/>
         <location filename="../win.cpp" line="1029"/>
         <location filename="../win.cpp" line="1201"/>
         <location filename="../win.cpp" line="1256"/>
@@ -1321,42 +1321,36 @@ enable</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2709"/>
         <source>Charging current limite</source>
-        <translation>充电电流上限</translation>
+        <translation type="vanished">充电电流上限</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2713"/>
         <source>Discharging current limite</source>
-        <translation>放电电流上限</translation>
+        <translation type="vanished">放电电流上限</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2717"/>
         <source>Allow charge power</source>
-        <translation>可充电功率</translation>
+        <translation type="vanished">可充电功率</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2721"/>
         <source>Allow discharge power</source>
-        <translation>可放电功率</translation>
+        <translation type="vanished">可放电功率</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2725"/>
         <source>Allow charge energy</source>
-        <translation>允许充电量</translation>
+        <translation type="vanished">允许充电量</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2729"/>
         <source>Allow discharge energy</source>
-        <translation>允许放电量</translation>
+        <translation type="vanished">允许放电量</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="3971"/>
-        <location filename="../win.ui" line="3981"/>
-        <location filename="../win.ui" line="5281"/>
-        <location filename="../win.ui" line="5915"/>
-        <location filename="../win.ui" line="9093"/>
-        <location filename="../win.ui" line="9108"/>
+        <location filename="../win.ui" line="3977"/>
+        <location filename="../win.ui" line="3987"/>
+        <location filename="../win.ui" line="5325"/>
+        <location filename="../win.ui" line="6055"/>
+        <location filename="../win.ui" line="9284"/>
+        <location filename="../win.ui" line="9299"/>
         <location filename="../win.cpp" line="1029"/>
         <location filename="../win.cpp" line="1201"/>
         <location filename="../win.cpp" line="1256"/>
@@ -1366,54 +1360,48 @@ enable</source>
         <translation>值</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5937"/>
-        <location filename="../win.ui" line="5956"/>
         <location filename="../win.cpp" line="4701"/>
         <source>120</source>
         <translation>120</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5975"/>
-        <location filename="../win.ui" line="5994"/>
         <source>135</source>
-        <translation>135</translation>
+        <translation type="vanished">135</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="6013"/>
         <source>45</source>
-        <translation>45</translation>
+        <translation type="vanished">45</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="6032"/>
         <source>95</source>
-        <translation>95</translation>
+        <translation type="vanished">95</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5465"/>
-        <location filename="../win.ui" line="6099"/>
-        <location filename="../win.ui" line="9098"/>
-        <location filename="../win.ui" line="9113"/>
+        <location filename="../win.ui" line="5554"/>
+        <location filename="../win.ui" line="6274"/>
+        <location filename="../win.ui" line="9289"/>
+        <location filename="../win.ui" line="9304"/>
         <location filename="../win.cpp" line="1029"/>
         <source>Unit</source>
         <translation>单位</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5512"/>
-        <location filename="../win.ui" line="6121"/>
-        <location filename="../win.ui" line="6143"/>
-        <location filename="../win.ui" line="8242"/>
-        <location filename="../win.ui" line="8698"/>
+        <location filename="../win.ui" line="5611"/>
+        <location filename="../win.ui" line="6301"/>
+        <location filename="../win.ui" line="6328"/>
+        <location filename="../win.ui" line="8433"/>
+        <location filename="../win.ui" line="8889"/>
         <source>A</source>
         <translation>A</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="6209"/>
-        <location filename="../win.ui" line="6231"/>
+        <location filename="../win.ui" line="6409"/>
+        <location filename="../win.ui" line="6436"/>
         <source>kWh</source>
         <translation>kWh</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5039"/>
+        <location filename="../win.ui" line="5078"/>
         <source>Bat voltage</source>
         <translation>电池电压</translation>
     </message>
@@ -1455,372 +1443,370 @@ Language</source>
         <translation type="vanished">TS</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="3768"/>
+        <location filename="../win.ui" line="3774"/>
         <source>Converter Data</source>
         <translation>变流器数据</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4412"/>
+        <location filename="../win.ui" line="4418"/>
         <source>Converter State</source>
         <translation>变流器状态</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4751"/>
+        <location filename="../win.ui" line="4757"/>
         <source>Converter Alarm</source>
         <translation>变流器告警</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5069"/>
+        <location filename="../win.ui" line="5108"/>
         <location filename="../win.cpp" line="2681"/>
         <source>Bat current</source>
         <translation>电池电流</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5099"/>
+        <location filename="../win.ui" line="5138"/>
         <location filename="../win.cpp" line="2685"/>
         <source>SOC</source>
         <translation>SOC</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5129"/>
+        <location filename="../win.ui" line="5168"/>
         <location filename="../win.cpp" line="2689"/>
         <source>SOH</source>
         <translation>SOH</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5159"/>
+        <location filename="../win.ui" line="5198"/>
         <source>Cell voltage (max)</source>
         <translation>单体最高电压</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5189"/>
+        <location filename="../win.ui" line="5228"/>
         <source>Cell voltage (min)</source>
         <translation>单体最低电压</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5219"/>
+        <location filename="../win.ui" line="5258"/>
         <source>Cell temp. (max)</source>
         <translation>单体最高温度</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5249"/>
+        <location filename="../win.ui" line="5288"/>
         <source>Cell temp. (min)</source>
         <translation>单体最低温度</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5303"/>
         <location filename="../win.cpp" line="3362"/>
         <source>600</source>
         <translation>600</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5322"/>
-        <location filename="../win.ui" line="5360"/>
         <location filename="../win.cpp" line="3353"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5341"/>
         <source>70</source>
-        <translation>70</translation>
+        <translation type="vanished">70</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5379"/>
         <source>3300</source>
-        <translation>3300</translation>
+        <translation type="vanished">3300</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5398"/>
         <source>3250</source>
-        <translation>3250</translation>
+        <translation type="vanished">3250</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5417"/>
         <source>28</source>
-        <translation>28</translation>
+        <translation type="vanished">28</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5436"/>
         <source>27</source>
-        <translation>27</translation>
+        <translation type="vanished">27</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5578"/>
-        <location filename="../win.ui" line="5600"/>
-        <location filename="../win.ui" line="8650"/>
-        <location filename="../win.ui" line="8682"/>
+        <location filename="../win.ui" line="5692"/>
+        <location filename="../win.ui" line="5719"/>
+        <location filename="../win.ui" line="8841"/>
+        <location filename="../win.ui" line="8873"/>
         <source>mV</source>
         <translation>mV</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5622"/>
-        <location filename="../win.ui" line="5644"/>
+        <location filename="../win.ui" line="5746"/>
+        <location filename="../win.ui" line="5773"/>
         <source>℃</source>
         <translation>℃</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5707"/>
+        <location filename="../win.ui" line="5841"/>
+        <location filename="../win.cpp" line="2709"/>
         <source>Charging current limit</source>
         <translation>充电电流限制</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5734"/>
+        <location filename="../win.ui" line="5868"/>
+        <location filename="../win.cpp" line="2713"/>
         <source>Discharging current limit</source>
         <translation>放电电流限制</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5761"/>
+        <location filename="../win.ui" line="5895"/>
+        <location filename="../win.cpp" line="2717"/>
         <source>Allowable charging power</source>
         <translation>可充电功率</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5788"/>
+        <location filename="../win.ui" line="5923"/>
+        <location filename="../win.cpp" line="2721"/>
         <source>Allowable discharging power</source>
         <translation>可放电功率</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5815"/>
+        <location filename="../win.ui" line="5950"/>
+        <location filename="../win.cpp" line="2725"/>
         <source>Allowable charging energy</source>
         <translation>可充电量</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="5842"/>
+        <location filename="../win.ui" line="5977"/>
+        <location filename="../win.cpp" line="2729"/>
         <source>Allowable discharging energy</source>
         <translation>可放电量</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="6381"/>
+        <location filename="../win.ui" line="6586"/>
         <source>Level1 </source>
         <translation>一级告警</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="6428"/>
+        <location filename="../win.ui" line="6633"/>
         <source>Level2</source>
         <translation>二级告警</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="6475"/>
+        <location filename="../win.ui" line="6680"/>
         <source>Level3</source>
         <translation>三级告警</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="6580"/>
+        <location filename="../win.ui" line="6785"/>
         <source>Charging
 enable</source>
         <translation>充电使能</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="6636"/>
+        <location filename="../win.ui" line="6841"/>
         <source>Discharging
 enable</source>
         <translation>放电使能</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="6729"/>
+        <location filename="../win.ui" line="6920"/>
         <source>Data report</source>
         <translation>数据报表</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="6783"/>
+        <location filename="../win.ui" line="6974"/>
         <source>Discharge:</source>
         <translation>放电：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="6811"/>
+        <location filename="../win.ui" line="7002"/>
         <source>1.1
 kW.h</source>
         <translation>1.1
 kW.h</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="6837"/>
-        <location filename="../win.ui" line="7077"/>
-        <location filename="../win.ui" line="7337"/>
+        <location filename="../win.ui" line="7028"/>
+        <location filename="../win.ui" line="7268"/>
+        <location filename="../win.ui" line="7528"/>
         <source>Day</source>
         <translation>日电量</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="6874"/>
-        <location filename="../win.ui" line="6928"/>
+        <location filename="../win.ui" line="7065"/>
+        <location filename="../win.ui" line="7119"/>
         <source>339
 kW.h</source>
         <translation>339
 kW.h</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="6894"/>
-        <location filename="../win.ui" line="7131"/>
-        <location filename="../win.ui" line="7417"/>
+        <location filename="../win.ui" line="7085"/>
+        <location filename="../win.ui" line="7322"/>
+        <location filename="../win.ui" line="7608"/>
         <source>Month</source>
         <translation>月电量</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="6948"/>
-        <location filename="../win.ui" line="7185"/>
-        <location filename="../win.ui" line="7356"/>
+        <location filename="../win.ui" line="7139"/>
+        <location filename="../win.ui" line="7376"/>
+        <location filename="../win.ui" line="7547"/>
         <source>Year</source>
         <translation>年电量</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="6982"/>
+        <location filename="../win.ui" line="7173"/>
         <source>585.1
 kW.h</source>
         <translation>585.1
 kW.h</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7002"/>
-        <location filename="../win.ui" line="7239"/>
-        <location filename="../win.ui" line="7436"/>
+        <location filename="../win.ui" line="7193"/>
+        <location filename="../win.ui" line="7430"/>
+        <location filename="../win.ui" line="7627"/>
         <source>Total</source>
         <translation>总电量</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7029"/>
+        <location filename="../win.ui" line="7220"/>
         <source>Charge:</source>
         <translation>充电：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7057"/>
+        <location filename="../win.ui" line="7248"/>
         <source>2.4
 kW.h</source>
         <translation>2.4
 kW.h</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7111"/>
-        <location filename="../win.ui" line="7165"/>
+        <location filename="../win.ui" line="7302"/>
+        <location filename="../win.ui" line="7356"/>
         <source>2.6
 kW.h</source>
         <translation>2.6
 kW.h</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7219"/>
+        <location filename="../win.ui" line="7410"/>
         <source>184.2
 kW.h</source>
         <translation>184.2
 kW.h</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7299"/>
+        <location filename="../win.ui" line="7490"/>
         <source>M  -</source>
         <translation>月 -</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7318"/>
+        <location filename="../win.ui" line="7509"/>
         <source>Y  -</source>
         <translation>年 -</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7379"/>
+        <location filename="../win.ui" line="7570"/>
         <source>M  +</source>
         <translation>月 +</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7398"/>
+        <location filename="../win.ui" line="7589"/>
         <source>Y  +</source>
         <translation>年 +</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7452"/>
+        <location filename="../win.ui" line="7643"/>
         <source>Export Data</source>
         <translation>导出数据</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7484"/>
+        <location filename="../win.ui" line="7675"/>
         <source>Note:</source>
         <translation>提示：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7501"/>
+        <location filename="../win.ui" line="7692"/>
         <source>Out put file:</source>
         <translation>输出文件：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7519"/>
+        <location filename="../win.ui" line="7710"/>
         <source>HistoryRecord.csv</source>
         <translation>HistoryRecord.csv</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7537"/>
+        <location filename="../win.ui" line="7728"/>
         <source>Log.csv</source>
         <translation>Log.csv</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7555"/>
+        <location filename="../win.ui" line="7746"/>
         <source>Report.csv</source>
         <translation>Report.csv</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7597"/>
+        <location filename="../win.ui" line="7788"/>
         <source>Data To Export</source>
         <translation>导出数据</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7643"/>
+        <location filename="../win.ui" line="7834"/>
         <source>static:</source>
         <translation>状态：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7697"/>
+        <location filename="../win.ui" line="7888"/>
         <location filename="../win.cpp" line="2243"/>
         <source>HistoricalFailure</source>
         <translation>历史记录</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7728"/>
+        <location filename="../win.ui" line="7919"/>
         <location filename="../win.cpp" line="2247"/>
         <source>OperationLog</source>
         <translation>操作日志</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7762"/>
+        <location filename="../win.ui" line="7953"/>
         <location filename="../win.cpp" line="2251"/>
         <source>Coulombmeter report</source>
         <translation>电量统计表</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7793"/>
+        <location filename="../win.ui" line="7984"/>
         <location filename="../win.cpp" line="2255"/>
         <source>Eject Udisk</source>
         <translation>退出U盘</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7813"/>
+        <location filename="../win.ui" line="8004"/>
         <source>History Record</source>
         <translation>历史记录</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7838"/>
+        <location filename="../win.ui" line="8029"/>
         <source>Operation Log</source>
         <translation>操作日志</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7880"/>
+        <location filename="../win.ui" line="8071"/>
         <source>Parameter setting</source>
         <translation>参数设置</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7986"/>
+        <location filename="../win.ui" line="8177"/>
         <location filename="../win.cpp" line="3307"/>
         <source>Grid connected mode of PCS</source>
         <translation>PCS并网方式</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8010"/>
+        <location filename="../win.ui" line="8201"/>
         <location filename="../win.cpp" line="3373"/>
         <source>Control mode</source>
         <translation>控制模式</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8034"/>
+        <location filename="../win.ui" line="8225"/>
         <source>Constant power (AC)</source>
         <translation>恒功率(AC)</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8058"/>
+        <location filename="../win.ui" line="8249"/>
         <location filename="../win.cpp" line="3382"/>
         <source>Machine number</source>
         <translation>设备号</translation>
@@ -1830,12 +1816,12 @@ kW.h</translation>
         <translation type="vanished">充放电</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8106"/>
+        <location filename="../win.ui" line="8297"/>
         <source>Parallel </source>
         <translation>并机</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8082"/>
+        <location filename="../win.ui" line="8273"/>
         <location filename="../win.cpp" line="3326"/>
         <source>Work mode</source>
         <translation>工作模式</translation>
@@ -1845,7 +1831,7 @@ kW.h</translation>
         <translation type="vanished">功率不平衡使能</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8130"/>
+        <location filename="../win.ui" line="8321"/>
         <location filename="../win.cpp" line="3335"/>
         <source>Output power factor</source>
         <translation>输出功率因素</translation>
@@ -1855,7 +1841,7 @@ kW.h</translation>
         <translation type="vanished">A相功率</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8178"/>
+        <location filename="../win.ui" line="8369"/>
         <location filename="../win.cpp" line="3344"/>
         <source>Output reactive power</source>
         <translation>输出无功功率</translation>
@@ -1865,7 +1851,7 @@ kW.h</translation>
         <translation type="vanished">B相功率</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8226"/>
+        <location filename="../win.ui" line="8417"/>
         <location filename="../win.cpp" line="3353"/>
         <source>Constant current</source>
         <translation>恒流</translation>
@@ -1875,23 +1861,23 @@ kW.h</translation>
         <translation type="vanished">C相功率</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8274"/>
+        <location filename="../win.ui" line="8465"/>
         <location filename="../win.cpp" line="3362"/>
         <source>Constant voltage</source>
         <translation>恒压</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8388"/>
+        <location filename="../win.ui" line="8579"/>
         <source>  Title</source>
         <translation>  标题</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8420"/>
+        <location filename="../win.ui" line="8611"/>
         <source>Return</source>
         <translation>返回</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8429"/>
+        <location filename="../win.ui" line="8620"/>
         <source>Battery setup</source>
         <translation>电池设置</translation>
     </message>
@@ -1916,84 +1902,84 @@ B1 - A1 ≥ 30 %
 </translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9043"/>
-        <location filename="../win.ui" line="9048"/>
-        <location filename="../win.ui" line="9053"/>
-        <location filename="../win.ui" line="9058"/>
-        <location filename="../win.ui" line="9063"/>
-        <location filename="../win.ui" line="9068"/>
-        <location filename="../win.ui" line="9073"/>
+        <location filename="../win.ui" line="9234"/>
+        <location filename="../win.ui" line="9239"/>
+        <location filename="../win.ui" line="9244"/>
+        <location filename="../win.ui" line="9249"/>
+        <location filename="../win.ui" line="9254"/>
+        <location filename="../win.ui" line="9259"/>
+        <location filename="../win.ui" line="9264"/>
         <source>New Row</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9118"/>
+        <location filename="../win.ui" line="9309"/>
         <location filename="../win.cpp" line="3590"/>
         <source>Capacity</source>
         <translation>容量</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9134"/>
+        <location filename="../win.ui" line="9325"/>
         <source>Grid off EOD</source>
         <translation>离网EOD</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9150"/>
+        <location filename="../win.ui" line="9341"/>
         <source>Cell number(2V)</source>
         <translation>电池节数(2V)</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9166"/>
+        <location filename="../win.ui" line="9357"/>
         <source>Grid on EOD</source>
         <translation>并网EOD</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9182"/>
+        <location filename="../win.ui" line="9373"/>
         <location filename="../win.cpp" line="3600"/>
         <source>Battery float voltage</source>
         <translation>电池浮充电压</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9198"/>
+        <location filename="../win.ui" line="9389"/>
         <source>Shutdown voltage point</source>
         <translation>关机电压点</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9243"/>
+        <location filename="../win.ui" line="9434"/>
         <location filename="../win.cpp" line="3605"/>
         <source>Battery filling voltage</source>
         <translation>电池均充电压</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9259"/>
+        <location filename="../win.ui" line="9450"/>
         <source>Mending center point</source>
         <translation>温补中心点</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9313"/>
+        <location filename="../win.ui" line="9504"/>
         <source>Charge limiting value</source>
         <translation>充电限流值</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9321"/>
-        <location filename="../win.ui" line="9385"/>
-        <location filename="../win.ui" line="9546"/>
-        <location filename="../win.ui" line="9562"/>
+        <location filename="../win.ui" line="9512"/>
+        <location filename="../win.ui" line="9576"/>
+        <location filename="../win.ui" line="9737"/>
+        <location filename="../win.ui" line="9753"/>
         <source>C</source>
         <translation>C</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9329"/>
+        <location filename="../win.ui" line="9520"/>
         <source>Temperature filling coefficient</source>
         <translation>温补系数</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9377"/>
+        <location filename="../win.ui" line="9568"/>
         <source>Discharge limiting value</source>
         <translation>放电限流值</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9393"/>
+        <location filename="../win.ui" line="9584"/>
         <source>Mending allowable setting</source>
         <translation>温补允许设置</translation>
     </message>
@@ -2002,7 +1988,7 @@ B1 - A1 ≥ 30 %
         <translation type="vanished">发电机关闭SOC(B1)</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9457"/>
+        <location filename="../win.ui" line="9648"/>
         <source>Temperature alarm upper limit</source>
         <translation>温度告警上限</translation>
     </message>
@@ -2011,19 +1997,19 @@ B1 - A1 ≥ 30 %
         <translation type="vanished">发电机开启SOC(A1)</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9521"/>
+        <location filename="../win.ui" line="9712"/>
         <location filename="../win.cpp" line="3641"/>
         <source>Uniform charging and flushing current</source>
         <translation>均充转浮充电流</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9554"/>
+        <location filename="../win.ui" line="9745"/>
         <location filename="../win.cpp" line="3646"/>
         <source>Float turn uniform charging current</source>
         <translation>浮充转均充电流</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8562"/>
+        <location filename="../win.ui" line="8753"/>
         <source>DOD_OnGrid:</source>
         <translation>并网DOD：</translation>
     </message>
@@ -2033,121 +2019,121 @@ B1 - A1 ≥ 30 %
         <translation>100kW-TS</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8578"/>
+        <location filename="../win.ui" line="8769"/>
         <source>Turn on SOC</source>
         <translation>启动SOC</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8594"/>
+        <location filename="../win.ui" line="8785"/>
         <source>DOD_OffGrid:</source>
         <translation>离网DOD：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8610"/>
+        <location filename="../win.ui" line="8801"/>
         <source>Turn off SOC</source>
         <translation>停止SOC</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8626"/>
+        <location filename="../win.ui" line="8817"/>
         <source>Charge Vol. upper Limit</source>
         <translation>充电电压上限</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8642"/>
+        <location filename="../win.ui" line="8833"/>
         <source>Turn on cell vol.</source>
         <translation>启动单体电压</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8658"/>
+        <location filename="../win.ui" line="8849"/>
         <source>Discharge Vol. lower Limit</source>
         <translation>放电电压下限</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8674"/>
+        <location filename="../win.ui" line="8865"/>
         <source>Turn off cell vol.</source>
         <translation>停止单体电压</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8690"/>
+        <location filename="../win.ui" line="8881"/>
         <source>Charge Cur. Limit</source>
         <translation>充电限流点</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8706"/>
+        <location filename="../win.ui" line="8897"/>
         <source>Turn on total vol.</source>
         <translation>启动总压</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8722"/>
+        <location filename="../win.ui" line="8913"/>
         <source>Generator turn off SOC</source>
         <translation>柴发关闭SOC</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8738"/>
+        <location filename="../win.ui" line="8929"/>
         <source>Turn off total vol.</source>
         <translation>停止总压</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8754"/>
+        <location filename="../win.ui" line="8945"/>
         <source>Generator turn on SOC</source>
         <translation>柴发开启SOC</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8770"/>
+        <location filename="../win.ui" line="8961"/>
         <source>UPS charge power</source>
         <translation>后备充电功率</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8786"/>
+        <location filename="../win.ui" line="8977"/>
         <source>Generator charge SOC</source>
         <translation>柴发充电</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8802"/>
+        <location filename="../win.ui" line="8993"/>
         <source>Monthly cycle time</source>
         <translation>月循环日期</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8818"/>
+        <location filename="../win.ui" line="9009"/>
         <source>Grid charge SOC</source>
         <translation>电网充电</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8834"/>
+        <location filename="../win.ui" line="9025"/>
         <location filename="../win.cpp" line="3488"/>
         <source>Charge Stop SOC</source>
         <translation>充电停止SOC</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8850"/>
+        <location filename="../win.ui" line="9041"/>
         <location filename="../win.cpp" line="3497"/>
         <source>Discharge Stop SOC</source>
         <translation>放电停止SOC</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8866"/>
+        <location filename="../win.ui" line="9057"/>
         <source>Grid capacity</source>
         <translation>电网容量</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8919"/>
+        <location filename="../win.ui" line="9110"/>
         <location filename="../win.cpp" line="2324"/>
         <source>BMS power on</source>
         <translation>电池上电</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8938"/>
+        <location filename="../win.ui" line="9129"/>
         <location filename="../win.cpp" line="2328"/>
         <source>BMS power off</source>
         <translation>电池下电</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8947"/>
+        <location filename="../win.ui" line="9138"/>
         <source>Lead</source>
         <translation>铅酸</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9003"/>
+        <location filename="../win.ui" line="9194"/>
         <source>A1: Generator turn on voltage
 B1: Generator turn off voltage
 A1 Setting range: [250, 900]
@@ -2160,163 +2146,163 @@ B1 设定范围： [250,900]
 设定规则：B1 - A1 ≥ 10V</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9577"/>
+        <location filename="../win.ui" line="9768"/>
         <source>Automatic operation</source>
         <translation>自动运行</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9597"/>
+        <location filename="../win.ui" line="9788"/>
         <source>SystemInformation</source>
         <translation>系统信息</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9612"/>
+        <location filename="../win.ui" line="9803"/>
         <source>Version</source>
         <translation>版本号</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9633"/>
-        <location filename="../win.ui" line="9638"/>
-        <location filename="../win.ui" line="9643"/>
-        <location filename="../win.ui" line="9648"/>
-        <location filename="../win.ui" line="9653"/>
-        <location filename="../win.ui" line="9658"/>
+        <location filename="../win.ui" line="9824"/>
+        <location filename="../win.ui" line="9829"/>
+        <location filename="../win.ui" line="9834"/>
+        <location filename="../win.ui" line="9839"/>
+        <location filename="../win.ui" line="9844"/>
+        <location filename="../win.ui" line="9849"/>
         <source>新建行</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9663"/>
-        <location filename="../win.ui" line="9668"/>
+        <location filename="../win.ui" line="9854"/>
+        <location filename="../win.ui" line="9859"/>
         <source>新建列</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9673"/>
+        <location filename="../win.ui" line="9864"/>
         <location filename="../win.cpp" line="4392"/>
         <source>Manufacturer name</source>
         <translation>厂家名称</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9688"/>
+        <location filename="../win.ui" line="9879"/>
         <location filename="../win.cpp" line="4402"/>
         <source>Monitoring software version</source>
         <translation>监控版本</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9693"/>
+        <location filename="../win.ui" line="9884"/>
         <source>Protocol version</source>
         <translation>协议版本号</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9698"/>
+        <location filename="../win.ui" line="9889"/>
         <location filename="../win.cpp" line="4420"/>
         <source>Converter software version</source>
         <translation>变流器软件版本</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9703"/>
+        <location filename="../win.ui" line="9894"/>
         <location filename="../win.cpp" line="4429"/>
         <source>CPLD software version</source>
         <translation>CPLD软件版本</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9708"/>
+        <location filename="../win.ui" line="9899"/>
         <source>SN:</source>
         <translation>SN：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9717"/>
+        <location filename="../win.ui" line="9908"/>
         <source>Network</source>
         <translation>网络</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9750"/>
+        <location filename="../win.ui" line="9941"/>
         <source>              interface:</source>
         <translation>接口号：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9766"/>
+        <location filename="../win.ui" line="9957"/>
         <source>Port:</source>
         <translation>端口：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9800"/>
+        <location filename="../win.ui" line="9991"/>
         <source>DHCP</source>
         <translation>自动获取</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9813"/>
+        <location filename="../win.ui" line="10004"/>
         <source>STATIC</source>
         <translation>静态</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9829"/>
+        <location filename="../win.ui" line="10020"/>
         <source>ip：</source>
         <translation>地址：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9842"/>
+        <location filename="../win.ui" line="10033"/>
         <source>netmask:</source>
         <translation>子网掩码：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9858"/>
+        <location filename="../win.ui" line="10049"/>
         <source>gateway:</source>
         <translation>网关：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9871"/>
+        <location filename="../win.ui" line="10062"/>
         <source>Server ip:</source>
         <translation>服务器IP：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9884"/>
+        <location filename="../win.ui" line="10075"/>
         <source>192 . 168 . 1 . 100</source>
         <translation>192 . 168 . 1 . 100</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9897"/>
+        <location filename="../win.ui" line="10088"/>
         <source>255 . 255 . 255 . 0</source>
         <translation>255 . 255 . 255 . 0</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9910"/>
+        <location filename="../win.ui" line="10101"/>
         <source>192 . 168 .  1  . 1</source>
         <translation>192 . 168 .  1  . 1</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9923"/>
+        <location filename="../win.ui" line="10114"/>
         <source> 192 . 168 . 1  . 200</source>
         <translation> 192 . 168 . 1  . 200</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9937"/>
+        <location filename="../win.ui" line="10128"/>
         <location filename="../win.cpp" line="2293"/>
         <source>Apply and Restart system</source>
         <translation>应用并重启系统</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9950"/>
+        <location filename="../win.ui" line="10141"/>
         <source>eth0</source>
         <translation>eth0</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9963"/>
+        <location filename="../win.ui" line="10154"/>
         <source>502</source>
         <translation>502</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10031"/>
+        <location filename="../win.ui" line="10222"/>
         <source>Menu</source>
         <translation>菜单</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10065"/>
+        <location filename="../win.ui" line="10256"/>
         <source>M_01 Converter turn off</source>
         <translation>M_01 变流器关闭</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10105"/>
+        <location filename="../win.ui" line="10296"/>
         <source>Current mode:CP</source>
         <translation>当前模式：CP</translation>
     </message>
@@ -2375,6 +2361,101 @@ B1 设定范围： [250,900]
         <location filename="../win.cpp" line="2841"/>
         <source>Inv. power factor</source>
         <translation>逆变功率因素</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2678"/>
+        <source>Total voltage of the battery uploaded by BMS.</source>
+        <translation>BMS上传的电池组总压。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2682"/>
+        <source>Total current of the battery uploaded by BMS.</source>
+        <translation>BMS上传的电池组总电流。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2686"/>
+        <source>Battery SOH uploaded from BMS, the percentage of available capacity after full charge compared to the rated capacity.</source>
+        <translation>BMS上传的电池组SOC，即当前电池剩余电量百分比。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2690"/>
+        <source>Battery SOC uploaded by BMS refers to the current remaining battery capacity percentage.</source>
+        <translation>BMS上传的电池组SOH，电池组充满后可用容量与出厂容量的百分比。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2694"/>
+        <source>The highest voltage of single cell uploaded by BMS.</source>
+        <translation>BMS上传的单体最高电压。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2698"/>
+        <source>The lowest voltage of single cell uploaded by BMS.</source>
+        <translation>BMS上传的单体最低电压。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2702"/>
+        <source>The highest temperature of single cell uploaded by BMS.</source>
+        <translation>BMS上传的单体最高温度。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2706"/>
+        <source>The lowest temperature of single cell uploaded by BMS.</source>
+        <translation>BMS上传的单体最低温度。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2710"/>
+        <source>The limit of charging current uploaded by BMS.</source>
+        <translation>BMS上传的充电电流限制。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2714"/>
+        <source>The limit of discharging current uploaded by BMS.</source>
+        <translation>BMS上传的放电电流限制。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2718"/>
+        <source>The allowable charging power uploaded by BMS.</source>
+        <translation>BMS上传的允许充电功率。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2722"/>
+        <source>The allowable discharging power uploaded by BMS.</source>
+        <translation>BMS上传的允许放电功率。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2726"/>
+        <source>The allowable charging capacity uploaded by BMS.</source>
+        <translation>BMS上传的允许充电量。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2730"/>
+        <source>The allowable discharging capacity uploaded by BMS.</source>
+        <translation>BMS上传的允许放电量。</translation>
+    </message>
+    <message>
+        <source>Alarm levels uploaded from BMS, level one alarm is yellow, level two alarm is orange, and level three alarm is red; By default, the converter does not respond to level one and level two alarms, but shuts down in response to level three alarms.</source>
+        <translation type="obsolete">BMS上传的告警等级，一级告警为黄色、二级告警为橙色、三级告警为红色；
+默认一级告警、二级告警变流器不做响应，三级告警变流器关机。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2737"/>
+        <source>Charging enable</source>
+        <translation>充电使能</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2738"/>
+        <source>Battery Status Uploaded by BMS: Enable indicates the battery is allowed to charge, Disable indicates the battery is not allowed to charge.</source>
+        <translation>BMS上传的电池状态：使能表示电池允许充电，禁止表示电池不允许充电。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2741"/>
+        <source>Discharging enable</source>
+        <translation>放电使能</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2742"/>
+        <source>Battery Status Uploaded by BMS: Enable indicates the battery is allowed to discharge, Disable indicates the battery is not allowed to discharge.</source>
+        <translation>BMS上传的电池状态：使能表示电池允许放电，禁止表示电池不允许放电。</translation>
     </message>
     <message>
         <location filename="../win.cpp" line="2760"/>
@@ -3258,24 +3339,20 @@ automatically and reset time</source>
         <translation>电池电压</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2678"/>
         <source>This is the total battery pressure of the battery pack uploaded from the BMS via the CAN/485/TCP communication protocol.</source>
-        <translation>这是通过CAN/485/TCP通讯协议从BMS上传的电池组的电池总压。</translation>
+        <translation type="vanished">这是通过CAN/485/TCP通讯协议从BMS上传的电池组的电池总压。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2682"/>
         <source>This is the total current of the battery pack uploaded from the BMS via the CAN/485/TCP communication protocol.</source>
-        <translation>这是通过CAN/485/TCP通讯协议从BMS上传的电池组的总电流。</translation>
+        <translation type="vanished">这是通过CAN/485/TCP通讯协议从BMS上传的电池组的总电流。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2686"/>
         <source>This is the SOC of the battery pack uploaded from the BMS via the CAN/485/TCP communication protocol, that is, the percentage of the current battery remaining.</source>
-        <translation>这是通过CAN/485/TCP通讯协议从BMS上传的电池组SOC，即当前电池剩余电量百分比。</translation>
+        <translation type="vanished">这是通过CAN/485/TCP通讯协议从BMS上传的电池组SOC，即当前电池剩余电量百分比。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2690"/>
         <source>This is the SOH of the battery pack uploaded from the BMS through the CAN/485/TCP communication protocol, the percentage of the current capacity of the battery pack to the factory capacity, that is, the health of the battery.</source>
-        <translation>这是通过CAN/485/TCP通讯协议从BMS上传的电池组SOH，电池组当前的容量与出厂容量的百分比，即电池的健康度。</translation>
+        <translation type="vanished">这是通过CAN/485/TCP通讯协议从BMS上传的电池组SOH，电池组当前的容量与出厂容量的百分比，即电池的健康度。</translation>
     </message>
     <message>
         <location filename="../win.cpp" line="2693"/>
@@ -3283,9 +3360,8 @@ automatically and reset time</source>
         <translation>单体最高电压</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2694"/>
         <source>This is the maximum voltage of the cell uploaded from the BMS via the CAN/485/TCP communication protocol, that is, the maximum voltage of all cell cells at present.</source>
-        <translation>这是通过CAN/485/TCP通讯协议从BMS上传的单体最高电压,即当前所有电池单体的最高电压。</translation>
+        <translation type="vanished">这是通过CAN/485/TCP通讯协议从BMS上传的单体最高电压,即当前所有电池单体的最高电压。</translation>
     </message>
     <message>
         <location filename="../win.cpp" line="2697"/>
@@ -3293,9 +3369,8 @@ automatically and reset time</source>
         <translation>单体最低电压</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2698"/>
         <source>This is the lowest voltage of the cell uploaded from the BMS via the CAN/485/TCP communication protocol, that is, the lowest voltage of all battery cells at present.</source>
-        <translation>这是通过CAN/485/TCP通讯协议从BMS上传的单体最低电压,即当前所有电池单体的最低电压。</translation>
+        <translation type="vanished">这是通过CAN/485/TCP通讯协议从BMS上传的单体最低电压,即当前所有电池单体的最低电压。</translation>
     </message>
     <message>
         <location filename="../win.cpp" line="2701"/>
@@ -3303,9 +3378,8 @@ automatically and reset time</source>
         <translation>单体最高温度</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2702"/>
         <source>This is the highest temperature of the cell uploaded from the BMS via the CAN/485/TCP communication protocol, that is, the highest temperature of all battery cells at present.</source>
-        <translation>这是通过CAN/485/TCP通讯协议从BMS上传的单体最高温度,即当前所有电池单体的最高温度。</translation>
+        <translation type="vanished">这是通过CAN/485/TCP通讯协议从BMS上传的单体最高温度,即当前所有电池单体的最高温度。</translation>
     </message>
     <message>
         <location filename="../win.cpp" line="2705"/>
@@ -3313,19 +3387,16 @@ automatically and reset time</source>
         <translation>单体最低温度</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2706"/>
         <source>This is the lowest temperature of the cell uploaded from the BMS via the CAN/485/TCP communication protocol, that is, the lowest temperature of all battery cells at present.</source>
-        <translation>这是通过CAN/485/TCP通讯协议从BMS上传的单体最低温度,即当前所有电池单体的最低温度。</translation>
+        <translation type="vanished">这是通过CAN/485/TCP通讯协议从BMS上传的单体最低温度,即当前所有电池单体的最低温度。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2710"/>
         <source>This is the upper limit of the charging current uploaded from the BMS via the CAN/485/TCP communication protocol, the maximum charging current allowed by the current battery pack (Note: when charging the end, PCS will limit the current according to the actual current).</source>
-        <translation>这是通过CAN/485/TCP通讯协议从BMS上传的充电电流上限，当前电池组所允许通过的最大充电电流(注: 充电末端时，PCS会根据实际电流来进行限流)。</translation>
+        <translation type="vanished">这是通过CAN/485/TCP通讯协议从BMS上传的充电电流上限，当前电池组所允许通过的最大充电电流(注: 充电末端时，PCS会根据实际电流来进行限流)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2714"/>
         <source>This is the upper limit of the discharge current uploaded from the BMS via the CAN/485/TCP communication protocol, the maximum discharge current allowed by the current battery pack.</source>
-        <translation>这是通过CAN/485/TCP通讯协议从BMS上传的放电电流上限，当前电池组所允许通过的最大放电电流。</translation>
+        <translation type="vanished">这是通过CAN/485/TCP通讯协议从BMS上传的放电电流上限，当前电池组所允许通过的最大放电电流。</translation>
     </message>
     <message>
         <source>This is the rechargeable power uploaded from the BMS through the CAN/485 communication protocol. The charging power of the battery cannot exceed this limit value.</source>
@@ -3336,9 +3407,8 @@ automatically and reset time</source>
         <translation type="vanished">这是通过CAN/485/TCP通讯协议从BMS上传的可放电功率，电池的放电功率不可超过这个限制数值。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2726"/>
         <source>This is the allowable charge amount uploaded from the BMS via the CAN/485/TCP communication protocol, the capacity of the current battery pack allowed to charge (Note: only some BMS will provide this value).</source>
-        <translation>这是通过CAN/485/TCP通讯协议从BMS上传的允许充电量，当前电池组允许充电的容量(注: 仅部分BMS会提供这个值)。</translation>
+        <translation type="vanished">这是通过CAN/485/TCP通讯协议从BMS上传的允许充电量，当前电池组允许充电的容量(注: 仅部分BMS会提供这个值)。</translation>
     </message>
     <message>
         <source>This is the allowable discharge from the BMS via the CAN/485/TCP communication protocol, the current capacity of the battery pack allowed to discharge (Note: only some BMS will provide this value).</source>
@@ -3350,29 +3420,24 @@ automatically and reset time</source>
         <translation>告警等级</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2734"/>
         <source>This is the alarm level icon. The color is changed according to the alarm level uploaded by the BMS. The alarm level is green for normal alarms, yellow for primary alarms, orange for secondary alarms, and red for tertiary alarms.If the alarm is Level 1 or Level 2, PCS does not respond.If the alarm is Level 3, the PCS shuts down.</source>
-        <translation>这是告警等级图示，根据BMS上传的告警等级改变颜色，此处可以通过颜色判断告警等级，正常为绿色、一级告警为黄色、二级告警为橙色、三级告警为红色；如果是一级告警或者二级告警，PCS不做响应；如果是三级告警，PCS关机。</translation>
+        <translation type="vanished">这是告警等级图示，根据BMS上传的告警等级改变颜色，此处可以通过颜色判断告警等级，正常为绿色、一级告警为黄色、二级告警为橙色、三级告警为红色；如果是一级告警或者二级告警，PCS不做响应；如果是三级告警，PCS关机。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2737"/>
         <source>Charge enable</source>
-        <translation>充电使能</translation>
+        <translation type="vanished">充电使能</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2738"/>
         <source>This is the current battery status uploaded by BMS via CAN/485/TCP. Enable indicates that the battery can be charged. Disable indicates that the battery cannot be charged.</source>
-        <translation>这是充电使能，由BMS通过CAN/485/TCP通讯协议上传的当前电池的状态；使能表示目前电池允许充电，禁止表示目前电池不允许充电。</translation>
+        <translation type="vanished">这是充电使能，由BMS通过CAN/485/TCP通讯协议上传的当前电池的状态；使能表示目前电池允许充电，禁止表示目前电池不允许充电。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2741"/>
         <source>Discharge enable</source>
-        <translation>放电使能</translation>
+        <translation type="vanished">放电使能</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2742"/>
         <source>This is the current state of the battery uploaded by the BMS via the CAN/485/TCP protocol. Enable indicates that the battery can be discharged. Disable indicates that the battery cannot be discharged.</source>
-        <translation>这是放电使能，由BMS通过CAN/485/TCP通讯协议上传的当前电池的状态；使能表示目前电池允许放电，禁止表示目前电池不允许放电。</translation>
+        <translation type="vanished">这是放电使能，由BMS通过CAN/485/TCP通讯协议上传的当前电池的状态；使能表示目前电池允许放电，禁止表示目前电池不允许放电。</translation>
     </message>
     <message>
         <source>The grid side voltage of the current PCS, this item is the phase voltage between phase A and phase B.</source>
@@ -3600,6 +3665,13 @@ The accuracy is 0.1, which means that the obtained data multiplied by 0.1 gives 
     <message>
         <source>    This is the control mode;If the local mode is selected, the dispatcher (EMS, RS485) can only monitor data but cannot control PCS. If the remote mode is selected,PCS parameter setting is disabled and the dispatcher (EMS,  RS485) can read and write data.</source>
         <translation type="vanished">    这是控制模式；选择本地模式时，调度机（EMS、RS485等）只能监听数据，不能控制PCS，选择远程模式时，PCS禁止参数设置，调度机（EMS、RS485等）可进行读写。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2734"/>
+        <source>Alarm levels uploaded from BMS, level one alarm is yellow, level two alarm is orange, and level three alarm is red;
+By default, the converter does not respond to level one and level two alarms, but shuts down in response to level three alarms.</source>
+        <translation>BMS上传的告警等级，一级告警为黄色、二级告警为橙色、三级告警为红色；
+默认一级告警、二级告警变流器不做响应，三级告警变流器关机。</translation>
     </message>
     <message>
         <location filename="../win.cpp" line="3111"/>
@@ -4015,7 +4087,7 @@ countercurrent</source>
         <translation type="vanished">这是开始时间，将在此时间开始以指定的功率进入指定的状态。</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9441"/>
+        <location filename="../win.ui" line="9632"/>
         <location filename="../win.cpp" line="3620"/>
         <source>Generator turn off voltage</source>
         <translation>发电机关闭电压</translation>
@@ -4026,7 +4098,7 @@ countercurrent</source>
         <translation>发电机关闭电压。</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9505"/>
+        <location filename="../win.ui" line="9696"/>
         <location filename="../win.cpp" line="3625"/>
         <source>Generator turn on voltage</source>
         <translation>发电机开启电压</translation>
@@ -4096,7 +4168,7 @@ countercurrent</source>
         <translation>这是SN,即产品序列号。</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8445"/>
+        <location filename="../win.ui" line="8636"/>
         <location filename="../win.cpp" line="4453"/>
         <source>Lithium</source>
         <translation>锂电</translation>
@@ -5102,7 +5174,7 @@ Backup</source>
         <translation>并机</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4711"/>
+        <location filename="../win.ui" line="4717"/>
         <location filename="../win.cpp" line="3165"/>
         <source>Maintenance Bypass Breaker</source>
         <translation>维修旁路</translation>
@@ -5225,92 +5297,92 @@ Backup</source>
         <translation type="vanished">这是高温信号，输入干接点6，有使能(Enable)、禁止(Disable)两种状态,此处获取的是最真实的物理硬件状态。</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="3986"/>
+        <location filename="../win.ui" line="3992"/>
         <source>PCS voltage(AB)</source>
         <translation>PCS 电压(AB)</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="3996"/>
+        <location filename="../win.ui" line="4002"/>
         <source>PCS voltage(BC)</source>
         <translation>PCS 电压(BC)</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4006"/>
+        <location filename="../win.ui" line="4012"/>
         <source>PCS voltage(CA)</source>
         <translation>PCS 电压(CA)</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4016"/>
+        <location filename="../win.ui" line="4022"/>
         <source>PCS current(A)</source>
         <translation>PCS 电流(A)</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4026"/>
+        <location filename="../win.ui" line="4032"/>
         <source>PCS current(B)</source>
         <translation>PCS 电流(B)</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4036"/>
+        <location filename="../win.ui" line="4042"/>
         <source>PCS current(C)</source>
         <translation>PCS 电流(C)</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4046"/>
+        <location filename="../win.ui" line="4052"/>
         <source>PCS Active P.</source>
         <translation>PCS有功功率</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4051"/>
+        <location filename="../win.ui" line="4057"/>
         <source>PCS Reactive P.</source>
         <translation>PCS无功功率</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4056"/>
+        <location filename="../win.ui" line="4062"/>
         <source>PCS Parent P.</source>
         <translation>PCS视在功率</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4061"/>
+        <location filename="../win.ui" line="4067"/>
         <source>PCS Pf</source>
         <translation>PCS功率因素</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="3991"/>
+        <location filename="../win.ui" line="3997"/>
         <location filename="../win.cpp" line="1186"/>
         <location filename="../win.cpp" line="2850"/>
         <source>Battery voltage</source>
         <translation>电池电压</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4001"/>
+        <location filename="../win.ui" line="4007"/>
         <location filename="../win.cpp" line="1186"/>
         <location filename="../win.cpp" line="2859"/>
         <source>Battery current</source>
         <translation>电池电流</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4011"/>
+        <location filename="../win.ui" line="4017"/>
         <location filename="../win.cpp" line="1186"/>
         <location filename="../win.cpp" line="2868"/>
         <source>Battery power</source>
         <translation>电池功率</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4021"/>
+        <location filename="../win.ui" line="4027"/>
         <location filename="../win.cpp" line="1187"/>
         <location filename="../win.cpp" line="2877"/>
         <source>Bus voltage</source>
         <translation>母线电压</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4031"/>
+        <location filename="../win.ui" line="4037"/>
         <location filename="../win.cpp" line="1187"/>
         <location filename="../win.cpp" line="2886"/>
         <source>IGBT temperature</source>
         <translation>IGBT温度</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="4041"/>
+        <location filename="../win.ui" line="4047"/>
         <location filename="../win.cpp" line="1188"/>
         <location filename="../win.cpp" line="2895"/>
         <source>Environment temperature</source>
@@ -5888,7 +5960,7 @@ fault</source>
         <translation>结束时间</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8404"/>
+        <location filename="../win.ui" line="8595"/>
         <location filename="../win.cpp" line="1059"/>
         <location filename="../win.cpp" line="2349"/>
         <source>Description</source>
@@ -5917,19 +5989,16 @@ fault</source>
         <translation>系统设置修改时的时间。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2718"/>
         <source>This is the allowable charging capacity uploaded from BMS through CAN/485/TCP communication protocol. It represents the current battery pack&apos;s capacity for charging. This value is not displayed when it does not exist (Note: Only certain BMSs provide this value).</source>
-        <translation>这是PCS通过CAN/485/TCP通讯协议从BMS上传得到允许充电功率或通过CAN/485/TCP通讯协议从BMS上传的当前充电限流值乘以当前电压值得到允许充电功率，电池的充电功率不可超过这个限制数值。</translation>
+        <translation type="vanished">这是PCS通过CAN/485/TCP通讯协议从BMS上传得到允许充电功率或通过CAN/485/TCP通讯协议从BMS上传的当前充电限流值乘以当前电压值得到允许充电功率，电池的充电功率不可超过这个限制数值。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2722"/>
         <source>This is the allowable discharge power obtained by PCS from BMS through CAN/485/TCP communication protocol, or obtained by multiplying the current discharge limit value uploaded from BMS through CAN/485/TCP communication protocol with the current voltage value. The battery&apos;s discharge power should not exceed this limitation value.</source>
-        <translation>这是PCS通过CAN/485/TCP通讯协议从BMS上传得到允许放电功率或通过CAN/485/TCP通讯协议从BMS上传的当前放电限流值乘以当前电压值得到允许放电功率，电池的放电功率不可超过这个限制数值。</translation>
+        <translation type="vanished">这是PCS通过CAN/485/TCP通讯协议从BMS上传得到允许放电功率或通过CAN/485/TCP通讯协议从BMS上传的当前放电限流值乘以当前电压值得到允许放电功率，电池的放电功率不可超过这个限制数值。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2730"/>
         <source>This is the allowable discharge capacity uploaded from BMS through CAN/485/TCP communication protocol. It represents the current battery pack&apos;s capacity for discharging. This value is not displayed when it does not exist (Note: Only certain BMSs provide this value).</source>
-        <translation>这是通过CAN/485/TCP通讯协议从BMS上传的允许放电量，当前电池组允许放电的容量，当不存在该值时，此项不显示(注:仅部分BMS会提供这个值)。</translation>
+        <translation type="vanished">这是通过CAN/485/TCP通讯协议从BMS上传的允许放电量，当前电池组允许放电的容量，当不存在该值时，此项不显示(注:仅部分BMS会提供这个值)。</translation>
     </message>
     <message>
         <source>The inverter side voltage of the current PCS is the phase voltage between phase A and phase B.</source>
@@ -5980,11 +6049,25 @@ fault</source>
         <translation type="vanished">当前PCS的逆变侧视在功率S，S= √((P^2+Q^2))。</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9218"/>
-        <location filename="../win.ui" line="9279"/>
-        <location filename="../win.ui" line="9349"/>
-        <location filename="../win.ui" line="9413"/>
-        <location filename="../win.ui" line="9477"/>
+        <location filename="../win.ui" line="5352"/>
+        <location filename="../win.ui" line="5376"/>
+        <location filename="../win.ui" line="5400"/>
+        <location filename="../win.ui" line="5424"/>
+        <location filename="../win.ui" line="5448"/>
+        <location filename="../win.ui" line="5472"/>
+        <location filename="../win.ui" line="5496"/>
+        <location filename="../win.ui" line="5520"/>
+        <location filename="../win.ui" line="6082"/>
+        <location filename="../win.ui" line="6106"/>
+        <location filename="../win.ui" line="6130"/>
+        <location filename="../win.ui" line="6154"/>
+        <location filename="../win.ui" line="6178"/>
+        <location filename="../win.ui" line="6202"/>
+        <location filename="../win.ui" line="9409"/>
+        <location filename="../win.ui" line="9470"/>
+        <location filename="../win.ui" line="9540"/>
+        <location filename="../win.ui" line="9604"/>
+        <location filename="../win.ui" line="9668"/>
         <location filename="../win.cpp" line="2341"/>
         <location filename="../win.cpp" line="3316"/>
         <source>0</source>

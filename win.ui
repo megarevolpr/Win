@@ -3743,13 +3743,19 @@ Language</string>
        </property>
        <item row="0" column="0">
         <widget class="QTabWidget" name="Run_tabWidget">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="font">
           <font>
            <pointsize>11</pointsize>
           </font>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="RTData_page">
           <property name="minimumSize">
@@ -4847,13 +4853,13 @@ QPushButton::hover{
          <widget class="QWidget" name="BatteryData_page">
           <property name="minimumSize">
            <size>
-            <width>971</width>
+            <width>981</width>
             <height>414</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>971</width>
+            <width>981</width>
             <height>414</height>
            </size>
           </property>
@@ -4878,17 +4884,26 @@ QPushButton::hover{
            </property>
            <item row="0" column="0">
             <widget class="QStackedWidget" name="BAT_stackedWidget">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="minimumSize">
               <size>
-               <width>971</width>
+               <width>981</width>
                <height>414</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>971</width>
+               <width>981</width>
                <height>414</height>
               </size>
+             </property>
+             <property name="currentIndex">
+              <number>1</number>
              </property>
              <widget class="QWidget" name="BAT_Lead_page">
               <property name="minimumSize">
@@ -4969,12 +4984,31 @@ QPushButton::hover{
               </property>
               <property name="font">
                <font>
+                <family>宋体</family>
                 <pointsize>11</pointsize>
                </font>
               </property>
               <layout class="QGridLayout" name="gridLayout_6">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <property name="spacing">
+                <number>0</number>
+               </property>
                <item row="0" column="0">
                 <layout class="QHBoxLayout" name="horizontalLayout_3">
+                 <property name="spacing">
+                  <number>6</number>
+                 </property>
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="3,2,1">
                    <property name="spacing">
@@ -4995,9 +5029,14 @@ QPushButton::hover{
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>173</width>
+                         <width>16777215</width>
                          <height>43</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
                        </property>
                        <property name="styleSheet">
                         <string notr="true">background-color: rgb(0, 151, 226);</string>
@@ -5023,13 +5062,13 @@ QPushButton::hover{
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>173</width>
+                         <width>16777215</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="font">
                         <font>
-                         <pointsize>11</pointsize>
+                         <pointsize>14</pointsize>
                         </font>
                        </property>
                        <property name="styleSheet">
@@ -5053,13 +5092,13 @@ QPushButton::hover{
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>173</width>
+                         <width>16777215</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="font">
                         <font>
-                         <pointsize>11</pointsize>
+                         <pointsize>14</pointsize>
                         </font>
                        </property>
                        <property name="styleSheet">
@@ -5083,13 +5122,13 @@ QPushButton::hover{
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>173</width>
+                         <width>16777215</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="font">
                         <font>
-                         <pointsize>11</pointsize>
+                         <pointsize>14</pointsize>
                         </font>
                        </property>
                        <property name="styleSheet">
@@ -5113,13 +5152,13 @@ QPushButton::hover{
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>173</width>
+                         <width>16777215</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="font">
                         <font>
-                         <pointsize>11</pointsize>
+                         <pointsize>14</pointsize>
                         </font>
                        </property>
                        <property name="styleSheet">
@@ -5143,13 +5182,13 @@ QPushButton::hover{
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>173</width>
+                         <width>16777215</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="font">
                         <font>
-                         <pointsize>11</pointsize>
+                         <pointsize>14</pointsize>
                         </font>
                        </property>
                        <property name="styleSheet">
@@ -5173,13 +5212,13 @@ QPushButton::hover{
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>173</width>
+                         <width>16777215</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="font">
                         <font>
-                         <pointsize>11</pointsize>
+                         <pointsize>14</pointsize>
                         </font>
                        </property>
                        <property name="styleSheet">
@@ -5203,13 +5242,13 @@ QPushButton::hover{
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>173</width>
+                         <width>16777215</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="font">
                         <font>
-                         <pointsize>11</pointsize>
+                         <pointsize>14</pointsize>
                         </font>
                        </property>
                        <property name="styleSheet">
@@ -5233,13 +5272,13 @@ QPushButton::hover{
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>173</width>
+                         <width>16777215</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="font">
                         <font>
-                         <pointsize>11</pointsize>
+                         <pointsize>14</pointsize>
                         </font>
                        </property>
                        <property name="styleSheet">
@@ -5264,15 +5303,20 @@ QPushButton::hover{
                       <widget class="QLabel" name="BatValue1">
                        <property name="minimumSize">
                         <size>
-                         <width>114</width>
+                         <width>70</width>
                          <height>43</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>114</width>
+                         <width>70</width>
                          <height>43</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
                        </property>
                        <property name="styleSheet">
                         <string notr="true">background-color: rgb(0, 151, 226);</string>
@@ -5289,18 +5333,23 @@ QPushButton::hover{
                       <widget class="QPushButton" name="pushButton_1">
                        <property name="minimumSize">
                         <size>
-                         <width>114</width>
+                         <width>70</width>
                          <height>43</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>114</width>
+                         <width>70</width>
                          <height>43</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
-                        <string>600</string>
+                        <string>0</string>
                        </property>
                       </widget>
                      </item>
@@ -5308,18 +5357,23 @@ QPushButton::hover{
                       <widget class="QPushButton" name="pushButton_2">
                        <property name="minimumSize">
                         <size>
-                         <width>114</width>
+                         <width>70</width>
                          <height>43</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>114</width>
+                         <width>70</width>
                          <height>43</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
-                        <string>100</string>
+                        <string>0</string>
                        </property>
                       </widget>
                      </item>
@@ -5327,18 +5381,23 @@ QPushButton::hover{
                       <widget class="QPushButton" name="pushButton_3">
                        <property name="minimumSize">
                         <size>
-                         <width>114</width>
+                         <width>70</width>
                          <height>43</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>114</width>
+                         <width>70</width>
                          <height>43</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
-                        <string>70</string>
+                        <string>0</string>
                        </property>
                       </widget>
                      </item>
@@ -5346,18 +5405,23 @@ QPushButton::hover{
                       <widget class="QPushButton" name="pushButton_4">
                        <property name="minimumSize">
                         <size>
-                         <width>114</width>
+                         <width>70</width>
                          <height>43</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>114</width>
+                         <width>70</width>
                          <height>43</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
-                        <string>100</string>
+                        <string>0</string>
                        </property>
                       </widget>
                      </item>
@@ -5365,18 +5429,23 @@ QPushButton::hover{
                       <widget class="QPushButton" name="pushButton_5">
                        <property name="minimumSize">
                         <size>
-                         <width>114</width>
+                         <width>70</width>
                          <height>43</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>114</width>
+                         <width>70</width>
                          <height>43</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
-                        <string>3300</string>
+                        <string>0</string>
                        </property>
                       </widget>
                      </item>
@@ -5384,18 +5453,23 @@ QPushButton::hover{
                       <widget class="QPushButton" name="pushButton_6">
                        <property name="minimumSize">
                         <size>
-                         <width>114</width>
+                         <width>70</width>
                          <height>43</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>114</width>
+                         <width>70</width>
                          <height>43</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
-                        <string>3250</string>
+                        <string>0</string>
                        </property>
                       </widget>
                      </item>
@@ -5403,18 +5477,23 @@ QPushButton::hover{
                       <widget class="QPushButton" name="pushButton_7">
                        <property name="minimumSize">
                         <size>
-                         <width>114</width>
+                         <width>70</width>
                          <height>43</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>114</width>
+                         <width>70</width>
                          <height>43</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
-                        <string>28</string>
+                        <string>0</string>
                        </property>
                       </widget>
                      </item>
@@ -5422,18 +5501,23 @@ QPushButton::hover{
                       <widget class="QPushButton" name="pushButton_8">
                        <property name="minimumSize">
                         <size>
-                         <width>114</width>
+                         <width>70</width>
                          <height>43</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>114</width>
+                         <width>70</width>
                          <height>43</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
-                        <string>27</string>
+                        <string>0</string>
                        </property>
                       </widget>
                      </item>
@@ -5448,7 +5532,7 @@ QPushButton::hover{
                       <widget class="QLabel" name="BatUnit1">
                        <property name="minimumSize">
                         <size>
-                         <width>56</width>
+                         <width>40</width>
                          <height>43</height>
                         </size>
                        </property>
@@ -5457,6 +5541,11 @@ QPushButton::hover{
                          <width>56</width>
                          <height>43</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
                        </property>
                        <property name="styleSheet">
                         <string notr="true">background-color: rgb(0, 151, 226);</string>
@@ -5473,7 +5562,7 @@ QPushButton::hover{
                       <widget class="QLabel" name="BatUnit_1">
                        <property name="minimumSize">
                         <size>
-                         <width>56</width>
+                         <width>40</width>
                          <height>43</height>
                         </size>
                        </property>
@@ -5482,6 +5571,11 @@ QPushButton::hover{
                          <width>56</width>
                          <height>43</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
                        </property>
                        <property name="frameShape">
                         <enum>QFrame::NoFrame</enum>
@@ -5498,7 +5592,7 @@ QPushButton::hover{
                       <widget class="QLabel" name="BatUnit_2">
                        <property name="minimumSize">
                         <size>
-                         <width>56</width>
+                         <width>40</width>
                          <height>43</height>
                         </size>
                        </property>
@@ -5507,6 +5601,11 @@ QPushButton::hover{
                          <width>56</width>
                          <height>43</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>A</string>
@@ -5520,7 +5619,7 @@ QPushButton::hover{
                       <widget class="QLabel" name="BatUnit_3">
                        <property name="minimumSize">
                         <size>
-                         <width>56</width>
+                         <width>40</width>
                          <height>43</height>
                         </size>
                        </property>
@@ -5529,6 +5628,11 @@ QPushButton::hover{
                          <width>56</width>
                          <height>43</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>%</string>
@@ -5542,7 +5646,7 @@ QPushButton::hover{
                       <widget class="QLabel" name="BatUnit_4">
                        <property name="minimumSize">
                         <size>
-                         <width>56</width>
+                         <width>40</width>
                          <height>43</height>
                         </size>
                        </property>
@@ -5551,6 +5655,11 @@ QPushButton::hover{
                          <width>56</width>
                          <height>43</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>%</string>
@@ -5564,7 +5673,7 @@ QPushButton::hover{
                       <widget class="QLabel" name="BatUnit_5">
                        <property name="minimumSize">
                         <size>
-                         <width>56</width>
+                         <width>40</width>
                          <height>43</height>
                         </size>
                        </property>
@@ -5573,6 +5682,11 @@ QPushButton::hover{
                          <width>56</width>
                          <height>43</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>mV</string>
@@ -5586,7 +5700,7 @@ QPushButton::hover{
                       <widget class="QLabel" name="BatUnit_6">
                        <property name="minimumSize">
                         <size>
-                         <width>56</width>
+                         <width>40</width>
                          <height>43</height>
                         </size>
                        </property>
@@ -5595,6 +5709,11 @@ QPushButton::hover{
                          <width>56</width>
                          <height>43</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>mV</string>
@@ -5608,7 +5727,7 @@ QPushButton::hover{
                       <widget class="QLabel" name="BatUnit_7">
                        <property name="minimumSize">
                         <size>
-                         <width>56</width>
+                         <width>40</width>
                          <height>43</height>
                         </size>
                        </property>
@@ -5617,6 +5736,11 @@ QPushButton::hover{
                          <width>56</width>
                          <height>43</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>℃</string>
@@ -5630,7 +5754,7 @@ QPushButton::hover{
                       <widget class="QLabel" name="BatUnit_8">
                        <property name="minimumSize">
                         <size>
-                         <width>56</width>
+                         <width>40</width>
                          <height>43</height>
                         </size>
                        </property>
@@ -5639,6 +5763,11 @@ QPushButton::hover{
                          <width>56</width>
                          <height>43</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>℃</string>
@@ -5663,15 +5792,20 @@ QPushButton::hover{
                       <widget class="QLabel" name="BATName1_2">
                        <property name="minimumSize">
                         <size>
-                         <width>173</width>
+                         <width>275</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>173</width>
+                         <width>16777215</width>
                          <height>42</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
                        </property>
                        <property name="styleSheet">
                         <string notr="true">background-color: rgb(0, 151, 226);</string>
@@ -5694,13 +5828,13 @@ QPushButton::hover{
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>173</width>
+                         <width>16777215</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="font">
                         <font>
-                         <pointsize>11</pointsize>
+                         <pointsize>14</pointsize>
                         </font>
                        </property>
                        <property name="text">
@@ -5721,13 +5855,13 @@ QPushButton::hover{
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>173</width>
+                         <width>16777215</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="font">
                         <font>
-                         <pointsize>11</pointsize>
+                         <pointsize>14</pointsize>
                         </font>
                        </property>
                        <property name="text">
@@ -5748,13 +5882,13 @@ QPushButton::hover{
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>173</width>
+                         <width>16777215</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="font">
                         <font>
-                         <pointsize>11</pointsize>
+                         <pointsize>14</pointsize>
                         </font>
                        </property>
                        <property name="text">
@@ -5775,13 +5909,14 @@ QPushButton::hover{
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>173</width>
+                         <width>16777215</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="font">
                         <font>
-                         <pointsize>11</pointsize>
+                         <family>宋体</family>
+                         <pointsize>14</pointsize>
                         </font>
                        </property>
                        <property name="text">
@@ -5802,13 +5937,13 @@ QPushButton::hover{
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>173</width>
+                         <width>16777215</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="font">
                         <font>
-                         <pointsize>11</pointsize>
+                         <pointsize>14</pointsize>
                         </font>
                        </property>
                        <property name="text">
@@ -5829,13 +5964,13 @@ QPushButton::hover{
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>173</width>
+                         <width>16777215</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="font">
                         <font>
-                         <pointsize>11</pointsize>
+                         <pointsize>14</pointsize>
                         </font>
                        </property>
                        <property name="text">
@@ -5856,7 +5991,7 @@ QPushButton::hover{
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>173</width>
+                         <width>16777215</width>
                          <height>42</height>
                         </size>
                        </property>
@@ -5878,7 +6013,7 @@ QPushButton::hover{
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>173</width>
+                         <width>16777215</width>
                          <height>42</height>
                         </size>
                        </property>
@@ -5898,15 +6033,20 @@ QPushButton::hover{
                       <widget class="QLabel" name="BatValue1_2">
                        <property name="minimumSize">
                         <size>
-                         <width>101</width>
+                         <width>70</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>101</width>
+                         <width>70</width>
                          <height>42</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
                        </property>
                        <property name="styleSheet">
                         <string notr="true">background-color: rgb(0, 151, 226);</string>
@@ -5923,18 +6063,23 @@ QPushButton::hover{
                       <widget class="QPushButton" name="pushButton_9">
                        <property name="minimumSize">
                         <size>
-                         <width>101</width>
+                         <width>70</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>101</width>
+                         <width>70</width>
                          <height>42</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
-                        <string>120</string>
+                        <string>0</string>
                        </property>
                       </widget>
                      </item>
@@ -5942,18 +6087,23 @@ QPushButton::hover{
                       <widget class="QPushButton" name="pushButton_10">
                        <property name="minimumSize">
                         <size>
-                         <width>101</width>
+                         <width>70</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>101</width>
+                         <width>70</width>
                          <height>42</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
-                        <string>120</string>
+                        <string>0</string>
                        </property>
                       </widget>
                      </item>
@@ -5961,18 +6111,23 @@ QPushButton::hover{
                       <widget class="QPushButton" name="pushButton_11">
                        <property name="minimumSize">
                         <size>
-                         <width>101</width>
+                         <width>70</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>101</width>
+                         <width>70</width>
                          <height>42</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
-                        <string>135</string>
+                        <string>0</string>
                        </property>
                       </widget>
                      </item>
@@ -5980,18 +6135,23 @@ QPushButton::hover{
                       <widget class="QPushButton" name="pushButton_12">
                        <property name="minimumSize">
                         <size>
-                         <width>101</width>
+                         <width>70</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>101</width>
+                         <width>70</width>
                          <height>42</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
-                        <string>135</string>
+                        <string>0</string>
                        </property>
                       </widget>
                      </item>
@@ -5999,18 +6159,23 @@ QPushButton::hover{
                       <widget class="QPushButton" name="pushButton_13">
                        <property name="minimumSize">
                         <size>
-                         <width>101</width>
+                         <width>70</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>101</width>
+                         <width>70</width>
                          <height>42</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
-                        <string>45</string>
+                        <string>0</string>
                        </property>
                       </widget>
                      </item>
@@ -6018,18 +6183,23 @@ QPushButton::hover{
                       <widget class="QPushButton" name="pushButton_14">
                        <property name="minimumSize">
                         <size>
-                         <width>101</width>
+                         <width>70</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>101</width>
+                         <width>70</width>
                          <height>42</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
-                        <string>95</string>
+                        <string>0</string>
                        </property>
                       </widget>
                      </item>
@@ -6037,13 +6207,13 @@ QPushButton::hover{
                       <widget class="QLabel" name="label_30">
                        <property name="minimumSize">
                         <size>
-                         <width>101</width>
+                         <width>70</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>101</width>
+                         <width>70</width>
                          <height>42</height>
                         </size>
                        </property>
@@ -6056,13 +6226,13 @@ QPushButton::hover{
                       <widget class="QLabel" name="label_31">
                        <property name="minimumSize">
                         <size>
-                         <width>101</width>
+                         <width>70</width>
                          <height>42</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>101</width>
+                         <width>70</width>
                          <height>42</height>
                         </size>
                        </property>
@@ -6082,7 +6252,7 @@ QPushButton::hover{
                       <widget class="QLabel" name="BatUnit1_2">
                        <property name="minimumSize">
                         <size>
-                         <width>56</width>
+                         <width>40</width>
                          <height>43</height>
                         </size>
                        </property>
@@ -6091,6 +6261,11 @@ QPushButton::hover{
                          <width>56</width>
                          <height>43</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
                        </property>
                        <property name="styleSheet">
                         <string notr="true">background-color: rgb(0, 151, 226);</string>
@@ -6107,7 +6282,7 @@ QPushButton::hover{
                       <widget class="QLabel" name="BatUnit_9">
                        <property name="minimumSize">
                         <size>
-                         <width>56</width>
+                         <width>40</width>
                          <height>43</height>
                         </size>
                        </property>
@@ -6116,6 +6291,11 @@ QPushButton::hover{
                          <width>56</width>
                          <height>43</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>A</string>
@@ -6129,7 +6309,7 @@ QPushButton::hover{
                       <widget class="QLabel" name="BatUnit_10">
                        <property name="minimumSize">
                         <size>
-                         <width>56</width>
+                         <width>40</width>
                          <height>43</height>
                         </size>
                        </property>
@@ -6138,6 +6318,11 @@ QPushButton::hover{
                          <width>56</width>
                          <height>43</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>A</string>
@@ -6151,7 +6336,7 @@ QPushButton::hover{
                       <widget class="QLabel" name="BatUnit_11">
                        <property name="minimumSize">
                         <size>
-                         <width>56</width>
+                         <width>40</width>
                          <height>43</height>
                         </size>
                        </property>
@@ -6160,6 +6345,11 @@ QPushButton::hover{
                          <width>56</width>
                          <height>43</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>kW</string>
@@ -6173,7 +6363,7 @@ QPushButton::hover{
                       <widget class="QLabel" name="BatUnit_12">
                        <property name="minimumSize">
                         <size>
-                         <width>56</width>
+                         <width>40</width>
                          <height>43</height>
                         </size>
                        </property>
@@ -6182,6 +6372,11 @@ QPushButton::hover{
                          <width>56</width>
                          <height>43</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>kW</string>
@@ -6195,7 +6390,7 @@ QPushButton::hover{
                       <widget class="QLabel" name="BatUnit_13">
                        <property name="minimumSize">
                         <size>
-                         <width>56</width>
+                         <width>40</width>
                          <height>43</height>
                         </size>
                        </property>
@@ -6204,6 +6399,11 @@ QPushButton::hover{
                          <width>56</width>
                          <height>43</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>kWh</string>
@@ -6217,7 +6417,7 @@ QPushButton::hover{
                       <widget class="QLabel" name="BatUnit_14">
                        <property name="minimumSize">
                         <size>
-                         <width>56</width>
+                         <width>40</width>
                          <height>43</height>
                         </size>
                        </property>
@@ -6226,6 +6426,11 @@ QPushButton::hover{
                          <width>56</width>
                          <height>43</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>14</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>kWh</string>
@@ -6239,7 +6444,7 @@ QPushButton::hover{
                       <widget class="QLabel" name="BatUnit_15">
                        <property name="minimumSize">
                         <size>
-                         <width>56</width>
+                         <width>40</width>
                          <height>43</height>
                         </size>
                        </property>
@@ -6261,7 +6466,7 @@ QPushButton::hover{
                       <widget class="QLabel" name="BatUnit_16">
                        <property name="minimumSize">
                         <size>
-                         <width>56</width>
+                         <width>40</width>
                          <height>43</height>
                         </size>
                        </property>
@@ -6327,7 +6532,7 @@ QPushButton::hover{
                           </property>
                           <property name="font">
                            <font>
-                            <pointsize>11</pointsize>
+                            <pointsize>14</pointsize>
                            </font>
                           </property>
                           <property name="text">
@@ -6374,7 +6579,7 @@ QPushButton::hover{
                           </property>
                           <property name="font">
                            <font>
-                            <pointsize>11</pointsize>
+                            <pointsize>14</pointsize>
                            </font>
                           </property>
                           <property name="text">
@@ -6421,7 +6626,7 @@ QPushButton::hover{
                           </property>
                           <property name="font">
                            <font>
-                            <pointsize>11</pointsize>
+                            <pointsize>14</pointsize>
                            </font>
                           </property>
                           <property name="text">
@@ -6468,7 +6673,7 @@ QPushButton::hover{
                           </property>
                           <property name="font">
                            <font>
-                            <pointsize>11</pointsize>
+                            <pointsize>14</pointsize>
                            </font>
                           </property>
                           <property name="text">
@@ -6520,7 +6725,7 @@ QPushButton::hover{
                          </property>
                          <property name="font">
                           <font>
-                           <pointsize>11</pointsize>
+                           <pointsize>14</pointsize>
                           </font>
                          </property>
                          <property name="text">
@@ -6573,7 +6778,7 @@ QPushButton::hover{
                          </property>
                          <property name="font">
                           <font>
-                           <pointsize>11</pointsize>
+                           <pointsize>14</pointsize>
                           </font>
                          </property>
                          <property name="text">
@@ -6601,7 +6806,7 @@ enable</string>
                          </property>
                          <property name="font">
                           <font>
-                           <pointsize>11</pointsize>
+                           <pointsize>14</pointsize>
                           </font>
                          </property>
                          <property name="text">
@@ -6629,7 +6834,7 @@ enable</string>
                          </property>
                          <property name="font">
                           <font>
-                           <pointsize>11</pointsize>
+                           <pointsize>14</pointsize>
                           </font>
                          </property>
                          <property name="text">
@@ -6645,7 +6850,7 @@ enable</string>
                         <widget class="QPushButton" name="pushButton_17">
                          <property name="minimumSize">
                           <size>
-                           <width>104</width>
+                           <width>113</width>
                            <height>65</height>
                           </size>
                          </property>
@@ -6657,7 +6862,7 @@ enable</string>
                          </property>
                          <property name="font">
                           <font>
-                           <pointsize>11</pointsize>
+                           <pointsize>14</pointsize>
                           </font>
                          </property>
                          <property name="text">
@@ -6674,20 +6879,6 @@ enable</string>
                 </layout>
                </item>
               </layout>
-             </widget>
-             <widget class="QWidget" name="BAT_No_page">
-              <property name="minimumSize">
-               <size>
-                <width>971</width>
-                <height>407</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>971</width>
-                <height>407</height>
-               </size>
-              </property>
              </widget>
             </widget>
            </item>
@@ -10034,8 +10225,8 @@ Set rule:B1 - A1 ≥ 10V</string>
      <widget class="QLabel" name="Inverter_state_lab">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>9</y>
+        <x>280</x>
+        <y>10</y>
         <width>350</width>
         <height>40</height>
        </rect>

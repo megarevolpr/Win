@@ -2675,71 +2675,71 @@ void MEGAWin::BatteryData_clicked(int nid)
     switch (nid) {
     case 0:
         QMessageBox::question(this, tr("Bat volage")\
-                              ,tr("This is the total battery pressure of the battery pack uploaded from the BMS via the CAN/485/TCP communication protocol."), tr("OK"));
+                              ,tr("Total voltage of the battery uploaded by BMS."), tr("OK"));
         break;
     case 1:
         QMessageBox::question(this, tr("Bat current")\
-                              ,tr("This is the total current of the battery pack uploaded from the BMS via the CAN/485/TCP communication protocol."), tr("OK"));
+                              ,tr("Total current of the battery uploaded by BMS."), tr("OK"));
         break;
     case 2:
         QMessageBox::question(this, tr("SOC")\
-                              ,tr("This is the SOC of the battery pack uploaded from the BMS via the CAN/485/TCP communication protocol, that is, the percentage of the current battery remaining."), tr("OK"));
+                              ,tr("Battery SOH uploaded from BMS, the percentage of available capacity after full charge compared to the rated capacity."), tr("OK"));
         break;
     case 3:
         QMessageBox::question(this, tr("SOH")\
-                              ,tr("This is the SOH of the battery pack uploaded from the BMS through the CAN/485/TCP communication protocol, the percentage of the current capacity of the battery pack to the factory capacity, that is, the health of the battery."), tr("OK"));
+                              ,tr("Battery SOC uploaded by BMS refers to the current remaining battery capacity percentage."), tr("OK"));
         break;
     case 4:
         QMessageBox::question(this, tr("Cell voltage(max)")\
-                              ,tr("This is the maximum voltage of the cell uploaded from the BMS via the CAN/485/TCP communication protocol, that is, the maximum voltage of all cell cells at present."), tr("OK"));
+                              ,tr("The highest voltage of single cell uploaded by BMS."), tr("OK"));
         break;
     case 5:
         QMessageBox::question(this, tr("Cell voltage(min)")\
-                              ,tr("This is the lowest voltage of the cell uploaded from the BMS via the CAN/485/TCP communication protocol, that is, the lowest voltage of all battery cells at present."), tr("OK"));
+                              ,tr("The lowest voltage of single cell uploaded by BMS."), tr("OK"));
         break;
     case 6:
         QMessageBox::question(this, tr("Cell temp.(max)")\
-                              ,tr("This is the highest temperature of the cell uploaded from the BMS via the CAN/485/TCP communication protocol, that is, the highest temperature of all battery cells at present."), tr("OK"));
+                              ,tr("The highest temperature of single cell uploaded by BMS."), tr("OK"));
         break;
     case 7:
         QMessageBox::question(this, tr("Cell temp.(min)")\
-                              ,tr("This is the lowest temperature of the cell uploaded from the BMS via the CAN/485/TCP communication protocol, that is, the lowest temperature of all battery cells at present."), tr("OK"));
+                              ,tr("The lowest temperature of single cell uploaded by BMS."), tr("OK"));
         break;
     case 8:
-        QMessageBox::question(this, tr("Charging current limite")\
-                              ,tr("This is the upper limit of the charging current uploaded from the BMS via the CAN/485/TCP communication protocol, the maximum charging current allowed by the current battery pack (Note: when charging the end, PCS will limit the current according to the actual current)."), tr("OK"));
+        QMessageBox::question(this, tr("Charging current limit")\
+                              ,tr("The limit of charging current uploaded by BMS."), tr("OK"));
         break;
     case 9:
-        QMessageBox::question(this, tr("Discharging current limite")\
-                              ,tr("This is the upper limit of the discharge current uploaded from the BMS via the CAN/485/TCP communication protocol, the maximum discharge current allowed by the current battery pack."), tr("OK"));
+        QMessageBox::question(this, tr("Discharging current limit")\
+                              ,tr("The limit of discharging current uploaded by BMS."), tr("OK"));
         break;
     case 10:
-        QMessageBox::question(this, tr("Allow charge power")\
-                              ,tr("This is the allowable charging capacity uploaded from BMS through CAN/485/TCP communication protocol. It represents the current battery pack's capacity for charging. This value is not displayed when it does not exist (Note: Only certain BMSs provide this value)."), tr("OK"));
+        QMessageBox::question(this, tr("Allowable charging power")\
+                              ,tr("The allowable charging power uploaded by BMS."), tr("OK"));
         break;
     case 11:
-        QMessageBox::question(this, tr("Allow discharge power")\
-                              ,tr("This is the allowable discharge power obtained by PCS from BMS through CAN/485/TCP communication protocol, or obtained by multiplying the current discharge limit value uploaded from BMS through CAN/485/TCP communication protocol with the current voltage value. The battery's discharge power should not exceed this limitation value."), tr("OK"));
+        QMessageBox::question(this, tr("Allowable discharging power")\
+                              ,tr("The allowable discharging power uploaded by BMS."), tr("OK"));
         break;
     case 12:
-        QMessageBox::question(this, tr("Allow charge energy")\
-                              ,tr("This is the allowable charge amount uploaded from the BMS via the CAN/485/TCP communication protocol, the capacity of the current battery pack allowed to charge (Note: only some BMS will provide this value)."), tr("OK"));
+        QMessageBox::question(this, tr("Allowable charging energy")\
+                              ,tr("The allowable charging capacity uploaded by BMS."), tr("OK"));
         break;
     case 13:
-        QMessageBox::question(this, tr("Allow discharge energy")\
-                              ,tr("This is the allowable discharge capacity uploaded from BMS through CAN/485/TCP communication protocol. It represents the current battery pack's capacity for discharging. This value is not displayed when it does not exist (Note: Only certain BMSs provide this value)."), tr("OK"));
+        QMessageBox::question(this, tr("Allowable discharging energy")\
+                              ,tr("The allowable discharging capacity uploaded by BMS."), tr("OK"));
         break;
     case 14:
         QMessageBox::question(this, tr("Alarm level")\
-                              ,tr("This is the alarm level icon. The color is changed according to the alarm level uploaded by the BMS. The alarm level is green for normal alarms, yellow for primary alarms, orange for secondary alarms, and red for tertiary alarms.If the alarm is Level 1 or Level 2, PCS does not respond.If the alarm is Level 3, the PCS shuts down."), tr("OK"));
+                              ,tr("Alarm levels uploaded from BMS, level one alarm is yellow, level two alarm is orange, and level three alarm is red;\nBy default, the converter does not respond to level one and level two alarms, but shuts down in response to level three alarms."), tr("OK"));
         break;
     case 15:
-        QMessageBox::question(this, tr("Charge enable")\
-                              ,tr("This is the current battery status uploaded by BMS via CAN/485/TCP. Enable indicates that the battery can be charged. Disable indicates that the battery cannot be charged."), tr("OK"));
+        QMessageBox::question(this, tr("Charging enable")\
+                              ,tr("Battery Status Uploaded by BMS: Enable indicates the battery is allowed to charge, Disable indicates the battery is not allowed to charge."), tr("OK"));
         break;
     case 16:
-        QMessageBox::question(this, tr("Discharge enable")\
-                              ,tr("This is the current state of the battery uploaded by the BMS via the CAN/485/TCP protocol. Enable indicates that the battery can be discharged. Disable indicates that the battery cannot be discharged."), tr("OK"));
+        QMessageBox::question(this, tr("Discharging enable")\
+                              ,tr("Battery Status Uploaded by BMS: Enable indicates the battery is allowed to discharge, Disable indicates the battery is not allowed to discharge."), tr("OK"));
         break;
     default:
         break;
