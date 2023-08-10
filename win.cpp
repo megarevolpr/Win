@@ -1085,7 +1085,7 @@ void MEGAWin::History_tab()
         ui->Historicalfailure_tableWidget->setRowHeight(i,40);
     }
 
-    History();//历史记录
+    History(ui->Historicalfailure_tableWidget);//历史记录
 }
 
 /***************************************************************
@@ -2335,220 +2335,222 @@ void MEGAWin::MonitorDebug_clicked(int nid)
 /***************************************************************
  * 历史记录
  ***************************************************************/
-void MEGAWin::History()
+void MEGAWin::History(QTableWidget *myTable)
 {
     QString str1 = tr("0");
     QString str2 = tr("Level");
-    QString str3 = tr("This is the event alarm level. When the event alarm level is 0, it is marked red, indicating that this is the fault information.");
+    QString str3 = tr("0 represents an alarm event, and this item will turn red. 1 represents a status event.");//0表示告警事件，且此项会变红，1表示状态事件
     QString str4 = tr("Start Time");
-    QString str5 = tr("This is the event start time, which means that the record started appearing at this time.");
+    QString str5 = tr("Event start time.");//事件开始时间。
     QString str6 = tr("End Time");
-    QString str7 = tr("This is the event end time, which means the end time of this record,'... 'means no end time.");
+    QString str7 = tr("Event end time: '... 'indicates that there is no end time,'-' indicates that the event is in progress.");//19.事件结束时间：表示这条记录的结束时间，'...'表示无结束时间,'-'表示事件正在进行。
     QString str8 = tr("CAN communication failure");
-    QString str9 = tr("Description");
-    QString str10 = tr("This is the event description, when there is an alarm information, the alarm information will be recorded here.");
-    QString str11 = tr("Fire alarm (High temp. alarm)");
-    QString str12 = tr("Power Meter Comm fualttLead-acid abnormal");
-
+    QString str9 = tr("event description");//事件描述
+    QString str10 = tr("event description.");//事件描述。
+    QString str11 = tr("Fire alarm (High temp. alarm)");//消防告警(高温告警)
+    QString str12 = tr("Power Meter Comm fualttLead-acid abnormal");//电能表通讯故障
     QString str13 = tr("Converter Standby.");//变换器待机
     QString str14 = tr("The grid contactor connected");//电网接触器闭合
     QString str15 = tr("The grid breaker connected");//电网断路器闭合
     QString str16 = tr("The output breaker connected");//输出断路器闭合
     QString str17 = tr("Buck not softened");//低压侧未软起
     QString str18 = tr("Contactor off buck");//低压侧接触器断开
+    //QString str19 = tr("Turning on the converter is not allowed");//变流器开机不允许
     QString str20 = tr("The grid breaker disconnected");//电网断路器断开
+    //QString str21 = tr("The grid contactor is disconnected");//电网接触器断开
+
     QString str24 = tr("1");
 
     int line=0;int column=0;
-    Grade9 = new Specification(this,Grade9_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Grade9 = new Specification(this,Grade9_explain, myTable, line++, column, \
                                                     str24, str2, str3);
     Grade9->add_Specification();
-    Grade10 = new Specification(this,Grade10_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Grade10 = new Specification(this,Grade10_explain, myTable, line++, column, \
                                                     str24, str2, str3);
     Grade10->add_Specification();
-    Grade11 = new Specification(this,Grade11_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Grade11 = new Specification(this,Grade11_explain, myTable, line++, column, \
                                                     str24, str2, str3);
     Grade11->add_Specification();
-    Grade12 = new Specification(this,Grade12_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Grade12 = new Specification(this,Grade12_explain, myTable, line++, column, \
                                                     str24, str2, str3);
     Grade12->add_Specification();
-    Grade13 = new Specification(this,Grade13_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Grade13 = new Specification(this,Grade13_explain, myTable, line++, column, \
                                                     str24, str2, str3);
     Grade13->add_Specification();
-    Grade14 = new Specification(this,Grade14_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Grade14 = new Specification(this,Grade14_explain, myTable, line++, column, \
                                                     str24, str2, str3);
     Grade14->add_Specification();
-    Grade15 = new Specification(this,Grade15_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Grade15 = new Specification(this,Grade15_explain, myTable, line++, column, \
                                                     str24, str2, str3);
     Grade15->add_Specification();
 
-    Grade = new Specification(this,Grade_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Grade = new Specification(this,Grade_explain, myTable, line++, column, \
                                                     str1, str2, str3);
     Grade->add_Specification();
-    Grade2 = new Specification(this,Grade2_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Grade2 = new Specification(this,Grade2_explain, myTable, line++, column, \
                                                     str1, str2, str3);
     Grade2->add_Specification();
-    Grade3 = new Specification(this,Grade3_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Grade3 = new Specification(this,Grade3_explain, myTable, line++, column, \
                                                     str1, str2,  str3);
     Grade3->add_Specification();
-    Grade4 = new Specification(this,Grade4_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Grade4 = new Specification(this,Grade4_explain, myTable, line++, column, \
                                                     str1, str2, str3);
     Grade4->add_Specification();
-    Grade5 = new Specification(this,Grade5_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Grade5 = new Specification(this,Grade5_explain, myTable, line++, column, \
                                                     str1, str2, str3);
     Grade5->add_Specification();
-    Grade6 = new Specification(this,Grade6_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Grade6 = new Specification(this,Grade6_explain, myTable, line++, column, \
                                                     str1, str2, str3);
     Grade6->add_Specification();
-    Grade7 = new Specification(this,Grade7_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Grade7 = new Specification(this,Grade7_explain, myTable, line++, column, \
                                                     str1, str2, \
                                                     str3);
     Grade7->add_Specification();
-    Grade8 = new Specification(this,Grade8_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Grade8 = new Specification(this,Grade8_explain, myTable, line++, column, \
                                                     str1, str2, str3);
     Grade8->add_Specification();
     line=0;
     column=1;
-    StartTime9 = new Specification(this,StartTime9_explain, ui->Historicalfailure_tableWidget, line++, column, \
-                                                    "2023.7.29 14:59:56", str4, str5);
+    StartTime9 = new Specification(this,StartTime9_explain, myTable, line++, column, \
+                                                    "29-7-2023 14:59:56", str4, str5);
     StartTime9->add_Specification();
-    StartTime10 = new Specification(this,StartTime10_explain, ui->Historicalfailure_tableWidget, line++, column, \
-                                                    "2023.7.29 14:59:55", str4, str5);
+    StartTime10 = new Specification(this,StartTime10_explain, myTable, line++, column, \
+                                                    "29-7-2023 14:59:55", str4, str5);
     StartTime10->add_Specification();
-    StartTime11 = new Specification(this,StartTime11_explain, ui->Historicalfailure_tableWidget, line++, column, \
-                                                    "2023.7.29 14:59:51", str4, str5);
+    StartTime11 = new Specification(this,StartTime11_explain, myTable, line++, column, \
+                                                    "29-7-2023 14:59:51", str4, str5);
     StartTime11->add_Specification();
-    StartTime12 = new Specification(this,StartTime12_explain, ui->Historicalfailure_tableWidget, line++, column, \
-                                                    "2023.7.29 14:59:51", str4, str5);
+    StartTime12 = new Specification(this,StartTime12_explain, myTable, line++, column, \
+                                                    "29-7-2023 14:59:51", str4, str5);
     StartTime12->add_Specification();
-    StartTime13 = new Specification(this,StartTime13_explain, ui->Historicalfailure_tableWidget, line++, column, \
-                                                    "2023.7.29 14:59:50", str4, str5);
+    StartTime13 = new Specification(this,StartTime13_explain, myTable, line++, column, \
+                                                    "29-7-2023 14:59:50", str4, str5);
     StartTime13->add_Specification();
-    StartTime14 = new Specification(this,StartTime14_explain, ui->Historicalfailure_tableWidget, line++, column, \
-                                                    "2023.7.29 14:57:50", str4, str5);
+    StartTime14 = new Specification(this,StartTime14_explain, myTable, line++, column, \
+                                                    "29-7-2023 14:57:50", str4, str5);
     StartTime14->add_Specification();
-    StartTime15 = new Specification(this,StartTime15_explain, ui->Historicalfailure_tableWidget, line++, column, \
-                                                    "2023.7.29 14:57:50", str4, str5);
+    StartTime15 = new Specification(this,StartTime15_explain, myTable, line++, column, \
+                                                    "29-7-2023 14:57:50", str4, str5);
     StartTime15->add_Specification();
 
-    StartTime = new Specification(this,StartTime_explain, ui->Historicalfailure_tableWidget, line++, column, \
-                                                    "2023.5.6 15:49:50", str4, str5);
+    StartTime = new Specification(this,StartTime_explain, myTable, line++, column, \
+                                                    "6-5-2023 15:49:50", str4, str5);
     StartTime->add_Specification();
-    StartTime2 = new Specification(this,StartTime2_explain, ui->Historicalfailure_tableWidget, line++, column, \
-                                                    "2023.5.6 15:48:18", str4, str5);
+    StartTime2 = new Specification(this,StartTime2_explain, myTable, line++, column, \
+                                                    "6-5-2023 15:48:18", str4, str5);
     StartTime2->add_Specification();
-    StartTime3 = new Specification(this,StartTime3_explain, ui->Historicalfailure_tableWidget, line++, column, \
-                                                    "2023.5.6 15:39:3", str4, str5);
+    StartTime3 = new Specification(this,StartTime3_explain, myTable, line++, column, \
+                                                    "6-5-2023 15:39:3", str4, str5);
     StartTime3->add_Specification();
-    StartTime4 = new Specification(this,StartTime4_explain, ui->Historicalfailure_tableWidget, line++, column, \
-                                                    "2023.5.6 15:39:3", str4, str5);
+    StartTime4 = new Specification(this,StartTime4_explain, myTable, line++, column, \
+                                                    "6-5-2023 15:39:3", str4, str5);
     StartTime4->add_Specification();
-    StartTime5 = new Specification(this,StartTime5_explain, ui->Historicalfailure_tableWidget, line++, column, \
-                                                    "2023.5.6 15:39:3", str4, str5);
+    StartTime5 = new Specification(this,StartTime5_explain, myTable, line++, column, \
+                                                    "6-5-2023 15:39:3", str4, str5);
     StartTime5->add_Specification();
-    StartTime6 = new Specification(this,StartTime6_explain, ui->Historicalfailure_tableWidget, line++, column, \
-                                                    "2023.5.6 15:21:56", str4, str5);
+    StartTime6 = new Specification(this,StartTime6_explain, myTable, line++, column, \
+                                                    "6-5-2023 15:21:56", str4, str5);
     StartTime6->add_Specification();
-    StartTime7 = new Specification(this,StartTime7_explain, ui->Historicalfailure_tableWidget, line++, column, \
-                                                    "2023.5.6 15:21:38", str4, str5);
+    StartTime7 = new Specification(this,StartTime7_explain, myTable, line++, column, \
+                                                    "6-5-2023 15:21:38", str4, str5);
     StartTime7->add_Specification();
-    StartTime8 = new Specification(this,StartTime8_explain, ui->Historicalfailure_tableWidget, line++, column, \
-                                                    "2023.5.6 15:21:38", str4, str5);
+    StartTime8 = new Specification(this,StartTime8_explain, myTable, line++, column, \
+                                                    "6-5-2023 15:21:38", str4, str5);
     StartTime8->add_Specification();
     line=0;
     column=2;
-    EndTime9 = new Specification(this,EndTime9_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    EndTime9 = new Specification(this,EndTime9_explain, myTable, line++, column, \
                                                     "...", str6, str7);
     EndTime9->add_Specification();
-    EndTime10 = new Specification(this,EndTime10_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    EndTime10 = new Specification(this,EndTime10_explain, myTable, line++, column, \
                                                     "...", str6, str7);
     EndTime10->add_Specification();
-    EndTime11 = new Specification(this,EndTime11_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    EndTime11 = new Specification(this,EndTime11_explain, myTable, line++, column, \
                                                     "...", str6, str7);
     EndTime11->add_Specification();
-    EndTime12 = new Specification(this,EndTime12_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    EndTime12 = new Specification(this,EndTime12_explain, myTable, line++, column, \
                                                     "...", str6, str7);
     EndTime12->add_Specification();
-    EndTime13 = new Specification(this,EndTime13_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    EndTime13 = new Specification(this,EndTime13_explain, myTable, line++, column, \
                                                     "...", str6, str7);
     EndTime13->add_Specification();
-    EndTime14 = new Specification(this,EndTime14_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    EndTime14 = new Specification(this,EndTime14_explain, myTable, line++, column, \
                                                     "...", str6, str7);
     EndTime14->add_Specification();
-    EndTime15 = new Specification(this,EndTime15_explain, ui->Historicalfailure_tableWidget, line++, column, \
-                                                    "2023.7.29 16:42:24", str6, str7);
+    EndTime15 = new Specification(this,EndTime15_explain, myTable, line++, column, \
+                                                    "29-7-2023 16:42:24", str6, str7);
     EndTime15->add_Specification();
 
-    EndTime = new Specification(this,EndTime_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    EndTime = new Specification(this,EndTime_explain, myTable, line++, column, \
                                                     "-", str6, str7);
     EndTime->add_Specification();
-    EndTime2 = new Specification(this,EndTime2_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    EndTime2 = new Specification(this,EndTime2_explain, myTable, line++, column, \
                                                     "-", str6, str7);
     EndTime2->add_Specification();
-    EndTime3 = new Specification(this,EndTime3_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    EndTime3 = new Specification(this,EndTime3_explain, myTable, line++, column, \
                                                     "...", str6, str7);
     EndTime3->add_Specification();
-    EndTime4 = new Specification(this,EndTime4_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    EndTime4 = new Specification(this,EndTime4_explain, myTable, line++, column, \
                                                     "-", str6, str7);
     EndTime4->add_Specification();
-    EndTime5 = new Specification(this,EndTime5_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    EndTime5 = new Specification(this,EndTime5_explain, myTable, line++, column, \
                                                     "...", str6, str7);
     EndTime5->add_Specification();
-    EndTime6 = new Specification(this,EndTime6_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    EndTime6 = new Specification(this,EndTime6_explain, myTable, line++, column, \
                                                     "-", str6, str7);
     EndTime6->add_Specification();
-    EndTime7 = new Specification(this,EndTime7_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    EndTime7 = new Specification(this,EndTime7_explain, myTable, line++, column, \
                                                     "-", str6, str7);
     EndTime7->add_Specification();
-    EndTime8 = new Specification(this,EndTime8_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    EndTime8 = new Specification(this,EndTime8_explain, myTable, line++, column, \
                                                     "-", str6, str7);
     EndTime8->add_Specification();
     line=0;
     column=3;
-    Describe9 = new Specification(this,Describe9_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Describe9 = new Specification(this,Describe9_explain, myTable, line++, column, \
                                                     str13, str9, str10);
     Describe9->add_Specification();
-    Describe10 = new Specification(this,Describe10_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Describe10 = new Specification(this,Describe10_explain, myTable, line++, column, \
                                                     str14, str9, str10);
     Describe10->add_Specification();
-    Describe11 = new Specification(this,Describe11_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Describe11 = new Specification(this,Describe11_explain, myTable, line++, column, \
                                                     str15, str9, str10);
     Describe11->add_Specification();
-    Describe12 = new Specification(this,Describe12_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Describe12 = new Specification(this,Describe12_explain, myTable, line++, column, \
                                                     str16, str9, str10);
     Describe12->add_Specification();
-    Describe13 = new Specification(this,Describe13_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Describe13 = new Specification(this,Describe13_explain, myTable, line++, column, \
                                                     str17, str9, str10);
     Describe13->add_Specification();
-    Describe14 = new Specification(this,Describe14_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Describe14 = new Specification(this,Describe14_explain, myTable, line++, column, \
                                                     str18, str9, str10);
     Describe14->add_Specification();
-    Describe15 = new Specification(this,Describe15_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Describe15 = new Specification(this,Describe15_explain, myTable, line++, column, \
                                                     str20, str9, str10);
     Describe15->add_Specification();
 
-    Describe = new Specification(this,Describe_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Describe = new Specification(this,Describe_explain, myTable, line++, column, \
                                                     str8, str9, str10);
     Describe->add_Specification();
-    Describe2 = new Specification(this,Describe2_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Describe2 = new Specification(this,Describe2_explain, myTable, line++, column, \
                                                     str8, str9, str10);
     Describe2->add_Specification();
-    Describe3 = new Specification(this,Describe3_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Describe3 = new Specification(this,Describe3_explain, myTable, line++, column, \
                                                     str11, str9, str10);
     Describe3->add_Specification();
-    Describe4 = new Specification(this,Describe4_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Describe4 = new Specification(this,Describe4_explain, myTable, line++, column, \
                                                     str8, str9, str10);
     Describe4->add_Specification();
-    Describe5 = new Specification(this,Describe5_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Describe5 = new Specification(this,Describe5_explain, myTable, line++, column, \
                                                     str12, str9, str10);
     Describe5->add_Specification();
-    Describe6 = new Specification(this,Describe6_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Describe6 = new Specification(this,Describe6_explain, myTable, line++, column, \
                                                     str8, str9, str10);
     Describe6->add_Specification();
-    Describe7 = new Specification(this,Describe7_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Describe7 = new Specification(this,Describe7_explain, myTable, line++, column, \
                                                     str11, str9, str10);
     Describe7->add_Specification();
-    Describe8 = new Specification(this,Describe8_explain, ui->Historicalfailure_tableWidget, line++, column, \
+    Describe8 = new Specification(this,Describe8_explain, myTable, line++, column, \
                                                     str12, str9, str10);
     Describe8->add_Specification();
 }
@@ -2561,43 +2563,43 @@ void MEGAWin::OperationLog()
     QString str = tr("ModificationTime");
     QString str1 = tr("Time when the system Settings are modified.");
     QString str2 = tr("RecordEvent");
-    QString str3 = tr("Here is a record of the operation when a change is made to the system Settings.");
+    QString str3 = tr("System settings operation records.");
 
     ModificationTime = new Specification(this,ModificationTime_explain, ui->Operation_tableWidget, 0, 0, \
-                                                    "2023-05-12 11:32:45", str, str1);
+                                                    "12-05-2023 11:32:45", str, str1);
     ModificationTime->add_Specification();
     ModificationTime2 = new Specification(this,ModificationTime2_explain, ui->Operation_tableWidget, 1, 0, \
-                                                    "2023-05-12 11:32:33", str, str1);
+                                                    "12-05-2023 11:32:33", str, str1);
     ModificationTime2->add_Specification();
     ModificationTime3 = new Specification(this,ModificationTime3_explain, ui->Operation_tableWidget, 2, 0, \
-                                                    "2023-05-11 19:29:24", str, str1);
+                                                    "11-05-2023 19:29:24", str, str1);
     ModificationTime3->add_Specification();
     ModificationTime4 = new Specification(this,ModificationTime4_explain, ui->Operation_tableWidget, 3, 0, \
-                                                    "2023-05-11 19:29:21", str, str1);
+                                                    "11-05-2023 19:29:21", str, str1);
     ModificationTime4->add_Specification();
     ModificationTime5 = new Specification(this,ModificationTime5_explain, ui->Operation_tableWidget, 4, 0, \
-                                                    "2023-05-11 19:29:10", str, str1);
+                                                    "11-05-2023 19:29:10", str, str1);
     ModificationTime5->add_Specification();
     ModificationTime6 = new Specification(this,ModificationTime6_explain, ui->Operation_tableWidget, 5, 0, \
-                                                    "2023-05-11 19:29:07", str, str1);
+                                                    "11-05-2023 19:29:07", str, str1);
     ModificationTime6->add_Specification();
     ModificationTime7 = new Specification(this,ModificationTime7_explain, ui->Operation_tableWidget, 6, 0, \
-                                                    "2023-05-11 17:21:16", str, str1);
+                                                    "11-05-2023 17:21:16", str, str1);
     ModificationTime7->add_Specification();
     ModificationTime8 = new Specification(this,ModificationTime8_explain, ui->Operation_tableWidget, 7, 0, \
-                                                    "2023-05-11 11:21:02", str, str1);
+                                                    "11-05-2023 11:21:02", str, str1);
     ModificationTime8->add_Specification();
     ModificationTime9 = new Specification(this,ModificationTime9_explain, ui->Operation_tableWidget, 8, 0, \
-                                                    "2023-05-11 11:20:58", str, str1);
+                                                    "11-05-2023 11:20:58", str, str1);
     ModificationTime9->add_Specification();
     ModificationTime10 = new Specification(this,ModificationTime10_explain, ui->Operation_tableWidget, 9, 0, \
-                                                    "2023-05-11 11:02:22", str, str1);
+                                                    "11-05-2023 11:02:22", str, str1);
     ModificationTime10->add_Specification();
     ModificationTime11 = new Specification(this,ModificationTime11_explain, ui->Operation_tableWidget, 10, 0, \
-                                                    "2023-05-11 11:02:18", str,  str1);
+                                                    "11-05-2023 11:02:18", str,  str1);
     ModificationTime11->add_Specification();
     ModificationTime12 = new Specification(this,ModificationTime12_explain, ui->Operation_tableWidget, 11, 0, \
-                                                    "2023-05-11 11:02:14", str, str1);
+                                                    "11-05-2023 11:02:14", str, str1);
     ModificationTime12->add_Specification();
     EventRecord = new Specification(this,EventRecord_explain, ui->Operation_tableWidget, 0, 1, \
                                                     tr("Power control type：CP_P->CP_N&&P"), str2, str3);

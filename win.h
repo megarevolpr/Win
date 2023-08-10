@@ -776,7 +776,7 @@ public:
         void RTData_Anologe();//实时模拟量数据
         void RTData_Status();//实时状态量数据
 private:
-        void History();//历史记录
+        void History(QTableWidget *myTable);//历史记录
         void OperationLog();//操作日志
         void RTAlarm(); //告警信息绘表
         void PCS_Data();//PCS数据 绘制button

@@ -7595,8 +7595,8 @@ kW.h</string>
           <widget class="QWidget" name="verticalLayoutWidget_14">
            <property name="geometry">
             <rect>
-             <x>170</x>
-             <y>10</y>
+             <x>200</x>
+             <y>20</y>
              <width>581</width>
              <height>341</height>
             </rect>
