@@ -2170,7 +2170,7 @@ void MEGAWin::on_Run_tabWidget_tabBarClicked(int index)
 }
 
 /***************************************************************
- * 数据报表
+ * 数据报表&导出数据
  ***************************************************************/
 void MEGAWin::Data_report_clicked(int nid)
 {
@@ -2240,23 +2240,22 @@ void MEGAWin::Data_report_clicked(int nid)
                               ,tr("To view the total charge and discharge, click here to jump to the overview chart."), tr("OK"));
         break;
     case 16:
-        QMessageBox::question(this, tr("HistoricalFailure")\
-                              ,tr("To export history records, click here to export history records to the USB flash drive. The file exported to the USB flash drive is HistoryRecord.csv, which needs to be opened with Excel."), tr("OK"));
+        QMessageBox::question(this, tr("Historical Failure")\
+                              ,tr("Export History Records, click here to export the history records to a U disk. The exported file will be named Record.csv, and it needs to be opened with Excel."), tr("OK"));
         break;
     case 17:
-        QMessageBox::question(this, tr("OperationLog")\
-                              ,tr("Click here to export operation logs to the USB flash drive. The Log file is Log.csv, and you need to open the file using Excel."), tr("OK"));
+        QMessageBox::question(this, tr("Operation Log")\
+                              ,tr("Export operation log. Click here to export operation log to U disk."), tr("OK"));
         break;
     case 18:
-        QMessageBox::question(this, tr("Coulombmeter report")\
+        QMessageBox::question(this, tr("Electricity Statistical Table")\
                               ,tr("Export the battery statistics. Click here to export the battery statistics to the U disk.\nThe accuracy is 0.1, which means that the obtained data multiplied by 0.1 gives the actual value."), tr("OK"));
         break;
     case 19:
-        QMessageBox::question(this, tr("Eject Udisk")\
-                              ,tr("Exit the U disk and unmount the U disk mounted to the display control to ensure that the data in the U disk will not be damaged."), tr("OK"));
+        QMessageBox::question(this, tr("Eject U disk")\
+                              ,tr("Eject U disk."), tr("OK"));
         break;
     }
-
 }
 
 /***************************************************************

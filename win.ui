@@ -6913,7 +6913,7 @@ enable</string>
           </font>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="DataReport_page">
           <attribute name="title">
@@ -7597,13 +7597,19 @@ kW.h</string>
             <rect>
              <x>170</x>
              <y>10</y>
-             <width>463</width>
-             <height>322</height>
+             <width>581</width>
+             <height>341</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_32" stretch="0,0">
             <item>
              <widget class="QGroupBox" name="groupBox_5">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>455</width>
@@ -7612,8 +7618,8 @@ kW.h</string>
               </property>
               <property name="maximumSize">
                <size>
-                <width>455</width>
-                <height>151</height>
+                <width>16777215</width>
+                <height>16777215</height>
                </size>
               </property>
               <property name="font">
@@ -7635,7 +7641,7 @@ kW.h</string>
                </property>
                <property name="font">
                 <font>
-                 <pointsize>11</pointsize>
+                 <pointsize>14</pointsize>
                 </font>
                </property>
                <property name="text">
@@ -7653,11 +7659,11 @@ kW.h</string>
                </property>
                <property name="font">
                 <font>
-                 <pointsize>11</pointsize>
+                 <pointsize>14</pointsize>
                 </font>
                </property>
                <property name="text">
-                <string>HistoryRecord.csv</string>
+                <string>Record.csv</string>
                </property>
               </widget>
               <widget class="QLabel" name="label_26">
@@ -7671,7 +7677,7 @@ kW.h</string>
                </property>
                <property name="font">
                 <font>
-                 <pointsize>11</pointsize>
+                 <pointsize>14</pointsize>
                 </font>
                </property>
                <property name="text">
@@ -7683,13 +7689,13 @@ kW.h</string>
                 <rect>
                  <x>40</x>
                  <y>100</y>
-                 <width>121</width>
+                 <width>211</width>
                  <height>31</height>
                 </rect>
                </property>
                <property name="font">
                 <font>
-                 <pointsize>11</pointsize>
+                 <pointsize>14</pointsize>
                 </font>
                </property>
                <property name="text">
@@ -7731,7 +7737,10 @@ kW.h</string>
                   </property>
                   <property name="font">
                    <font>
+                    <family>宋体</family>
                     <pointsize>18</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
                    </font>
                   </property>
                   <property name="text">
@@ -7771,7 +7780,7 @@ kW.h</string>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>147</width>
+                      <width>16777215</width>
                       <height>25</height>
                      </size>
                     </property>
@@ -7781,7 +7790,7 @@ kW.h</string>
                      </font>
                     </property>
                     <property name="text">
-                     <string>static:</string>
+                     <string>status:</string>
                     </property>
                    </widget>
                   </item>
@@ -7795,12 +7804,26 @@ kW.h</string>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>299</width>
+                      <width>16777215</width>
                       <height>25</height>
                      </size>
                     </property>
+                    <property name="font">
+                     <font>
+                      <family>宋体</family>
+                      <pointsize>12</pointsize>
+                      <weight>75</weight>
+                      <bold>true</bold>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgb(255, 255, 255);
+border-width: 1px;
+border-style: solid;
+border-color: rgb(255, 170, 0);</string>
+                    </property>
                     <property name="text">
-                     <string/>
+                     <string>u disk disconnect!</string>
                     </property>
                    </widget>
                   </item>
@@ -7818,8 +7841,8 @@ kW.h</string>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>221</width>
-                      <height>30</height>
+                      <width>16777215</width>
+                      <height>16777215</height>
                      </size>
                     </property>
                     <property name="font">
@@ -7835,7 +7858,7 @@ border-style: solid;
 border-color: rgb(0, 157, 235);</string>
                     </property>
                     <property name="text">
-                     <string>HistoricalFailure</string>
+                     <string>Historical Failure</string>
                     </property>
                    </widget>
                   </item>
@@ -7849,8 +7872,8 @@ border-color: rgb(0, 157, 235);</string>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>221</width>
-                      <height>30</height>
+                      <width>16777215</width>
+                      <height>16777215</height>
                      </size>
                     </property>
                     <property name="font">
@@ -7866,7 +7889,7 @@ border-style: solid;
 border-color: rgb(255, 170, 0);</string>
                     </property>
                     <property name="text">
-                     <string>OperationLog</string>
+                     <string>Operation Log</string>
                     </property>
                    </widget>
                   </item>
@@ -7884,8 +7907,8 @@ border-color: rgb(255, 170, 0);</string>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>221</width>
-                      <height>30</height>
+                      <width>16777215</width>
+                      <height>16777215</height>
                      </size>
                     </property>
                     <property name="font">
@@ -7900,7 +7923,7 @@ border-color: rgb(85, 230, 0);
 background-color: rgb(85, 255, 0);</string>
                     </property>
                     <property name="text">
-                     <string>Coulombmeter report</string>
+                     <string>Electricity Statistical Table</string>
                     </property>
                    </widget>
                   </item>
@@ -7914,8 +7937,8 @@ background-color: rgb(85, 255, 0);</string>
                     </property>
                     <property name="maximumSize">
                      <size>
-                      <width>221</width>
-                      <height>30</height>
+                      <width>16777215</width>
+                      <height>16777215</height>
                      </size>
                     </property>
                     <property name="font">
@@ -7931,7 +7954,7 @@ border-color: rgb(230, 0, 0);
 background-color: rgb(255, 0, 0);</string>
                     </property>
                     <property name="text">
-                     <string>Eject Udisk</string>
+                     <string>Eject U disk</string>
                     </property>
                    </widget>
                   </item>
