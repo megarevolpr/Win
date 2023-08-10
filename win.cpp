@@ -57,7 +57,7 @@ MEGAWin::~MEGAWin()
 void MEGAWin::onTimerOut()//时间显示
 {
     QDateTime time = QDateTime::currentDateTime();
-    QString str = time.toString("yyyy-MM-dd HH:mm:ss");
+    QString str = time.toString("dd-MM-yyyy HH:mm:ss");
     ui->TimeSeting_btn->setText(str);
 }
 
@@ -72,6 +72,7 @@ void MEGAWin::MemoryAllocation()
     ASKey = true;//确保只绘制一次高级设置页面
 
     m_menu = new Menu(this);//菜单创建
+    UpgradeInterface = new UpgradeTools(this);
 
     /***************************数据报表&导出数据**********************************/
 
@@ -461,7 +462,7 @@ void MEGAWin::MemoryAllocation()
     UserPassPort = nullptr;
     RootPassport = nullptr;
     Language = nullptr;
-    System_upgrade = nullptr;
+//    System_upgrade = nullptr;
     Sounds = nullptr;
     EnergyMeterModel= nullptr;
     BmsComFaultTime = nullptr;
@@ -1178,9 +1179,9 @@ void MEGAWin::PCS_Data_Tab()
 {
 //    ui->Converter_Tab->clearContents();
     QStringList Converter_Tablist1;
-    Converter_Tablist1  << tr("PCS voltage(AB)") << tr("PCS voltage(BC)") << tr("PCS voltage(CA)")
-                        << tr("PCS current(A)") << tr("PCS current(B)")<< tr("PCS current(C)")
-                        << tr("PCS Active P.") << tr("PCS Reactive P.") << tr("PCS Parent P.") << tr("PCS Pf");
+    Converter_Tablist1  << tr("Inv. voltage(AB)") << tr("Inv. voltage(BC)") << tr("Inv. voltage(CA)")
+                        << tr("Inv. current(A)") << tr("Inv. current(B)")<< tr("Inv. current(C)")
+                        << tr("Inv. active power") << tr("Inv. reactive power") << tr("Inv. apparent power") << tr("Inv. power factor");
     QStringList Converter_Tablist2;
     Converter_Tablist2  << tr("Battery voltage") << tr("Battery current") << tr("Battery power")
                         << tr("Bus voltage") << tr("IGBT temperature")
@@ -1220,6 +1221,10 @@ void MEGAWin::PCS_Data_Tab()
     {
         ui->Converter_Tab->setItem(i, 2, new QTableWidgetItem(Converter_Tablist2.at(i)));
         ui->Converter_Tab->item(i, 2)->setTextAlignment(Qt::AlignCenter);
+    }
+    for(int i=0;i<10;i++)
+    {
+        ui->Converter_Tab->setRowHeight(i,35.5);
     }
 
     PCS_Data();//PCS数据
@@ -1265,7 +1270,10 @@ void MEGAWin::Grid_Data_Tab()
         ui->Grid_Tab->setItem(i, 0, new QTableWidgetItem(Grid_Tablist.at(i)));
         ui->Grid_Tab->item(i, 0)->setTextAlignment(Qt::AlignCenter);
     }
-
+    for(int i=0;i<11;i++)
+    {
+        ui->Grid_Tab->setRowHeight(i,32);
+    }
     Grid_Data();//电网数据
 }
 /******************************************************************************
@@ -1278,7 +1286,7 @@ void MEGAWin::Load_Data_Tab()
     Load_Tablist << tr("Load voltage(AB)") << tr("Load voltage(BC)") << tr("Load voltage(CA)")
                         << tr("Load current(A)") << tr("Load current(B)")<< tr("Load current(C)")
                         << tr("Load active power") << tr("Load reactive power")
-                        << tr("Load apparent power") << tr("Load power fator");
+                        << tr("Load apparent power") << tr("Load power factor");
     ui->Load_Tab->setColumnCount(2);
     ui->Load_Tab->setRowCount(Load_Tablist.size());
     //设置表格背景颜色
@@ -1305,7 +1313,10 @@ void MEGAWin::Load_Data_Tab()
         ui->Load_Tab->setItem(i, 0, new QTableWidgetItem(Load_Tablist.at(i)));
         ui->Load_Tab->item(i, 0)->setTextAlignment(Qt::AlignCenter);
     }
-
+    for(int i=0;i<10;i++)
+    {
+        ui->Load_Tab->setRowHeight(i,35.5);
+    }
     Load_Data();//负载数据
 }
 /******************************************************************************
@@ -1729,6 +1740,7 @@ void MEGAWin::Change_Language()
     Battery_Setup_Lead_Tab_delete();//铅酸电池delete
     OperationLog_tab_delete();//操作日志delete
     HistoryRecord_delete();//历史记录delete
+    delete UpgradeInterface;//升级
 
     RunStatePage();//重新加载实时数据的UI
 
@@ -1737,6 +1749,7 @@ void MEGAWin::Change_Language()
     RecordPage();//重新加载记录的UI
 
     SystemParam_tbnt_released();//重新加载高级设置的UI
+    UpgradeInterface = new UpgradeTools(this);
 
 }
 
@@ -1854,7 +1867,7 @@ void MEGAWin::LinkRelationship()
     connect(pButton_Version, SIGNAL(buttonClicked(int)), this,SLOT(SystemlnformationVer_clicked(int)));//系统信息
     connect(pButton_MonitorDebug, SIGNAL(buttonClicked(int)), this,SLOT(MonitorDebug_clicked(int)));//监控调试
     connect(ui->search_le,SIGNAL(editingFinished()), this, SLOT(on_search_btn_clicked()));//搜索栏关联搜索槽，使LineEdit失去焦点或回车键回车也生效
-
+    connect(System_upgrade_explain, SIGNAL(clicked(bool)), this, SLOT(UpgradeInterface_clicked())); //升级界面关联
 }
 
 /******************************************************************************
@@ -1881,9 +1894,9 @@ void MEGAWin::ModuleState_Tab()//PCS状态
          RTState_Bypass_List2 << tr("converter available") << tr("DC Soft start")\
                     << tr("converter status") << tr("Reactive power Regulation") << tr("LVRT");
          QStringList RTState_Bypass_List4;
-          RTState_Bypass_List4 << tr("Generator signal") << tr("Reserve")\
-                               << tr("Reserve") << tr("EPO signal")\
-                               << tr("Shutdown") << tr("Access control signal")\
+          RTState_Bypass_List4 << tr("Start Diesel Generator Signal") << tr("DO2")\
+                               << tr("DO3") << tr("Dry contact EPO")\
+                               << tr("Dry contact Shutdown") << tr("Access control signal")\
                                << tr("Full power signal") << tr("Smoke alarm signal")<< tr("Hight temp. signal");
 
         ui->RTState_Bypass_Tab->setColumnCount(6);
@@ -2737,8 +2750,8 @@ void MEGAWin::PCS_Data()
         delete PCS_vol_AB;
     }
     PCS_vol_AB = new Specification(this,PCS_vol_AB_explain, ui->Converter_Tab, 0, 1, \
-                                            "270.2V", tr("PCS voltage(AB)"), \
-                                            tr("The inverter side voltage of the current PCS is the phase voltage between phase A and phase B."));
+                                            "0V", tr("Inv. voltage(AB)"), \
+                                            tr("Inv. side AB line voltage."));
     PCS_vol_AB->add_Specification();
 
     if(PCS_vol_BC != nullptr)
@@ -2746,8 +2759,8 @@ void MEGAWin::PCS_Data()
         delete PCS_vol_BC;
     }
     PCS_vol_BC = new Specification(this,PCS_vol_BC_explain, ui->Converter_Tab, 1, 1, \
-                                            "270V", tr("PCS voltage(BC)"), \
-                                            tr("The inverter side voltage of the current PCS is the phase voltage between phase B and phase C."));
+                                            "0V", tr("Inv. voltage(BC)"), \
+                                            tr("Inv. side BC line voltage."));
     PCS_vol_BC->add_Specification();
 
     if(PCS_vol_CA != nullptr)
@@ -2755,8 +2768,8 @@ void MEGAWin::PCS_Data()
         delete PCS_vol_CA;
     }
     PCS_vol_CA = new Specification(this,PCS_vol_CA_explain, ui->Converter_Tab, 2, 1, \
-                                            "270.1V", tr("PCS voltage(CA)"), \
-                                            tr("The inverter side voltage of the current PCS is the phase voltage between phase A and phase C."));
+                                            "0V", tr("Inv. voltage(CA)"), \
+                                            tr("Inv. side CA line voltage."));
     PCS_vol_CA->add_Specification();
 
     if(PCS_cur_A != nullptr)
@@ -2764,8 +2777,8 @@ void MEGAWin::PCS_Data()
         delete PCS_cur_A;
     }
     PCS_cur_A = new Specification(this,PCS_cur_A_explain, ui->Converter_Tab, 3, 1, \
-                                            "0A", tr("PCS current(A)"), \
-                                            tr("The current of the inverter side of the current PCS is the current of phase A."));
+                                            "0A", tr("Inv. current(A)"), \
+                                            tr("Inv. side A phase current."));
     PCS_cur_A->add_Specification();
 
     if(PCS_cur_B != nullptr)
@@ -2773,8 +2786,8 @@ void MEGAWin::PCS_Data()
         delete PCS_cur_B;
     }
     PCS_cur_B = new Specification(this,PCS_cur_B_explain, ui->Converter_Tab, 4, 1, \
-                                            "0A", tr("PCS current(B)"), \
-                                            tr("The current of the inverter side of the current PCS is the current of phase B."));
+                                            "0A", tr("Inv. current(B)"), \
+                                            tr("Inv. side B phase current."));
     PCS_cur_B->add_Specification();
 
     if(PCS_cur_C != nullptr)
@@ -2782,8 +2795,8 @@ void MEGAWin::PCS_Data()
         delete PCS_cur_C;
     }
     PCS_cur_C = new Specification(this,PCS_cur_C_explain, ui->Converter_Tab, 5, 1, \
-                                            "0A", tr("PCS current(C)"), \
-                                            tr("The current of the inverter side of the current PCS is the current of phase C."));
+                                            "0A", tr("Inv. current(C)"), \
+                                            tr("Inv. side C phase current."));
     PCS_cur_C->add_Specification();
 
     if(PCS_act_P != nullptr)
@@ -2791,8 +2804,8 @@ void MEGAWin::PCS_Data()
         delete PCS_act_P;
     }
     PCS_act_P = new Specification(this,PCS_act_P_explain, ui->Converter_Tab, 6, 1, \
-                                            "0kW", tr("PCS Active Power"), \
-                                            tr("The active power P of the inverter side of the current PCS."));
+                                            "0kW", tr("Inv. active power"), \
+                                            tr("Active power P on the inv. side of the converter."));
     PCS_act_P->add_Specification();
 
     if(PCS_rea_P != nullptr)
@@ -2800,8 +2813,8 @@ void MEGAWin::PCS_Data()
         delete PCS_rea_P;
     }
     PCS_rea_P = new Specification(this,PCS_rea_P_explain, ui->Converter_Tab, 7, 1, \
-                                            "0kVar", tr("PCS Reactive Power"), \
-                                            tr("The reactive power Q of the inverter side of the current PCS."));
+                                            "0kVar", tr("Inv. reactive power"), \
+                                            tr("Reactive power Q on the inv. side of the converter."));
     PCS_rea_P->add_Specification();
 
     if(PCS_par_P != nullptr)
@@ -2809,8 +2822,8 @@ void MEGAWin::PCS_Data()
         delete PCS_par_P;
     }
     PCS_par_P = new Specification(this,PCS_par_P_explain, ui->Converter_Tab, 8, 1, \
-                                            "0kVA", tr("PCS Parent Power"), \
-                                            tr("The inverter side view of the current PCS is at power S, S= √((P^2+Q^2))."));
+                                            "0kVA", tr("Inv. apparent power"), \
+                                            tr("Apparent power S on the inv. side of the converter."));
     PCS_par_P->add_Specification();
 
     if(PCS_Pf != nullptr)
@@ -2819,8 +2832,8 @@ void MEGAWin::PCS_Data()
     }
 
     PCS_Pf = new Specification(this,PCS_Pf_explain, ui->Converter_Tab, 9, 1, \
-                                            "0", tr("PCS Power factor"), \
-                                            tr("Power factor Pf on the inverter side of current PCS, Pf = P/S."));
+                                            "0", tr("Inv. power factor"), \
+                                            tr("Power factor PF on the inv. side of the converter."));
     PCS_Pf->add_Specification();
 
     if(PCS_Bat_vol != nullptr)
@@ -2828,8 +2841,8 @@ void MEGAWin::PCS_Data()
         delete PCS_Bat_vol;
     }
     PCS_Bat_vol = new Specification(this,PCS_Bat_vol_explain, ui->Converter_Tab, 0, 3, \
-                                            "0V", tr("PCS Battery voltage"), \
-                                            tr("The current PCS samples the battery voltage from the connected battery."));
+                                            "0V", tr("Battery voltage"), \
+                                            tr("Converter battery side voltage."));
     PCS_Bat_vol->add_Specification();
 
     if(PCS_Bat_cur != nullptr)
@@ -2837,8 +2850,8 @@ void MEGAWin::PCS_Data()
         delete PCS_Bat_cur;
     }
     PCS_Bat_cur = new Specification(this,PCS_Bat_cur_explain, ui->Converter_Tab, 1, 3, \
-                                            "0A", tr("PCS Battery current"), \
-                                            tr("Battery current sampled by the PCS from the connected battery."));
+                                            "0A", tr("Battery current"), \
+                                            tr("Converter battery side current."));
     PCS_Bat_cur->add_Specification();
 
     if(PCS_Bat_P != nullptr)
@@ -2846,8 +2859,8 @@ void MEGAWin::PCS_Data()
         delete PCS_Bat_P;
     }
     PCS_Bat_P = new Specification(this,PCS_Bat_P_explain, ui->Converter_Tab, 2, 3, \
-                                            "0kW", tr("PCS Battery power"), \
-                                            tr("At present, PCS calculates the product of battery voltage and battery current to obtain battery power."));
+                                            "0kW", tr("Battery power"), \
+                                            tr("Converter battery side power."));
     PCS_Bat_P->add_Specification();
 
     if(PCS_Bus_vol != nullptr)
@@ -2855,8 +2868,8 @@ void MEGAWin::PCS_Data()
         delete PCS_Bus_vol;
     }
     PCS_Bus_vol = new Specification(this,PCS_Bus_vol_explain, ui->Converter_Tab, 3, 3, \
-                                            "0V", tr("PCS Bus voltage"), \
-                                            tr("The current bus voltage sampled by PCS from the bus side."));
+                                            "0V", tr("Bus voltage"), \
+                                            tr("Converter bus voltage."));
     PCS_Bus_vol->add_Specification();
 
     if(PCS_IGBT_T != nullptr)
@@ -2864,8 +2877,8 @@ void MEGAWin::PCS_Data()
         delete PCS_IGBT_T;
     }
     PCS_IGBT_T = new Specification(this,PCS_IGBT_T_explain, ui->Converter_Tab, 4, 3, \
-                                            "39℃", tr("PCS IGBT temperature"), \
-                                            tr("The current IGBT temperature of the MPS must not exceed 105 ° C. Otherwise, the MPS will derate and can resume full power operation at 73 ° C after derating."));
+                                            "0℃", tr("IGBT temperature"), \
+                                            tr("The IGBT temperature of the converter: The IGBT temperature must not exceed 102°C. Otherwise, the converter will operate at a reduced capacity. It will resume full power operation when the temperature drops to 73°C."));
     PCS_IGBT_T->add_Specification();
 
     if(PCS_Env_T != nullptr)
@@ -2873,8 +2886,8 @@ void MEGAWin::PCS_Data()
         delete PCS_Env_T;
     }
     PCS_Env_T = new Specification(this,PCS_Env_T_explain, ui->Converter_Tab, 5, 3, \
-                                            "25℃", tr("PCS Environment temperature"), \
-                                            tr("The ambient temperature of the current PCS."));
+                                            "0℃", tr("Environment temperature"), \
+                                            tr("”The ambient temperature."));
     PCS_Env_T->add_Specification();
 }
 
@@ -2889,7 +2902,7 @@ void MEGAWin::Grid_Data()
     }
     Grid_vol_AB = new Specification(this,Grid_vol_AB_explain, ui->Grid_Tab, 0, 1, \
                                             "0V", tr("Grid voltage(AB)"), \
-                                            tr("The grid side voltage of the current PCS, this item is the phase voltage between phase A and phase B."));
+                                            tr("Grid side AB line voltage."));
     Grid_vol_AB->add_Specification();
 
     if(Grid_vol_BC != nullptr)
@@ -2898,7 +2911,7 @@ void MEGAWin::Grid_Data()
     }
     Grid_vol_BC = new Specification(this,Grid_vol_BC_explain, ui->Grid_Tab, 1, 1, \
                                             "0V", tr("Grid voltage(BC)"), \
-                                            tr("The grid side voltage of the current PCS, this item is the phase voltage between phase B and phase C."));
+                                            tr("Grid side BC line voltage."));
     Grid_vol_BC->add_Specification();
 
     if(Grid_vol_CA != nullptr)
@@ -2907,7 +2920,7 @@ void MEGAWin::Grid_Data()
     }
     Grid_vol_CA = new Specification(this,Grid_vol_CA_explain, ui->Grid_Tab, 2, 1, \
                                             "0V", tr("Grid voltage(CA)"), \
-                                            tr("The grid side voltage of the current PCS, this item is the phase voltage between phase A and phase C."));
+                                            tr("Grid side CA line voltage."));
     Grid_vol_CA->add_Specification();
 
     if(Grid_cur_A != nullptr)
@@ -2916,7 +2929,7 @@ void MEGAWin::Grid_Data()
     }
     Grid_cur_A = new Specification(this,Grid_cur_A_explain, ui->Grid_Tab, 3, 1, \
                                             "0A", tr("Grid current(A)"), \
-                                            tr("The current on the grid side of PCS, this item is the current of phase A."));
+                                            tr("Grid side A phase current."));
     Grid_cur_A->add_Specification();
 
     if(Grid_cur_B != nullptr)
@@ -2925,7 +2938,7 @@ void MEGAWin::Grid_Data()
     }
     Grid_cur_B = new Specification(this,Grid_cur_B_explain, ui->Grid_Tab, 4, 1, \
                                             "0A", tr("Grid current(B)"), \
-                                            tr("The current on the grid side of PCS, this item is the current of phase B."));
+                                            tr("Grid side B phase current."));
     Grid_cur_B->add_Specification();
 
     if(Grid_cur_C != nullptr)
@@ -2934,7 +2947,7 @@ void MEGAWin::Grid_Data()
     }
     Grid_cur_C = new Specification(this,Grid_cur_C_explain, ui->Grid_Tab, 5, 1, \
                                             "0A", tr("Grid current(C)"), \
-                                            tr("The current on the grid side of PCS, this item is the current of phase C."));
+                                            tr("Grid side C phase current."));
     Grid_cur_C->add_Specification();
 
     if(Grid_act_P != nullptr)
@@ -2943,7 +2956,7 @@ void MEGAWin::Grid_Data()
     }
     Grid_act_P = new Specification(this,Grid_act_P_explain, ui->Grid_Tab, 6, 1, \
                                             "0kW", tr("Grid active power"), \
-                                            tr("Current active power (P) on the grid side of PCS."));
+                                            tr("Active power P on the grid side of the converter."));
     Grid_act_P->add_Specification();
 
     if(Grid_rea_P != nullptr)
@@ -2952,7 +2965,7 @@ void MEGAWin::Grid_Data()
     }
     Grid_rea_P = new Specification(this,Grid_rea_P_explain, ui->Grid_Tab, 7, 1, \
                                             "0kVar", tr("Grid reactive power"), \
-                                            tr("Current reactive power (Q) on the grid side of PCS."));
+                                            tr("Reactive power Q on the grid side of the converter."));
     Grid_rea_P->add_Specification();
 
     if(Grid_app_P != nullptr)
@@ -2961,7 +2974,7 @@ void MEGAWin::Grid_Data()
     }
     Grid_app_P = new Specification(this,Grid_app_P_explain, ui->Grid_Tab, 8, 1, \
                                             "0kVA", tr("Grid apparent power"), \
-                                            tr("Current PCS grid side view power (S), S= √((P^2+Q^2))."));
+                                            tr("Apparent power S on the grid side of the converter."));
     Grid_app_P->add_Specification();
 
     if(Grid_fre != nullptr)
@@ -2970,7 +2983,7 @@ void MEGAWin::Grid_Data()
     }
     Grid_fre = new Specification(this,Grid_fre_explain, ui->Grid_Tab, 9, 1, \
                                             "0Hz", tr("Grid frequency"), \
-                                            tr("Current PCS collection of power grid frequency."));
+                                            tr("Frequency on the grid side of the converter."));
     Grid_fre->add_Specification();
 
     if(Grid_Pf != nullptr)
@@ -2979,7 +2992,7 @@ void MEGAWin::Grid_Data()
     }
     Grid_Pf = new Specification(this,Grid_Pf_explain, ui->Grid_Tab, 10, 1, \
                                             "0", tr("Grid power factor"), \
-                                            tr("Grid side power factor (Pf) of the current PCS, Pf = P/S."));
+                                            tr("Power factor PF on the grid side of the converter."));
     Grid_Pf->add_Specification();
 }
 
@@ -2994,7 +3007,7 @@ void MEGAWin::Load_Data()
     }
     Load_vol_AB = new Specification(this,Load_vol_AB_explain, ui->Load_Tab, 0, 1, \
                                             "0V", tr("Load voltage(AB)"), \
-                                            tr("The load side voltage of the current PCS, this item is the phase voltage between phase A and phase B."));
+                                            tr("Load side AB line voltage."));
     Load_vol_AB->add_Specification();
 
     if(Load_vol_BC != nullptr)
@@ -3003,7 +3016,7 @@ void MEGAWin::Load_Data()
     }
     Load_vol_BC = new Specification(this,Load_vol_BC_explain, ui->Load_Tab, 1, 1, \
                                             "0V", tr("Load voltage(BC)"), \
-                                            tr("The load side voltage of the current PCS, this item is the phase voltage between phase B and phase C."));
+                                            tr("Load side BC line voltage."));
     Load_vol_BC->add_Specification();
 
     if(Load_vol_CA != nullptr)
@@ -3012,7 +3025,7 @@ void MEGAWin::Load_Data()
     }
     Load_vol_CA = new Specification(this,Load_vol_CA_explain, ui->Load_Tab, 2, 1, \
                                             "0V", tr("Load voltage(CA)"), \
-                                            tr("The load side voltage of the current PCS, this item is the phase voltage between phase A and phase C."));
+                                            tr("Load side CA line voltage."));
     Load_vol_CA->add_Specification();
 
     if(Load_cur_A != nullptr)
@@ -3021,7 +3034,7 @@ void MEGAWin::Load_Data()
     }
     Load_cur_A = new Specification(this,Load_cur_A_explain, ui->Load_Tab, 3, 1, \
                                             "0A", tr("Load current(A)"), \
-                                            tr("The current on the load side of PCS is the current of phase A."));
+                                            tr("Load side A phase current."));
     Load_cur_A->add_Specification();
 
     if(Load_cur_B != nullptr)
@@ -3030,7 +3043,7 @@ void MEGAWin::Load_Data()
     }
     Load_cur_B = new Specification(this,Load_cur_B_explain, ui->Load_Tab, 4, 1, \
                                             "0A", tr("Load current(B)"), \
-                                            tr("The current at the load side of PCS is the current of phase B."));
+                                            tr("Load side B phase current."));
     Load_cur_B->add_Specification();
 
     if(Load_cur_C != nullptr)
@@ -3039,7 +3052,7 @@ void MEGAWin::Load_Data()
     }
     Load_cur_C = new Specification(this,Load_cur_C_explain, ui->Load_Tab, 5, 1, \
                                             "0A", tr("Load current(C)"), \
-                                            tr("The current at the load side of PCS is the current of phase C."));
+                                            tr("Load side C phase current."));
     Load_cur_C->add_Specification();
 
     if(Load_act_P != nullptr)
@@ -3048,7 +3061,7 @@ void MEGAWin::Load_Data()
     }
     Load_act_P = new Specification(this,Load_act_P_explain, ui->Load_Tab, 6, 1, \
                                             "0kW", tr("Load active power"), \
-                                            tr("Current PCS active power (P) on load side."));
+                                            tr("Active power P on the load side of the converter."));
     Load_act_P->add_Specification();
 
     if(Load_rea_P != nullptr)
@@ -3057,7 +3070,7 @@ void MEGAWin::Load_Data()
     }
     Load_rea_P = new Specification(this,Load_rea_P_explain, ui->Load_Tab, 7, 1, \
                                             "0kVar", tr("Load reactive power"), \
-                                            tr("Reactive power (Q) on the load side of current PCS."));
+                                            tr("Reactive power Q on the load side of the converter."));
     Load_rea_P->add_Specification();
 
     if(Load_app_P != nullptr)
@@ -3066,7 +3079,7 @@ void MEGAWin::Load_Data()
     }
     Load_app_P = new Specification(this,Load_app_P_explain, ui->Load_Tab, 8, 1, \
                                             "0kVA", tr("Load apparent power"), \
-                                            tr("Current PCS load side view at power (S), S= √((P^2+Q^2))."));
+                                            tr("Apparent power S on the load side of the converter."));
     Load_app_P->add_Specification();
 
     if(Load_Pf != nullptr)
@@ -3075,7 +3088,7 @@ void MEGAWin::Load_Data()
     }
     Load_Pf = new Specification(this,Load_Pf_explain, ui->Load_Tab, 9, 1, \
                                             "0", tr("Load power factor"), \
-                                            tr("The load side power factor (Pf) of the current PCS, Pf = P/S."));
+                                            tr("Power factor PF on the load side of the converter."));
     Load_Pf->add_Specification();
 }
 
@@ -4381,7 +4394,7 @@ void MEGAWin::SystemMessages()
     }
     MonitoringVersion = new Specification(this,MonitoringVersion_explain, ui->EquipmentInfor_tableWidget, 1, 1, \
                                      "V103B500D004", tr("Monitoring software version"), \
-                                     tr("This is the name of the manufacturer."));
+                                     tr("This is the monitoring version number."));
     MonitoringVersion->add_Specification();
 
     if(SysProtocol_Version != nullptr)
@@ -4634,14 +4647,18 @@ void MEGAWin::FunctionSet()
                                  tr("Set the display language of the display screen, which can be selected as Chinese and English. The system will restart when switching languages."));
     Language->add_Specification();
 
-    if(System_upgrade != nullptr)
+    /*if(System_upgrade != nullptr)
     {
         delete System_upgrade;
     }
     System_upgrade = new Specification(this,System_upgrade_explain, ui->UI_Parameter_Tab, 4, 7, \
                                        tr("upgrade"), tr("System upgrade"), \
                                        tr("Click to enter the system upgrade application and upgrade the system according to the upgrade document."));
-    System_upgrade->add_Specification();
+    System_upgrade->add_Specification();*/
+
+    //系统升级说明
+    System_upgrade_explain->setText(tr("upgrade"));
+    ui->UI_Parameter_Tab->setCellWidget(4, 7, (QWidget *)System_upgrade_explain);
 
     if(Sounds != nullptr)
     {
@@ -5603,6 +5620,18 @@ void MEGAWin::on_search_btn_clicked()
                 ui->RTAlarm_Data_page->setRowHidden(item.at(i)->row(),false);//恢复对应的行
             }
         }
+    }
+}
+
+void MEGAWin::UpgradeInterface_clicked()
+{
+    if(UpgradeInterface->isHidden())
+    {
+        UpgradeInterface->show();
+    }
+    else
+    {
+        UpgradeInterface->hide();
     }
 }
 

@@ -9,7 +9,7 @@
 #include <QTranslator>
 #include "Menu.h"
 #include "Specification/Specification.h"
-
+#include "upgradetools.h"
 
 
 
@@ -36,6 +36,7 @@ public:
     ~MEGAWin();
 
         Menu *m_menu;
+        UpgradeTools *UpgradeInterface;
 
         /***************************系统设置****************************/
         QPushButton *Grid_connected_mode_explain;//并网方式说明
@@ -226,7 +227,7 @@ public:
         Specification *UserPassPort;
         Specification *RootPassport;
         Specification *Language;
-        Specification *System_upgrade;
+//        Specification *System_upgrade;
         Specification *Sounds;
         Specification *EnergyMeterModel;
         Specification *BmsComFaultTime;
@@ -850,6 +851,7 @@ private slots:
     void on_ChangeLanguage_btn_1_clicked();
 
     void on_search_btn_clicked();
+    void UpgradeInterface_clicked();//升级界面
 
 private:
     Ui::MEGAWin *ui;

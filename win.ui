@@ -2514,68 +2514,6 @@ Language</string>
       <property name="spacing">
        <number>0</number>
       </property>
-      <item row="0" column="3">
-       <widget class="QLabel" name="label">
-        <property name="minimumSize">
-         <size>
-          <width>15</width>
-          <height>45</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>99</width>
-          <height>45</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Agency FB</family>
-          <pointsize>18</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string>-</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="5">
-       <widget class="QLabel" name="UI_space_1">
-        <property name="minimumSize">
-         <size>
-          <width>15</width>
-          <height>45</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>99</width>
-          <height>45</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Agency FB</family>
-          <pointsize>18</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string>-</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="1">
        <spacer name="horizontalSpacer_10">
         <property name="orientation">
@@ -2589,48 +2527,100 @@ Language</string>
         </property>
        </spacer>
       </item>
-      <item row="0" column="6">
-       <widget class="QLabel" name="UI_Freq">
+      <item row="0" column="5">
+       <widget class="QPushButton" name="TimeSeting_btn">
         <property name="minimumSize">
          <size>
-          <width>60</width>
+          <width>323</width>
           <height>45</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>9999</width>
+          <width>999</width>
           <height>45</height>
          </size>
         </property>
         <property name="font">
          <font>
-          <family>SimSun-ExtB</family>
-          <pointsize>18</pointsize>
+          <pointsize>20</pointsize>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
-         <string>50Hz</string>
+         <string/>
         </property>
        </widget>
       </item>
-      <item row="0" column="7">
+      <item row="0" column="0">
+       <widget class="QPushButton" name="ChangeLanguage_btn">
+        <property name="minimumSize">
+         <size>
+          <width>110</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>99999</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>Change
+Language</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QPushButton" name="Alarm_Button">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/new_ui/UI/Warning_2.png);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
        <spacer name="horizontalSpacer_3">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Preferred</enum>
+        </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>11</width>
+          <width>120</width>
           <height>45</height>
          </size>
         </property>
        </spacer>
       </item>
-      <item row="0" column="4">
+      <item row="0" column="2">
        <widget class="QLabel" name="UI_captye">
         <property name="minimumSize">
          <size>
@@ -2654,115 +2644,7 @@ Language</string>
          <string notr="true">color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
-         <string>100kW</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QPushButton" name="ChangeLanguage_btn">
-        <property name="minimumSize">
-         <size>
-          <width>110</width>
-          <height>45</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>99999</width>
-          <height>45</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>11</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true"/>
-        </property>
-        <property name="text">
-         <string>Change
-Language</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <widget class="QLabel" name="Machine_Name">
-        <property name="minimumSize">
-         <size>
-          <width>100</width>
-          <height>45</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>9999</width>
-          <height>45</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>SimSun-ExtB</family>
-          <pointsize>20</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string>PCS-TS</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="9">
-       <widget class="QPushButton" name="TimeSeting_btn">
-        <property name="minimumSize">
-         <size>
-          <width>323</width>
-          <height>45</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>999</width>
-          <height>45</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>16</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(255, 255, 255);</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="8">
-       <widget class="QPushButton" name="Alarm_Button">
-        <property name="minimumSize">
-         <size>
-          <width>50</width>
-          <height>45</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>50</width>
-          <height>45</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">border-image: url(:/new_ui/UI/Warning_2.png);</string>
-        </property>
-        <property name="text">
-         <string/>
+         <string>100kW-TS</string>
         </property>
        </widget>
       </item>
@@ -3372,7 +3254,7 @@ Language</string>
        <property name="geometry">
         <rect>
          <x>400</x>
-         <y>300</y>
+         <y>330</y>
          <width>151</width>
          <height>91</height>
         </rect>
@@ -3590,7 +3472,7 @@ Language</string>
          <x>440</x>
          <y>220</y>
          <width>13</width>
-         <height>80</height>
+         <height>110</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -3606,7 +3488,7 @@ Language</string>
          <x>470</x>
          <y>220</y>
          <width>15</width>
-         <height>80</height>
+         <height>110</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -3622,7 +3504,7 @@ Language</string>
          <x>500</x>
          <y>220</y>
          <width>13</width>
-         <height>80</height>
+         <height>110</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -3883,7 +3765,7 @@ Language</string>
            </size>
           </property>
           <attribute name="title">
-           <string>PCS Data</string>
+           <string>Converter Data</string>
           </attribute>
           <layout class="QGridLayout" name="gridLayout_22">
            <property name="leftMargin">
@@ -3982,7 +3864,7 @@ Language</string>
                   </size>
                  </property>
                  <property name="currentIndex">
-                  <number>1</number>
+                  <number>2</number>
                  </property>
                  <widget class="QWidget" name="Bypass_Converter_page">
                   <layout class="QGridLayout" name="gridLayout_46">
@@ -4402,8 +4284,28 @@ Language</string>
                      <height>122</height>
                     </size>
                    </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton:checked {
+	background-color: rgb(85, 170, 255);
+	color: rgb(0, 0, 0);
+}
+QPushButton:!checked {
+    background-color: rgb(31, 133, 227);
+	color: rgb(255, 255, 255);
+}
+QPushButton::hover{
+	color: rgb(0, 0, 0);
+ }
+</string>
+                   </property>
                    <property name="text">
                     <string>Converter</string>
+                   </property>
+                   <property name="checkable">
+                    <bool>true</bool>
+                   </property>
+                   <property name="autoExclusive">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -4421,8 +4323,28 @@ Language</string>
                      <height>123</height>
                     </size>
                    </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton:checked {
+	background-color: rgb(85, 170, 255);
+	color: rgb(0, 0, 0);
+}
+QPushButton:!checked {
+    background-color: rgb(31, 133, 227);
+	color: rgb(255, 255, 255);
+}
+QPushButton::hover{
+	color: rgb(0, 0, 0);
+ }
+</string>
+                   </property>
                    <property name="text">
                     <string>Grid</string>
+                   </property>
+                   <property name="checkable">
+                    <bool>true</bool>
+                   </property>
+                   <property name="autoExclusive">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -4440,8 +4362,28 @@ Language</string>
                      <height>123</height>
                     </size>
                    </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton:checked {
+	background-color: rgb(85, 170, 255);
+	color: rgb(0, 0, 0);
+}
+QPushButton:!checked {
+    background-color: rgb(31, 133, 227);
+	color: rgb(255, 255, 255);
+}
+QPushButton::hover{
+	color: rgb(0, 0, 0);
+ }
+</string>
+                   </property>
                    <property name="text">
                     <string>Load</string>
+                   </property>
+                   <property name="checkable">
+                    <bool>true</bool>
+                   </property>
+                   <property name="autoExclusive">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -4467,7 +4409,7 @@ Language</string>
            </size>
           </property>
           <attribute name="title">
-           <string>PCS State</string>
+           <string>Converter State</string>
           </attribute>
           <layout class="QGridLayout" name="gridLayout_31">
            <property name="leftMargin">
@@ -4806,7 +4748,7 @@ Language</string>
            </size>
           </property>
           <attribute name="title">
-           <string>PCS Alarm</string>
+           <string>Converter Alarm</string>
           </attribute>
           <layout class="QGridLayout" name="gridLayout_4">
            <property name="leftMargin">
@@ -5762,7 +5704,7 @@ Language</string>
                         </font>
                        </property>
                        <property name="text">
-                        <string>Charging current limite</string>
+                        <string>Charging current limit</string>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignCenter</set>
@@ -5789,7 +5731,7 @@ Language</string>
                         </font>
                        </property>
                        <property name="text">
-                        <string>Discharging current limite</string>
+                        <string>Discharging current limit</string>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignCenter</set>
@@ -5816,7 +5758,7 @@ Language</string>
                         </font>
                        </property>
                        <property name="text">
-                        <string>Allow charge power</string>
+                        <string>Allowable charging power</string>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignCenter</set>
@@ -5843,7 +5785,7 @@ Language</string>
                         </font>
                        </property>
                        <property name="text">
-                        <string>Allow discharge power</string>
+                        <string>Allowable discharging power</string>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignCenter</set>
@@ -5870,7 +5812,7 @@ Language</string>
                         </font>
                        </property>
                        <property name="text">
-                        <string>Allow charge energy</string>
+                        <string>Allowable charging energy</string>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignCenter</set>
@@ -5897,7 +5839,7 @@ Language</string>
                         </font>
                        </property>
                        <property name="text">
-                        <string>Allow discharge energy</string>
+                        <string>Allowable discharging energy</string>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignCenter</set>
@@ -6436,7 +6378,7 @@ Language</string>
                            </font>
                           </property>
                           <property name="text">
-                           <string>Warning1</string>
+                           <string>Level1 </string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignCenter</set>
@@ -6483,7 +6425,7 @@ Language</string>
                            </font>
                           </property>
                           <property name="text">
-                           <string>Warning2</string>
+                           <string>Level2</string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignCenter</set>
@@ -6530,7 +6472,7 @@ Language</string>
                            </font>
                           </property>
                           <property name="text">
-                           <string>Warning3</string>
+                           <string>Level3</string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignCenter</set>
@@ -6635,7 +6577,7 @@ Language</string>
                           </font>
                          </property>
                          <property name="text">
-                          <string>Charge 
+                          <string>Charging
 enable</string>
                          </property>
                          <property name="alignment">
@@ -6691,7 +6633,7 @@ enable</string>
                           </font>
                          </property>
                          <property name="text">
-                          <string>Discharge 
+                          <string>Discharging
 enable</string>
                          </property>
                          <property name="alignment">
@@ -6780,7 +6722,7 @@ enable</string>
           </font>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="DataReport_page">
           <attribute name="title">
@@ -6807,7 +6749,7 @@ enable</string>
                 </size>
                </property>
                <property name="currentIndex">
-                <number>1</number>
+                <number>0</number>
                </property>
                <widget class="QWidget" name="Report_tabPage_D"/>
                <widget class="QWidget" name="Report_tabPage_M"/>
@@ -10079,8 +10021,11 @@ Set rule:B1 - A1 ≥ 10V</string>
       <property name="font">
        <font>
         <family>SimSun-ExtB</family>
-        <pointsize>14</pointsize>
+        <pointsize>20</pointsize>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>Menu</string>
@@ -10109,12 +10054,18 @@ Set rule:B1 - A1 ≥ 10V</string>
       </property>
       <property name="font">
        <font>
-        <family>SimSun-ExtB</family>
+        <family>新宋体</family>
         <pointsize>14</pointsize>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
       <property name="text">
-       <string/>
+       <string>M_01 Converter turn off</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="CurrentMode_lb">
@@ -10140,6 +10091,7 @@ Set rule:B1 - A1 ≥ 10V</string>
       </property>
       <property name="font">
        <font>
+        <family>新宋体</family>
         <pointsize>14</pointsize>
        </font>
       </property>
