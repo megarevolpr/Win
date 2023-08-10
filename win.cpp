@@ -256,7 +256,7 @@ void MEGAWin::MemoryAllocation()
 
     Grid_connected_mode = nullptr;
     Constant_power = nullptr;
-    Work_mode = nullptr;
+//    Work_mode = nullptr;
     Output_power_factor = nullptr;
     Output_reactive_power = nullptr;
     Constant_current = nullptr;
@@ -1868,6 +1868,7 @@ void MEGAWin::LinkRelationship()
     connect(pButton_MonitorDebug, SIGNAL(buttonClicked(int)), this,SLOT(MonitorDebug_clicked(int)));//监控调试
     connect(ui->search_le,SIGNAL(editingFinished()), this, SLOT(on_search_btn_clicked()));//搜索栏关联搜索槽，使LineEdit失去焦点或回车键回车也生效
     connect(System_upgrade_explain, SIGNAL(clicked(bool)), this, SLOT(UpgradeInterface_clicked())); //升级界面关联
+    connect(Work_mode_explain, SIGNAL(clicked(bool)), this, SLOT(WorkingMode_clicked())); //升级界面关联
 }
 
 /******************************************************************************
@@ -3305,8 +3306,10 @@ void MEGAWin::ParameterSet()
         delete Grid_connected_mode;
     }
     Grid_connected_mode = new Specification(this,Grid_connected_mode_explain, ui->System_Tab, line++, column, \
-                                            tr("automatic"), tr("Grid connected mode of PCS"), \
-                                            tr("    When automatic and off-grid is selected, it will automatically identify and switch and off-grid. When the voltage on the grid side is normal, the contactor on the grid side will close, and the machine is in grid-connected mode (PQ).When the grid is out of power, the grid side contactor will be disconnected, and the machine is in off-grid mode (VF).\n   When the grid-connected mode is selected, and the grid side voltage is normal, the grid side contactor will close, and the machine is in grid-connected mode (PQ);If the power grid loses power, the machine will give an alarm warning of the power grid low voltage.\n    When off-grid mode is selected, the machine will disconnect the grid side contactor, and the machine is in off-grid mode (VF)."));
+                                            tr("automatic"), tr("Grid conected mode of the converter "), \
+                                            tr("When \"Auto\" is selected, the converter will automatically switch between grid-on and grid-off. When the grid side is normal, the converter operates in grid-on mode (PQ).When the grid side is abnormal, the converter operates in grid-off mode (VF).\
+                                               When \"Grid-on\" is selected, the converter operates in grid-on mode (PQ).When the grid side is abnormal, the converter will shut down.\
+                                               When \"Grid-off\" is selected, the converter operates in grid-off mode (VF)."));
     Grid_connected_mode->add_Specification();
 
     if(Constant_power != NULL)
@@ -3315,18 +3318,23 @@ void MEGAWin::ParameterSet()
     }
     Constant_power = new Specification(this,Constant_power_explain, ui->System_Tab, line++, column, \
                                        tr("0"), tr("Constant power(AC)"), \
-                                       tr("    This is the power setting of the AC side. The charging and discharging power of the AC side can be controlled by modifying the value of this item.When advanced Settings control power mode select constant power mode (CP_N&P), positive value indicates discharge, negative value indicates charging.\n    For example, set -5, indicating that the AC side will charge the battery with a power of -5kW, due to the loss of the inverter, the power on the DC side will be less than the power on the AC side.\n    For example, set 5, indicating that the AC side will be 5kW power output, due to the loss of the inverter, the DC side of the power will be greater than the AC side of the power."));
+                                       tr("AC Side Power: You can control the charging and discharging power of the battery from the AC side by modifying this value. When the advanced setting for power control mode is set to Constant Power mode (CP_N&P), a positive value indicates discharging, and a negative value indicates charging.\
+\nFor example, setting it to -5 means that the AC side will charge the battery at a power of -5 kW. Due to converter losses, the DC side power will be lower than the AC side power in this case. Setting it to 5 means that the AC side will output power at 5 kW. Due to converter losses, the DC side power will be higher than the AC side power in this case."));
     Constant_power->add_Specification();
 
 
-    if(Work_mode != NULL)
+   Work_mode_explain->setText(tr("Manual"));
+   ui->System_Tab->setCellWidget(line++, column, (QWidget *)Work_mode_explain);
+    /*if(Work_mode != NULL)
     {
         delete Work_mode;
     }
     Work_mode = new Specification(this,Work_mode_explain, ui->System_Tab, line++, column, \
                                   tr("Manual"), tr("Work mode"), \
-                                  tr("    When manual mode is selected (applicable to EMS remote scheduling), you can use the HMI or EMS to control the running status of the machine. Charge and discharge power (active power) Reactive power information such as the power factor.\n    When the UPS mode (backup mode) is selected, the system switches from zero power to off-grid discharge mode to provide energy for critical loads when the power grid loses power.Please go to the battery setting page to set this mode. Note: This mode is only used in lithium mode, and the communication between PCS and BMS is normal.\n    The peak-valley filling mode is used for peak-valley arbitrage. PCS can operate according to the local peak-valley electricity price period, and can go to the automatic operation page to set the charging and discharging mode charging and discharging power and other information during the operation period.\n    When the system anti-countercurrent mode is selected, the PCS in this mode is in the local power grid system, and the energy meter is connected at the entrance of the power grid. When the PCS discharges the system, if the PCS detects that there is energy flowing into the power grid in reverse direction, the PCS will actively reduce the power to prevent energy flowing into the power grid."));
-    Work_mode->add_Specification();
+                                  tr("When selecting the manual mode, the converter’s operating status, charging or discharging power (active power), reactive power, power factor etc,can be controlled through HMI or EMS.\
+                                     When selecting the UPS mode, When the grid side is abnormal, the system will switch from zero power to grid-off discharge mode to provide energy to critical loads. Please go to the \"Battery Settings\" page to configure this mode. Note: This mode is only applicable to lithium battery mode and requires normal communication between the converter and BMS.\
+                                     Peak shaving and valley filling mode is used for peak-valley price arbitrage. The converter can operate according to the local peak-valley electricity price periods. Please set the operating time period, charging or discharging mode, charging or discharging power, and other information on the \"Mixed mode\" page."));
+    Work_mode->add_Specification();*/
 
     if(Output_power_factor != NULL)
     {
@@ -3334,7 +3342,7 @@ void MEGAWin::ParameterSet()
     }
     Output_power_factor = new Specification(this,Output_power_factor_explain, ui->System_Tab, line++, column, \
                                             tr("1"), tr("Output power factor"), \
-                                            tr("    The power factor Pf can be modified. The power factor is equal to the ratio of active power and reactive power. Positive value indicates reactive power lead and negative value indicates reactive power lag.\n    The power factor is a coefficient used to measure the output efficiency of electrical equipment, and the power factor is equal to the ratio of active power to reactive power. When the output reactive power factor is selected in the advanced settings 'system Settings' page, this output power factor can be modified to control the output of active power and reactive power."));
+                                            tr("This item can modify the power factor, where the power factor is equal to the ratio of active power to apparent power. A positive value indicates leading reactive power, while a negative value indicates lagging reactive power."));
     Output_power_factor->add_Specification();
 
     if(Output_reactive_power != NULL)
@@ -3343,7 +3351,7 @@ void MEGAWin::ParameterSet()
     }
     Output_reactive_power = new Specification(this,Output_reactive_power_explain, ui->System_Tab, line++, column, \
                                               tr("1"), tr("Output reactive power"), \
-                                              tr("    This parameter can change the reactive power Q, positive value indicates reactive power lead, negative value indicates reactive power lag."));
+                                              tr("This parameter can change the reactive power Q, positive value indicates leading reactive power, negative value indicates lagging reactive power."));
     Output_reactive_power->add_Specification();
 
     if(Constant_current != NULL)
@@ -3352,7 +3360,7 @@ void MEGAWin::ParameterSet()
     }
     Constant_current = new Specification(this,Constant_current_explain, ui->System_Tab, line++, column, \
                                          tr("100"), tr("Constant current"), \
-                                         tr("    When the control power mode of the advanced Settings page is set to constant current (CC), modify the constant current value, then the machine will charge and discharge the battery with the current value, positive value represents discharge, negative value represents charging."));
+                                         tr("Enter the advanced settings interface and select the control power mode. Choose constant voltage and modify the voltage value. Converter will operate at the constant voltage value and function as a constant voltage source."));
     Constant_current->add_Specification();
 
     if(Constant_voltage != NULL)
@@ -3361,7 +3369,7 @@ void MEGAWin::ParameterSet()
     }
     Constant_voltage = new Specification(this,Constant_voltage_explain, ui->System_Tab, line++, column, \
                                          tr("600"), tr("Constant voltage"), \
-                                         tr("    When the control power mode of the Advanced Settings 'Function Settings' page is set to constant voltage (CV), modify the constant voltage value, the machine will operate at a constant voltage value, and the machine will be used as a constant voltage source."));
+                                         tr("Enter the advanced settings interface and select the control power mode. Choose constant current and modify the current value. Converter will charge or discharge the battery with this current value. Positive values represent discharging, while negative values represent charging."));
     Constant_voltage->add_Specification();
 
     if(Control_mode != NULL)
@@ -3372,7 +3380,7 @@ void MEGAWin::ParameterSet()
     column = 4;
     Control_mode = new Specification(this,Control_mode_explain, ui->System_Tab, line++, column, \
                                      tr("Local"), tr("Control mode"), \
-                                     tr("This is the control mode: the dispatching machine can only monitor data through Ethernet cable, RS485 tool, and CAN tool, but cannot control the PCS.\nThe remote mode: the dispatching machine can only read and write data through Ethernet cable, RS485 tool, and CAN tool."));
+                                     tr("Enter the advanced settings interface and select the control power mode. Choose constant voltage and modify the voltage value. Converter will operate at the constant voltage value and function as a constant voltage source."));
     Control_mode->add_Specification();
 
     if(Machine_number != NULL)
@@ -3380,8 +3388,8 @@ void MEGAWin::ParameterSet()
         delete Machine_number;
     }
     Machine_number = new Specification(this,Machine_number_explain, ui->System_Tab, line++, column, \
-                                       tr("Master_00"), tr("Machine number"), \
-                                       tr("    This is the device number, and you can choose host(Master) or slave(Slave), where master is Master_00 and Slave_01 to Slave_08 are slaves."));
+                                       tr("M_01"), tr("Machine number"), \
+                                       tr("Device number: You can set ID number, which can be set within the range of M_01 to M_12."));
     Machine_number->add_Specification();
 
     if(Parallel != NULL)
@@ -3390,7 +3398,7 @@ void MEGAWin::ParameterSet()
     }
     Parallel = new Specification(this,Parallel_explain, ui->System_Tab, line++, column, \
                                  tr("Disable"), tr("Parallel"), \
-                                 tr("Parallel Operation: When multiple devices are operating off-grid in parallel, this setting needs to be enabled."));
+                                 tr("Parallel operation: When converter operates at grid-off mode in parallel, this item needs to be enabled."));
     Parallel->add_Specification();
 }
 
@@ -5639,6 +5647,32 @@ void MEGAWin::UpgradeInterface_clicked()
     else
     {
         UpgradeInterface->hide();
+    }
+}
+
+void MEGAWin::WorkingMode_clicked()
+{
+    int reply = QMessageBox::question(this, tr("Working mode")\
+                          ,tr("When selecting the manual mode, the converter’s operating status, charging or discharging power (active power), reactive power, power factor etc,can be controlled through HMI or EMS.\
+                              When selecting the UPS mode, When the grid side is abnormal, the system will switch from zero power to grid-off discharge mode to provide energy to critical loads. Please go to the \"Battery Settings\" page to configure this mode. Note: This mode is only applicable to lithium battery mode and requires normal communication between the converter and BMS.\
+                              Peak shaving and valley filling mode is used for peak-valley price arbitrage. The converter can operate according to the local peak-valley electricity price periods. Please set the operating time period, charging or discharging mode, charging or discharging power, and other information on the \"Mixed mode\" page.\nGrid expansion."),\
+                                      tr("Click to view grid expansion"),tr("OK"));
+    if (reply == 0)
+    {
+        // 点击了"Grid expansion"按钮的处理逻辑,进入新界面  点击查看电网扩容
+        if(UpgradeInterface->isHidden())
+        {
+            UpgradeInterface->show();
+        }
+        else
+        {
+            UpgradeInterface->hide();
+        }
+        return ;
+
+    } else if (reply == 1) {
+        // 点击了"OK"按钮的处理逻辑
+
     }
 }
 

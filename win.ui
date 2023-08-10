@@ -141,13 +141,8 @@ color: rgb(255, 255, 255);</string>
        <height>455</height>
       </size>
      </property>
-     <property name="font">
-      <font>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
      <property name="currentIndex">
-      <number>5</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="UI_Parameter_page">
       <property name="sizePolicy">
@@ -206,11 +201,6 @@ color: rgb(255, 255, 255);</string>
            <width>973</width>
            <height>420</height>
           </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-          </font>
          </property>
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
@@ -822,11 +812,6 @@ color: rgb(255, 255, 255);</string>
          <height>420</height>
         </size>
        </property>
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-        </font>
-       </property>
        <property name="editTriggers">
         <set>QAbstractItemView::NoEditTriggers</set>
        </property>
@@ -1435,11 +1420,6 @@ color: rgb(255, 255, 255);</string>
            <height>420</height>
           </size>
          </property>
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-          </font>
-         </property>
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
@@ -1781,11 +1761,6 @@ color: rgb(255, 255, 255);</string>
            <height>395</height>
           </size>
          </property>
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-          </font>
-         </property>
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
@@ -1937,11 +1912,6 @@ color: rgb(255, 255, 255);</string>
          <width>973</width>
          <height>420</height>
         </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>11</pointsize>
-        </font>
        </property>
        <property name="editTriggers">
         <set>QAbstractItemView::NoEditTriggers</set>
@@ -3749,11 +3719,6 @@ Language</string>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-          </font>
-         </property>
          <property name="currentIndex">
           <number>3</number>
          </property>
@@ -3870,7 +3835,7 @@ Language</string>
                   </size>
                  </property>
                  <property name="currentIndex">
-                  <number>2</number>
+                  <number>0</number>
                  </property>
                  <widget class="QWidget" name="Bypass_Converter_page">
                   <layout class="QGridLayout" name="gridLayout_46">
@@ -3905,11 +3870,6 @@ Language</string>
                        <width>836</width>
                        <height>399</height>
                       </size>
-                     </property>
-                     <property name="font">
-                      <font>
-                       <pointsize>11</pointsize>
-                      </font>
                      </property>
                      <attribute name="horizontalHeaderDefaultSectionSize">
                       <number>169</number>
@@ -4099,11 +4059,6 @@ Language</string>
                        <height>383</height>
                       </size>
                      </property>
-                     <property name="font">
-                      <font>
-                       <pointsize>11</pointsize>
-                      </font>
-                     </property>
                      <attribute name="horizontalHeaderDefaultSectionSize">
                       <number>338</number>
                      </attribute>
@@ -4196,11 +4151,6 @@ Language</string>
                        <width>830</width>
                        <height>383</height>
                       </size>
-                     </property>
-                     <property name="font">
-                      <font>
-                       <pointsize>11</pointsize>
-                      </font>
                      </property>
                      <attribute name="horizontalHeaderDefaultSectionSize">
                       <number>338</number>
@@ -4536,11 +4486,6 @@ QPushButton::hover{
                    <height>407</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <pointsize>11</pointsize>
-                  </font>
-                 </property>
                  <property name="wordWrap">
                   <bool>true</bool>
                  </property>
@@ -4835,11 +4780,6 @@ QPushButton::hover{
                  <width>971</width>
                  <height>404</height>
                 </size>
-               </property>
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
                </property>
                <property name="verticalScrollMode">
                 <enum>QAbstractItemView::ScrollPerPixel</enum>
@@ -6907,13 +6847,8 @@ enable</string>
        </property>
        <item row="0" column="0">
         <widget class="QTabWidget" name="Record_tabWidget">
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-          </font>
-         </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="DataReport_page">
           <attribute name="title">
@@ -7980,13 +7915,7 @@ background-color: rgb(255, 0, 0);</string>
            <item row="0" column="0">
             <layout class="QHBoxLayout" name="horizontalLayout_18">
              <item>
-              <widget class="QTableWidget" name="Historicalfailure_tableWidget">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-              </widget>
+              <widget class="QTableWidget" name="Historicalfailure_tableWidget"/>
              </item>
             </layout>
            </item>
@@ -8005,13 +7934,7 @@ background-color: rgb(255, 0, 0);</string>
            <item row="0" column="0">
             <layout class="QHBoxLayout" name="horizontalLayout_19">
              <item>
-              <widget class="QTableWidget" name="Operation_tableWidget">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-              </widget>
+              <widget class="QTableWidget" name="Operation_tableWidget"/>
              </item>
             </layout>
            </item>
@@ -8037,7 +7960,7 @@ background-color: rgb(255, 0, 0);</string>
         </font>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>3</number>
        </property>
        <widget class="QWidget" name="ParameterSet_page">
         <attribute name="title">
@@ -8051,11 +7974,6 @@ background-color: rgb(255, 0, 0);</string>
            <width>981</width>
            <height>421</height>
           </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-          </font>
          </property>
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
@@ -8147,7 +8065,7 @@ background-color: rgb(255, 0, 0);</string>
          </column>
          <item row="0" column="0">
           <property name="text">
-           <string>Grid connected mode of PCS</string>
+           <string>Grid conected mode of the converter</string>
           </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
@@ -8602,7 +8520,7 @@ background-color: rgb(255, 0, 0);</string>
           </rect>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="Lithium_tabWidgetPage">
           <attribute name="title">
@@ -8616,11 +8534,6 @@ background-color: rgb(255, 0, 0);</string>
              <width>971</width>
              <height>331</height>
             </rect>
-           </property>
-           <property name="font">
-            <font>
-             <pointsize>11</pointsize>
-            </font>
            </property>
            <property name="editTriggers">
             <set>QAbstractItemView::NoEditTriggers</set>
@@ -9188,11 +9101,6 @@ Set rule:B1 - A1 ≥ 10V</string>
                 <height>390</height>
                </size>
               </property>
-              <property name="font">
-               <font>
-                <pointsize>11</pointsize>
-               </font>
-              </property>
               <property name="editTriggers">
                <set>QAbstractItemView::NoEditTriggers</set>
               </property>
@@ -9749,11 +9657,6 @@ Set rule:B1 - A1 ≥ 10V</string>
            <height>421</height>
           </rect>
          </property>
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-          </font>
-         </property>
         </widget>
        </widget>
        <widget class="QWidget" name="SystemInformation_page">
@@ -9783,11 +9686,6 @@ Set rule:B1 - A1 ≥ 10V</string>
                <width>471</width>
                <height>381</height>
               </rect>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>11</pointsize>
-              </font>
              </property>
              <property name="editTriggers">
               <set>QAbstractItemView::NoEditTriggers</set>

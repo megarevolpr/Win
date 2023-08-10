@@ -46,7 +46,7 @@ public:
         Specification *Constant_power;
 
         QPushButton *Work_mode_explain;  //工作模式说明
-        Specification *Work_mode;
+//        Specification *Work_mode;
 
         QPushButton *Output_power_factor_explain;    //输出功率因素说明
         Specification *Output_power_factor;
@@ -852,6 +852,7 @@ private slots:
 
     void on_search_btn_clicked();
     void UpgradeInterface_clicked();//升级界面
+    void WorkingMode_clicked();//工作模式点击
 
 private:
     Ui::MEGAWin *ui;
