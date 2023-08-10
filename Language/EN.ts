@@ -34,10 +34,10 @@ Language</source>
         <location filename="../win.ui" line="4263"/>
         <location filename="../win.ui" line="4552"/>
         <location filename="../win.ui" line="4597"/>
-        <location filename="../win.ui" line="8098"/>
-        <location filename="../win.ui" line="8138"/>
-        <location filename="../win.ui" line="8663"/>
-        <location filename="../win.ui" line="8723"/>
+        <location filename="../win.ui" line="8048"/>
+        <location filename="../win.ui" line="8088"/>
+        <location filename="../win.ui" line="8613"/>
+        <location filename="../win.ui" line="8673"/>
         <location filename="../win.cpp" line="2361"/>
         <location filename="../win.cpp" line="3335"/>
         <location filename="../win.cpp" line="3344"/>
@@ -58,10 +58,10 @@ Language</source>
         <location filename="../win.ui" line="4268"/>
         <location filename="../win.ui" line="4557"/>
         <location filename="../win.ui" line="4602"/>
-        <location filename="../win.ui" line="8103"/>
-        <location filename="../win.ui" line="8146"/>
-        <location filename="../win.ui" line="8668"/>
-        <location filename="../win.ui" line="8728"/>
+        <location filename="../win.ui" line="8053"/>
+        <location filename="../win.ui" line="8096"/>
+        <location filename="../win.ui" line="8618"/>
+        <location filename="../win.ui" line="8678"/>
         <source>2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -77,10 +77,10 @@ Language</source>
         <location filename="../win.ui" line="4223"/>
         <location filename="../win.ui" line="4562"/>
         <location filename="../win.ui" line="4607"/>
-        <location filename="../win.ui" line="8108"/>
-        <location filename="../win.ui" line="8154"/>
-        <location filename="../win.ui" line="8673"/>
-        <location filename="../win.ui" line="8733"/>
+        <location filename="../win.ui" line="8058"/>
+        <location filename="../win.ui" line="8104"/>
+        <location filename="../win.ui" line="8623"/>
+        <location filename="../win.ui" line="8683"/>
         <source>3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -96,10 +96,10 @@ Language</source>
         <location filename="../win.ui" line="4228"/>
         <location filename="../win.ui" line="4567"/>
         <location filename="../win.ui" line="4612"/>
-        <location filename="../win.ui" line="8113"/>
-        <location filename="../win.ui" line="8162"/>
-        <location filename="../win.ui" line="8678"/>
-        <location filename="../win.ui" line="8738"/>
+        <location filename="../win.ui" line="8063"/>
+        <location filename="../win.ui" line="8112"/>
+        <location filename="../win.ui" line="8628"/>
+        <location filename="../win.ui" line="8688"/>
         <source>4</source>
         <translation type="unfinished"></translation>
     </message>
@@ -115,10 +115,10 @@ Language</source>
         <location filename="../win.ui" line="4233"/>
         <location filename="../win.ui" line="4572"/>
         <location filename="../win.ui" line="4617"/>
-        <location filename="../win.ui" line="8118"/>
-        <location filename="../win.ui" line="8167"/>
-        <location filename="../win.ui" line="8683"/>
-        <location filename="../win.ui" line="8743"/>
+        <location filename="../win.ui" line="8068"/>
+        <location filename="../win.ui" line="8117"/>
+        <location filename="../win.ui" line="8633"/>
+        <location filename="../win.ui" line="8693"/>
         <source>5</source>
         <translation type="unfinished"></translation>
     </message>
@@ -134,10 +134,10 @@ Language</source>
         <location filename="../win.ui" line="4238"/>
         <location filename="../win.ui" line="4577"/>
         <location filename="../win.ui" line="4622"/>
-        <location filename="../win.ui" line="8123"/>
-        <location filename="../win.ui" line="8172"/>
-        <location filename="../win.ui" line="8688"/>
-        <location filename="../win.ui" line="8748"/>
+        <location filename="../win.ui" line="8073"/>
+        <location filename="../win.ui" line="8122"/>
+        <location filename="../win.ui" line="8638"/>
+        <location filename="../win.ui" line="8698"/>
         <source>6</source>
         <translation type="unfinished"></translation>
     </message>
@@ -151,8 +151,8 @@ Language</source>
         <location filename="../win.ui" line="4145"/>
         <location filename="../win.ui" line="4243"/>
         <location filename="../win.ui" line="4582"/>
-        <location filename="../win.ui" line="8128"/>
-        <location filename="../win.ui" line="8693"/>
+        <location filename="../win.ui" line="8078"/>
+        <location filename="../win.ui" line="8643"/>
         <source>7</source>
         <translation type="unfinished"></translation>
     </message>
@@ -166,9 +166,9 @@ Language</source>
         <location filename="../win.ui" line="4150"/>
         <location filename="../win.ui" line="4248"/>
         <location filename="../win.ui" line="4587"/>
-        <location filename="../win.ui" line="8133"/>
-        <location filename="../win.ui" line="8698"/>
-        <location filename="../win.ui" line="9269"/>
+        <location filename="../win.ui" line="8083"/>
+        <location filename="../win.ui" line="8648"/>
+        <location filename="../win.ui" line="9219"/>
         <source>8</source>
         <translation type="unfinished"></translation>
     </message>
@@ -181,8 +181,8 @@ Language</source>
         <location filename="../win.ui" line="3962"/>
         <location filename="../win.ui" line="4253"/>
         <location filename="../win.ui" line="4592"/>
-        <location filename="../win.ui" line="8703"/>
-        <location filename="../win.ui" line="9274"/>
+        <location filename="../win.ui" line="8653"/>
+        <location filename="../win.ui" line="9224"/>
         <source>9</source>
         <translation type="unfinished"></translation>
     </message>
@@ -193,7 +193,7 @@ Language</source>
         <location filename="../win.ui" line="3967"/>
         <location filename="../win.ui" line="4155"/>
         <location filename="../win.ui" line="4258"/>
-        <location filename="../win.ui" line="8708"/>
+        <location filename="../win.ui" line="8658"/>
         <source>10</source>
         <translation type="unfinished"></translation>
     </message>
@@ -201,7 +201,7 @@ Language</source>
         <location filename="../win.ui" line="279"/>
         <location filename="../win.ui" line="894"/>
         <location filename="../win.ui" line="2016"/>
-        <location filename="../win.ui" line="8713"/>
+        <location filename="../win.ui" line="8663"/>
         <source>11</source>
         <translation type="unfinished"></translation>
     </message>
@@ -209,7 +209,7 @@ Language</source>
         <location filename="../win.ui" line="284"/>
         <location filename="../win.ui" line="899"/>
         <location filename="../win.ui" line="2021"/>
-        <location filename="../win.ui" line="8718"/>
+        <location filename="../win.ui" line="8668"/>
         <source>12</source>
         <translation type="unfinished"></translation>
     </message>
@@ -252,20 +252,20 @@ Language</source>
         <location filename="../win.ui" line="1902"/>
         <location filename="../win.ui" line="1910"/>
         <location filename="../win.ui" line="1918"/>
-        <location filename="../win.ui" line="8193"/>
-        <location filename="../win.ui" line="8217"/>
-        <location filename="../win.ui" line="8265"/>
-        <location filename="../win.ui" line="8289"/>
-        <location filename="../win.ui" line="8313"/>
-        <location filename="../win.ui" line="8337"/>
-        <location filename="../win.ui" line="8385"/>
-        <location filename="../win.ui" line="9001"/>
-        <location filename="../win.ui" line="9317"/>
-        <location filename="../win.ui" line="9349"/>
-        <location filename="../win.ui" line="9496"/>
-        <location filename="../win.ui" line="9560"/>
-        <location filename="../win.ui" line="9624"/>
-        <location filename="../win.ui" line="9688"/>
+        <location filename="../win.ui" line="8143"/>
+        <location filename="../win.ui" line="8167"/>
+        <location filename="../win.ui" line="8215"/>
+        <location filename="../win.ui" line="8239"/>
+        <location filename="../win.ui" line="8263"/>
+        <location filename="../win.ui" line="8287"/>
+        <location filename="../win.ui" line="8335"/>
+        <location filename="../win.ui" line="8951"/>
+        <location filename="../win.ui" line="9267"/>
+        <location filename="../win.ui" line="9299"/>
+        <location filename="../win.ui" line="9446"/>
+        <location filename="../win.ui" line="9510"/>
+        <location filename="../win.ui" line="9574"/>
+        <location filename="../win.ui" line="9638"/>
         <source>-</source>
         <translation type="unfinished"></translation>
     </message>
@@ -356,9 +356,9 @@ Language</source>
         <location filename="../win.ui" line="1036"/>
         <location filename="../win.ui" line="6355"/>
         <location filename="../win.ui" line="6382"/>
-        <location filename="../win.ui" line="8241"/>
-        <location filename="../win.ui" line="8969"/>
-        <location filename="../win.ui" line="9065"/>
+        <location filename="../win.ui" line="8191"/>
+        <location filename="../win.ui" line="8919"/>
+        <location filename="../win.ui" line="9015"/>
         <source>kW</source>
         <translation type="unfinished"></translation>
     </message>
@@ -432,16 +432,16 @@ Language</source>
         <location filename="../win.ui" line="1132"/>
         <location filename="../win.ui" line="1180"/>
         <location filename="../win.ui" line="5584"/>
-        <location filename="../win.ui" line="8481"/>
-        <location filename="../win.ui" line="8825"/>
-        <location filename="../win.ui" line="8857"/>
-        <location filename="../win.ui" line="8905"/>
-        <location filename="../win.ui" line="8937"/>
-        <location filename="../win.ui" line="9333"/>
-        <location filename="../win.ui" line="9365"/>
-        <location filename="../win.ui" line="9381"/>
-        <location filename="../win.ui" line="9426"/>
-        <location filename="../win.ui" line="9442"/>
+        <location filename="../win.ui" line="8431"/>
+        <location filename="../win.ui" line="8775"/>
+        <location filename="../win.ui" line="8807"/>
+        <location filename="../win.ui" line="8855"/>
+        <location filename="../win.ui" line="8887"/>
+        <location filename="../win.ui" line="9283"/>
+        <location filename="../win.ui" line="9315"/>
+        <location filename="../win.ui" line="9331"/>
+        <location filename="../win.ui" line="9376"/>
+        <location filename="../win.ui" line="9392"/>
         <source>V</source>
         <translation type="unfinished"></translation>
     </message>
@@ -526,18 +526,18 @@ Language</source>
         <location filename="../win.ui" line="1164"/>
         <location filename="../win.ui" line="5638"/>
         <location filename="../win.ui" line="5665"/>
-        <location filename="../win.ui" line="8761"/>
-        <location filename="../win.ui" line="8777"/>
-        <location filename="../win.ui" line="8793"/>
-        <location filename="../win.ui" line="8809"/>
-        <location filename="../win.ui" line="8921"/>
-        <location filename="../win.ui" line="8953"/>
-        <location filename="../win.ui" line="8985"/>
-        <location filename="../win.ui" line="9017"/>
-        <location filename="../win.ui" line="9033"/>
-        <location filename="../win.ui" line="9049"/>
-        <location filename="../win.ui" line="9640"/>
-        <location filename="../win.ui" line="9704"/>
+        <location filename="../win.ui" line="8711"/>
+        <location filename="../win.ui" line="8727"/>
+        <location filename="../win.ui" line="8743"/>
+        <location filename="../win.ui" line="8759"/>
+        <location filename="../win.ui" line="8871"/>
+        <location filename="../win.ui" line="8903"/>
+        <location filename="../win.ui" line="8935"/>
+        <location filename="../win.ui" line="8967"/>
+        <location filename="../win.ui" line="8983"/>
+        <location filename="../win.ui" line="8999"/>
+        <location filename="../win.ui" line="9590"/>
+        <location filename="../win.ui" line="9654"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1249,8 +1249,8 @@ Language</source>
         <location filename="../win.ui" line="3982"/>
         <location filename="../win.ui" line="5045"/>
         <location filename="../win.ui" line="5814"/>
-        <location filename="../win.ui" line="9279"/>
-        <location filename="../win.ui" line="9294"/>
+        <location filename="../win.ui" line="9229"/>
+        <location filename="../win.ui" line="9244"/>
         <location filename="../win.cpp" line="1029"/>
         <location filename="../win.cpp" line="1201"/>
         <location filename="../win.cpp" line="1256"/>
@@ -1265,8 +1265,8 @@ Language</source>
         <location filename="../win.ui" line="3987"/>
         <location filename="../win.ui" line="5325"/>
         <location filename="../win.ui" line="6055"/>
-        <location filename="../win.ui" line="9284"/>
-        <location filename="../win.ui" line="9299"/>
+        <location filename="../win.ui" line="9234"/>
+        <location filename="../win.ui" line="9249"/>
         <location filename="../win.cpp" line="1029"/>
         <location filename="../win.cpp" line="1201"/>
         <location filename="../win.cpp" line="1256"/>
@@ -1283,8 +1283,8 @@ Language</source>
     <message>
         <location filename="../win.ui" line="5554"/>
         <location filename="../win.ui" line="6274"/>
-        <location filename="../win.ui" line="9289"/>
-        <location filename="../win.ui" line="9304"/>
+        <location filename="../win.ui" line="9239"/>
+        <location filename="../win.ui" line="9254"/>
         <location filename="../win.cpp" line="1029"/>
         <source>Unit</source>
         <translation type="unfinished"></translation>
@@ -1293,8 +1293,8 @@ Language</source>
         <location filename="../win.ui" line="5611"/>
         <location filename="../win.ui" line="6301"/>
         <location filename="../win.ui" line="6328"/>
-        <location filename="../win.ui" line="8433"/>
-        <location filename="../win.ui" line="8889"/>
+        <location filename="../win.ui" line="8383"/>
+        <location filename="../win.ui" line="8839"/>
         <source>A</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1390,8 +1390,8 @@ Language</source>
     <message>
         <location filename="../win.ui" line="5692"/>
         <location filename="../win.ui" line="5719"/>
-        <location filename="../win.ui" line="8841"/>
-        <location filename="../win.ui" line="8873"/>
+        <location filename="../win.ui" line="8791"/>
+        <location filename="../win.ui" line="8823"/>
         <source>mV</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1483,7 +1483,6 @@ kW.h</source>
     <message>
         <location filename="../win.ui" line="7028"/>
         <location filename="../win.ui" line="7268"/>
-        <location filename="../win.ui" line="7528"/>
         <source>Day</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1497,14 +1496,12 @@ kW.h</source>
     <message>
         <location filename="../win.ui" line="7085"/>
         <location filename="../win.ui" line="7322"/>
-        <location filename="../win.ui" line="7608"/>
         <source>Month</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="7139"/>
         <location filename="../win.ui" line="7376"/>
-        <location filename="../win.ui" line="7547"/>
         <source>Year</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1517,7 +1514,6 @@ kW.h</source>
     <message>
         <location filename="../win.ui" line="7193"/>
         <location filename="../win.ui" line="7430"/>
-        <location filename="../win.ui" line="7627"/>
         <source>Total</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1556,268 +1552,268 @@ kW.h</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7570"/>
+        <location filename="../win.ui" line="7545"/>
         <source>M  +</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7589"/>
+        <location filename="../win.ui" line="7564"/>
         <source>Y  +</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7643"/>
+        <location filename="../win.ui" line="7593"/>
         <source>Export Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7675"/>
+        <location filename="../win.ui" line="7625"/>
         <source>Note:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7692"/>
+        <location filename="../win.ui" line="7642"/>
         <source>Out put file:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7710"/>
+        <location filename="../win.ui" line="7660"/>
         <source>HistoryRecord.csv</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7728"/>
+        <location filename="../win.ui" line="7678"/>
         <source>Log.csv</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7746"/>
+        <location filename="../win.ui" line="7696"/>
         <source>Report.csv</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7788"/>
+        <location filename="../win.ui" line="7738"/>
         <source>Data To Export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7834"/>
+        <location filename="../win.ui" line="7784"/>
         <source>static:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7888"/>
+        <location filename="../win.ui" line="7838"/>
         <location filename="../win.cpp" line="2243"/>
         <source>HistoricalFailure</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7919"/>
+        <location filename="../win.ui" line="7869"/>
         <location filename="../win.cpp" line="2247"/>
         <source>OperationLog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7953"/>
+        <location filename="../win.ui" line="7903"/>
         <location filename="../win.cpp" line="2251"/>
         <source>Coulombmeter report</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="7984"/>
+        <location filename="../win.ui" line="7934"/>
         <location filename="../win.cpp" line="2255"/>
         <source>Eject Udisk</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8004"/>
+        <location filename="../win.ui" line="7954"/>
         <source>History Record</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8029"/>
+        <location filename="../win.ui" line="7979"/>
         <source>Operation Log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8071"/>
+        <location filename="../win.ui" line="8021"/>
         <source>Parameter setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8177"/>
+        <location filename="../win.ui" line="8127"/>
         <location filename="../win.cpp" line="3307"/>
         <source>Grid connected mode of PCS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8201"/>
+        <location filename="../win.ui" line="8151"/>
         <location filename="../win.cpp" line="3373"/>
         <source>Control mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8225"/>
+        <location filename="../win.ui" line="8175"/>
         <source>Constant power (AC)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8249"/>
+        <location filename="../win.ui" line="8199"/>
         <location filename="../win.cpp" line="3382"/>
         <source>Machine number</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8297"/>
+        <location filename="../win.ui" line="8247"/>
         <source>Parallel </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8273"/>
+        <location filename="../win.ui" line="8223"/>
         <location filename="../win.cpp" line="3326"/>
         <source>Work mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8321"/>
+        <location filename="../win.ui" line="8271"/>
         <location filename="../win.cpp" line="3335"/>
         <source>Output power factor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8369"/>
+        <location filename="../win.ui" line="8319"/>
         <location filename="../win.cpp" line="3344"/>
         <source>Output reactive power</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8417"/>
+        <location filename="../win.ui" line="8367"/>
         <location filename="../win.cpp" line="3353"/>
         <source>Constant current</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8465"/>
+        <location filename="../win.ui" line="8415"/>
         <location filename="../win.cpp" line="3362"/>
         <source>Constant voltage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8579"/>
+        <location filename="../win.ui" line="8529"/>
         <source>  Title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8611"/>
+        <location filename="../win.ui" line="8561"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8620"/>
+        <location filename="../win.ui" line="8570"/>
         <source>Battery setup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9234"/>
-        <location filename="../win.ui" line="9239"/>
-        <location filename="../win.ui" line="9244"/>
-        <location filename="../win.ui" line="9249"/>
-        <location filename="../win.ui" line="9254"/>
-        <location filename="../win.ui" line="9259"/>
-        <location filename="../win.ui" line="9264"/>
+        <location filename="../win.ui" line="9184"/>
+        <location filename="../win.ui" line="9189"/>
+        <location filename="../win.ui" line="9194"/>
+        <location filename="../win.ui" line="9199"/>
+        <location filename="../win.ui" line="9204"/>
+        <location filename="../win.ui" line="9209"/>
+        <location filename="../win.ui" line="9214"/>
         <source>New Row</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9309"/>
+        <location filename="../win.ui" line="9259"/>
         <location filename="../win.cpp" line="3590"/>
         <source>Capacity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9325"/>
+        <location filename="../win.ui" line="9275"/>
         <source>Grid off EOD</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9341"/>
+        <location filename="../win.ui" line="9291"/>
         <source>Cell number(2V)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9357"/>
+        <location filename="../win.ui" line="9307"/>
         <source>Grid on EOD</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9373"/>
+        <location filename="../win.ui" line="9323"/>
         <location filename="../win.cpp" line="3600"/>
         <source>Battery float voltage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9389"/>
+        <location filename="../win.ui" line="9339"/>
         <source>Shutdown voltage point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9434"/>
+        <location filename="../win.ui" line="9384"/>
         <location filename="../win.cpp" line="3605"/>
         <source>Battery filling voltage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9450"/>
+        <location filename="../win.ui" line="9400"/>
         <source>Mending center point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9504"/>
+        <location filename="../win.ui" line="9454"/>
         <source>Charge limiting value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9512"/>
-        <location filename="../win.ui" line="9576"/>
-        <location filename="../win.ui" line="9737"/>
-        <location filename="../win.ui" line="9753"/>
+        <location filename="../win.ui" line="9462"/>
+        <location filename="../win.ui" line="9526"/>
+        <location filename="../win.ui" line="9687"/>
+        <location filename="../win.ui" line="9703"/>
         <source>C</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9520"/>
+        <location filename="../win.ui" line="9470"/>
         <source>Temperature filling coefficient</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9568"/>
+        <location filename="../win.ui" line="9518"/>
         <source>Discharge limiting value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9584"/>
+        <location filename="../win.ui" line="9534"/>
         <source>Mending allowable setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9648"/>
+        <location filename="../win.ui" line="9598"/>
         <source>Temperature alarm upper limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9712"/>
+        <location filename="../win.ui" line="9662"/>
         <location filename="../win.cpp" line="3641"/>
         <source>Uniform charging and flushing current</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9745"/>
+        <location filename="../win.ui" line="9695"/>
         <location filename="../win.cpp" line="3646"/>
         <source>Float turn uniform charging current</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8753"/>
+        <location filename="../win.ui" line="8703"/>
         <source>DOD_OnGrid:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1827,121 +1823,121 @@ kW.h</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8769"/>
+        <location filename="../win.ui" line="8719"/>
         <source>Turn on SOC</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8785"/>
+        <location filename="../win.ui" line="8735"/>
         <source>DOD_OffGrid:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8801"/>
+        <location filename="../win.ui" line="8751"/>
         <source>Turn off SOC</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8817"/>
+        <location filename="../win.ui" line="8767"/>
         <source>Charge Vol. upper Limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8833"/>
+        <location filename="../win.ui" line="8783"/>
         <source>Turn on cell vol.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8849"/>
+        <location filename="../win.ui" line="8799"/>
         <source>Discharge Vol. lower Limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8865"/>
+        <location filename="../win.ui" line="8815"/>
         <source>Turn off cell vol.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8881"/>
+        <location filename="../win.ui" line="8831"/>
         <source>Charge Cur. Limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8897"/>
+        <location filename="../win.ui" line="8847"/>
         <source>Turn on total vol.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8913"/>
+        <location filename="../win.ui" line="8863"/>
         <source>Generator turn off SOC</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8929"/>
+        <location filename="../win.ui" line="8879"/>
         <source>Turn off total vol.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8945"/>
+        <location filename="../win.ui" line="8895"/>
         <source>Generator turn on SOC</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8961"/>
+        <location filename="../win.ui" line="8911"/>
         <source>UPS charge power</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8977"/>
+        <location filename="../win.ui" line="8927"/>
         <source>Generator charge SOC</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8993"/>
+        <location filename="../win.ui" line="8943"/>
         <source>Monthly cycle time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9009"/>
+        <location filename="../win.ui" line="8959"/>
         <source>Grid charge SOC</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9025"/>
+        <location filename="../win.ui" line="8975"/>
         <location filename="../win.cpp" line="3488"/>
         <source>Charge Stop SOC</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9041"/>
+        <location filename="../win.ui" line="8991"/>
         <location filename="../win.cpp" line="3497"/>
         <source>Discharge Stop SOC</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9057"/>
+        <location filename="../win.ui" line="9007"/>
         <source>Grid capacity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9110"/>
+        <location filename="../win.ui" line="9060"/>
         <location filename="../win.cpp" line="2324"/>
         <source>BMS power on</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9129"/>
+        <location filename="../win.ui" line="9079"/>
         <location filename="../win.cpp" line="2328"/>
         <source>BMS power off</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9138"/>
+        <location filename="../win.ui" line="9088"/>
         <source>Lead</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9194"/>
+        <location filename="../win.ui" line="9144"/>
         <source>A1: Generator turn on voltage
 B1: Generator turn off voltage
 A1 Setting range: [250, 900]
@@ -1950,163 +1946,163 @@ Set rule:B1 - A1 ≥ 10V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9768"/>
+        <location filename="../win.ui" line="9718"/>
         <source>Automatic operation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9788"/>
+        <location filename="../win.ui" line="9738"/>
         <source>SystemInformation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9803"/>
+        <location filename="../win.ui" line="9753"/>
         <source>Version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9824"/>
-        <location filename="../win.ui" line="9829"/>
-        <location filename="../win.ui" line="9834"/>
-        <location filename="../win.ui" line="9839"/>
-        <location filename="../win.ui" line="9844"/>
-        <location filename="../win.ui" line="9849"/>
+        <location filename="../win.ui" line="9774"/>
+        <location filename="../win.ui" line="9779"/>
+        <location filename="../win.ui" line="9784"/>
+        <location filename="../win.ui" line="9789"/>
+        <location filename="../win.ui" line="9794"/>
+        <location filename="../win.ui" line="9799"/>
         <source>新建行</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9854"/>
-        <location filename="../win.ui" line="9859"/>
+        <location filename="../win.ui" line="9804"/>
+        <location filename="../win.ui" line="9809"/>
         <source>新建列</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9864"/>
+        <location filename="../win.ui" line="9814"/>
         <location filename="../win.cpp" line="4392"/>
         <source>Manufacturer name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9879"/>
+        <location filename="../win.ui" line="9829"/>
         <location filename="../win.cpp" line="4402"/>
         <source>Monitoring software version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9884"/>
+        <location filename="../win.ui" line="9834"/>
         <source>Protocol version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9889"/>
+        <location filename="../win.ui" line="9839"/>
         <location filename="../win.cpp" line="4420"/>
         <source>Converter software version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9894"/>
+        <location filename="../win.ui" line="9844"/>
         <location filename="../win.cpp" line="4429"/>
         <source>CPLD software version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9899"/>
+        <location filename="../win.ui" line="9849"/>
         <source>SN:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9908"/>
+        <location filename="../win.ui" line="9858"/>
         <source>Network</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9941"/>
+        <location filename="../win.ui" line="9891"/>
         <source>              interface:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9957"/>
+        <location filename="../win.ui" line="9907"/>
         <source>Port:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9991"/>
+        <location filename="../win.ui" line="9941"/>
         <source>DHCP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10004"/>
+        <location filename="../win.ui" line="9954"/>
         <source>STATIC</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10020"/>
+        <location filename="../win.ui" line="9970"/>
         <source>ip：</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10033"/>
+        <location filename="../win.ui" line="9983"/>
         <source>netmask:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10049"/>
+        <location filename="../win.ui" line="9999"/>
         <source>gateway:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10062"/>
+        <location filename="../win.ui" line="10012"/>
         <source>Server ip:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10075"/>
+        <location filename="../win.ui" line="10025"/>
         <source>192 . 168 . 1 . 100</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10088"/>
+        <location filename="../win.ui" line="10038"/>
         <source>255 . 255 . 255 . 0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10101"/>
+        <location filename="../win.ui" line="10051"/>
         <source>192 . 168 .  1  . 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10114"/>
+        <location filename="../win.ui" line="10064"/>
         <source> 192 . 168 . 1  . 200</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10128"/>
+        <location filename="../win.ui" line="10078"/>
         <location filename="../win.cpp" line="2293"/>
         <source>Apply and Restart system</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10141"/>
+        <location filename="../win.ui" line="10091"/>
         <source>eth0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10154"/>
+        <location filename="../win.ui" line="10104"/>
         <source>502</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10222"/>
+        <location filename="../win.ui" line="10172"/>
         <source>Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10256"/>
+        <location filename="../win.ui" line="10206"/>
         <source>M_01 Converter turn off</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10296"/>
+        <location filename="../win.ui" line="10246"/>
         <source>Current mode:CP</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2572,18 +2568,8 @@ By default, the converter does not respond to level one and level two alarms, bu
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2180"/>
-        <source>The discharge quantity of the day is shown here; Click here to jump to a histogram of daily charge and discharge, with the horizontal axis in days and the vertical axis in power (kWh)The discharge quantity of the day is shown here; Click here to jump to a histogram of daily charge and discharge, with the horizontal axis in days and the vertical axis in power (kWh).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../win.cpp" line="2183"/>
         <source>Discharge Month</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="2184"/>
-        <source>This shows the discharge amount of this month. Click here to jump to the histogram of monthly charge and discharge amount. The horizontal axis is in month and the vertical axis is in power (kWh).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2592,18 +2578,8 @@ By default, the converter does not respond to level one and level two alarms, bu
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2188"/>
-        <source>This shows the discharge amount of this year. Click here to jump to the histogram of the annual charge and discharge amount. The horizontal axis is in year, and the vertical axis is in power (kWh).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../win.cpp" line="2191"/>
         <source>Discharge Total</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="2192"/>
-        <source>The total discharge power is displayed here. Click here to jump to the overview chart.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2617,18 +2593,8 @@ By default, the converter does not respond to level one and level two alarms, bu
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2200"/>
-        <source>This shows the amount of charging in this month. Click here to jump to the histogram of monthly charging and discharging. The horizontal axis is in month and the vertical axis is in power (kWh).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../win.cpp" line="2203"/>
         <source>Charge Year</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="2204"/>
-        <source>This shows the amount of charging for this year. Click here to jump to the histogram of charging and discharging for each year. The horizontal axis is in years and the vertical axis is in power (kWh).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2637,28 +2603,13 @@ By default, the converter does not respond to level one and level two alarms, bu
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2208"/>
-        <source>This shows the total amount of charging, click here to jump to the overview chart.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../win.cpp" line="2211"/>
         <source>Month-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2212"/>
-        <source>To view the data of the previous month, click on it to display the data of the previous month of the current displayed month.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../win.cpp" line="2215"/>
         <source>Year-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="2216"/>
-        <source>To view the previous year&apos;s data, click on it to display the previous year&apos;s data for the current displayed year.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2687,18 +2638,8 @@ By default, the converter does not respond to level one and level two alarms, bu
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2228"/>
-        <source>To view the data for the next month, click to display the data for the next month of the current displayed month.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../win.cpp" line="2231"/>
         <source>Year+</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="2232"/>
-        <source>To view the data for the next year, click on it to display the data for the next year of the current displayed year.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3119,6 +3060,66 @@ countercurrent</source>
     <message>
         <location filename="../win.cpp" line="2120"/>
         <source>Alarm icon: It is not displayed when there is no alarm. When there is a minor alarm, a yellow icon is displayed. When there is a fault alarm, a red icon is displayed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2180"/>
+        <source>Display today&apos;s power discharge amount.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2184"/>
+        <source>Display this month&apos;s power discharge amount.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2188"/>
+        <source>Display this year&apos;s power discharge amount.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2192"/>
+        <source>Display total power discharge amount.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2196"/>
+        <source>Display today&apos;s power charge amount</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2200"/>
+        <source>Display this month&apos;s power charge amount.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2204"/>
+        <source>Display this year&apos;s power charge amount.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2208"/>
+        <source>Display total power charge amount.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2212"/>
+        <source>To view the data of the previous month.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2216"/>
+        <source>To view the data of the previous year.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2228"/>
+        <source>To view the data of the next month.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="2232"/>
+        <source>To view the data of the next year.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3713,7 +3714,7 @@ When you select AUTO, the system automatically determines the battery manufactur
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9632"/>
+        <location filename="../win.ui" line="9582"/>
         <location filename="../win.cpp" line="3620"/>
         <source>Generator turn off voltage</source>
         <translation type="unfinished"></translation>
@@ -3724,7 +3725,7 @@ When you select AUTO, the system automatically determines the battery manufactur
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9696"/>
+        <location filename="../win.ui" line="9646"/>
         <location filename="../win.cpp" line="3625"/>
         <source>Generator turn on voltage</source>
         <translation type="unfinished"></translation>
@@ -3790,7 +3791,7 @@ When you select AUTO, the system automatically determines the battery manufactur
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8636"/>
+        <location filename="../win.ui" line="8586"/>
         <location filename="../win.cpp" line="4453"/>
         <source>Lithium</source>
         <translation type="unfinished"></translation>
@@ -5216,11 +5217,6 @@ fault</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="2196"/>
-        <source>Here shows the charge of the day; Click here to jump to a histogram of daily charge and discharge, with the horizontal axis in days and the vertical axis in power (kWh).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../win.cpp" line="2244"/>
         <source>To export history records, click here to export history records to the USB flash drive. The file exported to the USB flash drive is HistoryRecord.csv, which needs to be opened with Excel.</source>
         <translation type="unfinished"></translation>
@@ -5274,7 +5270,7 @@ fault</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="8595"/>
+        <location filename="../win.ui" line="8545"/>
         <location filename="../win.cpp" line="1059"/>
         <location filename="../win.cpp" line="2349"/>
         <source>Description</source>
@@ -5317,11 +5313,11 @@ fault</source>
         <location filename="../win.ui" line="6154"/>
         <location filename="../win.ui" line="6178"/>
         <location filename="../win.ui" line="6202"/>
-        <location filename="../win.ui" line="9409"/>
-        <location filename="../win.ui" line="9470"/>
-        <location filename="../win.ui" line="9540"/>
-        <location filename="../win.ui" line="9604"/>
-        <location filename="../win.ui" line="9668"/>
+        <location filename="../win.ui" line="9359"/>
+        <location filename="../win.ui" line="9420"/>
+        <location filename="../win.ui" line="9490"/>
+        <location filename="../win.ui" line="9554"/>
+        <location filename="../win.ui" line="9618"/>
         <location filename="../win.cpp" line="2341"/>
         <location filename="../win.cpp" line="3316"/>
         <source>0</source>

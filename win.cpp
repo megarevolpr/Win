@@ -87,12 +87,12 @@ void MEGAWin::MemoryAllocation()
     pButton_History->addButton(ui->Char_T,7);
     pButton_History->addButton(ui->Subtract_M,8);
     pButton_History->addButton(ui->Subtract_Y,9);
-    pButton_History->addButton(ui->Day_btn,10);
-    pButton_History->addButton(ui->Year_btn,11);
+//    pButton_History->addButton(ui->Day_btn,10);
+//    pButton_History->addButton(ui->Year_btn,11);
     pButton_History->addButton(ui->Add_M,12);
     pButton_History->addButton(ui->Add_Y,13);
-    pButton_History->addButton(ui->Month_btn,14);
-    pButton_History->addButton(ui->Total_btn,15);
+//    pButton_History->addButton(ui->Month_btn,14);
+//    pButton_History->addButton(ui->Total_btn,15);
     pButton_History->addButton(ui->OutPut_historyFailuer,16);
     pButton_History->addButton(ui->Output_OperationLog,17);
     pButton_History->addButton(ui->CoulombmeterReport_btn,18);
@@ -2177,43 +2177,43 @@ void MEGAWin::Data_report_clicked(int nid)
     switch (nid) {
     case 0:
         QMessageBox::question(this, tr("Discharge Day")\
-                              ,tr("The discharge quantity of the day is shown here; Click here to jump to a histogram of daily charge and discharge, with the horizontal axis in days and the vertical axis in power (kWh)The discharge quantity of the day is shown here; Click here to jump to a histogram of daily charge and discharge, with the horizontal axis in days and the vertical axis in power (kWh)."), tr("OK"));
+                              ,tr("Display today's power discharge amount."), tr("OK"));
         break;
     case 1:
         QMessageBox::question(this, tr("Discharge Month")\
-                              ,tr("This shows the discharge amount of this month. Click here to jump to the histogram of monthly charge and discharge amount. The horizontal axis is in month and the vertical axis is in power (kWh)."), tr("OK"));
+                              ,tr("Display this month's power discharge amount."), tr("OK"));
         break;
     case 2:
         QMessageBox::question(this, tr("Discharge Year")\
-                              ,tr("This shows the discharge amount of this year. Click here to jump to the histogram of the annual charge and discharge amount. The horizontal axis is in year, and the vertical axis is in power (kWh)."), tr("OK"));
+                              ,tr("Display this year's power discharge amount."), tr("OK"));
         break;
     case 3:
         QMessageBox::question(this, tr("Discharge Total")\
-                              ,tr("The total discharge power is displayed here. Click here to jump to the overview chart."), tr("OK"));
+                              ,tr("Display total power discharge amount."), tr("OK"));
         break;
     case 4:
         QMessageBox::question(this, tr("Charge Day")\
-                              ,tr("Here shows the charge of the day; Click here to jump to a histogram of daily charge and discharge, with the horizontal axis in days and the vertical axis in power (kWh)."), tr("OK"));
+                              ,tr("Display today's power charge amount"), tr("OK"));
         break;
     case 5:
         QMessageBox::question(this, tr("Charge Month")\
-                              ,tr("This shows the amount of charging in this month. Click here to jump to the histogram of monthly charging and discharging. The horizontal axis is in month and the vertical axis is in power (kWh)."), tr("OK"));
+                              ,tr("Display this month's power charge amount."), tr("OK"));
         break;
     case 6:
         QMessageBox::question(this, tr("Charge Year")\
-                              ,tr("This shows the amount of charging for this year. Click here to jump to the histogram of charging and discharging for each year. The horizontal axis is in years and the vertical axis is in power (kWh)."), tr("OK"));
+                              ,tr("Display this year's power charge amount."), tr("OK"));
         break;
     case 7:
         QMessageBox::question(this, tr("Charge Total")\
-                              ,tr("This shows the total amount of charging, click here to jump to the overview chart."), tr("OK"));
+                              ,tr("Display total power charge amount."), tr("OK"));
         break;
     case 8:
         QMessageBox::question(this, tr("Month-")\
-                              ,tr("To view the data of the previous month, click on it to display the data of the previous month of the current displayed month."), tr("OK"));
+                              ,tr("To view the data of the previous month."), tr("OK"));
         break;
     case 9:
         QMessageBox::question(this, tr("Year-")\
-                              ,tr("To view the previous year's data, click on it to display the previous year's data for the current displayed year."), tr("OK"));
+                              ,tr("To view the data of the previous year."), tr("OK"));
         break;
     case 10:
         QMessageBox::question(this, tr("Daily electricity quantity")\
@@ -2225,11 +2225,11 @@ void MEGAWin::Data_report_clicked(int nid)
         break;
     case 12:
         QMessageBox::question(this, tr("Month+")\
-                              ,tr("To view the data for the next month, click to display the data for the next month of the current displayed month."), tr("OK"));
+                              ,tr("To view the data of the next month."), tr("OK"));
         break;
     case 13:
         QMessageBox::question(this, tr("Year+")\
-                              ,tr("To view the data for the next year, click on it to display the data for the next year of the current displayed year."), tr("OK"));
+                              ,tr("To view the data of the next year."), tr("OK"));
         break;
     case 14:
         QMessageBox::question(this, tr("Monthly electric quantity")\

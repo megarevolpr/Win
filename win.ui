@@ -13,7 +13,7 @@
   <property name="minimumSize">
    <size>
     <width>981</width>
-    <height>562</height>
+    <height>561</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -2672,7 +2672,7 @@ Language</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">
@@ -6921,7 +6921,7 @@ enable</string>
           </attribute>
           <layout class="QGridLayout" name="gridLayout_11">
            <item row="0" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_23" stretch="10,1">
+            <layout class="QHBoxLayout" name="horizontalLayout_23" stretch="10,0">
              <property name="spacing">
               <number>3</number>
              </property>
@@ -6940,7 +6940,7 @@ enable</string>
                 </size>
                </property>
                <property name="currentIndex">
-                <number>0</number>
+                <number>3</number>
                </property>
                <widget class="QWidget" name="Report_tabPage_D"/>
                <widget class="QWidget" name="Report_tabPage_M"/>
@@ -6949,8 +6949,8 @@ enable</string>
                 <widget class="QWidget" name="verticalLayoutWidget_5">
                  <property name="geometry">
                   <rect>
-                   <x>60</x>
-                   <y>10</y>
+                   <x>190</x>
+                   <y>30</y>
                    <width>454</width>
                    <height>343</height>
                   </rect>
@@ -7511,42 +7511,17 @@ kW.h</string>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="Day_btn">
-                     <property name="minimumSize">
+                    <spacer name="verticalSpacer">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
                       <size>
-                       <width>63</width>
-                       <height>78</height>
+                       <width>20</width>
+                       <height>40</height>
                       </size>
                      </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>63</width>
-                       <height>78</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>Day</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="Year_btn">
-                     <property name="minimumSize">
-                      <size>
-                       <width>63</width>
-                       <height>78</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>63</width>
-                       <height>78</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>Year</string>
-                     </property>
-                    </widget>
+                    </spacer>
                    </item>
                   </layout>
                  </item>
@@ -7591,42 +7566,17 @@ kW.h</string>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="Month_btn">
-                     <property name="minimumSize">
+                    <spacer name="verticalSpacer_2">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
                       <size>
-                       <width>63</width>
-                       <height>78</height>
+                       <width>20</width>
+                       <height>40</height>
                       </size>
                      </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>63</width>
-                       <height>78</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>Month</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="Total_btn">
-                     <property name="minimumSize">
-                      <size>
-                       <width>63</width>
-                       <height>78</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>63</width>
-                       <height>78</height>
-                      </size>
-                     </property>
-                     <property name="text">
-                      <string>Total</string>
-                     </property>
-                    </widget>
+                    </spacer>
                    </item>
                   </layout>
                  </item>
