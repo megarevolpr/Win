@@ -1935,7 +1935,10 @@ void MEGAWin::ModuleState_Tab()//PCS状态
         }
         ui->RTState_Bypass_Tab->resizeRowsToContents();
     }
-
+    for(int i=0;i<9;i++)
+    {
+        ui->RTState_Bypass_Tab->setRowHeight(i,42);
+    }
     PCS_State();//PCS状态
 }
 
@@ -2070,6 +2073,7 @@ void MEGAWin::on_Running_btn_clicked()
     ui->Run_tabWidget->setCurrentWidget(ui->RTData_page);
     ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
     ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Converter_page);
+    ui->SConverter_btn->click();
 }
 
 /***************************************************************
@@ -2081,6 +2085,7 @@ void MEGAWin::on_Grid_clicked()
     ui->Run_tabWidget->setCurrentWidget(ui->RTData_page);
     ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
     ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Grid_page);
+    ui->SGrid_btn->click();
 }
 
 /***************************************************************
@@ -2092,6 +2097,7 @@ void MEGAWin::on_Load_clicked()
     ui->Run_tabWidget->setCurrentWidget(ui->RTData_page);
     ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
     ui->Bypass_Tab->setCurrentWidget(ui->Bypass_Load_page);
+    ui->SLoad_btn->click();
 }
 
 /***************************************************************
@@ -3102,8 +3108,8 @@ void MEGAWin::PCS_State()
         delete DC_input_Breaker;
     }
     DC_input_Breaker = new Specification(this,DC_input_Breaker_explain, ui->RTState_Bypass_Tab, 0, 1, \
-                                            tr("Close"), tr("DC input Breaker"), \
-                                            tr("DC input circuit breaker has three states: Break, Close, Trip; The DC input circuit breaker can only be manually disconnected. If the DC input circuit breaker overcurrent, the DC input circuit breaker may trip."));
+                                            tr("On"), tr("DC input Breaker"), \
+                                            tr("There are two states for a DC circuit breaker: On, Off."));
     DC_input_Breaker->add_Specification();
 
     if(DC_Cont != nullptr)
@@ -3111,8 +3117,8 @@ void MEGAWin::PCS_State()
         delete DC_Cont;
     }
     DC_Cont = new Specification(this,DC_Cont_explain, ui->RTState_Bypass_Tab, 1, 1, \
-                                            tr("Close"), tr("DC contactor"), \
-                                            tr("DC contactor has two states: Break, Close; When the DC side is soft Break, the DC contactor is closed. When the DC side of the battery is disconnected, the DC bus voltage drops to a certain voltage, and the DC contactor is disconnected."));
+                                            tr("On"), tr("DC contactor"), \
+                                            tr("The DC contactor has two states: On, Off. After the soft start of the DC side is completed, the DC contactor closes. When the DC side of the battery is disconnected and the voltage of the DC bus drops to a certain level, the DC contactor opens."));
     DC_Cont->add_Specification();
 
     if(Output_Cont != nullptr)
@@ -3120,8 +3126,8 @@ void MEGAWin::PCS_State()
         delete Output_Cont;
     }
     Output_Cont = new Specification(this,Output_Cont_explain, ui->RTState_Bypass_Tab, 2, 1, \
-                                            tr("Close"), tr("Output contactor"), \
-                                            tr("The output contactor has two states: Break, Close; When the DC side soft opening is completed, the output contactor is closed; When the converter is turned off, the output contactor is disconnected."));
+                                            tr("On"), tr("Output contactor"), \
+                                            tr("The output contactor has two states: On, Off. The output contactor closes after the soft start on the inv. side is completed. The output contactor opens when the converter is shut down."));
     Output_Cont->add_Specification();
 
     if(Output_Breaker != nullptr)
@@ -3129,8 +3135,8 @@ void MEGAWin::PCS_State()
         delete Output_Breaker;
     }
     Output_Breaker = new Specification(this,Output_Breaker_explain, ui->RTState_Bypass_Tab, 3, 1, \
-                                            tr("Close"), tr("Output Breaker"), \
-                                            tr("The output circuit breaker has three states: open, closed, and tripped. It can only be manually opened and closed. If there is an overcurrent in the output circuit breaker, it will trip."));
+                                            tr("On"), tr("Output Breaker"), \
+                                            tr("The output circuit breaker has three states: On, Off. It can only be manually opened and closed. If there is an overcurrent in the output circuit breaker, it will trip."));
     Output_Breaker->add_Specification();
 
     if(Grid_Cont != nullptr)
@@ -3138,8 +3144,8 @@ void MEGAWin::PCS_State()
         delete Grid_Cont;
     }
     Grid_Cont = new Specification(this,Grid_Cont_explain, ui->RTState_Bypass_Tab, 4, 1, \
-                                            tr("Close"), tr("Grid contactor"), \
-                                            tr("The grid contactor has two states: open and closed. When the inverter is in grid-connected mode and the grid voltage is normal, the grid contactor is closed. When the inverter is in island mode, the grid contactor is open. In the islanded state, the grid contactor remains open."));
+                                            tr("On"), tr("Grid contactor"), \
+                                            tr("The grid contactor has two states: On, Off. When the inverter is in grid-connected mode and the grid voltage is normal, the grid contactor is closed. When the inverter is in island mode, the grid contactor is open. In the islanded state, the grid contactor remains open."));
     Grid_Cont->add_Specification();
 
     if(Grid_Breaker != nullptr)
@@ -3147,8 +3153,8 @@ void MEGAWin::PCS_State()
         delete Grid_Breaker;
     }
     Grid_Breaker = new Specification(this,Grid_Breaker_explain, ui->RTState_Bypass_Tab, 5, 1, \
-                                            tr("Close"), tr("Grid Breaker"), \
-                                            tr("The power grid circuit breaker has three states: Break, Close, Trip; The power grid circuit breaker can only be manually disconnected. If the power grid circuit breaker overflows, the power grid circuit breaker may trip."));
+                                            tr("On"), tr("Grid Breaker"), \
+                                            tr("The power grid circuit breaker has three states: On, Off; The power grid circuit breaker can only be manually disconnected. If the power grid circuit breaker overflows, the power grid circuit breaker may trip."));
     Grid_Breaker->add_Specification();
 
     if(MB_Breaker != nullptr)
@@ -3156,8 +3162,8 @@ void MEGAWin::PCS_State()
         delete MB_Breaker;
     }
     MB_Breaker = new Specification(this,MB_Breaker_explain, ui->RTState_Bypass_Tab, 6, 1, \
-                                            tr("Close"), tr("Maintenance Bypass Breaker"), \
-                                            tr("Maintenance bypass circuit breaker has two states: Break, Close; This circuit breaker is only used for machine maintenance, if necessary, please contact the maintenance personnel."));
+                                            tr("On"), tr("Maintenance Bypass Breaker"), \
+                                            tr("There are two states for the maintenance bypass circuit breaker: On, Off. This circuit breaker is only used for machine maintenance. If maintenance is required, please contact the maintenance personnel."));
     MB_Breaker->add_Specification();
 
     if(converter_available != nullptr)
@@ -3165,8 +3171,8 @@ void MEGAWin::PCS_State()
         delete converter_available;
     }
     converter_available = new Specification(this,converter_available_explain, ui->RTState_Bypass_Tab, 0, 3, \
-                                            tr("Disable"), tr("converter available"), \
-                                            tr("The converter can be enabled in two states: Enable and Disable. When the internal self-test of the machine is no problem, the converter is enabled; Otherwise the converter is prohibited."));
+                                            tr("Disabled"), tr("converter available"), \
+                                            tr("The converter has two states: enabled,disabled. The converter is enabled when the self-check is successful. Otherwise, the converter is disabled."));
     converter_available->add_Specification();
 
     if(DC_Soft_start != nullptr)
@@ -3175,7 +3181,7 @@ void MEGAWin::PCS_State()
     }
     DC_Soft_start = new Specification(this,DC_Soft_start_explain, ui->RTState_Bypass_Tab, 1, 3, \
                                             tr("Not starting"), tr("DC Soft start"), \
-                                            tr("The DC Soft boot has three states: Soft starting, complete, and Not starting. Soft start means that when the converter is started, it gradually accelerates or decelerates the device to the normal operating state by controlling the change of current or voltage, so as to reduce the current shock and voltage peak in the circuit, protect the circuit components and reduce the mechanical damage of the device. Soft start can increase device life, reduce energy consumption, and improve system efficiency."));
+                                            tr("There are three states for DC soft start: Not starting, Soft starting, and Complete. Soft start refers to the process in which the converter charges the busbar with the battery during startup, causing the busbar voltage to rise close to the battery voltage."));
     DC_Soft_start->add_Specification();
 
     if(converter_status != nullptr)
@@ -3184,7 +3190,7 @@ void MEGAWin::PCS_State()
     }
     converter_status = new Specification(this,converter_status_explain, ui->RTState_Bypass_Tab, 2, 3, \
                                             tr("Shut down"), tr("converter status"), \
-                                            tr("There are eight converter states:Shut down, Soft start, Grid-ON Charge, Grid-ON Discharge, Grid-OFF Discharge, Drop and Connected,Standby, Grid-OFF Charge."));
+                                            tr("Converter states include: OFF, AC Soft Start, Grid-ON Charge, Grid-ON Discharge, Grid-OFF Discharge, Derating grid-on, Standby, Grid-OFF Charge, Constant Voltage Discharge and Constant Voltage Charge."));
     converter_status->add_Specification();
 
     if(Reactive_P_Regulation != nullptr)
@@ -3193,7 +3199,7 @@ void MEGAWin::PCS_State()
     }
     Reactive_P_Regulation = new Specification(this,Reactive_P_Regulation_explain, ui->RTState_Bypass_Tab, 3, 3, \
                                             tr("Disable"), tr("Reactive Power Regulation"), \
-                                            tr("There are three types of reactive power regulation: Disable, Pf regulation, and Q regulation."));
+                                            tr("There are three types of reactive power regulation: Disable,PF regulation, and  regulation."));
     Reactive_P_Regulation->add_Specification();
 
     if(LVRT != nullptr)
@@ -3202,7 +3208,7 @@ void MEGAWin::PCS_State()
     }
     LVRT = new Specification(this,LVRT_explain, ui->RTState_Bypass_Tab, 4, 3, \
                                             tr("LVRT"), tr("LVRT"), \
-                                            tr("This is the current state of low voltage crossing (LVRT). Low voltage crossing refers to the ability to withstand a certain limit of low voltage of the grid within a certain period of time without exiting the operation. There are two states here, namely Non and LVRT."));
+                                            tr("LVRT states : enabled , disabled."));
     LVRT->add_Specification();
 
     if(Generator_signal != nullptr)
@@ -3210,8 +3216,8 @@ void MEGAWin::PCS_State()
         delete Generator_signal;
     }
     Generator_signal = new Specification(this,Generator_signal_explain, ui->RTState_Bypass_Tab, 0, 5, \
-                                            tr("Enable"), tr("Generator signal"), \
-                                            tr("This is the status of the current chai signal, output dry contact 1, there are Enable and Disable two states, here is the most real physical hardware status."));
+                                            tr("Enable"), tr("Start Diesel Generator Signal"), \
+                                            tr("Signal to start the diesel generator, start the diesel generator when enabled, stop the diesel generator when disabled."));
     Generator_signal->add_Specification();
 
     if(Reserve != nullptr)
@@ -3219,8 +3225,8 @@ void MEGAWin::PCS_State()
         delete Reserve;
     }
     Reserve = new Specification(this,Reserve_explain, ui->RTState_Bypass_Tab, 1, 5, \
-                                            tr("Disable"), tr("Reserve"), \
-                                            tr("This bit is reserved and has no effect. Dry contact 2 is output. The status of dry contact 2 is Enable(Enable) or Disable(Disable)."));
+                                            tr("Disable"), tr("DO2"), \
+                                            tr("Dry contact 2 is output."));
     Reserve->add_Specification();
 
     if(Reserve2 != nullptr)
@@ -3228,8 +3234,8 @@ void MEGAWin::PCS_State()
         delete Reserve2;
     }
     Reserve2 = new Specification(this,Reserve2_explain, ui->RTState_Bypass_Tab, 2, 5, \
-                                            tr("Disable"), tr("Reserve2"), \
-                                            tr("This bit is reserved and has no effect. Dry contact 2 is output. The status of dry contact 3 is Enable(Enable) or Disable(Disable)"));
+                                            tr("Disable"), tr("DO3"), \
+                                            tr("Dry contact 3 is output."));
     Reserve2->add_Specification();
 
     if(EPO_Cont_signal1 != nullptr)
@@ -3237,8 +3243,8 @@ void MEGAWin::PCS_State()
         delete EPO_Cont_signal1;
     }
     EPO_Cont_signal1 = new Specification(this,EPO_Cont_signal1_explain, ui->RTState_Bypass_Tab, 3, 5, \
-                                            tr("Disable"), tr("EPO signal"), \
-                                            tr("This is signal 1 of the EPO node. Enter dry contact 1, that is, dry contact signal 1 of external shutdown. There are two states: Enable and Disable."));
+                                            tr("Disable"), tr("Dry contact EPO"), \
+                                            tr("Dry contact EPO：Enable，Disable."));
     EPO_Cont_signal1->add_Specification();
 
     if(EPO_Cont_signal2 != nullptr)
@@ -3246,8 +3252,8 @@ void MEGAWin::PCS_State()
         delete EPO_Cont_signal2;
     }
     EPO_Cont_signal2 = new Specification(this,EPO_Cont_signal2_explain, ui->RTState_Bypass_Tab, 4, 5, \
-                                            tr("Disable"), tr("Shutdown"), \
-                                            tr("This is signal 2 of the EPO node. Enter dry contact 2, that is, dry contact signal 2 of the external shutdown. There are two states: Enable and Disable."));
+                                            tr("Disable"), tr("Dry contact Shutdown"), \
+                                            tr("Dry contact Shutdown：Enable，Disable."));
     EPO_Cont_signal2->add_Specification();
 
     if(Access_signal != nullptr)
@@ -3255,8 +3261,8 @@ void MEGAWin::PCS_State()
         delete Access_signal;
     }
     Access_signal = new Specification(this,Access_signal_explain, ui->RTState_Bypass_Tab, 5, 5, \
-                                            tr("Disable"), tr("Access_signal"), \
-                                            tr("This is the access signal. Enter dry contact 3. The status is Enable or Disable. The actual physical hardware status is obtained here."));
+                                            tr("Disable"), tr("Access signal"), \
+                                            tr("Access signal:Enable, Disable."));
     Access_signal->add_Specification();
 
     if(Full_P_signal != nullptr)
@@ -3264,8 +3270,8 @@ void MEGAWin::PCS_State()
         delete Full_P_signal;
     }
     Full_P_signal = new Specification(this,Full_P_signal_explain, ui->RTState_Bypass_Tab, 6, 5, \
-                                            tr("Disable"), tr("Full_P_signal"), \
-                                            tr("This is a full power signal, the input dry contact 4 has two states of Enable and Disable, and what is obtained here is the most real physical hardware state."));
+                                            tr("Disable"), tr("Full power signal"), \
+                                            tr("Full power signal:Enable, Disable."));
     Full_P_signal->add_Specification();
 
     if(Smoke_alarm_signal != nullptr)
@@ -3274,7 +3280,7 @@ void MEGAWin::PCS_State()
     }
     Smoke_alarm_signal = new Specification(this,Smoke_alarm_signal_explain, ui->RTState_Bypass_Tab, 7, 5, \
                                             tr("Disable"), tr("Smoke alarm signal"), \
-                                            tr("This isa smoke alarm signal. Enter dry contact 5. The status is Enable or Disable. The actual physical hardware status is obtained here."));
+                                            tr("Smoke alarm signal:Enable, Disable."));
     Smoke_alarm_signal->add_Specification();
 
     if(Hight_temp_signal != nullptr)
@@ -3282,8 +3288,8 @@ void MEGAWin::PCS_State()
         delete Hight_temp_signal;
     }
     Hight_temp_signal = new Specification(this,Hight_temp_signal_explain, ui->RTState_Bypass_Tab, 8, 5, \
-                                            tr("Disable"), tr("Hight temp signal"), \
-                                            tr("This isa high temperature signal. Input dry contact 6. Two states are available: Enable and Disable."));
+                                            tr("Disable"), tr("Fire fighting signal"), \
+                                            tr("Fire fighting signal:Enable, Disable."));
     Hight_temp_signal->add_Specification();
 }
 
