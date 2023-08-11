@@ -404,13 +404,13 @@ void MEGAWin::MemoryAllocation()
     pButton_Version->addButton(ui->server_ip_explain_btn,5);
     pButton_Version->addButton(ui->ok,6);
 
-    Manufacturer_name_explain   = new QPushButton;
+//    Manufacturer_name_explain   = new QPushButton;
     MonitoringVersion_explain   = new QPushButton;
     SysProtocol_Version_explain = new QPushButton;
     ConverterVersion_explain    = new QPushButton;
     CPLD_Version_explain        = new QPushButton;
     SN_explain                  = new QPushButton;
-    Manufacturer_name = nullptr;
+//    Manufacturer_name = nullptr;
     MonitoringVersion = nullptr;
     SysProtocol_Version = nullptr;
     ConverterVersion = nullptr;
@@ -1350,7 +1350,7 @@ void MEGAWin::RTDataDisplay()
 void MEGAWin::Information_tbnt_released()
 {
     ui->EquipmentInfor_tableWidget->setColumnCount(2);
-    ui->EquipmentInfor_tableWidget->setRowCount(6);
+    ui->EquipmentInfor_tableWidget->setRowCount(5);
     ui->EquipmentInfor_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
     ui->EquipmentInfor_tableWidget->verticalHeader()->setVisible(false);//设置垂直头不可见
     ui->EquipmentInfor_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
@@ -1361,7 +1361,7 @@ void MEGAWin::Information_tbnt_released()
 
     //将设备信息显示到LCD上
     QStringList List4;
-    List4 << tr("Name") << tr("Information") ;
+    List4 << tr("Name") << tr("System Information") ;
     ui->EquipmentInfor_tableWidget->setHorizontalHeaderLabels(List4);
     ui->EquipmentInfor_tableWidget->setColumnWidth(0,230);
     ui->EquipmentInfor_tableWidget->horizontalHeader()->setStretchLastSection(1);//自动占用剩余空间
@@ -3141,7 +3141,7 @@ void MEGAWin::PCS_State()
     }
     Output_Breaker = new Specification(this,Output_Breaker_explain, ui->RTState_Bypass_Tab, 3, 1, \
                                             tr("On"), tr("Output Breaker"), \
-                                            tr("The output circuit breaker has three states: On, Off. It can only be manually opened and closed. If there is an overcurrent in the output circuit breaker, it will trip."));
+                                            tr("The output circuit breaker has two states: On, Off. It can only be manually opened and closed. If there is an overcurrent in the output circuit breaker, it will trip."));
     Output_Breaker->add_Specification();
 
     if(Grid_Cont != nullptr)
@@ -3159,7 +3159,7 @@ void MEGAWin::PCS_State()
     }
     Grid_Breaker = new Specification(this,Grid_Breaker_explain, ui->RTState_Bypass_Tab, 5, 1, \
                                             tr("On"), tr("Grid Breaker"), \
-                                            tr("The power grid circuit breaker has three states: On, Off; The power grid circuit breaker can only be manually disconnected. If the power grid circuit breaker overflows, the power grid circuit breaker may trip."));
+                                            tr("The power grid circuit breaker has two states: On, Off; The power grid circuit breaker can only be manually disconnected. If the power grid circuit breaker overflows, the power grid circuit breaker may trip."));
     Grid_Breaker->add_Specification();
 
     if(MB_Breaker != nullptr)
@@ -3720,8 +3720,8 @@ void MEGAWin::AutoOperation()
     QString temp6 = tr("9:00");
     QString temp7 = tr("10:00");
     QString temp8 = tr("End time: The system stops automatically running when the system reaches this time.");
-    QString temp9 = tr("This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic.");
-    QString temp10 = tr("This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging.");
+    QString temp9 = tr("This working state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic.");
+    QString temp10 = tr("Working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging.");
     QString temp11 = tr("Start time: When the system reaches this time, it starts to run automatically.");
     QString temp12 = tr("Select: After this function is enabled, the system automatically runs the selected function mode within the specified period.");
 
@@ -4443,21 +4443,22 @@ void MEGAWin::AutoOperation()
  ***************************************************************/
 void MEGAWin::SystemMessages()
 {
-    if(Manufacturer_name != nullptr)
+    /*if(Manufacturer_name != nullptr)
     {
         delete Manufacturer_name;
     }
     Manufacturer_name = new Specification(this,Manufacturer_name_explain, ui->EquipmentInfor_tableWidget, 0, 1, \
                                      "PCS", tr("Manufacturer name"), \
                                      tr("This is the name of the manufacturer."));
-    Manufacturer_name->add_Specification();
+    Manufacturer_name->add_Specification();*/
 
+    int line=0;
 
     if(MonitoringVersion != nullptr)
     {
         delete MonitoringVersion;
     }
-    MonitoringVersion = new Specification(this,MonitoringVersion_explain, ui->EquipmentInfor_tableWidget, 1, 1, \
+    MonitoringVersion = new Specification(this,MonitoringVersion_explain, ui->EquipmentInfor_tableWidget, line++, 1, \
                                      "V103B500D004", tr("Monitoring software version"), \
                                      tr("This is the monitoring version number."));
     MonitoringVersion->add_Specification();
@@ -4466,7 +4467,7 @@ void MEGAWin::SystemMessages()
     {
         delete SysProtocol_Version;
     }
-    SysProtocol_Version = new Specification(this,SysProtocol_Version_explain, ui->EquipmentInfor_tableWidget, 2, 1, \
+    SysProtocol_Version = new Specification(this,SysProtocol_Version_explain, ui->EquipmentInfor_tableWidget, line++, 1, \
                                      "V001B001D001", tr("Protocol Version"), \
                                      tr("This is the protocol version number."));
     SysProtocol_Version->add_Specification();
@@ -4475,7 +4476,7 @@ void MEGAWin::SystemMessages()
     {
         delete ConverterVersion;
     }
-    ConverterVersion = new Specification(this,ConverterVersion_explain, ui->EquipmentInfor_tableWidget, 3, 1, \
+    ConverterVersion = new Specification(this,ConverterVersion_explain, ui->EquipmentInfor_tableWidget, line++, 1, \
                                      "V105B500D008", tr("Converter software version"), \
                                      tr("This is the converter software version."));
     ConverterVersion->add_Specification();
@@ -4484,7 +4485,7 @@ void MEGAWin::SystemMessages()
     {
         delete CPLD_Version;
     }
-    CPLD_Version = new Specification(this,CPLD_Version_explain, ui->EquipmentInfor_tableWidget, 4, 1, \
+    CPLD_Version = new Specification(this,CPLD_Version_explain, ui->EquipmentInfor_tableWidget, line++, 1, \
                                      "V001B001D000", tr("CPLD software version"), \
                                      tr("This is the CPLD software version."));
     CPLD_Version->add_Specification();
@@ -4493,7 +4494,7 @@ void MEGAWin::SystemMessages()
     {
         delete SN;
     }
-    SN = new Specification(this,SN_explain, ui->EquipmentInfor_tableWidget, 5, 1, \
+    SN = new Specification(this,SN_explain, ui->EquipmentInfor_tableWidget, line++, 1, \
                                      "F12200000001", tr("SN"), \
                                      tr("This is SN, the serial number of the product."));
     SN->add_Specification();

@@ -236,14 +236,14 @@ public:
         Specification *EMSComFaultModel;
 
         /***************************系统信息**************************/
-        QPushButton *Manufacturer_name_explain;
+//        QPushButton *Manufacturer_name_explain;
         QPushButton *MonitoringVersion_explain;
         QPushButton *SysProtocol_Version_explain;
         QPushButton *ConverterVersion_explain;
         QPushButton *CPLD_Version_explain;
         QPushButton *SN_explain;
 
-        Specification *Manufacturer_name;
+//        Specification *Manufacturer_name;
         Specification *MonitoringVersion;
         Specification *SysProtocol_Version;
         Specification *ConverterVersion;

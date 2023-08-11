@@ -7918,7 +7918,7 @@ background-color: rgb(255, 0, 0);</string>
         </font>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>3</number>
        </property>
        <widget class="QWidget" name="ParameterSet_page">
         <attribute name="title">
@@ -9776,11 +9776,6 @@ Set rule:B1 - A1 ≥ 10V</string>
                <string>新建行</string>
               </property>
              </row>
-             <row>
-              <property name="text">
-               <string>新建行</string>
-              </property>
-             </row>
              <column>
               <property name="text">
                <string>新建列</string>
@@ -9793,7 +9788,7 @@ Set rule:B1 - A1 ≥ 10V</string>
              </column>
              <item row="0" column="0">
               <property name="text">
-               <string>Manufacturer name</string>
+               <string>Monitoring software version</string>
               </property>
              </item>
              <item row="0" column="1">
@@ -9808,25 +9803,20 @@ Set rule:B1 - A1 ≥ 10V</string>
              </item>
              <item row="1" column="0">
               <property name="text">
-               <string>Monitoring software version</string>
+               <string>Protocol version</string>
               </property>
              </item>
              <item row="2" column="0">
               <property name="text">
-               <string>Protocol version</string>
+               <string>Converter software version</string>
               </property>
              </item>
              <item row="3" column="0">
               <property name="text">
-               <string>Converter software version</string>
-              </property>
-             </item>
-             <item row="4" column="0">
-              <property name="text">
                <string>CPLD software version</string>
               </property>
              </item>
-             <item row="5" column="0">
+             <item row="4" column="0">
               <property name="text">
                <string>SN:</string>
               </property>

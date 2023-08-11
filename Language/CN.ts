@@ -210,7 +210,7 @@
     </message>
     <message>
         <location filename="../win.ui" line="314"/>
-        <location filename="../win.cpp" line="4512"/>
+        <location filename="../win.cpp" line="4513"/>
         <source>Battery type</source>
         <translation>电池类型</translation>
     </message>
@@ -266,13 +266,13 @@
     </message>
     <message>
         <location filename="../win.ui" line="330"/>
-        <location filename="../win.cpp" line="4576"/>
+        <location filename="../win.cpp" line="4577"/>
         <source>Host Address</source>
         <translation>主机地址</translation>
     </message>
     <message>
         <location filename="../win.ui" line="346"/>
-        <location filename="../win.cpp" line="4649"/>
+        <location filename="../win.cpp" line="4650"/>
         <source>ProtocolVersion</source>
         <translation>协议版本</translation>
     </message>
@@ -283,7 +283,7 @@
     </message>
     <message>
         <location filename="../win.ui" line="378"/>
-        <location filename="../win.cpp" line="4585"/>
+        <location filename="../win.cpp" line="4586"/>
         <source>serial port 1</source>
         <translation>串口1</translation>
     </message>
@@ -298,25 +298,25 @@
     </message>
     <message>
         <location filename="../win.ui" line="394"/>
-        <location filename="../win.cpp" line="4658"/>
+        <location filename="../win.cpp" line="4659"/>
         <source>UserPassPort</source>
         <translation>用户密码</translation>
     </message>
     <message>
         <location filename="../win.ui" line="410"/>
-        <location filename="../win.cpp" line="4530"/>
+        <location filename="../win.cpp" line="4531"/>
         <source>Power control type</source>
         <translation>功率控制类型</translation>
     </message>
     <message>
         <location filename="../win.ui" line="426"/>
-        <location filename="../win.cpp" line="4594"/>
+        <location filename="../win.cpp" line="4595"/>
         <source>serial port 2</source>
         <translation>串口2</translation>
     </message>
     <message>
         <location filename="../win.ui" line="442"/>
-        <location filename="../win.cpp" line="4667"/>
+        <location filename="../win.cpp" line="4668"/>
         <source>RootPassport</source>
         <translation>超级权限</translation>
     </message>
@@ -327,19 +327,19 @@
     </message>
     <message>
         <location filename="../win.ui" line="474"/>
-        <location filename="../win.cpp" line="4604"/>
+        <location filename="../win.cpp" line="4605"/>
         <source>serial port 3</source>
         <translation>串口3</translation>
     </message>
     <message>
         <location filename="../win.ui" line="490"/>
-        <location filename="../win.cpp" line="4676"/>
+        <location filename="../win.cpp" line="4677"/>
         <source>Language</source>
         <translation>语言</translation>
     </message>
     <message>
         <location filename="../win.ui" line="506"/>
-        <location filename="../win.cpp" line="4548"/>
+        <location filename="../win.cpp" line="4549"/>
         <source>Output power limit</source>
         <translation>输出功率上限</translation>
     </message>
@@ -359,7 +359,7 @@
     </message>
     <message>
         <location filename="../win.ui" line="522"/>
-        <location filename="../win.cpp" line="4613"/>
+        <location filename="../win.cpp" line="4614"/>
         <source>serial port 4</source>
         <translation>串口4</translation>
     </message>
@@ -374,25 +374,25 @@
     </message>
     <message>
         <location filename="../win.ui" line="570"/>
-        <location filename="../win.cpp" line="4622"/>
+        <location filename="../win.cpp" line="4623"/>
         <source>serial port 5</source>
         <translation>串口5</translation>
     </message>
     <message>
         <location filename="../win.ui" line="586"/>
-        <location filename="../win.cpp" line="4698"/>
+        <location filename="../win.cpp" line="4699"/>
         <source>Sounds</source>
         <translation>声音</translation>
     </message>
     <message>
         <location filename="../win.ui" line="594"/>
-        <location filename="../win.cpp" line="4566"/>
+        <location filename="../win.cpp" line="4567"/>
         <source>Power Delta</source>
         <translation>功率回差</translation>
     </message>
     <message>
         <location filename="../win.ui" line="610"/>
-        <location filename="../win.cpp" line="4631"/>
+        <location filename="../win.cpp" line="4632"/>
         <source>Can port 1</source>
         <translation>CAN 1</translation>
     </message>
@@ -411,7 +411,7 @@
     </message>
     <message>
         <location filename="../win.ui" line="663"/>
-        <location filename="../win.cpp" line="4640"/>
+        <location filename="../win.cpp" line="4641"/>
         <source>Can port 2</source>
         <translation>CAN 2</translation>
     </message>
@@ -441,6 +441,8 @@
         <location filename="../win.ui" line="9323"/>
         <location filename="../win.ui" line="9368"/>
         <location filename="../win.ui" line="9384"/>
+        <location filename="../win.ui" line="9582"/>
+        <location filename="../win.ui" line="9646"/>
         <source>V</source>
         <translation>V</translation>
     </message>
@@ -456,7 +458,7 @@
     </message>
     <message>
         <location filename="../win.ui" line="892"/>
-        <location filename="../win.cpp" line="4742"/>
+        <location filename="../win.cpp" line="4743"/>
         <source>Change rate of power</source>
         <translation>功率变化率</translation>
     </message>
@@ -467,19 +469,19 @@
     </message>
     <message>
         <location filename="../win.ui" line="908"/>
-        <location filename="../win.cpp" line="4850"/>
+        <location filename="../win.cpp" line="4851"/>
         <source>Machine type</source>
         <translation>机器型号</translation>
     </message>
     <message>
         <location filename="../win.ui" line="929"/>
-        <location filename="../win.cpp" line="4949"/>
+        <location filename="../win.cpp" line="4950"/>
         <source>Module Number</source>
         <translation>模块数量</translation>
     </message>
     <message>
         <location filename="../win.ui" line="950"/>
-        <location filename="../win.cpp" line="4751"/>
+        <location filename="../win.cpp" line="4752"/>
         <source>Grid frequency upper limit</source>
         <translation>电网频率变化范围上限</translation>
     </message>
@@ -493,19 +495,19 @@
     </message>
     <message>
         <location filename="../win.ui" line="971"/>
-        <location filename="../win.cpp" line="4859"/>
+        <location filename="../win.cpp" line="4860"/>
         <source>Machine capacity</source>
         <translation>机器容量</translation>
     </message>
     <message>
         <location filename="../win.ui" line="987"/>
-        <location filename="../win.cpp" line="4958"/>
+        <location filename="../win.cpp" line="4959"/>
         <source>Restore factory</source>
         <translation>恢复出厂</translation>
     </message>
     <message>
         <location filename="../win.ui" line="1003"/>
-        <location filename="../win.cpp" line="4760"/>
+        <location filename="../win.cpp" line="4761"/>
         <source>Grid frequency lower limit</source>
         <translation>电网频率变化范围下限</translation>
     </message>
@@ -516,7 +518,7 @@
     </message>
     <message>
         <location filename="../win.ui" line="1131"/>
-        <location filename="../win.cpp" line="4985"/>
+        <location filename="../win.cpp" line="4986"/>
         <source>Clear Data</source>
         <translation>清除数据</translation>
     </message>
@@ -539,8 +541,6 @@
         <location filename="../win.ui" line="8969"/>
         <location filename="../win.ui" line="8985"/>
         <location filename="../win.ui" line="9001"/>
-        <location filename="../win.ui" line="9582"/>
-        <location filename="../win.ui" line="9646"/>
         <source>%</source>
         <translation>%</translation>
     </message>
@@ -559,49 +559,49 @@
     </message>
     <message>
         <location filename="../win.ui" line="1147"/>
-        <location filename="../win.cpp" line="4787"/>
+        <location filename="../win.cpp" line="4788"/>
         <source>HVRT enable</source>
         <translation>高压穿越使能</translation>
     </message>
     <message>
         <location filename="../win.ui" line="1163"/>
-        <location filename="../win.cpp" line="4895"/>
+        <location filename="../win.cpp" line="4896"/>
         <source>Output reactive power mode</source>
         <translation>输出无功方式</translation>
     </message>
     <message>
         <location filename="../win.ui" line="1179"/>
-        <location filename="../win.cpp" line="4796"/>
+        <location filename="../win.cpp" line="4797"/>
         <source>LVRT enable</source>
         <translation>低压穿越使能</translation>
     </message>
     <message>
         <location filename="../win.ui" line="1195"/>
-        <location filename="../win.cpp" line="4904"/>
+        <location filename="../win.cpp" line="4905"/>
         <source>Grid connected mode of Inv</source>
         <translation>逆变器并网方式</translation>
     </message>
     <message>
         <location filename="../win.ui" line="1211"/>
-        <location filename="../win.cpp" line="4805"/>
+        <location filename="../win.cpp" line="4806"/>
         <source>AFD enable</source>
         <translation>孤岛使能</translation>
     </message>
     <message>
         <location filename="../win.ui" line="1227"/>
-        <location filename="../win.cpp" line="4913"/>
+        <location filename="../win.cpp" line="4914"/>
         <source>Primary FM dead zone</source>
         <translation>一次调频死区</translation>
     </message>
     <message>
         <location filename="../win.ui" line="1243"/>
-        <location filename="../win.cpp" line="4814"/>
+        <location filename="../win.cpp" line="4815"/>
         <source>Insulation detection enable</source>
         <translation>绝缘监测使能</translation>
     </message>
     <message>
         <location filename="../win.ui" line="1259"/>
-        <location filename="../win.cpp" line="4922"/>
+        <location filename="../win.cpp" line="4923"/>
         <source>PFM coeff</source>
         <translation>有功调频系数</translation>
     </message>
@@ -612,13 +612,13 @@
     </message>
     <message>
         <location filename="../win.ui" line="1280"/>
-        <location filename="../win.cpp" line="4823"/>
+        <location filename="../win.cpp" line="4824"/>
         <source>PrimaryFreq enable</source>
         <translation>一次调频使能</translation>
     </message>
     <message>
         <location filename="../win.ui" line="1296"/>
-        <location filename="../win.cpp" line="4931"/>
+        <location filename="../win.cpp" line="4932"/>
         <source>Grid recover time</source>
         <translation>电网恢复并网时间</translation>
     </message>
@@ -631,7 +631,7 @@
     </message>
     <message>
         <location filename="../win.ui" line="626"/>
-        <location filename="../win.cpp" line="4707"/>
+        <location filename="../win.cpp" line="4708"/>
         <source>Energy Meter Model</source>
         <translation>电能表型号</translation>
     </message>
@@ -657,19 +657,19 @@
     </message>
     <message>
         <location filename="../win.ui" line="1312"/>
-        <location filename="../win.cpp" line="4832"/>
+        <location filename="../win.cpp" line="4833"/>
         <source>Inertia enable</source>
         <translation>转动惯量使能</translation>
     </message>
     <message>
         <location filename="../win.ui" line="1328"/>
-        <location filename="../win.cpp" line="4940"/>
+        <location filename="../win.cpp" line="4941"/>
         <source>DynamicCap</source>
         <translation>电网扩容使能</translation>
     </message>
     <message>
         <location filename="../win.ui" line="1336"/>
-        <location filename="../win.cpp" line="4841"/>
+        <location filename="../win.cpp" line="4842"/>
         <source>CV parallel</source>
         <translation>恒压并机使能</translation>
     </message>
@@ -801,31 +801,31 @@
     </message>
     <message>
         <location filename="../win.ui" line="1746"/>
-        <location filename="../win.cpp" line="5168"/>
+        <location filename="../win.cpp" line="5169"/>
         <source>Prohibit charging</source>
         <translation>禁充</translation>
     </message>
     <message>
         <location filename="../win.ui" line="1756"/>
-        <location filename="../win.cpp" line="5177"/>
+        <location filename="../win.cpp" line="5178"/>
         <source>Prohibit discharging</source>
         <translation>禁放</translation>
     </message>
     <message>
         <location filename="../win.ui" line="1766"/>
-        <location filename="../win.cpp" line="5186"/>
+        <location filename="../win.cpp" line="5187"/>
         <source>BMS warning</source>
         <translation>BMS提示     </translation>
     </message>
     <message>
         <location filename="../win.ui" line="1776"/>
-        <location filename="../win.cpp" line="5195"/>
+        <location filename="../win.cpp" line="5196"/>
         <source>BMS alarm</source>
         <translation>BMS告警     </translation>
     </message>
     <message>
         <location filename="../win.ui" line="1786"/>
-        <location filename="../win.cpp" line="5204"/>
+        <location filename="../win.cpp" line="5205"/>
         <source>BMS fualt</source>
         <translation>BMS故障     </translation>
     </message>
@@ -846,7 +846,7 @@
     </message>
     <message>
         <location filename="../win.ui" line="1984"/>
-        <location filename="../win.cpp" line="5275"/>
+        <location filename="../win.cpp" line="5276"/>
         <source>Debug variable 1</source>
         <translation>调试变量1</translation>
     </message>
@@ -862,7 +862,7 @@
     </message>
     <message>
         <location filename="../win.ui" line="2005"/>
-        <location filename="../win.cpp" line="5283"/>
+        <location filename="../win.cpp" line="5284"/>
         <source>Debug variable 2</source>
         <translation>调试变量2</translation>
     </message>
@@ -878,7 +878,7 @@
     </message>
     <message>
         <location filename="../win.ui" line="2026"/>
-        <location filename="../win.cpp" line="5291"/>
+        <location filename="../win.cpp" line="5292"/>
         <source>Debug variable 3</source>
         <translation>调试变量3</translation>
     </message>
@@ -904,7 +904,7 @@
     </message>
     <message>
         <location filename="../win.ui" line="2057"/>
-        <location filename="../win.cpp" line="5475"/>
+        <location filename="../win.cpp" line="5476"/>
         <source>INV On off flag</source>
         <translation>开关机状态字</translation>
     </message>
@@ -920,7 +920,7 @@
     </message>
     <message>
         <location filename="../win.ui" line="2075"/>
-        <location filename="../win.cpp" line="5483"/>
+        <location filename="../win.cpp" line="5484"/>
         <source>Logic state</source>
         <translation>逻辑状态字</translation>
     </message>
@@ -936,7 +936,7 @@
     </message>
     <message>
         <location filename="../win.ui" line="2093"/>
-        <location filename="../win.cpp" line="5491"/>
+        <location filename="../win.cpp" line="5492"/>
         <source>INV flag</source>
         <translation>逆变状态字</translation>
     </message>
@@ -952,7 +952,7 @@
     </message>
     <message>
         <location filename="../win.ui" line="2111"/>
-        <location filename="../win.cpp" line="5499"/>
+        <location filename="../win.cpp" line="5500"/>
         <source>Grid flag</source>
         <translation>电网状态字</translation>
     </message>
@@ -968,7 +968,7 @@
     </message>
     <message>
         <location filename="../win.ui" line="2129"/>
-        <location filename="../win.cpp" line="5507"/>
+        <location filename="../win.cpp" line="5508"/>
         <source>Grid protect flag</source>
         <translation>电网保护状态字</translation>
     </message>
@@ -984,7 +984,7 @@
     </message>
     <message>
         <location filename="../win.ui" line="2147"/>
-        <location filename="../win.cpp" line="5515"/>
+        <location filename="../win.cpp" line="5516"/>
         <source>Bat flag</source>
         <translation>电池状态字</translation>
     </message>
@@ -1000,7 +1000,7 @@
     </message>
     <message>
         <location filename="../win.ui" line="2165"/>
-        <location filename="../win.cpp" line="5523"/>
+        <location filename="../win.cpp" line="5524"/>
         <source>DC bus flag</source>
         <translation>母线状态字</translation>
     </message>
@@ -1016,13 +1016,13 @@
     </message>
     <message>
         <location filename="../win.ui" line="2186"/>
-        <location filename="../win.cpp" line="5531"/>
+        <location filename="../win.cpp" line="5532"/>
         <source>INT main flag</source>
         <translation>中断状态字</translation>
     </message>
     <message>
         <location filename="../win.ui" line="2194"/>
-        <location filename="../win.cpp" line="5539"/>
+        <location filename="../win.cpp" line="5540"/>
         <source>parallel signal</source>
         <translation>并机状态字</translation>
     </message>
@@ -1063,7 +1063,7 @@
     </message>
     <message>
         <location filename="../win.ui" line="2294"/>
-        <location filename="../win.cpp" line="5594"/>
+        <location filename="../win.cpp" line="5595"/>
         <source>test data</source>
         <translation>测试数据</translation>
     </message>
@@ -1078,6 +1078,10 @@
         <location filename="../win.cpp" line="2331"/>
         <source>Battery power off</source>
         <translation>电池下电</translation>
+    </message>
+    <message>
+        <source> SN:</source>
+        <translation type="vanished">    SN:</translation>
     </message>
     <message>
         <source>PCS-TS</source>
@@ -1305,7 +1309,7 @@ enable</source>
         <location filename="../win.cpp" line="3287"/>
         <location filename="../win.cpp" line="3296"/>
         <location filename="../win.cpp" line="3403"/>
-        <location filename="../win.cpp" line="5012"/>
+        <location filename="../win.cpp" line="5013"/>
         <source>Disable</source>
         <translation>禁止</translation>
     </message>
@@ -1370,7 +1374,7 @@ enable</source>
         <translation>值</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4725"/>
+        <location filename="../win.cpp" line="4726"/>
         <source>120</source>
         <translation>120</translation>
     </message>
@@ -1430,7 +1434,7 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="1115"/>
-        <location filename="../win.cpp" line="4886"/>
+        <location filename="../win.cpp" line="4887"/>
         <source>Transformer Turns Ratio</source>
         <translation>变压器变比</translation>
     </message>
@@ -2230,143 +2234,140 @@ B1 设定范围： [250,900]
         <location filename="../win.ui" line="9766"/>
         <location filename="../win.ui" line="9771"/>
         <location filename="../win.ui" line="9776"/>
-        <location filename="../win.ui" line="9781"/>
         <source>新建行</source>
         <translation></translation>
     </message>
     <message>
+        <location filename="../win.ui" line="9781"/>
         <location filename="../win.ui" line="9786"/>
-        <location filename="../win.ui" line="9791"/>
         <source>新建列</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9796"/>
-        <location filename="../win.cpp" line="4451"/>
         <source>Manufacturer name</source>
-        <translation>厂家名称</translation>
+        <translation type="vanished">厂家名称</translation>
+    </message>
+    <message>
+        <location filename="../win.ui" line="9791"/>
+        <location filename="../win.cpp" line="4462"/>
+        <source>Monitoring software version</source>
+        <translation>     监控版本</translation>
+    </message>
+    <message>
+        <location filename="../win.ui" line="9806"/>
+        <source>Protocol version</source>
+        <translation>     协议版本号</translation>
     </message>
     <message>
         <location filename="../win.ui" line="9811"/>
-        <location filename="../win.cpp" line="4461"/>
-        <source>Monitoring software version</source>
-        <translation>监控版本</translation>
+        <location filename="../win.cpp" line="4480"/>
+        <source>Converter software version</source>
+        <translation>     变流器软件版本</translation>
     </message>
     <message>
         <location filename="../win.ui" line="9816"/>
-        <source>Protocol version</source>
-        <translation>协议版本号</translation>
+        <location filename="../win.cpp" line="4489"/>
+        <source>CPLD software version</source>
+        <translation>     CPLD软件版本</translation>
     </message>
     <message>
         <location filename="../win.ui" line="9821"/>
-        <location filename="../win.cpp" line="4479"/>
-        <source>Converter software version</source>
-        <translation>变流器软件版本</translation>
-    </message>
-    <message>
-        <location filename="../win.ui" line="9826"/>
-        <location filename="../win.cpp" line="4488"/>
-        <source>CPLD software version</source>
-        <translation>CPLD软件版本</translation>
-    </message>
-    <message>
-        <location filename="../win.ui" line="9831"/>
         <source>SN:</source>
-        <translation>SN：</translation>
+        <translation>     SN：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9840"/>
+        <location filename="../win.ui" line="9830"/>
         <source>Network</source>
         <translation>网络</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9873"/>
+        <location filename="../win.ui" line="9863"/>
         <source>              interface:</source>
         <translation>接口号：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9889"/>
+        <location filename="../win.ui" line="9879"/>
         <source>Port:</source>
         <translation>端口：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9923"/>
+        <location filename="../win.ui" line="9913"/>
         <source>DHCP</source>
         <translation>自动获取</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9936"/>
+        <location filename="../win.ui" line="9926"/>
         <source>STATIC</source>
         <translation>静态</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9952"/>
+        <location filename="../win.ui" line="9942"/>
         <source>ip：</source>
         <translation>地址：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9965"/>
+        <location filename="../win.ui" line="9955"/>
         <source>netmask:</source>
         <translation>子网掩码：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9981"/>
+        <location filename="../win.ui" line="9971"/>
         <source>gateway:</source>
         <translation>网关：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9994"/>
+        <location filename="../win.ui" line="9984"/>
         <source>Server ip:</source>
         <translation>服务器IP：</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10007"/>
+        <location filename="../win.ui" line="9997"/>
         <source>192 . 168 . 1 . 100</source>
         <translation>192 . 168 . 1 . 100</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10020"/>
+        <location filename="../win.ui" line="10010"/>
         <source>255 . 255 . 255 . 0</source>
         <translation>255 . 255 . 255 . 0</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10033"/>
+        <location filename="../win.ui" line="10023"/>
         <source>192 . 168 .  1  . 1</source>
         <translation>192 . 168 .  1  . 1</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10046"/>
+        <location filename="../win.ui" line="10036"/>
         <source> 192 . 168 . 1  . 200</source>
         <translation> 192 . 168 . 1  . 200</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10060"/>
+        <location filename="../win.ui" line="10050"/>
         <location filename="../win.cpp" line="2296"/>
         <source>Apply and Restart system</source>
         <translation>应用并重启系统</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10073"/>
+        <location filename="../win.ui" line="10063"/>
         <source>eth0</source>
         <translation>eth0</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10086"/>
+        <location filename="../win.ui" line="10076"/>
         <source>502</source>
         <translation>502</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10154"/>
+        <location filename="../win.ui" line="10144"/>
         <source>Menu</source>
         <translation>菜单</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10188"/>
+        <location filename="../win.ui" line="10178"/>
         <source>M_01 Converter turn off</source>
         <translation>M_01 变流器关闭</translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10228"/>
+        <location filename="../win.ui" line="10218"/>
         <source>Current mode:CP</source>
         <translation>当前模式：CP</translation>
     </message>
@@ -2425,6 +2426,11 @@ B1 设定范围： [250,900]
         <location filename="../win.cpp" line="2846"/>
         <source>Inv. power factor</source>
         <translation>逆变功率因素</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="1364"/>
+        <source>System Information</source>
+        <translation>系统信息</translation>
     </message>
     <message>
         <location filename="../win.cpp" line="2184"/>
@@ -2862,9 +2868,8 @@ The remote mode: the dispatching machine can only read and write data through Et
         <translation>放电</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="1364"/>
         <source>Information</source>
-        <translation>信息</translation>
+        <translation type="vanished">信息</translation>
     </message>
     <message>
         <location filename="../win.cpp" line="1384"/>
@@ -2995,11 +3000,11 @@ The remote mode: the dispatching machine can only read and write data through Et
         <location filename="../win.cpp" line="2739"/>
         <location filename="../win.cpp" line="2743"/>
         <location filename="../win.cpp" line="2747"/>
-        <location filename="../win.cpp" line="5563"/>
-        <location filename="../win.cpp" line="5586"/>
-        <location filename="../win.cpp" line="5594"/>
-        <location filename="../win.cpp" line="5602"/>
-        <location filename="../win.cpp" line="5674"/>
+        <location filename="../win.cpp" line="5564"/>
+        <location filename="../win.cpp" line="5587"/>
+        <location filename="../win.cpp" line="5595"/>
+        <location filename="../win.cpp" line="5603"/>
+        <location filename="../win.cpp" line="5675"/>
         <source>OK</source>
         <translation>确定</translation>
     </message>
@@ -3842,9 +3847,8 @@ By default, the converter does not respond to level one and level two alarms, bu
         <translation>输出接触器有两种状态:闭合、断开;当逆变侧软启完成后，输出接触器闭合;当变流器关机时，输出接触器断开。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="3144"/>
         <source>The output circuit breaker has three states: On, Off. It can only be manually opened and closed. If there is an overcurrent in the output circuit breaker, it will trip.</source>
-        <translation>输出断路器有两种状态:闭合、断开;只能手动断开，如果输出断路器过流，输出断路器会发生脱扣。</translation>
+        <translation type="vanished">输出断路器有两种状态:闭合、断开;只能手动断开，如果输出断路器过流，输出断路器会发生脱扣。</translation>
     </message>
     <message>
         <location filename="../win.cpp" line="3153"/>
@@ -3852,9 +3856,8 @@ By default, the converter does not respond to level one and level two alarms, bu
         <translation>电网接触器有两种状态： 闭合、断开；当变流器处于并网模式下，且电网侧电压正常时，电网接触器闭合；变流器处于离网模式下，电网接触器断开；离网状态下，电网接触器断开。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="3162"/>
         <source>The power grid circuit breaker has three states: On, Off; The power grid circuit breaker can only be manually disconnected. If the power grid circuit breaker overflows, the power grid circuit breaker may trip.</source>
-        <translation>电网断路器有两种状态:闭合、断开;只能手动断开，如果电网断路器过流，电网断路器会发生脱扣。</translation>
+        <translation type="vanished">电网断路器有两种状态:闭合、断开;只能手动断开，如果电网断路器过流，电网断路器会发生脱扣。</translation>
     </message>
     <message>
         <location filename="../win.cpp" line="3171"/>
@@ -4140,6 +4143,16 @@ For example, setting it to -5 means that the AC side will charge the battery at 
         <translation>结束时间：系统到达此时间后停止自动运行.</translation>
     </message>
     <message>
+        <location filename="../win.cpp" line="3723"/>
+        <source>This working state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic.</source>
+        <translation>工作状态,将在工作时间执行此状态,有三种可供选择，分别为充电、放电、自动。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="3724"/>
+        <source>Working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging.</source>
+        <translation>工作功率,此状态下工作时根据工作状态执行此功率，正数为放电，负数为充电。</translation>
+    </message>
+    <message>
         <location filename="../win.cpp" line="3725"/>
         <source>Start time: When the system reaches this time, it starts to run automatically.</source>
         <translation>开始时间：系统到达此时间后开始自动运行.</translation>
@@ -4150,12 +4163,12 @@ For example, setting it to -5 means that the AC side will charge the battery at 
         <translation>选择：使能后，系统将按照设置的时间段自动运行选择的功能模式.</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4462"/>
+        <location filename="../win.cpp" line="4463"/>
         <source>This is the monitoring version number.</source>
         <translation>这是监控版本号</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4558"/>
+        <location filename="../win.cpp" line="4559"/>
         <source>Battery Protocol: This is the battery protocol that parses the packets sent by the BMS according to the selected battery protocol.
 Currently, the following battery manufacturer protocols are supported: MEGA, LISHEN, PENGHUI, GOLD, BMSER, LANLI, SHENLAN, PAINENG, NINGDESHIDAI, SUOYING, XINGWANGDA, KUBO, GAOTE_V2, TOGOOD,PGS, WOBO, KGOOER, LIDE, PAINENG_L, WEILAN, ALPHA, TUOPU, JIEHUI, JDI, ECUBE, FARO, BGS, JDITEC, HUASU, LIGAO.
 When you select AUTO, the system automatically determines the battery manufacturer.</source>
@@ -4164,29 +4177,29 @@ When you select AUTO, the system automatically determines the battery manufactur
     选择AUTO时将自动判断电池厂家协议。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4887"/>
+        <location filename="../win.cpp" line="4888"/>
         <source>Transformer Turns Ratio: Please refer to the factory nameplate for the turns ratio setting based on the built-in transformer. If any changes are required, please contact customer service for confirmation.</source>
         <translation>变压器变比：根据内置变压器的变比设置，以出厂铭牌标识为准,如需更改，请联系客服确认。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4895"/>
+        <location filename="../win.cpp" line="4896"/>
         <source>Non
 adjustable</source>
         <translation>不可调节</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4904"/>
+        <location filename="../win.cpp" line="4905"/>
         <source>Non
 countercurrent</source>
         <translation>不可逆流</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5670"/>
+        <location filename="../win.cpp" line="5671"/>
         <source>Working mode</source>
         <translation>工作模式</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5671"/>
+        <location filename="../win.cpp" line="5672"/>
         <source>When selecting the manual mode, the converter’s operating status, charging or discharging power (active power), reactive power, power factor etc,can be controlled through HMI or EMS.                              When selecting the UPS mode, When the grid side is abnormal, the system will switch from zero power to grid-off discharge mode to provide energy to critical loads. Please go to the &quot;Battery Settings&quot; page to configure this mode. Note: This mode is only applicable to lithium battery mode and requires normal communication between the converter and BMS.                              Peak shaving and valley filling mode is used for peak-valley price arbitrage. The converter can operate according to the local peak-valley electricity price periods. Please set the operating time period, charging or discharging mode, charging or discharging power, and other information on the &quot;Mixed mode&quot; page.
 Grid expansion.</source>
         <translation>当选择手动模式时，可通过HMI或者EMS 控制机器的运行状态、充放电功率(有功功率)、无功功率、功率因素等。
@@ -4195,7 +4208,7 @@ Grid expansion.</source>
 电网扩容。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5674"/>
+        <location filename="../win.cpp" line="5675"/>
         <source>Click to view grid expansion</source>
         <translation>点击查看电网容量</translation>
     </message>
@@ -4253,17 +4266,17 @@ Grid expansion.</source>
         <translation type="vanished">这是&apos;使能&apos;，选择后将在指定的时间以指定的功率开启指定的状态，并在指定的时间结束。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4708"/>
+        <location filename="../win.cpp" line="4709"/>
         <source>Energy meter model: The energy meter model is selected according to the type of energy meter that is connected. According to the characteristics and specifications of the connected watt-hour meter, select the corresponding watt-hour meter model, which can be selected NONE, DTSD1352, AMC96-E4/KC or ADL3000-E-B.</source>
         <translation>电能表型号：电能表型号是根据接入的电能表类型进行选择的。根据所连接的电能表的特性和规格，选择相应的电能表型号，可根据情况选择NONE、DTSD1352、AMC96-E4/KC或ADL3000-E-B。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4815"/>
+        <location filename="../win.cpp" line="4816"/>
         <source>Insulation detection Enable, insulation resistance greater than 33KΩ to be able to operate normally, less than 33KΩ can not start, and to alarm, the default prohibition, the choice is to Enable, prohibit.</source>
         <translation>绝缘检测使能，绝缘电阻大于33KΩ要能正常起机运行，小于33KΩ不能起机，并且要告警，默认禁止,可供选择为允许(Enable)、禁止(prohibit)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4851"/>
+        <location filename="../win.cpp" line="4852"/>
         <source>Set according to the machine model on site, the factory value prevails, the default PCS-TS, if you need to change, please contact customer service.</source>
         <translation>根据现场机器机器型号设置，以出厂值为准，默认PCS-TS，如需更改，请联系客服。</translation>
     </message>
@@ -4304,73 +4317,70 @@ Grid expansion.</source>
         <translation type="vanished">这是结束时间，将在此时间结束由&apos;开始时间&apos;开始的状态。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="3723"/>
         <source>This is the state, which will be executed during working hours.  There are three options: charge, discharge, and Automatic.</source>
-        <translation>这是状态，将在工作时间执行此状态，有三种可供选择，分别为充电、放电、自动。</translation>
+        <translation type="vanished">这是状态，将在工作时间执行此状态，有三种可供选择，分别为充电、放电、自动。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="3724"/>
         <source>This is the working power, which is executed according to the working state when working in this state, the positive number is discharging, and the negative number is charging.</source>
-        <translation>这是工作功率，此状态下工作时根据工作状态执行此功率，正数为放电，负数为充电。</translation>
+        <translation type="vanished">这是工作功率，此状态下工作时根据工作状态执行此功率，正数为放电，负数为充电。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4452"/>
         <source>This is the name of the manufacturer.</source>
-        <translation>这是厂家名称。</translation>
+        <translation type="vanished">这是厂家名称。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4470"/>
+        <location filename="../win.cpp" line="4471"/>
         <source>Protocol Version</source>
         <translation>监控版本</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4471"/>
+        <location filename="../win.cpp" line="4472"/>
         <source>This is the protocol version number.</source>
         <translation>这是协议版本号。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4480"/>
+        <location filename="../win.cpp" line="4481"/>
         <source>This is the converter software version.</source>
         <translation>这是变流器软件版本。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4489"/>
+        <location filename="../win.cpp" line="4490"/>
         <source>This is the CPLD software version.</source>
         <translation>这是CPLD软件版本。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4497"/>
+        <location filename="../win.cpp" line="4498"/>
         <source>SN</source>
         <translation>SN</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4498"/>
+        <location filename="../win.cpp" line="4499"/>
         <source>This is SN, the serial number of the product.</source>
         <translation>这是SN,即产品序列号。</translation>
     </message>
     <message>
         <location filename="../win.ui" line="8485"/>
-        <location filename="../win.cpp" line="4512"/>
+        <location filename="../win.cpp" line="4513"/>
         <source>Lithium</source>
         <translation>锂电</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4513"/>
+        <location filename="../win.cpp" line="4514"/>
         <source>Choose the battery type according to the actual situation, there are two types of Lithium and LeadAcid to choose from.</source>
         <translation>根据实际情况选择电池类型，有锂电(Lithium)和铅酸(LeadAcid)两种类型可供选择。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4521"/>
+        <location filename="../win.cpp" line="4522"/>
         <source>BMS Comm type</source>
         <translation>电池通信方式</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4522"/>
+        <location filename="../win.cpp" line="4523"/>
         <source>Set the communication mode between the battery, RS485 or CAN communication or Ethernet can be selected according to the situation.</source>
         <translation>设置与电池之间的通信方式，可根据情况选择RS485(RS485)或CAN通信(CAN)或以太网(Ethernet)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4531"/>
+        <location filename="../win.cpp" line="4532"/>
         <source>Set the control power mode, including constant voltage (CV), constant current (CC), constant power (CP_P), and positive and negative power (CP_N&amp;P).
 If constant voltage (CV) mode is selected, the converter will operate in constant voltage mode.
 If constant current (CC) mode is selected, the converter will operate in constant current mode.
@@ -4381,28 +4391,28 @@ If you choose constant power (CP_P) or positive and negative power (CP_N&amp;P) 
 如果选择恒功率(CP_P)或者正负功率(CP_N&amp;P)模式：可以在&apos;恒功率&apos;处设置功率大小，数值为大小为功率大小，正值为放电，负值为充电。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4539"/>
+        <location filename="../win.cpp" line="4540"/>
         <source>EMS Comm type</source>
         <translation>EMS通信方式</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4540"/>
+        <location filename="../win.cpp" line="4541"/>
         <source>You CAN set the communication mode of the EMS, including RS485,CAN, and Ethernet. Select one communication mode that can be read and written remotely, and the other two communication modes can be read only.</source>
         <translation>设置EMS的通信方式，有RS485(RS485),CAN通信(CAN)和以太网(Ethernet)三种方式，选中其中一种通信方式，该通信方式远程可读可写，其他两种通信方式仅可读。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4549"/>
+        <location filename="../win.cpp" line="4550"/>
         <source>HMI Limits the range of power Settings on the AC side.</source>
         <translation>HMI限制交流侧功率设置值的范围。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4557"/>
+        <location filename="../win.cpp" line="4558"/>
         <source>Auto</source>
         <translation>自动</translation>
     </message>
     <message>
         <location filename="../win.ui" line="554"/>
-        <location filename="../win.cpp" line="4557"/>
+        <location filename="../win.cpp" line="4558"/>
         <source>BAT protocol</source>
         <translation>电池协议</translation>
     </message>
@@ -4411,7 +4421,7 @@ If you choose constant power (CP_P) or positive and negative power (CP_N&amp;P) 
         <translation type="vanished">这是电池协议，根据选择的电池协议解析BMS发送的报文。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4567"/>
+        <location filename="../win.cpp" line="4568"/>
         <source>Set the power back difference, the default power back difference is 10kw, the output power increases to &apos;output power limit + power back difference&apos;, will reduce the output power to &apos;output power - power back difference&apos;, (Note: this setting only takes effect in the system anti-countercurrent mode, for control of power grid inlet power back difference).</source>
         <translation>设置功率回差，默认功率回差为10kw，输出功率增加达到&apos;输出功率限制+功率回差&apos;时，会将输出功率降低到&apos;输出功率-功率回差&apos;，(注：本设置仅在系统防逆流模式生效，用于控制电网入口的功率回差)。</translation>
     </message>
@@ -4514,72 +4524,72 @@ If you choose constant power (CP_P) or positive and negative power (CP_N&amp;P) 
         <translation type="vanished">设置放电电压下限回差，默认放电电压下限回差为10V，放电电电压低于&apos;放电电压下限-放电电电压回差&apos;时，将会对设备进行禁放，放电电压达到&apos;放电电压下限+充电电压回差&apos;时解除禁放。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4577"/>
+        <location filename="../win.cpp" line="4578"/>
         <source>This is the device address, which defaults to 1 and can be adjusted from 1 to 255 to match the host address during EMS communication.</source>
         <translation>这是设备地址，默认值为1，可调范围在1~255之间，用于EMS通信时匹配主机地址。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4586"/>
+        <location filename="../win.cpp" line="4587"/>
         <source>This is serial port 1, there are six options, namely 1200, 2400, 4800, 9600, 19200, 38400, serial port 1 default baud rate is 9600 BPS, eight data bits, no check, one stop bit(8, N, 1).</source>
         <translation>这是串口1，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口1默认波特率是9600bps，八个数据位，无校验，一个停止位（8，N，1）。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4595"/>
+        <location filename="../win.cpp" line="4596"/>
         <source>This is serial port 2, there are six options, namely 1200, 2400, 4800, 9600, 19200, 38400, serial port 2 default baud rate is 9600 BPS, eight data bits, no check, one stop bit(8, N, 1).</source>
         <translation>这是串口2，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口2默认波特率是9600bps，八个数据位，无校验，一个停止位（8，N，1）。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4605"/>
+        <location filename="../win.cpp" line="4606"/>
         <source>This is serial port 3, there are six options, namely 1200, 2400, 4800, 9600, 19200, 38400, serial port 3 default baud rate is 9600 BPS, eight data bits, no check, one stop bit(8, N, 1).</source>
         <translation>这是串口3，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口3默认波特率是9600bps，八个数据位，无校验，一个停止位（8，N，1）。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4614"/>
+        <location filename="../win.cpp" line="4615"/>
         <source>This is serial port 4, there are six options, namely 1200, 2400, 4800, 9600, 19200, 38400, serial port 4 default baud rate is 9600 BPS, eight data bits, no check, one stop bit(8, N, 1).</source>
         <translation>这是串口4，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口4默认波特率是9600bps，八个数据位，无校验，一个停止位（8，N，1）。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4623"/>
+        <location filename="../win.cpp" line="4624"/>
         <source>This is serial port 5, there are six options, namely 1200, 2400, 4800, 9600, 19200, 38400, serial port 5 default baud rate is 9600 BPS, eight data bits, no check, one stop bit(8, N, 1).</source>
         <translation>这是串口5，有六项可供选择，分别是1200、2400、4800、9600、19200、38400，串口5默认波特率是9600bps，八个数据位，无校验，一个停止位（8，N，1）。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4632"/>
+        <location filename="../win.cpp" line="4633"/>
         <source>This is the CAN1 port, the baud rate of PCS internal communication, the default baud rate is 500kbps, eight data bits, no check, one stop bit(8, N, 1).</source>
         <translation>这是CAN1端口，PCS内部通讯的波特率，默认波特率500kbps，八个数据位，无校验，一个停止位（8，N，1）。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4641"/>
+        <location filename="../win.cpp" line="4642"/>
         <source>This is the CAN2 port, the baud rate of PCS internal communication, the default baud rate is 125kbps, eight data bits, no check, one stop bit(8, N, 1).</source>
         <translation>这是CAN2端口，PCS内部通讯的波特率，默认波特率125kbps，八个数据位，无校验，一个停止位（8，N，1）。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4650"/>
+        <location filename="../win.cpp" line="4651"/>
         <source>This is the protocol version number, which is used to view the current protocol version. The protocol version number defaults to V1.0.</source>
         <translation>这是协议版本号，用于查看当前协议版本,协议版本号默认为V1.0。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4659"/>
+        <location filename="../win.cpp" line="4660"/>
         <source>This is the user password, you can reset the user password, the default user password 123456, (note: User password must be six digits).</source>
         <translation>这是用户密码，可供重新设置用户密码，默认用户密码123456，(注：用户密码必须为六位数)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4668"/>
+        <location filename="../win.cpp" line="4669"/>
         <source>This is the super permission password, you can reset the super permission password, the default super permission password 888888, (Note: super permission password must be six digits).</source>
         <translation>这是超级权限密码，可供重新设置超级权限密码，默认超级权限密码888888，(注：超级权限密码必须为六位数)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4676"/>
+        <location filename="../win.cpp" line="4677"/>
         <source>English</source>
         <translation>中文</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4677"/>
+        <location filename="../win.cpp" line="4678"/>
         <source>Set the display language of the display screen, which can be selected as Chinese and English. The system will restart when switching languages.</source>
         <translation>设置显示屏的显示语言，可供选择为中文与英文，切换语言时系统会重启。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4690"/>
+        <location filename="../win.cpp" line="4691"/>
         <source>upgrade</source>
         <translation>升级</translation>
     </message>
@@ -4588,17 +4598,17 @@ If you choose constant power (CP_P) or positive and negative power (CP_N&amp;P) 
         <translation type="vanished">点击即可进入系统升级应用程序，根据升级文档进行系统升级。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4698"/>
+        <location filename="../win.cpp" line="4699"/>
         <source>Allow</source>
         <translation>允许</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4699"/>
+        <location filename="../win.cpp" line="4700"/>
         <source>Set whether the display is enabled sound, which can be allowed(Allow) or prohibited(forbid).</source>
         <translation>设置显示屏是否开启声音，可供选择为允许(Allow)、禁止(forbid)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4707"/>
+        <location filename="../win.cpp" line="4708"/>
         <source>NONE</source>
         <translation>NONE</translation>
     </message>
@@ -4607,90 +4617,90 @@ If you choose constant power (CP_P) or positive and negative power (CP_N&amp;P) 
         <translation type="vanished">电能表型号：电能表型号是根据接入的电能表类型进行选择的。根据所连接的电能表的特性和规格，选择相应的电能表型号。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4716"/>
+        <location filename="../win.cpp" line="4717"/>
         <source>20</source>
         <translation>20</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4716"/>
+        <location filename="../win.cpp" line="4717"/>
         <source>Bms Com. Fault Time</source>
         <translation>BMS通信故障判定时间</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4717"/>
+        <location filename="../win.cpp" line="4718"/>
         <source>BMS communication fault determination time: The BMS communication fault determination time refers to the BMS communication fault when the BMS communication is disconnected and the communication is not recovered after a preset period of time.</source>
         <translation>BMS通信故障判定时间：BMS通信故障判定时间是指当BMS通信断开，并经过预设的一段时间后仍未恢复正常通信时，将判定为BMS通信故障。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4725"/>
+        <location filename="../win.cpp" line="4726"/>
         <source>EMS Com. Fault Model</source>
         <translation>EMS通信故障判定时间</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4726"/>
+        <location filename="../win.cpp" line="4727"/>
         <source>EMS communication fault determination time: The EMS communication fault determination time refers to the time when the communication between the EMS is disconnected and the communication is not recovered after a preset period of time.</source>
         <translation>EMS通信故障判定时间：EMS通信故障判定时间是指当EMS通信断开，并经过预设的一段时间后仍未恢复正常通信时，将判定为EMS通信故障。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4743"/>
+        <location filename="../win.cpp" line="4744"/>
         <source>How fast the power changes per unit time.</source>
         <translation>单位时间内功率变化的快慢。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4752"/>
+        <location filename="../win.cpp" line="4753"/>
         <source>The upper limit of the frequency range allowed on the AC side is 0.2, 0.5, 1, and 3.</source>
         <translation>交流侧所允许的频率变化范围的上限，可供选择为0.2、0.5、1、3。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4761"/>
+        <location filename="../win.cpp" line="4762"/>
         <source>The lower limit of the frequency range allowed on the AC side can be selected as -0.2, -0.5, -1, or -3.</source>
         <translation>交流侧所允许的频率变化范围的下限，可供选择为-0.2、-0.5、-1、-3。</translation>
     </message>
     <message>
         <location filename="../win.ui" line="1051"/>
-        <location filename="../win.cpp" line="4769"/>
+        <location filename="../win.cpp" line="4770"/>
         <source>Vol protection upper limit</source>
         <translation>电压保护范围上限</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4770"/>
+        <location filename="../win.cpp" line="4771"/>
         <source>The upper limit of the voltage range allowed on the AC side can be +10, +15, +20, or +30.</source>
         <translation>交流侧所允许的电压变化范围的上限，可供选择为+10、+15、+20、+30。</translation>
     </message>
     <message>
         <location filename="../win.ui" line="1099"/>
-        <location filename="../win.cpp" line="4778"/>
+        <location filename="../win.cpp" line="4779"/>
         <source>Vol protection lower limit</source>
         <translation>电压保护范围下限</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4779"/>
+        <location filename="../win.cpp" line="4780"/>
         <source>The lower limit of the voltage variation range allowed on the AC side can be -10, -15, -20, or -30.</source>
         <translation>交流侧所允许的电压变化范围的下限，可供选择为-10、-15、-20、-30。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4787"/>
-        <location filename="../win.cpp" line="4796"/>
-        <location filename="../win.cpp" line="4805"/>
-        <location filename="../win.cpp" line="4814"/>
-        <location filename="../win.cpp" line="4823"/>
-        <location filename="../win.cpp" line="4832"/>
-        <location filename="../win.cpp" line="4841"/>
+        <location filename="../win.cpp" line="4788"/>
+        <location filename="../win.cpp" line="4797"/>
+        <location filename="../win.cpp" line="4806"/>
+        <location filename="../win.cpp" line="4815"/>
+        <location filename="../win.cpp" line="4824"/>
+        <location filename="../win.cpp" line="4833"/>
+        <location filename="../win.cpp" line="4842"/>
         <source>prohibit</source>
         <translation>禁止</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4788"/>
+        <location filename="../win.cpp" line="4789"/>
         <source>This is the high voltage crossing (HVRT) Enable, enable the device will not stop because of a short period of high voltage, the option is to Enable, prohibit, (note: this is generally used in large grid-connected power stations).</source>
         <translation>这是高压穿越(HVRT)使能,使能后该设备不会因为短时间的高电压而停机,可供选择为允许(Enable)、禁止(prohibit)，(注：此项一般在大型并网电站使用)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4797"/>
+        <location filename="../win.cpp" line="4798"/>
         <source>This is the low voltage crossing (LVRT) Enable, enable the device will not stop because of a short period of low voltage, the option is to Enable, prohibit, (note: this is generally used in large grid-connected power stations).</source>
         <translation>这是低压穿越(LVRT)使能，使能后该设备不会因为短时间的低电压而停机,可供选择为允许(Enable)、禁止(prohibit) ，(注：此项一般在大型并网电站使用)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4806"/>
+        <location filename="../win.cpp" line="4807"/>
         <source>Prevent islanding effect, When the detection of the island effect (in the photovoltaic grid-connected system, when the power failure occurs in the large power grid, the photovoltaic grid-connected inverter power generation and the local load on the low-voltage side of the grid if the power is just matched, it is easy to appear self-sufficient maintenance power state, resulting in the &apos;island&apos; phenomenon, thereby endangering the safety of maintenance personnel), the inverter automatically shut down, and the option is allowed Enable, prohibit, (Note: this is generally used in large grid-connected power stations).</source>
         <translation>防止孤岛效应，当检测出现孤岛效应(在光伏并网系统中,当大电网出现停电事故时,光伏并网逆变器发电与电网低压侧本地负载如果刚好出现功率相匹配时,容易出现自给自足的维持发电状态,从而出现&quot;&quot;孤岛&quot;&quot;现象,从而危及检修人员安全)时,让逆变器自动停机,可供选择为允许(Enable)、禁止(prohibit) ，(注：此项一般在大型并网电站使用)。</translation>
     </message>
@@ -4699,42 +4709,42 @@ If you choose constant power (CP_P) or positive and negative power (CP_N&amp;P) 
         <translation type="vanished">绝缘检测使能，绝缘电阻大于33KΩ要能正常起机运行，小于33KΩ不能起机，并且要告警，默认禁止,可供选择为允许(Enable)、禁止(prohibit) ，(注：此项一般在大型并网电站使用)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4824"/>
+        <location filename="../win.cpp" line="4825"/>
         <source>When the frequency of the power grid deviates from the rated value, the power grid frequency is maintained stable by controlling the increase or decrease of the active power, which can be selected to Enable, prohibit, (Note: this is generally used in large grid-connected power stations).</source>
         <translation>一次调频使能,电网的频率偏离额定值时，通过控制有功功率的增减使电网频率维持稳定，可供选择为允许(Enable)、禁止(prohibit) ，(注：此项一般在大型并网电站使用)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4833"/>
+        <location filename="../win.cpp" line="4834"/>
         <source>Moment of inertia Enable, can be selected to Enable, prohibit, (Note: this is generally used in large grid-connected power stations).</source>
         <translation>转动惯量使能，可供选择为允许(Enable)、禁止(prohibit) ，(注：此项一般在大型并网电站使用)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4842"/>
+        <location filename="../win.cpp" line="4843"/>
         <source>Constant voltage parallel Enable, you can choose to Enable, prohibit, (Note: this setting is used in constant voltage parallel mode).</source>
         <translation>恒压并机使能,可供选择为允许(Enable)、禁止(prohibit)，(注：此项设置在恒压并机模式下使用)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4860"/>
+        <location filename="../win.cpp" line="4861"/>
         <source>The rated capacity of PCS is subject to the ex-factory value and cannot be changed.</source>
         <translation>PCS的额定容量，以出厂值为准，不可更改。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4868"/>
+        <location filename="../win.cpp" line="4869"/>
         <source>Output Fre grade</source>
         <translation>输出频率等级</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4869"/>
+        <location filename="../win.cpp" line="4870"/>
         <source>Set the output frequency level, the default is 50Hz, generally 50Hz or 60Hz, can be fine-tuned according to the project.</source>
         <translation>设置输出频率的等级，默认50Hz，一般为50Hz或60Hz，可根据项目地微调。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4877"/>
+        <location filename="../win.cpp" line="4878"/>
         <source>Output vol level</source>
         <translation>输出电压等级</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4878"/>
+        <location filename="../win.cpp" line="4879"/>
         <source>The voltage level is changed according to the actual local power grid voltage. The voltage level is subject to delivery. If you need to change it, contact customer service for confirmation.</source>
         <translation>电压等级根据当地实际电网电压更改，以出厂为准，如需更改，请联系客服确认。</translation>
     </message>
@@ -4751,7 +4761,7 @@ If you choose constant power (CP_P) or positive and negative power (CP_N&amp;P) 
         <translation type="vanished">不可调节</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4896"/>
+        <location filename="../win.cpp" line="4897"/>
         <source>Output reactive mode, the default is not adjustable, can be selected as power factor (Pf), reactive power (Q), Non adjustable.</source>
         <translation>输出无功方式，默认不可调节，可供选择为功率因数(Pf)、无功功率(Q)、不可调节(Non adjustable)。</translation>
     </message>
@@ -4760,42 +4770,42 @@ If you choose constant power (CP_P) or positive and negative power (CP_N&amp;P) 
         <translation type="vanished">不可逆流</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4905"/>
+        <location filename="../win.cpp" line="4906"/>
         <source>Set the grid-connected mode of the inverter, which can be countercurrent, that is, DC can be converted into AC power and then incorporated into the power grid; Irreversible means that the current on the DC side does not flow to the grid. The default value can be Countercurrent. The options can be countercurrent or Non countercurrent. With the local grid qualification, it can be changed to &apos;countercurrent&apos;; When using Prevent countercurrent mode, you can change to &apos;countercurrent&apos;.</source>
         <translation>设置逆变器的并网方式，可逆流即直流转换成交流电后可以并入电网；不可逆则是直流侧的电流不会流向电网。默认可逆流，可供选择为可逆流(Countercurrent)、不可逆流(Non countercurrent)；具备当地并网资质时，可改为‘可逆流’；使用系统防逆流模式时，可改为‘逆流’。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4914"/>
+        <location filename="../win.cpp" line="4915"/>
         <source>Primary frequency modulation dead zone, in order to prevent unnecessary action of the switch when the frequency difference of the grid changes in a small range, (Note: This is generally used in large grid-connected power stations).</source>
         <translation>一次调频死区,为了防止在电网频差小范围变化时调门不必要的动作而设置的频差，(注：此项一般在大型并网电站使用)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4923"/>
+        <location filename="../win.cpp" line="4924"/>
         <source>This can set the active power frequency modulation coefficient, (Note: this is generally used in large grid-connected power stations).</source>
         <translation>此项可以设置有功调频系数，(注：此项一般在大型并网电站使用)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4932"/>
+        <location filename="../win.cpp" line="4933"/>
         <source>Grid restoration time: reserved function, setting invalid.</source>
         <translation>电网恢复并网时间：预留功能，设置无效。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4941"/>
+        <location filename="../win.cpp" line="4942"/>
         <source>Enable the power network expansion. The options are Enable and Disable.</source>
         <translation>电网扩容使能,当负载在短时间内所需功率大于电网容量时，可暂时从电池辅助供电以达到功率要求，可供选择为使能(Enable)、禁止(Disable)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4950"/>
+        <location filename="../win.cpp" line="4951"/>
         <source>Number of modules for PCS, default 1(invalid setting).</source>
         <translation>PCS的模块数量，默认值1(无效设置)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4958"/>
+        <location filename="../win.cpp" line="4959"/>
         <source>restore</source>
         <translation>恢复出厂</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4959"/>
+        <location filename="../win.cpp" line="4960"/>
         <source>Restore the factory default Settings.</source>
         <translation>恢复出厂时的默认设置。</translation>
     </message>
@@ -4804,18 +4814,18 @@ If you choose constant power (CP_P) or positive and negative power (CP_N&amp;P) 
         <translation type="vanished">设置备份</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4967"/>
+        <location filename="../win.cpp" line="4968"/>
         <source>Backup Set Parameters</source>
         <translation>备份设置参数</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4967"/>
+        <location filename="../win.cpp" line="4968"/>
         <source>Backup
 Settings</source>
         <translation>设置备份</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4968"/>
+        <location filename="../win.cpp" line="4969"/>
         <source>Backup setting parameters: Backup setting parameters refers to backing up the parameters set on the current device so that the backup parameter Settings can be restored when needed.</source>
         <translation>备份设置参数：备份设置参数是指将当前设备设置的参数进行备份，以便在需要时可以恢复到这些备份的参数设置。 </translation>
     </message>
@@ -4824,98 +4834,98 @@ Settings</source>
         <translation type="vanished">恢复备份</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4976"/>
+        <location filename="../win.cpp" line="4977"/>
         <source>Restore Backup Set Parameters</source>
         <translation>恢复备份设置参数</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4976"/>
+        <location filename="../win.cpp" line="4977"/>
         <source>Restore
 Backup</source>
         <translation>恢复备份</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4977"/>
+        <location filename="../win.cpp" line="4978"/>
         <source>Restore backup setting parameters: Restore backup setting parameters means to restore the device to the last backup setting parameters and restart the device.</source>
         <translation>恢复备份设置参数：恢复备份设置参数是指将设备恢复到上一次备份好的设置参数，并重新启动设备。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4985"/>
+        <location filename="../win.cpp" line="4986"/>
         <source>Clear</source>
         <translation>清除</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4986"/>
+        <location filename="../win.cpp" line="4987"/>
         <source>Clear previous recorded data and operation data of the system.</source>
         <translation>清除系统此前的记录数据及操作数据。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4995"/>
+        <location filename="../win.cpp" line="4996"/>
         <source>Normally closed circuit (NC) or normally open circuit (NO) according to field Settings.</source>
         <translation>根据现场设置为常闭电路(NC)或常开电路（NO）。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4996"/>
+        <location filename="../win.cpp" line="4997"/>
         <source>When the dry contact is enabled and an abnormal signal is received, the device performs the selected action.</source>
         <translation>当干接点使能后，收到异常信号时，设备将会执行此项所选的动作。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5003"/>
+        <location filename="../win.cpp" line="5004"/>
         <source>DI_1_Enable</source>
         <translation>输入干接点1使能项</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5004"/>
+        <location filename="../win.cpp" line="5005"/>
         <source>Enter dry contact 1. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set.</source>
         <translation>输入干接点1，如果选择使能，当干接点检测到不是设置的NO/NC时，会触发Action的动作；如果选择禁止，当干接点检测到不是设置的NO/NC时，不做任何动作。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5012"/>
+        <location filename="../win.cpp" line="5013"/>
         <source>DI_2_Enable</source>
         <translation>输入干接点2使能项</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5013"/>
+        <location filename="../win.cpp" line="5014"/>
         <source>Enter dry contact 2. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set.</source>
         <translation>输入干接点2，如果选择使能，当干接点检测到不是设置的NO/NC时，会触发Action的动作；如果选择禁止，当干接点检测到不是设置的NO/NC时，不做任何动作。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5021"/>
+        <location filename="../win.cpp" line="5022"/>
         <source>DI_3_Enable</source>
         <translation>输入干接点3使能项</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5022"/>
+        <location filename="../win.cpp" line="5023"/>
         <source>Enter dry contact 3. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set.</source>
         <translation>输入干接点3，如果选择使能，当干接点检测到不是设置的NO/NC时，会触发Action的动作；如果选择禁止，当干接点检测到不是设置的NO/NC时，不做任何动作。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5030"/>
+        <location filename="../win.cpp" line="5031"/>
         <source>DI_4_Enable</source>
         <translation>输入干接点4使能项</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5031"/>
+        <location filename="../win.cpp" line="5032"/>
         <source>Enter dry contact 4. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set.</source>
         <translation>输入干接点4，如果选择使能，当干接点检测到不是设置的NO/NC时，会触发Action的动作；如果选择禁止，当干接点检测到不是设置的NO/NC时，不做任何动作。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5039"/>
+        <location filename="../win.cpp" line="5040"/>
         <source>DI_5_Enable</source>
         <translation>输入干接点5使能项</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5040"/>
+        <location filename="../win.cpp" line="5041"/>
         <source>Enter dry contact 5. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set.</source>
         <translation>输入干接点5，如果选择使能，当干接点检测到不是设置的NO/NC时，会触发Action的动作；如果选择禁止，当干接点检测到不是设置的NO/NC时，不做任何动作。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5048"/>
+        <location filename="../win.cpp" line="5049"/>
         <source>DI_6_Enable</source>
         <translation>输入干接点6使能项</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5049"/>
+        <location filename="../win.cpp" line="5050"/>
         <source>Enter dry contact 6. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set.</source>
         <translation>输入干接点6，如果选择使能，当干接点检测到不是设置的NO/NC时，会触发Action的动作；如果选择禁止，当干接点检测到不是设置的NO/NC时，不做任何动作。</translation>
     </message>
@@ -4944,32 +4954,32 @@ Backup</source>
         <translation type="vanished">输出干接点3，如果选择使能，当干接点检测到不是设置的NO/NC时，会触发Action的动作；如果选择禁止，当干接点检测到不是设置的NO/NC时，不做任何动作。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5057"/>
+        <location filename="../win.cpp" line="5058"/>
         <source>DI_1_NC_O</source>
         <translation>输入干接点1常闭/常开项</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5065"/>
+        <location filename="../win.cpp" line="5066"/>
         <source>DI_2_NC_O</source>
         <translation>输入干接点2常闭/常开项</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5073"/>
+        <location filename="../win.cpp" line="5074"/>
         <source>DI_3_NC_O</source>
         <translation>输入干接点3常闭/常开项</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5081"/>
+        <location filename="../win.cpp" line="5082"/>
         <source>DI_4_NC_O</source>
         <translation>输入干接点4常闭/常开项</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5089"/>
+        <location filename="../win.cpp" line="5090"/>
         <source>DI_5_NC_O</source>
         <translation>输入干接点5常闭/常开项</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5097"/>
+        <location filename="../win.cpp" line="5098"/>
         <source>DI_6_NC_O</source>
         <translation>输入干接点6常闭/常开项</translation>
     </message>
@@ -4986,7 +4996,7 @@ Backup</source>
         <translation type="vanished">输出干接点3常闭/常开项</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5105"/>
+        <location filename="../win.cpp" line="5106"/>
         <source>DI_1_Action</source>
         <translation>输入干接点1响应动作</translation>
     </message>
@@ -4994,34 +5004,34 @@ Backup</source>
         <location filename="../win.ui" line="1591"/>
         <location filename="../win.ui" line="1635"/>
         <location filename="../win.ui" line="1679"/>
-        <location filename="../win.cpp" line="5113"/>
-        <location filename="../win.cpp" line="5121"/>
-        <location filename="../win.cpp" line="5129"/>
+        <location filename="../win.cpp" line="5114"/>
+        <location filename="../win.cpp" line="5122"/>
+        <location filename="../win.cpp" line="5130"/>
         <source>Prompt</source>
         <translation>提示</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5113"/>
+        <location filename="../win.cpp" line="5114"/>
         <source>DI_2_Action</source>
         <translation>输入干接点2响应动作</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5121"/>
+        <location filename="../win.cpp" line="5122"/>
         <source>DI_3_Action</source>
         <translation>输入干接点3响应动作</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5129"/>
+        <location filename="../win.cpp" line="5130"/>
         <source>DI_4_Action</source>
         <translation>输入干接点4响应动作</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5137"/>
+        <location filename="../win.cpp" line="5138"/>
         <source>DI_5_Action</source>
         <translation>输入干接点5响应动作</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5145"/>
+        <location filename="../win.cpp" line="5146"/>
         <source>DI_6_Action</source>
         <translation>输入干接点6响应动作</translation>
     </message>
@@ -5038,15 +5048,15 @@ Backup</source>
         <translation type="vanished">输出干接点3响应动作</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5159"/>
-        <location filename="../win.cpp" line="5168"/>
-        <location filename="../win.cpp" line="5177"/>
-        <location filename="../win.cpp" line="5195"/>
+        <location filename="../win.cpp" line="5160"/>
+        <location filename="../win.cpp" line="5169"/>
+        <location filename="../win.cpp" line="5178"/>
+        <location filename="../win.cpp" line="5196"/>
         <source>Standby</source>
         <translation>待机</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5160"/>
+        <location filename="../win.cpp" line="5161"/>
         <source>DOD protection: Actions to be performed when DOD protection is triggered. The optional functions are NO action, Power down, Standby, Shut down,0 power standby.</source>
         <translation>DOD保护，触发DOD保护时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)、0功率待机（0 power standby）。</translation>
     </message>
@@ -5055,242 +5065,242 @@ Backup</source>
         <translation type="vanished">DOD保护，触发DOD保护时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5169"/>
+        <location filename="../win.cpp" line="5170"/>
         <source>The action performed when the charge ban is triggered;Optional function: NO action, Power down, Standby, Shut down.</source>
         <translation>触发禁充时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5178"/>
+        <location filename="../win.cpp" line="5179"/>
         <source>The action to be performed when a ban is triggered.The optional functions are NO action, Power down, Standby, Shut down.</source>
         <translation>触发禁放时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5186"/>
+        <location filename="../win.cpp" line="5187"/>
         <source>NO action</source>
         <translation>不动作</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5187"/>
+        <location filename="../win.cpp" line="5188"/>
         <source>Action to be performed when a BMS prompt is triggered.The optional functions are NO action, Power down, Standby, Shut down.</source>
         <translation>触发BMS提示时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5196"/>
+        <location filename="../win.cpp" line="5197"/>
         <source>Action when a BMS alarm is triggered.The optional functions are NO action, Power down, Standby, Shut down.</source>
         <translation>触发BMS告警时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5205"/>
+        <location filename="../win.cpp" line="5206"/>
         <source>Action that is performed when a BMS fault is triggered.The optional functions are NO action, Power down, Standby, Shut down.</source>
         <translation>触发BMS故障时执行的动作，可选功能为不动作(NO action)、降功率(Power down)、待机(Standby)、关机(Shut down)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5213"/>
+        <location filename="../win.cpp" line="5214"/>
         <source>BMS warning CP</source>
         <translation>BMS 提示 充电功率</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5214"/>
+        <location filename="../win.cpp" line="5215"/>
         <source>The charge power when the BMS prompt is triggered.</source>
         <translation>触发BMS提示时的充电功率。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5222"/>
+        <location filename="../win.cpp" line="5223"/>
         <source>BMS alarm CP</source>
         <translation>BMS 告警 充电功率</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5223"/>
+        <location filename="../win.cpp" line="5224"/>
         <source>Charge power that is executed when a BMS alarm is triggered.</source>
         <translation>触发BMS告警时执行的的充电功率。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5231"/>
+        <location filename="../win.cpp" line="5232"/>
         <source>BMS fualt CP</source>
         <translation>BMS 故障 充电功率</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5232"/>
+        <location filename="../win.cpp" line="5233"/>
         <source>Charging power when a BMS fault is triggered.</source>
         <translation>触发BMS故障时的充电功率。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5240"/>
+        <location filename="../win.cpp" line="5241"/>
         <source>BMS warning DP</source>
         <translation>BMS 提示 放电功率</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5241"/>
+        <location filename="../win.cpp" line="5242"/>
         <source>Discharge power when the BMS prompt is triggered.</source>
         <translation>触发BMS提示时的放电功率。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5249"/>
+        <location filename="../win.cpp" line="5250"/>
         <source>BMS alarm DP</source>
         <translation>BMS 告警 放电功率</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5250"/>
+        <location filename="../win.cpp" line="5251"/>
         <source>Discharge power when a BMS alarm is triggered.</source>
         <translation>触发BMS告警时的放电功率。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5258"/>
+        <location filename="../win.cpp" line="5259"/>
         <source>BMS fualt DP</source>
         <translation>BMS 故障 放电功率</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5259"/>
+        <location filename="../win.cpp" line="5260"/>
         <source>Discharge power when triggering a BMS fault.</source>
         <translation>触发BMS故障时的放电功率。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5268"/>
+        <location filename="../win.cpp" line="5269"/>
         <source>It is used for internal debugging only.</source>
         <translation>仅提供内部调试使用。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5299"/>
+        <location filename="../win.cpp" line="5300"/>
         <source>Debug variable 1 addr</source>
         <translation>调试地址变量1</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5307"/>
+        <location filename="../win.cpp" line="5308"/>
         <source>Debug variable 2 addr</source>
         <translation>调试地址变量2</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5315"/>
+        <location filename="../win.cpp" line="5316"/>
         <source>Debug variable 3 addr</source>
         <translation>调试地址变量3</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5323"/>
+        <location filename="../win.cpp" line="5324"/>
         <source>Debug memery var 1</source>
         <translation>调试内存变量1</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5331"/>
+        <location filename="../win.cpp" line="5332"/>
         <source>Debug memery var 2</source>
         <translation>调试内存变量2</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5339"/>
+        <location filename="../win.cpp" line="5340"/>
         <source>Debug memery var 3</source>
         <translation>调试内存变量3</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5347"/>
+        <location filename="../win.cpp" line="5348"/>
         <source>Input Vol revise</source>
         <translation>输入电压系数</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5355"/>
+        <location filename="../win.cpp" line="5356"/>
         <source>Input Cur revise</source>
         <translation>输入电流系数</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5363"/>
+        <location filename="../win.cpp" line="5364"/>
         <source>1.5 Voltage revise</source>
         <translation>1.5V电压系数</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5371"/>
+        <location filename="../win.cpp" line="5372"/>
         <source>Bus Vol revise</source>
         <translation>母线电压系数</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5379"/>
+        <location filename="../win.cpp" line="5380"/>
         <source>Grid A AB Vol revise</source>
         <translation>电网A相电压系数</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5387"/>
+        <location filename="../win.cpp" line="5388"/>
         <source>Grid B BC Vol revise</source>
         <translation>电网B相电压系数</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5395"/>
+        <location filename="../win.cpp" line="5396"/>
         <source>Grid C CA Vol revise</source>
         <translation>电网C相电压系数</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5403"/>
+        <location filename="../win.cpp" line="5404"/>
         <source>Output A Cur revise</source>
         <translation>输出A相电流系数</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5411"/>
+        <location filename="../win.cpp" line="5412"/>
         <source>Output B Cur revise</source>
         <translation>输出B相电流系数</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5419"/>
+        <location filename="../win.cpp" line="5420"/>
         <source>Output C Cur revise</source>
         <translation>输出C相电流系数</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5427"/>
+        <location filename="../win.cpp" line="5428"/>
         <source>INV A Vol revise</source>
         <translation>逆变A相电压系数</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5435"/>
+        <location filename="../win.cpp" line="5436"/>
         <source>INV B Vol revise</source>
         <translation>逆变B相电压系数</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5443"/>
+        <location filename="../win.cpp" line="5444"/>
         <source>INV C Vol revise</source>
         <translation>逆变C相电压系数</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5451"/>
+        <location filename="../win.cpp" line="5452"/>
         <source>INV A ind Cur revise</source>
         <translation>逆变A相电感电流系数</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5459"/>
+        <location filename="../win.cpp" line="5460"/>
         <source>INV B ind Cur revise</source>
         <translation>逆变B相电感电流系数</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5467"/>
+        <location filename="../win.cpp" line="5468"/>
         <source>INV_C_ind_Cur_revise</source>
         <translation>逆变C相电感电流系数</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5563"/>
+        <location filename="../win.cpp" line="5564"/>
         <source>static</source>
         <translation>静态</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5563"/>
+        <location filename="../win.cpp" line="5564"/>
         <source>If this parameter is selected, static IP addresses are used.</source>
         <translation>如果选择此项，表示使用静态的IP地址。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5586"/>
+        <location filename="../win.cpp" line="5587"/>
         <source>This is an automatic IP acquisition, currently not supported.</source>
         <translation>这是自动获取IP，暂不支持。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5586"/>
+        <location filename="../win.cpp" line="5587"/>
         <source>dhcp</source>
         <translation>自动获取</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5594"/>
+        <location filename="../win.cpp" line="5595"/>
         <source>Call in test data (for internal testing personnel only).</source>
         <translation>调入测试数据(仅供内部测试人员使用)。</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5602"/>
+        <location filename="../win.cpp" line="5603"/>
         <source>Time</source>
         <translation>时间</translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5602"/>
+        <location filename="../win.cpp" line="5603"/>
         <source>Click here to modify the time displayed on the HMI.</source>
         <translation>点击此处，可以对HMI显示的时间进行修改。</translation>
     </message>
@@ -5446,10 +5456,10 @@ Backup</source>
     </message>
     <message>
         <location filename="../win.cpp" line="3197"/>
-        <location filename="../win.cpp" line="5105"/>
-        <location filename="../win.cpp" line="5137"/>
-        <location filename="../win.cpp" line="5145"/>
-        <location filename="../win.cpp" line="5204"/>
+        <location filename="../win.cpp" line="5106"/>
+        <location filename="../win.cpp" line="5138"/>
+        <location filename="../win.cpp" line="5146"/>
+        <location filename="../win.cpp" line="5205"/>
         <source>Shut down</source>
         <translation>关机</translation>
     </message>
@@ -5475,12 +5485,12 @@ Backup</source>
         <location filename="../win.ui" line="1613"/>
         <location filename="../win.ui" line="1657"/>
         <location filename="../win.cpp" line="3224"/>
-        <location filename="../win.cpp" line="4940"/>
-        <location filename="../win.cpp" line="5003"/>
-        <location filename="../win.cpp" line="5021"/>
-        <location filename="../win.cpp" line="5030"/>
-        <location filename="../win.cpp" line="5039"/>
-        <location filename="../win.cpp" line="5048"/>
+        <location filename="../win.cpp" line="4941"/>
+        <location filename="../win.cpp" line="5004"/>
+        <location filename="../win.cpp" line="5022"/>
+        <location filename="../win.cpp" line="5031"/>
+        <location filename="../win.cpp" line="5040"/>
+        <location filename="../win.cpp" line="5049"/>
         <source>Enable</source>
         <translation>使能</translation>
     </message>
@@ -5934,6 +5944,16 @@ fault</source>
         <location filename="../win.cpp" line="2332"/>
         <source>Battery power-off: This function allows the BMS to send a command to open the contactor (Note: this feature is only supported by some BMS manufacturers).</source>
         <translation>电池下电：该项可以给BMS下发断开接触器的指令(注:仅部分BMS厂家支持该功能)。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="3144"/>
+        <source>The output circuit breaker has two states: On, Off. It can only be manually opened and closed. If there is an overcurrent in the output circuit breaker, it will trip.</source>
+        <translation>输出断路器有两种状态:闭合、断开;只能手动断开，如果输出断路器过流，输出断路器会发生脱扣。</translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="3162"/>
+        <source>The power grid circuit breaker has two states: On, Off; The power grid circuit breaker can only be manually disconnected. If the power grid circuit breaker overflows, the power grid circuit breaker may trip.</source>
+        <translation>电网断路器有两种状态:闭合、断开;只能手动断开，如果电网断路器过流，电网断路器会发生脱扣。</translation>
     </message>
     <message>
         <location filename="../win.cpp" line="3506"/>
