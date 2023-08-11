@@ -268,14 +268,8 @@ Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="330"/>
-        <location filename="../win.cpp" line="4577"/>
-        <source>Host Address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../win.ui" line="346"/>
-        <location filename="../win.cpp" line="4650"/>
+        <location filename="../win.cpp" line="4657"/>
         <source>ProtocolVersion</source>
         <translation type="unfinished"></translation>
     </message>
@@ -286,7 +280,6 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="378"/>
-        <location filename="../win.cpp" line="4586"/>
         <source>serial port 1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -301,7 +294,7 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="394"/>
-        <location filename="../win.cpp" line="4659"/>
+        <location filename="../win.cpp" line="4666"/>
         <source>UserPassPort</source>
         <translation type="unfinished"></translation>
     </message>
@@ -313,13 +306,13 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="426"/>
-        <location filename="../win.cpp" line="4595"/>
+        <location filename="../win.cpp" line="4593"/>
         <source>serial port 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="442"/>
-        <location filename="../win.cpp" line="4668"/>
+        <location filename="../win.cpp" line="4675"/>
         <source>RootPassport</source>
         <translation type="unfinished"></translation>
     </message>
@@ -330,19 +323,19 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="474"/>
-        <location filename="../win.cpp" line="4605"/>
+        <location filename="../win.cpp" line="4602"/>
         <source>serial port 3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="490"/>
-        <location filename="../win.cpp" line="4677"/>
+        <location filename="../win.cpp" line="4684"/>
         <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="506"/>
-        <location filename="../win.cpp" line="4549"/>
+        <location filename="../win.cpp" line="4553"/>
         <source>Output power limit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -362,7 +355,7 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="522"/>
-        <location filename="../win.cpp" line="4614"/>
+        <location filename="../win.cpp" line="4612"/>
         <source>serial port 4</source>
         <translation type="unfinished"></translation>
     </message>
@@ -373,25 +366,19 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="570"/>
-        <location filename="../win.cpp" line="4623"/>
+        <location filename="../win.cpp" line="4621"/>
         <source>serial port 5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="586"/>
-        <location filename="../win.cpp" line="4699"/>
+        <location filename="../win.cpp" line="4706"/>
         <source>Sounds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="594"/>
-        <location filename="../win.cpp" line="4567"/>
-        <source>Power Delta</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../win.ui" line="610"/>
-        <location filename="../win.cpp" line="4632"/>
+        <location filename="../win.cpp" line="4639"/>
         <source>Can port 1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -410,7 +397,7 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="663"/>
-        <location filename="../win.cpp" line="4641"/>
+        <location filename="../win.cpp" line="4648"/>
         <source>Can port 2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -457,7 +444,7 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="892"/>
-        <location filename="../win.cpp" line="4743"/>
+        <location filename="../win.cpp" line="4750"/>
         <source>Change rate of power</source>
         <translation type="unfinished"></translation>
     </message>
@@ -468,19 +455,19 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="908"/>
-        <location filename="../win.cpp" line="4851"/>
+        <location filename="../win.cpp" line="4858"/>
         <source>Machine type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="929"/>
-        <location filename="../win.cpp" line="4950"/>
+        <location filename="../win.cpp" line="4957"/>
         <source>Module Number</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="950"/>
-        <location filename="../win.cpp" line="4752"/>
+        <location filename="../win.cpp" line="4759"/>
         <source>Grid frequency upper limit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -494,19 +481,19 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="971"/>
-        <location filename="../win.cpp" line="4860"/>
+        <location filename="../win.cpp" line="4867"/>
         <source>Machine capacity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="987"/>
-        <location filename="../win.cpp" line="4959"/>
+        <location filename="../win.cpp" line="4966"/>
         <source>Restore factory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="1003"/>
-        <location filename="../win.cpp" line="4761"/>
+        <location filename="../win.cpp" line="4768"/>
         <source>Grid frequency lower limit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -517,7 +504,7 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="1131"/>
-        <location filename="../win.cpp" line="4986"/>
+        <location filename="../win.cpp" line="4993"/>
         <source>Clear Data</source>
         <translation type="unfinished"></translation>
     </message>
@@ -546,49 +533,49 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="1147"/>
-        <location filename="../win.cpp" line="4788"/>
+        <location filename="../win.cpp" line="4795"/>
         <source>HVRT enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="1163"/>
-        <location filename="../win.cpp" line="4896"/>
+        <location filename="../win.cpp" line="4903"/>
         <source>Output reactive power mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="1179"/>
-        <location filename="../win.cpp" line="4797"/>
+        <location filename="../win.cpp" line="4804"/>
         <source>LVRT enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="1195"/>
-        <location filename="../win.cpp" line="4905"/>
+        <location filename="../win.cpp" line="4912"/>
         <source>Grid connected mode of Inv</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="1211"/>
-        <location filename="../win.cpp" line="4806"/>
+        <location filename="../win.cpp" line="4813"/>
         <source>AFD enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="1227"/>
-        <location filename="../win.cpp" line="4914"/>
+        <location filename="../win.cpp" line="4921"/>
         <source>Primary FM dead zone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="1243"/>
-        <location filename="../win.cpp" line="4815"/>
+        <location filename="../win.cpp" line="4822"/>
         <source>Insulation detection enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="1259"/>
-        <location filename="../win.cpp" line="4923"/>
+        <location filename="../win.cpp" line="4930"/>
         <source>PFM coeff</source>
         <translation type="unfinished"></translation>
     </message>
@@ -599,13 +586,13 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="1280"/>
-        <location filename="../win.cpp" line="4824"/>
+        <location filename="../win.cpp" line="4831"/>
         <source>PrimaryFreq enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="1296"/>
-        <location filename="../win.cpp" line="4932"/>
+        <location filename="../win.cpp" line="4939"/>
         <source>Grid recover time</source>
         <translation type="unfinished"></translation>
     </message>
@@ -623,7 +610,7 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="626"/>
-        <location filename="../win.cpp" line="4708"/>
+        <location filename="../win.cpp" line="4715"/>
         <source>Energy Meter Model</source>
         <translation type="unfinished"></translation>
     </message>
@@ -649,25 +636,25 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="1115"/>
-        <location filename="../win.cpp" line="4887"/>
+        <location filename="../win.cpp" line="4894"/>
         <source>Transformer Turns Ratio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="1312"/>
-        <location filename="../win.cpp" line="4833"/>
+        <location filename="../win.cpp" line="4840"/>
         <source>Inertia enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="1328"/>
-        <location filename="../win.cpp" line="4941"/>
+        <location filename="../win.cpp" line="4948"/>
         <source>DynamicCap</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="1336"/>
-        <location filename="../win.cpp" line="4842"/>
+        <location filename="../win.cpp" line="4849"/>
         <source>CV parallel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -787,31 +774,31 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="1746"/>
-        <location filename="../win.cpp" line="5169"/>
+        <location filename="../win.cpp" line="5176"/>
         <source>Prohibit charging</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="1756"/>
-        <location filename="../win.cpp" line="5178"/>
+        <location filename="../win.cpp" line="5185"/>
         <source>Prohibit discharging</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="1766"/>
-        <location filename="../win.cpp" line="5187"/>
+        <location filename="../win.cpp" line="5194"/>
         <source>BMS warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="1776"/>
-        <location filename="../win.cpp" line="5196"/>
+        <location filename="../win.cpp" line="5203"/>
         <source>BMS alarm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="1786"/>
-        <location filename="../win.cpp" line="5205"/>
+        <location filename="../win.cpp" line="5212"/>
         <source>BMS fualt</source>
         <translation type="unfinished"></translation>
     </message>
@@ -832,7 +819,7 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="1984"/>
-        <location filename="../win.cpp" line="5276"/>
+        <location filename="../win.cpp" line="5283"/>
         <source>Debug variable 1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -848,7 +835,7 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="2005"/>
-        <location filename="../win.cpp" line="5284"/>
+        <location filename="../win.cpp" line="5291"/>
         <source>Debug variable 2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -864,7 +851,7 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="2026"/>
-        <location filename="../win.cpp" line="5292"/>
+        <location filename="../win.cpp" line="5299"/>
         <source>Debug variable 3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -890,7 +877,7 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="2057"/>
-        <location filename="../win.cpp" line="5476"/>
+        <location filename="../win.cpp" line="5483"/>
         <source>INV On off flag</source>
         <translation type="unfinished"></translation>
     </message>
@@ -906,7 +893,7 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="2075"/>
-        <location filename="../win.cpp" line="5484"/>
+        <location filename="../win.cpp" line="5491"/>
         <source>Logic state</source>
         <translation type="unfinished"></translation>
     </message>
@@ -922,7 +909,7 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="2093"/>
-        <location filename="../win.cpp" line="5492"/>
+        <location filename="../win.cpp" line="5499"/>
         <source>INV flag</source>
         <translation type="unfinished"></translation>
     </message>
@@ -938,7 +925,7 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="2111"/>
-        <location filename="../win.cpp" line="5500"/>
+        <location filename="../win.cpp" line="5507"/>
         <source>Grid flag</source>
         <translation type="unfinished"></translation>
     </message>
@@ -954,7 +941,7 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="2129"/>
-        <location filename="../win.cpp" line="5508"/>
+        <location filename="../win.cpp" line="5515"/>
         <source>Grid protect flag</source>
         <translation type="unfinished"></translation>
     </message>
@@ -970,7 +957,7 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="2147"/>
-        <location filename="../win.cpp" line="5516"/>
+        <location filename="../win.cpp" line="5523"/>
         <source>Bat flag</source>
         <translation type="unfinished"></translation>
     </message>
@@ -986,7 +973,7 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="2165"/>
-        <location filename="../win.cpp" line="5524"/>
+        <location filename="../win.cpp" line="5531"/>
         <source>DC bus flag</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1002,13 +989,13 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="2186"/>
-        <location filename="../win.cpp" line="5532"/>
+        <location filename="../win.cpp" line="5539"/>
         <source>INT main flag</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="2194"/>
-        <location filename="../win.cpp" line="5540"/>
+        <location filename="../win.cpp" line="5547"/>
         <source>parallel signal</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1049,7 +1036,7 @@ Language</source>
     </message>
     <message>
         <location filename="../win.ui" line="2294"/>
-        <location filename="../win.cpp" line="5595"/>
+        <location filename="../win.cpp" line="5602"/>
         <source>test data</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1238,7 +1225,7 @@ Language</source>
         <location filename="../win.cpp" line="3287"/>
         <location filename="../win.cpp" line="3296"/>
         <location filename="../win.cpp" line="3403"/>
-        <location filename="../win.cpp" line="5013"/>
+        <location filename="../win.cpp" line="5020"/>
         <source>Disable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1274,7 +1261,7 @@ Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4726"/>
+        <location filename="../win.cpp" line="4733"/>
         <source>120</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1665,6 +1652,7 @@ kW.h</source>
     </message>
     <message>
         <location filename="../win.ui" line="8460"/>
+        <location filename="../win.cpp" line="5668"/>
         <source>Return</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2041,93 +2029,93 @@ Set rule:B1 - A1 ≥ 10V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9863"/>
+        <location filename="../win.ui" line="9889"/>
         <source>              interface:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9879"/>
+        <location filename="../win.ui" line="9930"/>
         <source>Port:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9913"/>
+        <location filename="../win.ui" line="9997"/>
         <source>DHCP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9926"/>
+        <location filename="../win.ui" line="10016"/>
         <source>STATIC</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9942"/>
+        <location filename="../win.ui" line="10032"/>
         <source>ip：</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9955"/>
+        <location filename="../win.ui" line="10045"/>
         <source>netmask:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9971"/>
+        <location filename="../win.ui" line="10061"/>
         <source>gateway:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9984"/>
+        <location filename="../win.ui" line="10074"/>
         <source>Server ip:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="9997"/>
+        <location filename="../win.ui" line="10087"/>
         <source>192 . 168 . 1 . 100</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10010"/>
+        <location filename="../win.ui" line="10100"/>
         <source>255 . 255 . 255 . 0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10023"/>
+        <location filename="../win.ui" line="10113"/>
         <source>192 . 168 .  1  . 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10036"/>
+        <location filename="../win.ui" line="10126"/>
         <source> 192 . 168 . 1  . 200</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10050"/>
+        <location filename="../win.ui" line="10149"/>
         <location filename="../win.cpp" line="2296"/>
         <source>Apply and Restart system</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10063"/>
+        <location filename="../win.ui" line="9911"/>
         <source>eth0</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10076"/>
+        <location filename="../win.ui" line="9949"/>
         <source>502</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10144"/>
+        <location filename="../win.ui" line="10233"/>
         <source>Menu</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10178"/>
+        <location filename="../win.ui" line="10267"/>
         <source>M_01 Converter turn off</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.ui" line="10218"/>
+        <location filename="../win.ui" line="10307"/>
         <source>Current mode:CP</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2547,11 +2535,12 @@ By default, the converter does not respond to level one and level two alarms, bu
         <location filename="../win.cpp" line="2739"/>
         <location filename="../win.cpp" line="2743"/>
         <location filename="../win.cpp" line="2747"/>
-        <location filename="../win.cpp" line="5564"/>
-        <location filename="../win.cpp" line="5587"/>
-        <location filename="../win.cpp" line="5595"/>
-        <location filename="../win.cpp" line="5603"/>
-        <location filename="../win.cpp" line="5675"/>
+        <location filename="../win.cpp" line="5571"/>
+        <location filename="../win.cpp" line="5594"/>
+        <location filename="../win.cpp" line="5602"/>
+        <location filename="../win.cpp" line="5610"/>
+        <location filename="../win.cpp" line="5668"/>
+        <location filename="../win.cpp" line="5693"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3003,18 +2992,18 @@ automatically and reset time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4888"/>
+        <location filename="../win.cpp" line="4895"/>
         <source>Transformer Turns Ratio: Please refer to the factory nameplate for the turns ratio setting based on the built-in transformer. If any changes are required, please contact customer service for confirmation.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4896"/>
+        <location filename="../win.cpp" line="4903"/>
         <source>Non
 adjustable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4905"/>
+        <location filename="../win.cpp" line="4912"/>
         <source>Non
 countercurrent</source>
         <translation type="unfinished"></translation>
@@ -3646,18 +3635,138 @@ For example, setting it to -5 means that the AC side will charge the battery at 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5671"/>
+        <location filename="../win.cpp" line="4514"/>
+        <source>Battery Types: Lithium, Lead-Acid.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="4523"/>
+        <source>Battery Communication Modes: None, RS485, CAN, Ethernet. (Note: Due to the fact that CAN and Ethernet both have only one port, the battery communication mode and EMS communication mode cannot be selected as &quot;CAN&quot; or &quot;Ethernet&quot; simultaneously.)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="4532"/>
+        <source>Constant Voltage (CV) mode: The converter will operate in constant voltage mode on the DC side.                                              Constant Current (CC) mode: The converter will operate in constant current mode on the DC side.                                              Constant Power AC (CP_AC) mode: The power level can be set at &quot;constant power.&quot; The value represents the power level, positive for discharge and negative for charge. For example, setting it to -5 means that the AC side will charge the battery with a power of 5 kW. Due to converter losses, the DC side power will be lower than the AC side power in this case. Conversely, setting it to 5 means that the AC side will output power at 5 kW. Due to converter losses, the DC side power will be higher than the AC side power in this case.                                              Reserved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="4544"/>
+        <source>EMS communication methods: RS485, CAN, Ethernet.                                         The setting communication methods are readable and writable in remote mode, and only readable in local mode. The unselected communication methods are only readable in both remote and local mode.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="4554"/>
+        <source>Output Power Limit: Restricts the upper limit of the set value for the power on the AC side of the converter.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="4563"/>
+        <source>Battery Protocol: Parse the messages sent by BMS based on the selected battery protocol. Currently supported battery manufacturer protocols include:MEGA, LISHEN, PENGHUI, GAOTE, XIENENG, LANLI, SHENLAN, PAINENG, NINGDESHIDAI, SUOYING, XINGWANGDA, KUBO, GAOTE_V2, TOGOOD, GROUP_STANDARD, WOBO, KGOOER, LIDE, PAINENG_L, WEILAN, ALPHA, TUOPU, JIEHUI, JDI, ECUBE, FARO, BGS, JDITEC, HUASU, LIGAO.                                             
+Select AUTO to automatically detect the battery manufacturer protocol.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.ui" line="594"/>
+        <location filename="../win.cpp" line="4573"/>
+        <source>Anti-backflow power tolerance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="4574"/>
+        <source>Anti-backflow power tolerance.The default power tolerance is 10 kW. When the output power increases to &quot;output power limit + power tolerance&quot;, the output power will be reduced to &quot;output power limit - power tolerance&quot;.
+(Note: This setting only takes effect in the system anti-backflow mode and is used to control the power tolerance at the grid entrance).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.ui" line="330"/>
+        <location filename="../win.cpp" line="4584"/>
+        <source>Serial Communication Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="4585"/>
+        <source>Serial Communication Address: The default value is 1, adjustable range is between 1 and 255, used for matching address during serial communication.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="4594"/>
+        <source>Serial Port 2 has six selectable baud rates: 1200, 2400, 4800, 9600, 19200, and 38400. The default baud rate for Serial Port 2 is 9600 bps, with eight data bits, no parity, and one stop bit (8-N-1).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="4603"/>
+        <source>Serial Port 3 has six selectable baud rates: 1200, 2400, 4800, 9600, 19200, and 38400. The default baud rate for Serial Port 3 is 9600 bps, with eight data bits, no parity, and one stop bit (8-N-1).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="4613"/>
+        <source>Serial Port 4 has six selectable baud rates: 1200, 2400, 4800, 9600, 19200, and 38400. The default baud rate for Serial Port 4 is 9600 bps, with eight data bits, no parity, and one stop bit (8-N-1).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="4622"/>
+        <source>Serial Port 5 has six selectable baud rates: 1200, 2400, 4800, 9600, 19200, and 38400. The default baud rate for Serial Port 5 is 9600 bps, with eight data bits, no parity, and one stop bit (8-N-1).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="4630"/>
+        <source>serial port 6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="4631"/>
+        <source>Serial Port 6 has six selectable baud rates: 1200, 2400, 4800, 9600, 19200, and 38400. The default baud rate for Serial Port 6 is 9600 bps, with eight data bits, no parity, and one stop bit (8-N-1).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="4640"/>
+        <source>CAN1 Port: The baud rate for internal communication is 500 kbps by default and cannot be modified. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="4649"/>
+        <source>CAN2 Port: Optional baud rates for the CAN2 port include 100, 125, 250, 500, and 800 kbps, with a default baud rate of 500 kbps.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="4658"/>
+        <source>Protocol version: View the current protocol version. The default protocol version number is V1.0.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="4667"/>
+        <source>User password: Available for resetting the user password. The default user password is 123456. (Note: The user password must be six digits.)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="4676"/>
+        <source>Admin password: Available for resetting the admin password. The default admin password is 888888. (Note: The admin password must be six digits.)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="5666"/>
+        <source>Upgrade prompt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="5667"/>
+        <source>1. Make sure to press the EPO button before upgrading.                              
+2. Before upgrading the DCDC, switch off the ship-type switch of the DCDC module.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../win.cpp" line="5689"/>
         <source>Working mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5672"/>
+        <location filename="../win.cpp" line="5690"/>
         <source>When selecting the manual mode, the converter’s operating status, charging or discharging power (active power), reactive power, power factor etc,can be controlled through HMI or EMS.                              When selecting the UPS mode, When the grid side is abnormal, the system will switch from zero power to grid-off discharge mode to provide energy to critical loads. Please go to the &quot;Battery Settings&quot; page to configure this mode. Note: This mode is only applicable to lithium battery mode and requires normal communication between the converter and BMS.                              Peak shaving and valley filling mode is used for peak-valley price arbitrage. The converter can operate according to the local peak-valley electricity price periods. Please set the operating time period, charging or discharging mode, charging or discharging power, and other information on the &quot;Mixed mode&quot; page.
 Grid expansion.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5675"/>
+        <location filename="../win.cpp" line="5693"/>
         <source>Click to view grid expansion</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3767,24 +3876,17 @@ Grid expansion.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4559"/>
-        <source>Battery Protocol: This is the battery protocol that parses the packets sent by the BMS according to the selected battery protocol.
-Currently, the following battery manufacturer protocols are supported: MEGA, LISHEN, PENGHUI, GOLD, BMSER, LANLI, SHENLAN, PAINENG, NINGDESHIDAI, SUOYING, XINGWANGDA, KUBO, GAOTE_V2, TOGOOD,PGS, WOBO, KGOOER, LIDE, PAINENG_L, WEILAN, ALPHA, TUOPU, JIEHUI, JDI, ECUBE, FARO, BGS, JDITEC, HUASU, LIGAO.
-When you select AUTO, the system automatically determines the battery manufacturer.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="4709"/>
+        <location filename="../win.cpp" line="4716"/>
         <source>Energy meter model: The energy meter model is selected according to the type of energy meter that is connected. According to the characteristics and specifications of the connected watt-hour meter, select the corresponding watt-hour meter model, which can be selected NONE, DTSD1352, AMC96-E4/KC or ADL3000-E-B.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4816"/>
+        <location filename="../win.cpp" line="4823"/>
         <source>Insulation detection Enable, insulation resistance greater than 33KΩ to be able to operate normally, less than 33KΩ can not start, and to alarm, the default prohibition, the choice is to Enable, prohibit.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4852"/>
+        <location filename="../win.cpp" line="4859"/>
         <source>Set according to the machine model on site, the factory value prevails, the default PCS-TS, if you need to change, please contact customer service.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3837,57 +3939,24 @@ When you select AUTO, the system automatically determines the battery manufactur
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4514"/>
-        <source>Choose the battery type according to the actual situation, there are two types of Lithium and LeadAcid to choose from.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../win.cpp" line="4522"/>
         <source>BMS Comm type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4523"/>
-        <source>Set the communication mode between the battery, RS485 or CAN communication or Ethernet can be selected according to the situation.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="4532"/>
-        <source>Set the control power mode, including constant voltage (CV), constant current (CC), constant power (CP_P), and positive and negative power (CP_N&amp;P).
-If constant voltage (CV) mode is selected, the converter will operate in constant voltage mode.
-If constant current (CC) mode is selected, the converter will operate in constant current mode.
-If you choose constant power (CP_P) or positive and negative power (CP_N&amp;P) mode: you can set the power size at &apos;constant power&apos;, the value is the size of the power size, positive for discharge, negative for charging.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="4540"/>
+        <location filename="../win.cpp" line="4543"/>
         <source>EMS Comm type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4541"/>
-        <source>You CAN set the communication mode of the EMS, including RS485,CAN, and Ethernet. Select one communication mode that can be read and written remotely, and the other two communication modes can be read only.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="4550"/>
-        <source>HMI Limits the range of power Settings on the AC side.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="4558"/>
+        <location filename="../win.cpp" line="4562"/>
         <source>Auto</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="554"/>
-        <location filename="../win.cpp" line="4558"/>
+        <location filename="../win.cpp" line="4562"/>
         <source>BAT protocol</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="4568"/>
-        <source>Set the power back difference, the default power back difference is 10kw, the output power increases to &apos;output power limit + power back difference&apos;, will reduce the output power to &apos;output power - power back difference&apos;, (Note: this setting only takes effect in the system anti-countercurrent mode, for control of power grid inlet power back difference).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3911,407 +3980,352 @@ If you choose constant power (CP_P) or positive and negative power (CP_N&amp;P) 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4578"/>
-        <source>This is the device address, which defaults to 1 and can be adjusted from 1 to 255 to match the host address during EMS communication.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="4587"/>
-        <source>This is serial port 1, there are six options, namely 1200, 2400, 4800, 9600, 19200, 38400, serial port 1 default baud rate is 9600 BPS, eight data bits, no check, one stop bit(8, N, 1).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="4596"/>
-        <source>This is serial port 2, there are six options, namely 1200, 2400, 4800, 9600, 19200, 38400, serial port 2 default baud rate is 9600 BPS, eight data bits, no check, one stop bit(8, N, 1).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="4606"/>
-        <source>This is serial port 3, there are six options, namely 1200, 2400, 4800, 9600, 19200, 38400, serial port 3 default baud rate is 9600 BPS, eight data bits, no check, one stop bit(8, N, 1).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="4615"/>
-        <source>This is serial port 4, there are six options, namely 1200, 2400, 4800, 9600, 19200, 38400, serial port 4 default baud rate is 9600 BPS, eight data bits, no check, one stop bit(8, N, 1).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="4624"/>
-        <source>This is serial port 5, there are six options, namely 1200, 2400, 4800, 9600, 19200, 38400, serial port 5 default baud rate is 9600 BPS, eight data bits, no check, one stop bit(8, N, 1).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="4633"/>
-        <source>This is the CAN1 port, the baud rate of PCS internal communication, the default baud rate is 500kbps, eight data bits, no check, one stop bit(8, N, 1).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="4642"/>
-        <source>This is the CAN2 port, the baud rate of PCS internal communication, the default baud rate is 125kbps, eight data bits, no check, one stop bit(8, N, 1).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="4651"/>
-        <source>This is the protocol version number, which is used to view the current protocol version. The protocol version number defaults to V1.0.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="4660"/>
-        <source>This is the user password, you can reset the user password, the default user password 123456, (note: User password must be six digits).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="4669"/>
-        <source>This is the super permission password, you can reset the super permission password, the default super permission password 888888, (Note: super permission password must be six digits).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../win.cpp" line="4677"/>
+        <location filename="../win.cpp" line="4684"/>
         <source>English</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4678"/>
+        <location filename="../win.cpp" line="4685"/>
         <source>Set the display language of the display screen, which can be selected as Chinese and English. The system will restart when switching languages.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4691"/>
+        <location filename="../win.cpp" line="4698"/>
         <source>upgrade</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4699"/>
+        <location filename="../win.cpp" line="4706"/>
         <source>Allow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4700"/>
+        <location filename="../win.cpp" line="4707"/>
         <source>Set whether the display is enabled sound, which can be allowed(Allow) or prohibited(forbid).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4708"/>
+        <location filename="../win.cpp" line="4715"/>
         <source>NONE</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4717"/>
+        <location filename="../win.cpp" line="4724"/>
         <source>20</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4717"/>
+        <location filename="../win.cpp" line="4724"/>
         <source>Bms Com. Fault Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4718"/>
+        <location filename="../win.cpp" line="4725"/>
         <source>BMS communication fault determination time: The BMS communication fault determination time refers to the BMS communication fault when the BMS communication is disconnected and the communication is not recovered after a preset period of time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4726"/>
+        <location filename="../win.cpp" line="4733"/>
         <source>EMS Com. Fault Model</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4727"/>
+        <location filename="../win.cpp" line="4734"/>
         <source>EMS communication fault determination time: The EMS communication fault determination time refers to the time when the communication between the EMS is disconnected and the communication is not recovered after a preset period of time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4744"/>
+        <location filename="../win.cpp" line="4751"/>
         <source>How fast the power changes per unit time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4753"/>
+        <location filename="../win.cpp" line="4760"/>
         <source>The upper limit of the frequency range allowed on the AC side is 0.2, 0.5, 1, and 3.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4762"/>
+        <location filename="../win.cpp" line="4769"/>
         <source>The lower limit of the frequency range allowed on the AC side can be selected as -0.2, -0.5, -1, or -3.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="1051"/>
-        <location filename="../win.cpp" line="4770"/>
+        <location filename="../win.cpp" line="4777"/>
         <source>Vol protection upper limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4771"/>
+        <location filename="../win.cpp" line="4778"/>
         <source>The upper limit of the voltage range allowed on the AC side can be +10, +15, +20, or +30.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../win.ui" line="1099"/>
-        <location filename="../win.cpp" line="4779"/>
+        <location filename="../win.cpp" line="4786"/>
         <source>Vol protection lower limit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4780"/>
+        <location filename="../win.cpp" line="4787"/>
         <source>The lower limit of the voltage variation range allowed on the AC side can be -10, -15, -20, or -30.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4788"/>
-        <location filename="../win.cpp" line="4797"/>
-        <location filename="../win.cpp" line="4806"/>
-        <location filename="../win.cpp" line="4815"/>
-        <location filename="../win.cpp" line="4824"/>
-        <location filename="../win.cpp" line="4833"/>
-        <location filename="../win.cpp" line="4842"/>
+        <location filename="../win.cpp" line="4795"/>
+        <location filename="../win.cpp" line="4804"/>
+        <location filename="../win.cpp" line="4813"/>
+        <location filename="../win.cpp" line="4822"/>
+        <location filename="../win.cpp" line="4831"/>
+        <location filename="../win.cpp" line="4840"/>
+        <location filename="../win.cpp" line="4849"/>
         <source>prohibit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4789"/>
+        <location filename="../win.cpp" line="4796"/>
         <source>This is the high voltage crossing (HVRT) Enable, enable the device will not stop because of a short period of high voltage, the option is to Enable, prohibit, (note: this is generally used in large grid-connected power stations).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4798"/>
+        <location filename="../win.cpp" line="4805"/>
         <source>This is the low voltage crossing (LVRT) Enable, enable the device will not stop because of a short period of low voltage, the option is to Enable, prohibit, (note: this is generally used in large grid-connected power stations).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4807"/>
+        <location filename="../win.cpp" line="4814"/>
         <source>Prevent islanding effect, When the detection of the island effect (in the photovoltaic grid-connected system, when the power failure occurs in the large power grid, the photovoltaic grid-connected inverter power generation and the local load on the low-voltage side of the grid if the power is just matched, it is easy to appear self-sufficient maintenance power state, resulting in the &apos;island&apos; phenomenon, thereby endangering the safety of maintenance personnel), the inverter automatically shut down, and the option is allowed Enable, prohibit, (Note: this is generally used in large grid-connected power stations).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4825"/>
+        <location filename="../win.cpp" line="4832"/>
         <source>When the frequency of the power grid deviates from the rated value, the power grid frequency is maintained stable by controlling the increase or decrease of the active power, which can be selected to Enable, prohibit, (Note: this is generally used in large grid-connected power stations).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4834"/>
+        <location filename="../win.cpp" line="4841"/>
         <source>Moment of inertia Enable, can be selected to Enable, prohibit, (Note: this is generally used in large grid-connected power stations).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4843"/>
+        <location filename="../win.cpp" line="4850"/>
         <source>Constant voltage parallel Enable, you can choose to Enable, prohibit, (Note: this setting is used in constant voltage parallel mode).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4861"/>
+        <location filename="../win.cpp" line="4868"/>
         <source>The rated capacity of PCS is subject to the ex-factory value and cannot be changed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4869"/>
+        <location filename="../win.cpp" line="4876"/>
         <source>Output Fre grade</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4870"/>
+        <location filename="../win.cpp" line="4877"/>
         <source>Set the output frequency level, the default is 50Hz, generally 50Hz or 60Hz, can be fine-tuned according to the project.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4878"/>
+        <location filename="../win.cpp" line="4885"/>
         <source>Output vol level</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4879"/>
+        <location filename="../win.cpp" line="4886"/>
         <source>The voltage level is changed according to the actual local power grid voltage. The voltage level is subject to delivery. If you need to change it, contact customer service for confirmation.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4897"/>
+        <location filename="../win.cpp" line="4904"/>
         <source>Output reactive mode, the default is not adjustable, can be selected as power factor (Pf), reactive power (Q), Non adjustable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4906"/>
+        <location filename="../win.cpp" line="4913"/>
         <source>Set the grid-connected mode of the inverter, which can be countercurrent, that is, DC can be converted into AC power and then incorporated into the power grid; Irreversible means that the current on the DC side does not flow to the grid. The default value can be Countercurrent. The options can be countercurrent or Non countercurrent. With the local grid qualification, it can be changed to &apos;countercurrent&apos;; When using Prevent countercurrent mode, you can change to &apos;countercurrent&apos;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4915"/>
+        <location filename="../win.cpp" line="4922"/>
         <source>Primary frequency modulation dead zone, in order to prevent unnecessary action of the switch when the frequency difference of the grid changes in a small range, (Note: This is generally used in large grid-connected power stations).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4924"/>
+        <location filename="../win.cpp" line="4931"/>
         <source>This can set the active power frequency modulation coefficient, (Note: this is generally used in large grid-connected power stations).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4933"/>
+        <location filename="../win.cpp" line="4940"/>
         <source>Grid restoration time: reserved function, setting invalid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4942"/>
+        <location filename="../win.cpp" line="4949"/>
         <source>Enable the power network expansion. The options are Enable and Disable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4951"/>
+        <location filename="../win.cpp" line="4958"/>
         <source>Number of modules for PCS, default 1(invalid setting).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4959"/>
+        <location filename="../win.cpp" line="4966"/>
         <source>restore</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4960"/>
+        <location filename="../win.cpp" line="4967"/>
         <source>Restore the factory default Settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4968"/>
+        <location filename="../win.cpp" line="4975"/>
         <source>Backup Set Parameters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4968"/>
+        <location filename="../win.cpp" line="4975"/>
         <source>Backup
 Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4969"/>
+        <location filename="../win.cpp" line="4976"/>
         <source>Backup setting parameters: Backup setting parameters refers to backing up the parameters set on the current device so that the backup parameter Settings can be restored when needed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4977"/>
+        <location filename="../win.cpp" line="4984"/>
         <source>Restore Backup Set Parameters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4977"/>
+        <location filename="../win.cpp" line="4984"/>
         <source>Restore
 Backup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4978"/>
+        <location filename="../win.cpp" line="4985"/>
         <source>Restore backup setting parameters: Restore backup setting parameters means to restore the device to the last backup setting parameters and restart the device.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4986"/>
+        <location filename="../win.cpp" line="4993"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4987"/>
+        <location filename="../win.cpp" line="4994"/>
         <source>Clear previous recorded data and operation data of the system.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4996"/>
+        <location filename="../win.cpp" line="5003"/>
         <source>Normally closed circuit (NC) or normally open circuit (NO) according to field Settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="4997"/>
+        <location filename="../win.cpp" line="5004"/>
         <source>When the dry contact is enabled and an abnormal signal is received, the device performs the selected action.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5004"/>
+        <location filename="../win.cpp" line="5011"/>
         <source>DI_1_Enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5005"/>
+        <location filename="../win.cpp" line="5012"/>
         <source>Enter dry contact 1. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5013"/>
+        <location filename="../win.cpp" line="5020"/>
         <source>DI_2_Enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5014"/>
+        <location filename="../win.cpp" line="5021"/>
         <source>Enter dry contact 2. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5022"/>
+        <location filename="../win.cpp" line="5029"/>
         <source>DI_3_Enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5023"/>
+        <location filename="../win.cpp" line="5030"/>
         <source>Enter dry contact 3. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5031"/>
+        <location filename="../win.cpp" line="5038"/>
         <source>DI_4_Enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5032"/>
+        <location filename="../win.cpp" line="5039"/>
         <source>Enter dry contact 4. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5040"/>
+        <location filename="../win.cpp" line="5047"/>
         <source>DI_5_Enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5041"/>
+        <location filename="../win.cpp" line="5048"/>
         <source>Enter dry contact 5. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5049"/>
+        <location filename="../win.cpp" line="5056"/>
         <source>DI_6_Enable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5050"/>
+        <location filename="../win.cpp" line="5057"/>
         <source>Enter dry contact 6. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5058"/>
+        <location filename="../win.cpp" line="5065"/>
         <source>DI_1_NC_O</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5066"/>
+        <location filename="../win.cpp" line="5073"/>
         <source>DI_2_NC_O</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5074"/>
+        <location filename="../win.cpp" line="5081"/>
         <source>DI_3_NC_O</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5082"/>
+        <location filename="../win.cpp" line="5089"/>
         <source>DI_4_NC_O</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5090"/>
+        <location filename="../win.cpp" line="5097"/>
         <source>DI_5_NC_O</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5098"/>
+        <location filename="../win.cpp" line="5105"/>
         <source>DI_6_NC_O</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5106"/>
+        <location filename="../win.cpp" line="5113"/>
         <source>DI_1_Action</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4319,287 +4333,287 @@ Backup</source>
         <location filename="../win.ui" line="1591"/>
         <location filename="../win.ui" line="1635"/>
         <location filename="../win.ui" line="1679"/>
-        <location filename="../win.cpp" line="5114"/>
-        <location filename="../win.cpp" line="5122"/>
-        <location filename="../win.cpp" line="5130"/>
+        <location filename="../win.cpp" line="5121"/>
+        <location filename="../win.cpp" line="5129"/>
+        <location filename="../win.cpp" line="5137"/>
         <source>Prompt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5114"/>
+        <location filename="../win.cpp" line="5121"/>
         <source>DI_2_Action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5122"/>
+        <location filename="../win.cpp" line="5129"/>
         <source>DI_3_Action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5130"/>
+        <location filename="../win.cpp" line="5137"/>
         <source>DI_4_Action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5138"/>
+        <location filename="../win.cpp" line="5145"/>
         <source>DI_5_Action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5146"/>
+        <location filename="../win.cpp" line="5153"/>
         <source>DI_6_Action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5160"/>
-        <location filename="../win.cpp" line="5169"/>
-        <location filename="../win.cpp" line="5178"/>
-        <location filename="../win.cpp" line="5196"/>
+        <location filename="../win.cpp" line="5167"/>
+        <location filename="../win.cpp" line="5176"/>
+        <location filename="../win.cpp" line="5185"/>
+        <location filename="../win.cpp" line="5203"/>
         <source>Standby</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5161"/>
+        <location filename="../win.cpp" line="5168"/>
         <source>DOD protection: Actions to be performed when DOD protection is triggered. The optional functions are NO action, Power down, Standby, Shut down,0 power standby.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5170"/>
+        <location filename="../win.cpp" line="5177"/>
         <source>The action performed when the charge ban is triggered;Optional function: NO action, Power down, Standby, Shut down.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5179"/>
+        <location filename="../win.cpp" line="5186"/>
         <source>The action to be performed when a ban is triggered.The optional functions are NO action, Power down, Standby, Shut down.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5187"/>
+        <location filename="../win.cpp" line="5194"/>
         <source>NO action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5188"/>
+        <location filename="../win.cpp" line="5195"/>
         <source>Action to be performed when a BMS prompt is triggered.The optional functions are NO action, Power down, Standby, Shut down.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5197"/>
+        <location filename="../win.cpp" line="5204"/>
         <source>Action when a BMS alarm is triggered.The optional functions are NO action, Power down, Standby, Shut down.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5206"/>
+        <location filename="../win.cpp" line="5213"/>
         <source>Action that is performed when a BMS fault is triggered.The optional functions are NO action, Power down, Standby, Shut down.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5214"/>
+        <location filename="../win.cpp" line="5221"/>
         <source>BMS warning CP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5215"/>
+        <location filename="../win.cpp" line="5222"/>
         <source>The charge power when the BMS prompt is triggered.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5223"/>
+        <location filename="../win.cpp" line="5230"/>
         <source>BMS alarm CP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5224"/>
+        <location filename="../win.cpp" line="5231"/>
         <source>Charge power that is executed when a BMS alarm is triggered.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5232"/>
+        <location filename="../win.cpp" line="5239"/>
         <source>BMS fualt CP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5233"/>
+        <location filename="../win.cpp" line="5240"/>
         <source>Charging power when a BMS fault is triggered.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5241"/>
+        <location filename="../win.cpp" line="5248"/>
         <source>BMS warning DP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5242"/>
+        <location filename="../win.cpp" line="5249"/>
         <source>Discharge power when the BMS prompt is triggered.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5250"/>
+        <location filename="../win.cpp" line="5257"/>
         <source>BMS alarm DP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5251"/>
+        <location filename="../win.cpp" line="5258"/>
         <source>Discharge power when a BMS alarm is triggered.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5259"/>
+        <location filename="../win.cpp" line="5266"/>
         <source>BMS fualt DP</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5260"/>
+        <location filename="../win.cpp" line="5267"/>
         <source>Discharge power when triggering a BMS fault.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5269"/>
+        <location filename="../win.cpp" line="5276"/>
         <source>It is used for internal debugging only.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5300"/>
+        <location filename="../win.cpp" line="5307"/>
         <source>Debug variable 1 addr</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5308"/>
+        <location filename="../win.cpp" line="5315"/>
         <source>Debug variable 2 addr</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5316"/>
+        <location filename="../win.cpp" line="5323"/>
         <source>Debug variable 3 addr</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5324"/>
+        <location filename="../win.cpp" line="5331"/>
         <source>Debug memery var 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5332"/>
+        <location filename="../win.cpp" line="5339"/>
         <source>Debug memery var 2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5340"/>
+        <location filename="../win.cpp" line="5347"/>
         <source>Debug memery var 3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5348"/>
+        <location filename="../win.cpp" line="5355"/>
         <source>Input Vol revise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5356"/>
+        <location filename="../win.cpp" line="5363"/>
         <source>Input Cur revise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5364"/>
+        <location filename="../win.cpp" line="5371"/>
         <source>1.5 Voltage revise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5372"/>
+        <location filename="../win.cpp" line="5379"/>
         <source>Bus Vol revise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5380"/>
+        <location filename="../win.cpp" line="5387"/>
         <source>Grid A AB Vol revise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5388"/>
+        <location filename="../win.cpp" line="5395"/>
         <source>Grid B BC Vol revise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5396"/>
+        <location filename="../win.cpp" line="5403"/>
         <source>Grid C CA Vol revise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5404"/>
+        <location filename="../win.cpp" line="5411"/>
         <source>Output A Cur revise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5412"/>
+        <location filename="../win.cpp" line="5419"/>
         <source>Output B Cur revise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5420"/>
+        <location filename="../win.cpp" line="5427"/>
         <source>Output C Cur revise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5428"/>
+        <location filename="../win.cpp" line="5435"/>
         <source>INV A Vol revise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5436"/>
+        <location filename="../win.cpp" line="5443"/>
         <source>INV B Vol revise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5444"/>
+        <location filename="../win.cpp" line="5451"/>
         <source>INV C Vol revise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5452"/>
+        <location filename="../win.cpp" line="5459"/>
         <source>INV A ind Cur revise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5460"/>
+        <location filename="../win.cpp" line="5467"/>
         <source>INV B ind Cur revise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5468"/>
+        <location filename="../win.cpp" line="5475"/>
         <source>INV_C_ind_Cur_revise</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5564"/>
+        <location filename="../win.cpp" line="5571"/>
         <source>static</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5564"/>
+        <location filename="../win.cpp" line="5571"/>
         <source>If this parameter is selected, static IP addresses are used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5587"/>
+        <location filename="../win.cpp" line="5594"/>
         <source>This is an automatic IP acquisition, currently not supported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5587"/>
+        <location filename="../win.cpp" line="5594"/>
         <source>dhcp</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5595"/>
+        <location filename="../win.cpp" line="5602"/>
         <source>Call in test data (for internal testing personnel only).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5603"/>
+        <location filename="../win.cpp" line="5610"/>
         <source>Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../win.cpp" line="5603"/>
+        <location filename="../win.cpp" line="5610"/>
         <source>Click here to modify the time displayed on the HMI.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4626,10 +4640,10 @@ Backup</source>
     </message>
     <message>
         <location filename="../win.cpp" line="3197"/>
-        <location filename="../win.cpp" line="5106"/>
-        <location filename="../win.cpp" line="5138"/>
-        <location filename="../win.cpp" line="5146"/>
-        <location filename="../win.cpp" line="5205"/>
+        <location filename="../win.cpp" line="5113"/>
+        <location filename="../win.cpp" line="5145"/>
+        <location filename="../win.cpp" line="5153"/>
+        <location filename="../win.cpp" line="5212"/>
         <source>Shut down</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4643,12 +4657,12 @@ Backup</source>
         <location filename="../win.ui" line="1613"/>
         <location filename="../win.ui" line="1657"/>
         <location filename="../win.cpp" line="3224"/>
-        <location filename="../win.cpp" line="4941"/>
-        <location filename="../win.cpp" line="5004"/>
-        <location filename="../win.cpp" line="5022"/>
-        <location filename="../win.cpp" line="5031"/>
-        <location filename="../win.cpp" line="5040"/>
-        <location filename="../win.cpp" line="5049"/>
+        <location filename="../win.cpp" line="4948"/>
+        <location filename="../win.cpp" line="5011"/>
+        <location filename="../win.cpp" line="5029"/>
+        <location filename="../win.cpp" line="5038"/>
+        <location filename="../win.cpp" line="5047"/>
+        <location filename="../win.cpp" line="5056"/>
         <source>Enable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5461,43 +5475,43 @@ fault</source>
     </message>
     <message>
         <location filename="../UpgradeTools/upgradetools.ui" line="230"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="57"/>
-        <source>DCDC</source>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="58"/>
+        <source>DCDC Upgrade</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../UpgradeTools/upgradetools.ui" line="251"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="61"/>
-        <source>DCAC</source>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="63"/>
+        <source>DCAC Upgrade</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../UpgradeTools/upgradetools.ui" line="274"/>
         <location filename="../UpgradeTools/upgradetools.ui" line="661"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="65"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="85"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="68"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="94"/>
         <source>Monitor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../UpgradeTools/upgradetools.ui" line="295"/>
         <location filename="../UpgradeTools/upgradetools.ui" line="682"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="69"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="89"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="72"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="98"/>
         <source>Backup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../UpgradeTools/upgradetools.ui" line="316"/>
         <location filename="../UpgradeTools/upgradetools.ui" line="703"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="73"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="93"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="76"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="102"/>
         <source>Restore</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../UpgradeTools/upgradetools.ui" line="339"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="77"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="81"/>
         <source>Apply and restart</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5525,13 +5539,13 @@ fault</source>
     </message>
     <message>
         <location filename="../UpgradeTools/upgradetools.ui" line="566"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="105"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="121"/>
         <source>Monitor.hex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../UpgradeTools/upgradetools.ui" line="587"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="109"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="125"/>
         <source>DSPUpdate.hex</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5547,92 +5561,99 @@ fault</source>
     </message>
     <message>
         <location filename="../UpgradeTools/upgradetools.ui" line="726"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="97"/>
-        <source>PCS</source>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="106"/>
+        <source>DSP Upgrade</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../UpgradeTools/upgradetools.ui" line="747"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="101"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="112"/>
         <source>Restart</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="58"/>
-        <source>After inserting the USB flash drive and detecting the DCDC upgrade program DCDC_Update.hex,click to upgrade the corresponding DCDC module based on the displayed module number.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="58"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="62"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="66"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="70"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="74"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="78"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="60"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="65"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="69"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="73"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="77"/>
         <location filename="../UpgradeTools/upgradetools.cpp" line="82"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="86"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="90"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="94"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="98"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="102"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="106"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="110"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="91"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="95"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="99"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="103"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="108"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="113"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="122"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="126"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="62"/>
-        <source>After inserting the USB flash drive and detecting the DCAC upgrade program DCAC_Update.hex,click to upgrade DCAC.
-You need to press the EPO during the upgrade.</source>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="59"/>
+        <source>DCDC Upgrade: Insert a u disk and check for the presence of the DCDC upgrade program &apos;DCDC_Update.hex&apos;. Click on DCDC, and then upgrade the corresponding DCDC module according to the selected module number above.                                
+(Note: Before upgrading the DCDC, ensure that the ship mode switch on the DCDC module is set to the OFF position.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="66"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="86"/>
-        <source>After inserting the USB flash drive and checking that there is a Monitor upgrade program monitor.hex, click to upgrade the monitor program.</source>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="64"/>
+        <source>DCAC Upgrade: Insert the u disk and check if there is a DCAC upgrade program called &apos;DCAC_Update.hex&apos;. Click to upgrade the DCAC.                                
+(Note: Press the EPO button before upgrading.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="70"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="90"/>
-        <source>Click to back up the upgrade program.</source>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="69"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="95"/>
+        <source>After inserting the u disk and checking that there is a Monitor upgrade program &apos;Monitor.hex&apos;, click to upgrade the monitor program.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="74"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="94"/>
-        <source>Click to restore to the already backed up program.</source>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="73"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="99"/>
+        <source>Backup: Click to backup the current program files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="78"/>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="102"/>
-        <source>Click to restart.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="81"/>
-        <source>Baud Rate</source>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="77"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="103"/>
+        <source>Restore: Restore to the most recent backup program files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../UpgradeTools/upgradetools.cpp" line="82"/>
-        <source>This is the baud rate setting, there are 125k and 500k two baud rate options, the default 500k.</source>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="113"/>
+        <source>Click to restart.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="98"/>
-        <source>After inserting the USB flash drive and checking that there is DCAC update program DSPUpdate.hex, click to upgrade DSP.
-You need to press the EPO during the upgrade.</source>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="82"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="113"/>
+        <source>Previous Page</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="106"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="90"/>
+        <source>Baud Rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="91"/>
+        <source>Baud Rate: Default is 500k and cannot be modified.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="107"/>
+        <source>DSP Upgrade: Insert the u disk and check if there is a DSP upgrade program called &apos;DSPUpdate.hex&apos;. Click to upgrade the DSP.                                
+(Note: Press the EPO button before upgrading.))</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="122"/>
         <source>This is the name of the monitoring upgrade program.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../UpgradeTools/upgradetools.cpp" line="110"/>
+        <location filename="../UpgradeTools/upgradetools.cpp" line="126"/>
         <source>This is the DSP upgrade program name.</source>
         <translation type="unfinished"></translation>
     </message>

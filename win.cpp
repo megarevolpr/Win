@@ -4511,7 +4511,7 @@ void MEGAWin::FunctionSet()
     }
     Battery_type = new Specification(this,Battery_type_explain, ui->UI_Parameter_Tab, 0, 1, \
                                      tr("Lithium"), tr("Battery type"), \
-                                     tr("Choose the battery type according to the actual situation, there are two types of Lithium and LeadAcid to choose from."));
+                                     tr("Battery Types: Lithium, Lead-Acid."));
     Battery_type->add_Specification();
 
     if(BMS_Comm_type != nullptr)
@@ -4520,7 +4520,7 @@ void MEGAWin::FunctionSet()
     }
     BMS_Comm_type = new Specification(this,BMS_Comm_type_explain, ui->UI_Parameter_Tab, 1, 1, \
                                       "CAN", tr("BMS Comm type"), \
-                                      tr("Set the communication mode between the battery, RS485 or CAN communication or Ethernet can be selected according to the situation."));
+                                      tr("Battery Communication Modes: None, RS485, CAN, Ethernet. (Note: Due to the fact that CAN and Ethernet both have only one port, the battery communication mode and EMS communication mode cannot be selected as \"CAN\" or \"Ethernet\" simultaneously.)"));
     BMS_Comm_type->add_Specification();
 
     if(Power_control_type != nullptr)
@@ -4529,7 +4529,10 @@ void MEGAWin::FunctionSet()
     }
     Power_control_type = new Specification(this,Power_control_type_explain, ui->UI_Parameter_Tab, 2, 1,\
                                            "CP_N&&P" , tr("Power control type"), \
-                                           tr("Set the control power mode, including constant voltage (CV), constant current (CC), constant power (CP_P), and positive and negative power (CP_N&P).\nIf constant voltage (CV) mode is selected, the converter will operate in constant voltage mode.\nIf constant current (CC) mode is selected, the converter will operate in constant current mode.\nIf you choose constant power (CP_P) or positive and negative power (CP_N&P) mode: you can set the power size at 'constant power', the value is the size of the power size, positive for discharge, negative for charging."));
+                                           tr("Constant Voltage (CV) mode: The converter will operate in constant voltage mode on the DC side.\
+                                              Constant Current (CC) mode: The converter will operate in constant current mode on the DC side.\
+                                              Constant Power AC (CP_AC) mode: The power level can be set at \"constant power.\" The value represents the power level, positive for discharge and negative for charge. For example, setting it to -5 means that the AC side will charge the battery with a power of 5 kW. Due to converter losses, the DC side power will be lower than the AC side power in this case. Conversely, setting it to 5 means that the AC side will output power at 5 kW. Due to converter losses, the DC side power will be higher than the AC side power in this case.\
+                                              Reserved."));
     Power_control_type->add_Specification();
 
     if(EMS_Comm_type != nullptr)
@@ -4538,7 +4541,8 @@ void MEGAWin::FunctionSet()
     }
     EMS_Comm_type = new Specification(this,EMS_Comm_type_explain, ui->UI_Parameter_Tab, 3, 1, \
                                       "RS485", tr("EMS Comm type"), \
-                                      tr("You CAN set the communication mode of the EMS, including RS485,CAN, and Ethernet. Select one communication mode that can be read and written remotely, and the other two communication modes can be read only."));
+                                      tr("EMS communication methods: RS485, CAN, Ethernet.\
+                                         The setting communication methods are readable and writable in remote mode, and only readable in local mode. The unselected communication methods are only readable in both remote and local mode."));
     EMS_Comm_type->add_Specification();
 
     if(Output_power_limit != nullptr)
@@ -4547,7 +4551,7 @@ void MEGAWin::FunctionSet()
     }
     Output_power_limit = new Specification(this,Output_power_limit_explain, ui->UI_Parameter_Tab, 4, 1,\
                                            "100", tr("Output power limit"), \
-                                           tr("HMI Limits the range of power Settings on the AC side."));
+                                           tr("Output Power Limit: Restricts the upper limit of the set value for the power on the AC side of the converter."));
     Output_power_limit->add_Specification();
 
     if(BAT_protocol != nullptr)
@@ -4556,7 +4560,9 @@ void MEGAWin::FunctionSet()
     }
     BAT_protocol = new Specification(this,BAT_protocol_explain, ui->UI_Parameter_Tab, 5, 1, \
                                           tr("Auto"), tr("BAT protocol"), \
-                                          tr("Battery Protocol: This is the battery protocol that parses the packets sent by the BMS according to the selected battery protocol.\nCurrently, the following battery manufacturer protocols are supported: MEGA, LISHEN, PENGHUI, GOLD, BMSER, LANLI, SHENLAN, PAINENG, NINGDESHIDAI, SUOYING, XINGWANGDA, KUBO, GAOTE_V2, TOGOOD,PGS, WOBO, KGOOER, LIDE, PAINENG_L, WEILAN, ALPHA, TUOPU, JIEHUI, JDI, ECUBE, FARO, BGS, JDITEC, HUASU, LIGAO.\nWhen you select AUTO, the system automatically determines the battery manufacturer."));
+                                          tr("Battery Protocol: Parse the messages sent by BMS based on the selected battery protocol. Currently supported battery manufacturer protocols include:\
+MEGA, LISHEN, PENGHUI, GAOTE, XIENENG, LANLI, SHENLAN, PAINENG, NINGDESHIDAI, SUOYING, XINGWANGDA, KUBO, GAOTE_V2, TOGOOD, GROUP_STANDARD, WOBO, KGOOER, LIDE, PAINENG_L, WEILAN, ALPHA, TUOPU, JIEHUI, JDI, ECUBE, FARO, BGS, JDITEC, HUASU, LIGAO.\
+                                             \nSelect AUTO to automatically detect the battery manufacturer protocol."));
     BAT_protocol->add_Specification();
 
     if(Power_Delta != nullptr)
@@ -4564,8 +4570,9 @@ void MEGAWin::FunctionSet()
         delete Power_Delta;
     }
     Power_Delta = new Specification(this,Power_Delta_explain, ui->UI_Parameter_Tab, 6, 1, \
-                                    "10", tr("Power Delta"), \
-                                    tr("Set the power back difference, the default power back difference is 10kw, the output power increases to 'output power limit + power back difference', will reduce the output power to 'output power - power back difference', (Note: this setting only takes effect in the system anti-countercurrent mode, for control of power grid inlet power back difference)."));
+                                    "10", tr("Anti-backflow power tolerance"), \
+                                    tr("Anti-backflow power tolerance.The default power tolerance is 10 kW. When the output power increases to \"output power limit + power tolerance\", the output power will be reduced to \"output power limit - power tolerance\".\
+\n(Note: This setting only takes effect in the system anti-backflow mode and is used to control the power tolerance at the grid entrance)."));
     Power_Delta->add_Specification();
 
 
@@ -4574,8 +4581,8 @@ void MEGAWin::FunctionSet()
         delete Host_Address;
     }
     Host_Address = new Specification(this,Host_Address_explain, ui->UI_Parameter_Tab, 0, 4,\
-                                     "1", tr("Host Address"), \
-                                     tr("This is the device address, which defaults to 1 and can be adjusted from 1 to 255 to match the host address during EMS communication."));
+                                     "1", tr("Serial Communication Address"), \
+                                     tr("Serial Communication Address: The default value is 1, adjustable range is between 1 and 255, used for matching address during serial communication."));
     Host_Address->add_Specification();
 
     if(serial_port_1 != nullptr)
@@ -4583,8 +4590,8 @@ void MEGAWin::FunctionSet()
         delete serial_port_1;
     }
     serial_port_1 = new Specification(this,serial_port_1_explain, ui->UI_Parameter_Tab, 1, 4, \
-                                      "9600", tr("serial port 1"), \
-                                      tr("This is serial port 1, there are six options, namely 1200, 2400, 4800, 9600, 19200, 38400, serial port 1 default baud rate is 9600 BPS, eight data bits, no check, one stop bit(8, N, 1)."));
+                                      "9600", tr("serial port 2"), \
+                                      tr("Serial Port 2 has six selectable baud rates: 1200, 2400, 4800, 9600, 19200, and 38400. The default baud rate for Serial Port 2 is 9600 bps, with eight data bits, no parity, and one stop bit (8-N-1)."));
     serial_port_1->add_Specification();
 
     if(serial_port_2 != nullptr)
@@ -4592,8 +4599,8 @@ void MEGAWin::FunctionSet()
         delete serial_port_2;
     }
     serial_port_2 = new Specification(this,serial_port_2_explain, ui->UI_Parameter_Tab, 2, 4, \
-                                      "9600", tr("serial port 2"), \
-                                      tr("This is serial port 2, there are six options, namely 1200, 2400, 4800, 9600, 19200, 38400, serial port 2 default baud rate is 9600 BPS, eight data bits, no check, one stop bit(8, N, 1)."));
+                                      "9600", tr("serial port 3"), \
+                                      tr("Serial Port 3 has six selectable baud rates: 1200, 2400, 4800, 9600, 19200, and 38400. The default baud rate for Serial Port 3 is 9600 bps, with eight data bits, no parity, and one stop bit (8-N-1)."));
     serial_port_2->add_Specification();
 
     if(serial_port_3 != nullptr)
@@ -4602,8 +4609,8 @@ void MEGAWin::FunctionSet()
         delete serial_port_3;
     }
     serial_port_3 = new Specification(this,serial_port_3_explain, ui->UI_Parameter_Tab, 3, 4, \
-                                      "9600", tr("serial port 3"), \
-                                      tr("This is serial port 3, there are six options, namely 1200, 2400, 4800, 9600, 19200, 38400, serial port 3 default baud rate is 9600 BPS, eight data bits, no check, one stop bit(8, N, 1)."));
+                                      "9600", tr("serial port 4"), \
+                                      tr("Serial Port 4 has six selectable baud rates: 1200, 2400, 4800, 9600, 19200, and 38400. The default baud rate for Serial Port 4 is 9600 bps, with eight data bits, no parity, and one stop bit (8-N-1)."));
     serial_port_3->add_Specification();
 
     if(serial_port_4 != nullptr)
@@ -4611,8 +4618,8 @@ void MEGAWin::FunctionSet()
         delete serial_port_4;
     }
     serial_port_4 = new Specification(this,serial_port_4_explain, ui->UI_Parameter_Tab, 4, 4, \
-                                      "9600", tr("serial port 4"), \
-                                      tr("This is serial port 4, there are six options, namely 1200, 2400, 4800, 9600, 19200, 38400, serial port 4 default baud rate is 9600 BPS, eight data bits, no check, one stop bit(8, N, 1)."));
+                                      "9600", tr("serial port 5"), \
+                                      tr("Serial Port 5 has six selectable baud rates: 1200, 2400, 4800, 9600, 19200, and 38400. The default baud rate for Serial Port 5 is 9600 bps, with eight data bits, no parity, and one stop bit (8-N-1)."));
     serial_port_4->add_Specification();
 
     if(serial_port_5 != nullptr)
@@ -4620,8 +4627,8 @@ void MEGAWin::FunctionSet()
         delete serial_port_5;
     }
     serial_port_5 = new Specification(this,serial_port_5_explain, ui->UI_Parameter_Tab, 5, 4, \
-                                      "9600", tr("serial port 5"), \
-                                      tr("This is serial port 5, there are six options, namely 1200, 2400, 4800, 9600, 19200, 38400, serial port 5 default baud rate is 9600 BPS, eight data bits, no check, one stop bit(8, N, 1)."));
+                                      "9600", tr("serial port 6"), \
+                                      tr("Serial Port 6 has six selectable baud rates: 1200, 2400, 4800, 9600, 19200, and 38400. The default baud rate for Serial Port 6 is 9600 bps, with eight data bits, no parity, and one stop bit (8-N-1)."));
     serial_port_5->add_Specification();
 
     if(Can_port_1 != nullptr)
@@ -4630,7 +4637,7 @@ void MEGAWin::FunctionSet()
     }
     Can_port_1 = new Specification(this,Can_port_1_explain, ui->UI_Parameter_Tab, 6, 4, \
                                    "500", tr("Can port 1"), \
-                                   tr("This is the CAN1 port, the baud rate of PCS internal communication, the default baud rate is 500kbps, eight data bits, no check, one stop bit(8, N, 1)."));
+                                   tr("CAN1 Port: The baud rate for internal communication is 500 kbps by default and cannot be modified. "));
     Can_port_1->add_Specification();
 
     if(Can_port_2 != nullptr)
@@ -4639,7 +4646,7 @@ void MEGAWin::FunctionSet()
     }
     Can_port_2 = new Specification(this,Can_port_2_explain, ui->UI_Parameter_Tab, 7, 4, \
                                    "125", tr("Can port 2"), \
-                                   tr("This is the CAN2 port, the baud rate of PCS internal communication, the default baud rate is 125kbps, eight data bits, no check, one stop bit(8, N, 1)."));
+                                   tr("CAN2 Port: Optional baud rates for the CAN2 port include 100, 125, 250, 500, and 800 kbps, with a default baud rate of 500 kbps."));
     Can_port_2->add_Specification();
 
     if(ProtocolVersion != nullptr)
@@ -4648,7 +4655,7 @@ void MEGAWin::FunctionSet()
     }
     ProtocolVersion = new Specification(this,ProtocolVersion_explain, ui->UI_Parameter_Tab, 0, 7, \
                                         "V1.0", tr("ProtocolVersion"), \
-                                        tr("This is the protocol version number, which is used to view the current protocol version. The protocol version number defaults to V1.0."));
+                                        tr("Protocol version: View the current protocol version. The default protocol version number is V1.0."));
     ProtocolVersion->add_Specification();
 
     if(UserPassPort != nullptr)
@@ -4657,7 +4664,7 @@ void MEGAWin::FunctionSet()
     }
     UserPassPort = new Specification(this,UserPassPort_explain, ui->UI_Parameter_Tab, 1, 7, \
                                      "123456", tr("UserPassPort"), \
-                                     tr("This is the user password, you can reset the user password, the default user password 123456, (note: User password must be six digits)."));
+                                     tr("User password: Available for resetting the user password. The default user password is 123456. (Note: The user password must be six digits.)"));
     UserPassPort->add_Specification();
 
     if(RootPassport != nullptr)
@@ -4666,7 +4673,7 @@ void MEGAWin::FunctionSet()
     }
     RootPassport = new Specification(this,RootPassport_explain, ui->UI_Parameter_Tab, 2, 7,\
                                      "888888", tr("RootPassport"), \
-                                     tr("This is the super permission password, you can reset the super permission password, the default super permission password 888888, (Note: super permission password must be six digits)."));
+                                     tr("Admin password: Available for resetting the admin password. The default admin password is 888888. (Note: The admin password must be six digits.)"));
     RootPassport->add_Specification();
 
     if(Language != nullptr)
@@ -5656,13 +5663,24 @@ void MEGAWin::on_search_btn_clicked()
 
 void MEGAWin::UpgradeInterface_clicked()
 {
-    if(UpgradeInterface->isHidden())
+    int reply = QMessageBox::question(this, tr("Upgrade prompt")\
+                          ,tr("1. Make sure to press the EPO button before upgrading.\
+                              \n2. Before upgrading the DCDC, switch off the ship-type switch of the DCDC module."), tr("Return"),tr("OK"));
+    if (reply == 0)
     {
-        UpgradeInterface->show();
-    }
-    else
-    {
-        UpgradeInterface->hide();
+        // 点击了"Cancel"按钮的处理逻辑
+        return ;
+
+    } else if (reply == 1) {
+        // 点击了"OK"按钮的处理逻辑
+        if(UpgradeInterface->isHidden())
+        {
+            UpgradeInterface->show();
+        }
+        else
+        {
+            UpgradeInterface->hide();
+        }
     }
 }
 
