@@ -10,6 +10,7 @@
 #include "Menu.h"
 #include "Specification/Specification.h"
 #include "upgradetools.h"
+#include "GridExpansion.h"
 
 
 
@@ -37,6 +38,7 @@ public:
 
         Menu *m_menu;
         UpgradeTools *UpgradeInterface;
+        GridExpansion *GridExpansionInterface;
 
         /***************************系统设置****************************/
         QPushButton *Grid_connected_mode_explain;//并网方式说明

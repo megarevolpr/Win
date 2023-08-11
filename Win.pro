@@ -29,11 +29,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 include         ($$PWD/UI_Menu/UI_Menu.pri)
 include         ($$PWD/Specification/Specification.pri)
 include         ($$PWD/UpgradeTools/UpgradeTools.pri)
+include         ($$PWD/GridExpansion/GridExpansion.pri)
 
 #INCLUDEPATH     +=$$PWD/Messagebox/
 INCLUDEPATH     +=$$PWD/UI_Menu/
 INCLUDEPATH     +=$$PWD/Specification/
 INCLUDEPATH     +=$$PWD/UpgradeTools/
+INCLUDEPATH     +=$$PWD/GridExpansion/
 
 CONFIG += c++11
 

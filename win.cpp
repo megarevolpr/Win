@@ -73,6 +73,7 @@ void MEGAWin::MemoryAllocation()
 
     m_menu = new Menu(this);//菜单创建
     UpgradeInterface = new UpgradeTools(this);
+    GridExpansionInterface = new GridExpansion(this);
 
     /***************************数据报表&导出数据**********************************/
 
@@ -1069,7 +1070,6 @@ void MEGAWin::History_tab()
     ui->Historicalfailure_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
     ui->Historicalfailure_tableWidget->setShowGrid(true);//设置显示格子
     ui->Historicalfailure_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
-    ui->Historicalfailure_tableWidget->setEditTriggers(QAbstractItemView::SelectedClicked);//单机修改
     ui->Historicalfailure_tableWidget->setColumnWidth(0,50);
     ui->Historicalfailure_tableWidget->setColumnWidth(1,180);
     ui->Historicalfailure_tableWidget->setColumnWidth(2,180);
@@ -1744,6 +1744,7 @@ void MEGAWin::Change_Language()
     OperationLog_tab_delete();//操作日志delete
     HistoryRecord_delete();//历史记录delete
     delete UpgradeInterface;//升级
+    delete GridExpansionInterface;
 
     RunStatePage();//重新加载实时数据的UI
 
@@ -1753,6 +1754,7 @@ void MEGAWin::Change_Language()
 
     SystemParam_tbnt_released();//重新加载高级设置的UI
     UpgradeInterface = new UpgradeTools(this);
+    GridExpansionInterface = new GridExpansion(this);
 
 }
 
@@ -5163,7 +5165,7 @@ void MEGAWin::BMS_Protect()
     }
     DOD_Action = new Specification(this,DOD_Action_explain, ui->BMSProtection_tW, 0, 0, \
                                    tr("Standby"), "DOD", \
-                                   tr("DOD protection: Actions to be performed when DOD protection is triggered. The optional functions are NO action, Power down, Standby, Shut down,0 power standby."));
+                                   tr("DOD protection: Actions to be performed when DOD protection is triggered. The optional functions are NO action, Standby, Shut down,0 power standby."));
     DOD_Action->add_Specification();
 
     if(Prohibit_charging_Action != nullptr)
@@ -5172,7 +5174,7 @@ void MEGAWin::BMS_Protect()
     }
     Prohibit_charging_Action = new Specification(this,Prohibit_charging_Action_explain, ui->BMSProtection_tW, 1, 0, \
                                    tr("Standby"), tr("Prohibit charging"), \
-                                   tr("The action performed when the charge ban is triggered;Optional function: NO action, Power down, Standby, Shut down."));
+                                   tr("The action performed when the charge ban is triggered;Optional function: NO action, Standby, Shut down,0 power standby."));
     Prohibit_charging_Action->add_Specification();
 
     if(Prohibit_discharging_Action != nullptr)
@@ -5181,7 +5183,7 @@ void MEGAWin::BMS_Protect()
     }
     Prohibit_discharging_Action = new Specification(this,Prohibit_discharging_Action_explain, ui->BMSProtection_tW, 2, 0, \
                                    tr("Standby"), tr("Prohibit discharging"), \
-                                   tr("The action to be performed when a ban is triggered.The optional functions are NO action, Power down, Standby, Shut down."));
+                                   tr("The action to be performed when a ban is triggered.The optional functions are NO action, Standby, Shut down,0 power standby."));
     Prohibit_discharging_Action->add_Specification();
 
     if(BMS_warning_Action != nullptr)
@@ -5189,8 +5191,8 @@ void MEGAWin::BMS_Protect()
         delete BMS_warning_Action;
     }
     BMS_warning_Action = new Specification(this,BMS_warning_Action_explain, ui->BMSProtection_tW, 3, 0, \
-                                   tr("NO action"), tr("BMS warning"), \
-                                   tr("Action to be performed when a BMS prompt is triggered.The optional functions are NO action, Power down, Standby, Shut down."));
+                                   tr("NO action"), tr("level 1 alarm"), \
+                                   tr("Action to be performed when level 1 alarm is triggered.The optional functions are NO action, Power down, Standby, Shut down,0 power standby."));
     BMS_warning_Action->add_Specification();
 
     if(BMS_alarm_Action != nullptr)
@@ -5198,8 +5200,8 @@ void MEGAWin::BMS_Protect()
         delete BMS_alarm_Action;
     }
     BMS_alarm_Action = new Specification(this,BMS_alarm_Action_explain, ui->BMSProtection_tW, 4, 0, \
-                                   tr("Standby"), tr("BMS alarm"), \
-                                   tr("Action when a BMS alarm is triggered.The optional functions are NO action, Power down, Standby, Shut down."));
+                                   tr("Standby"), tr("level 2 alarm"), \
+                                   tr("Action to be performed when level 2 alarm is triggered.The optional functions are NO action, Power down, Standby, Shut down,0 power standby."));
     BMS_alarm_Action->add_Specification();
 
     if(BMS_fualt_Action != nullptr)
@@ -5207,8 +5209,8 @@ void MEGAWin::BMS_Protect()
         delete BMS_fualt_Action;
     }
     BMS_fualt_Action = new Specification(this,BMS_fualt_Action_explain, ui->BMSProtection_tW, 5, 0, \
-                                   tr("Shut down"), tr("BMS fualt"), \
-                                   tr("Action that is performed when a BMS fault is triggered.The optional functions are NO action, Power down, Standby, Shut down."));
+                                   tr("Shut down"), tr("level 3 alarm"), \
+                                   tr("Action that is performed when level 3 alarm is triggered.The optional functions are NO action, Standby, Shut down,0 power standby."));
     BMS_fualt_Action->add_Specification();
 
     if(BMS_warning_CP != nullptr)
@@ -5216,8 +5218,8 @@ void MEGAWin::BMS_Protect()
         delete BMS_warning_CP;
     }
     BMS_warning_CP = new Specification(this,BMS_warning_CP_explain, ui->BMSProtection_tW, 3, 1, \
-                                   "0", tr("BMS warning CP"), \
-                                   tr("The charge power when the BMS prompt is triggered."));
+                                   "0", tr("level 1 alarm CP"), \
+                                   tr("The charging power executed when a level 1 alarm is triggered."));
     BMS_warning_CP->add_Specification();
 
     if(BMS_alarm_CP != nullptr)
@@ -5225,26 +5227,26 @@ void MEGAWin::BMS_Protect()
         delete BMS_alarm_CP;
     }
     BMS_alarm_CP = new Specification(this,BMS_alarm_CP_explain, ui->BMSProtection_tW, 4, 1, \
-                                   "0", tr("BMS alarm CP"), \
-                                   tr("Charge power that is executed when a BMS alarm is triggered."));
+                                   "0", tr("level 2 alarm CP"), \
+                                   tr("The charging power executed when a level 2 alarm is triggered."));
     BMS_alarm_CP->add_Specification();
 
-    if(BMS_fualt_CP != nullptr)
+    /*if(BMS_fualt_CP != nullptr)
     {
         delete BMS_fualt_CP;
     }
     BMS_fualt_CP = new Specification(this,BMS_fualt_CP_explain, ui->BMSProtection_tW, 5, 1, \
                                    "0", tr("BMS fualt CP"), \
                                    tr("Charging power when a BMS fault is triggered."));
-    BMS_fualt_CP->add_Specification();
+    BMS_fualt_CP->add_Specification();*/
 
     if(BMS_warning_DP != nullptr)
     {
         delete BMS_warning_DP;
     }
     BMS_warning_DP = new Specification(this,BMS_warning_DP_explain, ui->BMSProtection_tW, 3, 2, \
-                                   "0", tr("BMS warning DP"), \
-                                   tr("Discharge power when the BMS prompt is triggered."));
+                                   "0", tr("level 1 alarm DP"), \
+                                   tr("The discharging power executed when a level 1 alarm is triggered."));
     BMS_warning_DP->add_Specification();
 
     if(BMS_alarm_DP != nullptr)
@@ -5252,18 +5254,18 @@ void MEGAWin::BMS_Protect()
         delete BMS_alarm_DP;
     }
     BMS_alarm_DP = new Specification(this,BMS_alarm_DP_explain, ui->BMSProtection_tW, 4, 2, \
-                                   "0", tr("BMS alarm DP"), \
-                                   tr("Discharge power when a BMS alarm is triggered."));
+                                   "0", tr("level 2 alarm DP"), \
+                                   tr("The discharging power executed when a level 2 alarm is triggered."));
     BMS_alarm_DP->add_Specification();
 
-    if(BMS_fualt_DP != nullptr)
+    /*if(BMS_fualt_DP != nullptr)
     {
         delete BMS_fualt_DP;
     }
     BMS_fualt_DP = new Specification(this,BMS_fualt_DP_explain, ui->BMSProtection_tW, 5, 2, \
                                    "0", tr("BMS fualt DP"), \
                                    tr("Discharge power when triggering a BMS fault."));
-    BMS_fualt_DP->add_Specification();
+    BMS_fualt_DP->add_Specification();*/
 }
 
 /***************************************************************
@@ -5692,13 +5694,13 @@ void MEGAWin::WorkingMode_clicked()
     if (reply == 0)
     {
         // 点击了"Grid expansion"按钮的处理逻辑,进入新界面  点击查看电网扩容
-        if(UpgradeInterface->isHidden())
+        if(GridExpansionInterface->isHidden())
         {
-            UpgradeInterface->show();
+            GridExpansionInterface->show();
         }
         else
         {
-            UpgradeInterface->hide();
+            GridExpansionInterface->hide();
         }
         return ;
 
