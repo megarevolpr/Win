@@ -142,7 +142,7 @@ color: rgb(255, 255, 255);</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="UI_Parameter_page">
       <property name="sizePolicy">
@@ -1192,7 +1192,7 @@ color: rgb(255, 255, 255);</string>
        </item>
        <item row="6" column="3">
         <property name="text">
-         <string>Grid connected mode of Inv</string>
+         <string>Converter Anti-Reverse Flow</string>
         </property>
         <property name="textAlignment">
          <set>AlignCenter</set>
@@ -1325,7 +1325,7 @@ color: rgb(255, 255, 255);</string>
        </item>
        <item row="10" column="3">
         <property name="text">
-         <string>DynamicCap</string>
+         <string/>
         </property>
         <property name="textAlignment">
          <set>AlignCenter</set>

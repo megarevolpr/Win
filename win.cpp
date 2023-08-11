@@ -494,7 +494,7 @@ void MEGAWin::MemoryAllocation()
     Primary_FM_dead_zone_explain        = new QPushButton;
     PFM_coeff_explain                   = new QPushButton;
     Grid_recover_time_explain           = new QPushButton;
-    DynamicCap_explain                  = new QPushButton;
+//    DynamicCap_explain                  = new QPushButton;
     Module_Number_explain               = new QPushButton;
     Restore_factory_explain             = new QPushButton;
     BackupSetParameters_explain         = new QPushButton;
@@ -522,7 +522,7 @@ void MEGAWin::MemoryAllocation()
     Primary_FM_dead_zone = nullptr;
     PFM_coeff = nullptr;
     Grid_recover_time = nullptr;
-    DynamicCap = nullptr;
+//    DynamicCap = nullptr;
     Module_Number = nullptr;
     Restore_factory = nullptr;
     BackupSetParameters = nullptr;
@@ -4747,8 +4747,8 @@ void MEGAWin::SystemParameter()
         delete Change_rate_of_power;
     }
     Change_rate_of_power = new Specification(this,Change_rate_of_power_explain, ui->UI_SystemParameter_Tab, 0, 1, \
-                                             "20", tr("Change rate of power"), \
-                                             tr("How fast the power changes per unit time."));
+                                             "20", tr("Power change rate"), \
+                                             tr("Power change rate: the rate at which power changes within a second ."));
     Change_rate_of_power->add_Specification();
 
     if(Grid_frequency_upper_limit != nullptr)
@@ -4757,7 +4757,7 @@ void MEGAWin::SystemParameter()
     }
     Grid_frequency_upper_limit = new Specification(this,Grid_frequency_upper_limit_explain, ui->UI_SystemParameter_Tab, 1, 1, \
                                                    "3", tr("Grid frequency upper limit"), \
-                                                   tr("The upper limit of the frequency range allowed on the AC side is 0.2, 0.5, 1, and 3."));
+                                                   tr("Upper limit of power grid frequency variation: The maximum range of frequency variation allowed on the AC side, which can be selected as 0.2, 0.5, 1, 5."));
     Grid_frequency_upper_limit->add_Specification();
 
     if(Grid_frequency_lower_limit != nullptr)
@@ -4766,7 +4766,7 @@ void MEGAWin::SystemParameter()
     }
     Grid_frequency_lower_limit = new Specification(this,Grid_frequency_lower_limit_explain, ui->UI_SystemParameter_Tab, 2, 1, \
                                                    "-3", tr("Grid frequency lower limit"), \
-                                                   tr("The lower limit of the frequency range allowed on the AC side can be selected as -0.2, -0.5, -1, or -3."));
+                                                   tr("Lower limit of power grid frequency variation range: The maximum range of frequency variation allowed on the AC side, which can be selected as-0.5, -1, -2, -5."));
     Grid_frequency_lower_limit->add_Specification();
 
     if(Vol_protection_upper_limit != nullptr)
@@ -4775,7 +4775,7 @@ void MEGAWin::SystemParameter()
     }
     Vol_protection_upper_limit = new Specification(this,Vol_protection_upper_limit_explain, ui->UI_SystemParameter_Tab, 3, 1, \
                                                    "+15", tr("Vol protection upper limit"), \
-                                                   tr("The upper limit of the voltage range allowed on the AC side can be +10, +15, +20, or +30."));
+                                                   tr("Upper limit of voltage protection range: The maximum range of voltage variation allowed on the AC side, which can be selected as 10, 15, 20."));
     Vol_protection_upper_limit->add_Specification();
 
     if(Vol_protection_lower_limit != nullptr)
@@ -4784,7 +4784,7 @@ void MEGAWin::SystemParameter()
     }
     Vol_protection_lower_limit = new Specification(this,Vol_protection_lower_limit_explain, ui->UI_SystemParameter_Tab, 4, 1, \
                                                    "-15", tr("Vol protection lower limit"), \
-                                                   tr("The lower limit of the voltage variation range allowed on the AC side can be -10, -15, -20, or -30."));
+                                                   tr("Lower limit of voltage protection range: The minimum range of voltage variation allowed on the AC side, which can be selected as -10, -15, -20."));
     Vol_protection_lower_limit->add_Specification();
 
     if(HVRT_enable != nullptr)
@@ -4793,7 +4793,7 @@ void MEGAWin::SystemParameter()
     }
     HVRT_enable = new Specification(this,HVRT_enable_explain, ui->UI_SystemParameter_Tab, 5, 1, \
                                                     tr("prohibit"), tr("HVRT enable"), \
-                                                    tr("This is the high voltage crossing (HVRT) Enable, enable the device will not stop because of a short period of high voltage, the option is to Enable, prohibit, (note: this is generally used in large grid-connected power stations)."));
+                                                    tr("High voltage ride through(HVRT) enablement: Enable, Disable. (Note: This option is generally used in large grid-on power stations.)"));
     HVRT_enable->add_Specification();
 
     if(LVRT_enable != nullptr)
@@ -4802,7 +4802,7 @@ void MEGAWin::SystemParameter()
     }
     LVRT_enable = new Specification(this,LVRT_enable_explain, ui->UI_SystemParameter_Tab, 6, 1, \
                                     tr("prohibit"), tr("LVRT enable"), \
-                                    tr("This is the low voltage crossing (LVRT) Enable, enable the device will not stop because of a short period of low voltage, the option is to Enable, prohibit, (note: this is generally used in large grid-connected power stations)."));
+                                    tr("Low voltage ride through(LVRT) enablement: Enable, Disable. (Note: This option is generally used in large grid-on power stations.)"));
     LVRT_enable->add_Specification();
 
     if(AFD_enable != nullptr)
@@ -4811,7 +4811,8 @@ void MEGAWin::SystemParameter()
     }
     AFD_enable = new Specification(this,AFD_enable_explain, ui->UI_SystemParameter_Tab, 7, 1, \
                                    tr("prohibit"), tr("AFD enable"), \
-                                   tr("Prevent islanding effect, When the detection of the island effect (in the photovoltaic grid-connected system, when the power failure occurs in the large power grid, the photovoltaic grid-connected inverter power generation and the local load on the low-voltage side of the grid if the power is just matched, it is easy to appear self-sufficient maintenance power state, resulting in the 'island' phenomenon, thereby endangering the safety of maintenance personnel), the inverter automatically shut down, and the option is allowed Enable, prohibit, (Note: this is generally used in large grid-connected power stations)."));
+                                   tr("Prevent islanding effect. When islanding effect is detected (in a photovoltaic grid-on system, when a power outage occurs in the main grid, and the PV grid-connected converter generates power that matches the local load on the low-voltage side of the grid, it can easily sustain power generation independently, resulting in an 'island' phenomenon, which endangers the safety of maintenance personnel), the converter automatically shuts down.\
+ The options for this feature can be set as 'Enable' or 'prohibited' .(Note: This option is generally used in large grid-on power stations.)"));
     AFD_enable->add_Specification();
 
     if(Insulation_detection_enable != nullptr)
@@ -4820,7 +4821,7 @@ void MEGAWin::SystemParameter()
     }
     Insulation_detection_enable = new Specification(this,Insulation_detection_enable_explain, ui->UI_SystemParameter_Tab, 8, 1, \
                                                     tr("prohibit"), tr("Insulation detection enable"), \
-                                                    tr("Insulation detection Enable, insulation resistance greater than 33KΩ to be able to operate normally, less than 33KΩ can not start, and to alarm, the default prohibition, the choice is to Enable, prohibit."));
+                                                    tr("Insulation detection enable, the insulation resistance should be greater than 33KΩ for normal start-up and operation. If it is less than 33KΩ, it should not start, and an alarm should be triggered. By default, it is disabled, but can be set as 'Enable' or 'prohibited'."));
     Insulation_detection_enable->add_Specification();
 
     if(PrimaryFreq_enable != nullptr)
@@ -4829,7 +4830,7 @@ void MEGAWin::SystemParameter()
     }
     PrimaryFreq_enable = new Specification(this,PrimaryFreq_enable_explain, ui->UI_SystemParameter_Tab, 9, 1, \
                                            tr("prohibit"), tr("PrimaryFreq enable"), \
-                                           tr("When the frequency of the power grid deviates from the rated value, the power grid frequency is maintained stable by controlling the increase or decrease of the active power, which can be selected to Enable, prohibit, (Note: this is generally used in large grid-connected power stations)."));
+                                           tr("Primary frequency control enable: When the grid frequency deviates from the rated value, the active power is controlled to increase or decrease in order to maintain the grid frequency at the rated value. It can be selected as enabled or disabled. (Note: This option is generally used in large grid-on power stations.)"));
     PrimaryFreq_enable->add_Specification();
 
     if(Inertia_enable != nullptr)
@@ -4838,7 +4839,7 @@ void MEGAWin::SystemParameter()
     }
     Inertia_enable = new Specification(this,Inertia_enable_explain, ui->UI_SystemParameter_Tab, 10, 1, \
                                        tr("prohibit"), tr("Inertia enable"), \
-                                       tr("Moment of inertia Enable, can be selected to Enable, prohibit, (Note: this is generally used in large grid-connected power stations)."));
+                                       tr("Rotational inertia enable: It can be selected as enabled or disabled. (Note: This option is generally used in large grid-on power stations.)"));
     Inertia_enable->add_Specification();
 
     if(CV_parallel != nullptr)
@@ -4847,7 +4848,7 @@ void MEGAWin::SystemParameter()
     }
     CV_parallel = new Specification(this,CV_parallel_explain, ui->UI_SystemParameter_Tab, 11, 1, \
                                     tr("prohibit"), tr("CV parallel"), \
-                                    tr("Constant voltage parallel Enable, you can choose to Enable, prohibit, (Note: this setting is used in constant voltage parallel mode)."));
+                                    tr("Constant voltage parallel operation enable: It can be selected as enabled or disabled.  (Note: This option is generally used in large grid-on power stations.)"));
     CV_parallel->add_Specification();
 
     if(Machine_type != nullptr)
@@ -4856,7 +4857,7 @@ void MEGAWin::SystemParameter()
     }
     Machine_type = new Specification(this,Machine_type_explain, ui->UI_SystemParameter_Tab, 0, 4, \
                                      "PCS-TS", tr("Machine type"), \
-                                     tr("Set according to the machine model on site, the factory value prevails, the default PCS-TS, if you need to change, please contact customer service."));
+                                     tr("Converter Model: As per factory settings, generally not modifiable."));
     Machine_type->add_Specification();
 
     if(Machine_capacity != nullptr)
@@ -4865,7 +4866,7 @@ void MEGAWin::SystemParameter()
     }
     Machine_capacity = new Specification(this,Machine_capacity_explain, ui->UI_SystemParameter_Tab, 1, 4, \
                                      "100", tr("Machine capacity"), \
-                                     tr("The rated capacity of PCS is subject to the ex-factory value and cannot be changed."));
+                                     tr("The rated capacity of the converter shall be based on the factory value and cannot be changed."));
     Machine_capacity->add_Specification();
 
     if(Output_Fre_grade != nullptr)
@@ -4874,7 +4875,7 @@ void MEGAWin::SystemParameter()
     }
     Output_Fre_grade = new Specification(this,Output_Fre_grade_explain, ui->UI_SystemParameter_Tab, 2, 4, \
                                          "50", tr("Output Fre grade"), \
-                                         tr("Set the output frequency level, the default is 50Hz, generally 50Hz or 60Hz, can be fine-tuned according to the project."));
+                                         tr("Output Frequency Level: Default 50Hz, typically 50Hz or 60Hz."));
     Output_Fre_grade->add_Specification();
 
     if(Output_vol_level != nullptr)
@@ -4883,7 +4884,7 @@ void MEGAWin::SystemParameter()
     }
     Output_vol_level = new Specification(this,Output_vol_level_explain, ui->UI_SystemParameter_Tab, 3, 4, \
                                          "400", tr("Output vol level"), \
-                                         tr("The voltage level is changed according to the actual local power grid voltage. The voltage level is subject to delivery. If you need to change it, contact customer service for confirmation."));
+                                         tr("Output Voltage Level: As per factory settings, generally not modifiable."));
     Output_vol_level->add_Specification();
 
     if(Converter_side_vol_level != nullptr)
@@ -4892,7 +4893,7 @@ void MEGAWin::SystemParameter()
     }
     Converter_side_vol_level = new Specification(this,Converter_side_vol_level_explain, ui->UI_SystemParameter_Tab, 4, 4, \
                                          "270:400", tr("Transformer Turns Ratio"), \
-                                         tr("Transformer Turns Ratio: Please refer to the factory nameplate for the turns ratio setting based on the built-in transformer. If any changes are required, please contact customer service for confirmation."));
+                                         tr("Transformer Voltage Ratio: To be determined by the factory nameplate, not modifiable."));
     Converter_side_vol_level->add_Specification();
 
     if(Output_reactive_power_mode != nullptr)
@@ -4901,7 +4902,7 @@ void MEGAWin::SystemParameter()
     }
     Output_reactive_power_mode = new Specification(this,Output_reactive_power_mode_explain, ui->UI_SystemParameter_Tab, 5, 4, \
                                          tr("Non\nadjustable"), tr("Output reactive power mode"), \
-                                         tr("Output reactive mode, the default is not adjustable, can be selected as power factor (Pf), reactive power (Q), Non adjustable."));
+                                         tr("Reactive Power Output Mode: Default non-adjustable, options include Power Factor, Reactive Power, non-adjustable."));
     Output_reactive_power_mode->add_Specification();
 
     if(Grid_connected_mode_of_Inv != nullptr)
@@ -4909,8 +4910,8 @@ void MEGAWin::SystemParameter()
         delete Grid_connected_mode_of_Inv;
     }
     Grid_connected_mode_of_Inv = new Specification(this,Grid_connected_mode_of_Inv_explain, ui->UI_SystemParameter_Tab, 6, 4, \
-                                                   tr("Non\ncountercurrent"), tr("Grid connected mode of Inv"), \
-                                                   tr("Set the grid-connected mode of the inverter, which can be countercurrent, that is, DC can be converted into AC power and then incorporated into the power grid; Irreversible means that the current on the DC side does not flow to the grid. The default value can be Countercurrent. The options can be countercurrent or Non countercurrent. With the local grid qualification, it can be changed to 'countercurrent'; When using Prevent countercurrent mode, you can change to 'countercurrent'."));
+                                                   tr("Non\ncountercurrent"), tr("Converter Anti-Reverse Flow"), \
+                                                   tr("Converter Anti-Reverse Flow: Enable, Disable; Enabling prevents converter current from flowing into the grid, while Disabling allows converter current to flow into the grid."));
     Grid_connected_mode_of_Inv->add_Specification();
 
     if(Primary_FM_dead_zone != nullptr)
@@ -4919,7 +4920,7 @@ void MEGAWin::SystemParameter()
     }
     Primary_FM_dead_zone = new Specification(this,Primary_FM_dead_zone_explain, ui->UI_SystemParameter_Tab, 7, 4, \
                                              "3", tr("Primary FM dead zone"), \
-                                             tr("Primary frequency modulation dead zone, in order to prevent unnecessary action of the switch when the frequency difference of the grid changes in a small range, (Note: This is generally used in large grid-connected power stations)."));
+                                             tr("Frequency Deviation Deadzone: A frequency difference settings to prevent unnecessary frequency regulation actions during minor grid frequency fluctuations. (Note: This option is generally used in large grid-on power stations.)"));
     Primary_FM_dead_zone->add_Specification();
 
     if(PFM_coeff != nullptr)
@@ -4928,7 +4929,7 @@ void MEGAWin::SystemParameter()
     }
     PFM_coeff = new Specification(this,PFM_coeff_explain, ui->UI_SystemParameter_Tab, 8, 4, \
                                   "20", tr("PFM coeff"), \
-                                  tr("This can set the active power frequency modulation coefficient, (Note: this is generally used in large grid-connected power stations)."));
+                                  tr("Active Frequency Regulation Coefficient: The active frequency regulation coefficient can be configured. (Note: This option is generally used in large grid-on power stations.)"));
     PFM_coeff->add_Specification();
 
     if(Grid_recover_time != nullptr)
@@ -4940,14 +4941,14 @@ void MEGAWin::SystemParameter()
                                           tr("Grid restoration time: reserved function, setting invalid."));
     Grid_recover_time->add_Specification();
 
-    if(DynamicCap!= nullptr)
+    /*if(DynamicCap!= nullptr)
     {
         delete DynamicCap;
     }
     DynamicCap = new Specification(this,DynamicCap_explain, ui->UI_SystemParameter_Tab, 10, 4, \
                                    tr("Enable"), tr("DynamicCap"), \
                                    tr("Enable the power network expansion. The options are Enable and Disable."));
-    DynamicCap->add_Specification();
+    DynamicCap->add_Specification();*/
 
     if(Module_Number != nullptr)
     {
@@ -4972,7 +4973,7 @@ void MEGAWin::SystemParameter()
         delete BackupSetParameters;
     }
     BackupSetParameters = new Specification(this,BackupSetParameters_explain, ui->UI_SystemParameter_Tab,2, 7, \
-                                        tr("Backup\nSettings"), tr("Backup Set Parameters"), \
+                                        tr("Backup"), tr("Backup Set Parameters"), \
                                         tr("Backup setting parameters: Backup setting parameters refers to backing up the parameters set on the current device so that the backup parameter Settings can be restored when needed."));
     BackupSetParameters->add_Specification();
 
@@ -5001,15 +5002,17 @@ void MEGAWin::SystemParameter()
 void MEGAWin::Peripheral()
 {
     QString str = tr("Normally closed circuit (NC) or normally open circuit (NO) according to field Settings.");
-    QString str1 = tr("When the dry contact is enabled and an abnormal signal is received, the device performs the selected action.");
+    QString str1 = tr("When the dry contact is enabled, the device will perform the selected action when there is a change in the signal.");
+    QString str2 = tr("Input Dry Contact: \
+                      \nEnabled: Triggers the Action when the dry contact detects a state other than the specified NO/NC.\
+                      \nDisabled: No action is taken when the dry contact detects a state other than the specified NO/NC.");
 
     if(DI_1_Enable != nullptr)
     {
         delete DI_1_Enable;
     }
     DI_1_Enable = new Specification(this,DI_1_Enable_explain, ui->ExternalDevice_tW, 0, 0, \
-                                   tr("Enable"), tr("DI_1_Enable"), \
-                                   tr("Enter dry contact 1. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set."));
+                                   tr("Enable"), tr("DI 1 Enable"), str2 );
     DI_1_Enable->add_Specification();
 
     if(DI_2_Enable != nullptr)
@@ -5017,8 +5020,7 @@ void MEGAWin::Peripheral()
         delete DI_2_Enable;
     }
     DI_2_Enable = new Specification(this,DI_2_Enable_explain, ui->ExternalDevice_tW, 1, 0, \
-                                   tr("Disable"), tr("DI_2_Enable"), \
-                                   tr("Enter dry contact 2. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set."));
+                                   tr("Disable"), tr("DI 2 Enable"), str2);
     DI_2_Enable->add_Specification();
 
     if(DI_3_Enable != nullptr)
@@ -5026,8 +5028,7 @@ void MEGAWin::Peripheral()
         delete DI_3_Enable;
     }
     DI_3_Enable = new Specification(this,DI_3_Enable_explain, ui->ExternalDevice_tW, 2, 0, \
-                                   tr("Enable"), tr("DI_3_Enable"), \
-                                   tr("Enter dry contact 3. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set."));
+                                   tr("Enable"), tr("DI 3 Enable"), str2);
     DI_3_Enable->add_Specification();
 
     if(DI_4_Enable != nullptr)
@@ -5035,8 +5036,7 @@ void MEGAWin::Peripheral()
         delete DI_4_Enable;
     }
     DI_4_Enable = new Specification(this,DI_4_Enable_explain, ui->ExternalDevice_tW, 3, 0, \
-                                   tr("Enable"), tr("DI_4_Enable"), \
-                                   tr("Enter dry contact 4. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set."));
+                                   tr("Enable"), tr("DI 4 Enable"), str2);
     DI_4_Enable->add_Specification();
 
     if(DI_5_Enable != nullptr)
@@ -5044,8 +5044,7 @@ void MEGAWin::Peripheral()
         delete DI_5_Enable;
     }
     DI_5_Enable = new Specification(this,DI_5_Enable_explain, ui->ExternalDevice_tW, 4, 0, \
-                                   tr("Enable"), tr("DI_5_Enable"), \
-                                   tr("Enter dry contact 5. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set."));
+                                   tr("Enable"), tr("DI 5 Enable"), str2);
     DI_5_Enable->add_Specification();
 
     if(DI_6_Enable != nullptr)
@@ -5053,8 +5052,7 @@ void MEGAWin::Peripheral()
         delete DI_6_Enable;
     }
     DI_6_Enable = new Specification(this,DI_6_Enable_explain, ui->ExternalDevice_tW, 5, 0, \
-                                   tr("Enable"), tr("DI_6_Enable"), \
-                                   tr("Enter dry contact 6. If Enable is selected, the Action is triggered when the dry contact detects that NO/NC is not set. If Disable is selected, the dry contact does not take any action when it detects that NO/NC is not set."));
+                                   tr("Enable"), tr("DI 6 Enable"), str2);
     DI_6_Enable->add_Specification();
 
     if(DI_1_NC_O != nullptr)

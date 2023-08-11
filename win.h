@@ -272,7 +272,7 @@ public:
         QPushButton *Primary_FM_dead_zone_explain;
         QPushButton *PFM_coeff_explain;
         QPushButton *Grid_recover_time_explain;
-        QPushButton *DynamicCap_explain;
+//        QPushButton *DynamicCap_explain;
         QPushButton *Module_Number_explain;
         QPushButton *Restore_factory_explain;
         QPushButton *BackupSetParameters_explain;
@@ -301,7 +301,7 @@ public:
         Specification *Primary_FM_dead_zone;
         Specification *PFM_coeff;
         Specification *Grid_recover_time;
-        Specification *DynamicCap;
+//        Specification *DynamicCap;
         Specification *Module_Number;
         Specification *Restore_factory;
         Specification *BackupSetParameters;
