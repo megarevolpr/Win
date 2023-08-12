@@ -30,12 +30,15 @@ include         ($$PWD/UI_Menu/UI_Menu.pri)
 include         ($$PWD/Specification/Specification.pri)
 include         ($$PWD/UpgradeTools/UpgradeTools.pri)
 include         ($$PWD/GridExpansion/GridExpansion.pri)
+include         ($$PWD/FaultTableInterface/FaultTableInterface.pri)
 
 #INCLUDEPATH     +=$$PWD/Messagebox/
 INCLUDEPATH     +=$$PWD/UI_Menu/
 INCLUDEPATH     +=$$PWD/Specification/
 INCLUDEPATH     +=$$PWD/UpgradeTools/
 INCLUDEPATH     +=$$PWD/GridExpansion/
+INCLUDEPATH     +=$$PWD/FaultTableInterface/
+
 
 CONFIG += c++11
 

@@ -8,6 +8,7 @@
 #include <QPainter>
 #include <qdebug.h>
 
+#include "Specification/Specification.h"
 namespace Ui {
 class GridExpansion;
 }
@@ -26,6 +27,11 @@ private slots:
 
     void on_tabWidget_currentChanged(int index);
 
+    void on_pushButton_clicked();
+
+
+    void on_pushButton_2_clicked();
+
 protected:
    virtual void wheelEvent(QWheelEvent *event) override;    //滚轮事件
     void mousePressEvent(QMouseEvent *event) override;
@@ -39,8 +45,20 @@ protected:
 
 
 public:
+    QPushButton *Generator_Charging;
+    QPushButton *Charging_SOC_of_Grid;
+    QPushButton *Charging_Stop_SOC;
+    QPushButton *Discharging_Stop_SOC;
+    QPushButton *Grid_Capacity;
+
+    Specification *Generator_Charging_explain;
+    Specification *Charging_SOC_of_Grid_explain;
+    Specification *Charging_Stop_SOC_explain;
+    Specification *Discharging_Stop_SOC_explain;
+    Specification *Grid_Capacity_explain;
+
     //上述所有的事件只是为了更改如下的变量
-    QPixmap srcImage,changeImage;   //原始图像以及缩放后的图像
+    QPixmap srcImage,changeImage,normal;   //原始图像以及缩放后的图像
     float ratio = 1.0;      //缩放的比例
 
 public:

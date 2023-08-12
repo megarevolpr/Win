@@ -7,16 +7,17 @@ GridExpansion::GridExpansion(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QFont font("宋体", 12); // 创建一个宋体字体，字号为12
-    QApplication::setFont(font); // 设置应用程序的全局字体为宋体
+    setWindowState(Qt::WindowMaximized); // 最大化
 
-    InitializeTable();
+
 
     Generator_Charging = new QPushButton;
     Charging_SOC_of_Grid = new QPushButton;
     Charging_Stop_SOC = new QPushButton;
     Discharging_Stop_SOC = new QPushButton;
     Grid_Capacity = new QPushButton;
+
+    InitializeTable();
 }
 
 GridExpansion::~GridExpansion()
@@ -43,17 +44,28 @@ void GridExpansion::InitializeTable()
     {
         ui->tableWidget->setRowHeight(i,50);
     }
-
-    Generator_Charging_explain;
-    Charging_SOC_of_Grid_explain;
-    Charging_Stop_SOC_explain;
-    Discharging_Stop_SOC_explain;
-    Grid_Capacity_explain;
     QString str = tr("0");
-    Generator_Charging_explain = new Specification(this,Generator_Charging, ui->tableWidget, 0, 0, \
-                                    str, tr("DI_1_Enable"), \
-                                    str2);
+
+    Generator_Charging_explain = new Specification(this,Generator_Charging, ui->tableWidget, 0, 1, \
+                                    str, tr("Charging SOC of Diesel Generator"), \
+                                    tr("Charging SOC of Diesel Generator: In grid expansion mode, when a diesel generator is connected, the battery SOC will charge when it is below this SOC."));
     Generator_Charging_explain->add_Specification();
+    Charging_SOC_of_Grid_explain = new Specification(this,Charging_SOC_of_Grid, ui->tableWidget, 1, 1, \
+                                    str, tr("Charging SOC of Grid"), \
+                                    tr("Charging SOC of Grid: In grid expansion mode, when there is no diesel generator connected, the battery SOC will charge when it is below this SOC."));
+    Charging_SOC_of_Grid_explain->add_Specification();
+    Charging_Stop_SOC_explain = new Specification(this,Charging_Stop_SOC, ui->tableWidget, 2, 1, \
+                                    str, tr("Charging Stop SOC"), \
+                                    tr("Charging Stop SOC: In grid expansion mode, when the battery is charging, it will stop charging when the battery SOC is greater than this SOC."));
+    Charging_Stop_SOC_explain->add_Specification();
+    Discharging_Stop_SOC_explain = new Specification(this,Discharging_Stop_SOC, ui->tableWidget, 3, 1, \
+                                    str, tr("Discharging Stop SOC"), \
+                                    tr("Discharging Stop SOC: In grid expansion mode, the battery will stop discharging when the battery SOC is below this SOC."));
+    Discharging_Stop_SOC_explain->add_Specification();
+    Grid_Capacity_explain = new Specification(this,Grid_Capacity, ui->tableWidget, 4, 1, \
+                                    str, tr("Grid Capacity"), \
+                                    tr("Grid Capacity: The maximum power capacity connected to the grid in grid expansion mode."));
+    Grid_Capacity_explain->add_Specification();
 }
 
 //加载图像
@@ -92,6 +104,9 @@ void GridExpansion::mouseMoveEvent(QMouseEvent *event)
 {
     if (mousePress)
     {
+        int x = this->frameGeometry().width()-130;
+        int y = this->frameGeometry().height();
+
         //记录scorllArea的横纵滚动条
         QScrollBar *tmph = ui->scrollArea->horizontalScrollBar();
         QScrollBar *tmpv = ui->scrollArea->verticalScrollBar();
@@ -103,19 +118,19 @@ void GridExpansion::mouseMoveEvent(QMouseEvent *event)
 
         if (offset.x() > 0 && offset.x() > abs(offset.y()))
         {
-            tmph->setValue(tmph->value() - 40);
+            tmph->setValue(tmph->value() - x*0.007);
         }
         else if (offset.x() < 0 && abs(offset.x()) > abs(offset.y()))
         {
-            tmph->setValue(tmph->value() + 40);
+            tmph->setValue(tmph->value() + x*0.007);
         }
         else if (offset.y() > 0 && offset.y() > abs(offset.x()))
         {
-            tmpv->setValue(tmpv->value() - 40);
+            tmpv->setValue(tmpv->value() - y*0.007);
         }
         else if (offset.y() < 0 && abs(offset.y()) > abs(offset.x()))
         {
-            tmpv->setValue(tmpv->value() + 40);
+            tmpv->setValue(tmpv->value() + y*0.007);
         }
     }
 }
@@ -136,12 +151,12 @@ void GridExpansion::wheelEvent(QWheelEvent *event)
     {
         if(event->delta()>0)
         {
-           ratio = ratio*1.1;//在当前的比例基础上乘以1.2
+           ratio = ratio*1.05;//在当前的比例基础上乘以1.2
 
         }
         else if(event->delta()<0)
         {
-            ratio = ratio*0.9;//在当前的比例基础上乘以0.8
+                ratio = ratio*0.95;//在当前的比例基础上乘以0.9
         }
         else
         {
@@ -168,7 +183,7 @@ void GridExpansion::keyReleaseEvent(QKeyEvent *event)
         event->accept();
     }
 }
-
+//表格宽度随窗口大小变化
 void GridExpansion::resizeEvent(QResizeEvent *event)
 {
     int x = this->frameGeometry().width(); //获取ui形成窗口宽度
@@ -185,8 +200,25 @@ void GridExpansion::on_tabWidget_currentChanged(int index)
     if(index==1)
     {
         on_openImageBtn();
+        normal = srcImage;
     }
     else {
-        qDebug()<<index;
+
     }
+}
+//重新加载恢复到标准大小
+void GridExpansion::on_pushButton_clicked()
+{
+    int x = this->frameGeometry().width(); //获取ui形成窗口宽度
+    int y = this->frameGeometry().height();//获取窗口高度
+
+    changeImage = srcImage.scaled(x-150,y-20); //图像缩放到指定高度和宽度，保持长宽比例
+    ui->label->setPixmap(changeImage);
+
+
+}
+
+void GridExpansion::on_pushButton_2_clicked()
+{
+    this->hide();
 }

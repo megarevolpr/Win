@@ -74,6 +74,7 @@ void MEGAWin::MemoryAllocation()
     m_menu = new Menu(this);//菜单创建
     UpgradeInterface = new UpgradeTools(this);
     GridExpansionInterface = new GridExpansion(this);
+    FaultTable = new FaultTableInterface(this);
 
     /***************************数据报表&导出数据**********************************/
 
@@ -1745,6 +1746,7 @@ void MEGAWin::Change_Language()
     HistoryRecord_delete();//历史记录delete
     delete UpgradeInterface;//升级
     delete GridExpansionInterface;
+    delete FaultTable;
 
     RunStatePage();//重新加载实时数据的UI
 
@@ -1755,6 +1757,7 @@ void MEGAWin::Change_Language()
     SystemParam_tbnt_released();//重新加载高级设置的UI
     UpgradeInterface = new UpgradeTools(this);
     GridExpansionInterface = new GridExpansion(this);
+    FaultTable = new FaultTableInterface(this);
 
 }
 
@@ -2671,7 +2674,8 @@ void MEGAWin::RTAlarm()
                     << tr("Response action")<< tr("Whether to reset\nautomatically and reset time");
     ui->RTAlarm_Data_page->setHorizontalHeaderLabels(RTAlarm_Title);
 
-    PCS_Alarm_information_table();  //展示PCS故障信息表
+//    PCS_Alarm_information_table();  //展示PCS故障信息表
+    excel_read(ui->RTAlarm_Data_page);
 }
 
 /***************************************************************
@@ -3522,8 +3526,8 @@ void MEGAWin::BetterySetup()
         delete Gen_charge_SOC;
     }
     Gen_charge_SOC = new Specification(this,Gen_charge_SOC_explain, ui->Lithum_Tab, line++, column, \
-                                     "10", tr("Genertor charge SOC"), \
-                                     tr("Diesel Generator Charging SOC: In the grid expansion mode, when the diesel generator is connected, if the battery's SOC is lower than this value, the battery will be charged."));
+                                     "10", tr("Charging SOC of Diesel Generator"), \
+                                     tr("Charging SOC of Diesel Generator: In grid expansion mode, when a diesel generator is connected, the battery SOC will charge when it is below this SOC."));
     Gen_charge_SOC->add_Specification();
 
     if(Grid_charge_SOC != nullptr)
@@ -3532,7 +3536,7 @@ void MEGAWin::BetterySetup()
     }
     Grid_charge_SOC = new Specification(this,Grid_charge_SOC_explain, ui->Lithum_Tab, line++, column, \
                                      "15", tr("Grid charge SOC"), \
-                                     tr("Grid Charging SOC: In the grid expansion mode, when the diesel generator is not connected, if the battery's SOC is lower than this value, the battery will be charged."));
+                                     tr("Charging SOC of Grid: In grid expansion mode, when there is no diesel generator connected, the battery SOC will charge when it is below this SOC."));
     Grid_charge_SOC->add_Specification();
 
     if(ChargeStopSOC != nullptr)
@@ -3541,7 +3545,7 @@ void MEGAWin::BetterySetup()
     }
     ChargeStopSOC = new Specification(this,ChargeStopSOC_explain, ui->Lithum_Tab, line++, column, \
                                      "90", tr("Charge Stop SOC"), \
-                                     tr("Stop Charging SOC: When the current State of Charge (SOC) of the battery is higher than the preset value, the converter will stop charging. "));
+                                     tr("Discharging Stop SOC: In grid expansion mode, the battery will stop discharging when the battery SOC is below this SOC."));
     ChargeStopSOC->add_Specification();
 
     if(DischargeStopSOC != nullptr)
@@ -3550,7 +3554,7 @@ void MEGAWin::BetterySetup()
     }
     DischargeStopSOC = new Specification(this,DischargeStopSOC_explain, ui->Lithum_Tab, line++, column, \
                                      "10", tr("Discharge Stop SOC"), \
-                                     tr("Stop Discharging SOC: When the current SOC of the battery is lower than the preset value, the converter will stop discharging. "));
+                                     tr("Grid Capacity: The maximum power capacity connected to the grid in grid expansion mode."));
     DischargeStopSOC->add_Specification();
 
     if(Grid_capacity != nullptr)
@@ -5630,35 +5634,43 @@ void MEGAWin::on_ChangeLanguage_btn_1_clicked()
  ***************************************************************/
 void MEGAWin::on_search_btn_clicked()
 {
-    QString search = ui->search_le->text();
-    int row=ui->RTAlarm_Data_page->rowCount();
-
-    if (search == "")   //判断搜索框是否是空，如果是空就显示所有行
+    if(FaultTable->isHidden())
     {
-        for(int i=0; i<row; i++)
-        {
-            ui->RTAlarm_Data_page->setRowHidden(i,false);
-        }
+        FaultTable->show();
     }
     else
     {
-        //通过你输入的和表格里面所有内容进行比对，找到符合条件的索引
-        QList <QTableWidgetItem *> item = ui->RTAlarm_Data_page->findItems(ui->search_le->text(), Qt::MatchContains);
-
-        for(int i=0; i<row; i++)
-        {
-            ui->RTAlarm_Data_page->setRowHidden(i,true);//然后把所有行都隐藏
-        }
-
-        if(!item.empty())   //判断符合条件索引是不是空
-        {
-            //恢复对应的行
-            for(int i=0; i<item.count(); i++)
-            {
-                ui->RTAlarm_Data_page->setRowHidden(item.at(i)->row(),false);//恢复对应的行
-            }
-        }
+        FaultTable->hide();
     }
+//    QString search = ui->search_le->text();
+//    int row=ui->RTAlarm_Data_page->rowCount();
+
+//    if (search == "")   //判断搜索框是否是空，如果是空就显示所有行
+//    {
+//        for(int i=0; i<row; i++)
+//        {
+//            ui->RTAlarm_Data_page->setRowHidden(i,false);
+//        }
+//    }
+//    else
+//    {
+//        //通过你输入的和表格里面所有内容进行比对，找到符合条件的索引
+//        QList <QTableWidgetItem *> item = ui->RTAlarm_Data_page->findItems(ui->search_le->text(), Qt::MatchContains);
+
+//        for(int i=0; i<row; i++)
+//        {
+//            ui->RTAlarm_Data_page->setRowHidden(i,true);//然后把所有行都隐藏
+//        }
+
+//        if(!item.empty())   //判断符合条件索引是不是空
+//        {
+//            //恢复对应的行
+//            for(int i=0; i<item.count(); i++)
+//            {
+//                ui->RTAlarm_Data_page->setRowHidden(item.at(i)->row(),false);//恢复对应的行
+//            }
+//        }
+//    }
 }
 
 void MEGAWin::UpgradeInterface_clicked()
@@ -5710,11 +5722,50 @@ void MEGAWin::WorkingMode_clicked()
     }
 }
 
+//从excel快速读取至tabel表
+void MEGAWin::excel_read(QTableWidget *tablewidget)
+{
+//    QFile file("../test.txt");
+//    if (file.open(QIODevice::ReadOnly | QIODevice::Text))
+//    {
+//        QTextStream f_put(&file);
+//        f_put.setCodec("UTF-8");
 
-//void MEGAWin::resizeEvent(QResizeEvent *event)
-//{
-//    int x = this->frameGeometry().width(); //获取ui形成窗口宽度
-//    int y = this->frameGeometry().height();//获取窗口高度
+//        int row = 0;
+//        tablewidget->setColumnCount(5);
 
-//    ui->UI_stackedWidget->setGeometry(0,0,x,y);
-//}
+//        while (!f_put.atEnd())
+//        {
+//            QStringList word;
+//            for (int i = 0; i < 6; ++i)
+//            {
+//                QString entire = f_put.readLine().trimmed();
+//                if(i==5)
+//                {
+
+//                }
+//                else
+//                {
+//                    word << entire;
+//                }
+//            }
+
+//            if (word.size() == 5)
+//            {
+//                tablewidget->insertRow(row);
+//                for (int i = 0; i < 5; ++i)
+//                {
+//                    QTableWidgetItem* item = new QTableWidgetItem(word[i]);
+//                    tablewidget->setItem(row, i, item);
+//                }
+//                tablewidget->setRowHeight(row, 100);
+//                ++row;
+//            }
+//        }
+
+//        tablewidget->setRowCount(row);
+//        file.close();
+//    }
+}
+
+

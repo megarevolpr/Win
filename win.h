@@ -7,11 +7,17 @@
 #include <QList>
 #include <QStandardItemModel>
 #include <QTranslator>
+#include <QFile>
+#include <QTextStream>
+#include <qdebug.h>
+#include <QTextStream>//文本流
+#include <QIODevice>//I/O设备接口类
+
 #include "Menu.h"
 #include "Specification/Specification.h"
 #include "upgradetools.h"
 #include "GridExpansion.h"
-
+#include "FaultTableInterface.h"
 
 
 #define CTL_STANDBY         0
@@ -39,6 +45,7 @@ public:
         Menu *m_menu;
         UpgradeTools *UpgradeInterface;
         GridExpansion *GridExpansionInterface;
+        FaultTableInterface *FaultTable;
 
         /***************************系统设置****************************/
         QPushButton *Grid_connected_mode_explain;//并网方式说明
@@ -773,12 +780,13 @@ public:
         void BatterySet_tab();//电池设置表初始化
         void RunTimeSet_tab();//系统自动运行表初始化
 
-
         void PCS_Data_Tab();//PCS数据表
         void Grid_Data_Tab();//电网数据表
         void Load_Data_Tab();//负载数据表
         void RTData_Anologe();//实时模拟量数据
         void RTData_Status();//实时状态量数据
+
+        void excel_read(QTableWidget *tablewidget);
 private:
         void History(QTableWidget *myTable);//历史记录
         void OperationLog();//操作日志
