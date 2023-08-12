@@ -1,0 +1,16 @@
+INPUT(
+./debug\Menu.o
+./debug\Specification.o
+./debug\upgradetools.o
+./debug\powergridexpansion.o
+./debug\powergridexpansion.o
+./debug\main.o
+./debug\win.o
+./debug\qrc_image.o
+./debug\qrc_language.o
+./debug\moc_Menu.o
+./debug\moc_Specification.o
+./debug\moc_upgradetools.o
+./debug\moc_powergridexpansion.o
+./debug\moc_win.o
+);
