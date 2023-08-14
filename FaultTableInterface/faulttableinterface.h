@@ -7,6 +7,9 @@
 #include <qdebug.h>
 #include <QTextStream>//文本流
 #include <QIODevice>//I/O设备接口类
+#include <QTableWidget>
+
+
 
 namespace Ui {
 class FaultTableInterface;
@@ -17,17 +20,24 @@ class FaultTableInterface : public QMainWindow
     Q_OBJECT
 
 public:
-    void RTAlarm();
-    void To_excel_read();
+    void RTAlarm(QString path,QTableWidget *myTable);
+    void To_excel_read(QString path,QTableWidget *tablewidget);
+    void ToSwarch(QTableWidget *tablewidget);
+    void TableSiz();
 
 
 
-    explicit FaultTableInterface(QWidget *parent = nullptr);
+    explicit FaultTableInterface(QWidget *parent = nullptr,int LanguageType=0);
 
 
 
-
+    int Language=0;
     ~FaultTableInterface();
+
+private slots:
+    void on_Search_btn_clicked();
+
+    void on_pushButton_clicked();
 
 private:
 

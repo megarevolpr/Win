@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Fault_Description/DCAC_Fault.txt</file>
+        <file>Fault_Description/DCDC_Fault.txt</file>
+        <file>Fault_Description/DCAC_Fault_Ch.txt</file>
+        <file>Fault_Description/DCDC_Fault_Ch.txt</file>
+    </qresource>
+</RCC>

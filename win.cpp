@@ -34,6 +34,7 @@ MEGAWin::MEGAWin(QWidget *parent) :
 {
     LanguageType = CHINESE; //开机默认为中文
 
+
     ui->setupUi(this);
 
 //    this->setMinimumSize(1150,780);
@@ -74,7 +75,7 @@ void MEGAWin::MemoryAllocation()
     m_menu = new Menu(this);//菜单创建
     UpgradeInterface = new UpgradeTools(this);
     GridExpansionInterface = new GridExpansion(this);
-    FaultTable = new FaultTableInterface(this);
+    FaultTable = new FaultTableInterface(this,LanguageType);
 
     /***************************数据报表&导出数据**********************************/
 
@@ -1757,7 +1758,7 @@ void MEGAWin::Change_Language()
     SystemParam_tbnt_released();//重新加载高级设置的UI
     UpgradeInterface = new UpgradeTools(this);
     GridExpansionInterface = new GridExpansion(this);
-    FaultTable = new FaultTableInterface(this);
+    FaultTable = new FaultTableInterface(this,LanguageType);
 
 }
 
@@ -2036,6 +2037,7 @@ void MEGAWin::LoadLanguageInit()
         qApp->installTranslator(translator);
         ui->retranslateUi(this);
         LanguageType = ENGLISH;
+
     }
 
 }
@@ -2674,8 +2676,8 @@ void MEGAWin::RTAlarm()
                     << tr("Response action")<< tr("Whether to reset\nautomatically and reset time");
     ui->RTAlarm_Data_page->setHorizontalHeaderLabels(RTAlarm_Title);
 
-//    PCS_Alarm_information_table();  //展示PCS故障信息表
-    excel_read(ui->RTAlarm_Data_page);
+    PCS_Alarm_information_table();  //展示PCS故障信息表
+//    excel_read(ui->RTAlarm_Data_page);
 }
 
 /***************************************************************
