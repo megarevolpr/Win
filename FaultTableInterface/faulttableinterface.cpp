@@ -7,6 +7,7 @@ FaultTableInterface::FaultTableInterface(QWidget *parent,int LanguageType) :
 {
     ui->setupUi(this);
     setWindowState(Qt::WindowMaximized); // 最大化
+    ui->tabWidget->removeTab(1);//将索引号为0的MPS从菜单移除
     Language = LanguageType;
 
     if(Language == 0)
