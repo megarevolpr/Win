@@ -57,9 +57,18 @@ MEGAWin::~MEGAWin()
 
 void MEGAWin::onTimerOut()//时间显示
 {
-    QDateTime time = QDateTime::currentDateTime();
-    QString str = time.toString("dd-MM-yyyy HH:mm:ss");
-    ui->TimeSeting_btn->setText(str);
+    if(LanguageType == 1)
+    {
+        QDateTime time = QDateTime::currentDateTime();
+        QString str = time.toString("dd-MM-yyyy HH:mm:ss");
+        ui->TimeSeting_btn->setText(str);
+    }
+    else {
+        QDateTime time = QDateTime::currentDateTime();
+        QString str = time.toString("yyyy-MM-dd HH:mm:ss");
+        ui->TimeSeting_btn->setText(str);
+    }
+
 }
 
 void MEGAWin::updateTimeOut()
@@ -965,7 +974,7 @@ void MEGAWin::RunStatePage()
     PCS_Data_Tab();//变流器实时数据
     Grid_Data_Tab();//电网实时数据
     Load_Data_Tab();//负载实时数据
-    RTAlarm();//告警信息
+//    RTAlarm();//告警信息
     ModuleState_Tab();//PCS状态
 }
 
@@ -1379,7 +1388,7 @@ void MEGAWin::Information_tbnt_released()
 /*************************************************************************
  * PCS故障信息表
  ************************************************************************/
-void MEGAWin::PCS_Alarm_information_table()
+/*void MEGAWin::PCS_Alarm_information_table()
 {
     ui->RTAlarm_Data_page->setRowHeight(0, 110);
     QStringList RTAlarm_List;
@@ -1716,7 +1725,7 @@ void MEGAWin::PCS_Alarm_information_table()
         ui->RTAlarm_Data_page->setItem(27, i, new QTableWidgetItem(RTAlarm_List.at(i)));
         ui->RTAlarm_Data_page->item(27, i)->setTextAlignment(Qt::AlignCenter);
     }
-}
+}*/
 
 /***************************************************************
  * 切换语言并应用到所有页面
@@ -1875,7 +1884,7 @@ void MEGAWin::LinkRelationship()
     connect(pButton_BatteryData, SIGNAL(buttonClicked(int)), this,SLOT(BatteryData_clicked(int)));//电池数据
     connect(pButton_Version, SIGNAL(buttonClicked(int)), this,SLOT(SystemlnformationVer_clicked(int)));//系统信息
     connect(pButton_MonitorDebug, SIGNAL(buttonClicked(int)), this,SLOT(MonitorDebug_clicked(int)));//监控调试
-    connect(ui->search_le,SIGNAL(editingFinished()), this, SLOT(on_search_btn_clicked()));//搜索栏关联搜索槽，使LineEdit失去焦点或回车键回车也生效
+//    connect(ui->search_le,SIGNAL(editingFinished()), this, SLOT(on_search_btn_clicked()));//搜索栏关联搜索槽，使LineEdit失去焦点或回车键回车也生效
     connect(System_upgrade_explain, SIGNAL(clicked(bool)), this, SLOT(UpgradeInterface_clicked())); //升级界面关联
     connect(Work_mode_explain, SIGNAL(clicked(bool)), this, SLOT(WorkingMode_clicked())); //升级界面关联
 }
@@ -1986,15 +1995,15 @@ void MEGAWin::My_menuAction(int Index)
         break;
     case MACHINECLOSE:
         QMessageBox::question(this, tr("Turn off")\
-                              ,tr("This is the converter off switch. Click to turn on and off the converter."), tr("OK"));
+                              ,tr("The converter off switch. Click to turn off the converter."), tr("OK"));
         break;
     case MACHINESTANDBY:
         QMessageBox::question(this, tr("Stand-by")\
-                              ,tr("This is the converter standby switch. Click the converter to enter the standby state."), tr("OK"));
+                              ,tr("The converter standby switch. Click the converter to enter the standby state."), tr("OK"));
         break;
     case MACHINEOPEN:
         QMessageBox::question(this, tr("Turn on")\
-                              ,tr("This is the converter on switch, click to turn on the converter."), tr("OK"));
+                              ,tr("The converter on switch. Click to turn on the converter."), tr("OK"));
         break;
     default:
         break;
@@ -2422,100 +2431,201 @@ void MEGAWin::History(QTableWidget *myTable)
     Grade8->add_Specification();
     line=0;
     column=1;
-    StartTime9 = new Specification(this,StartTime9_explain, myTable, line++, column, \
-                                                    "29-7-2023 14:59:56", str4, str5);
-    StartTime9->add_Specification();
-    StartTime10 = new Specification(this,StartTime10_explain, myTable, line++, column, \
-                                                    "29-7-2023 14:59:55", str4, str5);
-    StartTime10->add_Specification();
-    StartTime11 = new Specification(this,StartTime11_explain, myTable, line++, column, \
-                                                    "29-7-2023 14:59:51", str4, str5);
-    StartTime11->add_Specification();
-    StartTime12 = new Specification(this,StartTime12_explain, myTable, line++, column, \
-                                                    "29-7-2023 14:59:51", str4, str5);
-    StartTime12->add_Specification();
-    StartTime13 = new Specification(this,StartTime13_explain, myTable, line++, column, \
-                                                    "29-7-2023 14:59:50", str4, str5);
-    StartTime13->add_Specification();
-    StartTime14 = new Specification(this,StartTime14_explain, myTable, line++, column, \
-                                                    "29-7-2023 14:57:50", str4, str5);
-    StartTime14->add_Specification();
-    StartTime15 = new Specification(this,StartTime15_explain, myTable, line++, column, \
-                                                    "29-7-2023 14:57:50", str4, str5);
-    StartTime15->add_Specification();
+    if(LanguageType==0)
+    {
+        StartTime9 = new Specification(this,StartTime9_explain, myTable, line++, column, \
+                                                        "2023-7-29 14:59:56", str4, str5);
+        StartTime9->add_Specification();
+        StartTime10 = new Specification(this,StartTime10_explain, myTable, line++, column, \
+                                                        "2023-7-29 14:59:55", str4, str5);
+        StartTime10->add_Specification();
+        StartTime11 = new Specification(this,StartTime11_explain, myTable, line++, column, \
+                                                        "2023-7-29 14:59:51", str4, str5);
+        StartTime11->add_Specification();
+        StartTime12 = new Specification(this,StartTime12_explain, myTable, line++, column, \
+                                                        "2023-7-29 14:59:51", str4, str5);
+        StartTime12->add_Specification();
+        StartTime13 = new Specification(this,StartTime13_explain, myTable, line++, column, \
+                                                        "2023-7-29 14:59:50", str4, str5);
+        StartTime13->add_Specification();
+        StartTime14 = new Specification(this,StartTime14_explain, myTable, line++, column, \
+                                                        "2023-7-29 14:57:50", str4, str5);
+        StartTime14->add_Specification();
+        StartTime15 = new Specification(this,StartTime15_explain, myTable, line++, column, \
+                                                        "2023-7-29 14:57:50", str4, str5);
+        StartTime15->add_Specification();
 
-    StartTime = new Specification(this,StartTime_explain, myTable, line++, column, \
-                                                    "6-5-2023 15:49:50", str4, str5);
-    StartTime->add_Specification();
-    StartTime2 = new Specification(this,StartTime2_explain, myTable, line++, column, \
-                                                    "6-5-2023 15:48:18", str4, str5);
-    StartTime2->add_Specification();
-    StartTime3 = new Specification(this,StartTime3_explain, myTable, line++, column, \
-                                                    "6-5-2023 15:39:3", str4, str5);
-    StartTime3->add_Specification();
-    StartTime4 = new Specification(this,StartTime4_explain, myTable, line++, column, \
-                                                    "6-5-2023 15:39:3", str4, str5);
-    StartTime4->add_Specification();
-    StartTime5 = new Specification(this,StartTime5_explain, myTable, line++, column, \
-                                                    "6-5-2023 15:39:3", str4, str5);
-    StartTime5->add_Specification();
-    StartTime6 = new Specification(this,StartTime6_explain, myTable, line++, column, \
-                                                    "6-5-2023 15:21:56", str4, str5);
-    StartTime6->add_Specification();
-    StartTime7 = new Specification(this,StartTime7_explain, myTable, line++, column, \
-                                                    "6-5-2023 15:21:38", str4, str5);
-    StartTime7->add_Specification();
-    StartTime8 = new Specification(this,StartTime8_explain, myTable, line++, column, \
-                                                    "6-5-2023 15:21:38", str4, str5);
-    StartTime8->add_Specification();
-    line=0;
-    column=2;
-    EndTime9 = new Specification(this,EndTime9_explain, myTable, line++, column, \
-                                                    "...", str6, str7);
-    EndTime9->add_Specification();
-    EndTime10 = new Specification(this,EndTime10_explain, myTable, line++, column, \
-                                                    "...", str6, str7);
-    EndTime10->add_Specification();
-    EndTime11 = new Specification(this,EndTime11_explain, myTable, line++, column, \
-                                                    "...", str6, str7);
-    EndTime11->add_Specification();
-    EndTime12 = new Specification(this,EndTime12_explain, myTable, line++, column, \
-                                                    "...", str6, str7);
-    EndTime12->add_Specification();
-    EndTime13 = new Specification(this,EndTime13_explain, myTable, line++, column, \
-                                                    "...", str6, str7);
-    EndTime13->add_Specification();
-    EndTime14 = new Specification(this,EndTime14_explain, myTable, line++, column, \
-                                                    "...", str6, str7);
-    EndTime14->add_Specification();
-    EndTime15 = new Specification(this,EndTime15_explain, myTable, line++, column, \
-                                                    "29-7-2023 16:42:24", str6, str7);
-    EndTime15->add_Specification();
+        StartTime = new Specification(this,StartTime_explain, myTable, line++, column, \
+                                                        "2023-5-6 15:49:50", str4, str5);
+        StartTime->add_Specification();
+        StartTime2 = new Specification(this,StartTime2_explain, myTable, line++, column, \
+                                                        "2023-5-6 15:48:18", str4, str5);
+        StartTime2->add_Specification();
+        StartTime3 = new Specification(this,StartTime3_explain, myTable, line++, column, \
+                                                        "2023-5-6 15:39:3", str4, str5);
+        StartTime3->add_Specification();
+        StartTime4 = new Specification(this,StartTime4_explain, myTable, line++, column, \
+                                                        "2023-5-6 15:39:3", str4, str5);
+        StartTime4->add_Specification();
+        StartTime5 = new Specification(this,StartTime5_explain, myTable, line++, column, \
+                                                        "2023-5-6 15:39:3", str4, str5);
+        StartTime5->add_Specification();
+        StartTime6 = new Specification(this,StartTime6_explain, myTable, line++, column, \
+                                                        "2023-5-6 15:21:56", str4, str5);
+        StartTime6->add_Specification();
+        StartTime7 = new Specification(this,StartTime7_explain, myTable, line++, column, \
+                                                        "2023-5-6 15:21:38", str4, str5);
+        StartTime7->add_Specification();
+        StartTime8 = new Specification(this,StartTime8_explain, myTable, line++, column, \
+                                                        "2023-5-6 15:21:38", str4, str5);
+        StartTime8->add_Specification();
+        line=0;
+        column=2;
+        EndTime9 = new Specification(this,EndTime9_explain, myTable, line++, column, \
+                                                        "...", str6, str7);
+        EndTime9->add_Specification();
+        EndTime10 = new Specification(this,EndTime10_explain, myTable, line++, column, \
+                                                        "...", str6, str7);
+        EndTime10->add_Specification();
+        EndTime11 = new Specification(this,EndTime11_explain, myTable, line++, column, \
+                                                        "...", str6, str7);
+        EndTime11->add_Specification();
+        EndTime12 = new Specification(this,EndTime12_explain, myTable, line++, column, \
+                                                        "...", str6, str7);
+        EndTime12->add_Specification();
+        EndTime13 = new Specification(this,EndTime13_explain, myTable, line++, column, \
+                                                        "...", str6, str7);
+        EndTime13->add_Specification();
+        EndTime14 = new Specification(this,EndTime14_explain, myTable, line++, column, \
+                                                        "...", str6, str7);
+        EndTime14->add_Specification();
+        EndTime15 = new Specification(this,EndTime15_explain, myTable, line++, column, \
+                                                        "2023-7-29 16:42:24", str6, str7);
+        EndTime15->add_Specification();
 
-    EndTime = new Specification(this,EndTime_explain, myTable, line++, column, \
-                                                    "-", str6, str7);
-    EndTime->add_Specification();
-    EndTime2 = new Specification(this,EndTime2_explain, myTable, line++, column, \
-                                                    "-", str6, str7);
-    EndTime2->add_Specification();
-    EndTime3 = new Specification(this,EndTime3_explain, myTable, line++, column, \
-                                                    "...", str6, str7);
-    EndTime3->add_Specification();
-    EndTime4 = new Specification(this,EndTime4_explain, myTable, line++, column, \
-                                                    "-", str6, str7);
-    EndTime4->add_Specification();
-    EndTime5 = new Specification(this,EndTime5_explain, myTable, line++, column, \
-                                                    "...", str6, str7);
-    EndTime5->add_Specification();
-    EndTime6 = new Specification(this,EndTime6_explain, myTable, line++, column, \
-                                                    "-", str6, str7);
-    EndTime6->add_Specification();
-    EndTime7 = new Specification(this,EndTime7_explain, myTable, line++, column, \
-                                                    "-", str6, str7);
-    EndTime7->add_Specification();
-    EndTime8 = new Specification(this,EndTime8_explain, myTable, line++, column, \
-                                                    "-", str6, str7);
-    EndTime8->add_Specification();
+        EndTime = new Specification(this,EndTime_explain, myTable, line++, column, \
+                                                        "-", str6, str7);
+        EndTime->add_Specification();
+        EndTime2 = new Specification(this,EndTime2_explain, myTable, line++, column, \
+                                                        "-", str6, str7);
+        EndTime2->add_Specification();
+        EndTime3 = new Specification(this,EndTime3_explain, myTable, line++, column, \
+                                                        "...", str6, str7);
+        EndTime3->add_Specification();
+        EndTime4 = new Specification(this,EndTime4_explain, myTable, line++, column, \
+                                                        "-", str6, str7);
+        EndTime4->add_Specification();
+        EndTime5 = new Specification(this,EndTime5_explain, myTable, line++, column, \
+                                                        "...", str6, str7);
+        EndTime5->add_Specification();
+        EndTime6 = new Specification(this,EndTime6_explain, myTable, line++, column, \
+                                                        "-", str6, str7);
+        EndTime6->add_Specification();
+        EndTime7 = new Specification(this,EndTime7_explain, myTable, line++, column, \
+                                                        "-", str6, str7);
+        EndTime7->add_Specification();
+        EndTime8 = new Specification(this,EndTime8_explain, myTable, line++, column, \
+                                                        "-", str6, str7);
+        EndTime8->add_Specification();
+    }
+    else {
+        StartTime9 = new Specification(this,StartTime9_explain, myTable, line++, column, \
+                                                        "29-7-2023 14:59:56", str4, str5);
+        StartTime9->add_Specification();
+        StartTime10 = new Specification(this,StartTime10_explain, myTable, line++, column, \
+                                                        "29-7-2023 14:59:55", str4, str5);
+        StartTime10->add_Specification();
+        StartTime11 = new Specification(this,StartTime11_explain, myTable, line++, column, \
+                                                        "29-7-2023 14:59:51", str4, str5);
+        StartTime11->add_Specification();
+        StartTime12 = new Specification(this,StartTime12_explain, myTable, line++, column, \
+                                                        "29-7-2023 14:59:51", str4, str5);
+        StartTime12->add_Specification();
+        StartTime13 = new Specification(this,StartTime13_explain, myTable, line++, column, \
+                                                        "29-7-2023 14:59:50", str4, str5);
+        StartTime13->add_Specification();
+        StartTime14 = new Specification(this,StartTime14_explain, myTable, line++, column, \
+                                                        "29-7-2023 14:57:50", str4, str5);
+        StartTime14->add_Specification();
+        StartTime15 = new Specification(this,StartTime15_explain, myTable, line++, column, \
+                                                        "29-7-2023 14:57:50", str4, str5);
+        StartTime15->add_Specification();
+
+        StartTime = new Specification(this,StartTime_explain, myTable, line++, column, \
+                                                        "6-5-2023 15:49:50", str4, str5);
+        StartTime->add_Specification();
+        StartTime2 = new Specification(this,StartTime2_explain, myTable, line++, column, \
+                                                        "6-5-2023 15:48:18", str4, str5);
+        StartTime2->add_Specification();
+        StartTime3 = new Specification(this,StartTime3_explain, myTable, line++, column, \
+                                                        "6-5-2023 15:39:3", str4, str5);
+        StartTime3->add_Specification();
+        StartTime4 = new Specification(this,StartTime4_explain, myTable, line++, column, \
+                                                        "6-5-2023 15:39:3", str4, str5);
+        StartTime4->add_Specification();
+        StartTime5 = new Specification(this,StartTime5_explain, myTable, line++, column, \
+                                                        "6-5-2023 15:39:3", str4, str5);
+        StartTime5->add_Specification();
+        StartTime6 = new Specification(this,StartTime6_explain, myTable, line++, column, \
+                                                        "6-5-2023 15:21:56", str4, str5);
+        StartTime6->add_Specification();
+        StartTime7 = new Specification(this,StartTime7_explain, myTable, line++, column, \
+                                                        "6-5-2023 15:21:38", str4, str5);
+        StartTime7->add_Specification();
+        StartTime8 = new Specification(this,StartTime8_explain, myTable, line++, column, \
+                                                        "6-5-2023 15:21:38", str4, str5);
+        StartTime8->add_Specification();
+        line=0;
+        column=2;
+        EndTime9 = new Specification(this,EndTime9_explain, myTable, line++, column, \
+                                                        "...", str6, str7);
+        EndTime9->add_Specification();
+        EndTime10 = new Specification(this,EndTime10_explain, myTable, line++, column, \
+                                                        "...", str6, str7);
+        EndTime10->add_Specification();
+        EndTime11 = new Specification(this,EndTime11_explain, myTable, line++, column, \
+                                                        "...", str6, str7);
+        EndTime11->add_Specification();
+        EndTime12 = new Specification(this,EndTime12_explain, myTable, line++, column, \
+                                                        "...", str6, str7);
+        EndTime12->add_Specification();
+        EndTime13 = new Specification(this,EndTime13_explain, myTable, line++, column, \
+                                                        "...", str6, str7);
+        EndTime13->add_Specification();
+        EndTime14 = new Specification(this,EndTime14_explain, myTable, line++, column, \
+                                                        "...", str6, str7);
+        EndTime14->add_Specification();
+        EndTime15 = new Specification(this,EndTime15_explain, myTable, line++, column, \
+                                                        "29-7-2023 16:42:24", str6, str7);
+        EndTime15->add_Specification();
+
+        EndTime = new Specification(this,EndTime_explain, myTable, line++, column, \
+                                                        "-", str6, str7);
+        EndTime->add_Specification();
+        EndTime2 = new Specification(this,EndTime2_explain, myTable, line++, column, \
+                                                        "-", str6, str7);
+        EndTime2->add_Specification();
+        EndTime3 = new Specification(this,EndTime3_explain, myTable, line++, column, \
+                                                        "...", str6, str7);
+        EndTime3->add_Specification();
+        EndTime4 = new Specification(this,EndTime4_explain, myTable, line++, column, \
+                                                        "-", str6, str7);
+        EndTime4->add_Specification();
+        EndTime5 = new Specification(this,EndTime5_explain, myTable, line++, column, \
+                                                        "...", str6, str7);
+        EndTime5->add_Specification();
+        EndTime6 = new Specification(this,EndTime6_explain, myTable, line++, column, \
+                                                        "-", str6, str7);
+        EndTime6->add_Specification();
+        EndTime7 = new Specification(this,EndTime7_explain, myTable, line++, column, \
+                                                        "-", str6, str7);
+        EndTime7->add_Specification();
+        EndTime8 = new Specification(this,EndTime8_explain, myTable, line++, column, \
+                                                        "-", str6, str7);
+        EndTime8->add_Specification();
+    }
+
+
     line=0;
     column=3;
     Describe9 = new Specification(this,Describe9_explain, myTable, line++, column, \
@@ -2653,32 +2763,32 @@ void MEGAWin::OperationLog()
 /***************************************************************
  * PCS故障信息表初始化
  ***************************************************************/
-void MEGAWin::RTAlarm()
-{
-    ui->RTAlarm_Data_page->setColumnCount(5);
-    ui->RTAlarm_Data_page->setRowCount(28);
-    ui->RTAlarm_Data_page->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
-    ui->RTAlarm_Data_page->verticalHeader()->setVisible(false);//设置垂直头不可见
-    ui->RTAlarm_Data_page->setFrameShape(QFrame::NoFrame);//设置无边框
-    ui->RTAlarm_Data_page->setShowGrid(true);//设置显示格子
-    ui->RTAlarm_Data_page->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
-    ui->RTAlarm_Data_page->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
-    ui->RTAlarm_Data_page->setStyleSheet("selection-background-color:lightblue;");
+/*void MEGAWin::RTAlarm()
+//{
+//    ui->RTAlarm_Data_page->setColumnCount(5);
+//    ui->RTAlarm_Data_page->setRowCount(28);
+//    ui->RTAlarm_Data_page->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
+//    ui->RTAlarm_Data_page->verticalHeader()->setVisible(false);//设置垂直头不可见
+//    ui->RTAlarm_Data_page->setFrameShape(QFrame::NoFrame);//设置无边框
+//    ui->RTAlarm_Data_page->setShowGrid(true);//设置显示格子
+//    ui->RTAlarm_Data_page->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
+//    ui->RTAlarm_Data_page->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
+//    ui->RTAlarm_Data_page->setStyleSheet("selection-background-color:lightblue;");
 
-    ui->RTAlarm_Data_page->setColumnWidth(0,110);
-    ui->RTAlarm_Data_page->setColumnWidth(1,85);
-    ui->RTAlarm_Data_page->setColumnWidth(2,305);
-    ui->RTAlarm_Data_page->setColumnWidth(3,200);
-    ui->RTAlarm_Data_page->setColumnWidth(4,250);
+//    ui->RTAlarm_Data_page->setColumnWidth(0,110);
+//    ui->RTAlarm_Data_page->setColumnWidth(1,85);
+//    ui->RTAlarm_Data_page->setColumnWidth(2,305);
+//    ui->RTAlarm_Data_page->setColumnWidth(3,200);
+//    ui->RTAlarm_Data_page->setColumnWidth(4,250);
 
-    QStringList RTAlarm_Title;
-    RTAlarm_Title << tr("Alarm name") << tr("Alarm leve")<< tr("Trigger condition") \
-                    << tr("Response action")<< tr("Whether to reset\nautomatically and reset time");
-    ui->RTAlarm_Data_page->setHorizontalHeaderLabels(RTAlarm_Title);
+//    QStringList RTAlarm_Title;
+//    RTAlarm_Title << tr("Alarm name") << tr("Alarm leve")<< tr("Trigger condition") \
+//                    << tr("Response action")<< tr("Whether to reset\nautomatically and reset time");
+//    ui->RTAlarm_Data_page->setHorizontalHeaderLabels(RTAlarm_Title);
 
-    PCS_Alarm_information_table();  //展示PCS故障信息表
+//    PCS_Alarm_information_table();  //展示PCS故障信息表
 //    excel_read(ui->RTAlarm_Data_page);
-}
+}*/
 
 /***************************************************************
  * 电池数据
@@ -3424,7 +3534,7 @@ void MEGAWin::BetterySetup()
         delete DOD_OnGrid;
     }
     DOD_OnGrid = new Specification(this,DOD_OnGrid_explain, ui->Lithum_Tab, line++, column, \
-                                     "90", tr("Grid-on DOD"), \
+                                     "0", tr("Grid-on DOD"), \
                                      tr("Grid-on DOD, allowable depth of discharge in grid-on mode."));
     DOD_OnGrid->add_Specification();
 
@@ -3433,7 +3543,7 @@ void MEGAWin::BetterySetup()
         delete DOD_OffGrid;
     }
     DOD_OffGrid = new Specification(this,DOD_OffGrid_explain, ui->Lithum_Tab, line++, column, \
-                                     "90", tr("Grid-off DOD"), \
+                                     "0", tr("Grid-off DOD"), \
                                      tr("Grid-off DOD, allowable depth of discharge in grid-off mode."));
     DOD_OffGrid->add_Specification();
 
@@ -3442,7 +3552,7 @@ void MEGAWin::BetterySetup()
         delete Charge_Vol_Up_Limit;
     }
     Charge_Vol_Up_Limit = new Specification(this,Charge_Vol_Up_Limit_explain, ui->Lithum_Tab, line++, column, \
-                                     "792", tr("Charge Volt upper Limit"), \
+                                     "0", tr("Charge Volt upper Limit"), \
                                      tr("Charging voltage upper limit: When the battery total voltage reaches this value during charging, the converter will shut down."));
     Charge_Vol_Up_Limit->add_Specification();
 
@@ -3451,7 +3561,7 @@ void MEGAWin::BetterySetup()
         delete Charge_Vol_upper_Limit_delta;
     }
     Charge_Vol_upper_Limit_delta = new Specification(this,Charge_Vol_upper_Limit_delta_explain, ui->Lithum_Tab, line++, column, \
-                                                     "10", tr("Charge Vol upper Limit delta"), \
+                                                     "0", tr("Charge Vol upper Limit delta"), \
                                                      tr("Charging voltage upper limit hysteresis: When the battery is charging, if the battery total voltage reaches the charging voltage upper limit, the converter will shut down. When the battery total voltage drops below the charging voltage upper limit minus the hysteresis value, the converter will automatically turn on."));
     Charge_Vol_upper_Limit_delta->add_Specification();
 
@@ -3460,7 +3570,7 @@ void MEGAWin::BetterySetup()
         delete Disc_Vol_lower_Limit;
     }
     Disc_Vol_lower_Limit = new Specification(this,Disc_Vol_lower_Limit_explain, ui->Lithum_Tab, line++, column, \
-                                     "616", tr("Discharge Volt lower Limit"), \
+                                     "0", tr("Discharge Volt lower Limit"), \
                                      tr("Discharge voltage lower limit: When the battery total voltage reaches this value during discharge, the converter will shut down."));
     Disc_Vol_lower_Limit->add_Specification();
 
@@ -3469,7 +3579,7 @@ void MEGAWin::BetterySetup()
         delete Discharge_Vol_lower_Limit_delta;
     }
     Discharge_Vol_lower_Limit_delta = new Specification(this,Discharge_Vol_lower_Limit_delta_explain, ui->Lithum_Tab, line++, column,\
-                                                        "10", tr("Discharge Vol lower Limit delta"), \
+                                                        "0", tr("Discharge Vol lower Limit delta"), \
                                                         tr("Discharge voltage lower limit hysteresis: When the battery is discharging, if the battery total voltage drops below the discharge voltage lower limit, the converter will shut down. When the battery total voltage exceeds the discharge voltage lower limit plus the hysteresis value, the converter will automatically turn on."));
     Discharge_Vol_lower_Limit_delta->add_Specification();
 
@@ -3478,7 +3588,7 @@ void MEGAWin::BetterySetup()
         delete Charge_Cur_Limit;
     }
     Charge_Cur_Limit = new Specification(this,Charge_Cur_Limit_explain, ui->Lithum_Tab, line++, column, \
-                                     "160", tr("Charge Current Limit"), \
+                                     "0", tr("Charge Current Limit"), \
                                      tr("Charging current limit: The maximum allowable current on the battery side to prevent overcurrent during charging."));
     Charge_Cur_Limit->add_Specification();
 
@@ -3487,12 +3597,16 @@ void MEGAWin::BetterySetup()
         delete Discharge_Cur_Limit;
     }
     Discharge_Cur_Limit = new Specification(this,Discharge_Cur_Limit_explain, ui->Lithum_Tab, line++, column, \
-                                     "160", tr("Discharge Current Limit"), \
+                                     "0", tr("Discharge Current Limit"), \
                                      tr("Discharging current limit: The maximum allowable current on the battery side to prevent overcurrent during Discharging."));
     Discharge_Cur_Limit->add_Specification();
 
+    if(Charge_power_limit != nullptr)
+    {
+        delete Charge_power_limit;
+    }
     Charge_power_limit = new Specification(this,Charge_power_limit_explain, ui->Lithum_Tab, line++, column, \
-                                           "100", tr("Charge power limit"),\
+                                           "0", tr("Charge power limit"),\
                                            tr("Set the charging power limit to allow the maximum power of charging."));
     Charge_power_limit->add_Specification();
 
@@ -3501,7 +3615,7 @@ void MEGAWin::BetterySetup()
         delete Discharge_power_limit;
     }
     Discharge_power_limit = new Specification(this,Discharge_power_limit_explain, ui->Lithum_Tab, line++, column, \
-                                              "100", tr("Charge power limit"), \
+                                              "0", tr("Discharge power limit"), \
                                               tr("The discharge power limit is set to allow the maximum power of the discharge."));
     Discharge_power_limit->add_Specification();
 
@@ -3510,7 +3624,7 @@ void MEGAWin::BetterySetup()
         delete Gen_turn_off_SOC;
     }
     Gen_turn_off_SOC = new Specification(this,Gen_turn_off_SOC_explain, ui->Lithum_Tab, line++, column, \
-                                     "85", tr("Generator turn off SOC"), \
+                                     "0", tr("Generator turn off SOC"), \
                                      tr("When the specified SOC is reached, the diesel generator shuts down."));
     Gen_turn_off_SOC->add_Specification();
 
@@ -3519,7 +3633,7 @@ void MEGAWin::BetterySetup()
         delete Gen_turn_on_SOC;
     }
     Gen_turn_on_SOC = new Specification(this,Gen_turn_on_SOC_explain, ui->Lithum_Tab, line++, column, \
-                                     "25", tr("Genertor turn on SOC"), \
+                                     "0", tr("Genertor turn on SOC"), \
                                      tr("When the specified SOC is reached, the diesel generator starts."));
     Gen_turn_on_SOC->add_Specification();
 
@@ -3528,7 +3642,7 @@ void MEGAWin::BetterySetup()
         delete Gen_charge_SOC;
     }
     Gen_charge_SOC = new Specification(this,Gen_charge_SOC_explain, ui->Lithum_Tab, line++, column, \
-                                     "10", tr("Charging SOC of Diesel Generator"), \
+                                     "0", tr("Charging SOC of Diesel Generator"), \
                                      tr("Charging SOC of Diesel Generator: In grid expansion mode, when a diesel generator is connected, the battery SOC will charge when it is below this SOC."));
     Gen_charge_SOC->add_Specification();
 
@@ -3537,7 +3651,7 @@ void MEGAWin::BetterySetup()
         delete Grid_charge_SOC;
     }
     Grid_charge_SOC = new Specification(this,Grid_charge_SOC_explain, ui->Lithum_Tab, line++, column, \
-                                     "15", tr("Grid charge SOC"), \
+                                     "0", tr("Grid charge SOC"), \
                                      tr("Charging SOC of Grid: In grid expansion mode, when there is no diesel generator connected, the battery SOC will charge when it is below this SOC."));
     Grid_charge_SOC->add_Specification();
 
@@ -3546,7 +3660,7 @@ void MEGAWin::BetterySetup()
         delete ChargeStopSOC;
     }
     ChargeStopSOC = new Specification(this,ChargeStopSOC_explain, ui->Lithum_Tab, line++, column, \
-                                     "90", tr("Charge Stop SOC"), \
+                                     "0", tr("Charge Stop SOC"), \
                                      tr("Discharging Stop SOC: In grid expansion mode, the battery will stop discharging when the battery SOC is below this SOC."));
     ChargeStopSOC->add_Specification();
 
@@ -3555,7 +3669,7 @@ void MEGAWin::BetterySetup()
         delete DischargeStopSOC;
     }
     DischargeStopSOC = new Specification(this,DischargeStopSOC_explain, ui->Lithum_Tab, line++, column, \
-                                     "10", tr("Discharge Stop SOC"), \
+                                     "0", tr("Discharge Stop SOC"), \
                                      tr("Grid Capacity: The maximum power capacity connected to the grid in grid expansion mode."));
     DischargeStopSOC->add_Specification();
 
@@ -3564,16 +3678,9 @@ void MEGAWin::BetterySetup()
         delete Grid_capacity;
     }
     Grid_capacity = new Specification(this,Grid_capacity_explain, ui->Lithum_Tab, line++, column, \
-                                     "100", tr("Grid_capacity"), \
+                                     "0", tr("Grid_capacity"), \
                                      tr("Grid Capacity: The maximum capacity of the converter's AC side input, which takes effect in the converter power supply mode."));
     Grid_capacity->add_Specification();
-    if(Charge_power_limit != nullptr)
-    {
-        delete Charge_power_limit;
-    }
-
-
-
 
 
     line = 0;
@@ -3583,7 +3690,7 @@ void MEGAWin::BetterySetup()
         delete Turn_on_SOC;
     }
     Turn_on_SOC = new Specification(this,Turn_on_SOC_explain, ui->Lithum_Tab, line++, column, \
-                                     "20", tr("Turn_on_SOC"), \
+                                     "0", tr("Turn_on_SOC"), \
                                      tr("Start SOC: In UPS mode, when the battery SOC reaches that value, the converter starts charging."));
     Turn_on_SOC->add_Specification();
 
@@ -3592,7 +3699,7 @@ void MEGAWin::BetterySetup()
         delete Turn_off_SOC;
     }
     Turn_off_SOC = new Specification(this,Turn_off_SOC_explain, ui->Lithum_Tab, line++, column, \
-                                     "50", tr("Turn_off_SOC"), \
+                                     "0", tr("Turn_off_SOC"), \
                                      tr("Stop SOC: In UPS mode, when the battery SOC reaches that value, the converter stops charging."));
     Turn_off_SOC->add_Specification();
 
@@ -3601,7 +3708,7 @@ void MEGAWin::BetterySetup()
         delete Turn_on_cell_vol;
     }
     Turn_on_cell_vol = new Specification(this,Turn_on_cell_vol_explain, ui->Lithum_Tab, line++, column, \
-                                     "3100", tr("Turn_on_cell_vol"), \
+                                     "0", tr("Turn_on_cell_vol"), \
                                      tr("Start cell voltage: In UPS mode, when the lowest voltage of a battery cell reaches that value, the converter starts charging."));
     Turn_on_cell_vol->add_Specification();
 
@@ -3610,7 +3717,7 @@ void MEGAWin::BetterySetup()
         delete Turn_off_cell_vol;
     }
     Turn_off_cell_vol = new Specification(this,Turn_off_cell_vol_explain, ui->Lithum_Tab, line++, column, \
-                                     "3500", tr("Turn_off_cell_vol"), \
+                                     "0", tr("Turn_off_cell_vol"), \
                                      tr("Stop cell voltage: In UPS mode, when the highest voltage of a battery cell reaches that value, the converter stops charging."));
     Turn_off_cell_vol->add_Specification();
 
@@ -3619,7 +3726,7 @@ void MEGAWin::BetterySetup()
         delete Turn_on_total_vol;
     }
     Turn_on_total_vol = new Specification(this,Turn_on_total_vol_explain, ui->Lithum_Tab, line++, column, \
-                                     "400", tr("Turn_on_total_vol"), \
+                                     "0", tr("Turn_on_total_vol"), \
                                      tr("Start total voltage: In UPS mode, when the total voltage of the battery reaches that value, the converter starts charging."));
     Turn_on_total_vol->add_Specification();
 
@@ -3637,7 +3744,7 @@ void MEGAWin::BetterySetup()
         delete UPS_charge_power;
     }
     UPS_charge_power = new Specification(this,UPS_charge_power_explain, ui->Lithum_Tab, line++, column, \
-                                     "-1", tr("UPS_charge_power"), \
+                                     "0", tr("UPS_charge_power"), \
                                      tr("Backup charging power: In UPS mode, the backup charging power of the converter when the battery starts charging."));
     UPS_charge_power->add_Specification();
 
@@ -4680,7 +4787,7 @@ MEGA, LISHEN, PENGHUI, GAOTE, XIENENG, LANLI, SHENLAN, PAINENG, NINGDESHIDAI, SU
         delete RootPassport;
     }
     RootPassport = new Specification(this,RootPassport_explain, ui->UI_Parameter_Tab, 2, 7,\
-                                     "888888", tr("RootPassport"), \
+                                     "888888", tr("Admin password"), \
                                      tr("Admin password: Available for resetting the admin password. The default admin password is 888888. (Note: The admin password must be six digits.)"));
     RootPassport->add_Specification();
 

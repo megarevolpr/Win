@@ -142,7 +142,7 @@ color: rgb(255, 255, 255);</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>5</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="UI_Parameter_page">
       <property name="sizePolicy">
@@ -343,7 +343,7 @@ color: rgb(255, 255, 255);</string>
          </item>
          <item row="0" column="6">
           <property name="text">
-           <string>ProtocolVersion</string>
+           <string>Protocol Version</string>
           </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
@@ -391,7 +391,7 @@ color: rgb(255, 255, 255);</string>
          </item>
          <item row="1" column="6">
           <property name="text">
-           <string>UserPassPort</string>
+           <string>User PassPort</string>
           </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
@@ -439,7 +439,7 @@ color: rgb(255, 255, 255);</string>
          </item>
          <item row="2" column="6">
           <property name="text">
-           <string>RootPassport</string>
+           <string>Admin password</string>
           </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
@@ -2588,7 +2588,7 @@ Language</string>
          <string notr="true">color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
-         <string>100kW-TS</string>
+         <string>100kW - TS</string>
         </property>
        </widget>
       </item>
@@ -2616,7 +2616,7 @@ Language</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">
@@ -3694,7 +3694,7 @@ Language</string>
           </sizepolicy>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="RTData_page">
           <property name="minimumSize">
@@ -4702,30 +4702,34 @@ QPushButton::hover{
                 <number>0</number>
                </property>
                <item>
-                <widget class="QLineEdit" name="search_le">
-                 <property name="minimumSize">
-                  <size>
-                   <width>860</width>
-                   <height>30</height>
-                  </size>
+                <widget class="QLabel" name="label">
+                 <property name="font">
+                  <font>
+                   <family>宋体</family>
+                   <pointsize>15</pointsize>
+                  </font>
                  </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>860</width>
-                   <height>16777215</height>
-                  </size>
+                 <property name="text">
+                  <string>Please click on 'Alarm Information' to enter the query interface
+and view the details of the alarm information you have encountered.</string>
                  </property>
-                 <property name="placeholderText">
-                  <string>Please enter search keywords</string>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QPushButton" name="search_btn">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
                  <property name="minimumSize">
                   <size>
                    <width>110</width>
-                   <height>30</height>
+                   <height>0</height>
                   </size>
                  </property>
                  <property name="maximumSize">
@@ -4735,30 +4739,25 @@ QPushButton::hover{
                   </size>
                  </property>
                  <property name="text">
-                  <string>Search</string>
+                  <string>Alarm
+Information</string>
                  </property>
                 </widget>
                </item>
               </layout>
              </item>
              <item>
-              <widget class="QTableWidget" name="RTAlarm_Data_page">
-               <property name="minimumSize">
+              <spacer name="verticalSpacer_4">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
                 <size>
-                 <width>971</width>
-                 <height>375</height>
+                 <width>20</width>
+                 <height>40</height>
                 </size>
                </property>
-               <property name="maximumSize">
-                <size>
-                 <width>971</width>
-                 <height>404</height>
-                </size>
-               </property>
-               <property name="verticalScrollMode">
-                <enum>QAbstractItemView::ScrollPerPixel</enum>
-               </property>
-              </widget>
+              </spacer>
              </item>
             </layout>
            </item>
@@ -6822,7 +6821,7 @@ enable</string>
        <item row="0" column="0">
         <widget class="QTabWidget" name="Record_tabWidget">
          <property name="currentIndex">
-          <number>1</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="DataReport_page">
           <attribute name="title">
@@ -7934,7 +7933,7 @@ background-color: rgb(255, 0, 0);</string>
         </font>
        </property>
        <property name="currentIndex">
-        <number>3</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="ParameterSet_page">
         <attribute name="title">
@@ -8494,7 +8493,7 @@ background-color: rgb(255, 0, 0);</string>
           </rect>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="Lithium_tabWidgetPage">
           <attribute name="title">
@@ -10001,6 +10000,9 @@ Set rule:B1 - A1 ≥ 10V</string>
                    <bool>false</bool>
                   </property>
                   <widget class="QRadioButton" name="radio_dhcp">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
                    <property name="geometry">
                     <rect>
                      <x>10</x>

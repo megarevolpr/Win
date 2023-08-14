@@ -18,8 +18,6 @@ FaultTableInterface::FaultTableInterface(QWidget *parent,int LanguageType) :
         RTAlarm(QString(":/Fault_Description/DCAC_Fault.txt"),ui->tableWidget);
         RTAlarm(QString(":/Fault_Description/DCDC_Fault.txt"),ui->tableWidget_2);
     }
-    qDebug()<<Language<<endl;
-
 
     connect(ui->search_le,SIGNAL(editingFinished()), this, SLOT(on_Search_btn_clicked()));//搜索栏关联搜索槽，使LineEdit失去焦点或回车键回车也生效
 //    FaultTableInterface::excel_read(ui->tableWidget);
@@ -138,23 +136,23 @@ void FaultTableInterface::ToSwarch(QTableWidget *myTable)
     }
 }
 
-void FaultTableInterface::TableSiz()
-{
-    int x = this->frameGeometry().width(); //获取ui形成窗口宽度
-    int y = this->frameGeometry().height();//获取窗口高度
+//void FaultTableInterface::TableSiz()
+//{
+//    int x = this->frameGeometry().width(); //获取ui形成窗口宽度
+//    int y = this->frameGeometry().height();//获取窗口高度
 
-    ui->tableWidget->setColumnWidth(0,(x-5)*0.2);//450\650\150
-    ui->tableWidget->setColumnWidth(1,(x-5)*0.1);
-    ui->tableWidget->setColumnWidth(2,(x-5)*0.2);
-    ui->tableWidget->setColumnWidth(3,(x-5)*0.2);
-    ui->tableWidget->setColumnWidth(4,(x-5)*0.2);
+//    ui->tableWidget->setColumnWidth(0,(x-5)*0.2);//450\650\150
+//    ui->tableWidget->setColumnWidth(1,(x-5)*0.1);
+//    ui->tableWidget->setColumnWidth(2,(x-5)*0.2);
+//    ui->tableWidget->setColumnWidth(3,(x-5)*0.2);
+//    ui->tableWidget->setColumnWidth(4,(x-5)*0.2);
 
-    ui->tableWidget_2->setColumnWidth(0,(x-5)*0.2);//450\650\150
-    ui->tableWidget_2->setColumnWidth(1,(x-5)*0.1);
-    ui->tableWidget_2->setColumnWidth(2,(x-5)*0.2);
-    ui->tableWidget_2->setColumnWidth(3,(x-5)*0.2);
-    ui->tableWidget_2->setColumnWidth(4,(x-5)*0.2);
-}
+//    ui->tableWidget_2->setColumnWidth(0,(x-5)*0.2);//450\650\150
+//    ui->tableWidget_2->setColumnWidth(1,(x-5)*0.1);
+//    ui->tableWidget_2->setColumnWidth(2,(x-5)*0.2);
+//    ui->tableWidget_2->setColumnWidth(3,(x-5)*0.2);
+//    ui->tableWidget_2->setColumnWidth(4,(x-5)*0.2);
+//}
 
 void FaultTableInterface::on_Search_btn_clicked()
 {
@@ -168,32 +166,32 @@ void FaultTableInterface::resizeEvent(QResizeEvent *event)
     int y = this->frameGeometry().height();//获取窗口高度
 
     ui->tableWidget->setColumnWidth(0,(x-5)*0.2);//450\650\150
-    ui->tableWidget->setColumnWidth(1,(x-5)*0.1);
+    ui->tableWidget->setColumnWidth(1,(x-5)*0.15);
     ui->tableWidget->setColumnWidth(2,(x-5)*0.2);
     ui->tableWidget->setColumnWidth(3,(x-5)*0.2);
     ui->tableWidget->setColumnWidth(4,(x-5)*0.2);
 
     ui->tableWidget_2->setColumnWidth(0,(x-5)*0.2);//450\650\150
-    ui->tableWidget_2->setColumnWidth(1,(x-5)*0.1);
+    ui->tableWidget_2->setColumnWidth(1,(x-5)*0.15);
     ui->tableWidget_2->setColumnWidth(2,(x-5)*0.2);
     ui->tableWidget_2->setColumnWidth(3,(x-5)*0.2);
     ui->tableWidget_2->setColumnWidth(4,(x-5)*0.2);
 }
 
 
-void FaultTableInterface::on_pushButton_clicked()
-{
-    if(Language == 0)
-    {
-        Language = 1;
+//void FaultTableInterface::on_pushButton_clicked()
+//{
+//    if(Language == 0)
+//    {
+//        Language = 1;
 
-        RTAlarm(QString(":/Fault_Description/DCAC_Fault.txt"),ui->tableWidget);
-        RTAlarm(QString(":/Fault_Description/DCDC_Fault.txt"),ui->tableWidget_2);
-    }
-    else {
-        Language = 0;
-        RTAlarm(QString(":/Fault_Description/DCAC_Fault_Ch.txt"),ui->tableWidget);
-        RTAlarm(QString(":/Fault_Description/DCDC_Fault_Ch.txt"),ui->tableWidget_2);
-    }
-    TableSiz();
-}
+//        RTAlarm(QString(":/Fault_Description/DCAC_Fault.txt"),ui->tableWidget);
+//        RTAlarm(QString(":/Fault_Description/DCDC_Fault.txt"),ui->tableWidget_2);
+//    }
+//    else {
+//        Language = 0;
+//        RTAlarm(QString(":/Fault_Description/DCAC_Fault_Ch.txt"),ui->tableWidget);
+//        RTAlarm(QString(":/Fault_Description/DCDC_Fault_Ch.txt"),ui->tableWidget_2);
+//    }
+//    TableSiz();
+//}

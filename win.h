@@ -790,7 +790,7 @@ public:
 private:
         void History(QTableWidget *myTable);//历史记录
         void OperationLog();//操作日志
-        void RTAlarm(); //告警信息绘表
+//        void RTAlarm(); //告警信息绘表
         void PCS_Data();//PCS数据 绘制button
         void Grid_Data();//电网数据 绘制button
         void Load_Data();//负载数据 绘制button
@@ -810,7 +810,7 @@ private:
         void RTDataDisplay();
         void Information_tbnt_released(); //系统信息槽
         void GeneralParam_tbnt_released();  //一般参数槽
-        void PCS_Alarm_information_table();  //PCS故障信息表
+//        void PCS_Alarm_information_table();  //PCS故障信息表
 
         void Change_Language(); //切换语言
 

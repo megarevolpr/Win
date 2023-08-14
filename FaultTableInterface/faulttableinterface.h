@@ -23,7 +23,7 @@ public:
     void RTAlarm(QString path,QTableWidget *myTable);
     void To_excel_read(QString path,QTableWidget *tablewidget);
     void ToSwarch(QTableWidget *tablewidget);
-    void TableSiz();
+//    void TableSiz();
 
 
 
@@ -37,7 +37,7 @@ public:
 private slots:
     void on_Search_btn_clicked();
 
-    void on_pushButton_clicked();
+//    void on_pushButton_clicked();
 
 private:
 
