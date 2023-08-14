@@ -46,31 +46,31 @@ Grid-on mode:
 Grid-off mode:
   When the battery discharges to the cut-off voltage minus 5V (e.g., if the cut-off voltage is 500V, discharge stops at 495V), an alarm &quot;Discharge Not Allowed&quot; will be triggered, and the DCAC converter will shut down. The &quot;Discharge Not Allowed&quot; alarm will be cleared when the battery voltage is greater than the discharge cut-off voltage plus the discharge hysteresis voltage. If there is no shutdown command, the system will resume operation.
   When the battery is charged to the upper limit of the charging voltage, an alarm &quot;Charging Not Allowed&quot; will be triggered. If the DCAC is in charging mode or in grid-off discharge mode, it will not be affected.
-  The &quot;Charging Not All</source>
+  The &quot;Charging Not Allowed&quot; alarm will be cleared when the battery voltage is lower than the upper limit of the charging voltage minus the charging hysteresis voltage.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FaultTableInterface/faulttableinterface.cpp" line="51"/>
+        <location filename="../FaultTableInterface/faulttableinterface.cpp" line="52"/>
         <source>Alarm name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FaultTableInterface/faulttableinterface.cpp" line="51"/>
+        <location filename="../FaultTableInterface/faulttableinterface.cpp" line="52"/>
         <source>Alarm leve</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FaultTableInterface/faulttableinterface.cpp" line="51"/>
+        <location filename="../FaultTableInterface/faulttableinterface.cpp" line="52"/>
         <source>Trigger condition</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FaultTableInterface/faulttableinterface.cpp" line="52"/>
+        <location filename="../FaultTableInterface/faulttableinterface.cpp" line="53"/>
         <source>Response action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../FaultTableInterface/faulttableinterface.cpp" line="52"/>
+        <location filename="../FaultTableInterface/faulttableinterface.cpp" line="53"/>
         <source>Whether to reset
 automatically and reset time</source>
         <translation type="unfinished"></translation>

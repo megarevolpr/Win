@@ -19,6 +19,31 @@
         <translation>搜索</translation>
     </message>
     <message>
+        <location filename="../FaultTableInterface/faulttableinterface.ui" line="89"/>
+        <source>Battery Cut-off Voltage Protection Logic Explanation for Grid-on and grid-off modes:
+
+Grid-on mode:
+  When the battery discharges to the cut-off voltage minus 5V (e.g., if the cut-off voltage is 500V, discharge stops at 495V), an alarm &quot;Discharge Not Allowed&quot; will be triggered, and the DCAC converter output power will drop to 0.
+  The &quot;Discharge Not Allowed&quot; alarm will be cleared when the battery voltage is greater than the discharge cut-off voltage plus the discharge hysteresis voltage or when the mode is changed to charging.
+  When the battery is charged to the upper limit of the charging voltage, an alarm &quot;Charging Not Allowed&quot; will be triggered. If the DCAC is in charging mode, the charging power will drop to 0. If the DCAC is in discharge mode, it will not be affected.
+  The &quot;Charging Not Allowed&quot; alarm will be cleared when the battery voltage is lower than the upper limit of the charging voltage minus the charging hysteresis voltage or when it is in discharge mode.
+
+Grid-off mode:
+  When the battery discharges to the cut-off voltage minus 5V (e.g., if the cut-off voltage is 500V, discharge stops at 495V), an alarm &quot;Discharge Not Allowed&quot; will be triggered, and the DCAC converter will shut down. The &quot;Discharge Not Allowed&quot; alarm will be cleared when the battery voltage is greater than the discharge cut-off voltage plus the discharge hysteresis voltage. If there is no shutdown command, the system will resume operation.
+  When the battery is charged to the upper limit of the charging voltage, an alarm &quot;Charging Not Allowed&quot; will be triggered. If the DCAC is in charging mode or in grid-off discharge mode, it will not be affected.
+  The &quot;Charging Not Allowed&quot; alarm will be cleared when the battery voltage is lower than the upper limit of the charging voltage minus the charging hysteresis voltage.</source>
+        <translation>电池充放电截止电压在并网及离网时的详细保护逻辑说明：
+并网：
+    电池放电放到放电截止电压-5V，（例如：截止电压是500V，那么495V就会截止放电）会报“放电不允许”告警，DCAC逆变输出功率降为0。
+    当电池电压大于放电截止电压+放电回差电压或改为充电时，“放电不允许”告警消除。
+    电池充电到充电电压上限时，会报“充电不允许”告警，DCAC若处于充电状态，充电功率降为0，DCAC若处于放电状态，则不受影响。
+    当电池电压低于充电电压上限-充电回差电压或处于放电时，“充电不允许”告警消除。
+离网：
+    电池放电放到截止电压-5V（例如：截止电压是500V，那么495V就会截止放电）会报“放电不允许”告警，DCAC逆变停机。当电池电压大于放电截止电压+放电回差电压时，“放电不允许”告警消除，无关机命令下，恢复启动运行。
+    电池充电到充电电压上限时，会报“充电不允许”告警，DCAC若处于充电状态，DCAC处于离网放电状态，则不受影响。
+    当电池电压低于充电电压上限-充电回差电压，“充电不允许”告警消除。</translation>
+    </message>
+    <message>
         <source>Change
 Language</source>
         <translation type="vanished">切换语言</translation>
@@ -39,7 +64,6 @@ Language</source>
         <translation>电池保护逻辑说明</translation>
     </message>
     <message>
-        <location filename="../FaultTableInterface/faulttableinterface.ui" line="89"/>
         <source>Battery Cut-off Voltage Protection Logic Explanation for Grid-on and grid-off modes:
 
 Grid-on mode:
@@ -52,7 +76,7 @@ Grid-off mode:
   When the battery discharges to the cut-off voltage minus 5V (e.g., if the cut-off voltage is 500V, discharge stops at 495V), an alarm &quot;Discharge Not Allowed&quot; will be triggered, and the DCAC converter will shut down. The &quot;Discharge Not Allowed&quot; alarm will be cleared when the battery voltage is greater than the discharge cut-off voltage plus the discharge hysteresis voltage. If there is no shutdown command, the system will resume operation.
   When the battery is charged to the upper limit of the charging voltage, an alarm &quot;Charging Not Allowed&quot; will be triggered. If the DCAC is in charging mode or in grid-off discharge mode, it will not be affected.
   The &quot;Charging Not All</source>
-        <translation>电池充放电截止电压在并网及离网时的详细保护逻辑说明：
+        <translation type="vanished">电池充放电截止电压在并网及离网时的详细保护逻辑说明：
 并网：
     电池放电放到放电截止电压-5V，（例如：截止电压是500V，那么495V就会截止放电）会报“放电不允许”告警，DCAC逆变输出功率降为0。
     当电池电压大于放电截止电压+放电回差电压或改为充电时，“放电不允许”告警消除。
@@ -64,27 +88,27 @@ Grid-off mode:
     当电池电压低于充电电压上限-充电回差电压，“充电不允许”告警消除。</translation>
     </message>
     <message>
-        <location filename="../FaultTableInterface/faulttableinterface.cpp" line="51"/>
+        <location filename="../FaultTableInterface/faulttableinterface.cpp" line="52"/>
         <source>Alarm name</source>
         <translation>告警名称</translation>
     </message>
     <message>
-        <location filename="../FaultTableInterface/faulttableinterface.cpp" line="51"/>
+        <location filename="../FaultTableInterface/faulttableinterface.cpp" line="52"/>
         <source>Alarm leve</source>
         <translation>告警等级</translation>
     </message>
     <message>
-        <location filename="../FaultTableInterface/faulttableinterface.cpp" line="51"/>
+        <location filename="../FaultTableInterface/faulttableinterface.cpp" line="52"/>
         <source>Trigger condition</source>
         <translation>触发条件</translation>
     </message>
     <message>
-        <location filename="../FaultTableInterface/faulttableinterface.cpp" line="52"/>
+        <location filename="../FaultTableInterface/faulttableinterface.cpp" line="53"/>
         <source>Response action</source>
         <translation>响应动作</translation>
     </message>
     <message>
-        <location filename="../FaultTableInterface/faulttableinterface.cpp" line="52"/>
+        <location filename="../FaultTableInterface/faulttableinterface.cpp" line="53"/>
         <source>Whether to reset
 automatically and reset time</source>
         <translation>是否自动复位及复位时间</translation>
