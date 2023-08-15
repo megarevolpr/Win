@@ -7,6 +7,7 @@
 #include <QScrollBar>
 #include <QPainter>
 #include <qdebug.h>
+#include <QtMath>
 
 #include "Specification/Specification.h"
 namespace Ui {
@@ -20,7 +21,6 @@ class GridExpansion : public QMainWindow
 //槽函数
 private slots:
     void  on_openImageBtn();
-    void  on_resetImageBtn();
 
 
 //事件类函数
@@ -60,7 +60,10 @@ public:
     //上述所有的事件只是为了更改如下的变量
     QPixmap srcImage,changeImage,normal;   //原始图像以及缩放后的图像
     float ratio = 1.0;      //缩放的比例
+    float ratio_t;
+
     int Language;
+    bool Image_key;
 
 public:
     explicit GridExpansion(QWidget *parent = nullptr,int LanguageType=0);

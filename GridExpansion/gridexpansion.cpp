@@ -9,6 +9,7 @@ GridExpansion::GridExpansion(QWidget *parent,int LanguageType) :
 
     setWindowState(Qt::WindowMaximized); // 最大化
     Language = LanguageType;
+    Image_key = 1;
 
 
     Generator_Charging = new QPushButton;
@@ -89,13 +90,6 @@ void GridExpansion::on_openImageBtn()
      ui->label->setPixmap(srcImage);
 }
 
-//恢复原图
-void GridExpansion::on_resetImageBtn()
-{
-   ratio = 1;//恢复原始比例
-   //重绘
-   ui->label->setPixmap(srcImage);
-}
 //鼠标按键事件
 void GridExpansion::mousePressEvent(QMouseEvent *event)
 {
@@ -112,8 +106,8 @@ void GridExpansion::mouseMoveEvent(QMouseEvent *event)
 {
     if (mousePress)
     {
-        int x = this->frameGeometry().width()-130;
-        int y = this->frameGeometry().height();
+        /*int x = this->frameGeometry().width()-130;
+        int y = this->frameGeometry().height();*/
 
         //记录scorllArea的横纵滚动条
         QScrollBar *tmph = ui->scrollArea->horizontalScrollBar();
@@ -122,9 +116,27 @@ void GridExpansion::mouseMoveEvent(QMouseEvent *event)
         offset.setX(event->x() - preDot.x());
         offset.setY(event->y() - preDot.y());
 
-        //判断鼠标往哪边移动的，进度条就往哪边动，abs为求绝对值函数
 
-        if (offset.x() > 0 && offset.x() > abs(offset.y()))
+        if(tmph->value()<tmph->maximum()&&offset.x()<0)
+        {
+            tmph->setValue(tmph->value()-offset.x());
+        }
+        if(tmpv->value()<tmpv->maximum()&&offset.y()<0)
+        {
+            tmpv->setValue(tmpv->value()-offset.y());
+        }
+        if(tmph->value()>tmph->minimum()&&offset.x()>0)
+        {
+            tmph->setValue(tmph->value()-offset.x());
+        }
+        if(tmpv->value()>tmpv->minimum()&&offset.y()>0)
+        {
+            tmpv->setValue(tmpv->value()-offset.y());
+        }
+        preDot = event->pos();//重新记录起点
+
+        //判断鼠标往哪边移动的，进度条就往哪边动，abs为求绝对值函数
+        /*if (offset.x() > 0 && offset.x() > abs(offset.y()))
         {
             tmph->setValue(tmph->value() - x*0.007);
         }
@@ -139,7 +151,7 @@ void GridExpansion::mouseMoveEvent(QMouseEvent *event)
         else if (offset.y() < 0 && abs(offset.y()) > abs(offset.x()))
         {
             tmpv->setValue(tmpv->value() + y*0.007);
-        }
+        }*/
     }
 }
 //鼠标松开事件
@@ -157,7 +169,29 @@ void GridExpansion::wheelEvent(QWheelEvent *event)
 {
     if (event->modifiers() == Qt::ControlModifier)
     {
-        if(event->delta()>0)
+        // 获取normal的宽度和高度
+        int normalWidth = normal.width();
+        int normalHeight = normal.height();
+
+        double scaleFactor = qPow(1.02, event->delta() / 102.0); // 根据滚轮滚动的距离计算缩放因子
+        ratio *= scaleFactor;
+        int w = ratio * srcImage.width();
+        int h = ratio * srcImage.height();
+
+        // 如果srcImage比normal小，就将srcImage缩放到与normal相同大小
+        if (w < normalWidth || h < normalHeight) {
+            changeImage = srcImage.scaled(normalWidth, normalHeight);
+            ui->label->setPixmap(changeImage);
+            ratio = ratio_t;
+        }
+        else {
+            changeImage = srcImage.scaled(w, h);
+            ui->label->setPixmap(changeImage);
+            ratio_t = ratio;
+        }
+
+        event->accept();
+        /*if(event->delta()>0)
         {
            ratio = ratio*1.05;//在当前的比例基础上乘以1.2
 
@@ -176,7 +210,7 @@ void GridExpansion::wheelEvent(QWheelEvent *event)
          changeImage = srcImage.scaled(w,h); //图像缩放到指定高度和宽度，保持长宽比例
          ui->label->setPixmap(changeImage);
 
-         event->accept();
+         event->accept();*/
     }
     //当滚轮远离使用者时：
 }
@@ -188,6 +222,7 @@ void GridExpansion::keyReleaseEvent(QKeyEvent *event)
         // Ctrl键被松开
         // 执行app()函数
         on_openImageBtn();//重新加载图片，使其更加清晰
+        ratio = 1.0;
         event->accept();
     }
 }
@@ -208,22 +243,20 @@ void GridExpansion::on_tabWidget_currentChanged(int index)
     if(index==1)
     {
         on_openImageBtn();
-        normal = srcImage;
+        if(Image_key)
+        {
+            normal = srcImage;//保存初次加载的标准图
+            Image_key = 0;
+        }
     }
     else {
-
+        return ;
     }
 }
 //重新加载恢复到标准大小
 void GridExpansion::on_pushButton_clicked()
 {
-    int x = this->frameGeometry().width(); //获取ui形成窗口宽度
-    int y = this->frameGeometry().height();//获取窗口高度
-
-    changeImage = srcImage.scaled(x-150,y-20); //图像缩放到指定高度和宽度，保持长宽比例
-    ui->label->setPixmap(changeImage);
-
-
+    ui->label->setPixmap(normal);
 }
 
 void GridExpansion::on_pushButton_2_clicked()
