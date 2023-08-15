@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Grid expansion</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -186,7 +186,7 @@ Charging and discharging power calculation in grid expansion mode:
                <x>0</x>
                <y>0</y>
                <width>1190</width>
-               <height>787</height>
+               <height>779</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridLayout_2">

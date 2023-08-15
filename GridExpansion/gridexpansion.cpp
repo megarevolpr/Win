@@ -1,14 +1,14 @@
 #include "gridexpansion.h"
 #include "ui_gridexpansion.h"
 
-GridExpansion::GridExpansion(QWidget *parent) :
+GridExpansion::GridExpansion(QWidget *parent,int LanguageType) :
     QMainWindow(parent),
     ui(new Ui::GridExpansion)
 {
     ui->setupUi(this);
 
     setWindowState(Qt::WindowMaximized); // 最大化
-
+    Language = LanguageType;
 
 
     Generator_Charging = new QPushButton;
@@ -73,8 +73,16 @@ void GridExpansion::on_openImageBtn()
 {
      //设置label为居中显式
      ui->label->setAlignment(Qt::AlignCenter);
+     QString image_path;
      //读取并显示图像
-     QImage image("D:/Desktop/WORD/MEGA_code/MEGAWin/Win/UI/电网扩容逻辑图.png");
+     if(Language == 0)
+     {
+         image_path = ("D:/Desktop/WORD/MEGA_code/MEGAWin/Win/UI/电网扩容逻辑图.png");
+     }
+     else {
+        image_path = ("D:/Desktop/WORD/MEGA_code/MEGAWin/Win/UI/电网扩容逻辑图En.png");
+     }
+     QImage image(image_path);
      image = image.scaled(ui->label->size(),Qt::IgnoreAspectRatio,Qt::SmoothTransformation);
      srcImage = QPixmap::fromImage(image);
      //重绘

@@ -375,7 +375,7 @@ color: rgb(255, 255, 255);</string>
          </item>
          <item row="1" column="3">
           <property name="text">
-           <string>serial port 1</string>
+           <string>serial port 2</string>
           </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
@@ -423,7 +423,7 @@ color: rgb(255, 255, 255);</string>
          </item>
          <item row="2" column="3">
           <property name="text">
-           <string>serial port 2</string>
+           <string>serial port 3</string>
           </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
@@ -471,7 +471,7 @@ color: rgb(255, 255, 255);</string>
          </item>
          <item row="3" column="3">
           <property name="text">
-           <string>serial port 3</string>
+           <string>serial port 4</string>
           </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
@@ -519,7 +519,7 @@ color: rgb(255, 255, 255);</string>
          </item>
          <item row="4" column="3">
           <property name="text">
-           <string>serial port 4</string>
+           <string>serial port 5</string>
           </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
@@ -567,7 +567,7 @@ color: rgb(255, 255, 255);</string>
          </item>
          <item row="5" column="3">
           <property name="text">
-           <string>serial port 5</string>
+           <string>serial port 6</string>
           </property>
           <property name="textAlignment">
            <set>AlignCenter</set>
@@ -2393,11 +2393,13 @@ border-image: url(:/new_ui/UI/Enter.png);</string>
      </property>
      <property name="font">
       <font>
-       <pointsize>11</pointsize>
+       <family>宋体</family>
+       <pointsize>12</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(31, 133, 227);</string>
+      <string notr="true">background-color: rgb(31, 133, 227);
+color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>Change
@@ -2514,6 +2516,7 @@ Language</string>
         </property>
         <property name="font">
          <font>
+          <family>宋体</family>
           <pointsize>12</pointsize>
          </font>
         </property>
@@ -2616,7 +2619,7 @@ Language</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>4</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">
@@ -3059,14 +3062,11 @@ Language</string>
          <height>20</height>
         </rect>
        </property>
-       <property name="font">
-        <font>
-         <family>SimSun-ExtB</family>
-         <pointsize>13</pointsize>
-        </font>
-       </property>
        <property name="text">
-        <string/>
+        <string>0A</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="Bypass_BattVolt_label">
@@ -3078,14 +3078,11 @@ Language</string>
          <height>20</height>
         </rect>
        </property>
-       <property name="font">
-        <font>
-         <family>SimSun-ExtB</family>
-         <pointsize>13</pointsize>
-        </font>
-       </property>
        <property name="text">
-        <string/>
+        <string>0V</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QPushButton" name="Bypass_Batt_btn">
@@ -3129,14 +3126,11 @@ Language</string>
          <height>16</height>
         </rect>
        </property>
-       <property name="font">
-        <font>
-         <family>SimSun-ExtB</family>
-         <pointsize>13</pointsize>
-        </font>
-       </property>
        <property name="text">
-        <string/>
+        <string>0A</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="Bypass_Grid_Curr_B">
@@ -3148,14 +3142,11 @@ Language</string>
          <height>16</height>
         </rect>
        </property>
-       <property name="font">
-        <font>
-         <family>SimSun-ExtB</family>
-         <pointsize>13</pointsize>
-        </font>
-       </property>
        <property name="text">
-        <string/>
+        <string>0A</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="Bypass_Grid_Curr_C">
@@ -3167,14 +3158,11 @@ Language</string>
          <height>16</height>
         </rect>
        </property>
-       <property name="font">
-        <font>
-         <family>SimSun-ExtB</family>
-         <pointsize>13</pointsize>
-        </font>
-       </property>
        <property name="text">
-        <string/>
+        <string>0A</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QPushButton" name="Bypass_Grid_btn">
@@ -3220,7 +3208,10 @@ Language</string>
         </rect>
        </property>
        <property name="text">
-        <string/>
+        <string>0A</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="Bypass_Load_Curr_B">
@@ -3233,7 +3224,10 @@ Language</string>
         </rect>
        </property>
        <property name="text">
-        <string/>
+        <string>0A</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="Bypass_Load_Curr_C">
@@ -3246,7 +3240,10 @@ Language</string>
         </rect>
        </property>
        <property name="text">
-        <string/>
+        <string>0A</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="Bypass_Phrase_A_bar">
@@ -3342,7 +3339,10 @@ Language</string>
         </rect>
        </property>
        <property name="text">
-        <string/>
+        <string>0V</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="Bypass_Vb_lb">
@@ -3355,7 +3355,10 @@ Language</string>
         </rect>
        </property>
        <property name="text">
-        <string/>
+        <string>0V</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="Bypass_Vc_lb">
@@ -3368,7 +3371,10 @@ Language</string>
         </rect>
        </property>
        <property name="text">
-        <string/>
+        <string>0V</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="Bypass_Va_lb_Inv">
@@ -3381,7 +3387,10 @@ Language</string>
         </rect>
        </property>
        <property name="text">
-        <string/>
+        <string>0V</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="Bypass_Vb_lb_Inv">
@@ -3394,7 +3403,10 @@ Language</string>
         </rect>
        </property>
        <property name="text">
-        <string/>
+        <string>0V</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="Bypass_Vc_lb_Inv">
@@ -3407,7 +3419,10 @@ Language</string>
         </rect>
        </property>
        <property name="text">
-        <string/>
+        <string>0V</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="Load_bar_A">
@@ -3453,32 +3468,6 @@ Language</string>
        </property>
        <property name="styleSheet">
         <string notr="true">border-image: url(:/new_ui/UI/DCBar1-02.png);</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-      <widget class="QLabel" name="SOC_lb_bypass">
-       <property name="geometry">
-        <rect>
-         <x>250</x>
-         <y>210</y>
-         <width>67</width>
-         <height>17</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-      <widget class="QLabel" name="SOC_text_bypass">
-       <property name="geometry">
-        <rect>
-         <x>170</x>
-         <y>210</y>
-         <width>67</width>
-         <height>17</height>
-        </rect>
        </property>
        <property name="text">
         <string/>
@@ -3667,6 +3656,38 @@ Language</string>
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="horizontalLayoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>190</y>
+         <width>121</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_13">
+        <item>
+         <widget class="QLabel" name="SOC_text_bypass">
+          <property name="text">
+           <string>SOC:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="SOC_lb_bypass">
+          <property name="text">
+           <string>40%</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
      <widget class="QWidget" name="Status_page">
       <layout class="QGridLayout" name="gridLayout_14">
@@ -3694,7 +3715,7 @@ Language</string>
           </sizepolicy>
          </property>
          <property name="currentIndex">
-          <number>3</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="RTData_page">
           <property name="minimumSize">

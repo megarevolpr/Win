@@ -132,8 +132,6 @@ public:
     QLabel *Load_bar_A;
     QLabel *Load_bar_B;
     QLabel *Load_bar_C;
-    QLabel *SOC_lb_bypass;
-    QLabel *SOC_text_bypass;
     QWidget *layoutWidget2;
     QVBoxLayout *verticalLayout_29;
     QHBoxLayout *horizontalLayout_16;
@@ -148,6 +146,10 @@ public:
     QHBoxLayout *horizontalLayout_45;
     QLabel *Meter_Name_8;
     QLabel *Meter_Value_8;
+    QWidget *horizontalLayoutWidget;
+    QHBoxLayout *horizontalLayout_13;
+    QLabel *SOC_text_bypass;
+    QLabel *SOC_lb_bypass;
     QWidget *Status_page;
     QGridLayout *gridLayout_14;
     QTabWidget *Run_tabWidget;
@@ -1313,9 +1315,11 @@ public:
         ChangeLanguage_btn_1->setMinimumSize(QSize(109, 45));
         ChangeLanguage_btn_1->setMaximumSize(QSize(109, 45));
         QFont font2;
-        font2.setPointSize(11);
+        font2.setFamily(QString::fromUtf8("\345\256\213\344\275\223"));
+        font2.setPointSize(12);
         ChangeLanguage_btn_1->setFont(font2);
-        ChangeLanguage_btn_1->setStyleSheet(QStringLiteral("background-color: rgb(31, 133, 227);"));
+        ChangeLanguage_btn_1->setStyleSheet(QLatin1String("background-color: rgb(31, 133, 227);\n"
+"color: rgb(255, 255, 255);"));
         UI_stackedWidget->addWidget(BasicSet_page);
         UI_page = new QWidget();
         UI_page->setObjectName(QStringLiteral("UI_page"));
@@ -1351,9 +1355,7 @@ public:
         ChangeLanguage_btn->setObjectName(QStringLiteral("ChangeLanguage_btn"));
         ChangeLanguage_btn->setMinimumSize(QSize(110, 45));
         ChangeLanguage_btn->setMaximumSize(QSize(99999, 45));
-        QFont font4;
-        font4.setPointSize(12);
-        ChangeLanguage_btn->setFont(font4);
+        ChangeLanguage_btn->setFont(font2);
         ChangeLanguage_btn->setStyleSheet(QStringLiteral("color: rgb(255, 255, 255);"));
 
         gridLayout_2->addWidget(ChangeLanguage_btn, 0, 0, 1, 1);
@@ -1374,10 +1376,10 @@ public:
         UI_captye->setObjectName(QStringLiteral("UI_captye"));
         UI_captye->setMinimumSize(QSize(75, 45));
         UI_captye->setMaximumSize(QSize(9999, 45));
-        QFont font5;
-        font5.setFamily(QStringLiteral("SimSun-ExtB"));
-        font5.setPointSize(18);
-        UI_captye->setFont(font5);
+        QFont font4;
+        font4.setFamily(QStringLiteral("SimSun-ExtB"));
+        font4.setPointSize(18);
+        UI_captye->setFont(font4);
         UI_captye->setStyleSheet(QStringLiteral("color: rgb(255, 255, 255);"));
 
         gridLayout_2->addWidget(UI_captye, 0, 2, 1, 1);
@@ -1544,14 +1546,11 @@ public:
         Bypass_BattCurrent_label = new QLabel(Bypass_page);
         Bypass_BattCurrent_label->setObjectName(QStringLiteral("Bypass_BattCurrent_label"));
         Bypass_BattCurrent_label->setGeometry(QRect(320, 170, 81, 20));
-        QFont font6;
-        font6.setFamily(QStringLiteral("SimSun-ExtB"));
-        font6.setPointSize(13);
-        Bypass_BattCurrent_label->setFont(font6);
+        Bypass_BattCurrent_label->setAlignment(Qt::AlignCenter);
         Bypass_BattVolt_label = new QLabel(Bypass_page);
         Bypass_BattVolt_label->setObjectName(QStringLiteral("Bypass_BattVolt_label"));
         Bypass_BattVolt_label->setGeometry(QRect(320, 130, 81, 20));
-        Bypass_BattVolt_label->setFont(font6);
+        Bypass_BattVolt_label->setAlignment(Qt::AlignCenter);
         Bypass_Batt_btn = new QPushButton(Bypass_page);
         Bypass_Batt_btn->setObjectName(QStringLiteral("Bypass_Batt_btn"));
         Bypass_Batt_btn->setGeometry(QRect(150, 120, 130, 80));
@@ -1563,15 +1562,15 @@ public:
         Bypass_Grid_Curr_A = new QLabel(Bypass_page);
         Bypass_Grid_Curr_A->setObjectName(QStringLiteral("Bypass_Grid_Curr_A"));
         Bypass_Grid_Curr_A->setGeometry(QRect(620, 100, 61, 16));
-        Bypass_Grid_Curr_A->setFont(font6);
+        Bypass_Grid_Curr_A->setAlignment(Qt::AlignCenter);
         Bypass_Grid_Curr_B = new QLabel(Bypass_page);
         Bypass_Grid_Curr_B->setObjectName(QStringLiteral("Bypass_Grid_Curr_B"));
         Bypass_Grid_Curr_B->setGeometry(QRect(620, 130, 61, 16));
-        Bypass_Grid_Curr_B->setFont(font6);
+        Bypass_Grid_Curr_B->setAlignment(Qt::AlignCenter);
         Bypass_Grid_Curr_C = new QLabel(Bypass_page);
         Bypass_Grid_Curr_C->setObjectName(QStringLiteral("Bypass_Grid_Curr_C"));
         Bypass_Grid_Curr_C->setGeometry(QRect(620, 164, 61, 16));
-        Bypass_Grid_Curr_C->setFont(font6);
+        Bypass_Grid_Curr_C->setAlignment(Qt::AlignCenter);
         Bypass_Grid_btn = new QPushButton(Bypass_page);
         Bypass_Grid_btn->setObjectName(QStringLiteral("Bypass_Grid_btn"));
         Bypass_Grid_btn->setGeometry(QRect(680, 70, 121, 161));
@@ -1584,12 +1583,15 @@ public:
         Bypass_Load_Curr_A = new QLabel(Bypass_page);
         Bypass_Load_Curr_A->setObjectName(QStringLiteral("Bypass_Load_Curr_A"));
         Bypass_Load_Curr_A->setGeometry(QRect(520, 240, 80, 16));
+        Bypass_Load_Curr_A->setAlignment(Qt::AlignCenter);
         Bypass_Load_Curr_B = new QLabel(Bypass_page);
         Bypass_Load_Curr_B->setObjectName(QStringLiteral("Bypass_Load_Curr_B"));
         Bypass_Load_Curr_B->setGeometry(QRect(520, 260, 80, 16));
+        Bypass_Load_Curr_B->setAlignment(Qt::AlignCenter);
         Bypass_Load_Curr_C = new QLabel(Bypass_page);
         Bypass_Load_Curr_C->setObjectName(QStringLiteral("Bypass_Load_Curr_C"));
         Bypass_Load_Curr_C->setGeometry(QRect(520, 280, 80, 16));
+        Bypass_Load_Curr_C->setAlignment(Qt::AlignCenter);
         Bypass_Phrase_A_bar = new QLabel(Bypass_page);
         Bypass_Phrase_A_bar->setObjectName(QStringLiteral("Bypass_Phrase_A_bar"));
         Bypass_Phrase_A_bar->setGeometry(QRect(530, 120, 141, 13));
@@ -1613,21 +1615,27 @@ public:
         Bypass_Va_lb = new QLabel(Bypass_page);
         Bypass_Va_lb->setObjectName(QStringLiteral("Bypass_Va_lb"));
         Bypass_Va_lb->setGeometry(QRect(540, 100, 67, 16));
+        Bypass_Va_lb->setAlignment(Qt::AlignCenter);
         Bypass_Vb_lb = new QLabel(Bypass_page);
         Bypass_Vb_lb->setObjectName(QStringLiteral("Bypass_Vb_lb"));
         Bypass_Vb_lb->setGeometry(QRect(540, 134, 67, 16));
+        Bypass_Vb_lb->setAlignment(Qt::AlignCenter);
         Bypass_Vc_lb = new QLabel(Bypass_page);
         Bypass_Vc_lb->setObjectName(QStringLiteral("Bypass_Vc_lb"));
         Bypass_Vc_lb->setGeometry(QRect(540, 164, 67, 16));
+        Bypass_Vc_lb->setAlignment(Qt::AlignCenter);
         Bypass_Va_lb_Inv = new QLabel(Bypass_page);
         Bypass_Va_lb_Inv->setObjectName(QStringLiteral("Bypass_Va_lb_Inv"));
         Bypass_Va_lb_Inv->setGeometry(QRect(370, 240, 71, 20));
+        Bypass_Va_lb_Inv->setAlignment(Qt::AlignCenter);
         Bypass_Vb_lb_Inv = new QLabel(Bypass_page);
         Bypass_Vb_lb_Inv->setObjectName(QStringLiteral("Bypass_Vb_lb_Inv"));
         Bypass_Vb_lb_Inv->setGeometry(QRect(370, 260, 71, 20));
+        Bypass_Vb_lb_Inv->setAlignment(Qt::AlignCenter);
         Bypass_Vc_lb_Inv = new QLabel(Bypass_page);
         Bypass_Vc_lb_Inv->setObjectName(QStringLiteral("Bypass_Vc_lb_Inv"));
         Bypass_Vc_lb_Inv->setGeometry(QRect(370, 280, 71, 20));
+        Bypass_Vc_lb_Inv->setAlignment(Qt::AlignCenter);
         Load_bar_A = new QLabel(Bypass_page);
         Load_bar_A->setObjectName(QStringLiteral("Load_bar_A"));
         Load_bar_A->setGeometry(QRect(440, 220, 13, 110));
@@ -1640,12 +1648,6 @@ public:
         Load_bar_C->setObjectName(QStringLiteral("Load_bar_C"));
         Load_bar_C->setGeometry(QRect(500, 220, 13, 110));
         Load_bar_C->setStyleSheet(QStringLiteral("border-image: url(:/new_ui/UI/DCBar1-02.png);"));
-        SOC_lb_bypass = new QLabel(Bypass_page);
-        SOC_lb_bypass->setObjectName(QStringLiteral("SOC_lb_bypass"));
-        SOC_lb_bypass->setGeometry(QRect(250, 210, 67, 17));
-        SOC_text_bypass = new QLabel(Bypass_page);
-        SOC_text_bypass->setObjectName(QStringLiteral("SOC_text_bypass"));
-        SOC_text_bypass->setGeometry(QRect(170, 210, 67, 17));
         layoutWidget2 = new QWidget(Bypass_page);
         layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
         layoutWidget2->setGeometry(QRect(0, 0, 146, 112));
@@ -1733,6 +1735,26 @@ public:
 
 
         verticalLayout_29->addLayout(horizontalLayout_45);
+
+        horizontalLayoutWidget = new QWidget(Bypass_page);
+        horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
+        horizontalLayoutWidget->setGeometry(QRect(160, 190, 121, 21));
+        horizontalLayout_13 = new QHBoxLayout(horizontalLayoutWidget);
+        horizontalLayout_13->setSpacing(6);
+        horizontalLayout_13->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_13->setObjectName(QStringLiteral("horizontalLayout_13"));
+        horizontalLayout_13->setContentsMargins(0, 0, 0, 0);
+        SOC_text_bypass = new QLabel(horizontalLayoutWidget);
+        SOC_text_bypass->setObjectName(QStringLiteral("SOC_text_bypass"));
+        SOC_text_bypass->setAlignment(Qt::AlignCenter);
+
+        horizontalLayout_13->addWidget(SOC_text_bypass);
+
+        SOC_lb_bypass = new QLabel(horizontalLayoutWidget);
+        SOC_lb_bypass->setObjectName(QStringLiteral("SOC_lb_bypass"));
+        SOC_lb_bypass->setAlignment(Qt::AlignCenter);
+
+        horizontalLayout_13->addWidget(SOC_lb_bypass);
 
         stackedWidget->addWidget(Bypass_page);
         Status_page = new QWidget();
@@ -2049,12 +2071,14 @@ public:
         RTState_stackedWidget->setObjectName(QStringLiteral("RTState_stackedWidget"));
         RTState_stackedWidget->setMinimumSize(QSize(971, 407));
         RTState_stackedWidget->setMaximumSize(QSize(971, 407));
-        RTState_stackedWidget->setFont(font2);
+        QFont font5;
+        font5.setPointSize(11);
+        RTState_stackedWidget->setFont(font5);
         RTState_Bypass_N_page = new QWidget();
         RTState_Bypass_N_page->setObjectName(QStringLiteral("RTState_Bypass_N_page"));
         RTState_Bypass_N_page->setMinimumSize(QSize(971, 407));
         RTState_Bypass_N_page->setMaximumSize(QSize(971, 407));
-        RTState_Bypass_N_page->setFont(font2);
+        RTState_Bypass_N_page->setFont(font5);
         gridLayout = new QGridLayout(RTState_Bypass_N_page);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -2064,14 +2088,14 @@ public:
         RTState_MEGA_Tab->setObjectName(QStringLiteral("RTState_MEGA_Tab"));
         RTState_MEGA_Tab->setMinimumSize(QSize(971, 407));
         RTState_MEGA_Tab->setMaximumSize(QSize(971, 407));
-        RTState_MEGA_Tab->setFont(font2);
+        RTState_MEGA_Tab->setFont(font5);
 
         gridLayout->addWidget(RTState_MEGA_Tab, 0, 0, 1, 1);
 
         RTState_stackedWidget->addWidget(RTState_Bypass_N_page);
         RTState_Bypass_Y_page = new QWidget();
         RTState_Bypass_Y_page->setObjectName(QStringLiteral("RTState_Bypass_Y_page"));
-        RTState_Bypass_Y_page->setFont(font2);
+        RTState_Bypass_Y_page->setFont(font5);
         gridLayout_3 = new QGridLayout(RTState_Bypass_Y_page);
         gridLayout_3->setSpacing(6);
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
@@ -2186,10 +2210,10 @@ public:
         horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
         label = new QLabel(RTAlarm_page);
         label->setObjectName(QStringLiteral("label"));
-        QFont font7;
-        font7.setFamily(QString::fromUtf8("\345\256\213\344\275\223"));
-        font7.setPointSize(15);
-        label->setFont(font7);
+        QFont font6;
+        font6.setFamily(QString::fromUtf8("\345\256\213\344\275\223"));
+        font6.setPointSize(15);
+        label->setFont(font6);
         label->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_8->addWidget(label);
@@ -2245,12 +2269,12 @@ public:
         RTLead_Tab->setObjectName(QStringLiteral("RTLead_Tab"));
         RTLead_Tab->setMinimumSize(QSize(971, 407));
         RTLead_Tab->setMaximumSize(QSize(971, 407));
-        QFont font8;
-        font8.setFamily(QStringLiteral("Ubuntu"));
-        font8.setPointSize(14);
-        font8.setBold(false);
-        font8.setWeight(50);
-        RTLead_Tab->setFont(font8);
+        QFont font7;
+        font7.setFamily(QStringLiteral("Ubuntu"));
+        font7.setPointSize(14);
+        font7.setBold(false);
+        font7.setWeight(50);
+        RTLead_Tab->setFont(font7);
         RTLead_Tab->viewport()->setProperty("cursor", QVariant(QCursor(Qt::BlankCursor)));
         RTLead_Tab->setFrameShape(QFrame::StyledPanel);
         RTLead_Tab->setFrameShadow(QFrame::Sunken);
@@ -2262,10 +2286,10 @@ public:
         BAT_Lithium_page->setObjectName(QStringLiteral("BAT_Lithium_page"));
         BAT_Lithium_page->setMinimumSize(QSize(971, 414));
         BAT_Lithium_page->setMaximumSize(QSize(971, 414));
-        QFont font9;
-        font9.setFamily(QString::fromUtf8("\345\256\213\344\275\223"));
-        font9.setPointSize(11);
-        BAT_Lithium_page->setFont(font9);
+        QFont font8;
+        font8.setFamily(QString::fromUtf8("\345\256\213\344\275\223"));
+        font8.setPointSize(11);
+        BAT_Lithium_page->setFont(font8);
         gridLayout_6 = new QGridLayout(BAT_Lithium_page);
         gridLayout_6->setSpacing(0);
         gridLayout_6->setContentsMargins(11, 11, 11, 11);
@@ -2284,9 +2308,9 @@ public:
         BATName1->setObjectName(QStringLiteral("BATName1"));
         BATName1->setMinimumSize(QSize(173, 43));
         BATName1->setMaximumSize(QSize(16777215, 43));
-        QFont font10;
-        font10.setPointSize(14);
-        BATName1->setFont(font10);
+        QFont font9;
+        font9.setPointSize(14);
+        BATName1->setFont(font9);
         BATName1->setStyleSheet(QStringLiteral("background-color: rgb(0, 151, 226);"));
         BATName1->setAlignment(Qt::AlignCenter);
 
@@ -2297,7 +2321,7 @@ public:
         BatAnalog_1->setEnabled(true);
         BatAnalog_1->setMinimumSize(QSize(173, 42));
         BatAnalog_1->setMaximumSize(QSize(16777215, 42));
-        BatAnalog_1->setFont(font10);
+        BatAnalog_1->setFont(font9);
         BatAnalog_1->setStyleSheet(QStringLiteral(""));
         BatAnalog_1->setAlignment(Qt::AlignCenter);
 
@@ -2307,7 +2331,7 @@ public:
         BatAnalog_2->setObjectName(QStringLiteral("BatAnalog_2"));
         BatAnalog_2->setMinimumSize(QSize(173, 42));
         BatAnalog_2->setMaximumSize(QSize(16777215, 42));
-        BatAnalog_2->setFont(font10);
+        BatAnalog_2->setFont(font9);
         BatAnalog_2->setStyleSheet(QStringLiteral(""));
         BatAnalog_2->setAlignment(Qt::AlignCenter);
 
@@ -2317,7 +2341,7 @@ public:
         BatAnalog_3->setObjectName(QStringLiteral("BatAnalog_3"));
         BatAnalog_3->setMinimumSize(QSize(173, 42));
         BatAnalog_3->setMaximumSize(QSize(16777215, 42));
-        BatAnalog_3->setFont(font10);
+        BatAnalog_3->setFont(font9);
         BatAnalog_3->setStyleSheet(QStringLiteral(""));
         BatAnalog_3->setAlignment(Qt::AlignCenter);
 
@@ -2327,7 +2351,7 @@ public:
         BatAnalog_4->setObjectName(QStringLiteral("BatAnalog_4"));
         BatAnalog_4->setMinimumSize(QSize(173, 42));
         BatAnalog_4->setMaximumSize(QSize(16777215, 42));
-        BatAnalog_4->setFont(font10);
+        BatAnalog_4->setFont(font9);
         BatAnalog_4->setStyleSheet(QStringLiteral(""));
         BatAnalog_4->setAlignment(Qt::AlignCenter);
 
@@ -2337,7 +2361,7 @@ public:
         BatAnalog_5->setObjectName(QStringLiteral("BatAnalog_5"));
         BatAnalog_5->setMinimumSize(QSize(173, 42));
         BatAnalog_5->setMaximumSize(QSize(16777215, 42));
-        BatAnalog_5->setFont(font10);
+        BatAnalog_5->setFont(font9);
         BatAnalog_5->setStyleSheet(QStringLiteral(""));
         BatAnalog_5->setAlignment(Qt::AlignCenter);
 
@@ -2347,7 +2371,7 @@ public:
         BatAnalog_6->setObjectName(QStringLiteral("BatAnalog_6"));
         BatAnalog_6->setMinimumSize(QSize(173, 42));
         BatAnalog_6->setMaximumSize(QSize(16777215, 42));
-        BatAnalog_6->setFont(font10);
+        BatAnalog_6->setFont(font9);
         BatAnalog_6->setStyleSheet(QStringLiteral(""));
         BatAnalog_6->setAlignment(Qt::AlignCenter);
 
@@ -2357,7 +2381,7 @@ public:
         BatAnalog_7->setObjectName(QStringLiteral("BatAnalog_7"));
         BatAnalog_7->setMinimumSize(QSize(173, 42));
         BatAnalog_7->setMaximumSize(QSize(16777215, 42));
-        BatAnalog_7->setFont(font10);
+        BatAnalog_7->setFont(font9);
         BatAnalog_7->setStyleSheet(QStringLiteral(""));
         BatAnalog_7->setAlignment(Qt::AlignCenter);
 
@@ -2367,7 +2391,7 @@ public:
         BatAnalog_8->setObjectName(QStringLiteral("BatAnalog_8"));
         BatAnalog_8->setMinimumSize(QSize(173, 42));
         BatAnalog_8->setMaximumSize(QSize(16777215, 42));
-        BatAnalog_8->setFont(font10);
+        BatAnalog_8->setFont(font9);
         BatAnalog_8->setStyleSheet(QStringLiteral(""));
         BatAnalog_8->setAlignment(Qt::AlignCenter);
 
@@ -2383,7 +2407,7 @@ public:
         BatValue1->setObjectName(QStringLiteral("BatValue1"));
         BatValue1->setMinimumSize(QSize(70, 43));
         BatValue1->setMaximumSize(QSize(70, 43));
-        BatValue1->setFont(font10);
+        BatValue1->setFont(font9);
         BatValue1->setStyleSheet(QStringLiteral("background-color: rgb(0, 151, 226);"));
         BatValue1->setAlignment(Qt::AlignCenter);
 
@@ -2393,7 +2417,7 @@ public:
         pushButton_1->setObjectName(QStringLiteral("pushButton_1"));
         pushButton_1->setMinimumSize(QSize(70, 43));
         pushButton_1->setMaximumSize(QSize(70, 43));
-        pushButton_1->setFont(font10);
+        pushButton_1->setFont(font9);
 
         verticalLayout_16->addWidget(pushButton_1);
 
@@ -2401,7 +2425,7 @@ public:
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setMinimumSize(QSize(70, 43));
         pushButton_2->setMaximumSize(QSize(70, 43));
-        pushButton_2->setFont(font10);
+        pushButton_2->setFont(font9);
 
         verticalLayout_16->addWidget(pushButton_2);
 
@@ -2409,7 +2433,7 @@ public:
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setMinimumSize(QSize(70, 43));
         pushButton_3->setMaximumSize(QSize(70, 43));
-        pushButton_3->setFont(font10);
+        pushButton_3->setFont(font9);
 
         verticalLayout_16->addWidget(pushButton_3);
 
@@ -2417,7 +2441,7 @@ public:
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         pushButton_4->setMinimumSize(QSize(70, 43));
         pushButton_4->setMaximumSize(QSize(70, 43));
-        pushButton_4->setFont(font10);
+        pushButton_4->setFont(font9);
 
         verticalLayout_16->addWidget(pushButton_4);
 
@@ -2425,7 +2449,7 @@ public:
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
         pushButton_5->setMinimumSize(QSize(70, 43));
         pushButton_5->setMaximumSize(QSize(70, 43));
-        pushButton_5->setFont(font10);
+        pushButton_5->setFont(font9);
 
         verticalLayout_16->addWidget(pushButton_5);
 
@@ -2433,7 +2457,7 @@ public:
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
         pushButton_6->setMinimumSize(QSize(70, 43));
         pushButton_6->setMaximumSize(QSize(70, 43));
-        pushButton_6->setFont(font10);
+        pushButton_6->setFont(font9);
 
         verticalLayout_16->addWidget(pushButton_6);
 
@@ -2441,7 +2465,7 @@ public:
         pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
         pushButton_7->setMinimumSize(QSize(70, 43));
         pushButton_7->setMaximumSize(QSize(70, 43));
-        pushButton_7->setFont(font10);
+        pushButton_7->setFont(font9);
 
         verticalLayout_16->addWidget(pushButton_7);
 
@@ -2449,7 +2473,7 @@ public:
         pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
         pushButton_8->setMinimumSize(QSize(70, 43));
         pushButton_8->setMaximumSize(QSize(70, 43));
-        pushButton_8->setFont(font10);
+        pushButton_8->setFont(font9);
 
         verticalLayout_16->addWidget(pushButton_8);
 
@@ -2463,7 +2487,7 @@ public:
         BatUnit1->setObjectName(QStringLiteral("BatUnit1"));
         BatUnit1->setMinimumSize(QSize(40, 43));
         BatUnit1->setMaximumSize(QSize(56, 43));
-        BatUnit1->setFont(font10);
+        BatUnit1->setFont(font9);
         BatUnit1->setStyleSheet(QStringLiteral("background-color: rgb(0, 151, 226);"));
         BatUnit1->setAlignment(Qt::AlignCenter);
 
@@ -2473,7 +2497,7 @@ public:
         BatUnit_1->setObjectName(QStringLiteral("BatUnit_1"));
         BatUnit_1->setMinimumSize(QSize(40, 43));
         BatUnit_1->setMaximumSize(QSize(56, 43));
-        BatUnit_1->setFont(font10);
+        BatUnit_1->setFont(font9);
         BatUnit_1->setFrameShape(QFrame::NoFrame);
         BatUnit_1->setAlignment(Qt::AlignCenter);
 
@@ -2483,7 +2507,7 @@ public:
         BatUnit_2->setObjectName(QStringLiteral("BatUnit_2"));
         BatUnit_2->setMinimumSize(QSize(40, 43));
         BatUnit_2->setMaximumSize(QSize(56, 43));
-        BatUnit_2->setFont(font10);
+        BatUnit_2->setFont(font9);
         BatUnit_2->setAlignment(Qt::AlignCenter);
 
         verticalLayout_20->addWidget(BatUnit_2);
@@ -2492,7 +2516,7 @@ public:
         BatUnit_3->setObjectName(QStringLiteral("BatUnit_3"));
         BatUnit_3->setMinimumSize(QSize(40, 43));
         BatUnit_3->setMaximumSize(QSize(56, 43));
-        BatUnit_3->setFont(font10);
+        BatUnit_3->setFont(font9);
         BatUnit_3->setAlignment(Qt::AlignCenter);
 
         verticalLayout_20->addWidget(BatUnit_3);
@@ -2501,7 +2525,7 @@ public:
         BatUnit_4->setObjectName(QStringLiteral("BatUnit_4"));
         BatUnit_4->setMinimumSize(QSize(40, 43));
         BatUnit_4->setMaximumSize(QSize(56, 43));
-        BatUnit_4->setFont(font10);
+        BatUnit_4->setFont(font9);
         BatUnit_4->setAlignment(Qt::AlignCenter);
 
         verticalLayout_20->addWidget(BatUnit_4);
@@ -2510,7 +2534,7 @@ public:
         BatUnit_5->setObjectName(QStringLiteral("BatUnit_5"));
         BatUnit_5->setMinimumSize(QSize(40, 43));
         BatUnit_5->setMaximumSize(QSize(56, 43));
-        BatUnit_5->setFont(font10);
+        BatUnit_5->setFont(font9);
         BatUnit_5->setAlignment(Qt::AlignCenter);
 
         verticalLayout_20->addWidget(BatUnit_5);
@@ -2519,7 +2543,7 @@ public:
         BatUnit_6->setObjectName(QStringLiteral("BatUnit_6"));
         BatUnit_6->setMinimumSize(QSize(40, 43));
         BatUnit_6->setMaximumSize(QSize(56, 43));
-        BatUnit_6->setFont(font10);
+        BatUnit_6->setFont(font9);
         BatUnit_6->setAlignment(Qt::AlignCenter);
 
         verticalLayout_20->addWidget(BatUnit_6);
@@ -2528,7 +2552,7 @@ public:
         BatUnit_7->setObjectName(QStringLiteral("BatUnit_7"));
         BatUnit_7->setMinimumSize(QSize(40, 43));
         BatUnit_7->setMaximumSize(QSize(56, 43));
-        BatUnit_7->setFont(font10);
+        BatUnit_7->setFont(font9);
         BatUnit_7->setAlignment(Qt::AlignCenter);
 
         verticalLayout_20->addWidget(BatUnit_7);
@@ -2537,7 +2561,7 @@ public:
         BatUnit_8->setObjectName(QStringLiteral("BatUnit_8"));
         BatUnit_8->setMinimumSize(QSize(40, 43));
         BatUnit_8->setMaximumSize(QSize(56, 43));
-        BatUnit_8->setFont(font10);
+        BatUnit_8->setFont(font9);
         BatUnit_8->setAlignment(Qt::AlignCenter);
 
         verticalLayout_20->addWidget(BatUnit_8);
@@ -2561,7 +2585,7 @@ public:
         BATName1_2->setObjectName(QStringLiteral("BATName1_2"));
         BATName1_2->setMinimumSize(QSize(275, 42));
         BATName1_2->setMaximumSize(QSize(16777215, 42));
-        BATName1_2->setFont(font10);
+        BATName1_2->setFont(font9);
         BATName1_2->setStyleSheet(QStringLiteral("background-color: rgb(0, 151, 226);"));
         BATName1_2->setAlignment(Qt::AlignCenter);
 
@@ -2571,7 +2595,7 @@ public:
         BatUnit_17->setObjectName(QStringLiteral("BatUnit_17"));
         BatUnit_17->setMinimumSize(QSize(173, 42));
         BatUnit_17->setMaximumSize(QSize(16777215, 42));
-        BatUnit_17->setFont(font10);
+        BatUnit_17->setFont(font9);
         BatUnit_17->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(BatUnit_17);
@@ -2580,7 +2604,7 @@ public:
         BatUnit_18->setObjectName(QStringLiteral("BatUnit_18"));
         BatUnit_18->setMinimumSize(QSize(173, 42));
         BatUnit_18->setMaximumSize(QSize(16777215, 42));
-        BatUnit_18->setFont(font10);
+        BatUnit_18->setFont(font9);
         BatUnit_18->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(BatUnit_18);
@@ -2589,7 +2613,7 @@ public:
         BatUnit_19->setObjectName(QStringLiteral("BatUnit_19"));
         BatUnit_19->setMinimumSize(QSize(173, 42));
         BatUnit_19->setMaximumSize(QSize(16777215, 42));
-        BatUnit_19->setFont(font10);
+        BatUnit_19->setFont(font9);
         BatUnit_19->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(BatUnit_19);
@@ -2598,10 +2622,10 @@ public:
         BatUnit_20->setObjectName(QStringLiteral("BatUnit_20"));
         BatUnit_20->setMinimumSize(QSize(173, 42));
         BatUnit_20->setMaximumSize(QSize(16777215, 42));
-        QFont font11;
-        font11.setFamily(QString::fromUtf8("\345\256\213\344\275\223"));
-        font11.setPointSize(14);
-        BatUnit_20->setFont(font11);
+        QFont font10;
+        font10.setFamily(QString::fromUtf8("\345\256\213\344\275\223"));
+        font10.setPointSize(14);
+        BatUnit_20->setFont(font10);
         BatUnit_20->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(BatUnit_20);
@@ -2610,7 +2634,7 @@ public:
         BatUnit_21->setObjectName(QStringLiteral("BatUnit_21"));
         BatUnit_21->setMinimumSize(QSize(173, 42));
         BatUnit_21->setMaximumSize(QSize(16777215, 42));
-        BatUnit_21->setFont(font10);
+        BatUnit_21->setFont(font9);
         BatUnit_21->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(BatUnit_21);
@@ -2619,7 +2643,7 @@ public:
         BatUnit_22->setObjectName(QStringLiteral("BatUnit_22"));
         BatUnit_22->setMinimumSize(QSize(173, 42));
         BatUnit_22->setMaximumSize(QSize(16777215, 42));
-        BatUnit_22->setFont(font10);
+        BatUnit_22->setFont(font9);
         BatUnit_22->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(BatUnit_22);
@@ -2650,7 +2674,7 @@ public:
         BatValue1_2->setObjectName(QStringLiteral("BatValue1_2"));
         BatValue1_2->setMinimumSize(QSize(70, 42));
         BatValue1_2->setMaximumSize(QSize(70, 42));
-        BatValue1_2->setFont(font10);
+        BatValue1_2->setFont(font9);
         BatValue1_2->setStyleSheet(QStringLiteral("background-color: rgb(0, 151, 226);"));
         BatValue1_2->setAlignment(Qt::AlignCenter);
 
@@ -2660,7 +2684,7 @@ public:
         pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
         pushButton_9->setMinimumSize(QSize(70, 42));
         pushButton_9->setMaximumSize(QSize(70, 42));
-        pushButton_9->setFont(font10);
+        pushButton_9->setFont(font9);
 
         verticalLayout_6->addWidget(pushButton_9);
 
@@ -2668,7 +2692,7 @@ public:
         pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
         pushButton_10->setMinimumSize(QSize(70, 42));
         pushButton_10->setMaximumSize(QSize(70, 42));
-        pushButton_10->setFont(font10);
+        pushButton_10->setFont(font9);
 
         verticalLayout_6->addWidget(pushButton_10);
 
@@ -2676,7 +2700,7 @@ public:
         pushButton_11->setObjectName(QStringLiteral("pushButton_11"));
         pushButton_11->setMinimumSize(QSize(70, 42));
         pushButton_11->setMaximumSize(QSize(70, 42));
-        pushButton_11->setFont(font10);
+        pushButton_11->setFont(font9);
 
         verticalLayout_6->addWidget(pushButton_11);
 
@@ -2684,7 +2708,7 @@ public:
         pushButton_12->setObjectName(QStringLiteral("pushButton_12"));
         pushButton_12->setMinimumSize(QSize(70, 42));
         pushButton_12->setMaximumSize(QSize(70, 42));
-        pushButton_12->setFont(font10);
+        pushButton_12->setFont(font9);
 
         verticalLayout_6->addWidget(pushButton_12);
 
@@ -2692,7 +2716,7 @@ public:
         pushButton_13->setObjectName(QStringLiteral("pushButton_13"));
         pushButton_13->setMinimumSize(QSize(70, 42));
         pushButton_13->setMaximumSize(QSize(70, 42));
-        pushButton_13->setFont(font10);
+        pushButton_13->setFont(font9);
 
         verticalLayout_6->addWidget(pushButton_13);
 
@@ -2700,7 +2724,7 @@ public:
         pushButton_14->setObjectName(QStringLiteral("pushButton_14"));
         pushButton_14->setMinimumSize(QSize(70, 42));
         pushButton_14->setMaximumSize(QSize(70, 42));
-        pushButton_14->setFont(font10);
+        pushButton_14->setFont(font9);
 
         verticalLayout_6->addWidget(pushButton_14);
 
@@ -2728,7 +2752,7 @@ public:
         BatUnit1_2->setObjectName(QStringLiteral("BatUnit1_2"));
         BatUnit1_2->setMinimumSize(QSize(40, 43));
         BatUnit1_2->setMaximumSize(QSize(56, 43));
-        BatUnit1_2->setFont(font10);
+        BatUnit1_2->setFont(font9);
         BatUnit1_2->setStyleSheet(QStringLiteral("background-color: rgb(0, 151, 226);"));
         BatUnit1_2->setAlignment(Qt::AlignCenter);
 
@@ -2738,7 +2762,7 @@ public:
         BatUnit_9->setObjectName(QStringLiteral("BatUnit_9"));
         BatUnit_9->setMinimumSize(QSize(40, 43));
         BatUnit_9->setMaximumSize(QSize(56, 43));
-        BatUnit_9->setFont(font10);
+        BatUnit_9->setFont(font9);
         BatUnit_9->setAlignment(Qt::AlignCenter);
 
         verticalLayout_28->addWidget(BatUnit_9);
@@ -2747,7 +2771,7 @@ public:
         BatUnit_10->setObjectName(QStringLiteral("BatUnit_10"));
         BatUnit_10->setMinimumSize(QSize(40, 43));
         BatUnit_10->setMaximumSize(QSize(56, 43));
-        BatUnit_10->setFont(font10);
+        BatUnit_10->setFont(font9);
         BatUnit_10->setAlignment(Qt::AlignCenter);
 
         verticalLayout_28->addWidget(BatUnit_10);
@@ -2756,7 +2780,7 @@ public:
         BatUnit_11->setObjectName(QStringLiteral("BatUnit_11"));
         BatUnit_11->setMinimumSize(QSize(40, 43));
         BatUnit_11->setMaximumSize(QSize(56, 43));
-        BatUnit_11->setFont(font10);
+        BatUnit_11->setFont(font9);
         BatUnit_11->setAlignment(Qt::AlignCenter);
 
         verticalLayout_28->addWidget(BatUnit_11);
@@ -2765,7 +2789,7 @@ public:
         BatUnit_12->setObjectName(QStringLiteral("BatUnit_12"));
         BatUnit_12->setMinimumSize(QSize(40, 43));
         BatUnit_12->setMaximumSize(QSize(56, 43));
-        BatUnit_12->setFont(font10);
+        BatUnit_12->setFont(font9);
         BatUnit_12->setAlignment(Qt::AlignCenter);
 
         verticalLayout_28->addWidget(BatUnit_12);
@@ -2774,7 +2798,7 @@ public:
         BatUnit_13->setObjectName(QStringLiteral("BatUnit_13"));
         BatUnit_13->setMinimumSize(QSize(40, 43));
         BatUnit_13->setMaximumSize(QSize(56, 43));
-        BatUnit_13->setFont(font10);
+        BatUnit_13->setFont(font9);
         BatUnit_13->setAlignment(Qt::AlignCenter);
 
         verticalLayout_28->addWidget(BatUnit_13);
@@ -2783,7 +2807,7 @@ public:
         BatUnit_14->setObjectName(QStringLiteral("BatUnit_14"));
         BatUnit_14->setMinimumSize(QSize(40, 43));
         BatUnit_14->setMaximumSize(QSize(56, 43));
-        BatUnit_14->setFont(font10);
+        BatUnit_14->setFont(font9);
         BatUnit_14->setAlignment(Qt::AlignCenter);
 
         verticalLayout_28->addWidget(BatUnit_14);
@@ -2817,10 +2841,10 @@ public:
         groupBox->setObjectName(QStringLiteral("groupBox"));
         groupBox->setMinimumSize(QSize(237, 190));
         groupBox->setMaximumSize(QSize(237, 190));
-        QFont font12;
-        font12.setFamily(QStringLiteral("SimSun-ExtB"));
-        font12.setPointSize(10);
-        groupBox->setFont(font12);
+        QFont font11;
+        font11.setFamily(QStringLiteral("SimSun-ExtB"));
+        font11.setPointSize(10);
+        groupBox->setFont(font11);
         gridLayout_7 = new QGridLayout(groupBox);
         gridLayout_7->setSpacing(6);
         gridLayout_7->setContentsMargins(11, 11, 11, 11);
@@ -2832,7 +2856,7 @@ public:
         label_15->setObjectName(QStringLiteral("label_15"));
         label_15->setMinimumSize(QSize(112, 44));
         label_15->setMaximumSize(QSize(112, 44));
-        label_15->setFont(font10);
+        label_15->setFont(font9);
         label_15->setAlignment(Qt::AlignCenter);
 
         verticalLayout_5->addWidget(label_15);
@@ -2854,7 +2878,7 @@ public:
         label_16->setObjectName(QStringLiteral("label_16"));
         label_16->setMinimumSize(QSize(112, 44));
         label_16->setMaximumSize(QSize(112, 44));
-        label_16->setFont(font10);
+        label_16->setFont(font9);
         label_16->setAlignment(Qt::AlignCenter);
 
         verticalLayout_7->addWidget(label_16);
@@ -2876,7 +2900,7 @@ public:
         label_36->setObjectName(QStringLiteral("label_36"));
         label_36->setMinimumSize(QSize(112, 44));
         label_36->setMaximumSize(QSize(112, 44));
-        label_36->setFont(font10);
+        label_36->setFont(font9);
         label_36->setAlignment(Qt::AlignCenter);
 
         verticalLayout_9->addWidget(label_36);
@@ -2898,7 +2922,7 @@ public:
         label_17->setObjectName(QStringLiteral("label_17"));
         label_17->setMinimumSize(QSize(112, 44));
         label_17->setMaximumSize(QSize(112, 44));
-        label_17->setFont(font10);
+        label_17->setFont(font9);
         label_17->setAlignment(Qt::AlignCenter);
 
         verticalLayout_10->addWidget(label_17);
@@ -2926,7 +2950,7 @@ public:
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setMinimumSize(QSize(0, 65));
         label_2->setMaximumSize(QSize(145, 65));
-        label_2->setFont(font10);
+        label_2->setFont(font9);
         label_2->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_2->addWidget(label_2);
@@ -2949,7 +2973,7 @@ public:
         label_18->setObjectName(QStringLiteral("label_18"));
         label_18->setMinimumSize(QSize(113, 65));
         label_18->setMaximumSize(QSize(113, 65));
-        label_18->setFont(font10);
+        label_18->setFont(font9);
         label_18->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_5->addWidget(label_18);
@@ -2958,7 +2982,7 @@ public:
         pushButton_16->setObjectName(QStringLiteral("pushButton_16"));
         pushButton_16->setMinimumSize(QSize(113, 65));
         pushButton_16->setMaximumSize(QSize(113, 65));
-        pushButton_16->setFont(font10);
+        pushButton_16->setFont(font9);
 
         horizontalLayout_5->addWidget(pushButton_16);
 
@@ -2972,7 +2996,7 @@ public:
         label_19->setObjectName(QStringLiteral("label_19"));
         label_19->setMinimumSize(QSize(113, 65));
         label_19->setMaximumSize(QSize(113, 65));
-        label_19->setFont(font10);
+        label_19->setFont(font9);
         label_19->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_6->addWidget(label_19);
@@ -2981,7 +3005,7 @@ public:
         pushButton_17->setObjectName(QStringLiteral("pushButton_17"));
         pushButton_17->setMinimumSize(QSize(113, 65));
         pushButton_17->setMaximumSize(QSize(104, 65));
-        pushButton_17->setFont(font10);
+        pushButton_17->setFont(font9);
 
         horizontalLayout_6->addWidget(pushButton_17);
 
@@ -3062,7 +3086,7 @@ public:
         Dis_D->setObjectName(QStringLiteral("Dis_D"));
         Dis_D->setMinimumSize(QSize(100, 84));
         Dis_D->setMaximumSize(QSize(100, 84));
-        Dis_D->setFont(font2);
+        Dis_D->setFont(font5);
         Dis_D->setStyleSheet(QStringLiteral("background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(85, 170, 0, 255), stop:0.89 rgba(79, 255, 76, 100), stop:1 rgba(33, 255, 6, 255));"));
 
         verticalLayout_31->addWidget(Dis_D);
@@ -3090,7 +3114,7 @@ public:
         Dis_M->setObjectName(QStringLiteral("Dis_M"));
         Dis_M->setMinimumSize(QSize(100, 84));
         Dis_M->setMaximumSize(QSize(100, 84));
-        Dis_M->setFont(font2);
+        Dis_M->setFont(font5);
         Dis_M->setStyleSheet(QStringLiteral("background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(85, 170, 0, 255), stop:0.89 rgba(79, 255, 76, 100), stop:1 rgba(33, 255, 6, 255));"));
 
         verticalLayout_30->addWidget(Dis_M);
@@ -3115,7 +3139,7 @@ public:
         Dis_Y->setObjectName(QStringLiteral("Dis_Y"));
         Dis_Y->setMinimumSize(QSize(100, 84));
         Dis_Y->setMaximumSize(QSize(100, 84));
-        Dis_Y->setFont(font2);
+        Dis_Y->setFont(font5);
         Dis_Y->setStyleSheet(QStringLiteral("background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(85, 170, 0, 255), stop:0.89 rgba(79, 255, 76, 100), stop:1 rgba(33, 255, 6, 255));"));
 
         verticalLayout_22->addWidget(Dis_Y);
@@ -3140,7 +3164,7 @@ public:
         Dis_T->setObjectName(QStringLiteral("Dis_T"));
         Dis_T->setMinimumSize(QSize(100, 84));
         Dis_T->setMaximumSize(QSize(100, 84));
-        Dis_T->setFont(font2);
+        Dis_T->setFont(font5);
         Dis_T->setStyleSheet(QStringLiteral("background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(85, 170, 0, 255), stop:0.89 rgba(79, 255, 76, 100), stop:1 rgba(33, 255, 6, 255));"));
 
         verticalLayout_24->addWidget(Dis_T);
@@ -3176,7 +3200,7 @@ public:
         Char_D->setObjectName(QStringLiteral("Char_D"));
         Char_D->setMinimumSize(QSize(100, 84));
         Char_D->setMaximumSize(QSize(100, 84));
-        Char_D->setFont(font2);
+        Char_D->setFont(font5);
         Char_D->setStyleSheet(QStringLiteral("background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(255, 128, 128, 204), stop:0.89 rgba(255, 205,144, 64), stop:1 rgba(255, 168, 124, 255));"));
 
         verticalLayout_36->addWidget(Char_D);
@@ -3201,7 +3225,7 @@ public:
         Char_M->setObjectName(QStringLiteral("Char_M"));
         Char_M->setMinimumSize(QSize(100, 84));
         Char_M->setMaximumSize(QSize(100, 84));
-        Char_M->setFont(font2);
+        Char_M->setFont(font5);
         Char_M->setStyleSheet(QStringLiteral("background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(255, 128, 128, 204), stop:0.89 rgba(255, 205,144, 64), stop:1 rgba(255, 168, 124, 255));"));
 
         verticalLayout_35->addWidget(Char_M);
@@ -3226,7 +3250,7 @@ public:
         Char_Y->setObjectName(QStringLiteral("Char_Y"));
         Char_Y->setMinimumSize(QSize(100, 84));
         Char_Y->setMaximumSize(QSize(100, 84));
-        Char_Y->setFont(font2);
+        Char_Y->setFont(font5);
         Char_Y->setStyleSheet(QStringLiteral("background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(255, 128, 128, 204), stop:0.89 rgba(255, 205,144, 64), stop:1 rgba(255, 168, 124, 255));"));
 
         verticalLayout_34->addWidget(Char_Y);
@@ -3251,7 +3275,7 @@ public:
         Char_T->setObjectName(QStringLiteral("Char_T"));
         Char_T->setMinimumSize(QSize(100, 84));
         Char_T->setMaximumSize(QSize(100, 84));
-        Char_T->setFont(font2);
+        Char_T->setFont(font5);
         Char_T->setStyleSheet(QStringLiteral("background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(255, 128, 128, 204), stop:0.89 rgba(255, 205,144, 64), stop:1 rgba(255, 168, 124, 255));"));
 
         verticalLayout_33->addWidget(Char_T);
@@ -3370,23 +3394,23 @@ public:
         groupBox_5->setSizePolicy(sizePolicy3);
         groupBox_5->setMinimumSize(QSize(455, 151));
         groupBox_5->setMaximumSize(QSize(16777215, 16777215));
-        groupBox_5->setFont(font10);
+        groupBox_5->setFont(font9);
         label_27 = new QLabel(groupBox_5);
         label_27->setObjectName(QStringLiteral("label_27"));
         label_27->setGeometry(QRect(10, 30, 201, 31));
-        label_27->setFont(font10);
+        label_27->setFont(font9);
         label_28 = new QLabel(groupBox_5);
         label_28->setObjectName(QStringLiteral("label_28"));
         label_28->setGeometry(QRect(40, 60, 211, 31));
-        label_28->setFont(font10);
+        label_28->setFont(font9);
         label_26 = new QLabel(groupBox_5);
         label_26->setObjectName(QStringLiteral("label_26"));
         label_26->setGeometry(QRect(280, 60, 121, 31));
-        label_26->setFont(font10);
+        label_26->setFont(font9);
         label_35 = new QLabel(groupBox_5);
         label_35->setObjectName(QStringLiteral("label_35"));
         label_35->setGeometry(QRect(40, 100, 211, 31));
-        label_35->setFont(font10);
+        label_35->setFont(font9);
 
         verticalLayout_32->addWidget(groupBox_5);
 
@@ -3404,12 +3428,12 @@ public:
         label_13->setObjectName(QStringLiteral("label_13"));
         label_13->setMinimumSize(QSize(217, 30));
         label_13->setMaximumSize(QSize(217, 30));
-        QFont font13;
-        font13.setFamily(QString::fromUtf8("\345\256\213\344\275\223"));
-        font13.setPointSize(18);
-        font13.setBold(true);
-        font13.setWeight(75);
-        label_13->setFont(font13);
+        QFont font12;
+        font12.setFamily(QString::fromUtf8("\345\256\213\344\275\223"));
+        font12.setPointSize(18);
+        font12.setBold(true);
+        font12.setWeight(75);
+        label_13->setFont(font12);
         label_13->setAlignment(Qt::AlignCenter);
 
         horizontalLayout_9->addWidget(label_13);
@@ -3431,7 +3455,7 @@ public:
         label_14->setObjectName(QStringLiteral("label_14"));
         label_14->setMinimumSize(QSize(147, 25));
         label_14->setMaximumSize(QSize(16777215, 25));
-        label_14->setFont(font2);
+        label_14->setFont(font5);
 
         horizontalLayout_4->addWidget(label_14);
 
@@ -3439,12 +3463,12 @@ public:
         label_usb->setObjectName(QStringLiteral("label_usb"));
         label_usb->setMinimumSize(QSize(299, 25));
         label_usb->setMaximumSize(QSize(16777215, 25));
-        QFont font14;
-        font14.setFamily(QString::fromUtf8("\345\256\213\344\275\223"));
-        font14.setPointSize(12);
-        font14.setBold(true);
-        font14.setWeight(75);
-        label_usb->setFont(font14);
+        QFont font13;
+        font13.setFamily(QString::fromUtf8("\345\256\213\344\275\223"));
+        font13.setPointSize(12);
+        font13.setBold(true);
+        font13.setWeight(75);
+        label_usb->setFont(font13);
         label_usb->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
 "border-width: 1px;\n"
 "border-style: solid;\n"
@@ -3464,7 +3488,7 @@ public:
         OutPut_historyFailuer->setObjectName(QStringLiteral("OutPut_historyFailuer"));
         OutPut_historyFailuer->setMinimumSize(QSize(221, 30));
         OutPut_historyFailuer->setMaximumSize(QSize(16777215, 16777215));
-        OutPut_historyFailuer->setFont(font2);
+        OutPut_historyFailuer->setFont(font5);
         OutPut_historyFailuer->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
 "background-color: rgb(0, 133, 199);\n"
 "border-width: 2px;\n"
@@ -3477,7 +3501,7 @@ public:
         Output_OperationLog->setObjectName(QStringLiteral("Output_OperationLog"));
         Output_OperationLog->setMinimumSize(QSize(221, 30));
         Output_OperationLog->setMaximumSize(QSize(16777215, 16777215));
-        Output_OperationLog->setFont(font2);
+        Output_OperationLog->setFont(font5);
         Output_OperationLog->setStyleSheet(QLatin1String("background-color: rgb(255, 255, 255);\n"
 "background-color: rgb(255, 170, 0);\n"
 "border-width: 2px;\n"
@@ -3496,7 +3520,7 @@ public:
         CoulombmeterReport_btn->setObjectName(QStringLiteral("CoulombmeterReport_btn"));
         CoulombmeterReport_btn->setMinimumSize(QSize(221, 30));
         CoulombmeterReport_btn->setMaximumSize(QSize(16777215, 16777215));
-        CoulombmeterReport_btn->setFont(font2);
+        CoulombmeterReport_btn->setFont(font5);
         CoulombmeterReport_btn->setStyleSheet(QLatin1String("border-width: 2px;\n"
 "border-style: solid;\n"
 "border-color: rgb(85, 230, 0);\n"
@@ -3508,7 +3532,7 @@ public:
         Eject_btn->setObjectName(QStringLiteral("Eject_btn"));
         Eject_btn->setMinimumSize(QSize(221, 30));
         Eject_btn->setMaximumSize(QSize(16777215, 16777215));
-        Eject_btn->setFont(font2);
+        Eject_btn->setFont(font5);
         Eject_btn->setStyleSheet(QLatin1String("background-color: rgb(255, 0, 0);\n"
 "border-width: 2px;\n"
 "border-style: solid;\n"
@@ -3531,7 +3555,7 @@ public:
         Record_tabWidget->addTab(ExportData_page, QString());
         HistoryRecord_page = new QWidget();
         HistoryRecord_page->setObjectName(QStringLiteral("HistoryRecord_page"));
-        HistoryRecord_page->setFont(font2);
+        HistoryRecord_page->setFont(font5);
         gridLayout_12 = new QGridLayout(HistoryRecord_page);
         gridLayout_12->setSpacing(6);
         gridLayout_12->setContentsMargins(11, 11, 11, 11);
@@ -3550,7 +3574,7 @@ public:
         Record_tabWidget->addTab(HistoryRecord_page, QString());
         OperationLog_page = new QWidget();
         OperationLog_page->setObjectName(QStringLiteral("OperationLog_page"));
-        OperationLog_page->setFont(font2);
+        OperationLog_page->setFont(font5);
         gridLayout_13 = new QGridLayout(OperationLog_page);
         gridLayout_13->setSpacing(6);
         gridLayout_13->setContentsMargins(11, 11, 11, 11);
@@ -3576,7 +3600,7 @@ public:
         System_tabWidget = new QTabWidget(System_page);
         System_tabWidget->setObjectName(QStringLiteral("System_tabWidget"));
         System_tabWidget->setGeometry(QRect(-6, -1, 991, 451));
-        System_tabWidget->setFont(font2);
+        System_tabWidget->setFont(font5);
         ParameterSet_page = new QWidget();
         ParameterSet_page->setObjectName(QStringLiteral("ParameterSet_page"));
         System_Tab = new QTableWidget(ParameterSet_page);
@@ -4054,7 +4078,7 @@ public:
         plainTextEdit_2->setObjectName(QStringLiteral("plainTextEdit_2"));
         plainTextEdit_2->setMinimumSize(QSize(239, 160));
         plainTextEdit_2->setMaximumSize(QSize(239, 160));
-        plainTextEdit_2->setFont(font2);
+        plainTextEdit_2->setFont(font5);
 
         verticalLayout_38->addWidget(plainTextEdit_2);
 
@@ -4311,7 +4335,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem544 = new QTableWidgetItem();
         EquipmentInfor_tableWidget->setItem(0, 0, __qtablewidgetitem544);
         QTableWidgetItem *__qtablewidgetitem545 = new QTableWidgetItem();
-        __qtablewidgetitem545->setFont(font2);
+        __qtablewidgetitem545->setFont(font5);
         EquipmentInfor_tableWidget->setItem(0, 1, __qtablewidgetitem545);
         QTableWidgetItem *__qtablewidgetitem546 = new QTableWidgetItem();
         EquipmentInfor_tableWidget->setItem(1, 0, __qtablewidgetitem546);
@@ -4460,20 +4484,20 @@ public:
         UI_MenuBtn->setGeometry(QRect(1, 1, 120, 57));
         UI_MenuBtn->setMinimumSize(QSize(120, 57));
         UI_MenuBtn->setMaximumSize(QSize(999, 57));
-        QFont font15;
-        font15.setFamily(QStringLiteral("SimSun-ExtB"));
-        font15.setPointSize(20);
-        UI_MenuBtn->setFont(font15);
+        QFont font14;
+        font14.setFamily(QStringLiteral("SimSun-ExtB"));
+        font14.setPointSize(20);
+        UI_MenuBtn->setFont(font14);
         UI_MenuBtn->setStyleSheet(QStringLiteral("color: rgb(255, 255, 255);"));
         Inverter_state_lab = new QLabel(widget_state);
         Inverter_state_lab->setObjectName(QStringLiteral("Inverter_state_lab"));
         Inverter_state_lab->setGeometry(QRect(280, 10, 350, 40));
         Inverter_state_lab->setMinimumSize(QSize(350, 40));
         Inverter_state_lab->setMaximumSize(QSize(999, 40));
-        QFont font16;
-        font16.setFamily(QString::fromUtf8("\346\226\260\345\256\213\344\275\223"));
-        font16.setPointSize(14);
-        Inverter_state_lab->setFont(font16);
+        QFont font15;
+        font15.setFamily(QString::fromUtf8("\346\226\260\345\256\213\344\275\223"));
+        font15.setPointSize(14);
+        Inverter_state_lab->setFont(font15);
         Inverter_state_lab->setStyleSheet(QStringLiteral("color: rgb(255, 255, 255);"));
         Inverter_state_lab->setAlignment(Qt::AlignCenter);
         CurrentMode_lb = new QLabel(widget_state);
@@ -4481,7 +4505,7 @@ public:
         CurrentMode_lb->setGeometry(QRect(745, 1, 220, 57));
         CurrentMode_lb->setMinimumSize(QSize(210, 57));
         CurrentMode_lb->setMaximumSize(QSize(999, 57));
-        CurrentMode_lb->setFont(font16);
+        CurrentMode_lb->setFont(font15);
         CurrentMode_lb->setLayoutDirection(Qt::RightToLeft);
         CurrentMode_lb->setStyleSheet(QStringLiteral("color: rgb(255, 255, 255);"));
         CurrentMode_lb->setAlignment(Qt::AlignCenter);
@@ -4490,8 +4514,8 @@ public:
         retranslateUi(MEGAWin);
 
         BasicSettings->setCurrentIndex(0);
-        stackedWidget->setCurrentIndex(4);
-        Run_tabWidget->setCurrentIndex(3);
+        stackedWidget->setCurrentIndex(2);
+        Run_tabWidget->setCurrentIndex(0);
         RTD_PCS_StackedWidget->setCurrentIndex(1);
         Bypass_Tab->setCurrentIndex(0);
         BAT_stackedWidget->setCurrentIndex(1);
@@ -4566,7 +4590,7 @@ public:
         QTableWidgetItem *___qtablewidgetitem26 = UI_Parameter_Tab->item(1, 2);
         ___qtablewidgetitem26->setText(QApplication::translate("MEGAWin", "-", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem27 = UI_Parameter_Tab->item(1, 3);
-        ___qtablewidgetitem27->setText(QApplication::translate("MEGAWin", "serial port 1", Q_NULLPTR));
+        ___qtablewidgetitem27->setText(QApplication::translate("MEGAWin", "serial port 2", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem28 = UI_Parameter_Tab->item(1, 5);
         ___qtablewidgetitem28->setText(QApplication::translate("MEGAWin", "bps", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem29 = UI_Parameter_Tab->item(1, 6);
@@ -4578,7 +4602,7 @@ public:
         QTableWidgetItem *___qtablewidgetitem32 = UI_Parameter_Tab->item(2, 2);
         ___qtablewidgetitem32->setText(QApplication::translate("MEGAWin", "-", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem33 = UI_Parameter_Tab->item(2, 3);
-        ___qtablewidgetitem33->setText(QApplication::translate("MEGAWin", "serial port 2", Q_NULLPTR));
+        ___qtablewidgetitem33->setText(QApplication::translate("MEGAWin", "serial port 3", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem34 = UI_Parameter_Tab->item(2, 5);
         ___qtablewidgetitem34->setText(QApplication::translate("MEGAWin", "bps", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem35 = UI_Parameter_Tab->item(2, 6);
@@ -4590,7 +4614,7 @@ public:
         QTableWidgetItem *___qtablewidgetitem38 = UI_Parameter_Tab->item(3, 2);
         ___qtablewidgetitem38->setText(QApplication::translate("MEGAWin", "-", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem39 = UI_Parameter_Tab->item(3, 3);
-        ___qtablewidgetitem39->setText(QApplication::translate("MEGAWin", "serial port 3", Q_NULLPTR));
+        ___qtablewidgetitem39->setText(QApplication::translate("MEGAWin", "serial port 4", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem40 = UI_Parameter_Tab->item(3, 5);
         ___qtablewidgetitem40->setText(QApplication::translate("MEGAWin", "bps", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem41 = UI_Parameter_Tab->item(3, 6);
@@ -4602,7 +4626,7 @@ public:
         QTableWidgetItem *___qtablewidgetitem44 = UI_Parameter_Tab->item(4, 2);
         ___qtablewidgetitem44->setText(QApplication::translate("MEGAWin", "kW", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem45 = UI_Parameter_Tab->item(4, 3);
-        ___qtablewidgetitem45->setText(QApplication::translate("MEGAWin", "serial port 4", Q_NULLPTR));
+        ___qtablewidgetitem45->setText(QApplication::translate("MEGAWin", "serial port 5", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem46 = UI_Parameter_Tab->item(4, 5);
         ___qtablewidgetitem46->setText(QApplication::translate("MEGAWin", "bps", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem47 = UI_Parameter_Tab->item(4, 6);
@@ -4614,7 +4638,7 @@ public:
         QTableWidgetItem *___qtablewidgetitem50 = UI_Parameter_Tab->item(5, 2);
         ___qtablewidgetitem50->setText(QApplication::translate("MEGAWin", "-", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem51 = UI_Parameter_Tab->item(5, 3);
-        ___qtablewidgetitem51->setText(QApplication::translate("MEGAWin", "serial port 5", Q_NULLPTR));
+        ___qtablewidgetitem51->setText(QApplication::translate("MEGAWin", "serial port 6", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem52 = UI_Parameter_Tab->item(5, 5);
         ___qtablewidgetitem52->setText(QApplication::translate("MEGAWin", "bps", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem53 = UI_Parameter_Tab->item(5, 6);
@@ -5060,33 +5084,31 @@ public:
         Meter_Value_3->setText(QString());
         Meter_Name_4->setText(QString());
         Meter_Value_4->setText(QString());
-        Bypass_BattCurrent_label->setText(QString());
-        Bypass_BattVolt_label->setText(QString());
+        Bypass_BattCurrent_label->setText(QApplication::translate("MEGAWin", "0A", Q_NULLPTR));
+        Bypass_BattVolt_label->setText(QApplication::translate("MEGAWin", "0V", Q_NULLPTR));
         Bypass_Batt_btn->setText(QString());
         Bypass_Battery_bar->setText(QString());
-        Bypass_Grid_Curr_A->setText(QString());
-        Bypass_Grid_Curr_B->setText(QString());
-        Bypass_Grid_Curr_C->setText(QString());
+        Bypass_Grid_Curr_A->setText(QApplication::translate("MEGAWin", "0A", Q_NULLPTR));
+        Bypass_Grid_Curr_B->setText(QApplication::translate("MEGAWin", "0A", Q_NULLPTR));
+        Bypass_Grid_Curr_C->setText(QApplication::translate("MEGAWin", "0A", Q_NULLPTR));
         Bypass_Grid_btn->setText(QString());
         Bypass_Load_Btn->setText(QString());
-        Bypass_Load_Curr_A->setText(QString());
-        Bypass_Load_Curr_B->setText(QString());
-        Bypass_Load_Curr_C->setText(QString());
+        Bypass_Load_Curr_A->setText(QApplication::translate("MEGAWin", "0A", Q_NULLPTR));
+        Bypass_Load_Curr_B->setText(QApplication::translate("MEGAWin", "0A", Q_NULLPTR));
+        Bypass_Load_Curr_C->setText(QApplication::translate("MEGAWin", "0A", Q_NULLPTR));
         Bypass_Phrase_A_bar->setText(QString());
         Bypass_Phrase_B_bar->setText(QString());
         Bypass_Phrase_C_bar->setText(QString());
         Bypass_Running_btn->setText(QString());
-        Bypass_Va_lb->setText(QString());
-        Bypass_Vb_lb->setText(QString());
-        Bypass_Vc_lb->setText(QString());
-        Bypass_Va_lb_Inv->setText(QString());
-        Bypass_Vb_lb_Inv->setText(QString());
-        Bypass_Vc_lb_Inv->setText(QString());
+        Bypass_Va_lb->setText(QApplication::translate("MEGAWin", "0V", Q_NULLPTR));
+        Bypass_Vb_lb->setText(QApplication::translate("MEGAWin", "0V", Q_NULLPTR));
+        Bypass_Vc_lb->setText(QApplication::translate("MEGAWin", "0V", Q_NULLPTR));
+        Bypass_Va_lb_Inv->setText(QApplication::translate("MEGAWin", "0V", Q_NULLPTR));
+        Bypass_Vb_lb_Inv->setText(QApplication::translate("MEGAWin", "0V", Q_NULLPTR));
+        Bypass_Vc_lb_Inv->setText(QApplication::translate("MEGAWin", "0V", Q_NULLPTR));
         Load_bar_A->setText(QString());
         Load_bar_B->setText(QString());
         Load_bar_C->setText(QString());
-        SOC_lb_bypass->setText(QString());
-        SOC_text_bypass->setText(QString());
         Meter_Name_5->setText(QString());
         Meter_Value_5->setText(QString());
         Meter_Name_6->setText(QString());
@@ -5095,6 +5117,8 @@ public:
         Meter_Value_7->setText(QString());
         Meter_Name_8->setText(QString());
         Meter_Value_8->setText(QString());
+        SOC_text_bypass->setText(QApplication::translate("MEGAWin", "SOC:", Q_NULLPTR));
+        SOC_lb_bypass->setText(QApplication::translate("MEGAWin", "40%", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem240 = Converter_Tab->horizontalHeaderItem(0);
         ___qtablewidgetitem240->setText(QApplication::translate("MEGAWin", "Name", Q_NULLPTR));
         QTableWidgetItem *___qtablewidgetitem241 = Converter_Tab->horizontalHeaderItem(1);

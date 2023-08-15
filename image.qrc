@@ -65,6 +65,7 @@
         <file>UI/电网扩容逻辑图.png</file>
         <file>UI/电网扩容逻辑图.png</file>
         <file>UI/重新加载.png</file>
+        <file>UI/电网扩容逻辑图En.png</file>
     </qresource>
     <qresource prefix="/Massagebox">
         <file>UI/Close.png</file>

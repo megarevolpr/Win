@@ -447,7 +447,7 @@ public:
 
     void retranslateUi(QMainWindow *UpgradeTools)
     {
-        UpgradeTools->setWindowTitle(QApplication::translate("UpgradeTools", "MainWindow", Q_NULLPTR));
+        UpgradeTools->setWindowTitle(QApplication::translate("UpgradeTools", "UpgradeTools", Q_NULLPTR));
         label->setText(QApplication::translate("UpgradeTools", "MPS Upgrade app V2.0", Q_NULLPTR));
         Message_label->setText(QApplication::translate("UpgradeTools", " Message:", Q_NULLPTR));
         plainTextEdit->setPlainText(QApplication::translate("UpgradeTools", " Mounting finished \n"
@@ -500,7 +500,7 @@ public:
         Restore_btn_2->setText(QApplication::translate("UpgradeTools", "Restore", Q_NULLPTR));
         PCS_btn->setText(QApplication::translate("UpgradeTools", "DSP Upgrade", Q_NULLPTR));
         Apply_btn_2->setText(QApplication::translate("UpgradeTools", "Restart", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(MEGA), QApplication::translate("UpgradeTools", "MEGA", Q_NULLPTR));
+        tabWidget->setTabText(tabWidget->indexOf(MEGA), QApplication::translate("UpgradeTools", "PCS", Q_NULLPTR));
     } // retranslateUi
 
 };

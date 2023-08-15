@@ -68,7 +68,6 @@ void MEGAWin::onTimerOut()//时间显示
         QString str = time.toString("yyyy-MM-dd HH:mm:ss");
         ui->TimeSeting_btn->setText(str);
     }
-
 }
 
 void MEGAWin::updateTimeOut()
@@ -83,7 +82,7 @@ void MEGAWin::MemoryAllocation()
 
     m_menu = new Menu(this);//菜单创建
     UpgradeInterface = new UpgradeTools(this);
-    GridExpansionInterface = new GridExpansion(this);
+    GridExpansionInterface = new GridExpansion(this,LanguageType);
     FaultTable = new FaultTableInterface(this,LanguageType);
 
     /***************************数据报表&导出数据**********************************/
@@ -1766,7 +1765,7 @@ void MEGAWin::Change_Language()
 
     SystemParam_tbnt_released();//重新加载高级设置的UI
     UpgradeInterface = new UpgradeTools(this);
-    GridExpansionInterface = new GridExpansion(this);
+    GridExpansionInterface = new GridExpansion(this,LanguageType);
     FaultTable = new FaultTableInterface(this,LanguageType);
 
 }
@@ -2625,7 +2624,6 @@ void MEGAWin::History(QTableWidget *myTable)
         EndTime8->add_Specification();
     }
 
-
     line=0;
     column=3;
     Describe9 = new Specification(this,Describe9_explain, myTable, line++, column, \
@@ -2686,42 +2684,84 @@ void MEGAWin::OperationLog()
     QString str2 = tr("RecordEvent");
     QString str3 = tr("System settings operation records.");
 
-    ModificationTime = new Specification(this,ModificationTime_explain, ui->Operation_tableWidget, 0, 0, \
-                                                    "12-05-2023 11:32:45", str, str1);
-    ModificationTime->add_Specification();
-    ModificationTime2 = new Specification(this,ModificationTime2_explain, ui->Operation_tableWidget, 1, 0, \
-                                                    "12-05-2023 11:32:33", str, str1);
-    ModificationTime2->add_Specification();
-    ModificationTime3 = new Specification(this,ModificationTime3_explain, ui->Operation_tableWidget, 2, 0, \
-                                                    "11-05-2023 19:29:24", str, str1);
-    ModificationTime3->add_Specification();
-    ModificationTime4 = new Specification(this,ModificationTime4_explain, ui->Operation_tableWidget, 3, 0, \
-                                                    "11-05-2023 19:29:21", str, str1);
-    ModificationTime4->add_Specification();
-    ModificationTime5 = new Specification(this,ModificationTime5_explain, ui->Operation_tableWidget, 4, 0, \
-                                                    "11-05-2023 19:29:10", str, str1);
-    ModificationTime5->add_Specification();
-    ModificationTime6 = new Specification(this,ModificationTime6_explain, ui->Operation_tableWidget, 5, 0, \
-                                                    "11-05-2023 19:29:07", str, str1);
-    ModificationTime6->add_Specification();
-    ModificationTime7 = new Specification(this,ModificationTime7_explain, ui->Operation_tableWidget, 6, 0, \
-                                                    "11-05-2023 17:21:16", str, str1);
-    ModificationTime7->add_Specification();
-    ModificationTime8 = new Specification(this,ModificationTime8_explain, ui->Operation_tableWidget, 7, 0, \
-                                                    "11-05-2023 11:21:02", str, str1);
-    ModificationTime8->add_Specification();
-    ModificationTime9 = new Specification(this,ModificationTime9_explain, ui->Operation_tableWidget, 8, 0, \
-                                                    "11-05-2023 11:20:58", str, str1);
-    ModificationTime9->add_Specification();
-    ModificationTime10 = new Specification(this,ModificationTime10_explain, ui->Operation_tableWidget, 9, 0, \
-                                                    "11-05-2023 11:02:22", str, str1);
-    ModificationTime10->add_Specification();
-    ModificationTime11 = new Specification(this,ModificationTime11_explain, ui->Operation_tableWidget, 10, 0, \
-                                                    "11-05-2023 11:02:18", str,  str1);
-    ModificationTime11->add_Specification();
-    ModificationTime12 = new Specification(this,ModificationTime12_explain, ui->Operation_tableWidget, 11, 0, \
-                                                    "11-05-2023 11:02:14", str, str1);
-    ModificationTime12->add_Specification();
+    if(LanguageType == 0)
+    {
+        ModificationTime = new Specification(this,ModificationTime_explain, ui->Operation_tableWidget, 0, 0, \
+                                                        "2023-05-12 11:32:45", str, str1);
+        ModificationTime->add_Specification();
+        ModificationTime2 = new Specification(this,ModificationTime2_explain, ui->Operation_tableWidget, 1, 0, \
+                                                        "2023-05-12 11:32:33", str, str1);
+        ModificationTime2->add_Specification();
+        ModificationTime3 = new Specification(this,ModificationTime3_explain, ui->Operation_tableWidget, 2, 0, \
+                                                        "2023-05-12 19:29:24", str, str1);
+        ModificationTime3->add_Specification();
+        ModificationTime4 = new Specification(this,ModificationTime4_explain, ui->Operation_tableWidget, 3, 0, \
+                                                        "2023-05-11 19:29:21", str, str1);
+        ModificationTime4->add_Specification();
+        ModificationTime5 = new Specification(this,ModificationTime5_explain, ui->Operation_tableWidget, 4, 0, \
+                                                        "2023-05-11 19:29:10", str, str1);
+        ModificationTime5->add_Specification();
+        ModificationTime6 = new Specification(this,ModificationTime6_explain, ui->Operation_tableWidget, 5, 0, \
+                                                        "2023-05-11 19:29:07", str, str1);
+        ModificationTime6->add_Specification();
+        ModificationTime7 = new Specification(this,ModificationTime7_explain, ui->Operation_tableWidget, 6, 0, \
+                                                        "2023-05-11 17:21:16", str, str1);
+        ModificationTime7->add_Specification();
+        ModificationTime8 = new Specification(this,ModificationTime8_explain, ui->Operation_tableWidget, 7, 0, \
+                                                        "2023-05-11 11:21:02", str, str1);
+        ModificationTime8->add_Specification();
+        ModificationTime9 = new Specification(this,ModificationTime9_explain, ui->Operation_tableWidget, 8, 0, \
+                                                        "2023-05-11 11:20:58", str, str1);
+        ModificationTime9->add_Specification();
+        ModificationTime10 = new Specification(this,ModificationTime10_explain, ui->Operation_tableWidget, 9, 0, \
+                                                        "2023-05-11 11:02:22", str, str1);
+        ModificationTime10->add_Specification();
+        ModificationTime11 = new Specification(this,ModificationTime11_explain, ui->Operation_tableWidget, 10, 0, \
+                                                        "2023-05-11 11:02:18", str,  str1);
+        ModificationTime11->add_Specification();
+        ModificationTime12 = new Specification(this,ModificationTime12_explain, ui->Operation_tableWidget, 11, 0, \
+                                                        "2023-05-11 11:02:14", str, str1);
+        ModificationTime12->add_Specification();
+    }
+    else {
+        ModificationTime = new Specification(this,ModificationTime_explain, ui->Operation_tableWidget, 0, 0, \
+                                                        "12-05-2023 11:32:45", str, str1);
+        ModificationTime->add_Specification();
+        ModificationTime2 = new Specification(this,ModificationTime2_explain, ui->Operation_tableWidget, 1, 0, \
+                                                        "12-05-2023 11:32:33", str, str1);
+        ModificationTime2->add_Specification();
+        ModificationTime3 = new Specification(this,ModificationTime3_explain, ui->Operation_tableWidget, 2, 0, \
+                                                        "11-05-2023 19:29:24", str, str1);
+        ModificationTime3->add_Specification();
+        ModificationTime4 = new Specification(this,ModificationTime4_explain, ui->Operation_tableWidget, 3, 0, \
+                                                        "11-05-2023 19:29:21", str, str1);
+        ModificationTime4->add_Specification();
+        ModificationTime5 = new Specification(this,ModificationTime5_explain, ui->Operation_tableWidget, 4, 0, \
+                                                        "11-05-2023 19:29:10", str, str1);
+        ModificationTime5->add_Specification();
+        ModificationTime6 = new Specification(this,ModificationTime6_explain, ui->Operation_tableWidget, 5, 0, \
+                                                        "11-05-2023 19:29:07", str, str1);
+        ModificationTime6->add_Specification();
+        ModificationTime7 = new Specification(this,ModificationTime7_explain, ui->Operation_tableWidget, 6, 0, \
+                                                        "11-05-2023 17:21:16", str, str1);
+        ModificationTime7->add_Specification();
+        ModificationTime8 = new Specification(this,ModificationTime8_explain, ui->Operation_tableWidget, 7, 0, \
+                                                        "11-05-2023 11:21:02", str, str1);
+        ModificationTime8->add_Specification();
+        ModificationTime9 = new Specification(this,ModificationTime9_explain, ui->Operation_tableWidget, 8, 0, \
+                                                        "11-05-2023 11:20:58", str, str1);
+        ModificationTime9->add_Specification();
+        ModificationTime10 = new Specification(this,ModificationTime10_explain, ui->Operation_tableWidget, 9, 0, \
+                                                        "11-05-2023 11:02:22", str, str1);
+        ModificationTime10->add_Specification();
+        ModificationTime11 = new Specification(this,ModificationTime11_explain, ui->Operation_tableWidget, 10, 0, \
+                                                        "11-05-2023 11:02:18", str,  str1);
+        ModificationTime11->add_Specification();
+        ModificationTime12 = new Specification(this,ModificationTime12_explain, ui->Operation_tableWidget, 11, 0, \
+                                                        "11-05-2023 11:02:14", str, str1);
+        ModificationTime12->add_Specification();
+    }
+
     EventRecord = new Specification(this,EventRecord_explain, ui->Operation_tableWidget, 0, 1, \
                                                     tr("Power control type：CP_P->CP_N&&P"), str2, str3);
     EventRecord->add_Specification();
@@ -4676,7 +4716,7 @@ void MEGAWin::FunctionSet()
     BAT_protocol = new Specification(this,BAT_protocol_explain, ui->UI_Parameter_Tab, 5, 1, \
                                           tr("Auto"), tr("BAT protocol"), \
                                           tr("Battery Protocol: Parse the messages sent by BMS based on the selected battery protocol. Currently supported battery manufacturer protocols include:\
-MEGA, LISHEN, PENGHUI, GAOTE, XIENENG, LANLI, SHENLAN, PAINENG, NINGDESHIDAI, SUOYING, XINGWANGDA, KUBO, GAOTE_V2, TOGOOD, GROUP_STANDARD, WOBO, KGOOER, LIDE, PAINENG_L, WEILAN, ALPHA, TUOPU, JIEHUI, JDI, ECUBE, FARO, BGS, JDITEC, HUASU, LIGAO.\
+MEGA, LISHEN, PENGHUI, GAOTE, XIENENG, LANLI, SHENLAN, PAINENG, NINGDESHIDAI, SUOYING, XINGWANGDA, KUBO, GAOTE_V2, TOGOOD, GROUP_STANDARD, WOBO, KGOOER, LIDE, PAINENG_L, WEILAN, ALPHA, TUOPU, JIEHUI, JDI, FARO.\
                                              \nSelect AUTO to automatically detect the battery manufacturer protocol."));
     BAT_protocol->add_Specification();
 

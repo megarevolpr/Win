@@ -60,9 +60,10 @@ public:
     //上述所有的事件只是为了更改如下的变量
     QPixmap srcImage,changeImage,normal;   //原始图像以及缩放后的图像
     float ratio = 1.0;      //缩放的比例
+    int Language;
 
 public:
-    explicit GridExpansion(QWidget *parent = nullptr);
+    explicit GridExpansion(QWidget *parent = nullptr,int LanguageType=0);
     ~GridExpansion();
 
 private:

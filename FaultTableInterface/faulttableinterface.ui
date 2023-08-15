@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Fault description</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
@@ -85,6 +85,12 @@
            <layout class="QVBoxLayout" name="verticalLayout">
             <item>
              <widget class="QPlainTextEdit" name="plainTextEdit">
+              <property name="font">
+               <font>
+                <family>宋体</family>
+                <pointsize>15</pointsize>
+               </font>
+              </property>
               <property name="plainText">
                <string>Battery Cut-off Voltage Protection Logic Explanation for Grid-on and grid-off modes:
 
