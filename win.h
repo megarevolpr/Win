@@ -278,6 +278,7 @@ public:
         QPushButton *Converter_side_vol_level_explain;
         QPushButton *Output_reactive_power_mode_explain;
         QPushButton *Grid_connected_mode_of_Inv_explain;
+        QPushButton *System_Anti_Reverse_Flow_explain;  //系统防逆流
         QPushButton *Primary_FM_dead_zone_explain;
         QPushButton *PFM_coeff_explain;
         QPushButton *Grid_recover_time_explain;
@@ -307,6 +308,7 @@ public:
         Specification *Converter_side_vol_level;
         Specification *Output_reactive_power_mode;
         Specification *Grid_connected_mode_of_Inv;
+        Specification *System_Anti_Reverse_Flow;  //系统防逆流
         Specification *Primary_FM_dead_zone;
         Specification *PFM_coeff;
         Specification *Grid_recover_time;
@@ -865,6 +867,10 @@ private slots:
     void on_search_btn_clicked();
     void UpgradeInterface_clicked();//升级界面
     void WorkingMode_clicked();//工作模式点击
+
+    void on_Converter_State_btn_clicked();
+
+    void on_Current_Mode_btn_clicked();
 
 private:
     Ui::MEGAWin *ui;

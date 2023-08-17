@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = PCS_V1.3
+TARGET = PCS_V1.0.4
 TEMPLATE = app
 
 

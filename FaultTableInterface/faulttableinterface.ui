@@ -91,6 +91,9 @@
                 <pointsize>15</pointsize>
                </font>
               </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
               <property name="plainText">
                <string>Battery Cut-off Voltage Protection Logic Explanation for Grid-on and grid-off modes:
 

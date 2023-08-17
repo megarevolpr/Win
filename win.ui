@@ -1224,7 +1224,7 @@ color: rgb(255, 255, 255);</string>
        </item>
        <item row="7" column="3">
         <property name="text">
-         <string>Primary FM dead zone</string>
+         <string>System Anti-Reverse Flow</string>
         </property>
         <property name="textAlignment">
          <set>AlignCenter</set>
@@ -1232,7 +1232,7 @@ color: rgb(255, 255, 255);</string>
        </item>
        <item row="7" column="5">
         <property name="text">
-         <string>Hz</string>
+         <string>-</string>
         </property>
         <property name="textAlignment">
          <set>AlignCenter</set>
@@ -1256,7 +1256,7 @@ color: rgb(255, 255, 255);</string>
        </item>
        <item row="8" column="3">
         <property name="text">
-         <string>PFM coeff</string>
+         <string>Primary FM dead zone</string>
         </property>
         <property name="textAlignment">
          <set>AlignCenter</set>
@@ -1264,7 +1264,7 @@ color: rgb(255, 255, 255);</string>
        </item>
        <item row="8" column="5">
         <property name="text">
-         <string>kW/Hz</string>
+         <string>Hz</string>
         </property>
         <property name="textAlignment">
          <set>AlignCenter</set>
@@ -1293,7 +1293,7 @@ color: rgb(255, 255, 255);</string>
        </item>
        <item row="9" column="3">
         <property name="text">
-         <string>Grid recover time</string>
+         <string>PFM coeff</string>
         </property>
         <property name="textAlignment">
          <set>AlignCenter</set>
@@ -1301,7 +1301,7 @@ color: rgb(255, 255, 255);</string>
        </item>
        <item row="9" column="5">
         <property name="text">
-         <string>s</string>
+         <string>kW/Hz</string>
         </property>
         <property name="textAlignment">
          <set>AlignCenter</set>
@@ -1325,7 +1325,15 @@ color: rgb(255, 255, 255);</string>
        </item>
        <item row="10" column="3">
         <property name="text">
-         <string/>
+         <string>Grid recover time</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </item>
+       <item row="10" column="5">
+        <property name="text">
+         <string>s</string>
         </property>
         <property name="textAlignment">
          <set>AlignCenter</set>
@@ -1737,7 +1745,8 @@ color: rgb(255, 255, 255);</string>
           </property>
           <property name="font">
            <font>
-            <pointsize>9</pointsize>
+            <family>宋体</family>
+            <pointsize>12</pointsize>
            </font>
           </property>
          </row>
@@ -1747,7 +1756,8 @@ color: rgb(255, 255, 255);</string>
           </property>
           <property name="font">
            <font>
-            <pointsize>9</pointsize>
+            <family>宋体</family>
+            <pointsize>12</pointsize>
            </font>
           </property>
          </row>
@@ -1757,7 +1767,8 @@ color: rgb(255, 255, 255);</string>
           </property>
           <property name="font">
            <font>
-            <pointsize>9</pointsize>
+            <family>宋体</family>
+            <pointsize>12</pointsize>
            </font>
           </property>
          </row>
@@ -1767,7 +1778,8 @@ color: rgb(255, 255, 255);</string>
           </property>
           <property name="font">
            <font>
-            <pointsize>9</pointsize>
+            <family>宋体</family>
+            <pointsize>12</pointsize>
            </font>
           </property>
          </row>
@@ -1777,7 +1789,8 @@ color: rgb(255, 255, 255);</string>
           </property>
           <property name="font">
            <font>
-            <pointsize>9</pointsize>
+            <family>宋体</family>
+            <pointsize>12</pointsize>
            </font>
           </property>
          </row>
@@ -1787,7 +1800,8 @@ color: rgb(255, 255, 255);</string>
           </property>
           <property name="font">
            <font>
-            <pointsize>9</pointsize>
+            <family>宋体</family>
+            <pointsize>12</pointsize>
            </font>
           </property>
          </row>
@@ -1795,15 +1809,33 @@ color: rgb(255, 255, 255);</string>
           <property name="text">
            <string>Action</string>
           </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Charge power</string>
+          <property name="font">
+           <font>
+            <family>宋体</family>
+            <pointsize>12</pointsize>
+           </font>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Discharge power</string>
+           <string>Charge power(kW)</string>
+          </property>
+          <property name="font">
+           <font>
+            <family>宋体</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Discharge power(kW)</string>
+          </property>
+          <property name="font">
+           <font>
+            <family>宋体</family>
+            <pointsize>12</pointsize>
+           </font>
           </property>
          </column>
          <item row="0" column="1">
@@ -2619,7 +2651,7 @@ Language</string>
       </size>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="Host_Page">
       <widget class="QLabel" name="BattCurrent_label">
@@ -3830,7 +3862,7 @@ Language</string>
                   </size>
                  </property>
                  <property name="currentIndex">
-                  <number>0</number>
+                  <number>2</number>
                  </property>
                  <widget class="QWidget" name="Bypass_Converter_page">
                   <layout class="QGridLayout" name="gridLayout_46">
@@ -3865,6 +3897,9 @@ Language</string>
                        <width>836</width>
                        <height>399</height>
                       </size>
+                     </property>
+                     <property name="editTriggers">
+                      <set>QAbstractItemView::NoEditTriggers</set>
                      </property>
                      <attribute name="horizontalHeaderDefaultSectionSize">
                       <number>169</number>
@@ -4054,6 +4089,9 @@ Language</string>
                        <height>383</height>
                       </size>
                      </property>
+                     <property name="editTriggers">
+                      <set>QAbstractItemView::NoEditTriggers</set>
+                     </property>
                      <attribute name="horizontalHeaderDefaultSectionSize">
                       <number>338</number>
                      </attribute>
@@ -4147,6 +4185,9 @@ Language</string>
                        <height>383</height>
                       </size>
                      </property>
+                     <property name="editTriggers">
+                      <set>QAbstractItemView::NoEditTriggers</set>
+                     </property>
                      <attribute name="horizontalHeaderDefaultSectionSize">
                       <number>338</number>
                      </attribute>
@@ -4237,12 +4278,13 @@ Language</string>
                    </property>
                    <property name="styleSheet">
                     <string notr="true">QPushButton:checked {
-	background-color: rgb(85, 170, 255);
-	color: rgb(0, 0, 0);
+	border:2px solid rgb(27, 120, 205);
+	background-color: rgb(27, 120, 205);
 }
 QPushButton:!checked {
-    background-color: rgb(31, 133, 227);
 	color: rgb(255, 255, 255);
+	background-color: rgb(85, 170, 255);
+	border:2px solid rgb(85, 170, 255);
 }
 QPushButton::hover{
 	color: rgb(0, 0, 0);
@@ -4276,12 +4318,13 @@ QPushButton::hover{
                    </property>
                    <property name="styleSheet">
                     <string notr="true">QPushButton:checked {
-	background-color: rgb(85, 170, 255);
-	color: rgb(0, 0, 0);
+	border:2px solid rgb(27, 120, 205);
+	background-color: rgb(27, 120, 205);
 }
 QPushButton:!checked {
-    background-color: rgb(31, 133, 227);
 	color: rgb(255, 255, 255);
+	background-color: rgb(85, 170, 255);
+	border:2px solid rgb(85, 170, 255);
 }
 QPushButton::hover{
 	color: rgb(0, 0, 0);
@@ -4315,12 +4358,13 @@ QPushButton::hover{
                    </property>
                    <property name="styleSheet">
                     <string notr="true">QPushButton:checked {
-	background-color: rgb(85, 170, 255);
-	color: rgb(0, 0, 0);
+	border:2px solid rgb(27, 120, 205);
+	background-color: rgb(27, 120, 205);
 }
 QPushButton:!checked {
-    background-color: rgb(31, 133, 227);
 	color: rgb(255, 255, 255);
+	background-color: rgb(85, 170, 255);
+	border:2px solid rgb(85, 170, 255);
 }
 QPushButton::hover{
 	color: rgb(0, 0, 0);
@@ -9173,6 +9217,9 @@ background-color: rgb(255, 0, 0);</string>
                   <pointsize>11</pointsize>
                  </font>
                 </property>
+                <property name="readOnly">
+                 <bool>true</bool>
+                </property>
                 <property name="plainText">
                  <string>A1: Generator turn on voltage
 B1: Generator turn off voltage
@@ -9754,6 +9801,9 @@ Set rule:B1 - A1 ≥ 10V</string>
            <height>421</height>
           </rect>
          </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
         </widget>
        </widget>
        <widget class="QWidget" name="SystemInformation_page">
@@ -10272,14 +10322,20 @@ Set rule:B1 - A1 ≥ 10V</string>
        <string>Menu</string>
       </property>
      </widget>
-     <widget class="QLabel" name="Inverter_state_lab">
+     <widget class="QPushButton" name="Converter_State_btn">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>10</y>
+        <x>300</x>
+        <y>0</y>
         <width>350</width>
-        <height>40</height>
+        <height>58</height>
        </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
       </property>
       <property name="minimumSize">
        <size>
@@ -10287,15 +10343,9 @@ Set rule:B1 - A1 ≥ 10V</string>
         <height>40</height>
        </size>
       </property>
-      <property name="maximumSize">
-       <size>
-        <width>999</width>
-        <height>40</height>
-       </size>
-      </property>
       <property name="font">
        <font>
-        <family>新宋体</family>
+        <family>宋体</family>
         <pointsize>14</pointsize>
        </font>
       </property>
@@ -10305,48 +10355,33 @@ Set rule:B1 - A1 ≥ 10V</string>
       <property name="text">
        <string>M_01 Converter turn off</string>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
      </widget>
-     <widget class="QLabel" name="CurrentMode_lb">
+     <widget class="QPushButton" name="Current_Mode_btn">
       <property name="geometry">
        <rect>
-        <x>745</x>
-        <y>1</y>
-        <width>220</width>
-        <height>57</height>
+        <x>780</x>
+        <y>0</y>
+        <width>200</width>
+        <height>58</height>
        </rect>
       </property>
-      <property name="minimumSize">
-       <size>
-        <width>210</width>
-        <height>57</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>999</width>
-        <height>57</height>
-       </size>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
       </property>
       <property name="font">
        <font>
-        <family>新宋体</family>
+        <family>宋体</family>
         <pointsize>14</pointsize>
        </font>
-      </property>
-      <property name="layoutDirection">
-       <enum>Qt::RightToLeft</enum>
       </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>Current mode:CP</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>

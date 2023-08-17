@@ -106,9 +106,6 @@ void GridExpansion::mouseMoveEvent(QMouseEvent *event)
 {
     if (mousePress)
     {
-        /*int x = this->frameGeometry().width()-130;
-        int y = this->frameGeometry().height();*/
-
         //记录scorllArea的横纵滚动条
         QScrollBar *tmph = ui->scrollArea->horizontalScrollBar();
         QScrollBar *tmpv = ui->scrollArea->verticalScrollBar();
@@ -235,7 +232,9 @@ void GridExpansion::resizeEvent(QResizeEvent *event)
     ui->tableWidget->setColumnWidth(0,(x/2)*0.4);
     ui->tableWidget->setColumnWidth(1,(x/2)*0.3);
     ui->tableWidget->setColumnWidth(2,(x/2)*0.2);
-
+    on_openImageBtn();
+    normal = srcImage;//保存初次加载的标准图
+    ratio = 1.0;
 }
 //点击table头 加载图片
 void GridExpansion::on_tabWidget_currentChanged(int index)
@@ -243,11 +242,9 @@ void GridExpansion::on_tabWidget_currentChanged(int index)
     if(index==1)
     {
         on_openImageBtn();
-        if(Image_key)
-        {
-            normal = srcImage;//保存初次加载的标准图
-            Image_key = 0;
-        }
+
+        normal = srcImage.scaled(ui->scrollArea->viewport()->size().width(),ui->scrollArea->viewport()->size().height());;//保存初次加载的标准图
+        ratio = 1.0;
     }
     else {
         return ;
@@ -256,7 +253,13 @@ void GridExpansion::on_tabWidget_currentChanged(int index)
 //重新加载恢复到标准大小
 void GridExpansion::on_pushButton_clicked()
 {
+    // 获取normal的宽度和高度
+    int normalWidth = normal.width();
+    int normalHeight = normal.height();
+    changeImage = srcImage.scaled(normalWidth, normalHeight);
+//    ui->label->setPixmap(changeImage);
     ui->label->setPixmap(normal);
+    ratio = 1.0;
 }
 
 void GridExpansion::on_pushButton_2_clicked()

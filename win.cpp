@@ -57,7 +57,7 @@ MEGAWin::~MEGAWin()
 
 void MEGAWin::onTimerOut()//时间显示
 {
-    if(LanguageType == 1)
+    if(LanguageType == 1)//语言切换为英文时，时间为英式时间
     {
         QDateTime time = QDateTime::currentDateTime();
         QString str = time.toString("dd-MM-yyyy HH:mm:ss");
@@ -502,6 +502,7 @@ void MEGAWin::MemoryAllocation()
     Converter_side_vol_level_explain    = new QPushButton;
     Output_reactive_power_mode_explain  = new QPushButton;
     Grid_connected_mode_of_Inv_explain  = new QPushButton;
+    System_Anti_Reverse_Flow_explain    = new QPushButton;
     Primary_FM_dead_zone_explain        = new QPushButton;
     PFM_coeff_explain                   = new QPushButton;
     Grid_recover_time_explain           = new QPushButton;
@@ -530,6 +531,7 @@ void MEGAWin::MemoryAllocation()
     Converter_side_vol_level = nullptr;
     Output_reactive_power_mode = nullptr;
     Grid_connected_mode_of_Inv = nullptr;
+    System_Anti_Reverse_Flow = nullptr;
     Primary_FM_dead_zone = nullptr;
     PFM_coeff = nullptr;
     Grid_recover_time = nullptr;
@@ -1037,7 +1039,6 @@ void MEGAWin::UserParam_tab()
     ui->System_Tab->setShowGrid(true);//设置显示格子
     ui->System_Tab->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
     ui->System_Tab->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
-    ui->System_Tab->setEditTriggers(QAbstractItemView::SelectedClicked);//单机修改
 
     QStringList List5;
     List5 << tr("Name") << tr("Value") << tr("Unit")<< tr("Name") << tr("Value") << tr("Unit");
@@ -1813,8 +1814,8 @@ void MEGAWin::SystemParam_tbnt_released()
     ui->BMSProtection_tW->setStyleSheet("selection-background-color:lightblue;");
     for(int i=0;i<6;i++)//调整 BMS保护 的列宽列高
     {
-        ui->BMSProtection_tW->setColumnWidth(i,220);
-        ui->BMSProtection_tW->setRowHeight(i,50);
+        ui->BMSProtection_tW->setColumnWidth(i,250);
+        ui->BMSProtection_tW->setRowHeight(i,55);
     }
 
     for(int i=0;i<12;i++)//调整 调试 的列宽列高
@@ -1915,7 +1916,7 @@ void MEGAWin::ModuleState_Tab()//PCS状态
           RTState_Bypass_List4 << tr("Start Diesel Generator Signal") << tr("DO2")\
                                << tr("DO3") << tr("Dry contact EPO")\
                                << tr("Dry contact Shutdown") << tr("Access control signal")\
-                               << tr("Full power signal") << tr("Smoke alarm signal")<< tr("Hight temp. signal");
+                               << tr("Full power signal") << tr("Smoke alarm signal")<< tr("Fire fighting signal");
 
         ui->RTState_Bypass_Tab->setColumnCount(6);
         ui->RTState_Bypass_Tab->setRowCount(9);
@@ -1960,7 +1961,6 @@ void MEGAWin::ModuleState_Tab()//PCS状态
     PCS_State();//PCS状态
 }
 
-
 /***************************************************************
  * 菜单页面选择
  ***************************************************************/
@@ -1977,7 +1977,6 @@ void MEGAWin::My_menuAction(int Index)
         ui->RTState_stackedWidget->setCurrentWidget(ui->RTState_Bypass_Y_page);
         ui->BAT_stackedWidget->setCurrentWidget(ui->BAT_Lithium_page);
         ui->stackedWidget->setCurrentWidget(ui->Status_page);
-
         ui->RTD_PCS_StackedWidget->setCurrentWidget(ui->RTD_Bypass_Y_page);
         break;
     case RECORDPAGE:
@@ -3299,7 +3298,7 @@ void MEGAWin::PCS_State()
     }
     Output_Breaker = new Specification(this,Output_Breaker_explain, ui->RTState_Bypass_Tab, 3, 1, \
                                             tr("On"), tr("Output Breaker"), \
-                                            tr("The output circuit breaker has two states: On, Off. It can only be manually opened and closed. If there is an overcurrent in the output circuit breaker, it will trip."));
+                                            tr("The output circuit breaker has two states: On, Off. It can only be manually opened and closed."));
     Output_Breaker->add_Specification();
 
     if(Grid_Cont != nullptr)
@@ -3317,7 +3316,7 @@ void MEGAWin::PCS_State()
     }
     Grid_Breaker = new Specification(this,Grid_Breaker_explain, ui->RTState_Bypass_Tab, 5, 1, \
                                             tr("On"), tr("Grid Breaker"), \
-                                            tr("The power grid circuit breaker has two states: On, Off; The power grid circuit breaker can only be manually disconnected. If the power grid circuit breaker overflows, the power grid circuit breaker may trip."));
+                                            tr("The power grid circuit breaker has two states: On, Off; The power grid circuit breaker can only be manually disconnected."));
     Grid_Breaker->add_Specification();
 
     if(MB_Breaker != nullptr)
@@ -3335,7 +3334,7 @@ void MEGAWin::PCS_State()
     }
     converter_available = new Specification(this,converter_available_explain, ui->RTState_Bypass_Tab, 0, 3, \
                                             tr("Disabled"), tr("converter available"), \
-                                            tr("The converter has two states: enabled,disabled. The converter is enabled when the self-check is successful. Otherwise, the converter is disabled."));
+                                            tr("The converter has two states: Enable,Disabled. The converter is enabled when the self-check is successful. Otherwise, the converter is disabled."));
     converter_available->add_Specification();
 
     if(DC_Soft_start != nullptr)
@@ -3370,8 +3369,8 @@ void MEGAWin::PCS_State()
         delete LVRT;
     }
     LVRT = new Specification(this,LVRT_explain, ui->RTState_Bypass_Tab, 4, 3, \
-                                            tr("LVRT"), tr("LVRT"), \
-                                            tr("LVRT states : enabled , disabled."));
+                                            tr("Disable"), tr("LVRT"), \
+                                            tr("LVRT states : Enable , Disable."));
     LVRT->add_Specification();
 
     if(Generator_signal != nullptr)
@@ -3541,7 +3540,8 @@ void MEGAWin::ParameterSet()
     column = 4;
     Control_mode = new Specification(this,Control_mode_explain, ui->System_Tab, line++, column, \
                                      tr("Local"), tr("Control mode"), \
-                                     tr("Enter the advanced settings interface and select the control power mode. Choose constant voltage and modify the voltage value. Converter will operate at the constant voltage value and function as a constant voltage source."));
+                                     tr("Local: Converter control through HMI, In this mode, the EMS can only read and cannot write.\
+\nRemote: In remote mode, the EMS can perform both read and write control."));
     Control_mode->add_Specification();
 
     if(Machine_number != NULL)
@@ -3701,7 +3701,7 @@ void MEGAWin::BetterySetup()
     }
     ChargeStopSOC = new Specification(this,ChargeStopSOC_explain, ui->Lithum_Tab, line++, column, \
                                      "0", tr("Charge Stop SOC"), \
-                                     tr("Discharging Stop SOC: In grid expansion mode, the battery will stop discharging when the battery SOC is below this SOC."));
+                                     tr("Charging Stop SOC: In grid expansion mode, when the battery is charging, it will stop charging when the battery SOC is greater than this SOC."));
     ChargeStopSOC->add_Specification();
 
     if(DischargeStopSOC != nullptr)
@@ -3710,7 +3710,7 @@ void MEGAWin::BetterySetup()
     }
     DischargeStopSOC = new Specification(this,DischargeStopSOC_explain, ui->Lithum_Tab, line++, column, \
                                      "0", tr("Discharge Stop SOC"), \
-                                     tr("Grid Capacity: The maximum power capacity connected to the grid in grid expansion mode."));
+                                     tr("Discharging Stop SOC: In grid expansion mode, the battery will stop discharging when the battery SOC is below this SOC."));
     DischargeStopSOC->add_Specification();
 
     if(Grid_capacity != nullptr)
@@ -3719,7 +3719,7 @@ void MEGAWin::BetterySetup()
     }
     Grid_capacity = new Specification(this,Grid_capacity_explain, ui->Lithum_Tab, line++, column, \
                                      "0", tr("Grid_capacity"), \
-                                     tr("Grid Capacity: The maximum capacity of the converter's AC side input, which takes effect in the converter power supply mode."));
+                                     tr("Grid Capacity: The maximum power capacity connected to the grid in grid expansion mode."));
     Grid_capacity->add_Specification();
 
 
@@ -4683,7 +4683,7 @@ void MEGAWin::FunctionSet()
         delete Power_control_type;
     }
     Power_control_type = new Specification(this,Power_control_type_explain, ui->UI_Parameter_Tab, 2, 1,\
-                                           "CP_N&&P" , tr("Power control type"), \
+                                           "CP_AC" , tr("Power control type"), \
                                            tr("Constant Voltage (CV) mode: The converter will operate in constant voltage mode on the DC side.\
                                               Constant Current (CC) mode: The converter will operate in constant current mode on the DC side.\
                                               Constant Power AC (CP_AC) mode: The power level can be set at \"constant power.\" The value represents the power level, positive for discharge and negative for charge. For example, setting it to -5 means that the AC side will charge the battery with a power of 5 kW. Due to converter losses, the DC side power will be lower than the AC side power in this case. Conversely, setting it to 5 means that the AC side will output power at 5 kW. Due to converter losses, the DC side power will be higher than the AC side power in this case.\
@@ -5065,15 +5065,26 @@ void MEGAWin::SystemParameter()
         delete Grid_connected_mode_of_Inv;
     }
     Grid_connected_mode_of_Inv = new Specification(this,Grid_connected_mode_of_Inv_explain, ui->UI_SystemParameter_Tab, 6, 4, \
-                                                   tr("Non\ncountercurrent"), tr("Converter Anti-Reverse Flow"), \
+                                                   tr("Disable"), tr("Converter Anti-Reverse Flow"), \
                                                    tr("Converter Anti-Reverse Flow: Enable, Disable; Enabling prevents converter current from flowing into the grid, while Disabling allows converter current to flow into the grid."));
     Grid_connected_mode_of_Inv->add_Specification();
+
+    //系统防逆流
+    if(System_Anti_Reverse_Flow != nullptr)
+    {
+        delete System_Anti_Reverse_Flow;
+    }
+    System_Anti_Reverse_Flow = new Specification(this,System_Anti_Reverse_Flow_explain, ui->UI_SystemParameter_Tab, 7, 4, \
+                                                   tr("Disable"), tr("System Anti-Reverse Flow"), \
+                                                   tr("System Anti-Reverse Flow: Enable, Disable;\
+\nEnabling prevents system current from flowing into the grid, while Disabling allows system current to flow into the grid."));
+    System_Anti_Reverse_Flow->add_Specification();
 
     if(Primary_FM_dead_zone != nullptr)
     {
         delete Primary_FM_dead_zone;
     }
-    Primary_FM_dead_zone = new Specification(this,Primary_FM_dead_zone_explain, ui->UI_SystemParameter_Tab, 7, 4, \
+    Primary_FM_dead_zone = new Specification(this,Primary_FM_dead_zone_explain, ui->UI_SystemParameter_Tab, 8, 4, \
                                              "3", tr("Primary FM dead zone"), \
                                              tr("Frequency Deviation Deadzone: A frequency difference settings to prevent unnecessary frequency regulation actions during minor grid frequency fluctuations. (Note: This option is generally used in large grid-on power stations.)"));
     Primary_FM_dead_zone->add_Specification();
@@ -5082,7 +5093,7 @@ void MEGAWin::SystemParameter()
     {
         delete PFM_coeff;
     }
-    PFM_coeff = new Specification(this,PFM_coeff_explain, ui->UI_SystemParameter_Tab, 8, 4, \
+    PFM_coeff = new Specification(this,PFM_coeff_explain, ui->UI_SystemParameter_Tab, 9, 4, \
                                   "20", tr("PFM coeff"), \
                                   tr("Active Frequency Regulation Coefficient: The active frequency regulation coefficient can be configured. (Note: This option is generally used in large grid-on power stations.)"));
     PFM_coeff->add_Specification();
@@ -5091,7 +5102,7 @@ void MEGAWin::SystemParameter()
     {
         delete Grid_recover_time;
     }
-    Grid_recover_time = new Specification(this,Grid_recover_time_explain, ui->UI_SystemParameter_Tab, 9, 4, \
+    Grid_recover_time = new Specification(this,Grid_recover_time_explain, ui->UI_SystemParameter_Tab, 10, 4, \
                                           "10", tr("Grid recover time"), \
                                           tr("Grid restoration time: reserved function, setting invalid."));
     Grid_recover_time->add_Specification();
@@ -5748,6 +5759,22 @@ void MEGAWin::on_radio_dhcp_clicked()
 }
 
 /***************************************************************
+ * 主页 当前变流器状态 点击
+ ***************************************************************/
+void MEGAWin::on_Converter_State_btn_clicked()
+{
+    QMessageBox::question(this, tr("Converter State"), tr("Display the current status of the DCAC converter."), tr("OK"));
+}
+
+/***************************************************************
+ * 主页 当前模式 点击
+ ***************************************************************/
+void MEGAWin::on_Current_Mode_btn_clicked()
+{
+    QMessageBox::question(this ,tr("Current Mode"), tr("Display the current control power mode."), tr("OK"));
+}
+
+/***************************************************************
  * 调入测试数据
  ***************************************************************/
 void MEGAWin::on_radio_test_data_btn_clicked()
@@ -5770,6 +5797,7 @@ void MEGAWin::on_ChangeLanguage_btn_clicked()
 {
     Change_Language();
 }
+
 /***************************************************************
  * 高级设置切换语言
  ***************************************************************/
@@ -5822,11 +5850,13 @@ void MEGAWin::on_search_btn_clicked()
 //    }
 }
 
+/***************************************************************
+ * 升级工具点击槽
+ ***************************************************************/
 void MEGAWin::UpgradeInterface_clicked()
 {
     int reply = QMessageBox::question(this, tr("Upgrade prompt")\
-                          ,tr("1. Make sure to press the EPO button before upgrading.\
-                              \n2. Before upgrading the DCDC, switch off the ship-type switch of the DCDC module."), tr("Return"),tr("OK"));
+                          ,tr("Make sure to press the EPO button before upgrading."), tr("Return"),tr("OK"));
     if (reply == 0)
     {
         // 点击了"Cancel"按钮的处理逻辑
@@ -5916,5 +5946,3 @@ void MEGAWin::excel_read(QTableWidget *tablewidget)
 //        file.close();
 //    }
 }
-
-
