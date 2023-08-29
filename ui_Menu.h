@@ -43,7 +43,12 @@ public:
     {
         if (Menu->objectName().isEmpty())
             Menu->setObjectName(QStringLiteral("Menu"));
-        Menu->resize(331, 410);
+        Menu->resize(334, 462);
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(Menu->sizePolicy().hasHeightForWidth());
+        Menu->setSizePolicy(sizePolicy);
         Menu->setStyleSheet(QStringLiteral("background-color: rgb(171, 216, 255);"));
         gridLayout = new QGridLayout(Menu);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
@@ -55,11 +60,12 @@ public:
         gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         Host_bt = new QToolButton(widget);
         Host_bt->setObjectName(QStringLiteral("Host_bt"));
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(Host_bt->sizePolicy().hasHeightForWidth());
-        Host_bt->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(Host_bt->sizePolicy().hasHeightForWidth());
+        Host_bt->setSizePolicy(sizePolicy1);
+        Host_bt->setMinimumSize(QSize(125, 155));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/new_ui/UI/04-\345\261\217\345\271\225\346\240\241\345\207\206.png"), QSize(), QIcon::Normal, QIcon::Off);
         Host_bt->setIcon(icon);
@@ -70,8 +76,9 @@ public:
 
         RTDATA_bt = new QToolButton(widget);
         RTDATA_bt->setObjectName(QStringLiteral("RTDATA_bt"));
-        sizePolicy.setHeightForWidth(RTDATA_bt->sizePolicy().hasHeightForWidth());
-        RTDATA_bt->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(RTDATA_bt->sizePolicy().hasHeightForWidth());
+        RTDATA_bt->setSizePolicy(sizePolicy1);
+        RTDATA_bt->setMinimumSize(QSize(125, 155));
         QIcon icon1;
         icon1.addFile(QString::fromUtf8(":/new_ui/UI/03\345\256\236\346\227\266\345\212\237\347\216\207.png"), QSize(), QIcon::Normal, QIcon::Off);
         RTDATA_bt->setIcon(icon1);
@@ -82,8 +89,9 @@ public:
 
         Record_bt = new QToolButton(widget);
         Record_bt->setObjectName(QStringLiteral("Record_bt"));
-        sizePolicy.setHeightForWidth(Record_bt->sizePolicy().hasHeightForWidth());
-        Record_bt->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(Record_bt->sizePolicy().hasHeightForWidth());
+        Record_bt->setSizePolicy(sizePolicy1);
+        Record_bt->setMinimumSize(QSize(125, 155));
         QIcon icon2;
         icon2.addFile(QString::fromUtf8(":/new_ui/UI/03-\345\216\206\345\217\262\350\256\260\345\275\225.png"), QSize(), QIcon::Normal, QIcon::Off);
         Record_bt->setIcon(icon2);
@@ -94,8 +102,9 @@ public:
 
         System_bt = new QToolButton(widget);
         System_bt->setObjectName(QStringLiteral("System_bt"));
-        sizePolicy.setHeightForWidth(System_bt->sizePolicy().hasHeightForWidth());
-        System_bt->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(System_bt->sizePolicy().hasHeightForWidth());
+        System_bt->setSizePolicy(sizePolicy1);
+        System_bt->setMinimumSize(QSize(125, 155));
         QIcon icon3;
         icon3.addFile(QString::fromUtf8(":/new_ui/UI/06-\347\263\273\347\273\237\350\256\276\347\275\256.png"), QSize(), QIcon::Normal, QIcon::Off);
         System_bt->setIcon(icon3);
@@ -111,11 +120,9 @@ public:
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         Open_bt = new QToolButton(Menu);
         Open_bt->setObjectName(QStringLiteral("Open_bt"));
-        QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Preferred);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(Open_bt->sizePolicy().hasHeightForWidth());
-        Open_bt->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(Open_bt->sizePolicy().hasHeightForWidth());
+        Open_bt->setSizePolicy(sizePolicy);
+        Open_bt->setMinimumSize(QSize(110, 100));
         QIcon icon4;
         icon4.addFile(QString::fromUtf8(":/new_ui/UI/\345\274\200\345\205\263\346\234\272-01.png"), QSize(), QIcon::Normal, QIcon::Off);
         Open_bt->setIcon(icon4);
@@ -126,8 +133,9 @@ public:
 
         Standby_bt = new QToolButton(Menu);
         Standby_bt->setObjectName(QStringLiteral("Standby_bt"));
-        sizePolicy1.setHeightForWidth(Standby_bt->sizePolicy().hasHeightForWidth());
-        Standby_bt->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(Standby_bt->sizePolicy().hasHeightForWidth());
+        Standby_bt->setSizePolicy(sizePolicy);
+        Standby_bt->setMinimumSize(QSize(110, 100));
         QIcon icon5;
         icon5.addFile(QStringLiteral(":/new_ui/UI/Power_Standby.png"), QSize(), QIcon::Normal, QIcon::Off);
         Standby_bt->setIcon(icon5);
@@ -138,8 +146,9 @@ public:
 
         Close_bt = new QToolButton(Menu);
         Close_bt->setObjectName(QStringLiteral("Close_bt"));
-        sizePolicy1.setHeightForWidth(Close_bt->sizePolicy().hasHeightForWidth());
-        Close_bt->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(Close_bt->sizePolicy().hasHeightForWidth());
+        Close_bt->setSizePolicy(sizePolicy);
+        Close_bt->setMinimumSize(QSize(110, 100));
         QIcon icon6;
         icon6.addFile(QString::fromUtf8(":/new_ui/UI/\345\274\200\345\205\263\346\234\272-02.png"), QSize(), QIcon::Normal, QIcon::Off);
         Close_bt->setIcon(icon6);

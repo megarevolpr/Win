@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>331</width>
-    <height>410</height>
+    <width>334</width>
+    <height>462</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>Form</string>
@@ -29,6 +35,12 @@
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>125</width>
+            <height>155</height>
+           </size>
           </property>
           <property name="text">
            <string>Host</string>
@@ -56,6 +68,12 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="minimumSize">
+           <size>
+            <width>125</width>
+            <height>155</height>
+           </size>
+          </property>
           <property name="text">
            <string>Rt.Data</string>
           </property>
@@ -81,6 +99,12 @@
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>125</width>
+            <height>155</height>
+           </size>
           </property>
           <property name="text">
            <string>Record</string>
@@ -108,6 +132,12 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="minimumSize">
+           <size>
+            <width>125</width>
+            <height>155</height>
+           </size>
+          </property>
           <property name="text">
            <string>System</string>
           </property>
@@ -134,10 +164,16 @@
        <item>
         <widget class="QToolButton" name="Open_bt">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>110</width>
+           <height>100</height>
+          </size>
          </property>
          <property name="text">
           <string>Turn on</string>
@@ -160,10 +196,16 @@
        <item>
         <widget class="QToolButton" name="Standby_bt">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>110</width>
+           <height>100</height>
+          </size>
          </property>
          <property name="text">
           <string>Stand-by</string>
@@ -186,10 +228,16 @@
        <item>
         <widget class="QToolButton" name="Close_bt">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>110</width>
+           <height>100</height>
+          </size>
          </property>
          <property name="text">
           <string>Turn off</string>

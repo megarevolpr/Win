@@ -881,10 +881,16 @@ private:
     QButtonGroup *pButton_BatteryData;
     QButtonGroup *pButton_Version;
     QButtonGroup *pButton_MonitorDebug;
+    virtual void resizeEvent(QResizeEvent *event)override;//调整控件大小
+    void moveEvent(QMoveEvent *event) override;
+
     bool ASKey;//高级设置钥匙
     bool IPShow;//IP地址显示标志位
     QTranslator *translator;
     int LanguageType;
+    int Menu_Size_w;
+    int Menu_Size_h;
+
 };
 
 

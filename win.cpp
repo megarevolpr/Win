@@ -33,10 +33,10 @@ MEGAWin::MEGAWin(QWidget *parent) :
     ui(new Ui::MEGAWin)
 {
     LanguageType = CHINESE; //开机默认为中文
-
+    QFont font("Sans Serif", 13); // 创建Sans Serif一个字体，字号为13
+    QApplication::setFont(font); // 设置应用程序的全局字体为宋体
 
     ui->setupUi(this);
-
 //    this->setMinimumSize(1150,780);
     ui->UI_stackedWidget->setCurrentWidget(ui->UI_page );//开机后进入主页面
     ui->stackedWidget->setCurrentWidget(ui->Bypass_page);
@@ -79,7 +79,8 @@ void MEGAWin::updateTimeOut()
 void MEGAWin::MemoryAllocation()
 {
     ASKey = true;//确保只绘制一次高级设置页面
-
+    Menu_Size_w = 253;
+    Menu_Size_h = 453;
     m_menu = new Menu(this);//菜单创建
     UpgradeInterface = new UpgradeTools(this);
     GridExpansionInterface = new GridExpansion(this,LanguageType);
@@ -1039,24 +1040,14 @@ void MEGAWin::UserParam_tab()
     ui->System_Tab->setShowGrid(true);//设置显示格子
     ui->System_Tab->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
     ui->System_Tab->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
+    ui->System_Tab->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->System_Tab->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->System_Tab->verticalHeader()->setMinimumSectionSize(50);//设置行高最小值
 
     QStringList List5;
     List5 << tr("Name") << tr("Value") << tr("Unit")<< tr("Name") << tr("Value") << tr("Unit");
     ui->System_Tab->setHorizontalHeaderLabels(List5);
-    ui->System_Tab->setColumnWidth(0,163);
-    ui->System_Tab->setRowHeight(0, 48);
-    ui->System_Tab->setColumnWidth(1,163);
-    ui->System_Tab->setRowHeight(1, 48);
-    ui->System_Tab->setColumnWidth(2,163);
-    ui->System_Tab->setRowHeight(2, 48);
-    ui->System_Tab->setColumnWidth(3,163);
-    ui->System_Tab->setRowHeight(3, 48);
-    ui->System_Tab->setColumnWidth(4,163);
-    ui->System_Tab->setRowHeight(4, 48);
-    ui->System_Tab->setColumnWidth(5,163);
-    ui->System_Tab->setRowHeight(5, 48);
-    ui->System_Tab->setRowHeight(6, 48);
-    ui->System_Tab->setRowHeight(7, 48);
+
 
     AdvancedSetup_btn->setText(tr("Advance setting"));
     ui->System_Tab->setCellWidget(7,4, (QWidget *)AdvancedSetup_btn);          //高级设置入口
@@ -1081,10 +1072,10 @@ void MEGAWin::History_tab()
     ui->Historicalfailure_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
     ui->Historicalfailure_tableWidget->setShowGrid(true);//设置显示格子
     ui->Historicalfailure_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
-    ui->Historicalfailure_tableWidget->setColumnWidth(0,50);
-    ui->Historicalfailure_tableWidget->setColumnWidth(1,180);
-    ui->Historicalfailure_tableWidget->setColumnWidth(2,180);
-    ui->Historicalfailure_tableWidget->horizontalHeader()->setStretchLastSection(true);
+    ui->Historicalfailure_tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->Historicalfailure_tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->Historicalfailure_tableWidget->verticalHeader()->setMinimumSectionSize(50);//设置行高最小值
+
 
     Grade_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
     Grade2_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
@@ -1094,10 +1085,6 @@ void MEGAWin::History_tab()
     Grade6_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
     Grade7_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
     Grade8_explain->setStyleSheet("background-color:rgb(200, 0, 0);");
-    for(int i=0;i<15;i++)
-    {
-        ui->Historicalfailure_tableWidget->setRowHeight(i,40);
-    }
 
     History(ui->Historicalfailure_tableWidget);//历史记录
 }
@@ -1116,17 +1103,14 @@ void MEGAWin::OperationLog_tab()
     ui->Operation_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
     ui->Operation_tableWidget->setShowGrid(true);//设置显示格子
     ui->Operation_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
-    ui->Operation_tableWidget->setEditTriggers(QAbstractItemView::SelectedClicked);//单机修改
-    ui->Operation_tableWidget->setColumnWidth(0,260);
-    ui->Operation_tableWidget->horizontalHeader()->setStretchLastSection(true);
+    ui->Operation_tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->Operation_tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->Operation_tableWidget->verticalHeader()->setMinimumSectionSize(50);//设置行高最小值
+
     ui->Operation_tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
     ui->Operation_tableWidget->verticalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
     ui->Operation_tableWidget->setStyleSheet("selection-background-color:lightblue;");
 
-    for(int i=0;i<12;i++)
-    {
-        ui->Operation_tableWidget->setRowHeight(i,40);
-    }
     OperationLog();//操作日志
 }
 
@@ -1135,24 +1119,14 @@ void MEGAWin::OperationLog_tab()
  * ***************************************************************************/
 void MEGAWin::BatterySet_tab()
 {
-    ui->Lithum_Tab->setColumnWidth(0,250);
-    ui->Lithum_Tab->setColumnWidth(1,120);
-    ui->Lithum_Tab->setColumnWidth(2,100);
-    ui->Lithum_Tab->setColumnWidth(3,250);
-    ui->Lithum_Tab->setColumnWidth(4,120);
-    ui->Lithum_Tab->setColumnWidth(5,100);
+    ui->Lithum_Tab->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->Lithum_Tab->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->Lithum_Tab->verticalHeader()->setMinimumSectionSize(50);//设置行高最小值
 
-    ui->Lead_Tab->setColumnWidth(0,175);
-    ui->Lead_Tab->setColumnWidth(1,100);
-    ui->Lead_Tab->setColumnWidth(2,75);
-    ui->Lead_Tab->setColumnWidth(3,175);
-    ui->Lead_Tab->setColumnWidth(4,100);
-    ui->Lead_Tab->setColumnWidth(5,75);
-    for(int i=0;i<17;i++)
-    {
-        ui->Lithum_Tab->setRowHeight(i,50);
-        ui->Lead_Tab->setRowHeight(i,50);
-    }
+    ui->Lead_Tab->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->Lead_Tab->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->Lead_Tab->verticalHeader()->setMinimumSectionSize(50);//设置行高最小值
+
     BetterySetup();//电池设置
     Battery_Setup_Lead_Tab(ui->Lead_Tab);
 
@@ -1172,16 +1146,9 @@ void MEGAWin::RunTimeSet_tab()
     ui->Time_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
     ui->Time_tableWidget->setShowGrid(true);//设置显示格子
     ui->Time_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
-    ui->Time_tableWidget->setEditTriggers(QAbstractItemView::SelectedClicked);//单机修改
-    ui->Time_tableWidget->setColumnWidth(0,70);
-    ui->Time_tableWidget->setColumnWidth(1,180);
-    ui->Time_tableWidget->setColumnWidth(2,180);
-    ui->Time_tableWidget->setColumnWidth(3,130);
-    ui->Time_tableWidget->horizontalHeader()->setStretchLastSection(4);
-    for(int i=0;i<20;i++)
-    {
-        ui->Time_tableWidget->setRowHeight(i,40);
-    }
+    ui->Time_tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->Time_tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->Time_tableWidget->verticalHeader()->setMinimumSectionSize(50);//设置行高最小值
 
     AutoOperation();//自动运行
 
@@ -1214,11 +1181,18 @@ void MEGAWin::PCS_Data_Tab()
     QStringList Converter_TabList;
     Converter_TabList << tr("Name") << tr("Value") << tr("Name") << tr("Value")<< tr("Name") << tr("Value");
     ui->Converter_Tab->setHorizontalHeaderLabels(Converter_TabList);
-    ui->Converter_Tab->setColumnWidth(0,200);
+    ui->Converter_Tab->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->Converter_Tab->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->Converter_Tab->verticalHeader()->setMinimumSectionSize(50);//设置行高最小值
+    /*ui->Converter_Tab->setColumnWidth(0,200);
     ui->Converter_Tab->setColumnWidth(1,200);
     ui->Converter_Tab->setColumnWidth(2,200);
     ui->Converter_Tab->setColumnWidth(3,200);
     ui->Converter_Tab->horizontalHeader()->setStretchLastSection(3);
+    for(int i=0;i<10;i++)
+    {
+        ui->Converter_Tab->setRowHeight(i,35.5);
+    }*/
     ui->Converter_Tab->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
     ui->Converter_Tab->verticalHeader()->setVisible(false);//设置垂直头不可见
     ui->Converter_Tab->setFrameShape(QFrame::NoFrame);//设置无边框
@@ -1236,10 +1210,7 @@ void MEGAWin::PCS_Data_Tab()
         ui->Converter_Tab->setItem(i, 2, new QTableWidgetItem(Converter_Tablist2.at(i)));
         ui->Converter_Tab->item(i, 2)->setTextAlignment(Qt::AlignCenter);
     }
-    for(int i=0;i<10;i++)
-    {
-        ui->Converter_Tab->setRowHeight(i,35.5);
-    }
+
 
     PCS_Data();//PCS数据
 }
@@ -1257,6 +1228,9 @@ void MEGAWin::Grid_Data_Tab()
                      << tr("Grid apparent power") << tr("Grid frequency") << tr("Grid power factor");
     ui->Grid_Tab->setColumnCount(2);
     ui->Grid_Tab->setRowCount(Grid_Tablist.size());
+    ui->Grid_Tab->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->Grid_Tab->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->Grid_Tab->verticalHeader()->setMinimumSectionSize(50);//设置行高最小值
 
 
     //设置表格背景颜色
@@ -1269,9 +1243,12 @@ void MEGAWin::Grid_Data_Tab()
     QStringList Grid_TabList;
     Grid_TabList << tr("Name") << tr("Value");
     ui->Grid_Tab->setHorizontalHeaderLabels(Grid_TabList);
-    ui->Grid_Tab->setColumnWidth(0,400);
+    /*ui->Grid_Tab->setColumnWidth(0,400);
     ui->Grid_Tab->horizontalHeader()->setStretchLastSection(1);
-
+    for(int i=0;i<11;i++)
+    {
+        ui->Grid_Tab->setRowHeight(i,32);
+    }*/
     ui->Grid_Tab->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
     ui->Grid_Tab->verticalHeader()->setVisible(false);//设置垂直头不可见
     ui->Grid_Tab->setFrameShape(QFrame::NoFrame);//设置无边框
@@ -1284,10 +1261,7 @@ void MEGAWin::Grid_Data_Tab()
         ui->Grid_Tab->setItem(i, 0, new QTableWidgetItem(Grid_Tablist.at(i)));
         ui->Grid_Tab->item(i, 0)->setTextAlignment(Qt::AlignCenter);
     }
-    for(int i=0;i<11;i++)
-    {
-        ui->Grid_Tab->setRowHeight(i,32);
-    }
+
     Grid_Data();//电网数据
 }
 /******************************************************************************
@@ -1303,6 +1277,9 @@ void MEGAWin::Load_Data_Tab()
                         << tr("Load apparent power") << tr("Load power factor");
     ui->Load_Tab->setColumnCount(2);
     ui->Load_Tab->setRowCount(Load_Tablist.size());
+    ui->Load_Tab->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->Load_Tab->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->Load_Tab->verticalHeader()->setMinimumSectionSize(50);//设置行高最小值
     //设置表格背景颜色
     QPalette pal;
     pal.setColor(QPalette::Base, QColor(255, 0, 0));
@@ -1313,8 +1290,12 @@ void MEGAWin::Load_Data_Tab()
     QStringList Load_TabList;
     Load_TabList << tr("Name") << tr("Value");
     ui->Load_Tab->setHorizontalHeaderLabels(Load_TabList);
-    ui->Load_Tab->setColumnWidth(0,400);
+    /*ui->Load_Tab->setColumnWidth(0,400);
     ui->Load_Tab->horizontalHeader()->setStretchLastSection(1);
+    for(int i=0;i<10;i++)
+    {
+        ui->Load_Tab->setRowHeight(i,35.5);
+    }*/
     ui->Load_Tab->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
     ui->Load_Tab->verticalHeader()->setVisible(false);//设置垂直头不可见
     ui->Load_Tab->setFrameShape(QFrame::NoFrame);//设置无边框
@@ -1327,10 +1308,7 @@ void MEGAWin::Load_Data_Tab()
         ui->Load_Tab->setItem(i, 0, new QTableWidgetItem(Load_Tablist.at(i)));
         ui->Load_Tab->item(i, 0)->setTextAlignment(Qt::AlignCenter);
     }
-    for(int i=0;i<10;i++)
-    {
-        ui->Load_Tab->setRowHeight(i,35.5);
-    }
+
     Load_Data();//负载数据
 }
 /******************************************************************************
@@ -1369,18 +1347,14 @@ void MEGAWin::Information_tbnt_released()
     ui->EquipmentInfor_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
     ui->EquipmentInfor_tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
     ui->EquipmentInfor_tableWidget->setStyleSheet("selection-background-color:lightblue;");
+    ui->EquipmentInfor_tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->EquipmentInfor_tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->EquipmentInfor_tableWidget->verticalHeader()->setMinimumSectionSize(50);//设置行高最小值
 
     //将设备信息显示到LCD上
     QStringList List4;
     List4 << tr("Name") << tr("System Information") ;
     ui->EquipmentInfor_tableWidget->setHorizontalHeaderLabels(List4);
-    ui->EquipmentInfor_tableWidget->setColumnWidth(0,230);
-    ui->EquipmentInfor_tableWidget->horizontalHeader()->setStretchLastSection(1);//自动占用剩余空间
-
-    for(int i=0;i<6;i++)
-    {
-        ui->EquipmentInfor_tableWidget->setRowHeight(i,40);
-    }
     SystemMessages();//系统信息
 
 }
@@ -1776,67 +1750,38 @@ void MEGAWin::Change_Language()
  ***************************************************************/
 void MEGAWin::SystemParam_tbnt_released()
 {
+    ui->UI_Parameter_Tab->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->UI_Parameter_Tab->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->UI_Parameter_Tab->verticalHeader()->setMinimumSectionSize(50);//设置行高最小值
 
-    for(int i=0;i<12;i++)//调整功能设置、参数设置的列宽列高
-    {
-        ui->UI_Parameter_Tab->setColumnWidth(i,165);
-        ui->UI_Parameter_Tab->setRowHeight(i,50);
-        ui->UI_SystemParameter_Tab->setColumnWidth(i,160);
-        ui->UI_SystemParameter_Tab->setRowHeight(i++,50);
+    ui->UI_SystemParameter_Tab->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->UI_SystemParameter_Tab->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->UI_SystemParameter_Tab->verticalHeader()->setMinimumSectionSize(55);//设置行高最小值
 
-        ui->UI_Parameter_Tab->setColumnWidth(i,90);
-        ui->UI_Parameter_Tab->setRowHeight(i,50);
-        ui->UI_SystemParameter_Tab->setColumnWidth(i,115);
-        ui->UI_SystemParameter_Tab->setRowHeight(i++,50);
-
-        ui->UI_Parameter_Tab->setColumnWidth(i,55);
-        ui->UI_Parameter_Tab->setRowHeight(i,50);
-        ui->UI_SystemParameter_Tab->setColumnWidth(i,42);
-        ui->UI_SystemParameter_Tab->setRowHeight(i,50);
-    }
-
+    ui->UI_SystemParameter_Tab->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
 
     ui->ExternalDevice_tW->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
     ui->ExternalDevice_tW->verticalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
     ui->ExternalDevice_tW->setStyleSheet("selection-background-color:lightblue;");
-    for(int i=0;i<9;i++)//调整 外设 的列宽列高
-    {
-        ui->ExternalDevice_tW->setColumnWidth(i,200);
-        ui->ExternalDevice_tW->setRowHeight(i,50);
-        if(i==3){
-            ui->ExternalDevice_tW->setColumnWidth(i,280);
-            ui->ExternalDevice_tW->setRowHeight(i,50);
-        }
-    }
+    ui->ExternalDevice_tW->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->ExternalDevice_tW->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->ExternalDevice_tW->verticalHeader()->setMinimumSectionSize(50);//设置行高最小值
+
 
     ui->BMSProtection_tW->horizontalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
     ui->BMSProtection_tW->verticalHeader()->setStyleSheet("QHeaderView::section{background:skyblue;}");
     ui->BMSProtection_tW->setStyleSheet("selection-background-color:lightblue;");
-    for(int i=0;i<6;i++)//调整 BMS保护 的列宽列高
-    {
-        ui->BMSProtection_tW->setColumnWidth(i,250);
-        ui->BMSProtection_tW->setRowHeight(i,55);
-    }
+    ui->BMSProtection_tW->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->BMSProtection_tW->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->BMSProtection_tW->verticalHeader()->setMinimumSectionSize(50);//设置行高最小值
 
-    for(int i=0;i<12;i++)//调整 调试 的列宽列高
-    {
-        if(i%2==0)
-        {
-            ui->UI_Debug_Tab->setColumnWidth(i,165);
-            ui->UI_Debug_Tab->setRowHeight(i,50);
-        }
-        else
-        {
-            ui->UI_Debug_Tab->setColumnWidth(i,140);
-            ui->UI_Debug_Tab->setRowHeight(i,50);
-        }
-    }
-    for (int i=0;i<11; i++)
-    {
-            ui->UI_Debug_Tab->item (i,0)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-            ui->UI_Debug_Tab->item (i,2)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-            ui->UI_Debug_Tab->item (i,4)->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-    }
+    ui->UI_Debug_Tab->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->UI_Debug_Tab->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->UI_Debug_Tab->verticalHeader()->setMinimumSectionSize(50);//设置行高最小值
+
+    ui->EquipmentInfor_tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->EquipmentInfor_tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->EquipmentInfor_tableWidget->verticalHeader()->setMinimumSectionSize(50);//设置行高最小值
 
     FunctionSet();/*功能设置*/
     SystemParameter();/*系统参数*/
@@ -1926,16 +1871,13 @@ void MEGAWin::ModuleState_Tab()//PCS状态
         ui->RTState_Bypass_Tab->setShowGrid(true);//设置显示格子
         ui->RTState_Bypass_Tab->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
         ui->RTState_Bypass_Tab->setEditTriggers(QAbstractItemView::NoEditTriggers);//设置不可编辑
+        ui->RTState_Bypass_Tab->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+        ui->RTState_Bypass_Tab->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+        ui->RTState_Bypass_Tab->verticalHeader()->setMinimumSectionSize(50);//设置行高最小值
         ui->RTState_Bypass_Tab->setStyleSheet("selection-background-color:lightblue;");
         QStringList StateList_Bypass;
         StateList_Bypass << tr("Name") << tr("Value")<< tr("Name") << tr("Value")<< tr("Name") << tr("Value");
         ui->RTState_Bypass_Tab->setHorizontalHeaderLabels(StateList_Bypass);
-        ui->RTState_Bypass_Tab->setColumnWidth(0,220);
-        ui->RTState_Bypass_Tab->setColumnWidth(1,100);
-        ui->RTState_Bypass_Tab->setColumnWidth(2,210);
-        ui->RTState_Bypass_Tab->setColumnWidth(3,110);
-        ui->RTState_Bypass_Tab->setColumnWidth(4,220);
-        ui->RTState_Bypass_Tab->setColumnWidth(5,100);
 
         for(int i = 0; i < RTState_Bypass_List1.size(); i++)
         {
@@ -1953,10 +1895,6 @@ void MEGAWin::ModuleState_Tab()//PCS状态
             ui->RTState_Bypass_Tab->item(k, 4)->setTextAlignment(Qt::AlignCenter);
         }
         ui->RTState_Bypass_Tab->resizeRowsToContents();
-    }
-    for(int i=0;i<9;i++)
-    {
-        ui->RTState_Bypass_Tab->setRowHeight(i,42);
     }
     PCS_State();//PCS状态
 }
@@ -2059,13 +1997,15 @@ void MEGAWin::on_UI_MenuBtn_clicked()
         if(m_menu != nullptr)
         {
             delete m_menu;
+            m_menu = new Menu(this);
+            connect(m_menu, SIGNAL(Sent(int)), this, SLOT(My_menuAction(int))); //菜单
         }
-        m_menu = new Menu(this);
-        connect(m_menu, SIGNAL(Sent(int)), this, SLOT(My_menuAction(int)));
 
-        m_menu->setGeometry(0, 0, 250, 453);
-        m_menu->move(QPoint((this->pos().x() + 10),(this->pos().y()+87)));
-//        m_menu->move(QPoint((this->pos().x() + 30),(this->pos().y()+(this->frameGeometry().height()-(450+110)))));
+        m_menu->setGeometry(0, 0, 253, 453);
+        int x = this->frameGeometry().width(); //获取ui形成窗口宽度
+        int y = this->frameGeometry().height();//获取窗口高度
+
+        m_menu->move(QPoint((this->pos().x() + 10),(this->pos().y() + (y-ui->UI_MenuBtn->height()-461))));
         m_menu->show();
     }
     else
@@ -4911,8 +4851,8 @@ void MEGAWin::SystemParameter()
         delete Grid_frequency_upper_limit;
     }
     Grid_frequency_upper_limit = new Specification(this,Grid_frequency_upper_limit_explain, ui->UI_SystemParameter_Tab, 1, 1, \
-                                                   "3", tr("Grid frequency upper limit"), \
-                                                   tr("Upper limit of power grid frequency variation: The maximum range of frequency variation allowed on the AC side, which can be selected as 0.2, 0.5, 1, 5."));
+                                                   "0.2", tr("ULFV"), \
+                                                   tr("Upper limit of power grid frequency variation range: The maximum range of frequency variation allowed on the AC side, which can be selected as 0.2, 0.5, 1, 5."));
     Grid_frequency_upper_limit->add_Specification();
 
     if(Grid_frequency_lower_limit != nullptr)
@@ -4920,7 +4860,7 @@ void MEGAWin::SystemParameter()
         delete Grid_frequency_lower_limit;
     }
     Grid_frequency_lower_limit = new Specification(this,Grid_frequency_lower_limit_explain, ui->UI_SystemParameter_Tab, 2, 1, \
-                                                   "-3", tr("Grid frequency lower limit"), \
+                                                   "-0.5", tr("LLFV"), \
                                                    tr("Lower limit of power grid frequency variation range: The maximum range of frequency variation allowed on the AC side, which can be selected as-0.5, -1, -2, -5."));
     Grid_frequency_lower_limit->add_Specification();
 
@@ -5945,4 +5885,42 @@ void MEGAWin::excel_read(QTableWidget *tablewidget)
 //        tablewidget->setRowCount(row);
 //        file.close();
 //    }
+}
+/*********窗口缩放菜单跟随********/
+void MEGAWin::resizeEvent(QResizeEvent *event)
+{
+    int currentWidth = this->frameGeometry().width();//获取窗口宽度
+    int currentHeight = this->frameGeometry().height();//获取窗口高度
+    Menu_Size_w = currentWidth/6;
+    if(!m_menu->isHidden())
+    {
+        if(m_menu != nullptr)
+        {
+            delete m_menu;
+            m_menu = new Menu(this);
+            connect(m_menu, SIGNAL(Sent(int)), this, SLOT(My_menuAction(int))); //菜单
+        }
+        m_menu->setGeometry(0, 0, Menu_Size_w, Menu_Size_h);
+        m_menu->move(QPoint((this->pos().x() + 10),(this->pos().y() + (currentHeight-ui->UI_MenuBtn->height()-Menu_Size_h-5))));
+        m_menu->show();
+    }
+}
+/*********窗口移动菜单跟随*************/
+void MEGAWin::moveEvent(QMoveEvent *event)
+{
+    if(!m_menu->isHidden())
+    {
+        if(m_menu != nullptr)
+        {
+            delete m_menu;
+            m_menu = new Menu(this);
+            connect(m_menu, SIGNAL(Sent(int)), this, SLOT(My_menuAction(int))); //菜单
+        }
+        m_menu->setGeometry(0, 0, 253, 453);
+        int x = this->frameGeometry().width(); //获取ui形成窗口宽度
+        int y = this->frameGeometry().height();//获取窗口高度
+
+        m_menu->move(QPoint((this->pos().x() + 10),(this->pos().y() + (y-ui->UI_MenuBtn->height()-461))));
+        m_menu->show();
+    }
 }

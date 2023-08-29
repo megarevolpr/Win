@@ -1,0 +1,138 @@
+Low voltage on the high side (Buck mode input terminal)
+Alarm
+Voltage on high-voltage side is less than 300V
+DC converter high-voltage-side contactor opens and enters standby mode
+Check high-voltage-side voltage and restart after troubleshooting
+
+High voltage side reverse connection fault
+Alarm
+Polarity of the high-voltage busbar is reversed
+DC converter high-voltage-side contactor opens and enters standby mode
+Disconnect input-output switch, check high-voltage-side wiring, and restart after troubleshooting
+
+Low low voltage on the low side (Boost mode input terminal)
+Alarm
+Voltage on low-voltage side is less than 145V
+DC converter high-voltage-side contactor opens and enters standby mode
+Check low-voltage-side voltage and restart after troubleshooting
+
+Low voltage side reverse connection fault
+Alarm
+Polarity of the low-voltage busbar is reversed
+DC converter high-voltage-side contactor opens and enters standby mode
+Disconnect input-output switch, check low-voltage-side wiring, and restart after troubleshooting
+
+Overcurrent/ripple current limiting of DC converter
+General Fault
+Input or output current > 1.05 * Imax (Imax=125A)
+DC converter output-side contactor opens and enters standby mode
+Troubleshoot and restart after troubleshooting
+
+Fault of DC converter
+General Fault
+DC converter malfunctions
+DC converter enters standby mode
+Troubleshoot and restart after troubleshooting
+
+Overtemperature of DC converter
+General Fault
+Temperature detected by IGBT NTC is higher than 95 degrees Celsius
+DC converter output-side contactor opens and enters standby mode
+Troubleshoot and restart after troubleshooting
+
+Output overload
+General Fault
+Power of the DC converter > 1.1 * Pn (Pn = 50kW)
+DC converter output-side contactor opens and enters standby mode
+Check the size of the load
+
+Driver cable fault
+General Fault
+Poor contact of the IGBT drive wire
+DC converter input-output contactor opens and enters shutdown mode
+Check the IGBT driver wiring
+
+Lightning protection fault
+General Fault
+Output protection signal from surge protector
+DC converter input-output contactor opens and enters shutdown mode
+Disconnect input-output switch and replace lightning protection module in the cabinet
+
+Open circuit of high-voltage side contactor
+General Fault
+The auxiliary contacts of the high-voltage side contactor should be closed but are not closed
+DC converter output-side contactor opens and enters standby mode
+Disconnect input-output switch and replace DC contactor
+
+Short circuit of high-voltage side contactor
+General Fault
+The auxiliary contacts of the high-voltage side contactor should be open but are not open
+DC converter output-side contactor opens and enters standby mode
+Disconnect input-output switch and replace DC contactor
+
+Open circuit of low-voltage side contactor
+General Fault
+The auxiliary contacts of the low-voltage side contactor should be closed but are not closed
+DC converter output-side contactor opens and enters standby mode
+Disconnect input-output switch and replace DC contactor
+
+Short circuit of low-voltage side contactor
+General Fault
+The auxiliary contacts of the low-voltage side contactor should be open but are not open
+DC converter output-side contactor opens and enters standby mode
+Disconnect input-output switch and replace DC contactor
+
+Overvoltage fault of high-voltage side busbar
+Serious Fault
+Voltage on high-voltage side is greater than 1000V or, in boost mode, voltage on high-voltage side is greater than charge voltage upper limit + 50V
+DC converter high-voltage-side contactor opens and enters standby mode
+Disconnect input-output switch, check high-voltage-side voltage, and restart after troubleshooting
+
+Short circuit fault of high-voltage side busbar
+Serious Fault
+Short circuit on the high-voltage busbar
+DC converter high-voltage-side contactor opens and enters standby mode
+Disconnect input-output switch, check high-voltage-side wiring, and restart after troubleshooting
+
+Overvoltage fault of low-voltage side busbar
+Serious Fault
+Voltage on low-voltage side is greater than 900V or, in buck mode, voltage on low-voltage side is greater than charge voltage upper limit + 50V
+DC converter high-voltage-side contactor opens and enters standby mode
+Disconnect input-output switch, check low-voltage-side voltage, and restart after troubleshooting
+
+Short circuit fault of low-voltage side busbar
+Serious Fault
+Short circuit on the low-voltage busbar
+DC converter high-voltage-side contactor opens and enters standby mode
+Disconnect input-output switch, check low-voltage-side wiring, and restart after troubleshooting
+
+Abnormal insulation impedance
+Serious Fault
+Insulation impedance between positive and negative poles and ground is less than 33K ohms
+DC converter input-output contactor opens and enters shutdown mode
+Disconnect input-output switch
+
+Fault of DC auxiliary power supply
+Serious Fault
+Internal auxiliary power supply failure in the converter
+DC converter shuts down
+Replace auxiliary power supply board
+
+Fault of DC fan
+Serious Fault
+Fan overheating, jamming, damage, or power supply abnormality
+DC converter output-side contactor opens and enters standby mode
+Check fan duct and power supply
+
+Emergency shutdown
+Serious Fault
+Emergency shutdown button has been pressed
+DC converter output-side contactor opens and enters standby mode
+Disconnect input-output switch and check for faults
+
+Lack of synchronization of DC converter
+Serious Fault
+Carrier synchronization between converters during parallel operation
+DC converter output-side contactor opens and enters standby mode
+Disconnect input-output switch, check parallel connection network cable, and restart the DC module
+

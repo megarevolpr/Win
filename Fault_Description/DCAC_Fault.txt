@@ -1,0 +1,167 @@
+Battery Voltage Low
+Alarm
+DC input voltage is lower than (battery EOD voltage - 15V) or less than 1.414 times the grid line voltage
+DCAC Shutdown, AC Contactor Open
+Recoverable, Fault Clears Automatically After 5 Minutes
+
+Inverter Overtemperature
+Alarm
+IGBT temperature exceeds 112°C or reactor temperature exceeds 160°C
+IGBT Overtemperature: Power Reduction Operation (grid-on); DCAC Shutdown (grid-off), AC contactor open;Reactor Overtemperature: DCAC Shutdown, AC contactor open
+Recoverable, Fault Clears Automatically After 5 Minutes
+
+Output Overload
+Alarm
+Inverter output power or grid power > 115% of rated power (Pn)
+Power Reduction Operation (grid-on); DCAC Shutdown (grid-off), AC contactor open;
+Recoverable, Fault Clears Automatically After 5 Minutes
+
+Battery Reverse Connection Fault
+Alarm
+DC input polarity reversed
+DCAC Shutdown, AC Contactor Open
+Irrecoverable
+
+EMS Communication Fault
+Alarm
+Communication loss between DCAC and EMS, detection time of 3 minutes
+EMS Communication Abnormality Prompt
+Recoverable, Fault Clears Automatically After 30s
+
+Grid Overvoltage
+Alarm
+Grid voltage exceeds maximum allowable voltage (110%~130% adjustable), detection time of 0.2 seconds
+DCAC Shutdown, AC Contactor Open
+Recoverable, Fault Clears Automatically After 5 Minutes
+
+Grid Undervoltage
+Alarm
+Grid voltage exceeds minimum allowable voltage (90%~70% adjustable), detection time of 0.2
+DCAC Shutdown, AC Contactor Open
+Recoverable, Fault Clears Automatically After 5 Minutes
+
+Grid Reverse Polarity
+Alarm
+Phase sequence reversal (positive sequence voltage amplitude is less than negative sequence voltage amplitude), detection time of 0.1 seconds
+DCAC Shutdown, AC Contactor Open
+Irrecoverable
+
+Grid Frequency Abnormality
+Alarm
+Grid frequency exceeds allowable range of DCAC (±3Hz adjustable)
+DCAC Shutdown, AC Contactor Open
+Recoverable, Fault Clears Automatically After 5 Minutes
+
+Inverter Islanding Protection
+Alarm
+Active islanding protection enabled in grid-connected mode, grid outage
+DCAC Shutdown, AC Contactor Open
+Recoverable, Fault Clears Automatically After 5 Minutes
+
+Lightning Protection Fault
+Alarm
+Lightning arrester breakdown or leakage
+DCAC Shutdown, AC Contactor Open
+Irrecoverable
+
+Fan Failure
+Alarm
+Fan cannot start or operate
+DCAC Power Limit Operation
+Recoverable, Fault Clears Automatically After 5 Minutes
+
+Discharge not allowed
+Alarm
+Battery voltage is less than discharge lower limit voltage - 5V
+Discharge Condition Shutdown, Battery Voltage Discharged to Lower Limit, Power Reduction Discharge
+Recoverable, voltage rise discharge hysteresis, recovery allows discharge.
+
+Charging not allowed
+Alarm
+Battery voltage is greater than charge upper limit voltage
+Charge Condition Shutdown, Battery Voltage Charged to Upper Limit, Power Reduction Charge
+Recoverable, voltage drop charging hysteresis, recovery allows charging.
+
+Inverter Overcurrent
+General Fault
+Inductive current instantaneous value > 3Ip or inductive current effective value > 1.36In
+DCAC Shutdown, Output Contactor Open
+Recoverable, Fault Clears Automatically After 5 Minutes
+
+Inverter Fault
+General Fault
+During the soft start process of the inverter, after 30s, the effective value of the inverter voltage > 1.2Vrate or < 0.3Vrate.
+DCAC Shutdown
+Recoverable, Fault Clears Automatically After 5 Minutes
+
+Output Contactor Open Circuit
+General Fault
+The output contactor closure drive signal is sent, but the auxiliary contact feedback signal of the AC contactor is in the open state.
+DCAC Shutdown
+Recoverable, Fault Clears Automatically After 5 Minutes
+
+Output Contactor Short Circuit
+General Fault
+Reset the output contactor closure drive, and the auxiliary contact signal of the AC contactor is in the closed state.
+DCAC Shutdown
+Recoverable, Fault Clears Automatically After 5 Minutes
+
+DC Contactor Fault
+General Fault
+When the drive signal is closed, the voltage difference between the battery and the bus is >50V or the feedback contact signal is in the open state; when the drive signal is open, the auxiliary contact signal is in the closed state.
+DCAC Shutdown, AC Contactor Open
+Recoverable, Fault Clears Automatically After 5 Minutes
+
+BMS Communication Fault
+General Fault
+DCAC communication with BMS is lost, judging time is 50s.
+DCAC Shutdown, AC Contactor Open
+Recoverable, Fault Clears Automatically After 30s
+
+Inverter Phase Loss Fault
+General Fault
+In grid-connected operation, if one or more phases of the three-phase circuit are disconnected, the judging time is 10s.
+DCAC Shutdown, AC Contactor Open
+Recoverable, Fault Clears Automatically After 5 Minutes
+
+Drive Line Fault
+General Fault
+Drive line port is loose.
+DCAC Shutdown, AC Contactor Open
+Recoverable, Fault Clears Automatically After 5 Minutes
+
+DC Bus Overvoltage
+Serious Fault
+DC input voltage > 900V or DC bus voltage > (battery charging voltage upper limit + 50V)
+DCAC Shutdown, AC Contactor Open
+Irrecoverable
+
+DC Bus Short Circuit
+Serious Fault
+If the DC bus voltage is lower than 120V and the DC current is greater than 50A, the judging time is 600us.
+DCAC Shutdown, AC Contactor Open
+Irrecoverable
+
+AC Auxiliary Power Supply Fault
+Serious Fault
+Abnormality in the output of AC auxiliary power supply.
+DCAC Shutdown, AC Contactor Open
+Recoverable, Fault Clears Automatically After 5 Minutes
+
+DC Auxiliary Power Supply Fault
+Serious Fault
+Abnormality in the output of DC auxiliary power supply.
+DCAC Shutdown, AC Contactor Open
+Recoverable, Fault Clears Automatically After 5 Minutes
+
+Emergency Shutdown
+Serious Fault
+Pressing the EPO button on the inverter control panel.
+DCAC Shutdown, AC Contactor Open
+Recoverable, Fault Clears Automatically After EPO Button Reset
+
+Insulation Impedance Abnormality
+Serious Fault
+For 1000V systems, the positive-to-ground or negative-to-ground impedance is less than 33K ohms.
+DCAC Shutdown, AC Contactor Open
+Irrecoverable
