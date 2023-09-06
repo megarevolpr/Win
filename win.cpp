@@ -1072,7 +1072,11 @@ void MEGAWin::History_tab()
     ui->Historicalfailure_tableWidget->setFrameShape(QFrame::NoFrame);//设置无边框
     ui->Historicalfailure_tableWidget->setShowGrid(true);//设置显示格子
     ui->Historicalfailure_tableWidget->setSelectionBehavior(QAbstractItemView::SelectItems);//每次选择一行
-    ui->Historicalfailure_tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->Historicalfailure_tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Interactive);
+    ui->Historicalfailure_tableWidget->setColumnWidth(0,100);
+    for (int i = 1; i < ui->Historicalfailure_tableWidget->columnCount(); ++i) {
+        ui->Historicalfailure_tableWidget->horizontalHeader()->setSectionResizeMode(i, QHeaderView::Stretch);
+    }
     ui->Historicalfailure_tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->Historicalfailure_tableWidget->verticalHeader()->setMinimumSectionSize(50);//设置行高最小值
 
@@ -1750,11 +1754,11 @@ void MEGAWin::Change_Language()
  ***************************************************************/
 void MEGAWin::SystemParam_tbnt_released()
 {
-    ui->UI_Parameter_Tab->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+//    ui->UI_Parameter_Tab->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->UI_Parameter_Tab->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->UI_Parameter_Tab->verticalHeader()->setMinimumSectionSize(50);//设置行高最小值
 
-    ui->UI_SystemParameter_Tab->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+//    ui->UI_SystemParameter_Tab->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->UI_SystemParameter_Tab->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->UI_SystemParameter_Tab->verticalHeader()->setMinimumSectionSize(55);//设置行高最小值
 
@@ -1782,6 +1786,20 @@ void MEGAWin::SystemParam_tbnt_released()
     ui->EquipmentInfor_tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->EquipmentInfor_tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->EquipmentInfor_tableWidget->verticalHeader()->setMinimumSectionSize(50);//设置行高最小值
+
+    for (int i = 0; i < ui->UI_Parameter_Tab->columnCount(); ++i)
+    {
+        if(i%3==2)
+        {
+            ui->UI_Parameter_Tab->setColumnWidth(i,70);
+            ui->UI_SystemParameter_Tab->setColumnWidth(i,60);
+        }
+        else
+        {
+            ui->UI_Parameter_Tab->horizontalHeader()->setSectionResizeMode(i, QHeaderView::Stretch);
+            ui->UI_SystemParameter_Tab->horizontalHeader()->setSectionResizeMode(i, QHeaderView::Stretch);
+        }
+    }
 
     FunctionSet();/*功能设置*/
     SystemParameter();/*系统参数*/
@@ -2135,35 +2153,35 @@ void MEGAWin::Data_report_clicked(int nid)
     switch (nid) {
     case 0:
         QMessageBox::question(this, tr("Discharge Day")\
-                              ,tr("Display today's power discharge amount."), tr("OK"));
+                              ,tr("Display today's AC-side power discharge amount."), tr("OK"));
         break;
     case 1:
         QMessageBox::question(this, tr("Discharge Month")\
-                              ,tr("Display this month's power discharge amount."), tr("OK"));
+                              ,tr("Display this month's AC-side power discharge amount."), tr("OK"));
         break;
     case 2:
         QMessageBox::question(this, tr("Discharge Year")\
-                              ,tr("Display this year's power discharge amount."), tr("OK"));
+                              ,tr("Display this year's AC-side power discharge amount."), tr("OK"));
         break;
     case 3:
         QMessageBox::question(this, tr("Discharge Total")\
-                              ,tr("Display total power discharge amount."), tr("OK"));
+                              ,tr("Display total AC-side power discharge amount."), tr("OK"));
         break;
     case 4:
         QMessageBox::question(this, tr("Charge Day")\
-                              ,tr("Display today's power charge amount"), tr("OK"));
+                              ,tr("Display today's AC-side power charge amount"), tr("OK"));
         break;
     case 5:
         QMessageBox::question(this, tr("Charge Month")\
-                              ,tr("Display this month's power charge amount."), tr("OK"));
+                              ,tr("Display this month's AC-side power charge amount."), tr("OK"));
         break;
     case 6:
         QMessageBox::question(this, tr("Charge Year")\
-                              ,tr("Display this year's power charge amount."), tr("OK"));
+                              ,tr("Display this year's AC-side power charge amount."), tr("OK"));
         break;
     case 7:
         QMessageBox::question(this, tr("Charge Total")\
-                              ,tr("Display total power charge amount."), tr("OK"));
+                              ,tr("Display total AC-side power charge amount."), tr("OK"));
         break;
     case 8:
         QMessageBox::question(this, tr("Month-")\
@@ -3418,7 +3436,7 @@ void MEGAWin::ParameterSet()
     }
     Constant_power = new Specification(this,Constant_power_explain, ui->System_Tab, line++, column, \
                                        tr("0"), tr("Constant power(AC)"), \
-                                       tr("AC Side Power: You can control the charging and discharging power of the battery from the AC side by modifying this value. When the advanced setting for power control mode is set to Constant Power mode (CP_N&P), a positive value indicates discharging, and a negative value indicates charging.\
+                                       tr("AC Side Power: You can control the charging and discharging power of the battery from the AC side by modifying this value. When the advanced setting for power control mode is set to Constant Power mode (CP_AC), a positive value indicates discharging, and a negative value indicates charging.\
 \nFor example, setting it to -5 means that the AC side will charge the battery at a power of -5 kW. Due to converter losses, the DC side power will be lower than the AC side power in this case. Setting it to 5 means that the AC side will output power at 5 kW. Due to converter losses, the DC side power will be higher than the AC side power in this case."));
     Constant_power->add_Specification();
 
@@ -5680,22 +5698,22 @@ void MEGAWin::on_radio_static_clicked()
  ***************************************************************/
 void MEGAWin::on_radio_dhcp_clicked()
 {
-    IPShow = false;
-    if(IPShow)
-    {
-        ui->ip_explain_btn->show();
-        ui->netmask_explain_btn->show();
-        ui->gateway_explain_btn->show();
-        ui->server_ip_explain_btn->show();
-    }
-    else
-    {
-        ui->ip_explain_btn->hide();
-        ui->netmask_explain_btn->hide();
-        ui->gateway_explain_btn->hide();
-        ui->server_ip_explain_btn->hide();
-    }
-    QMessageBox::question(this ,tr("dhcp"), tr("This is an automatic IP acquisition, currently not supported."), tr("OK"));
+//    IPShow = false;
+//    if(IPShow)
+//    {
+//        ui->ip_explain_btn->show();
+//        ui->netmask_explain_btn->show();
+//        ui->gateway_explain_btn->show();
+//        ui->server_ip_explain_btn->show();
+//    }
+//    else
+//    {
+//        ui->ip_explain_btn->hide();
+//        ui->netmask_explain_btn->hide();
+//        ui->gateway_explain_btn->hide();
+//        ui->server_ip_explain_btn->hide();
+//    }
+//    QMessageBox::question(this ,tr("dhcp"), tr("This is an automatic IP acquisition, currently not supported."), tr("OK"));
 }
 
 /***************************************************************
@@ -5796,13 +5814,13 @@ void MEGAWin::on_search_btn_clicked()
 void MEGAWin::UpgradeInterface_clicked()
 {
     int reply = QMessageBox::question(this, tr("Upgrade prompt")\
-                          ,tr("Make sure to press the EPO button before upgrading."), tr("Return"),tr("OK"));
-    if (reply == 0)
+                          ,tr("Make sure to press the EPO button before upgrading."), tr("NEXT"),tr("Cancel"));
+    if (reply == 1)
     {
         // 点击了"Cancel"按钮的处理逻辑
         return ;
 
-    } else if (reply == 1) {
+    } else if (reply == 0) {
         // 点击了"OK"按钮的处理逻辑
         if(UpgradeInterface->isHidden())
         {
@@ -5891,6 +5909,8 @@ void MEGAWin::resizeEvent(QResizeEvent *event)
 {
     int currentWidth = this->frameGeometry().width();//获取窗口宽度
     int currentHeight = this->frameGeometry().height();//获取窗口高度
+    m_menu->ToModifyWidth();
+
     Menu_Size_w = currentWidth/6;
     if(!m_menu->isHidden())
     {

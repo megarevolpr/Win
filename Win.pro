@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = PCS_V1.0.4
+TARGET = PCS_V1.1.0
 TEMPLATE = app
 
 
@@ -66,6 +66,4 @@ RESOURCES += \
     language.qrc \
     faultdescription.qrc
 
-DISTFILES += \
-    Language/CN.ts \
-    Language/EN.ts
+DISTFILES +=

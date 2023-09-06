@@ -78,12 +78,9 @@ void UpgradeTools::UpgradeButton_clicked(int nid)
         break;//点击将恢复到已经备份好程序
     case 5:
         {
-            int reply = QMessageBox::question(this, tr("Apply and restart")\
-                                  ,tr("Click to restart."), tr("Previous Page"),tr("OK"));
-            if(reply == 0)
-            {
-                this->hide();
-            }
+            QMessageBox::question(this, tr("Apply and restart")\
+                                  ,tr("Click to restart."),tr("OK"));
+
         }
         break;//点击后将进行重启
     case 6:
@@ -109,12 +106,9 @@ void UpgradeTools::UpgradeButton_clicked(int nid)
         break;//
     case 11:
         {
-            int reply = QMessageBox::question(this, tr("Restart")\
-                                  ,tr("Click to restart."), tr("Previous Page"),tr("OK"));
-            if(reply == 0)
-            {
-                this->hide();
-            }
+            QMessageBox::question(this, tr("Restart")\
+                                  ,tr("Click to restart."),tr("OK"));
+
         }
         break;
     case 12:

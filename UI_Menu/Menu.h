@@ -56,10 +56,12 @@ public:
     explicit Menu(QWidget *parent = 0);
     ~Menu();
     void focusOutEvent(QFocusEvent *e);
+    void ToModifyWidth();
 protected:
     void mousePressEvent(QMouseEvent *e);
     void mouseReleaseEvent(QMouseEvent *e);
     bool eventFilter(QObject *obj, QEvent *event);
+
 
 private slots:
     void on_Host_bt_clicked();
