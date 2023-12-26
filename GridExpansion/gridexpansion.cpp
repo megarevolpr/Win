@@ -113,7 +113,6 @@ void GridExpansion::mouseMoveEvent(QMouseEvent *event)
         offset.setX(event->x() - preDot.x());
         offset.setY(event->y() - preDot.y());
 
-
         if(tmph->value()<tmph->maximum()&&offset.x()<0)
         {
             tmph->setValue(tmph->value()-offset.x());
@@ -131,24 +130,6 @@ void GridExpansion::mouseMoveEvent(QMouseEvent *event)
             tmpv->setValue(tmpv->value()-offset.y());
         }
         preDot = event->pos();//重新记录起点
-
-        //判断鼠标往哪边移动的，进度条就往哪边动，abs为求绝对值函数
-        /*if (offset.x() > 0 && offset.x() > abs(offset.y()))
-        {
-            tmph->setValue(tmph->value() - x*0.007);
-        }
-        else if (offset.x() < 0 && abs(offset.x()) > abs(offset.y()))
-        {
-            tmph->setValue(tmph->value() + x*0.007);
-        }
-        else if (offset.y() > 0 && offset.y() > abs(offset.x()))
-        {
-            tmpv->setValue(tmpv->value() - y*0.007);
-        }
-        else if (offset.y() < 0 && abs(offset.y()) > abs(offset.x()))
-        {
-            tmpv->setValue(tmpv->value() + y*0.007);
-        }*/
     }
 }
 //鼠标松开事件
