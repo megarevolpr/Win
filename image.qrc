@@ -1,12 +1,6 @@
 <RCC>
     <qresource prefix="/new_ui">
-        <file>UI/03-历史记录.png</file>
-        <file>UI/03-设备信息.png</file>
-        <file>UI/03实时功率.png</file>
         <file>UI/3.png</file>
-        <file>UI/04-操作日志.png</file>
-        <file>UI/04-屏幕校准.png</file>
-        <file>UI/06-系统设置.png</file>
         <file>UI/500k_PCS.jpg</file>
         <file>UI/DCBar1-02.png</file>
         <file>UI/Enter.png</file>
@@ -15,13 +9,17 @@
         <file>UI/ProcessBar1-02.png</file>
         <file>UI/ProcessBar2-02.png</file>
         <file>UI/Warning_2.png</file>
-        <file>UI/开关机-01.png</file>
-        <file>UI/开关机-02.png</file>
-        <file>UI/屏幕校准.png</file>
         <file>UI/BatterySOC_new.png</file>
-        <file>UI/电网扩容逻辑图.png</file>
-        <file>UI/电网扩容逻辑图.png</file>
-        <file>UI/电网扩容逻辑图En.png</file>
         <file>UI/Bat3.png</file>
+        <file>UI/06-SystemSettings.png</file>
+        <file>UI/04-OperationLog.png</file>
+        <file>UI/04-ScreenCalibration.png</file>
+        <file>UI/03-RealTimePower.png</file>
+        <file>UI/03-HistoricalRecord.png</file>
+        <file>UI/03-DeviceInformation.png</file>
+        <file>UI/PowerOn-01.png</file>
+        <file>UI/PowerOff-02.png</file>
+        <file>UI/LogicDiagram.png</file>
+        <file>UI/LogicDiagram_En.png</file>
     </qresource>
 </RCC>

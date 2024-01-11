@@ -32,10 +32,10 @@
 
 #include "Menu.h"
 #include "ui_Menu.h"
-#include <qdebug.h>
+#include <QDebug>
 
 Menu::Menu(QWidget *parent)  :
-    QDialog(parent,Qt::WindowTitleHint | Qt::CustomizeWindowHint | Qt::FramelessWindowHint),//QDialog(parent),
+    QDialog(parent,Qt::WindowTitleHint | Qt::CustomizeWindowHint | Qt::FramelessWindowHint),
     ui(new Ui::Menu)
 {
     ui->setupUi(this);
@@ -74,7 +74,7 @@ bool Menu::eventFilter(QObject *o, QEvent *e)//接受或拒绝拦截到的事件
 //窗口变化菜单跟随
 void Menu::ToModifyWidth()
 {
-    qDebug()<<ui->Host_bt->width()<<ui->RTDATA_bt->width()<<endl<<ui->Record_bt->width()<<ui->System_bt<<endl;
+    qDebug() << ui->Host_bt->width()<<ui->RTDATA_bt->width()<<endl<<ui->Record_bt->width()<<ui->System_bt<<endl;
     // 设置第二个按钮的宽度为第一个按钮的宽度
     ui->Host_bt->setFixedWidth(ui->RTDATA_bt->width());
 }

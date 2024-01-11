@@ -23,7 +23,7 @@
    <string notr="true">background-color: rgb(171, 216, 255);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
+   <item row="0" column="1">
     <layout class="QVBoxLayout" name="verticalLayout" stretch="4,1">
      <item>
       <widget class="QWidget" name="widget" native="true">
@@ -31,7 +31,7 @@
         <item row="0" column="0">
          <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,1">
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,1">
+           <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0">
             <item>
              <widget class="QToolButton" name="Host_bt">
               <property name="sizePolicy">
@@ -42,6 +42,7 @@
               </property>
               <property name="font">
                <font>
+                <family>SimSun-ExtB</family>
                 <pointsize>13</pointsize>
                </font>
               </property>
@@ -50,7 +51,7 @@
               </property>
               <property name="icon">
                <iconset resource="../image.qrc">
-                <normaloff>:/new_ui/UI/04-屏幕校准.png</normaloff>:/new_ui/UI/04-屏幕校准.png</iconset>
+                <normaloff>:/new_ui/UI/04-ScreenCalibration.png</normaloff>:/new_ui/UI/04-ScreenCalibration.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -81,7 +82,7 @@
               </property>
               <property name="icon">
                <iconset resource="../image.qrc">
-                <normaloff>:/new_ui/UI/03实时功率.png</normaloff>:/new_ui/UI/03实时功率.png</iconset>
+                <normaloff>:/new_ui/UI/03-RealTimePower.png</normaloff>:/new_ui/UI/03-RealTimePower.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -116,13 +117,16 @@
               </property>
               <property name="icon">
                <iconset resource="../image.qrc">
-                <normaloff>:/new_ui/UI/03-历史记录.png</normaloff>:/new_ui/UI/03-历史记录.png</iconset>
+                <normaloff>:/new_ui/UI/03-HistoricalRecord.png</normaloff>:/new_ui/UI/03-HistoricalRecord.png</iconset>
               </property>
               <property name="iconSize">
                <size>
                 <width>72</width>
                 <height>72</height>
                </size>
+              </property>
+              <property name="autoRepeatDelay">
+               <number>298</number>
               </property>
               <property name="toolButtonStyle">
                <enum>Qt::ToolButtonTextUnderIcon</enum>
@@ -142,12 +146,15 @@
                 <pointsize>13</pointsize>
                </font>
               </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
               <property name="text">
                <string>System</string>
               </property>
               <property name="icon">
                <iconset resource="../image.qrc">
-                <normaloff>:/new_ui/UI/06-系统设置.png</normaloff>:/new_ui/UI/06-系统设置.png</iconset>
+                <normaloff>:/new_ui/UI/06-SystemSettings.png</normaloff>:/new_ui/UI/06-SystemSettings.png</iconset>
               </property>
               <property name="iconSize">
                <size>
@@ -187,7 +194,7 @@
          </property>
          <property name="icon">
           <iconset resource="../image.qrc">
-           <normaloff>:/new_ui/UI/开关机-01.png</normaloff>:/new_ui/UI/开关机-01.png</iconset>
+           <normaloff>:/new_ui/UI/PowerOn-01.png</normaloff>:/new_ui/UI/PowerOn-01.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -249,7 +256,7 @@
          </property>
          <property name="icon">
           <iconset resource="../image.qrc">
-           <normaloff>:/new_ui/UI/开关机-02.png</normaloff>:/new_ui/UI/开关机-02.png</iconset>
+           <normaloff>:/new_ui/UI/PowerOff-02.png</normaloff>:/new_ui/UI/PowerOff-02.png</iconset>
          </property>
          <property name="iconSize">
           <size>

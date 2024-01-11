@@ -266,6 +266,7 @@ void MEGAWin::MemoryAllocation()
     Machine_number_explain = new QPushButton;           //设备号说明
     Parallel_explain = new QPushButton;                 //并机说明
 
+
     Grid_connected_mode = nullptr;
     Constant_power = nullptr;
 //    Work_mode = nullptr;
@@ -292,6 +293,8 @@ void MEGAWin::MemoryAllocation()
     ChargeStopSOC_explain       = new QPushButton;
     DischargeStopSOC_explain    = new QPushButton;
     Grid_capacity_explain       = new QPushButton;      //电网容量
+    Force_Charge_start_explain  = new QPushButton;      //强充开始电压
+    Force_Charge_stop_explain   = new QPushButton;      //强充停止电压
     Turn_on_SOC_explain         = new QPushButton;      //启动SOC
     Turn_off_SOC_explain        = new QPushButton;      //停止SOC
     Turn_on_cell_vol_explain    = new QPushButton;      //启动单体电压
@@ -318,6 +321,8 @@ void MEGAWin::MemoryAllocation()
     ChargeStopSOC = nullptr;
     DischargeStopSOC = nullptr;
     Grid_capacity = nullptr;
+    Force_Charge_start = nullptr;
+    Force_Charge_stop = nullptr;
     Turn_on_SOC = nullptr;
     Turn_off_SOC = nullptr;
     Turn_on_cell_vol = nullptr;
@@ -439,8 +444,10 @@ void MEGAWin::MemoryAllocation()
     EMS_Comm_type_explain                   = new QPushButton;
     Output_power_limit_explain              = new QPushButton;
     BAT_protocol_explain                    = new QPushButton;
+    EMS_CAN_Protocol_explain                = new QPushButton;
     Power_Delta_explain                     = new QPushButton;
     Host_Address_explain                    = new QPushButton;
+    Modbus_Offset_Address_explain           = new QPushButton;
     serial_port_1_explain                   = new QPushButton;
     serial_port_2_explain                   = new QPushButton;
     serial_port_3_explain                   = new QPushButton;
@@ -464,8 +471,10 @@ void MEGAWin::MemoryAllocation()
     EMS_Comm_type = nullptr;
     Output_power_limit = nullptr;
     BAT_protocol = nullptr;
+    EMS_CAN_Protocol = nullptr;
     Power_Delta = nullptr;
     Host_Address = nullptr;
+    Modbus_Offset_Address = nullptr;
     serial_port_1 = nullptr;
     serial_port_2 = nullptr;
     serial_port_3 = nullptr;
@@ -507,7 +516,7 @@ void MEGAWin::MemoryAllocation()
     Primary_FM_dead_zone_explain        = new QPushButton;
     PFM_coeff_explain                   = new QPushButton;
     Grid_recover_time_explain           = new QPushButton;
-//    DynamicCap_explain                  = new QPushButton;
+    DynamicCap_explain                  = new QPushButton;
     Module_Number_explain               = new QPushButton;
     Restore_factory_explain             = new QPushButton;
     BackupSetParameters_explain         = new QPushButton;
@@ -536,7 +545,7 @@ void MEGAWin::MemoryAllocation()
     Primary_FM_dead_zone = nullptr;
     PFM_coeff = nullptr;
     Grid_recover_time = nullptr;
-//    DynamicCap = nullptr;
+    DynamicCap = nullptr;
     Module_Number = nullptr;
     Restore_factory = nullptr;
     BackupSetParameters = nullptr;
@@ -562,6 +571,12 @@ void MEGAWin::MemoryAllocation()
     DI_4_Action_explain = new QPushButton;
     DI_5_Action_explain = new QPushButton;
     DI_6_Action_explain = new QPushButton;
+    DI_1_Function_explain = new QPushButton;
+    DI_2_Function_explain = new QPushButton;
+    DI_3_Function_explain = new QPushButton;
+    DI_4_Function_explain = new QPushButton;
+    DI_5_Function_explain = new QPushButton;
+    DI_6_Function_explain = new QPushButton;
     DI_1_Enable = nullptr;
     DI_2_Enable = nullptr;
     DI_3_Enable = nullptr;
@@ -580,6 +595,12 @@ void MEGAWin::MemoryAllocation()
     DI_4_Action = nullptr;
     DI_5_Action = nullptr;
     DI_6_Action = nullptr;
+    DI_1_Function = nullptr;
+    DI_2_Function = nullptr;
+    DI_3_Function = nullptr;
+    DI_4_Function = nullptr;
+    DI_5_Function = nullptr;
+    DI_6_Function = nullptr;
 
     //BMS保护
     DOD_Action_explain                 = new QPushButton;
@@ -688,6 +709,9 @@ void MEGAWin::MemoryAllocation()
     /*****************************电池设置****************************************/
     pButton_MonitorDebug->addButton(ui->BMSPowerOn_btn,4);//电池上电
     pButton_MonitorDebug->addButton(ui->BMSPowerOff_btn,5);//电池下电
+    /*****************************端口报文****************************************/
+    pButton_MonitorDebug->addButton(ui->Port_btn,6);//端口
+    pButton_MonitorDebug->addButton(ui->Begin_btn,7);//开始
 
     /*****************************PCS 实时数据****************************************/
     //变流器
@@ -783,6 +807,7 @@ void MEGAWin::MemoryAllocation()
     converter_status_explain    = new QPushButton;//变流器状态
     Reactive_P_Regulation_explain = new QPushButton;//无功调节方式
     LVRT_explain                = new QPushButton;//低压穿越
+    Forced_charge_explain       = new QPushButton;//强充标志位
     Generator_signal_explain    = new QPushButton;//发电机信号
     Reserve_explain             = new QPushButton;//保留位
     Reserve2_explain            = new QPushButton;//保留位
@@ -804,6 +829,7 @@ void MEGAWin::MemoryAllocation()
     converter_status = nullptr;
     Reactive_P_Regulation = nullptr;
     LVRT = nullptr;
+    Forced_charge = nullptr;
     Generator_signal = nullptr;
     Reserve = nullptr;
     Reserve2 = nullptr;
@@ -1849,7 +1875,7 @@ void MEGAWin::LinkRelationship()
     connect(pButton_MonitorDebug, SIGNAL(buttonClicked(int)), this,SLOT(MonitorDebug_clicked(int)));//监控调试
 //    connect(ui->search_le,SIGNAL(editingFinished()), this, SLOT(on_search_btn_clicked()));//搜索栏关联搜索槽，使LineEdit失去焦点或回车键回车也生效
     connect(System_upgrade_explain, SIGNAL(clicked(bool)), this, SLOT(UpgradeInterface_clicked())); //升级界面关联
-    connect(Work_mode_explain, SIGNAL(clicked(bool)), this, SLOT(WorkingMode_clicked())); //升级界面关联
+    connect(Work_mode_explain, SIGNAL(clicked(bool)), this, SLOT(WorkingMode_clicked())); //工作模式点击
 }
 
 /******************************************************************************
@@ -2303,8 +2329,52 @@ void MEGAWin::MonitorDebug_clicked(int nid)
             QMessageBox::question(this, tr("Battery power off")\
                           ,tr("Battery power-off: This function allows the BMS to send a command to open the contactor (Note: this feature is only supported by some BMS manufacturers)."), tr("OK"));
             break;
+        case 6:
+            QMessageBox::question(this, tr("Port")\
+                          ,tr("Select the port to be monitored. The optional port types are: None, RS485/2, RS485/3, RS485/4, RS485/5, RS485/6, CAN 1, CAN 2, Eth."), tr("OK"));
+            break;
+        case 7:
+            QMessageBox::question(this, tr("Begin")\
+                          ,tr("Start/Stop capturing messages."), tr("OK"));
+            break;
         default:
             break;
+    }
+}
+
+/***************************************************************
+ * 端口报文
+ ***************************************************************/
+void MEGAWin::on_comboBox_currentIndexChanged(int index)
+{
+    switch (index) {
+    case 0:
+        {
+            ui->PortMessage_TextEdit->setPlainText(tr("2023-09-27  17:27:56.201  CAN 2: Tx  Len=8  ID=9f000100 00 00 00 00 00 00 00 00\n"
+                                                      "2023-09-27  17:27:56.302  CAN 2: Rx  Len=8  ID=9f000301 0d 00 64 00 70 17 e8 03\n"
+                                                      "2023-09-27  17:27:57.105  CAN 2: Rx  Len=8  ID=9f000300 40 1f a0 0f e8 03 e8 03\n"
+                                                      "2023-09-27  17:27:57.206  CAN 2: Tx  Len=8  ID=9f000100 00 00 00 00 00 00 00 00\n"
+                                                      "2023-09-27  17:27:57.307  CAN 2: Rx  Len=8  ID=9f000301 0d 00 64 00 70 17 e8 03\n"
+                                                      "2023-09-27  17:27:57.910  CAN 2: Rx  Len=8  ID=9f000304 40 1f a0 0f 00 00 00 00\n"
+                                                      "2023-09-27  17:27:58.110  CAN 2: Rx  Len=8  ID=9f000300 40 1f a0 0f e8 03 e8 03\n"
+                                                      "2023-09-27  17:27:58.211  CAN 2: Tx  Len=8  ID=9f000100 00 00 00 00 00 00 00 00\n"
+                                                      "2023-09-27  17:27:58.312  CAN 2: Rx  Len=8  ID=9f000301 0d 00 64 00 70 17 e8 03\n"
+                                                      "2023-09-27  17:27:58.915  CAN 2: Rx  Len=8  ID=9f000304 40 1f a0 0f 00 00 00 00\n"
+                                                      "2023-09-27  17:27:59.116  CAN 2: Rx  Len=8  ID=9f000300 40 1f a0 0f e8 03 e8 03\n"
+                                                      "2023-09-27  17:27:59.217  CAN 2: Tx  Len=8  ID=9f000100 00 00 00 00 00 00 00 00\n"
+                                                      "2023-09-27  17:27:59.317  CAN 2: Rx  Len=8  ID=9f000301 0d 00 64 00 70 17 e8 03\n"
+                                                      "2023-09-27  17:27:59.920  CAN 2: Rx  Len=8  ID=9f000304 40 1f a0 0f 00 00 00 00\n"
+                                                      "2023-09-27  17:28:00.121  CAN 2: Rx  Len=8  ID=9f000300 40 1f a0 0f e8 03 e8 03"));
+        }
+        break;
+    case 1:
+        {
+        ui->PortMessage_TextEdit->setPlainText(tr("The message data will be recorded in the root directory of the USB drive in the 'PortDate.txt' file.\n"
+                                                  "Please connect a UBS flash drive!"));
+        }
+        break;
+    default:
+        break;
     }
 }
 
@@ -3331,6 +3401,15 @@ void MEGAWin::PCS_State()
                                             tr("LVRT states : Enable , Disable."));
     LVRT->add_Specification();
 
+    if(Forced_charge != nullptr)
+    {
+        delete Forced_charge;
+    }
+    Forced_charge = new Specification(this,Forced_charge_explain, ui->RTState_Bypass_Tab, 5, 3, \
+                                            tr("Disable"), tr("Forced charge"), \
+                                            tr("There are two states of forced charge: Enable, Disable. Turn on forced charge when enabled, and stop forced charge when disabled."));
+    Forced_charge->add_Specification();
+
     if(Generator_signal != nullptr)
     {
         delete Generator_signal;
@@ -3680,6 +3759,23 @@ void MEGAWin::BetterySetup()
                                      tr("Grid Capacity: The maximum power capacity connected to the grid in grid expansion mode."));
     Grid_capacity->add_Specification();
 
+    if(Force_Charge_start != nullptr)
+    {
+        delete Force_Charge_start;
+    }
+    Force_Charge_start = new Specification(this,Force_Charge_start_explain, ui->Lithum_Tab, line++, column, \
+                                     "0", tr("Force Charge start"), \
+                                     tr("Force Charge start: When the cell voltage drops below this value, the AC side will charge the battery at 10% of the machine capacity."));
+    Force_Charge_start->add_Specification();
+
+    if(Force_Charge_stop != nullptr)
+    {
+        delete Force_Charge_stop;
+    }
+    Force_Charge_stop = new Specification(this,Force_Charge_stop_explain, ui->Lithum_Tab, line++, column, \
+                                     "0", tr("Force Charge stop"), \
+                                     tr("Force Charge stop: When the cell voltage exceeds this value, the converter exits the forced charging and returns to the state before forced charging."));
+    Force_Charge_stop->add_Specification();
 
     line = 0;
     column = 4;
@@ -4633,7 +4729,9 @@ void MEGAWin::FunctionSet()
     }
     BMS_Comm_type = new Specification(this,BMS_Comm_type_explain, ui->UI_Parameter_Tab, 1, 1, \
                                       "CAN", tr("BMS Comm type"), \
-                                      tr("Battery Communication Modes: None, RS485, CAN, Ethernet. (Note: Due to the fact that CAN and Ethernet both have only one port, the battery communication mode and EMS communication mode cannot be selected as \"CAN\" or \"Ethernet\" simultaneously.)"));
+                                      tr("Battery Communication Modes: None, RS485, CAN, Ethernet, EMS Dispatch.\
+\nEMS Dispatch: Select this option when uploading battery data from EMS (EMS_CAN). If MEGA standard CAN_BMS_EMS protocol is used, EMS_CAN protocol needs to select \"standard\".\
+\n(Note: Due to the fact that CAN and Ethernet both have only one port, the battery communication mode and EMS communication mode cannot be selected as \"CAN\" or \"Ethernet\" simultaneously.)"));
     BMS_Comm_type->add_Specification();
 
     if(Power_control_type != nullptr)
@@ -4669,20 +4767,29 @@ void MEGAWin::FunctionSet()
 
     if(BAT_protocol != nullptr)
     {
-        delete BAT_protocol;
+         delete BAT_protocol;
     }
     BAT_protocol = new Specification(this,BAT_protocol_explain, ui->UI_Parameter_Tab, 5, 1, \
                                           tr("Auto"), tr("BAT protocol"), \
                                           tr("Battery Protocol: Parse the messages sent by BMS based on the selected battery protocol. Currently supported battery manufacturer protocols include:\
-MEGA, LISHEN, PENGHUI, GAOTE, XIENENG, LANLI, SHENLAN, PAINENG, NINGDESHIDAI, SUOYING, XINGWANGDA, KUBO, GAOTE_V2, TOGOOD, GROUP_STANDARD, WOBO, KGOOER, LIDE, PAINENG_L, WEILAN, ALPHA, TUOPU, JIEHUI, JDI, FARO.\
+MEGA, LISHEN, GREATPOWER, GOLD, BMSER, LANLI, SLANPOWER, PYLON, CATL, SUOYING, SUNWODA, CUBENERGY, GOLD_V2, TOPGOLD, PGS, WOBOYUAN, KGOOER, HZLDE, PYLON_L, VILION, ALPHA, TUOPU, JIEHUI, JDI, SCU, FARO, BGS, JDITEC, HUASU, LIGOO, FDBatt, FREEDOM, CATL_RTU.\
                                              \nSelect AUTO to automatically detect the battery manufacturer protocol."));
     BAT_protocol->add_Specification();
+
+    if(EMS_CAN_Protocol != nullptr)
+    {
+         delete EMS_CAN_Protocol;
+    }
+    EMS_CAN_Protocol = new Specification(this,EMS_CAN_Protocol_explain, ui->UI_Parameter_Tab, 6, 1, \
+                                          tr("NONE"), tr("EMS CAN Protocol"), \
+                                          tr("EMS CAN Protocol: NONE, Standard(CAN_BMS_EMS protocol), DEC."));
+    EMS_CAN_Protocol->add_Specification();
 
     if(Power_Delta != nullptr)
     {
         delete Power_Delta;
     }
-    Power_Delta = new Specification(this,Power_Delta_explain, ui->UI_Parameter_Tab, 6, 1, \
+    Power_Delta = new Specification(this,Power_Delta_explain, ui->UI_Parameter_Tab, 7, 1, \
                                     "10", tr("Anti-backflow power tolerance"), \
                                     tr("Anti-backflow power tolerance.The default power tolerance is 10 kW. When the output power increases to \"output power limit + power tolerance\", the output power will be reduced to \"output power limit - power tolerance\".\
 \n(Note: This setting only takes effect in the system anti-backflow mode and is used to control the power tolerance at the grid entrance)."));
@@ -4698,11 +4805,21 @@ MEGA, LISHEN, PENGHUI, GAOTE, XIENENG, LANLI, SHENLAN, PAINENG, NINGDESHIDAI, SU
                                      tr("Serial Communication Address: The default value is 1, adjustable range is between 1 and 255, used for matching address during serial communication."));
     Host_Address->add_Specification();
 
+    if(Modbus_Offset_Address != nullptr)
+    {
+         delete Modbus_Offset_Address;
+    }
+    Modbus_Offset_Address = new Specification(this,Modbus_Offset_Address_explain, ui->UI_Parameter_Tab, 1, 4, \
+                                      "0", tr("Modbus Offset Address"), \
+                                      tr("Modbus Offset Address: The offset of the register read or write address, the default value is 0.\
+\n(For example, Modbus protocol has a 1050 register (output line voltage AB), when the Modbus offset address is 3000, the register address used to read its value is 4050.)"));
+    Modbus_Offset_Address->add_Specification();
+
     if(serial_port_1 != nullptr)
     {
         delete serial_port_1;
     }
-    serial_port_1 = new Specification(this,serial_port_1_explain, ui->UI_Parameter_Tab, 1, 4, \
+    serial_port_1 = new Specification(this,serial_port_1_explain, ui->UI_Parameter_Tab, 2, 4, \
                                       "9600", tr("serial port 2"), \
                                       tr("Serial Port 2 has six selectable baud rates: 1200, 2400, 4800, 9600, 19200, and 38400. The default baud rate for Serial Port 2 is 9600 bps, with eight data bits, no parity, and one stop bit (8-N-1)."));
     serial_port_1->add_Specification();
@@ -4711,7 +4828,7 @@ MEGA, LISHEN, PENGHUI, GAOTE, XIENENG, LANLI, SHENLAN, PAINENG, NINGDESHIDAI, SU
     {
         delete serial_port_2;
     }
-    serial_port_2 = new Specification(this,serial_port_2_explain, ui->UI_Parameter_Tab, 2, 4, \
+    serial_port_2 = new Specification(this,serial_port_2_explain, ui->UI_Parameter_Tab, 3, 4, \
                                       "9600", tr("serial port 3"), \
                                       tr("Serial Port 3 has six selectable baud rates: 1200, 2400, 4800, 9600, 19200, and 38400. The default baud rate for Serial Port 3 is 9600 bps, with eight data bits, no parity, and one stop bit (8-N-1)."));
     serial_port_2->add_Specification();
@@ -4721,7 +4838,7 @@ MEGA, LISHEN, PENGHUI, GAOTE, XIENENG, LANLI, SHENLAN, PAINENG, NINGDESHIDAI, SU
 
         delete serial_port_3;
     }
-    serial_port_3 = new Specification(this,serial_port_3_explain, ui->UI_Parameter_Tab, 3, 4, \
+    serial_port_3 = new Specification(this,serial_port_3_explain, ui->UI_Parameter_Tab, 4, 4, \
                                       "9600", tr("serial port 4"), \
                                       tr("Serial Port 4 has six selectable baud rates: 1200, 2400, 4800, 9600, 19200, and 38400. The default baud rate for Serial Port 4 is 9600 bps, with eight data bits, no parity, and one stop bit (8-N-1)."));
     serial_port_3->add_Specification();
@@ -4730,7 +4847,7 @@ MEGA, LISHEN, PENGHUI, GAOTE, XIENENG, LANLI, SHENLAN, PAINENG, NINGDESHIDAI, SU
     {
         delete serial_port_4;
     }
-    serial_port_4 = new Specification(this,serial_port_4_explain, ui->UI_Parameter_Tab, 4, 4, \
+    serial_port_4 = new Specification(this,serial_port_4_explain, ui->UI_Parameter_Tab, 5, 4, \
                                       "9600", tr("serial port 5"), \
                                       tr("Serial Port 5 has six selectable baud rates: 1200, 2400, 4800, 9600, 19200, and 38400. The default baud rate for Serial Port 5 is 9600 bps, with eight data bits, no parity, and one stop bit (8-N-1)."));
     serial_port_4->add_Specification();
@@ -4739,7 +4856,7 @@ MEGA, LISHEN, PENGHUI, GAOTE, XIENENG, LANLI, SHENLAN, PAINENG, NINGDESHIDAI, SU
     {
         delete serial_port_5;
     }
-    serial_port_5 = new Specification(this,serial_port_5_explain, ui->UI_Parameter_Tab, 5, 4, \
+    serial_port_5 = new Specification(this,serial_port_5_explain, ui->UI_Parameter_Tab, 6, 4, \
                                       "9600", tr("serial port 6"), \
                                       tr("Serial Port 6 has six selectable baud rates: 1200, 2400, 4800, 9600, 19200, and 38400. The default baud rate for Serial Port 6 is 9600 bps, with eight data bits, no parity, and one stop bit (8-N-1)."));
     serial_port_5->add_Specification();
@@ -4748,7 +4865,7 @@ MEGA, LISHEN, PENGHUI, GAOTE, XIENENG, LANLI, SHENLAN, PAINENG, NINGDESHIDAI, SU
     {
         delete Can_port_1;
     }
-    Can_port_1 = new Specification(this,Can_port_1_explain, ui->UI_Parameter_Tab, 6, 4, \
+    Can_port_1 = new Specification(this,Can_port_1_explain, ui->UI_Parameter_Tab, 7, 4, \
                                    "500", tr("Can port 1"), \
                                    tr("CAN1 Port: The baud rate for internal communication is 500 kbps by default and cannot be modified. "));
     Can_port_1->add_Specification();
@@ -4757,7 +4874,7 @@ MEGA, LISHEN, PENGHUI, GAOTE, XIENENG, LANLI, SHENLAN, PAINENG, NINGDESHIDAI, SU
     {
         delete Can_port_2;
     }
-    Can_port_2 = new Specification(this,Can_port_2_explain, ui->UI_Parameter_Tab, 7, 4, \
+    Can_port_2 = new Specification(this,Can_port_2_explain, ui->UI_Parameter_Tab, 8, 4, \
                                    "125", tr("Can port 2"), \
                                    tr("CAN2 Port: Optional baud rates for the CAN2 port include 100, 125, 250, 500, and 800 kbps, with a default baud rate of 500 kbps."));
     Can_port_2->add_Specification();
@@ -5015,7 +5132,7 @@ void MEGAWin::SystemParameter()
     }
     Output_reactive_power_mode = new Specification(this,Output_reactive_power_mode_explain, ui->UI_SystemParameter_Tab, 5, 4, \
                                          tr("Non\nadjustable"), tr("Output reactive power mode"), \
-                                         tr("Reactive Power Output Mode: Default non-adjustable, options include Power Factor, Reactive Power, non-adjustable."));
+                                         tr("Reactive Power Output Mode: Default non-adjustable, options include non-adjustable, Power Factor, Reactive Power."));
     Output_reactive_power_mode->add_Specification();
 
     if(Grid_connected_mode_of_Inv != nullptr)
@@ -5023,8 +5140,10 @@ void MEGAWin::SystemParameter()
         delete Grid_connected_mode_of_Inv;
     }
     Grid_connected_mode_of_Inv = new Specification(this,Grid_connected_mode_of_Inv_explain, ui->UI_SystemParameter_Tab, 6, 4, \
-                                                   tr("Disable"), tr("Converter Anti-Reverse Flow"), \
-                                                   tr("Converter Anti-Reverse Flow: Enable, Disable; Enabling prevents converter current from flowing into the grid, while Disabling allows converter current to flow into the grid."));
+                                                   tr("Non\nCountercurrent"), tr("Converter Anti-Reverse Flow"), \
+                                                   tr("Converter Anti-Reverse Flow: Countercurrent,\
+\nNon Countercurrent;\
+\nCountercurrent allows converter current to flow into the grid, while Non Countercurrent prevents converter current from flowing into the grid."));
     Grid_connected_mode_of_Inv->add_Specification();
 
     //系统防逆流
@@ -5065,14 +5184,15 @@ void MEGAWin::SystemParameter()
                                           tr("Grid restoration time: reserved function, setting invalid."));
     Grid_recover_time->add_Specification();
 
-    /*if(DynamicCap!= nullptr)
+    if(DynamicCap != nullptr)
     {
         delete DynamicCap;
     }
-    DynamicCap = new Specification(this,DynamicCap_explain, ui->UI_SystemParameter_Tab, 10, 4, \
-                                   tr("Enable"), tr("DynamicCap"), \
-                                   tr("Enable the power network expansion. The options are Enable and Disable."));
-    DynamicCap->add_Specification();*/
+    DynamicCap = new Specification(this,DynamicCap_explain, ui->UI_SystemParameter_Tab, 11, 4, \
+                                   tr("prohibit"), tr("DynamicCap"), \
+                                   tr("DynamicCap: Enable, Disable.\
+\nThis is the dynamic capacity expansion function done by DSP: the capacity of the power grid port is set by constant power, the positive value is the grid capacity attribute, and the negative value is the load capacity attribute, which can be dispatched by EMS."));
+    DynamicCap->add_Specification();
 
     if(Module_Number != nullptr)
     {
@@ -5130,7 +5250,12 @@ void MEGAWin::Peripheral()
     QString str2 = tr("Input Dry Contact: \
                       \nEnabled: Triggers the Action when the dry contact detects a state other than the specified NO/NC.\
                       \nDisabled: No action is taken when the dry contact detects a state other than the specified NO/NC.");
+    QString str3 = tr("The dry contact function is optional.\
+\nOptional function items: EPO Shut Down, Shut Down NC, Access Control, Full power, Smoke, Temperature, Water logging, BMS alarm, ATS signal.\
+\nFor example, the function item of DI3 will select \"Access Control\" and will prompt an access control alarm when the signal is triggered.\
+Similarly, the function item of DI3 will select \"Smoke\" and will prompt a smoke alarm when the signal is triggered.");
 
+    //使能/禁止
     if(DI_1_Enable != nullptr)
     {
         delete DI_1_Enable;
@@ -5179,6 +5304,7 @@ void MEGAWin::Peripheral()
                                    tr("Enable"), tr("DI 6 Enable"), str2);
     DI_6_Enable->add_Specification();
 
+    //常开/常闭
     if(DI_1_NC_O != nullptr)
     {
         delete DI_1_NC_O;
@@ -5227,6 +5353,7 @@ void MEGAWin::Peripheral()
                                    "N_O", tr("DI_6_NC_O"), str);
     DI_6_NC_O->add_Specification();
 
+    //动作
     if(DI_1_Action != nullptr)
     {
         delete DI_1_Action;
@@ -5274,6 +5401,55 @@ void MEGAWin::Peripheral()
     DI_6_Action = new Specification(this,DI_6_Action_explain, ui->ExternalDevice_tW, 5, 2, \
                                    tr("Shut down"), tr("DI_6_Action"), str1);
     DI_6_Action->add_Specification();
+
+    //功能
+    if(DI_1_Function != nullptr)
+    {
+        delete DI_1_Function;
+    }
+    DI_1_Function = new Specification(this,DI_1_Function_explain, ui->ExternalDevice_tW, 0, 3, \
+                                   tr("Dry Contact EPO"), tr("DI_1_Function"), str3);
+    DI_1_Function->add_Specification();
+
+    if(DI_2_Function != nullptr)
+    {
+        delete DI_2_Function;
+    }
+    DI_2_Function = new Specification(this,DI_2_Function_explain, ui->ExternalDevice_tW, 1, 3, \
+                                   tr("Dry Contact Shutdown"), tr("DI_2_Function"), str3);
+    DI_2_Function->add_Specification();
+
+    if(DI_3_Function != nullptr)
+    {
+        delete DI_3_Function;
+    }
+    DI_3_Function = new Specification(this,DI_3_Function_explain, ui->ExternalDevice_tW, 2, 3, \
+                                   tr("Access Control"), tr("DI_3_Function"), str3);
+    DI_3_Function->add_Specification();
+
+    if(DI_4_Function != nullptr)
+    {
+        delete DI_4_Function;
+    }
+    DI_4_Function = new Specification(this,DI_4_Function_explain, ui->ExternalDevice_tW, 3, 3, \
+                                   tr("Full Power"), tr("DI_4_Function"), str3);
+    DI_4_Function->add_Specification();
+
+    if(DI_5_Function != nullptr)
+    {
+        delete DI_5_Function;
+    }
+    DI_5_Function = new Specification(this,DI_5_Function_explain, ui->ExternalDevice_tW, 4, 3, \
+                                   tr("Smoke"), tr("DI_5_Function"), str3);
+    DI_5_Function->add_Specification();
+
+    if(DI_6_Function != nullptr)
+    {
+        delete DI_6_Function;
+    }
+    DI_6_Function = new Specification(this,DI_6_Function_explain, ui->ExternalDevice_tW, 5, 3, \
+                                   tr("Temperature"), tr("DI_6_Function"), str3);
+    DI_6_Function->add_Specification();
 }
 
 /***************************************************************

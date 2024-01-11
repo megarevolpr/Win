@@ -24,7 +24,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <property name="iconSize">
        <size>
@@ -185,8 +185,8 @@ Charging and discharging power calculation in grid expansion mode:
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1190</width>
-               <height>779</height>
+               <width>1192</width>
+               <height>786</height>
               </rect>
              </property>
              <layout class="QGridLayout" name="gridLayout_2">

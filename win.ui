@@ -216,7 +216,7 @@ color: rgb(255, 255, 255);</string>
             </size>
            </property>
            <property name="currentIndex">
-            <number>0</number>
+            <number>6</number>
            </property>
            <widget class="QWidget" name="UI_Parameter_page">
             <property name="sizePolicy">
@@ -437,7 +437,7 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="1" column="3">
                 <property name="text">
-                 <string>serial port 2</string>
+                 <string>Modbus Offset Address</string>
                 </property>
                 <property name="textAlignment">
                  <set>AlignCenter</set>
@@ -445,7 +445,7 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="1" column="5">
                 <property name="text">
-                 <string>bps</string>
+                 <string>-</string>
                 </property>
                 <property name="textAlignment">
                  <set>AlignCenter</set>
@@ -485,7 +485,7 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="2" column="3">
                 <property name="text">
-                 <string>serial port 3</string>
+                 <string>serial port 2</string>
                 </property>
                 <property name="textAlignment">
                  <set>AlignCenter</set>
@@ -533,7 +533,7 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="3" column="3">
                 <property name="text">
-                 <string>serial port 4</string>
+                 <string>serial port 3</string>
                 </property>
                 <property name="textAlignment">
                  <set>AlignCenter</set>
@@ -581,7 +581,7 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="4" column="3">
                 <property name="text">
-                 <string>serial port 5</string>
+                 <string>serial port 4</string>
                 </property>
                 <property name="textAlignment">
                  <set>AlignCenter</set>
@@ -629,7 +629,7 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="5" column="3">
                 <property name="text">
-                 <string>serial port 6</string>
+                 <string>serial port 5</string>
                 </property>
                 <property name="textAlignment">
                  <set>AlignCenter</set>
@@ -653,7 +653,7 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="6" column="0">
                 <property name="text">
-                 <string>Anti-backflow power tolerance</string>
+                 <string>EMS CAN Protocol</string>
                 </property>
                 <property name="textAlignment">
                  <set>AlignCenter</set>
@@ -661,7 +661,7 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="6" column="2">
                 <property name="text">
-                 <string>kW</string>
+                 <string>-</string>
                 </property>
                 <property name="textAlignment">
                  <set>AlignCenter</set>
@@ -669,7 +669,7 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="6" column="3">
                 <property name="text">
-                 <string>Can port 1</string>
+                 <string>serial port 6</string>
                 </property>
                 <property name="textAlignment">
                  <set>AlignCenter</set>
@@ -706,7 +706,7 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="7" column="0">
                 <property name="text">
-                 <string/>
+                 <string>Anti-backflow power tolerance</string>
                 </property>
                 <property name="textAlignment">
                  <set>AlignCenter</set>
@@ -714,7 +714,7 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="7" column="2">
                 <property name="text">
-                 <string/>
+                 <string>kW</string>
                 </property>
                 <property name="textAlignment">
                  <set>AlignCenter</set>
@@ -722,7 +722,7 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="7" column="3">
                 <property name="text">
-                 <string>Can port 2</string>
+                 <string>Can port 1</string>
                 </property>
                 <property name="textAlignment">
                  <set>AlignCenter</set>
@@ -770,7 +770,7 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="8" column="3">
                 <property name="text">
-                 <string/>
+                 <string>Can port 2</string>
                 </property>
                 <property name="textAlignment">
                  <set>AlignCenter</set>
@@ -1433,7 +1433,18 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="11" column="3">
                 <property name="text">
-                 <string/>
+                 <string>DynamicCap</string>
+                </property>
+                <property name="textAlignment">
+                 <set>AlignCenter</set>
+                </property>
+               </item>
+               <item row="11" column="5">
+                <property name="text">
+                 <string>-</string>
+                </property>
+                <property name="textAlignment">
+                 <set>AlignCenter</set>
                 </property>
                </item>
               </widget>
@@ -1477,11 +1488,11 @@ color: rgb(255, 255, 255);</string>
                <property name="editTriggers">
                 <set>QAbstractItemView::NoEditTriggers</set>
                </property>
-               <attribute name="horizontalHeaderDefaultSectionSize">
-                <number>175</number>
-               </attribute>
                <attribute name="horizontalHeaderMinimumSectionSize">
                 <number>36</number>
+               </attribute>
+               <attribute name="horizontalHeaderDefaultSectionSize">
+                <number>175</number>
                </attribute>
                <attribute name="verticalHeaderMinimumSectionSize">
                 <number>34</number>
@@ -1561,7 +1572,7 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="0" column="3">
                 <property name="text">
-                 <string>Dry Contact EPO</string>
+                 <string/>
                 </property>
                 <property name="textAlignment">
                  <set>AlignCenter</set>
@@ -1577,7 +1588,7 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="1" column="3">
                 <property name="text">
-                 <string>Dry Contact Shutdown</string>
+                 <string/>
                 </property>
                 <property name="textAlignment">
                  <set>AlignCenter</set>
@@ -1585,7 +1596,7 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="2" column="3">
                 <property name="text">
-                 <string>Access Control</string>
+                 <string/>
                 </property>
                 <property name="textAlignment">
                  <set>AlignCenter</set>
@@ -1593,7 +1604,7 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="3" column="3">
                 <property name="text">
-                 <string>Full Power</string>
+                 <string/>
                 </property>
                 <property name="textAlignment">
                  <set>AlignCenter</set>
@@ -1601,7 +1612,7 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="4" column="3">
                 <property name="text">
-                 <string>Smoke</string>
+                 <string/>
                 </property>
                 <property name="textAlignment">
                  <set>AlignCenter</set>
@@ -1609,7 +1620,7 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="5" column="3">
                 <property name="text">
-                 <string>Temperature</string>
+                 <string/>
                 </property>
                 <property name="textAlignment">
                  <set>AlignCenter</set>
@@ -1788,11 +1799,11 @@ color: rgb(255, 255, 255);</string>
                <property name="editTriggers">
                 <set>QAbstractItemView::NoEditTriggers</set>
                </property>
-               <attribute name="horizontalHeaderDefaultSectionSize">
-                <number>200</number>
-               </attribute>
                <attribute name="horizontalHeaderMinimumSectionSize">
                 <number>36</number>
+               </attribute>
+               <attribute name="horizontalHeaderDefaultSectionSize">
+                <number>200</number>
                </attribute>
                <attribute name="verticalHeaderMinimumSectionSize">
                 <number>34</number>
@@ -1944,11 +1955,11 @@ color: rgb(255, 255, 255);</string>
                <attribute name="horizontalHeaderVisible">
                 <bool>false</bool>
                </attribute>
-               <attribute name="horizontalHeaderDefaultSectionSize">
-                <number>131</number>
-               </attribute>
                <attribute name="horizontalHeaderMinimumSectionSize">
                 <number>36</number>
+               </attribute>
+               <attribute name="horizontalHeaderDefaultSectionSize">
+                <number>131</number>
                </attribute>
                <attribute name="verticalHeaderVisible">
                 <bool>false</bool>
@@ -2066,6 +2077,9 @@ color: rgb(255, 255, 255);</string>
                 <property name="text">
                  <string>INV A inductance Cur. revise</string>
                 </property>
+                <property name="textAlignment">
+                 <set>AlignCenter</set>
+                </property>
                </item>
                <item row="1" column="0">
                 <property name="text">
@@ -2087,6 +2101,9 @@ color: rgb(255, 255, 255);</string>
                 <property name="text">
                  <string>INV B inductance Cur. revise</string>
                 </property>
+                <property name="textAlignment">
+                 <set>AlignCenter</set>
+                </property>
                </item>
                <item row="2" column="0">
                 <property name="text">
@@ -2100,10 +2117,16 @@ color: rgb(255, 255, 255);</string>
                 <property name="text">
                  <string>Grid A/AB Vol. revise</string>
                 </property>
+                <property name="textAlignment">
+                 <set>AlignCenter</set>
+                </property>
                </item>
                <item row="2" column="4">
                 <property name="text">
                  <string>INV C inductance Cur. revise</string>
+                </property>
+                <property name="textAlignment">
+                 <set>AlignCenter</set>
                 </property>
                </item>
                <item row="3" column="0">
@@ -2118,10 +2141,16 @@ color: rgb(255, 255, 255);</string>
                 <property name="text">
                  <string>Grid B/BC Vol. revise</string>
                 </property>
+                <property name="textAlignment">
+                 <set>AlignCenter</set>
+                </property>
                </item>
                <item row="3" column="4">
                 <property name="text">
                  <string>INV On off flag</string>
+                </property>
+                <property name="textAlignment">
+                 <set>AlignCenter</set>
                 </property>
                </item>
                <item row="4" column="0">
@@ -2136,10 +2165,16 @@ color: rgb(255, 255, 255);</string>
                 <property name="text">
                  <string>Grid C/CA Vol. revise</string>
                 </property>
+                <property name="textAlignment">
+                 <set>AlignCenter</set>
+                </property>
                </item>
                <item row="4" column="4">
                 <property name="text">
                  <string>Logic state</string>
+                </property>
+                <property name="textAlignment">
+                 <set>AlignCenter</set>
                 </property>
                </item>
                <item row="5" column="0">
@@ -2154,10 +2189,16 @@ color: rgb(255, 255, 255);</string>
                 <property name="text">
                  <string>Output A Cur. revise</string>
                 </property>
+                <property name="textAlignment">
+                 <set>AlignCenter</set>
+                </property>
                </item>
                <item row="5" column="4">
                 <property name="text">
                  <string>INV flag</string>
+                </property>
+                <property name="textAlignment">
+                 <set>AlignCenter</set>
                 </property>
                </item>
                <item row="6" column="0">
@@ -2172,10 +2213,16 @@ color: rgb(255, 255, 255);</string>
                 <property name="text">
                  <string>Output B Cur. revise</string>
                 </property>
+                <property name="textAlignment">
+                 <set>AlignCenter</set>
+                </property>
                </item>
                <item row="6" column="4">
                 <property name="text">
                  <string>Grid flag</string>
+                </property>
+                <property name="textAlignment">
+                 <set>AlignCenter</set>
                 </property>
                </item>
                <item row="7" column="0">
@@ -2190,10 +2237,16 @@ color: rgb(255, 255, 255);</string>
                 <property name="text">
                  <string>Output C Cur. revise</string>
                 </property>
+                <property name="textAlignment">
+                 <set>AlignCenter</set>
+                </property>
                </item>
                <item row="7" column="4">
                 <property name="text">
                  <string>Grid protect flag</string>
+                </property>
+                <property name="textAlignment">
+                 <set>AlignCenter</set>
                 </property>
                </item>
                <item row="8" column="0">
@@ -2208,10 +2261,16 @@ color: rgb(255, 255, 255);</string>
                 <property name="text">
                  <string>INV A Vol. revise</string>
                 </property>
+                <property name="textAlignment">
+                 <set>AlignCenter</set>
+                </property>
                </item>
                <item row="8" column="4">
                 <property name="text">
                  <string>Bat flag</string>
+                </property>
+                <property name="textAlignment">
+                 <set>AlignCenter</set>
                 </property>
                </item>
                <item row="9" column="0">
@@ -2225,6 +2284,9 @@ color: rgb(255, 255, 255);</string>
                <item row="9" column="2">
                 <property name="text">
                  <string>INV B Vol. revise</string>
+                </property>
+                <property name="textAlignment">
+                 <set>AlignCenter</set>
                 </property>
                </item>
                <item row="9" column="4">
@@ -2246,6 +2308,9 @@ color: rgb(255, 255, 255);</string>
                <item row="10" column="2">
                 <property name="text">
                  <string>INV C Vol. revise</string>
+                </property>
+                <property name="textAlignment">
+                 <set>AlignCenter</set>
                 </property>
                </item>
                <item row="10" column="4">
@@ -2503,6 +2568,123 @@ color: rgb(255, 255, 255);</string>
                   </size>
                  </property>
                 </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="PortMessage_Page">
+            <attribute name="title">
+             <string>PortMessage</string>
+            </attribute>
+            <layout class="QGridLayout" name="gridLayout_48">
+             <item row="0" column="0">
+              <layout class="QVBoxLayout" name="verticalLayout_43">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_35" stretch="2,2,1,2,6,1,2,2">
+                 <item alignment="Qt::AlignRight">
+                  <widget class="QLabel" name="label_32">
+                   <property name="text">
+                    <string>Port:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="Port_btn">
+                   <property name="text">
+                    <string>Can 2</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_30">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item alignment="Qt::AlignRight">
+                  <widget class="QLabel" name="label_33">
+                   <property name="text">
+                    <string>Display mode:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox">
+                   <item>
+                    <property name="text">
+                     <string>Displayed on screen</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Write to USB drive</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_31">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="Begin_btn">
+                   <property name="text">
+                    <string>Begin</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_32">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QPlainTextEdit" name="PortMessage_TextEdit">
+                 <property name="plainText">
+                  <string>2023-09-27  17:27:56.201  CAN 2: Tx  Len=8  ID=9f000100 00 00 00 00 00 00 00 00
+2023-09-27  17:27:56.302  CAN 2: Rx  Len=8  ID=9f000301 0d 00 64 00 70 17 e8 03
+2023-09-27  17:27:57.105  CAN 2: Rx  Len=8  ID=9f000300 40 1f a0 0f e8 03 e8 03
+2023-09-27  17:27:57.206  CAN 2: Tx  Len=8  ID=9f000100 00 00 00 00 00 00 00 00
+2023-09-27  17:27:57.307  CAN 2: Rx  Len=8  ID=9f000301 0d 00 64 00 70 17 e8 03
+2023-09-27  17:27:57.910  CAN 2: Rx  Len=8  ID=9f000304 40 1f a0 0f 00 00 00 00
+2023-09-27  17:27:58.110  CAN 2: Rx  Len=8  ID=9f000300 40 1f a0 0f e8 03 e8 03
+2023-09-27  17:27:58.211  CAN 2: Tx  Len=8  ID=9f000100 00 00 00 00 00 00 00 00
+2023-09-27  17:27:58.312  CAN 2: Rx  Len=8  ID=9f000301 0d 00 64 00 70 17 e8 03
+2023-09-27  17:27:58.915  CAN 2: Rx  Len=8  ID=9f000304 40 1f a0 0f 00 00 00 00
+2023-09-27  17:27:59.116  CAN 2: Rx  Len=8  ID=9f000300 40 1f a0 0f e8 03 e8 03
+2023-09-27  17:27:59.217  CAN 2: Tx  Len=8  ID=9f000100 00 00 00 00 00 00 00 00
+2023-09-27  17:27:59.317  CAN 2: Rx  Len=8  ID=9f000301 0d 00 64 00 70 17 e8 03
+2023-09-27  17:27:59.920  CAN 2: Rx  Len=8  ID=9f000304 40 1f a0 0f 00 00 00 00
+2023-09-27  17:28:00.121  CAN 2: Rx  Len=8  ID=9f000300 40 1f a0 0f e8 03 e8 03</string>
+                 </property>
+                </widget>
                </item>
               </layout>
              </item>
@@ -2800,7 +2982,7 @@ Language</string>
             </size>
            </property>
            <property name="currentIndex">
-            <number>4</number>
+            <number>0</number>
            </property>
            <widget class="QWidget" name="Host_Page">
             <widget class="QLabel" name="BattCurrent_label">
@@ -4098,7 +4280,7 @@ Language</string>
                 </sizepolicy>
                </property>
                <property name="currentIndex">
-                <number>3</number>
+                <number>0</number>
                </property>
                <widget class="QWidget" name="RTData_page">
                 <property name="sizePolicy">
@@ -4227,7 +4409,7 @@ Language</string>
                           </size>
                          </property>
                          <property name="currentIndex">
-                          <number>0</number>
+                          <number>2</number>
                          </property>
                          <widget class="QWidget" name="Bypass_Converter_page">
                           <layout class="QGridLayout" name="gridLayout_46">
@@ -5019,7 +5201,10 @@ QPushButton::hover{
                        </item>
                        <item row="5" column="2">
                         <property name="text">
-                         <string/>
+                         <string>Forced charge</string>
+                        </property>
+                        <property name="textAlignment">
+                         <set>AlignCenter</set>
                         </property>
                        </item>
                        <item row="5" column="4">
@@ -7314,7 +7499,7 @@ enable</string>
              <item row="0" column="0">
               <widget class="QTabWidget" name="Record_tabWidget">
                <property name="currentIndex">
-                <number>0</number>
+                <number>1</number>
                </property>
                <widget class="QWidget" name="DataReport_page">
                 <attribute name="title">
@@ -8453,7 +8638,7 @@ background-color: rgb(255, 0, 0);</string>
                 </font>
                </property>
                <property name="currentIndex">
-                <number>0</number>
+                <number>2</number>
                </property>
                <widget class="QWidget" name="ParameterSet_page">
                 <attribute name="title">
@@ -9108,6 +9293,16 @@ background-color: rgb(255, 0, 0);</string>
                            <string>17</string>
                           </property>
                          </row>
+                         <row>
+                          <property name="text">
+                           <string>18</string>
+                          </property>
+                         </row>
+                         <row>
+                          <property name="text">
+                           <string>19</string>
+                          </property>
+                         </row>
                          <column>
                           <property name="text">
                            <string>1</string>
@@ -9533,6 +9728,38 @@ background-color: rgb(255, 0, 0);</string>
                          <item row="16" column="2">
                           <property name="text">
                            <string>kW</string>
+                          </property>
+                          <property name="textAlignment">
+                           <set>AlignCenter</set>
+                          </property>
+                         </item>
+                         <item row="17" column="0">
+                          <property name="text">
+                           <string>Force Charge start</string>
+                          </property>
+                          <property name="textAlignment">
+                           <set>AlignCenter</set>
+                          </property>
+                         </item>
+                         <item row="17" column="2">
+                          <property name="text">
+                           <string>mV</string>
+                          </property>
+                          <property name="textAlignment">
+                           <set>AlignCenter</set>
+                          </property>
+                         </item>
+                         <item row="18" column="0">
+                          <property name="text">
+                           <string>Force Charge stop</string>
+                          </property>
+                          <property name="textAlignment">
+                           <set>AlignCenter</set>
+                          </property>
+                         </item>
+                         <item row="18" column="2">
+                          <property name="text">
+                           <string>mV</string>
                           </property>
                           <property name="textAlignment">
                            <set>AlignCenter</set>
@@ -10328,8 +10555,8 @@ Set rule:B1 - A1 ≥ 10V</string>
                           <rect>
                            <x>0</x>
                            <y>0</y>
-                           <width>558</width>
-                           <height>450</height>
+                           <width>480</width>
+                           <height>390</height>
                           </rect>
                          </property>
                          <layout class="QGridLayout" name="gridLayout_38">

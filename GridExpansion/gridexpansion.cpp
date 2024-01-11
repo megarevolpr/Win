@@ -9,7 +9,6 @@ GridExpansion::GridExpansion(QWidget *parent,int LanguageType) :
 
     setWindowState(Qt::WindowMaximized); // 最大化
     Language = LanguageType;
-    Image_key = 1;
 
 
     Generator_Charging = new QPushButton;
@@ -78,10 +77,10 @@ void GridExpansion::on_openImageBtn()
      //读取并显示图像
      if(Language == 0)
      {
-         image_path = (":new_ui/UI/电网扩容逻辑图.png");
+        image_path = (":new_ui/UI/LogicDiagram.png");
      }
      else {
-        image_path = (":new_ui/UI/电网扩容逻辑图.png");
+        image_path = (":new_ui/UI/LogicDiagram_En.png");
      }
      QImage image(image_path);
      image = image.scaled(ui->label->size(),Qt::IgnoreAspectRatio,Qt::SmoothTransformation);

@@ -78,6 +78,7 @@ public:
         QPushButton *Parallel_explain;  //并机说明
         Specification *Parallel;
 
+
         /***************************电池设置****************************/
         QPushButton *DOD_OnGrid_explain;
         QPushButton *DOD_OffGrid_explain;
@@ -92,6 +93,8 @@ public:
         QPushButton *ChargeStopSOC_explain;
         QPushButton *DischargeStopSOC_explain;
         QPushButton *Grid_capacity_explain;       //电网容量
+        QPushButton *Force_Charge_start_explain;  //强充开始电压
+        QPushButton *Force_Charge_stop_explain;   //强充停止电压
         QPushButton *Turn_on_SOC_explain;
         QPushButton *Turn_off_SOC_explain;
         QPushButton *Turn_on_cell_vol_explain;
@@ -145,6 +148,8 @@ public:
         Specification *ChargeStopSOC;
         Specification *DischargeStopSOC;
         Specification *Grid_capacity;       //电网容量
+        Specification *Force_Charge_start;       //强充开始电压
+        Specification *Force_Charge_stop;        //强充停止电压
         Specification *Turn_on_SOC;
         Specification *Turn_off_SOC;
         Specification *Turn_on_cell_vol;
@@ -200,8 +205,10 @@ public:
         QPushButton *EMS_Comm_type_explain;
         QPushButton *Output_power_limit_explain;
         QPushButton *BAT_protocol_explain;
+        QPushButton *EMS_CAN_Protocol_explain;
         QPushButton *Power_Delta_explain;
         QPushButton *Host_Address_explain;
+        QPushButton *Modbus_Offset_Address_explain;
         QPushButton *serial_port_1_explain;
         QPushButton *serial_port_2_explain;
         QPushButton *serial_port_3_explain;
@@ -225,8 +232,10 @@ public:
         Specification *EMS_Comm_type;
         Specification *Output_power_limit;
         Specification *BAT_protocol;
+        Specification *EMS_CAN_Protocol;
         Specification *Power_Delta;
         Specification *Host_Address;
+        Specification *Modbus_Offset_Address;
         Specification *serial_port_1;
         Specification *serial_port_2;
         Specification *serial_port_3;
@@ -282,7 +291,7 @@ public:
         QPushButton *Primary_FM_dead_zone_explain;
         QPushButton *PFM_coeff_explain;
         QPushButton *Grid_recover_time_explain;
-//        QPushButton *DynamicCap_explain;
+        QPushButton *DynamicCap_explain;
         QPushButton *Module_Number_explain;
         QPushButton *Restore_factory_explain;
         QPushButton *BackupSetParameters_explain;
@@ -312,7 +321,7 @@ public:
         Specification *Primary_FM_dead_zone;
         Specification *PFM_coeff;
         Specification *Grid_recover_time;
-//        Specification *DynamicCap;
+        Specification *DynamicCap;
         Specification *Module_Number;
         Specification *Restore_factory;
         Specification *BackupSetParameters;
@@ -337,6 +346,12 @@ public:
         QPushButton *DI_4_Action_explain;
         QPushButton *DI_5_Action_explain;
         QPushButton *DI_6_Action_explain;
+        QPushButton *DI_1_Function_explain;
+        QPushButton *DI_2_Function_explain;
+        QPushButton *DI_3_Function_explain;
+        QPushButton *DI_4_Function_explain;
+        QPushButton *DI_5_Function_explain;
+        QPushButton *DI_6_Function_explain;
 
         Specification *DI_1_Enable;
         Specification *DI_2_Enable;
@@ -356,6 +371,12 @@ public:
         Specification *DI_4_Action;
         Specification *DI_5_Action;
         Specification *DI_6_Action;
+        Specification *DI_1_Function;
+        Specification *DI_2_Function;
+        Specification *DI_3_Function;
+        Specification *DI_4_Function;
+        Specification *DI_5_Function;
+        Specification *DI_6_Function;
         /***************************BMS保护**************************/
         QPushButton *DOD_Action_explain;
         QPushButton *Prohibit_charging_Action_explain;
@@ -553,6 +574,7 @@ public:
         QPushButton *converter_status_explain;     //变流器状态
         QPushButton *Reactive_P_Regulation_explain;  //无功调节方式
         QPushButton *LVRT_explain;            //
+        QPushButton *Forced_charge_explain;   //强充标志位
         QPushButton *Generator_signal_explain;//柴发信号
         QPushButton *Reserve_explain;         //保留位
         QPushButton *Reserve2_explain;     //保留位
@@ -576,6 +598,7 @@ public:
         Specification *Reactive_P_Regulation;  //无功调节方式
         Specification *Sleep_mode;       //睡眠模式
         Specification *LVRT;            //
+        Specification *Forced_charge;  //强充标志位
         Specification *Generator_signal;//柴发信号
         Specification *Reserve;         //保留位
         Specification *Reserve2;     //保留位
@@ -852,6 +875,8 @@ private slots:
     void Data_report_clicked(int nid);//数据报表
     void SystemlnformationVer_clicked(int nid);//系统信息
     void MonitorDebug_clicked(int nid);//监控调试
+    void on_comboBox_currentIndexChanged(int index);//端口报文
+
     void on_radio_static_clicked();
 
     void on_radio_dhcp_clicked();

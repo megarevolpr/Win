@@ -63,7 +63,6 @@ public:
     float ratio_t;
 
     int Language;
-    bool Image_key;
 
 public:
     explicit GridExpansion(QWidget *parent = nullptr,int LanguageType=0);
