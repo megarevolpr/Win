@@ -7,7 +7,7 @@ GridExpansion::GridExpansion(QWidget *parent,int LanguageType) :
 {
     ui->setupUi(this);
 
-    setWindowState(Qt::WindowMaximized); // 最大化
+//    setWindowState(Qt::WindowMaximized); // 最大化
     Language = LanguageType;
     Image_key = 1;
 
