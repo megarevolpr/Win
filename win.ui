@@ -402,7 +402,7 @@ QToolTip{
             <enum>QFrame::Raised</enum>
            </property>
            <property name="currentIndex">
-            <number>3</number>
+            <number>1</number>
            </property>
            <widget class="QWidget" name="Host_page">
             <layout class="QGridLayout" name="gridLayout_3">
@@ -1269,7 +1269,7 @@ QToolTip{
                 <string notr="true"/>
                </property>
                <property name="currentIndex">
-                <number>0</number>
+                <number>1</number>
                </property>
                <widget class="QWidget" name="RT_Data_page">
                 <attribute name="title">
@@ -1419,82 +1419,82 @@ QToolTip{
                          </column>
                          <item row="0" column="0">
                           <property name="text">
-                           <string>PCS voltage(AB)</string>
+                           <string/>
                           </property>
                          </item>
                          <item row="0" column="2">
                           <property name="text">
-                           <string>Battery voltage</string>
+                           <string/>
                           </property>
                          </item>
                          <item row="1" column="0">
                           <property name="text">
-                           <string>PCS voltage(BC)</string>
+                           <string/>
                           </property>
                          </item>
                          <item row="1" column="2">
                           <property name="text">
-                           <string>Battery current</string>
+                           <string/>
                           </property>
                          </item>
                          <item row="2" column="0">
                           <property name="text">
-                           <string>PCS voltage(CA)</string>
+                           <string/>
                           </property>
                          </item>
                          <item row="2" column="2">
                           <property name="text">
-                           <string>Battery power</string>
+                           <string/>
                           </property>
                          </item>
                          <item row="3" column="0">
                           <property name="text">
-                           <string>PCS current(A)</string>
+                           <string/>
                           </property>
                          </item>
                          <item row="3" column="2">
                           <property name="text">
-                           <string>Bus voltage</string>
+                           <string/>
                           </property>
                          </item>
                          <item row="4" column="0">
                           <property name="text">
-                           <string>PCS current(B)</string>
+                           <string/>
                           </property>
                          </item>
                          <item row="4" column="2">
                           <property name="text">
-                           <string>IGBT temperature</string>
+                           <string/>
                           </property>
                          </item>
                          <item row="5" column="0">
                           <property name="text">
-                           <string>PCS current(C)</string>
+                           <string/>
                           </property>
                          </item>
                          <item row="5" column="2">
                           <property name="text">
-                           <string>Environment temperature</string>
+                           <string/>
                           </property>
                          </item>
                          <item row="6" column="0">
                           <property name="text">
-                           <string>PCS Active P.</string>
+                           <string/>
                           </property>
                          </item>
                          <item row="7" column="0">
                           <property name="text">
-                           <string>PCS Reactive P.</string>
+                           <string/>
                           </property>
                          </item>
                          <item row="8" column="0">
                           <property name="text">
-                           <string>PCS Parent P.</string>
+                           <string/>
                           </property>
                          </item>
                          <item row="9" column="0">
                           <property name="text">
-                           <string>PCS Pf</string>
+                           <string/>
                           </property>
                          </item>
                         </widget>
@@ -1723,6 +1723,9 @@ QPushButton::hover{
                         <string>Converter</string>
                        </property>
                        <property name="checkable">
+                        <bool>true</bool>
+                       </property>
+                       <property name="checked">
                         <bool>true</bool>
                        </property>
                        <property name="autoExclusive">
@@ -3637,31 +3640,6 @@ enable</string>
                         </layout>
                        </item>
                       </layout>
-                     </item>
-                    </layout>
-                   </widget>
-                   <widget class="QWidget" name="BAT_Lead_page">
-                    <layout class="QGridLayout" name="gridLayout_26">
-                     <property name="leftMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="topMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="rightMargin">
-                      <number>0</number>
-                     </property>
-                     <property name="bottomMargin">
-                      <number>0</number>
-                     </property>
-                     <item row="0" column="0">
-                      <widget class="QTableView" name="RTLead_Tab">
-                       <property name="font">
-                        <font>
-                         <pointsize>14</pointsize>
-                        </font>
-                       </property>
-                      </widget>
                      </item>
                     </layout>
                    </widget>
@@ -6044,7 +6022,7 @@ QPushButton::hover{
                          <string notr="true">background-color: rgb(255, 255, 255);</string>
                         </property>
                         <property name="currentIndex">
-                         <number>10</number>
+                         <number>4</number>
                         </property>
                         <widget class="QWidget" name="ParamSet__page">
                          <property name="styleSheet">

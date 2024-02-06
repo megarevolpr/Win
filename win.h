@@ -79,6 +79,12 @@ public:
     void LinkRelationship();//函数关联
     void MemoryAllocation();//初始化内存空间
 
+    void PCS_DataTableInit();//实时数据-表格初始化
+    void PCS_StateTableInit();//实时状态-表格初始化
+    void History();//历史记录-表格初始化
+    void OperationLog();//操作日志-表格初始化
+    void WorkingModeInit();//工作模式-表格初始化
+
 
 private:
 
@@ -89,20 +95,24 @@ private slots:
     void My_menuAction(int Index);//菜单选择
     void WordingMode(int Index);//模式切换说明
     void Return(int Index);//返回退出键
+    void Account_Change( uint8_t Account_Type );//切换登录信息
+    void Home_Click(int Index);//主页控件点击
 
     void on_UI_MenuBtn_clicked();
-
-    void on_Bypass_Batt_btn_clicked();
-
-    void on_Bypass_Running_btn_clicked();
-
-    void on_Bypass_Grid_btn_clicked();
-
-    void on_Bypass_Load_Btn_clicked();
 
     void on_SetNext_bt_clicked();
 
     void on_SetPrevious_bt_clicked();
+
+    void on_ToLogin_bt_clicked();
+
+    void on_Cancel_bt_clicked();
+
+    void on_SGrid_btn_2_clicked();
+
+    void on_SConverter_btn_2_clicked();
+
+    void on_SLoad_btn_2_clicked();
 
 private:
     Ui::MEGAWin *ui;
@@ -122,6 +132,7 @@ private:
     QButtonGroup *Menu_Group;//菜单控件组
     QButtonGroup *SystemMode_Group;//工作模式控件组
     QButtonGroup *ExitReturn_Group;//返回按钮控件组
+    QButtonGroup *HomeClick_Group;//主页点击控件组
 
 };
 

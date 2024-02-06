@@ -46,7 +46,7 @@ public:
     {
         if (Menu->objectName().isEmpty())
             Menu->setObjectName(QStringLiteral("Menu"));
-        Menu->resize(364, 462);
+        Menu->resize(432, 462);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
