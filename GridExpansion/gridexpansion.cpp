@@ -47,26 +47,26 @@ void GridExpansion::InitializeTable()
     }
     QString str = tr("0");
 
-    Generator_Charging_explain = new Specification(this,Generator_Charging, ui->tableWidget, 0, 1, \
-                                    str, tr("Charging SOC of Diesel Generator"), \
-                                    tr("Charging SOC of Diesel Generator: In grid expansion mode, when a diesel generator is connected, the battery SOC will charge when it is below this SOC."));
-    Generator_Charging_explain->add_Specification();
-    Charging_SOC_of_Grid_explain = new Specification(this,Charging_SOC_of_Grid, ui->tableWidget, 1, 1, \
-                                    str, tr("Charging SOC of Grid"), \
-                                    tr("Charging SOC of Grid: In grid expansion mode, when there is no diesel generator connected, the battery SOC will charge when it is below this SOC."));
-    Charging_SOC_of_Grid_explain->add_Specification();
-    Charging_Stop_SOC_explain = new Specification(this,Charging_Stop_SOC, ui->tableWidget, 2, 1, \
-                                    str, tr("Charging Stop SOC"), \
-                                    tr("Charging Stop SOC: In grid expansion mode, when the battery is charging, it will stop charging when the battery SOC is greater than this SOC."));
-    Charging_Stop_SOC_explain->add_Specification();
-    Discharging_Stop_SOC_explain = new Specification(this,Discharging_Stop_SOC, ui->tableWidget, 3, 1, \
-                                    str, tr("Discharging Stop SOC"), \
-                                    tr("Discharging Stop SOC: In grid expansion mode, the battery will stop discharging when the battery SOC is below this SOC."));
-    Discharging_Stop_SOC_explain->add_Specification();
-    Grid_Capacity_explain = new Specification(this,Grid_Capacity, ui->tableWidget, 4, 1, \
-                                    str, tr("Grid Capacity"), \
-                                    tr("Grid Capacity: The maximum power capacity connected to the grid in grid expansion mode."));
-    Grid_Capacity_explain->add_Specification();
+//    Generator_Charging_explain = new Specification(this,Generator_Charging, ui->tableWidget, 0, 1, \
+//                                    str, tr("Charging SOC of Diesel Generator"), \
+//                                    tr("Charging SOC of Diesel Generator: In grid expansion mode, when a diesel generator is connected, the battery SOC will charge when it is below this SOC."));
+//    Generator_Charging_explain->add_Specification();
+//    Charging_SOC_of_Grid_explain = new Specification(this,Charging_SOC_of_Grid, ui->tableWidget, 1, 1, \
+//                                    str, tr("Charging SOC of Grid"), \
+//                                    tr("Charging SOC of Grid: In grid expansion mode, when there is no diesel generator connected, the battery SOC will charge when it is below this SOC."));
+//    Charging_SOC_of_Grid_explain->add_Specification();
+//    Charging_Stop_SOC_explain = new Specification(this,Charging_Stop_SOC, ui->tableWidget, 2, 1, \
+//                                    str, tr("Charging Stop SOC"), \
+//                                    tr("Charging Stop SOC: In grid expansion mode, when the battery is charging, it will stop charging when the battery SOC is greater than this SOC."));
+//    Charging_Stop_SOC_explain->add_Specification();
+//    Discharging_Stop_SOC_explain = new Specification(this,Discharging_Stop_SOC, ui->tableWidget, 3, 1, \
+//                                    str, tr("Discharging Stop SOC"), \
+//                                    tr("Discharging Stop SOC: In grid expansion mode, the battery will stop discharging when the battery SOC is below this SOC."));
+//    Discharging_Stop_SOC_explain->add_Specification();
+//    Grid_Capacity_explain = new Specification(this,Grid_Capacity, ui->tableWidget, 4, 1, \
+//                                    str, tr("Grid Capacity"), \
+//                                    tr("Grid Capacity: The maximum power capacity connected to the grid in grid expansion mode."));
+//    Grid_Capacity_explain->add_Specification();
 }
 
 //加载图像
